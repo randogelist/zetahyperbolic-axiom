@@ -7,13 +7,37 @@
 **Full research inventory:** [45-item missing-pieces register and targeted proof agenda](docs/PERSISTENT_PAPER_GAPS.md).  
 **Original proof repository:** [`main` README](https://github.com/randogelist/zetahyperbolic-axiom/blob/86ca99a23d65cde4880a9005a49076c43e7bc968/README.md). This tracking branch deliberately does not edit active Lean proof modules.
 
-## Verified mathematical baseline (25 October 2026)
+## 1. Established proof tiers
+
+The **YOU_ARE_GOODWORKFLOWFRONTIER** tierlist (from [WORKFLOW.txt](WORKFLOW.txt)) is:
+
+| Marker | Tier | Definition |
+|:---:|:---|:---|
+| `!` | **B-Tier** | On-paper mathematical derivation, conditional on reasoning; not yet Lean-verified. |
+| `!!` | **A-Tier** | The exact statement parses, elaborates and compiles in Lean; its **transitive axiom audit** passes with no `sorryAx`, hidden axioms or unstated hypotheses. An A-Tier *conditional theorem* proves only the stated implication. |
+| `!!!` | **Formal closure** | A-Tier conditional chain reduces the target to acceptance of **finite witness data** by a terminating checker; no actual accepted witness yet. |
+| `!!!!` | **S-Tier** | Concrete finite witness data pass the checker, and the axiom-audited downstream Lean transfer to the final claim passes. |
+
+**Partial proof:** `!!` may already apply to individual mathematical components, **not** to the whole printed theorem. `Partially formalized`, `Not formalized` and `Blocked` describe manuscript coverage, **not** extra proof tiers. A false literal claim remains blocked even if a corrected proposition is fully A-Tier. No manuscript-wide `!!!` or `!!!!` certificate is asserted.
+
+## 2. Manuscript items, grouped by proof status
+
+| Whole printed item | Item numbers | Count |
+|:---|:---|---:|
+| `!!` A-Tier — complete printed result | 2.2, 2.3, 2.4, 2.5, 3.1, 4.3, 5.4 | 7 |
+| A-Tier components — whole printed result **open** | 3.3, 3.7, 3.8, 3.9, 4.1, 4.2, 4.4, 4.5, 4.6, 4.7, 4.8, 5.1, 5.2, 5.3, 6.2, 6.4, 6.6, 6.9, 6.10, 6.17, 6.18 | 21 |
+| Not formally established at item level | 5.6, 5.7, 6.1, 6.5, 6.7, 6.8, 6.11, 6.12, 6.14, 6.16 | 10 |
+| Literal printed statement **blocked** | 3.2, 3.4, 3.5, 3.6, 6.3, 6.13, 6.15 | 7 |
+
+**All 45 items**, their names, exact outstanding mathematical bridges and individual whole-item tier ratings appear in the [full register](docs/PERSISTENT_PAPER_GAPS.md), **immediately after its tier definitions**. A completed component does not remove the remaining obligations of a partially proved theorem.
+
+## 3. Verified mathematical baseline (25 October 2026)
 
 **219 Lean modules passed compilation and independent transitive axiom auditing**, covering 3,135 declarations, including 2,489 kernel theorem declarations (private/generated included). [Passing build](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40188664869). The corresponding Leaned Paper is substantially advanced mathematically, with real rational-moment identities, positive actual Gram pencils, unconditional hyperbolicity and zero-free disks, spectral and strict Newton/reciprocal-moment results, algebraic transfer, and independent odd-beta transcendence.
 
 Printed manuscript classification: **7 complete**, **21 partial**, **10 not formalized**, **7 literally blocked**. The 7 fully proved numbered results are **2.2, 2.3, 2.4, 2.5, 3.1, 4.3 and 5.4**. These numbers count whole paper statements, **not** Lean declarations. Source: [audited 45-result manuscript status](docs/FORMALIZATION_STATUS.md).
 
-## Missing-work priorities
+## 4. Missing-work priorities
 
 | Workstream | Necessary closure |
 |:---|:---|
@@ -24,7 +48,7 @@ Printed manuscript classification: **7 complete**, **21 partial**, **10 not form
 
 **Key diagnostic:** the paper's 4.6 lower height bound uses an upper bound in the wrong direction; 4.8's claimed global rational-root exclusion similarly applies a lower root-gap as an upper bound. These are *unproved paper inferences*, not reasons to discard the certified structural mathematics.
 
-## Persistent tracking procedure
+## 5. Persistent tracking procedure
 
 - Work from the actual manuscript and the existing [machine-readable item ledger](docs/formalization_status.json), preserve all 45 item IDs, and freeze unchanged certified Lean modules.
 - For each improvement record **the literal paper claim, exact constructed function/matrix, fully qualified Lean theorem, audited commit/runner receipt, retained hypotheses, and next open endpoint**.
