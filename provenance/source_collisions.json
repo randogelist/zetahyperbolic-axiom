@@ -1,0 +1,296 @@
+[
+  {
+    "module": "Main",
+    "variants": 4,
+    "locations": [
+      "source_inventory/01/ZETA3_EULER_BINOMIAL_ROW_MASS_v0_4_2/Main.lean",
+      "source_inventory/04/ZETA3_R_HALF_UNCONDITIONAL_MAHLER_LEAN_v0_2_3_FASTCORE_FIX3/Main.lean",
+      "source_inventory/05/CLASSIFIER_64_PI_BKQR_CALIBRATION_v0_5_2_FIX2/Main.lean",
+      "source_inventory/16/RH_FIVE_INDUCTION_LEAN_v0_3_0/Main.lean"
+    ]
+  },
+  {
+    "module": "Audit",
+    "variants": 2,
+    "locations": [
+      "source_inventory/10/GP7_UNIFIED_LEAN_BASE_v1_0_1_IMPORT_FIX/Audit.lean",
+      "source_inventory/16/RH_FIVE_INDUCTION_LEAN_v0_3_0/Audit.lean"
+    ]
+  },
+  {
+    "module": "Theorem_2_4_Canonical_Basis_Invariance",
+    "variants": 2,
+    "locations": [
+      "source_inventory/13/MAIN_CHAIN_LEAN_ONLY/Theorem_2_4_Canonical_Basis_Invariance.lean",
+      "source_inventory/15/Zetahyperbolic-general-assembled-lean433/Theorem_2_4_Canonical_Basis_Invariance.lean",
+      "source_inventory/17/zeta5-spectral-lean/Theorem_2_4_Canonical_Basis_Invariance.lean",
+      "source_inventory/18/Zetahyperbolic-general-assembled-lean433/Theorem_2_4_Canonical_Basis_Invariance.lean"
+    ]
+  },
+  {
+    "module": "Theorem_3_1_Universal_Hyperbolicity_And_Zero_Free_Disk",
+    "variants": 3,
+    "locations": [
+      "source_inventory/13/MAIN_CHAIN_LEAN_ONLY/Theorem_3_1_Universal_Hyperbolicity_And_Zero_Free_Disk.lean",
+      "source_inventory/14/ODD_ZETA_3X3_MERGED_v0_3_0/Theorem_3_1_Universal_Hyperbolicity_And_Zero_Free_Disk.lean",
+      "source_inventory/15/Zetahyperbolic-general-assembled-lean433/Theorem_3_1_Universal_Hyperbolicity_And_Zero_Free_Disk.lean",
+      "source_inventory/17/zeta5-spectral-lean/Theorem_3_1_Universal_Hyperbolicity_And_Zero_Free_Disk.lean",
+      "source_inventory/18/Zetahyperbolic-general-assembled-lean433/Theorem_3_1_Universal_Hyperbolicity_And_Zero_Free_Disk.lean"
+    ]
+  },
+  {
+    "module": "MAIN_CHAIN",
+    "variants": 4,
+    "locations": [
+      "source_inventory/13/MAIN_CHAIN_LEAN_ONLY/MAIN_CHAIN.lean",
+      "source_inventory/14/ODD_ZETA_3X3_MERGED_v0_3_0/MAIN_CHAIN.lean",
+      "source_inventory/15/Zetahyperbolic-general-assembled-lean433/MAIN_CHAIN.lean",
+      "source_inventory/17/zeta5-spectral-lean/MAIN_CHAIN.lean",
+      "source_inventory/18/Zetahyperbolic-general-assembled-lean433/MAIN_CHAIN.lean"
+    ]
+  },
+  {
+    "module": "Theorem_4_4_Sharpened_Spectral_Bound_And_Effective_Irrationality_Measure_For_Zeta_5",
+    "variants": 2,
+    "locations": [
+      "source_inventory/13/MAIN_CHAIN_LEAN_ONLY/Theorem_4_4_Sharpened_Spectral_Bound_And_Effective_Irrationality_Measure_For_Zeta_5.lean",
+      "source_inventory/14/ODD_ZETA_3X3_MERGED_v0_3_0/Theorem_4_4_Sharpened_Spectral_Bound_And_Effective_Irrationality_Measure_For_Zeta_5.lean",
+      "source_inventory/15/Zetahyperbolic-general-assembled-lean433/Theorem_4_4_Sharpened_Spectral_Bound_And_Effective_Irrationality_Measure_For_Zeta_5.lean",
+      "source_inventory/17/zeta5-spectral-lean/Theorem_4_4_Sharpened_Spectral_Bound_And_Effective_Irrationality_Measure_For_Zeta_5.lean",
+      "source_inventory/18/Zetahyperbolic-general-assembled-lean433/Theorem_4_4_Sharpened_Spectral_Bound_And_Effective_Irrationality_Measure_For_Zeta_5.lean"
+    ]
+  },
+  {
+    "module": "cert.Check",
+    "variants": 2,
+    "locations": [
+      "source_inventory/14/ODD_ZETA_3X3_MERGED_v0_3_0/cert/Check.lean",
+      "source_inventory/17/zeta5-spectral-lean/cert/Check.lean"
+    ]
+  },
+  {
+    "module": "Zeta5.AppendixBCheck",
+    "variants": 2,
+    "locations": [
+      "source_inventory/14/ODD_ZETA_3X3_MERGED_v0_3_0/Zeta5/AppendixBCheck.lean",
+      "source_inventory/17/zeta5-spectral-lean/Zeta5/AppendixBCheck.lean"
+    ]
+  },
+  {
+    "module": "Zeta5.Functional",
+    "variants": 2,
+    "locations": [
+      "source_inventory/14/ODD_ZETA_3X3_MERGED_v0_3_0/Zeta5/Functional.lean",
+      "source_inventory/17/zeta5-spectral-lean/Zeta5/Functional.lean"
+    ]
+  },
+  {
+    "module": "Zeta5.Interface",
+    "variants": 2,
+    "locations": [
+      "source_inventory/14/ODD_ZETA_3X3_MERGED_v0_3_0/Zeta5/Interface.lean",
+      "source_inventory/17/zeta5-spectral-lean/Zeta5/Interface.lean"
+    ]
+  },
+  {
+    "module": "Zeta5.InnerGeneral",
+    "variants": 2,
+    "locations": [
+      "source_inventory/14/ODD_ZETA_3X3_MERGED_v0_3_0/Zeta5/InnerGeneral.lean",
+      "source_inventory/17/zeta5-spectral-lean/Zeta5/InnerGeneral.lean"
+    ]
+  },
+  {
+    "module": "Zeta5.InnerTate",
+    "variants": 2,
+    "locations": [
+      "source_inventory/14/ODD_ZETA_3X3_MERGED_v0_3_0/Zeta5/InnerTate.lean",
+      "source_inventory/17/zeta5-spectral-lean/Zeta5/InnerTate.lean"
+    ]
+  },
+  {
+    "module": "Zeta5.Section41",
+    "variants": 2,
+    "locations": [
+      "source_inventory/14/ODD_ZETA_3X3_MERGED_v0_3_0/Zeta5/Section41.lean",
+      "source_inventory/17/zeta5-spectral-lean/Zeta5/Section41.lean"
+    ]
+  },
+  {
+    "module": "Zeta5.PNT",
+    "variants": 2,
+    "locations": [
+      "source_inventory/14/ODD_ZETA_3X3_MERGED_v0_3_0/Zeta5/PNT.lean",
+      "source_inventory/17/zeta5-spectral-lean/Zeta5/PNT.lean"
+    ]
+  },
+  {
+    "module": "Zeta5.OuterRange",
+    "variants": 2,
+    "locations": [
+      "source_inventory/14/ODD_ZETA_3X3_MERGED_v0_3_0/Zeta5/OuterRange.lean",
+      "source_inventory/17/zeta5-spectral-lean/Zeta5/OuterRange.lean"
+    ]
+  },
+  {
+    "module": "Zeta5.PrimeSum",
+    "variants": 2,
+    "locations": [
+      "source_inventory/14/ODD_ZETA_3X3_MERGED_v0_3_0/Zeta5/PrimeSum.lean",
+      "source_inventory/17/zeta5-spectral-lean/Zeta5/PrimeSum.lean"
+    ]
+  },
+  {
+    "module": "Zeta5.InnerEntries",
+    "variants": 2,
+    "locations": [
+      "source_inventory/14/ODD_ZETA_3X3_MERGED_v0_3_0/Zeta5/InnerEntries.lean",
+      "source_inventory/17/zeta5-spectral-lean/Zeta5/InnerEntries.lean"
+    ]
+  },
+  {
+    "module": "Zeta5.Axioms",
+    "variants": 2,
+    "locations": [
+      "source_inventory/14/ODD_ZETA_3X3_MERGED_v0_3_0/Zeta5/Axioms.lean",
+      "source_inventory/17/zeta5-spectral-lean/Zeta5/Axioms.lean"
+    ]
+  },
+  {
+    "module": "Zeta5.Lemma33",
+    "variants": 2,
+    "locations": [
+      "source_inventory/14/ODD_ZETA_3X3_MERGED_v0_3_0/Zeta5/Lemma33.lean",
+      "source_inventory/17/zeta5-spectral-lean/Zeta5/Lemma33.lean"
+    ]
+  },
+  {
+    "module": "Zeta5.OuterBasis",
+    "variants": 2,
+    "locations": [
+      "source_inventory/14/ODD_ZETA_3X3_MERGED_v0_3_0/Zeta5/OuterBasis.lean",
+      "source_inventory/17/zeta5-spectral-lean/Zeta5/OuterBasis.lean"
+    ]
+  },
+  {
+    "module": "Zeta5.Arithmetic",
+    "variants": 2,
+    "locations": [
+      "source_inventory/14/ODD_ZETA_3X3_MERGED_v0_3_0/Zeta5/Arithmetic.lean",
+      "source_inventory/17/zeta5-spectral-lean/Zeta5/Arithmetic.lean"
+    ]
+  },
+  {
+    "module": "Zeta5.LocalFunctional",
+    "variants": 2,
+    "locations": [
+      "source_inventory/14/ODD_ZETA_3X3_MERGED_v0_3_0/Zeta5/LocalFunctional.lean",
+      "source_inventory/17/zeta5-spectral-lean/Zeta5/LocalFunctional.lean"
+    ]
+  },
+  {
+    "module": "Zeta5.CrudeBound",
+    "variants": 2,
+    "locations": [
+      "source_inventory/14/ODD_ZETA_3X3_MERGED_v0_3_0/Zeta5/CrudeBound.lean",
+      "source_inventory/17/zeta5-spectral-lean/Zeta5/CrudeBound.lean"
+    ]
+  },
+  {
+    "module": "Zeta5.AppendixB",
+    "variants": 2,
+    "locations": [
+      "source_inventory/14/ODD_ZETA_3X3_MERGED_v0_3_0/Zeta5/AppendixB.lean",
+      "source_inventory/17/zeta5-spectral-lean/Zeta5/AppendixB.lean"
+    ]
+  },
+  {
+    "module": "Zeta5.Tail",
+    "variants": 2,
+    "locations": [
+      "source_inventory/14/ODD_ZETA_3X3_MERGED_v0_3_0/Zeta5/Tail.lean",
+      "source_inventory/17/zeta5-spectral-lean/Zeta5/Tail.lean"
+    ]
+  },
+  {
+    "module": "Zeta5.Sec6.Gram",
+    "variants": 2,
+    "locations": [
+      "source_inventory/14/ODD_ZETA_3X3_MERGED_v0_3_0/Zeta5/Sec6/Gram.lean",
+      "source_inventory/17/zeta5-spectral-lean/Zeta5/Sec6/Gram.lean"
+    ]
+  },
+  {
+    "module": "Zeta5.Sec6.Field",
+    "variants": 2,
+    "locations": [
+      "source_inventory/14/ODD_ZETA_3X3_MERGED_v0_3_0/Zeta5/Sec6/Field.lean",
+      "source_inventory/17/zeta5-spectral-lean/Zeta5/Sec6/Field.lean"
+    ]
+  },
+  {
+    "module": "Zeta5.Sec6.ArcsinePot",
+    "variants": 2,
+    "locations": [
+      "source_inventory/14/ODD_ZETA_3X3_MERGED_v0_3_0/Zeta5/Sec6/ArcsinePot.lean",
+      "source_inventory/17/zeta5-spectral-lean/Zeta5/Sec6/ArcsinePot.lean"
+    ]
+  },
+  {
+    "module": "Zeta5.Sec6.Num.Cell",
+    "variants": 2,
+    "locations": [
+      "source_inventory/14/ODD_ZETA_3X3_MERGED_v0_3_0/Zeta5/Sec6/Num/Cell.lean",
+      "source_inventory/17/zeta5-spectral-lean/Zeta5/Sec6/Num/Cell.lean"
+    ]
+  },
+  {
+    "module": "Zeta5.Sec6.Num.Tail",
+    "variants": 2,
+    "locations": [
+      "source_inventory/14/ODD_ZETA_3X3_MERGED_v0_3_0/Zeta5/Sec6/Num/Tail.lean",
+      "source_inventory/17/zeta5-spectral-lean/Zeta5/Sec6/Num/Tail.lean"
+    ]
+  },
+  {
+    "module": "Zetahyperbolic",
+    "variants": 2,
+    "locations": [
+      "source_inventory/15/Zetahyperbolic-general-assembled-lean433/Zetahyperbolic.lean",
+      "source_inventory/18/Zetahyperbolic-general-assembled-lean433/Zetahyperbolic.lean"
+    ]
+  },
+  {
+    "module": "lakefile",
+    "variants": 2,
+    "locations": [
+      "source_inventory/15/Zetahyperbolic-general-assembled-lean433/lakefile.lean",
+      "source_inventory/18/Zetahyperbolic-general-assembled-lean433/lakefile.lean"
+    ]
+  },
+  {
+    "module": "APPLICATIONS",
+    "variants": 2,
+    "locations": [
+      "source_inventory/15/Zetahyperbolic-general-assembled-lean433/APPLICATIONS.lean",
+      "source_inventory/18/Zetahyperbolic-general-assembled-lean433/APPLICATIONS.lean"
+    ]
+  },
+  {
+    "module": "CHECK_AXIOMS",
+    "variants": 2,
+    "locations": [
+      "source_inventory/15/Zetahyperbolic-general-assembled-lean433/CHECK_AXIOMS.lean",
+      "source_inventory/18/Zetahyperbolic-general-assembled-lean433/CHECK_AXIOMS.lean"
+    ]
+  },
+  {
+    "module": "Zeta5Merge.Theorem6_10",
+    "variants": 2,
+    "locations": [
+      "source_inventory/15/Zetahyperbolic-general-assembled-lean433/Zeta5Merge/Theorem6_10.lean",
+      "source_inventory/17/zeta5-spectral-lean/Zeta5Merge/Theorem6_10.lean",
+      "source_inventory/18/Zetahyperbolic-general-assembled-lean433/Zeta5Merge/Theorem6_10.lean"
+    ]
+  }
+]

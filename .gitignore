@@ -1,0 +1,12 @@
+.build/
+.cache/
+logs/
+*.olean
+*.ilean
+*.olean.private
+*.olean.server
+*.ir
+BUILD_RECEIPT.txt
+audit.accepted
+audit.accepted.tmp
+*.ir.sig

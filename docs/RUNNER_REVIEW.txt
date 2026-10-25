@@ -1,0 +1,6 @@
+INDEPENDENT RUNNER REVIEW — static CMD inspection only
+Reviewed analysis_runner/run.cmd SHA256 54d3b2be51a6f7aa98d42d99fcd212d5a9dd76d4d35d0a79b765f1b647e71c1d.
+No concrete ordinary-path CMD parser or subroutine-variable-clobber blocker found.
+Native --deps checks bind actual local imports to current-run accepted receipts and reject omitted/spurious local dependency-plan entries. External imports are restricted to fingerprinted roots. Local receipt labels omit randomized run-root paths, so immutable sources/dependencies/environment can reuse cached objects. Object manifests bind .olean and present .olean.private/.olean.server/.ilean/.ir/.ir.sig companions plus compiler logs. Cached publication invalidates the commit marker first; final marker is written only after hashes/copies agree. Compiler-only receipts remain distinct from final axiom acceptance.
+Residual limitations: no native CMD/Lean execution performed; !/% path handling is being finalized by runner owner; reject such raw paths before delayed expansion can alter them. The toolchain/external cache must remain immutable during a run because full external-tree hashing is performed once. Reading every external binary with certutil may be costly but is a conservative fingerprint policy, not a proof-tier claim.
+No runner edits made. Later runner modifications require targeted rereview.

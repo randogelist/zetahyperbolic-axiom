@@ -1,0 +1,4 @@
+Theorem_2_4_Canonical_Basis_Invariance
+Theorem_3_1_General_Odd_Weight_Endpoint
+Theorem_3_1_Positive_Moment_Realization
+Theorem_4_1_Spectral_Irrationality_Measure_Criterion

@@ -1,0 +1,86 @@
+{
+  "source_count": 85,
+  "declaration_count": 679,
+  "namespace_declaration_collisions": {},
+  "unresolved_local_imports": [],
+  "overlay": [
+    {
+      "path": "PAPER_PROVEN_CORE.lean",
+      "equal_bytes": true
+    },
+    {
+      "path": "PAPER_02_03_UNCONDITIONAL.lean",
+      "equal_bytes": true
+    },
+    {
+      "path": "Paper/Definition_2_1.lean",
+      "equal_bytes": true
+    },
+    {
+      "path": "Paper/Corollary_3_5.lean",
+      "equal_bytes": true
+    },
+    {
+      "path": "Paper/Theorem_2_4.lean",
+      "equal_bytes": true
+    },
+    {
+      "path": "Paper/Proposition_3_2.lean",
+      "equal_bytes": true
+    },
+    {
+      "path": "Paper/Theorem_3_1.lean",
+      "equal_bytes": true
+    },
+    {
+      "path": "Paper/Theorem_3_3.lean",
+      "equal_bytes": true
+    },
+    {
+      "path": "Paper/Lemma_2_2.lean",
+      "equal_bytes": true
+    },
+    {
+      "path": "Paper/Theorem_3_4.lean",
+      "equal_bytes": true
+    },
+    {
+      "path": "Paper/Lemma_2_3.lean",
+      "equal_bytes": true
+    },
+    {
+      "path": "Paper/Theorem_2_5.lean",
+      "equal_bytes": true
+    },
+    {
+      "path": "Paper/Corollary_3_6.lean",
+      "equal_bytes": true
+    },
+    {
+      "path": "ProofAdvances/Corollary_3_6_AllPrincipalMinors.lean",
+      "equal_bytes": true
+    },
+    {
+      "path": "ProofAdvances/Corollary_3_6_WeightedCorrected.lean",
+      "equal_bytes": true
+    },
+    {
+      "path": "ProofAdvances/Theorem_3_4.lean",
+      "equal_bytes": true
+    },
+    {
+      "path": "ProofAdvances/Corollary_3_6_FullGram.lean",
+      "equal_bytes": true
+    },
+    {
+      "path": "ProofAdvances/Corollary_3_6_ExactFiniteRank.lean",
+      "equal_bytes": true
+    },
+    {
+      "path": "ProofAdvances/Corollary_3_6.lean",
+      "equal_bytes": true
+    }
+  ],
+  "parse_notes": [],
+  "method": "Comment/string-stripped static namespace/section stack; excludes private declarations, not a Lean parser; no compilation."
+}

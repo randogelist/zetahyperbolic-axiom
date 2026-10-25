@@ -1,0 +1,3 @@
+Zetahyperbolic.Section2Checked
+Theorem_2_5_Lagrange_Pole_Diagonalization
+Theorem_3_1_Universal_Hyperbolicity_And_Zero_Free_Disk

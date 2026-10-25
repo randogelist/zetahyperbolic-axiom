@@ -1,0 +1,366 @@
+{
+  "scope": "Focused source audit, not full proof certification; package IDs refer to source_inventory",
+  "proof_marker": "NONE",
+  "rows": [
+    {
+      "manuscript_item": "2.2",
+      "title": "Rational functional pullback",
+      "source_state": "PARTIAL_SOURCE",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "19:Section2FunctionLevelPullback;19:Stage01FullRationalPullback;23:Paper10Section2OddPoleAllWeights",
+      "remaining_obligation": "Reconcile function-level partial fractions and polynomial Tau domain with actual manuscript functional; native audit required."
+    },
+    {
+      "manuscript_item": "2.3",
+      "title": "Reflection and difference identities for Tau",
+      "source_state": "PARTIAL_SOURCE",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "19:Section2MomentPoles;19:Section2PolynomialTau;23:Paper10Section2PoleReflection;23:Paper10Section2TauPoleDifference",
+      "remaining_obligation": "Combine polynomial and pole identities on the full rational-function domain."
+    },
+    {
+      "manuscript_item": "2.4",
+      "title": "Canonical basis invariance",
+      "source_state": "COMPLETE_CANDIDATE_SOURCE",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "20:Theorem_2_4_Canonical_Basis_Invariance;20:Theorem_2_4_Primitive_Normalization_Minimality",
+      "remaining_obligation": "Manuscript-equivalence/native compiler/axiom verification still required; source constructs normalization rather than assuming its existence."
+    },
+    {
+      "manuscript_item": "2.5",
+      "title": "Lagrange pole diagonalization",
+      "source_state": "COMPLETE_CANDIDATE_SOURCE",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "20:Theorem_2_5_Lagrange_Pole_Diagonalization",
+      "remaining_obligation": "Native compiler and axiom verification required for exact original residue and basis identities."
+    },
+    {
+      "manuscript_item": "3.1",
+      "title": "Universal hyperbolicity and zero-free disk",
+      "source_state": "COMPLETE_CANDIDATE_SOURCE",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "20:MAIN_CHAIN_ASSEMBLED;20:PaperChain/Stage03UnconditionalBridge",
+      "remaining_obligation": "Native compiler/axiom audit and exact statement review required. Source discharges Gram positivity and pole integral; this does not imply irrationality."
+    },
+    {
+      "manuscript_item": "3.2",
+      "title": "Continuous hyperbolic pencil for all real s > 1",
+      "source_state": "PARTIAL_SOURCE",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "20:Theorem_3_1_Universal_Hyperbolicity_And_Zero_Free_Disk",
+      "remaining_obligation": "Generic positive-pencil argument exists; continuous-weight integral and real-s realization are not assembled in selected active sources."
+    },
+    {
+      "manuscript_item": "3.3",
+      "title": "Total positivity, leading sign, universal signature",
+      "source_state": "PARTIAL_SOURCE",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "20:Theorem_2_5_Lagrange_Pole_Diagonalization;19:Section3SignatureCounts;NEW:Stage04PrincipalMinorCenter",
+      "remaining_obligation": "New candidate closes principal-minor positivity only. Arbitrary mixed minors, Stieltjes determinacy, actual signature transfer/counts and exact leading sign remain separate."
+    },
+    {
+      "manuscript_item": "3.4",
+      "title": "Root interlacing and Dodgson condensation",
+      "source_state": "PARTIAL_SOURCE",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "20:PaperChain/Stage04;NEW:Stage04PrincipalMinorCenter;23:Paper10Section3TwoByTwoInterlacing",
+      "remaining_obligation": "New source proves actual principal determinant center positivity/nonzero; all-rank exact degree/interlacing/Dodgson remain open."
+    },
+    {
+      "manuscript_item": "3.5",
+      "title": "Stieltjes J-fraction from interlacing roots",
+      "source_state": "STATED_TARGET",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "20:PaperChain/Stage04",
+      "remaining_obligation": "Construct actual finite fraction and prove its spectral edge estimate; the latter depends on Section4 growth."
+    },
+    {
+      "manuscript_item": "3.6",
+      "title": "Stieltjes reciprocal-root power sums",
+      "source_state": "PRINTED_STATEMENT_REQUIRES_CORRECTION",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "PDF:p11;REMOTE:v1_2_55/Corollary_3_6_ExactFiniteRank;REMOTE:v1_2_55/Corollary_3_6_AllPrincipalMinors",
+      "remaining_obligation": "Literal all-order strictness false for finite support; corrected sharp order bound uses number of DISTINCT inverse-square atoms. Printed convergence factor bound reversed and odd log-derivative sign inconsistent. See manuscript_issues.txt. Original-root injectivity NOT supplied."
+    },
+    {
+      "manuscript_item": "3.7",
+      "title": "Turanian non-negativity and Newton log-concavity",
+      "source_state": "PARTIAL_SOURCE",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "23:Paper10Section3RankTwoNewton;NEW:Stage04PrincipalMinorCenter",
+      "remaining_obligation": "Rank-two pieces only; full orders and strictness cases require independent proof."
+    },
+    {
+      "manuscript_item": "3.8",
+      "title": "Christoffel-Darboux pole representation and Jacobi derivative",
+      "source_state": "NOT_YET_MAPPED",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "",
+      "remaining_obligation": "Exact all-rank Jacobi/CD declaration not established by this focused review."
+    },
+    {
+      "manuscript_item": "3.9",
+      "title": "Hurwitz and Dirichlet hyperbolicity",
+      "source_state": "PARTIAL_SOURCE",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "24:PaperChain/Character;20:Zetahyperbolic/Section3Elementary",
+      "remaining_obligation": "Elementary Fekete pieces do not alone establish all shifted/character moment identities and nondegenerate slopes."
+    },
+    {
+      "manuscript_item": "4.1",
+      "title": "Spectral irrationality measure criterion",
+      "source_state": "CONDITIONAL_CANDIDATE_SOURCE",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "20:Theorem_4_1_Spectral_Irrationality_Measure_Criterion;20:MAIN_CHAIN_IRRATIONALITY",
+      "remaining_obligation": "General transfer is conditional on explicitly supplied decay/local comparisons; actual odd-zeta quantitative inputs remain open."
+    },
+    {
+      "manuscript_item": "4.2",
+      "title": "Transfer for algebraic approximations",
+      "source_state": "NOT_YET_MAPPED",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "",
+      "remaining_obligation": "Extend integer polynomial lower bound to bounded-degree algebraic approximation with actual height controls."
+    },
+    {
+      "manuscript_item": "4.3",
+      "title": "Ultrametric zero-free disk",
+      "source_state": "NOT_YET_MAPPED",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "",
+      "remaining_obligation": "Actual p-adic coefficient/valuation estimates not established by focused review."
+    },
+    {
+      "manuscript_item": "4.4",
+      "title": "Spectral bound and irrationality measure for zeta(5)",
+      "source_state": "CONDITIONAL_CANDIDATE_SOURCE",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "18:Theorem_4_4_Sharpened_Spectral_Bound_And_Effective_Irrationality_Measure_For_Zeta_5;20:PaperChain/Stage06;20:PaperChain/Stage05AdjacentDriftBridge",
+      "remaining_obligation": "Actual spectral/normalization/decay bounds unproved. Paper exponent 11.411 differs from historical Stage06 target11.407/10.954; never count stronger target as manuscript proof."
+    },
+    {
+      "manuscript_item": "4.5",
+      "title": "Irrationality and measure for b*zeta(5)+a*zeta(3)",
+      "source_state": "PARTIAL_SOURCE",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "20:Theorem_4_1_Linear_Odd_Zeta_Family;20:PaperChain/Stage07",
+      "remaining_obligation": "Concrete positivity cone, p-adic cancellation, uniform growth and quantitative transfer inputs open."
+    },
+    {
+      "manuscript_item": "4.6",
+      "title": "Determinant bounds and coefficient heights",
+      "source_state": "PARTIAL_SOURCE",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "20:PaperChain/Stage08;20:Theorem_4_1_Determinant_Log_Energy;20:Theorem_4_1_Content_Gram_Cancellation",
+      "remaining_obligation": "Finite identities exist; asymptotic constants/height-decay bounds unproved. Paper 0.23310 and3.73980 differ from Stage08 0.23338 and3.73872."
+    },
+    {
+      "manuscript_item": "4.7",
+      "title": "Root collapse and separation",
+      "source_state": "PARTIAL_SOURCE",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "23:Paper10Section8QuantitativeMassFraction;20:PaperChain/Stage08",
+      "remaining_obligation": "Finite counting inequality needs actual determinant-rate and spectral growth hypotheses."
+    },
+    {
+      "manuscript_item": "4.8",
+      "title": "Rational root exclusion and cluster degree bounds",
+      "source_state": "PARTIAL_SOURCE",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "23:Paper10Section4CenterRationalObstruction;23:Paper10Section4IntegerPolynomialTransfer",
+      "remaining_obligation": "Actual effective irrationality measure/height budgets are not supplied by rational-floor algebra."
+    },
+    {
+      "manuscript_item": "5.1",
+      "title": "Two-variable Beukers measure for zeta(7)",
+      "source_state": "PARTIAL_SOURCE",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "18:Theorem_5_1_Two_Variable_Beukers_Measure_For_Zeta_7;23:Paper10Section5TensorGridEnergy",
+      "remaining_obligation": "Rational dual entries/normalization are defined; full continuous integral and moment evaluation require audit/assembly."
+    },
+    {
+      "manuscript_item": "5.2",
+      "title": "Dual hyperbolicity and Krein decomposition",
+      "source_state": "CONDITIONAL_CANDIDATE_SOURCE",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "18:Theorem_5_2_Dual_Hyperbolicity_And_Krein_Space_Decomposition_Of_The_Two_Variable_Zeta_7_Pencil",
+      "remaining_obligation": "Finite sign transfer requires actual WeightSevenTailBound and finite positive/negative certificates; acceptance not supplied."
+    },
+    {
+      "manuscript_item": "5.3",
+      "title": "Beukers measure and dual pencil for beta(4)",
+      "source_state": "PARTIAL_SOURCE",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "23:Paper10Section6BetaTensorGrid;20:PaperChain/Stage10",
+      "remaining_obligation": "Character parity/tensor identities alone do not close continuous beta measure."
+    },
+    {
+      "manuscript_item": "5.4",
+      "title": "Higher-zeta cancellation on even pole pairs",
+      "source_state": "PARTIAL_SOURCE",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "19:Section2MomentPoles;23:Paper10Section2OddPoleAllWeights",
+      "remaining_obligation": "Simple-pole identities must be connected to full functional; exclude unsupported higher-order poles."
+    },
+    {
+      "manuscript_item": "5.6",
+      "title": "Weight-seven prime-sum evaluation and pole refinement",
+      "source_state": "NOT_YET_MAPPED",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "",
+      "remaining_obligation": "Prime-sum limit and exact rational residue expression not established in focused active-source review."
+    },
+    {
+      "manuscript_item": "5.7",
+      "title": "Double-pole determinant for 1,zeta(5),zeta(6)",
+      "source_state": "NOT_YET_MAPPED",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "",
+      "remaining_obligation": "Actual q-adic nonvanishing and double-pole minor valuation require mapping/proof."
+    },
+    {
+      "manuscript_item": "6.1",
+      "title": "Divided-difference valuation and intrinsic p^-6 barrier",
+      "source_state": "NOT_YET_MAPPED",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "",
+      "remaining_obligation": "Retain this manuscript obligation. No manuscript-equivalent native certification established by this focused review; historical theorem filenames/blueprints are not proof evidence."
+    },
+    {
+      "manuscript_item": "6.2",
+      "title": "Simultaneous weight-(6,7) Beukers functional",
+      "source_state": "NOT_YET_MAPPED",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "",
+      "remaining_obligation": "Retain this manuscript obligation. No manuscript-equivalent native certification established by this focused review; historical theorem filenames/blueprints are not proof evidence."
+    },
+    {
+      "manuscript_item": "6.3",
+      "title": "q-adic nonvanishing and positive-cone approximations",
+      "source_state": "NOT_YET_MAPPED",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "",
+      "remaining_obligation": "Retain this manuscript obligation. No manuscript-equivalent native certification established by this focused review; historical theorem filenames/blueprints are not proof evidence."
+    },
+    {
+      "manuscript_item": "6.4",
+      "title": "Character-Vandermonde sign cancellation and beta hyperbolicity",
+      "source_state": "PARTIAL_SOURCE",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "20:PaperChain/Stage10;23:Paper10Section6BetaSign;23:Paper10Section6BetaNormalizedSign",
+      "remaining_obligation": "Raw character-Vandermonde sign is (-1)^N; positive claim for odd N needs the separate orientation factor. Analytic/q-adic endpoints unclosed."
+    },
+    {
+      "manuscript_item": "6.5",
+      "title": "q-adic nonvanishing at zero",
+      "source_state": "NOT_YET_MAPPED",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "",
+      "remaining_obligation": "Retain this manuscript obligation. No manuscript-equivalent native certification established by this focused review; historical theorem filenames/blueprints are not proof evidence."
+    },
+    {
+      "manuscript_item": "6.6",
+      "title": "Generalized multi-weight positive-definite pencil",
+      "source_state": "NOT_YET_MAPPED",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "",
+      "remaining_obligation": "Retain this manuscript obligation. No manuscript-equivalent native certification established by this focused review; historical theorem filenames/blueprints are not proof evidence."
+    },
+    {
+      "manuscript_item": "6.7",
+      "title": "Universal multi-weight Beukers Krein decomposition",
+      "source_state": "NOT_YET_MAPPED",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "",
+      "remaining_obligation": "Retain this manuscript obligation. No manuscript-equivalent native certification established by this focused review; historical theorem filenames/blueprints are not proof evidence."
+    },
+    {
+      "manuscript_item": "6.8",
+      "title": "Three-term linear-independence cone",
+      "source_state": "NOT_YET_MAPPED",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "",
+      "remaining_obligation": "Retain this manuscript obligation. No manuscript-equivalent native certification established by this focused review; historical theorem filenames/blueprints are not proof evidence."
+    },
+    {
+      "manuscript_item": "6.9",
+      "title": "Triple-pole and multi-weight determinants",
+      "source_state": "PARTIAL_SOURCE",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "18:Zetahyperbolic/Theorem_6_9_Triple_Pole_Hermite_Repair",
+      "remaining_obligation": "Constructed finite Hermite block congruence and determinant. Global exact pole order, node invertibility and arithmetic transfer still require review."
+    },
+    {
+      "manuscript_item": "6.10",
+      "title": "Potential-gap identity and quadratic derivative growth",
+      "source_state": "PARTIAL_SOURCE",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "18:Zetahyperbolic/Theorem_6_10_Finite_Determinant_Identity;20:Theorem_4_1_Determinant_Log_Energy",
+      "remaining_obligation": "Finite determinant and log identities do not imply asymptotic positive gap or vanishing derivative-growth law."
+    },
+    {
+      "manuscript_item": "6.11",
+      "title": "Distribution growth and 2-adic quotient obstruction",
+      "source_state": "NOT_YET_MAPPED",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "",
+      "remaining_obligation": "Retain this manuscript obligation. No manuscript-equivalent native certification established by this focused review; historical theorem filenames/blueprints are not proof evidence."
+    },
+    {
+      "manuscript_item": "6.12",
+      "title": "Full-dimension sign-flip positivity and q-adic nonvanishing",
+      "source_state": "NOT_YET_MAPPED",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "",
+      "remaining_obligation": "Retain this manuscript obligation. No manuscript-equivalent native certification established by this focused review; historical theorem filenames/blueprints are not proof evidence."
+    },
+    {
+      "manuscript_item": "6.13",
+      "title": "Central-factorial secant differential identity",
+      "source_state": "NOT_YET_MAPPED",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "",
+      "remaining_obligation": "Retain this manuscript obligation. No manuscript-equivalent native certification established by this focused review; historical theorem filenames/blueprints are not proof evidence."
+    },
+    {
+      "manuscript_item": "6.14",
+      "title": "Even-pole cosh scaling and coupled pencils",
+      "source_state": "NOT_YET_MAPPED",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "",
+      "remaining_obligation": "Retain this manuscript obligation. No manuscript-equivalent native certification established by this focused review; historical theorem filenames/blueprints are not proof evidence."
+    },
+    {
+      "manuscript_item": "6.15",
+      "title": "Arithmetic transcendence, positive measure and rank-one law",
+      "source_state": "NOT_YET_MAPPED",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "",
+      "remaining_obligation": "Retain this manuscript obligation. No manuscript-equivalent native certification established by this focused review; historical theorem filenames/blueprints are not proof evidence."
+    },
+    {
+      "manuscript_item": "6.16",
+      "title": "Generalized multi-weight Zeta-Beta pencil",
+      "source_state": "NOT_YET_MAPPED",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "",
+      "remaining_obligation": "Retain this manuscript obligation. No manuscript-equivalent native certification established by this focused review; historical theorem filenames/blueprints are not proof evidence."
+    },
+    {
+      "manuscript_item": "6.17",
+      "title": "Universal two-variable Zeta-Beta pencil",
+      "source_state": "NOT_YET_MAPPED",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "",
+      "remaining_obligation": "Retain this manuscript obligation. No manuscript-equivalent native certification established by this focused review; historical theorem filenames/blueprints are not proof evidence."
+    },
+    {
+      "manuscript_item": "6.18",
+      "title": "Principal-minor 2-adic integrality and dyadic heights",
+      "source_state": "NOT_YET_MAPPED",
+      "native_status": "PENDING_CURRENT_RECEIPT",
+      "sources": "",
+      "remaining_obligation": "Retain this manuscript obligation. No manuscript-equivalent native certification established by this focused review; historical theorem filenames/blueprints are not proof evidence."
+    }
+  ]
+}

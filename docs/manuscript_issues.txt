@@ -1,0 +1,30 @@
+MANUSCRIPT_ISSUES_REVIEW
+Source: supplied 52-page PDF, page 11, Corollary 3.6.
+Verification: extracted text checked against rendered PDF page 11.
+Status: mathematical/source review only; no native Lean compilation performed.
+
+ISSUE_3_6_FINITE_SUPPORT
+The statement claims strictly positive Hankel determinants for the even reciprocal-root moment sequence at fixed K. The same proof represents that sequence by the finite positive measure sum_(j=1)^h delta_(u_j), u_j=(r_j-q0)^(-2)>0.
+For H_n=(sum_j u_j^(a+b))_(0<=a,b<n), H_n=V_n V_n^T, where V_n has h columns. Thus rank H_n<=h and det H_n=0 for every n>h. Literal all-orders strict positivity cannot be certified.
+Sharper correction: merge repeated u_j into distinct atoms v_1,...,v_d with positive integer multiplicities. Then H_n is positive definite exactly for n<=d and has determinant zero for n>d. Distinct roots alone do not give distinct u_j, since roots equidistant from q0 give the same inverse-square atom.
+Remote source Corollary_3_6_ExactFiniteRank establishes the threshold h under Function.Injective u. That assumption is real, not discharged for the original roots. Without injectivity, all-order positive semidefiniteness and determinant zero above h remain valid.
+
+ISSUE_3_6_BOUND_ORIENTATION
+The printed statement says 1 <= S_(2r)^(-1/(2r))/d_min <= h^(1/(2r)).
+The displayed proof correctly derives h^(-1/(2r))*d_min <= S_(2r)^(-1/(2r)) <= d_min.
+Correct statement: h^(-1/(2r)) <= S_(2r)^(-1/(2r))/d_min <= 1.
+Equivalently: 1 <= d_min / S_(2r)^(-1/(2r)) <= h^(1/(2r)).
+Reason: max u_j^r <= sum_j u_j^r <= h*(max u_j)^r, followed by the decreasing negative-root power. The limit d_min remains valid.
+
+ISSUE_3_6_LOG_DERIVATIVE_SIGN
+The printed definition uses (-1)^(m-1)/(m-1)! times d^m(log P)/dX^m at q0 and equates it to sum_j(r_j-q0)^(-m).
+But d^m(log|P|)/dX^m = (-1)^(m-1)*(m-1)!*sum_j(X-r_j)^(-m) away from the roots. The printed prefactor therefore yields sum_j(q0-r_j)^(-m).
+Correction: replace the denominator r_j-q0 by q0-r_j, or replace the prefactor (-1)^(m-1) by (-1)^m. All even moments are unaffected.
+
+HISTORICAL_NUMERIC_VARIANTS
+Canonical attachment20 PaperChain/Stage06 uses spectral targets 11.407 and 10.954; the supplied PDF Theorem4.4 prints 11.411. These may be proposed stronger bounds, but are not the literal manuscript statement and are not proved by comparing exponentials.
+Canonical attachment20 PaperChain/Stage08 uses determinant-rate bounds 0.23338 and 3.73872; supplied PDF Theorem4.6 prints 0.23310 and 3.73980. Preserve historical source text, label its numeric target variant, and prove an explicit implication if a stronger repaired target is ever certified.
+
+NEXT_SAFE_FORMALIZATION
+Keep original statement and corrected statement separate. Import the remote finite-atomic Gram chain with its hypotheses intact; instantiate only all-order semidefiniteness and rank<=h without a proof of distinct inverse-square atoms. Add coalescing of repeated atoms or an actual collision exclusion theorem before claiming the sharp original-pencil rank threshold.
+The newly generated Stage04PrincipalMinorCenter concerns the continuous original Gram pencil, not this finite reciprocal-root moment sequence. It proves the actual-pencil principal-minor portion only and does not repair or claim strict mixed-minor total positivity.

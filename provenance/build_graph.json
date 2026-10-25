@@ -1,0 +1,468 @@
+{
+  "Theorem_3_1_Hyperbolic_Moments": [
+    "Theorem_3_1_Hyperbolic_Weight",
+    "Mathlib.Analysis.SpecialFunctions.Gamma.Basic",
+    "Mathlib.MeasureTheory.Integral.DominatedConvergence",
+    "Mathlib.NumberTheory.ZetaValues",
+    "Mathlib.Tactic"
+  ],
+  "Theorem_3_1_Pole_Scaling": [
+    "Theorem_3_1_Hyperbolic_Moments",
+    "Mathlib.MeasureTheory.Integral.IntegralEqImproper"
+  ],
+  "Theorem_3_1_Concrete_Moment_Realization": [
+    "Theorem_3_1_Hyperbolic_Moments",
+    "Theorem_3_1_Positive_Moment_Realization",
+    "Zetahyperbolic.Section2Checked",
+    "Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap"
+  ],
+  "Theorem_4_1_Determinant_Log_Energy": [
+    "Theorem_4_1_Leading_Coefficient_Gap",
+    "Mathlib.Analysis.SpecialFunctions.Log.Basic",
+    "Mathlib.Tactic.Linarith"
+  ],
+  "Theorem_4_1_Direct_Irrationality_From_Decay": [
+    "Theorem_4_1_Spectral_Irrationality_Measure_Criterion"
+  ],
+  "Theorem_4_1_Leading_Coefficient_Gap": [
+    "MAIN_CHAIN_IRRATIONALITY"
+  ],
+  "Theorem_2_4_Canonical_Basis_Invariance": [
+    "Definition_2_1_Order_s_Rational_Moment_Functional",
+    "Mathlib.RingTheory.Polynomial.GaussLemma",
+    "Mathlib.Algebra.Polynomial.Degree.Units",
+    "Mathlib.Tactic.Ring"
+  ],
+  "MAIN_CHAIN_IRRATIONALITY": [
+    "MAIN_CHAIN_ASSEMBLED",
+    "Theorem_4_1_Direct_Irrationality_From_Decay",
+    "Theorem_2_4_Primitive_Normalization_Minimality",
+    "Mathlib.Analysis.SpecialFunctions.Log.Basic"
+  ],
+  "Theorem_4_1_Content_Gram_Cancellation": [
+    "Theorem_4_1_Determinant_Log_Energy",
+    "Mathlib.Tactic.Linarith"
+  ],
+  "Theorem_4_1_Integer_Polynomial_Irrationality": [
+    "Theorem_4_1_Spectral_Irrationality_Measure_Criterion"
+  ],
+  "Theorem_4_1_Linear_Odd_Zeta_Family": [
+    "Theorem_4_1_General_Odd_Zeta_Application"
+  ],
+  "Theorem_2_5_Lagrange_Pole_Diagonalization": [
+    "Theorem_2_4_Canonical_Basis_Invariance",
+    "Mathlib.Algebra.Polynomial.BigOperators",
+    "Mathlib.Algebra.BigOperators.Intervals",
+    "Mathlib.LinearAlgebra.Vandermonde",
+    "Mathlib.LinearAlgebra.Matrix.Polynomial",
+    "Mathlib.Tactic.NormNum",
+    "Mathlib.Tactic.Linarith",
+    "Mathlib.Tactic.Ring"
+  ],
+  "Theorem_4_1_Spectral_Irrationality_Measure_Criterion": [
+    "Theorem_3_1_Universal_Hyperbolicity_And_Zero_Free_Disk",
+    "Mathlib.Algebra.Polynomial.DenomsClearable",
+    "Mathlib.NumberTheory.Real.Irrational",
+    "Mathlib.Tactic.NormNum",
+    "Mathlib.Tactic.Linarith",
+    "Mathlib.Tactic.Positivity",
+    "Mathlib.Tactic.Ring",
+    "Mathlib.Tactic.FieldSimp",
+    "Mathlib.Analysis.Complex.Exponential"
+  ],
+  "Theorem_4_1_Adjacent_Log_Increment": [
+    "Theorem_4_1_Content_Gram_Cancellation",
+    "Mathlib.Tactic.Linarith",
+    "Mathlib.Tactic.Ring"
+  ],
+  "Definition_2_1_Order_s_Rational_Moment_Functional": [
+    "Mathlib.NumberTheory.LSeries.RiemannZeta",
+    "Mathlib.Analysis.PSeries",
+    "Mathlib.NumberTheory.Bernoulli",
+    "Mathlib.LinearAlgebra.Matrix.Determinant.Basic",
+    "Mathlib.Algebra.Polynomial.Div",
+    "Mathlib.Algebra.Polynomial.Derivative",
+    "Mathlib.Topology.Algebra.InfiniteSum.Real"
+  ],
+  "Theorem_3_1_Hyperbolic_Weight": [
+    "Definition_2_1_Order_s_Rational_Moment_Functional",
+    "Mathlib.Analysis.SpecialFunctions.Exp",
+    "Mathlib.Analysis.SpecialFunctions.Gamma.Basic",
+    "Mathlib.Analysis.SpecialFunctions.Gaussian.GaussianIntegral",
+    "Mathlib.MeasureTheory.Integral.DominatedConvergence",
+    "Mathlib.MeasureTheory.Constructions.Polish.Basic",
+    "Mathlib.MeasureTheory.Measure.WithDensity"
+  ],
+  "MAIN_CHAIN_ASSEMBLED": [
+    "ANALYTIC_FRONTIER",
+    "Zetahyperbolic.AnalyticMainChain",
+    "Theorem_3_1_Pole_Integral_Identity"
+  ],
+  "Theorem_3_1_Pole_Integral_Identity": [
+    "Theorem_3_1_Rational_Integral_Bridge",
+    "Theorem_3_1_Pole_Scaling",
+    "Theorem_3_1_Coth_Partial_Fractions",
+    "Theorem_3_1_Bose_Tail_Integral"
+  ],
+  "Theorem_3_1_Rational_Integral_Bridge": [
+    "Theorem_3_1_Hyperbolic_Moments",
+    "Mathlib.Tactic",
+    "Zetahyperbolic.ManuscriptCompatibility",
+    "Theorem_3_1_Concrete_Moment_Realization"
+  ],
+  "MAIN_CHAIN_ARITHMETIC": [
+    "MAIN_CHAIN_ASSEMBLED",
+    "Theorem_4_1_General_Odd_Zeta_Application",
+    "Theorem_4_1_Integer_Polynomial_Irrationality",
+    "Theorem_4_1_Linear_Odd_Zeta_Family"
+  ],
+  "Theorem_3_1_Bose_Tail_Integral": [
+    "Theorem_3_1_Hyperbolic_Moments",
+    "Theorem_3_1_Zeta_Tail"
+  ],
+  "Theorem_3_1_Zeta_Tail": [
+    "Definition_2_1_Order_s_Rational_Moment_Functional",
+    "Mathlib.Tactic"
+  ],
+  "PAPER_PROVEN_CORE": [
+    "MAIN_CHAIN_ASSEMBLED",
+    "Theorem_2_4_Primitive_Normalization_Minimality",
+    "Theorem_2_5_Weight_Change",
+    "Theorem_4_1_Leading_Coefficient_Gap"
+  ],
+  "Theorem_3_1_Coth_Partial_Fractions": [
+    "Mathlib.Analysis.SpecialFunctions.Trigonometric.Cotangent",
+    "Mathlib.Tactic"
+  ],
+  "Theorem_4_1_Pole_Log_Slope": [
+    "Theorem_4_1_Determinant_Log_Energy",
+    "Theorem_2_5_Lagrange_Pole_Diagonalization"
+  ],
+  "Theorem_2_4_Primitive_Normalization_Minimality": [
+    "Theorem_2_4_Canonical_Basis_Invariance"
+  ],
+  "Theorem_3_1_General_Odd_Weight_Endpoint": [
+    "Theorem_2_5_Lagrange_Pole_Diagonalization",
+    "Theorem_3_1_Universal_Hyperbolicity_And_Zero_Free_Disk"
+  ],
+  "Theorem_3_1_Universal_Hyperbolicity_And_Zero_Free_Disk": [
+    "Mathlib.Analysis.Matrix.Order",
+    "Theorem_2_4_Canonical_Basis_Invariance",
+    "Definition_2_1_Order_s_Rational_Moment_Functional",
+    "Mathlib.Algebra.Polynomial.BigOperators",
+    "Mathlib.Algebra.Polynomial.Degree.SmallDegree",
+    "Mathlib.LinearAlgebra.Complex.Module",
+    "Mathlib.LinearAlgebra.Matrix.Determinant.Basic",
+    "Mathlib.LinearAlgebra.Matrix.PosDef",
+    "Mathlib.LinearAlgebra.Matrix.Symmetric",
+    "Mathlib.Tactic.Ring"
+  ],
+  "PAPER_02_03_UNCONDITIONAL": [
+    "PAPER_PROVEN_CORE"
+  ],
+  "MAIN_CHAIN": [
+    "Theorem_2_4_Canonical_Basis_Invariance",
+    "Theorem_3_1_General_Odd_Weight_Endpoint",
+    "Theorem_3_1_Positive_Moment_Realization",
+    "Theorem_4_1_Spectral_Irrationality_Measure_Criterion"
+  ],
+  "Theorem_3_1_Positive_Moment_Realization": [
+    "Definition_2_1_Order_s_Rational_Moment_Functional",
+    "Mathlib.Algebra.Polynomial.OfFn",
+    "Mathlib.Algebra.Polynomial.Roots",
+    "Mathlib.LinearAlgebra.Matrix.PosDef",
+    "Mathlib.MeasureTheory.Integral.Bochner.Basic",
+    "Mathlib.MeasureTheory.Measure.Typeclasses.NullSingletonClass"
+  ],
+  "Theorem_2_5_Weight_Change": [
+    "Theorem_2_5_Lagrange_Pole_Diagonalization"
+  ],
+  "Theorem_4_1_General_Odd_Zeta_Application": [
+    "Theorem_3_1_General_Odd_Weight_Endpoint",
+    "Theorem_3_1_Positive_Moment_Realization",
+    "Theorem_4_1_Spectral_Irrationality_Measure_Criterion"
+  ],
+  "ANALYTIC_FRONTIER": [
+    "MAIN_CHAIN",
+    "Theorem_3_1_Rational_Integral_Bridge"
+  ],
+  "PaperChain.Stage04": [
+    "PaperChain.Stage03"
+  ],
+  "PaperChain.Stage05ContentGramAudit": [
+    "PaperChain.Stage05ContentGramBridge"
+  ],
+  "PaperChain.Stage08PoleProductAudit": [
+    "PaperChain.Stage08PoleProductBridge"
+  ],
+  "PaperChain.Stage09": [
+    "PaperChain.Stage08"
+  ],
+  "PaperChain.Stage03UnconditionalAudit": [
+    "PaperChain.Stage03UnconditionalBridge"
+  ],
+  "PaperChain.Stage08PoleProductBridge": [
+    "Theorem_4_1_Pole_Log_Slope",
+    "PaperChain.Stage08FinitePotentialBridge"
+  ],
+  "PaperChain.Stage10": [
+    "PaperChain.Stage09"
+  ],
+  "PaperChain.Stage02": [
+    "PaperChain.Stage01",
+    "Theorem_2_5_Lagrange_Pole_Diagonalization"
+  ],
+  "PaperChain.Stage03UnconditionalBridge": [
+    "MAIN_CHAIN_ASSEMBLED",
+    "PaperChain.Stage03"
+  ],
+  "PaperChain.Stage08FinitePotentialBridge": [
+    "Theorem_4_1_Determinant_Log_Energy",
+    "PaperChain.Stage05RateGapBridge"
+  ],
+  "PaperChain.Audit": [
+    "PaperChain.Stage10"
+  ],
+  "PaperChain.Stage05": [
+    "PaperChain.Stage04",
+    "Theorem_4_1_Integer_Polynomial_Irrationality"
+  ],
+  "PaperChain.Stage05RateGapBridge": [
+    "PaperChain.Stage05PrimitiveBridge",
+    "Theorem_4_1_Leading_Coefficient_Gap"
+  ],
+  "PaperChain.Stage05AdjacentDriftBridge": [
+    "Theorem_4_1_Adjacent_Log_Increment",
+    "PaperChain.Stage05ContentGramBridge"
+  ],
+  "PaperChain.Stage08FinitePotentialAudit": [
+    "PaperChain.Stage08FinitePotentialBridge"
+  ],
+  "PaperChain.Stage07": [
+    "PaperChain.Stage06"
+  ],
+  "PaperChain.Stage04PrincipalMinorCenter": [
+    "MAIN_CHAIN_ASSEMBLED",
+    "Mathlib.Tactic"
+  ],
+  "PaperChain.Stage05PrimitiveAudit": [
+    "PaperChain.Stage05PrimitiveBridge"
+  ],
+  "PaperChain.Stage05RateGapAudit": [
+    "PaperChain.Stage05RateGapBridge",
+    "PaperChain.Stage07WeightShiftBridge"
+  ],
+  "PaperChain.Stage05ContentGramBridge": [
+    "Theorem_4_1_Content_Gram_Cancellation",
+    "PaperChain.Stage08PoleProductBridge"
+  ],
+  "PaperChain.Stage05PrimitiveBridge": [
+    "MAIN_CHAIN_IRRATIONALITY",
+    "MAIN_CHAIN_ARITHMETIC",
+    "PaperChain.Stage03UnconditionalBridge"
+  ],
+  "PaperChain.Stage07WeightShiftBridge": [
+    "Theorem_2_5_Weight_Change",
+    "Zetahyperbolic.ManuscriptCompatibility"
+  ],
+  "PaperChain.Stage05AdjacentDriftAudit": [
+    "PaperChain.Stage05AdjacentDriftBridge"
+  ],
+  "PaperChain.Stage01": [
+    "Zetahyperbolic.Section2Checked"
+  ],
+  "PaperChain.Stage06": [
+    "PaperChain.Stage05"
+  ],
+  "PaperChain.Stage08": [
+    "PaperChain.Stage07"
+  ],
+  "PaperChain.Stage03": [
+    "PaperChain.Stage02",
+    "Theorem_3_1_Universal_Hyperbolicity_And_Zero_Free_Disk"
+  ],
+  "Paper.Definition_2_1": [
+    "Definition_2_1_Order_s_Rational_Moment_Functional"
+  ],
+  "Paper.Corollary_3_5": [
+    "Paper.Theorem_3_4"
+  ],
+  "Paper.Theorem_2_4": [
+    "Paper.Lemma_2_3",
+    "Theorem_2_4_Canonical_Basis_Invariance"
+  ],
+  "Paper.Proposition_3_2": [
+    "Paper.Theorem_3_1"
+  ],
+  "Paper.Theorem_3_1": [
+    "Paper.Theorem_2_5",
+    "PAPER_02_03_UNCONDITIONAL"
+  ],
+  "Paper.Theorem_3_3": [
+    "Paper.Proposition_3_2"
+  ],
+  "Paper.Lemma_2_2": [
+    "Paper.Definition_2_1",
+    "Zetahyperbolic.Section2Checked"
+  ],
+  "Paper.Theorem_3_4": [
+    "Paper.Theorem_3_3"
+  ],
+  "Paper.Lemma_2_3": [
+    "Paper.Lemma_2_2",
+    "Zetahyperbolic.Section2Checked"
+  ],
+  "Paper.Theorem_2_5": [
+    "Paper.Theorem_2_4",
+    "Theorem_2_5_Lagrange_Pole_Diagonalization"
+  ],
+  "Paper.Corollary_3_6": [
+    "Paper.Corollary_3_5"
+  ],
+  "ProofAdvances.Corollary_3_6_AllPrincipalMinors": [
+    "ProofAdvances.Corollary_3_6_ExactFiniteRank",
+    "Mathlib.Analysis.Matrix.PosDef",
+    "Mathlib.Tactic"
+  ],
+  "ProofAdvances.Corollary_3_6_WeightedCorrected": [
+    "ProofAdvances.Corollary_3_6_FullGram",
+    "Mathlib.LinearAlgebra.Matrix.Rank",
+    "Mathlib.LinearAlgebra.Matrix.PosDef",
+    "Mathlib.Tactic"
+  ],
+  "ProofAdvances.Theorem_3_4": [
+    "Paper.Theorem_3_4",
+    "Mathlib.Tactic"
+  ],
+  "ProofAdvances.Corollary_3_6_FullGram": [
+    "ProofAdvances.Corollary_3_6",
+    "Mathlib.LinearAlgebra.Matrix.PosDef",
+    "Mathlib.LinearAlgebra.Vandermonde",
+    "Mathlib.Tactic"
+  ],
+  "ProofAdvances.Corollary_3_6_ExactFiniteRank": [
+    "ProofAdvances.Corollary_3_6_WeightedCorrected",
+    "Mathlib.LinearAlgebra.Matrix.PosDef",
+    "Mathlib.Tactic"
+  ],
+  "ProofAdvances.Corollary_3_6": [
+    "Paper.Corollary_3_6",
+    "ProofAdvances.Theorem_3_4",
+    "Mathlib.Tactic"
+  ],
+  "Zetahyperbolic.Section3Elementary": [
+    "Zetahyperbolic.Foundations"
+  ],
+  "Zetahyperbolic.CoreLinearAlgebra": [
+    "Mathlib"
+  ],
+  "Zetahyperbolic.Foundations": [
+    "Mathlib"
+  ],
+  "Zetahyperbolic.Section2Checked": [
+    "Mathlib",
+    "Zetahyperbolic.CoreLinearAlgebra",
+    "Zetahyperbolic.Section3Elementary"
+  ],
+  "Zetahyperbolic.AnalyticMainChain": [
+    "ANALYTIC_FRONTIER",
+    "Zetahyperbolic.MainChain",
+    "Zetahyperbolic.ManuscriptCompatibility"
+  ],
+  "Zetahyperbolic.MainChain": [
+    "MAIN_CHAIN",
+    "Zetahyperbolic.ManuscriptCompatibility"
+  ],
+  "Zetahyperbolic.ManuscriptCompatibility": [
+    "Zetahyperbolic.Section2Checked",
+    "Theorem_2_5_Lagrange_Pole_Diagonalization",
+    "Theorem_3_1_Universal_Hyperbolicity_And_Zero_Free_Disk"
+  ],
+  "LeanPaper.KernelAudit": [
+    "Definition_2_1_Order_s_Rational_Moment_Functional",
+    "Theorem_2_4_Canonical_Basis_Invariance",
+    "Theorem_2_5_Lagrange_Pole_Diagonalization",
+    "Theorem_3_1_Universal_Hyperbolicity_And_Zero_Free_Disk",
+    "Theorem_3_1_General_Odd_Weight_Endpoint",
+    "Theorem_3_1_Positive_Moment_Realization",
+    "Theorem_4_1_Spectral_Irrationality_Measure_Criterion",
+    "MAIN_CHAIN",
+    "Theorem_3_1_Hyperbolic_Weight",
+    "Theorem_3_1_Hyperbolic_Moments",
+    "Zetahyperbolic.CoreLinearAlgebra",
+    "Zetahyperbolic.Foundations",
+    "Zetahyperbolic.Section3Elementary",
+    "Zetahyperbolic.Section2Checked",
+    "Zetahyperbolic.ManuscriptCompatibility",
+    "Theorem_3_1_Concrete_Moment_Realization",
+    "Theorem_3_1_Rational_Integral_Bridge",
+    "ANALYTIC_FRONTIER",
+    "Zetahyperbolic.MainChain",
+    "Zetahyperbolic.AnalyticMainChain",
+    "Theorem_3_1_Pole_Scaling",
+    "Theorem_3_1_Coth_Partial_Fractions",
+    "Theorem_3_1_Zeta_Tail",
+    "Theorem_3_1_Bose_Tail_Integral",
+    "Theorem_3_1_Pole_Integral_Identity",
+    "MAIN_CHAIN_ASSEMBLED",
+    "Theorem_4_1_General_Odd_Zeta_Application",
+    "Theorem_4_1_Integer_Polynomial_Irrationality",
+    "Theorem_4_1_Linear_Odd_Zeta_Family",
+    "MAIN_CHAIN_ARITHMETIC",
+    "Theorem_4_1_Direct_Irrationality_From_Decay",
+    "Theorem_2_4_Primitive_Normalization_Minimality",
+    "MAIN_CHAIN_IRRATIONALITY",
+    "Theorem_2_5_Weight_Change",
+    "Theorem_4_1_Leading_Coefficient_Gap",
+    "PAPER_PROVEN_CORE",
+    "PAPER_02_03_UNCONDITIONAL",
+    "Paper.Definition_2_1",
+    "Paper.Lemma_2_2",
+    "Paper.Lemma_2_3",
+    "Paper.Theorem_2_4",
+    "Paper.Theorem_2_5",
+    "Paper.Theorem_3_1",
+    "Paper.Proposition_3_2",
+    "Paper.Theorem_3_3",
+    "Paper.Theorem_3_4",
+    "Paper.Corollary_3_5",
+    "Paper.Corollary_3_6",
+    "PaperChain.Stage01",
+    "PaperChain.Stage02",
+    "PaperChain.Stage03",
+    "PaperChain.Stage04",
+    "PaperChain.Stage05",
+    "PaperChain.Stage06",
+    "PaperChain.Stage07",
+    "PaperChain.Stage08",
+    "PaperChain.Stage09",
+    "PaperChain.Stage10",
+    "PaperChain.Audit",
+    "PaperChain.Stage03UnconditionalBridge",
+    "PaperChain.Stage03UnconditionalAudit",
+    "PaperChain.Stage04PrincipalMinorCenter",
+    "Theorem_4_1_Determinant_Log_Energy",
+    "Theorem_4_1_Content_Gram_Cancellation",
+    "Theorem_4_1_Adjacent_Log_Increment",
+    "Theorem_4_1_Pole_Log_Slope",
+    "PaperChain.Stage05PrimitiveBridge",
+    "PaperChain.Stage05RateGapBridge",
+    "PaperChain.Stage08FinitePotentialBridge",
+    "PaperChain.Stage08PoleProductBridge",
+    "PaperChain.Stage05ContentGramBridge",
+    "PaperChain.Stage05AdjacentDriftBridge",
+    "PaperChain.Stage05AdjacentDriftAudit",
+    "PaperChain.Stage05ContentGramAudit",
+    "PaperChain.Stage05PrimitiveAudit",
+    "PaperChain.Stage07WeightShiftBridge",
+    "PaperChain.Stage05RateGapAudit",
+    "PaperChain.Stage08FinitePotentialAudit",
+    "PaperChain.Stage08PoleProductAudit",
+    "ProofAdvances.Theorem_3_4",
+    "ProofAdvances.Corollary_3_6",
+    "ProofAdvances.Corollary_3_6_FullGram",
+    "ProofAdvances.Corollary_3_6_WeightedCorrected",
+    "ProofAdvances.Corollary_3_6_ExactFiniteRank",
+    "ProofAdvances.Corollary_3_6_AllPrincipalMinors"
+  ]
+}
