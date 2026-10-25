@@ -1,0 +1,1894 @@
+{
+  "schema_version": 1,
+  "workflow": "YOU_ARE_GOODWORKFLOWFRONTIER",
+  "classification_date": "2026-10-25",
+  "scope": "Whole printed manuscript items; exact compiled components and current candidates are recorded separately. A successful module build or theorem-name wrapper is not a full-item certificate.",
+  "baseline_receipt": "validation/linux/baseline_v013_acceptance.json",
+  "baseline_receipt_sha256": "ffd8b02326290d5f6137050af98c73b3f7a7b45fdb02b22b0ba454ed3a5c8e3a",
+  "baseline": {
+    "version": "v0_1_3_construction",
+    "compiled_modules": 154,
+    "new_intake_modules": 58,
+    "project_declarations": 2023,
+    "kernel_theorem_declarations_including_generated_and_private": 1523,
+    "compiler": "Lean4.33.0",
+    "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d",
+    "axiom_method": "INDEPENDENT_VISITED_SET_GRAPH",
+    "native_windows_status": "NOT_RUN"
+  },
+  "new_work_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+  "full_manuscript_equivalence": "NOT_CERTIFIED",
+  "classification_policy": {
+    "Verified": "Whole printed statement proved in the current increment, with final compiler and independent transitive axiom receipt.",
+    "Already proved and retained": "Whole printed statement already covered by the retained audited baseline.",
+    "Partially formalized": "Audited exact components or explicitly narrower conditional helpers exist; at least one printed clause/identification is unproved.",
+    "In progress": "A missing part is actively being constructed; retained components are separately listed and no new proof pass is inferred.",
+    "Blocked": "The literal printed item contains a demonstrated obstruction or inconsistent formula; corrected variants are separate proof targets.",
+    "Not formalized": "No active manuscript-equivalent component has been mapped for this item; historical filenames and generic neighboring lemmas are not credited."
+  },
+  "counts": {
+    "status": {
+      "Verified": 1,
+      "Already proved and retained": 1,
+      "Partially formalized": 24,
+      "In progress": 0,
+      "Blocked": 3,
+      "Not formalized": 16
+    },
+    "complete_printed_items": 2,
+    "complete_printed_item_ids": [
+      "3.1",
+      "4.3"
+    ],
+    "total_printed_items": 45,
+    "items_with_mapped_baseline_endpoint": 29,
+    "warning": "Mapped endpoints include conditional helpers and counterexamples. This is not a count of proved printed results.",
+    "complete_printed_item_verification_note": "The complete 3.1 endpoint and retained 4.3 endpoint are included in the expanded final independent transitive axiom audit."
+  },
+  "ledger_update_proposal": {
+    "action": "Apply the coordinated semantic reconciliation to the existing JSON/CSV ledger, retaining the original 45 IDs/titles/order and legacy source fields; final global audit status remains separate.",
+    "changes": [
+      {
+        "manuscript_item": "4.3",
+        "proposal": "Promote semantic coverage to complete printed Proposition 4.3; center nonvanishing and disk membership are exactly its hypotheses. Keep native Windows status separate."
+      },
+      {
+        "manuscript_item": "2.4",
+        "proposal": "Replace COMPLETE_CANDIDATE_SOURCE as a full-coverage suggestion with partial generic-functional transport status."
+      },
+      {
+        "manuscript_item": "2.5",
+        "proposal": "Retain proved interpolation/actual matrix bridge; keep full rational-functional identification open."
+      },
+      {
+        "manuscript_item": "3.1",
+        "proposal": "Promote to complete printed Theorem 3.1 using targeted-compiled actual inverse-operator-norm and primitive complex-root assembly. Retain separation from later quantitative/irrationality endpoints."
+      },
+      {
+        "manuscript_item": "3.4,3.5,3.6",
+        "proposal": "Preserve literal blockers and corrected variants; do not promote full printed items when corrected proofs pass."
+      },
+      {
+        "manuscript_item": "all",
+        "proposal": "Remove stale requests for already-completed baseline Linux audit where present; native Windows validation remains NOT_RUN and semantic obligations remain open."
+      },
+      {
+        "manuscript_item": "2.2,2.3,3.4,3.6,3.7",
+        "proposal": "Record newly targeted-compiled RatFunc domain/representation, principal degree/rank, nearest-root limit plus first/second logarithmic moments, and all-derivative Turan/weak normalized Newton components. Do not close remaining full-item gaps or false literal statements."
+      }
+    ]
+  },
+  "rows": [
+    {
+      "ordinal": 1,
+      "manuscript_item": "2.2",
+      "title": "Rational functional pullback",
+      "status": "Partially formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "Pointwise substitution outside the finite pole set is connected to the canonical polynomial-plus-simple-pole moment formula, including the whole polynomial quotient and vanishing lower moments. Equality in the actual RatFunc field now forces equality of polynomial parts/residues across different supports; mu descends to a representation-independent functional on precisely the denominator-divisibility simple-negative-square-pole domain.",
+      "remaining_obligations": "Lift mu/tau linearity to the RatFunc subspaces, define and identify the actual RatFunc pullback substitution operator, and assemble the literal function-level identity. The algebraic simple-pole domain and representation independence are now proved; no meromorphic-domain equivalence is claimed.",
+      "exact_hypotheses": "k >= 1; finitely supported canonical coefficients; evaluation away from the specified poles.",
+      "baseline_endpoints": [
+        {
+          "name": "LeanPaper.PullbackReflection.function_and_moment_pullback",
+          "source": "src/LeanPaper/PullbackReflection.lean",
+          "source_sha256": "9a621ff7a04196929931c41b359674d0d96b4131b4bb7a72c05f57d0dec535fc"
+        }
+      ],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "manuscript_component",
+      "baseline_component_audit": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+      "new_work_verification": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+      "existing_ledger_source_state": "PARTIAL_SOURCE",
+      "existing_ledger_remaining_obligation": "New source connects exact pointwise substitution outside the finite pole set with the canonical normal-form moment identity, retaining the whole polynomial quotient and proving its lower moments vanish. Representation independence under equality of arbitrary RatFunc expressions and complete manuscript-domain identification remain open.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": [
+        {
+          "name": "LeanPaper.Section2RepresentationIndependence.muFunctionalPoly_representation_independent",
+          "source": "src/LeanPaper/Section2RepresentationIndependence.lean",
+          "source_sha256": "b66b7810f05862d4a9e64c33949aa7c33d8454d783aeaff3acd39118fca6a02b",
+          "verification": "LINUX_LEAN433_PASS_AXIOM_AUDITED"
+        },
+        {
+          "name": "LeanPaper.Section2RationalDomains.muDomain_iff_denom_dvd",
+          "source": "src/LeanPaper/Section2RationalDomains.lean",
+          "source_sha256": "b1b19199280667a2b13ec3b7d60dba867049477c4980245a31d45e5c8c4f7c29",
+          "verification": "LINUX_LEAN433_PASS_AXIOM_AUDITED"
+        }
+      ]
+    },
+    {
+      "ordinal": 2,
+      "manuscript_item": "2.3",
+      "title": "Reflection and difference identities for Tau",
+      "status": "Partially formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "Finite polynomial-plus-simple-pole reflection and tau difference, including the degree-2k correction coefficient and the matching pointwise x-to-x+1 translation. Tau, reflected moments and translated moments are now representation-independent in RatFunc; the full algebraic integer-simple-pole domain is characterized by denominator divisibility.",
+      "remaining_obligations": "Lift linearity and construct the RatFunc reflection/translation substitutions, retaining their domain exclusions, to assemble the complete function-level reflection/difference theorem. Algebraic domain characterization is no longer an open gap.",
+      "exact_hypotheses": "k >= 1; finite support; the difference theorem excludes pole labels 0 and 1.",
+      "baseline_endpoints": [
+        {
+          "name": "LeanPaper.PullbackReflection.finite_span_reflection",
+          "source": "src/LeanPaper/PullbackReflection.lean",
+          "source_sha256": "9a621ff7a04196929931c41b359674d0d96b4131b4bb7a72c05f57d0dec535fc"
+        },
+        {
+          "name": "LeanPaper.Section2FiniteDifference.function_and_moment_difference",
+          "source": "src/LeanPaper/Section2FiniteDifference.lean",
+          "source_sha256": "c7975335df6a7c3df8e15477a1cf80bfb6d0daa4a59f47da59769c10cbeae17e"
+        }
+      ],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "manuscript_component",
+      "baseline_component_audit": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+      "new_work_verification": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+      "existing_ledger_source_state": "PARTIAL_SOURCE",
+      "existing_ledger_remaining_obligation": "General RatFunc representation independence, the complete manuscript-domain identification and the pointwise reflection representation bridge remain open. The complete finite polynomial-plus-pole difference is now supplied as source; final local audit and native Windows validation remain required.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": [
+        {
+          "name": "LeanPaper.Section2TauRepresentation.tauFiniteSpan_representation_independent",
+          "source": "src/LeanPaper/Section2TauRepresentation.lean",
+          "source_sha256": "449cd161c55e9d6050f2e7eb0fa191a02de0168ba428027e3f8b0f29f868020a",
+          "verification": "LINUX_LEAN433_PASS_AXIOM_AUDITED"
+        },
+        {
+          "name": "LeanPaper.Section2TauRepresentation.translatedMoment_representation_independent",
+          "source": "src/LeanPaper/Section2TauRepresentation.lean",
+          "source_sha256": "449cd161c55e9d6050f2e7eb0fa191a02de0168ba428027e3f8b0f29f868020a",
+          "verification": "LINUX_LEAN433_PASS_AXIOM_AUDITED"
+        },
+        {
+          "name": "LeanPaper.Section2RationalDomains.tauDomain_iff_denom_dvd",
+          "source": "src/LeanPaper/Section2RationalDomains.lean",
+          "source_sha256": "b1b19199280667a2b13ec3b7d60dba867049477c4980245a31d45e5c8c4f7c29",
+          "verification": "LINUX_LEAN433_PASS_AXIOM_AUDITED"
+        }
+      ]
+    },
+    {
+      "ordinal": 3,
+      "manuscript_item": "2.4",
+      "title": "Canonical basis invariance",
+      "status": "Partially formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "Rational matrix basis transport scales the determinant by det(A)det(B); positive primitive integer normalizations are constructed and are invariant up to sign.",
+      "remaining_obligations": "The printed theorem quantifies over an arbitrary Q[X]-valued linear functional and arbitrary polynomial bases. An explicit transport from those functional evaluations/bases to changeBasisPencil is still needed; matrix transport alone is not that whole statement.",
+      "exact_hypotheses": "Invertible rational change matrices and nonzero determinant polynomial. Normalization existence is proved, not assumed.",
+      "baseline_endpoints": [
+        {
+          "name": "ManuscriptChain.BasisInvariance.det_changeBasisPencil",
+          "source": "src/Theorem_2_4_Canonical_Basis_Invariance.lean",
+          "source_sha256": "72d310e0b344c2aa6310e99aee1fe672dfd43b3c93cadd958ca9abf43b90af34"
+        },
+        {
+          "name": "ManuscriptChain.BasisInvariance.theorem_2_4_constructed_canonical_basis_invariance",
+          "source": "src/Theorem_2_4_Canonical_Basis_Invariance.lean",
+          "source_sha256": "72d310e0b344c2aa6310e99aee1fe672dfd43b3c93cadd958ca9abf43b90af34"
+        }
+      ],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "manuscript_component",
+      "baseline_component_audit": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "COMPLETE_CANDIDATE_SOURCE",
+      "existing_ledger_remaining_obligation": "Manuscript-equivalence/native compiler/axiom verification still required; source constructs normalization rather than assuming its existence.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    },
+    {
+      "ordinal": 4,
+      "manuscript_item": "2.5",
+      "title": "Lagrange pole diagonalization",
+      "status": "Partially formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "Constructed Lagrange polynomials have Kronecker evaluations and inverse-Vandermonde coefficients; their actual transformed pencil has constant off-diagonal entries, explicit diagonal slope, and nonzero slope determinant.",
+      "remaining_obligations": "Connect the coefficient-transport entries to the printed general functional expression mu_X(D_N^(2m) L_a L_b / D_K), including the rational-domain bridge. The finite polynomial and matrix identities are already retained.",
+      "exact_hypotheses": "Actual negative-square pole nodes and finite manuscript parameter data; invertibility/nonzero residues are proved.",
+      "baseline_endpoints": [
+        {
+          "name": "LeanPaper.Section2LagrangeIdentification.archive_polynomial_eq_constructed",
+          "source": "src/LeanPaper/Section2LagrangeIdentification.lean",
+          "source_sha256": "0aaf7f41c3e2e1221a58feb849cf4c89a32688d2685b18b652003e238fc6bc9b"
+        },
+        {
+          "name": "LeanPaper.Section2LagrangeBridge.actual_lagrange_slope",
+          "source": "src/LeanPaper/Section2LagrangeBridge.lean",
+          "source_sha256": "c0c0057321ab2d77a207f9dd83ca4893628655f4e2d30d3fabc495fd875b6395"
+        },
+        {
+          "name": "ManuscriptChain.PoleDiagonalization.theorem_2_5_lagrange_pole_diagonalization",
+          "source": "src/Theorem_2_5_Lagrange_Pole_Diagonalization.lean",
+          "source_sha256": "4ab4ba8669d84d6878a58cc3503d31f96037e58721ce3296421a6195cf978a83"
+        }
+      ],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "manuscript_component",
+      "baseline_component_audit": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "COMPLETE_CANDIDATE_SOURCE",
+      "existing_ledger_remaining_obligation": "The explicit polynomial interpolation/basis gap is addressed by the new source. Final local audit, native Windows validation and any additional general rational-functional domain claims remain separate.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    },
+    {
+      "ordinal": 5,
+      "manuscript_item": "3.1",
+      "title": "Universal hyperbolicity and zero-free disk",
+      "status": "Verified",
+      "full_printed_statement_verified": true,
+      "proved_scope": "Complete actual determinant and primitive integer-polynomial hyperbolicity: constructed primitive normalization, exact degree h, true Riemann-zeta center, positive center evaluation, all complex roots real and distinct from the center, and the literal Euclidean inverse-operator-norm zero-free disk. The constructed spectral radius equals ||G^(-1/2) M G^(-1/2)|| and a root attains the boundary.",
+      "remaining_obligations": "None for Theorem 3.1. Pairwise root distinctness is not claimed by the printed theorem or this formalization. Exponential spectral estimates and irrationality belong to later items and remain open.",
+      "exact_hypotheses": "k,m,N >= 1 and N < K. No supplied integral identity, Gram-positivity certificate, or arithmetic estimate. The paper says roots are distinct from the center, not pairwise distinct.",
+      "baseline_endpoints": [
+        {
+          "name": "ManuscriptChain.MAIN_CHAIN_UNCONDITIONAL",
+          "source": "src/MAIN_CHAIN_ASSEMBLED.lean",
+          "source_sha256": "b4d72cddd0f4a3c6c13005d4b080c43883b714ca565fa571b740aa02d1ddbdbe"
+        },
+        {
+          "name": "ManuscriptChain.EXACT_ZERO_FREE_DISK",
+          "source": "src/MAIN_CHAIN_ASSEMBLED.lean",
+          "source_sha256": "b4d72cddd0f4a3c6c13005d4b080c43883b714ca565fa571b740aa02d1ddbdbe"
+        },
+        {
+          "name": "ManuscriptChain.GeneralIrrationality.primitivePolynomial_natDegree",
+          "source": "src/MAIN_CHAIN_IRRATIONALITY.lean",
+          "source_sha256": "abbe4440ff1b6123024787987387789a544c7b4205a9ad73852936d5ab914b69"
+        }
+      ],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "complete_printed_statement",
+      "baseline_component_audit": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+      "new_work_verification": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+      "existing_ledger_source_state": "COMPLETE_CANDIDATE_SOURCE",
+      "existing_ledger_remaining_obligation": "Native compiler/axiom audit and exact statement review required. Source discharges Gram positivity and pole integral; this does not imply irrationality.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": [
+        {
+          "name": "LeanPaper.OperatorNormDisk.actual_radius_eq_inverse_norm",
+          "source": "src/LeanPaper/OperatorNormDisk.lean",
+          "source_sha256": "ab9c8623bce41acfac9168240752dc1e02035a88f0d64701a8c0ee2d0739dcd1",
+          "verification": "LINUX_LEAN433_PASS_AXIOM_AUDITED"
+        },
+        {
+          "name": "LeanPaper.PrimitiveNormDisk.primitive_theorem_3_1",
+          "source": "src/LeanPaper/PrimitiveNormDisk.lean",
+          "source_sha256": "f89e272dde8b836a61b197f8e48ef2e76ba69419e32f970588fc2e0f803f3e2c",
+          "verification": "LINUX_LEAN433_PASS_AXIOM_AUDITED"
+        },
+        {
+          "name": "LeanPaper.PrimitiveNormDisk.primitive_exact_norm_disk",
+          "source": "src/LeanPaper/PrimitiveNormDisk.lean",
+          "source_sha256": "f89e272dde8b836a61b197f8e48ef2e76ba69419e32f970588fc2e0f803f3e2c",
+          "verification": "LINUX_LEAN433_PASS_AXIOM_AUDITED"
+        }
+      ]
+    },
+    {
+      "ordinal": 6,
+      "manuscript_item": "3.2",
+      "title": "Continuous hyperbolic pencil for all real s > 1",
+      "status": "Partially formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "Positive real-power residue scaling preserves signs and slope nonsingularity; a supplied positive-definite base gives a real spectrum.",
+      "remaining_obligations": "Construct and identify the continuous real-s moment integral and prove positivity of the actual real-s base matrix.",
+      "exact_hypotheses": "Real exponent algebra on the finite nodes; base symmetry and positive definiteness remain explicit hypotheses.",
+      "baseline_endpoints": [
+        {
+          "name": "PaperAdvances.Proposition3_2.slope_det_ne_zero",
+          "source": "src/LeanPaper/ImportedSection3/RealExponent.lean",
+          "source_sha256": "bc68cd5659844b9945bdee522fb0b22f16643e5bfaa53c4a7ed89203143adde4"
+        },
+        {
+          "name": "PaperAdvances.Proposition3_2.all_complex_roots_real",
+          "source": "src/LeanPaper/ImportedSection3/RealExponent.lean",
+          "source_sha256": "bc68cd5659844b9945bdee522fb0b22f16643e5bfaa53c4a7ed89203143adde4"
+        }
+      ],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "manuscript_component",
+      "baseline_component_audit": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "PARTIAL_SOURCE",
+      "existing_ledger_remaining_obligation": "The continuous-weight moment integral and its identification with the manuscript real-s base matrix remain open. Positive definiteness of the supplied base is an explicit hypothesis; the finite real-power algebra does not discharge it.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    },
+    {
+      "ordinal": 7,
+      "manuscript_item": "3.3",
+      "title": "Total positivity, leading sign, universal signature",
+      "status": "Partially formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "Actual Gram determinant positivity, exact leading-coefficient residue product and weight-invariant positive/negative residue index sets.",
+      "remaining_obligations": "Arbitrary mixed-minor strict total positivity, Stieltjes determinacy and exact manuscript inertia/root-count formulas are not assembled.",
+      "exact_hypotheses": "Admissible actual odd-weight Gram matrix where used; sign products/index-set equalities do not by themselves prove inertia counts.",
+      "baseline_endpoints": [
+        {
+          "name": "PaperAdvances.Theorem3_3.actual_gram_det_pos",
+          "source": "src/LeanPaper/ImportedSection3/SignStructure.lean",
+          "source_sha256": "eaf34fcf093c1fe16eaa2d38c781061b3f806af9866c898b7bddf41f5af81c16"
+        },
+        {
+          "name": "PaperAdvances.Theorem3_3.leading_coefficient_product",
+          "source": "src/LeanPaper/ImportedSection3/SignStructure.lean",
+          "source_sha256": "eaf34fcf093c1fe16eaa2d38c781061b3f806af9866c898b7bddf41f5af81c16"
+        },
+        {
+          "name": "PaperAdvances.Theorem3_3.positive_pole_count_constant",
+          "source": "src/LeanPaper/ImportedSection3/SignStructure.lean",
+          "source_sha256": "eaf34fcf093c1fe16eaa2d38c781061b3f806af9866c898b7bddf41f5af81c16"
+        }
+      ],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "manuscript_component",
+      "baseline_component_audit": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "PARTIAL_SOURCE",
+      "existing_ledger_remaining_obligation": "Arbitrary mixed-minor total positivity, Stieltjes determinacy and full manuscript-equivalent signature/count formulas remain separate obligations. Weight-invariant residue sign sets and determinant sign products are not the full inertia theorem.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    },
+    {
+      "ordinal": 8,
+      "manuscript_item": "3.4",
+      "title": "Root interlacing and Dodgson condensation",
+      "status": "Blocked",
+      "full_printed_statement_verified": false,
+      "proved_scope": "All zeros of every actual principal determinant are real even with singular slope. The actual admissible k=2,m=1,N=1,K=6 first minor is a positive constant and has no roots. The corrected actual principal determinant degree and number of real roots counted with multiplicity are now proved equal to the rank of its direction matrix, allowing singular slopes.",
+      "remaining_obligations": "The literal universal r-root enumeration/closest-root minimum is false. The corrected degree/rank and root-count laws are proved; rank-sensitive interlacing and all-rank Dodgson assembly remain open.",
+      "exact_hypotheses": "Admissible actual parameters and any injective principal-index selection. The counterexample is an actual family instance.",
+      "baseline_endpoints": [
+        {
+          "name": "LeanPaper.PrincipalMinorRealRoots.original_principal_zeros_real",
+          "source": "src/LeanPaper/PrincipalMinorRealRoots.lean",
+          "source_sha256": "25cd2a12f3e6bd1cde01cbb24b871d5560914670e86aba828342ffbed0024c2c"
+        },
+        {
+          "name": "LeanPaper.SingularPrincipalMinorExample.first_minor_no_real_zero",
+          "source": "src/LeanPaper/SingularPrincipalMinorExample.lean",
+          "source_sha256": "47c7c969dca7bf0f52b2c6a347a693653b7be95a0b5ff8bae5afef5bfeb61c99"
+        },
+        {
+          "name": "LeanPaper.SingularPrincipalMinorExample.first_minor_natDegree_zero",
+          "source": "src/LeanPaper/SingularPrincipalMinorExample.lean",
+          "source_sha256": "47c7c969dca7bf0f52b2c6a347a693653b7be95a0b5ff8bae5afef5bfeb61c99"
+        }
+      ],
+      "active_work": "",
+      "printed_correction": "Enumerate roots only over nonzero normalized-slope eigenvalues. A minimum distance to roots requires a nonconstant minor or an explicit infinity convention. This does not refute eigenvalue interlacing or Dodgson identities.",
+      "evidence_kind": "manuscript_component",
+      "baseline_component_audit": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+      "new_work_verification": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+      "existing_ledger_source_state": "PRINTED_STATEMENT_REQUIRES_CORRECTION",
+      "existing_ledger_remaining_obligation": "New sources construct real-rootedness of every actual principal determinant even with singular slope, and an actual admissible k=2,m=1,N=1,K=6 first minor that is positive constant and has no roots. The printed universal r-root enumeration/closest-root-minimum clause requires correction. Exact degree/rank law, rank-sensitive interlacing and all-rank Dodgson assembly remain open; the counterexample does not reject eigenvalue interlacing or Dodgson itself.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": [
+        {
+          "name": "LeanPaper.PrincipalMinorRank.original_principal_degree_eq_rank",
+          "source": "src/LeanPaper/PrincipalMinorRank.lean",
+          "source_sha256": "3194228ec8e733c596daca64f8531bffce0629b63ba163f1e6d3e67420ee0eca",
+          "verification": "LINUX_LEAN433_PASS_AXIOM_AUDITED"
+        },
+        {
+          "name": "LeanPaper.PrincipalMinorRank.original_principal_real_roots_card_eq_rank",
+          "source": "src/LeanPaper/PrincipalMinorRank.lean",
+          "source_sha256": "3194228ec8e733c596daca64f8531bffce0629b63ba163f1e6d3e67420ee0eca",
+          "verification": "LINUX_LEAN433_PASS_AXIOM_AUDITED"
+        }
+      ]
+    },
+    {
+      "ordinal": 9,
+      "manuscript_item": "3.5",
+      "title": "Stieltjes J-fraction from interlacing roots",
+      "status": "Blocked",
+      "full_printed_statement_verified": false,
+      "proved_scope": "Correct normalized two- and three-level determinant, continuant and Schur-fraction identities for I+tB. An explicit general scalar diagnostic disproves the unscaled normalized-fraction calculation; it is not claimed to be a manuscript-family instance.",
+      "remaining_obligations": "The literal displayed fraction has inconsistent normalization. The general Lanczos/Jacobi construction, cyclicity/strict off-diagonal claims, determinant-ratio normalization and spectral-edge growth are unproved.",
+      "exact_hypotheses": "Finite real scalar entries; Schur denominators are nonzero where divided by.",
+      "baseline_endpoints": [
+        {
+          "name": "LeanPaper.Section3ContinuedFractions.corollary_3_5_two_level_schur_identity",
+          "source": "src/LeanPaper/ImportedSection3/NormalizedContinuedFraction.lean",
+          "source_sha256": "ecdf53f5c92f768eb120c277177b74cd879cbb8c400dfb87a19ccb65a4ab3b10"
+        },
+        {
+          "name": "LeanPaper.Section3ContinuedFractions.normalized_three_schur_identity",
+          "source": "src/LeanPaper/ImportedSection3/NormalizedContinuedFraction.lean",
+          "source_sha256": "ecdf53f5c92f768eb120c277177b74cd879cbb8c400dfb87a19ccb65a4ab3b10"
+        }
+      ],
+      "active_work": "",
+      "printed_correction": "For I+tB use 1+t*a_i and t^2*b_i^2, not a_i+t and b_i^2. The relation between normalized minors and original minors also retains Gram determinant factors.",
+      "evidence_kind": "manuscript_component",
+      "baseline_component_audit": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+      "new_work_verification": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+      "existing_ledger_source_state": "PRINTED_STATEMENT_REQUIRES_CORRECTION",
+      "existing_ledger_remaining_obligation": "The printed formula for I+tB uses unscaled a_i+t and b_i^2; corrected finite cases are tracked separately. Constructing the general Lanczos/Jacobi chain, proving all-depth interlacing/fraction identities and obtaining its spectral-edge growth bound remain open.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": [
+        {
+          "name": "LeanPaper.ManuscriptObstructions.normalized_fraction_printed_formula_fails",
+          "source": "src/LeanPaper/ManuscriptObstructions.lean",
+          "source_sha256": "8bfb250a4822bc4e5d9068d97d90ae4473dcd8fb4e5bda7ffac1960625758dec",
+          "verification": "LINUX_LEAN433_PASS_AXIOM_AUDITED"
+        }
+      ]
+    },
+    {
+      "ordinal": 10,
+      "manuscript_item": "3.6",
+      "title": "Stieltjes reciprocal-root power sums",
+      "status": "Blocked",
+      "full_printed_statement_verified": false,
+      "proved_scope": "Actual reciprocal-root even moments are finite positive atomic moments; repeated inverse-square gaps are coalesced. Hankel strict positivity holds exactly up to distinct support size and determinants vanish above it. An attained maximum U satisfies U^m <= sum u_i^m <= h*U^m. At any rational non-root shift the actual nearest-root distance is attained; the correctly oriented negative-root-power bound and convergence to that distance are proved. First inverse-gap and second even moments are rational, with the correct first and second logarithmic derivative formulas. The actual Hankel determinant at order h+1 is explicitly zero.",
+      "remaining_obligations": "The literal all-order strict Hankel positivity and printed bound/sign remain blocked. Rationality and logarithmic-derivative identification at all orders m>=3 remain open. First/second log identities are stated for delta; an explicit primitive-polynomial log specialization remains separate, although its root set is identified. The fixed-family inner limit supplies no uniform large-K collapse/separation estimate.",
+      "exact_hypotheses": "For positive reciprocal atoms the shift is not a root. Repeated roots and equal squared gaps are allowed. Nearest-root convergence/rationality use rational q with delta(q) != 0; first/second derivative statements use an arbitrary real non-root point. No simplicity assumption.",
+      "baseline_endpoints": [
+        {
+          "name": "LeanPaper.ReciprocalRootMoments.manuscript_reciprocal_moments",
+          "source": "src/LeanPaper/ReciprocalRootMoments.lean",
+          "source_sha256": "ece204374616708b3ec393e06f99d03a7e324e0d8398be670cd954c1250b1c34"
+        },
+        {
+          "name": "LeanPaper.ReciprocalRootMoments.reciprocalHankel_det_pos_iff",
+          "source": "src/LeanPaper/ReciprocalRootMoments.lean",
+          "source_sha256": "ece204374616708b3ec393e06f99d03a7e324e0d8398be670cd954c1250b1c34"
+        },
+        {
+          "name": "LeanPaper.Section3RootMomentBounds.actual_reciprocal_moment_bounds",
+          "source": "src/LeanPaper/ImportedSection3/RootMomentBounds.lean",
+          "source_sha256": "1440ed9939652092043c93fd25fb0a41807afe9a5c5113fe046f29de36fcbacc"
+        }
+      ],
+      "active_work": "",
+      "printed_correction": "At fixed K there are finitely many atoms. The corrected factor inequality is h^(-1/(2r)) <= S_(2r)^(-1/(2r))/d_min <= 1. The printed odd log-derivative sign uses q-r rather than r-q with its stated prefactor.",
+      "evidence_kind": "manuscript_component",
+      "baseline_component_audit": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+      "new_work_verification": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+      "existing_ledger_source_state": "PRINTED_STATEMENT_REQUIRES_CORRECTION",
+      "existing_ledger_remaining_obligation": "The prior exact finite-support rank and positivity corrections remain in force. Full higher log-derivative identification, rationality and the nearest-root limit/rate remain open. The literal all-order strictness is false; the printed factor bound and odd log-derivative sign require the recorded corrections.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": [
+        {
+          "name": "LeanPaper.ReciprocalNearestRootLimit.actual_nearest_root_limit",
+          "source": "src/LeanPaper/ReciprocalNearestRootLimit.lean",
+          "source_sha256": "d3b33ca2f2ce9fa2485e489d7ecd1c50bd9f231a8c42b19ece6bb4ab5a3a87fd",
+          "verification": "LINUX_LEAN433_PASS_AXIOM_AUDITED"
+        },
+        {
+          "name": "LeanPaper.ReciprocalLogDerivative.actual_first_inverse_gap_sum_rational",
+          "source": "src/LeanPaper/ReciprocalLogDerivative.lean",
+          "source_sha256": "aeee3e906b085cd45e8d335fb04b8b5fe07b718404503d3ed5206098343501c9",
+          "verification": "LINUX_LEAN433_PASS_AXIOM_AUDITED"
+        },
+        {
+          "name": "LeanPaper.ReciprocalLogDerivative.actual_log_hasDerivAt",
+          "source": "src/LeanPaper/ReciprocalLogDerivative.lean",
+          "source_sha256": "aeee3e906b085cd45e8d335fb04b8b5fe07b718404503d3ed5206098343501c9",
+          "verification": "LINUX_LEAN433_PASS_AXIOM_AUDITED"
+        },
+        {
+          "name": "LeanPaper.ReciprocalSecondMoment.actual_second_moment_rational",
+          "source": "src/LeanPaper/ReciprocalSecondMoment.lean",
+          "source_sha256": "ccbdc753878b1a4023de6762943ca25030f1c416045ba6c5f23806ad2adbaeb7",
+          "verification": "LINUX_LEAN433_PASS_AXIOM_AUDITED"
+        },
+        {
+          "name": "LeanPaper.ReciprocalSecondMoment.actual_log_second_hasDerivAt",
+          "source": "src/LeanPaper/ReciprocalSecondMoment.lean",
+          "source_sha256": "ccbdc753878b1a4023de6762943ca25030f1c416045ba6c5f23806ad2adbaeb7",
+          "verification": "LINUX_LEAN433_PASS_AXIOM_AUDITED"
+        },
+        {
+          "name": "LeanPaper.ManuscriptObstructions.manuscript_hankel_det_succ_eq_zero",
+          "source": "src/LeanPaper/ManuscriptObstructions.lean",
+          "source_sha256": "8bfb250a4822bc4e5d9068d97d90ae4473dcd8fb4e5bda7ffac1960625758dec",
+          "verification": "LINUX_LEAN433_PASS_AXIOM_AUDITED"
+        },
+        {
+          "name": "LeanPaper.ManuscriptObstructions.manuscript_hankel_not_positive_at_all_orders",
+          "source": "src/LeanPaper/ManuscriptObstructions.lean",
+          "source_sha256": "8bfb250a4822bc4e5d9068d97d90ae4473dcd8fb4e5bda7ffac1960625758dec",
+          "verification": "LINUX_LEAN433_PASS_AXIOM_AUDITED"
+        },
+        {
+          "name": "LeanPaper.ManuscriptObstructions.first_logarithmic_ratio_sign_fails",
+          "source": "src/LeanPaper/ManuscriptObstructions.lean",
+          "source_sha256": "8bfb250a4822bc4e5d9068d97d90ae4473dcd8fb4e5bda7ffac1960625758dec",
+          "verification": "LINUX_LEAN433_PASS_AXIOM_AUDITED"
+        }
+      ]
+    },
+    {
+      "ordinal": 11,
+      "manuscript_item": "3.7",
+      "title": "Turanian non-negativity and Newton log-concavity",
+      "status": "Partially formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "For the actual primitive integer polynomial, every derivative order satisfies Turan nonnegativity; nonconstant orders are strictly positive off roots, with equality exactly at a simultaneous zero of the derivative and its next derivative. The complete weak binomial-normalized Newton coefficient hierarchy, arbitrary real translated hierarchy and zeta-centered normalized Taylor hierarchy are proved, together with the weak strengthened degree-normalized Laguerre bound.",
+      "remaining_obligations": "The strict strengthened center bound, strict normalized Newton inequalities/equality classification, and the actual shifted-coefficient nonvanishing/generic-distinctness claims remain open. These are not consequences of the proved weak hierarchy alone.",
+      "exact_hypotheses": "Actual admissible parameters. Turan nonnegativity holds for every derivative order; strictness/equality use k<h and the off-root condition where stated. Newton uses the full degree h and interior coefficient range k+2<=h, with no coefficient sign or root-simplicity assumption.",
+      "baseline_endpoints": [
+        {
+          "name": "PaperAdvances.Theorem3_7_AllDegrees.THEOREM_3_7_ACTUAL_ALL_DEGREES",
+          "source": "src/LeanPaper/ImportedSection3/AllDegreeTuran.lean",
+          "source_sha256": "13770f083202156d188dfaaaa16a042121ba58ae58a2a5b11ead99c6e1172853"
+        },
+        {
+          "name": "PaperAdvances.Theorem3_7_StrictRolle.THEOREM_3_7_ACTUAL_TURAN_STRICT",
+          "source": "src/LeanPaper/ImportedSection3/StrictTuranRolle.lean",
+          "source_sha256": "155ea149cad0a873f6e63270cadccf170808db693e79b41a0ac14759d6e1e5bb"
+        },
+        {
+          "name": "LeanPaper.Section3Newton.cubic_newton_first",
+          "source": "src/LeanPaper/ImportedSection3/CubicNewton.lean",
+          "source_sha256": "1d379107faccd026202e67f068199e15a2f63aa3784c4966c7ad2d22dba403ef"
+        }
+      ],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "manuscript_component",
+      "baseline_component_audit": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+      "new_work_verification": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+      "existing_ledger_source_state": "PARTIAL_SOURCE",
+      "existing_ledger_remaining_obligation": "A complete all-orders Newton/log-concavity hierarchy and all manuscript strictness/interlacing formulations remain separate from the proved first-Turan and cubic statements.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": [
+        {
+          "name": "LeanPaper.HigherDerivativeTuran.actual_primitive_all_derivative_turan",
+          "source": "src/LeanPaper/HigherDerivativeTuran.lean",
+          "source_sha256": "7adf339e150a6834d6fdc038d77b5776204bbd6bdf076d45466575506d937a07",
+          "verification": "LINUX_LEAN433_PASS_AXIOM_AUDITED"
+        },
+        {
+          "name": "LeanPaper.HigherDerivativeTuran.actual_primitive_all_derivative_turan_strict",
+          "source": "src/LeanPaper/HigherDerivativeTuran.lean",
+          "source_sha256": "7adf339e150a6834d6fdc038d77b5776204bbd6bdf076d45466575506d937a07",
+          "verification": "LINUX_LEAN433_PASS_AXIOM_AUDITED"
+        },
+        {
+          "name": "LeanPaper.HigherDerivativeTuran.actual_primitive_all_derivative_turan_equality",
+          "source": "src/LeanPaper/HigherDerivativeTuran.lean",
+          "source_sha256": "7adf339e150a6834d6fdc038d77b5776204bbd6bdf076d45466575506d937a07",
+          "verification": "LINUX_LEAN433_PASS_AXIOM_AUDITED"
+        },
+        {
+          "name": "LeanPaper.NormalizedNewton.actual_primitive_laguerre",
+          "source": "src/LeanPaper/NormalizedNewton.lean",
+          "source_sha256": "24bca9092b39987bb86666c7cd5f0a2ffdd78c8b82622623674c9d5277d8c9f6",
+          "verification": "LINUX_LEAN433_PASS_AXIOM_AUDITED"
+        },
+        {
+          "name": "LeanPaper.NormalizedNewton.actual_primitive_coefficient_newton",
+          "source": "src/LeanPaper/NormalizedNewton.lean",
+          "source_sha256": "24bca9092b39987bb86666c7cd5f0a2ffdd78c8b82622623674c9d5277d8c9f6",
+          "verification": "LINUX_LEAN433_PASS_AXIOM_AUDITED"
+        },
+        {
+          "name": "LeanPaper.NormalizedNewton.actual_primitive_shifted_newton",
+          "source": "src/LeanPaper/NormalizedNewton.lean",
+          "source_sha256": "24bca9092b39987bb86666c7cd5f0a2ffdd78c8b82622623674c9d5277d8c9f6",
+          "verification": "LINUX_LEAN433_PASS_AXIOM_AUDITED"
+        },
+        {
+          "name": "LeanPaper.NormalizedNewton.actual_primitive_centered_newton",
+          "source": "src/LeanPaper/NormalizedNewton.lean",
+          "source_sha256": "24bca9092b39987bb86666c7cd5f0a2ffdd78c8b82622623674c9d5277d8c9f6",
+          "verification": "LINUX_LEAN433_PASS_AXIOM_AUDITED"
+        }
+      ]
+    },
+    {
+      "ordinal": 12,
+      "manuscript_item": "3.8",
+      "title": "Christoffel-Darboux pole representation and Jacobi derivative",
+      "status": "Partially formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "Actual relative/pole matrices share characteristic polynomial and trace. Affine determinant/logarithmic Jacobi derivative and exact polynomial Taylor remainder are proved.",
+      "remaining_obligations": "Complete orthogonal-polynomial Christoffel-Darboux identification and the stated asymptotic remainder estimate remain unproved.",
+      "exact_hypotheses": "The inverse and logarithm identities retain determinant/nonvanishing hypotheses.",
+      "baseline_endpoints": [
+        {
+          "name": "PaperAdvances.Theorem3_8_Actual.actual_relative_charpoly_eq_pole",
+          "source": "src/LeanPaper/ImportedSection3/ActualPoleKernel.lean",
+          "source_sha256": "4acd980feeb1cd1aa9e59b21457f69bd3924649ffbed98f4a6a616d3c3a26a93"
+        },
+        {
+          "name": "PaperAdvances.Theorem3_8_Jacobi.actual_affine_log_jacobi",
+          "source": "src/LeanPaper/ImportedSection3/Jacobi.lean",
+          "source_sha256": "9b31ffbeb4d813719312ebc365d9983b0f46e8866da417cbd75bd55b61d31c4c"
+        },
+        {
+          "name": "PaperAdvances.Theorem3_8_ExactTaylor.affine_det_exact_second_order",
+          "source": "src/LeanPaper/ImportedSection3/ExactTaylor.lean",
+          "source_sha256": "c33e48d4d7521257aaafd870a7df8d8acb660d16038113ad64964fc1f69165e9"
+        }
+      ],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "manuscript_component",
+      "baseline_component_audit": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "PARTIAL_REBUILT_SOURCE",
+      "existing_ledger_remaining_obligation": "The complete orthogonal-polynomial Christoffel-Darboux interpretation and any asymptotic remainder bounds are not certified by these finite matrix identities. Inverse/logarithm identities retain their nonvanishing hypotheses.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    },
+    {
+      "ordinal": 13,
+      "manuscript_item": "3.9",
+      "title": "Hurwitz and Dirichlet hyperbolicity",
+      "status": "Partially formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "Shifted negative-square pole algebra and real-power slope scaling; positivity of five explicit Fekete numerators/rational kernels; positive residues give positive slopes.",
+      "remaining_obligations": "Actual Hurwitz/Dirichlet Mellin moment evaluation and analytic Gram realization remain unconstructed.",
+      "exact_hypotheses": "Generic shifted spectral theorem assumes a symmetric positive-definite base. Finite kernel positivity does not discharge the analytic identification.",
+      "baseline_endpoints": [
+        {
+          "name": "PaperAdvances.Theorem3_9_ShiftedPole.hurwitz_complex_roots_real",
+          "source": "src/LeanPaper/ImportedCharacter/ShiftedPole.lean",
+          "source_sha256": "60877a28cd1d2b7e3eaa2a1dc5f4e128d54e9f84fb32161aa364827f09a71638"
+        },
+        {
+          "name": "PaperAdvances.Theorem3_9_CharacterPositive.all_rational_character_kernels_pos",
+          "source": "src/LeanPaper/ImportedCharacter/CharacterPositive.lean",
+          "source_sha256": "563b89fd4f1c9c8061e3e9496f818ed547a6e928563ebaac3ccd90e44b93cdd0"
+        }
+      ],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "manuscript_component",
+      "baseline_component_audit": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "PARTIAL_SOURCE",
+      "existing_ledger_remaining_obligation": "Actual Hurwitz/Dirichlet Mellin moment identities and analytic Gram realization remain open. Generic finite spectral transfer retains its base positivity hypothesis; character-polynomial positivity alone does not prove the analytic theorem.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    },
+    {
+      "ordinal": 14,
+      "manuscript_item": "4.1",
+      "title": "Spectral irrationality measure criterion",
+      "status": "Partially formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "Integer-polynomial rational-approximation transfer and spectral local-comparison lemmas; a constructed primitive odd-zeta family has a conditional irrationality transfer.",
+      "remaining_obligations": "Derive the printed asymptotic index-budget selection from its hypotheses and connect all decay/local-comparison rates to the actual family. No concrete odd-zeta decay estimate has been supplied.",
+      "exact_hypotheses": "Explicit Decay, LocalComparison and IndexBudget in the measure theorem; NormalizedQuadraticDecay and unboundedness for the odd-zeta transfer. These are substantive unproved family inputs.",
+      "baseline_endpoints": [
+        {
+          "name": "ManuscriptChain.RealTransfer.conditional_measure",
+          "source": "src/Theorem_4_1_Spectral_Irrationality_Measure_Criterion.lean",
+          "source_sha256": "7a4e4762865d8346f9d8ba1b36099850fc31ef4ee452960ca16770dc4d2ffa92"
+        },
+        {
+          "name": "ManuscriptChain.GeneralIrrationality.irrational_zeta_of_normalized_decay",
+          "source": "src/MAIN_CHAIN_IRRATIONALITY.lean",
+          "source_sha256": "abbe4440ff1b6123024787987387789a544c7b4205a9ad73852936d5ab914b69"
+        }
+      ],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "manuscript_component",
+      "baseline_component_audit": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "CONDITIONAL_CANDIDATE_SOURCE",
+      "existing_ledger_remaining_obligation": "General transfer is conditional on explicitly supplied decay/local comparisons; actual odd-zeta quantitative inputs remain open.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    },
+    {
+      "ordinal": 15,
+      "manuscript_item": "4.2",
+      "title": "Transfer for algebraic approximations",
+      "status": "Partially formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "A nonzero integer cannot equal a product of complex quantities whose norm is strictly below one.",
+      "remaining_obligations": "Construct the actual resultant and exact product identity, prove nonvanishing, and establish bounded-degree height and smallness estimates.",
+      "exact_hypotheses": "A nonzero integer resultant value, exact product identity and product-norm upper bound are supplied hypotheses.",
+      "baseline_endpoints": [
+        {
+          "name": "PaperOrder.Section4.proposition_4_2_resultant_product_barrier",
+          "source": "src/LeanPaper/ImportedSection4/Proposition_4_2_Resultant_Product_Barrier.lean",
+          "source_sha256": "0dcc50333b9e60a5cbd14da00e70bad9731b49bbb838b4060799b1240172e921"
+        }
+      ],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "manuscript_component",
+      "baseline_component_audit": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "PARTIAL_REBUILT_SOURCE",
+      "existing_ledger_remaining_obligation": "Constructing the actual integer resultant, proving its nonvanishing and obtaining bounded-degree algebraic-approximation height estimates remain open. The product identity and smallness estimate are explicit hypotheses.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    },
+    {
+      "ordinal": 16,
+      "manuscript_item": "4.3",
+      "title": "Ultrametric zero-free disk",
+      "status": "Already proved and retained",
+      "full_printed_statement_verified": true,
+      "proved_scope": "The complete printed integer-polynomial C_p zero-free disk: at any integral p-adic center with nonzero value, the polynomial norm is preserved at every C_p point in the open disk of that value norm.",
+      "remaining_obligations": "None for Proposition 4.3 itself. Family-specific p-adic zeta identification, valuations and irrationality are outside its printed statement.",
+      "exact_hypotheses": "p prime, Q in Z[X], xi in Z_p, Q(xi) != 0, alpha in C_p and |alpha-xi|_p < |Q(xi)|_p. These are exactly the printed premises, not missing proof obligations.",
+      "baseline_endpoints": [
+        {
+          "name": "PaperAdvances.Proposition4_3_ComplexPadicDisk.PROPOSITION_4_3_INTEGER_COMPLEX_PADIC",
+          "source": "src/LeanPaper/ImportedSection4/Proposition_4_3_ComplexPadicDisk.lean",
+          "source_sha256": "3aaece22dd1443bfb43d4a03979f1c46db35c65d9a556b7cb55b55137b0ec953"
+        }
+      ],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "complete_printed_statement",
+      "baseline_component_audit": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "PARTIAL_REBUILT_SOURCE",
+      "existing_ledger_remaining_obligation": "Center-value nonvanishing and disk membership remain explicit. No p-adic zeta identification, family-specific valuation asymptotic or irrationality endpoint is supplied. Final local audit and native Windows validation remain required.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    },
+    {
+      "ordinal": 17,
+      "manuscript_item": "4.4",
+      "title": "Spectral bound and irrationality measure for zeta(5)",
+      "status": "Partially formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "Only a conditional comparison between historical spectral exponent targets is proved; there is no retained concrete zeta(5) spectral bound or irrationality measure.",
+      "remaining_obligations": "Actual normalization/arithmetic multiplier, determinant decay and spectral bound remain open. Prove the paper value 11.411 and its effective measure; historical 11.407/10.954 are distinct targets.",
+      "exact_hypotheses": "The stronger historical spectral estimate is assumed. Comparing exponentials does not establish either estimate.",
+      "baseline_endpoints": [
+        {
+          "name": "PaperChain.stage06_sharpened_implies_standard",
+          "source": "src/PaperChain/Stage06.lean",
+          "source_sha256": "1a8b10c22a076a9b44ae9aab7746f916ad00f8131bf0e04ce017c71a5b241c02"
+        }
+      ],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "conditional_helper_only",
+      "baseline_component_audit": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "CONDITIONAL_CANDIDATE_SOURCE",
+      "existing_ledger_remaining_obligation": "Actual spectral/normalization/decay bounds unproved. Paper exponent 11.411 differs from historical Stage06 target11.407/10.954; never count stronger target as manuscript proof.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    },
+    {
+      "ordinal": 18,
+      "manuscript_item": "4.5",
+      "title": "Irrationality and measure for b*zeta(5)+a*zeta(3)",
+      "status": "Partially formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "Coupled-shift algebra and general odd-weight/linear-family transfer infrastructure are retained.",
+      "remaining_obligations": "Construct the actual b*zeta(5)+a*zeta(3) positive density cone, p-adic cancellation, uniform growth and quantitative measure inputs.",
+      "exact_hypotheses": "The source definitions of a weight sandwich/positivity cone are not proofs that the actual density lies in it.",
+      "baseline_endpoints": [
+        {
+          "name": "PaperChain.stage07_coupled_shift",
+          "source": "src/PaperChain/Stage07.lean",
+          "source_sha256": "7ec21cf40052dca2d8412fe63c96ce990632d27ec227242ee707fc86ee993d63"
+        },
+        {
+          "name": "ManuscriptChain.GeneralArithmetic.linearFamily_degree",
+          "source": "src/Theorem_4_1_Linear_Odd_Zeta_Family.lean",
+          "source_sha256": "7a91047a95e9075d148fdb6afb05b513a4ff0a43c684e8a091ae9d7bc276a38c"
+        }
+      ],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "conditional_helper_only",
+      "baseline_component_audit": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "PARTIAL_SOURCE",
+      "existing_ledger_remaining_obligation": "Concrete positivity cone, p-adic cancellation, uniform growth and quantitative transfer inputs open.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    },
+    {
+      "ordinal": 19,
+      "manuscript_item": "4.6",
+      "title": "Determinant bounds and coefficient heights",
+      "status": "Partially formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "Actual primitive leading coefficient equals center value times the relative determinant; a finite upper bound on that ratio gives a reciprocal lower bound for the center value.",
+      "remaining_obligations": "Uniform determinant/height-decay and asymptotic constants are unproved. Paper constants 0.23310 and 3.73980 remain distinct from historical 0.23338 and 3.73872.",
+      "exact_hypotheses": "The ratio upper bound is an explicit finite hypothesis, not an established family estimate.",
+      "baseline_endpoints": [
+        {
+          "name": "LeanPaper.Section4ManuscriptBridge.primitive_leading_barrier_identity",
+          "source": "src/LeanPaper/Section4ManuscriptBridge.lean",
+          "source_sha256": "c7d82a2dda22fb92ae2b9d7ecbce560fd1dc14f3fbe21637f165ca17467eec52"
+        },
+        {
+          "name": "LeanPaper.Section4ManuscriptBridge.primitive_evaluation_lower_of_inverse_ratio_bound",
+          "source": "src/LeanPaper/Section4ManuscriptBridge.lean",
+          "source_sha256": "c7d82a2dda22fb92ae2b9d7ecbce560fd1dc14f3fbe21637f165ca17467eec52"
+        }
+      ],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "manuscript_component",
+      "baseline_component_audit": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "PARTIAL_SOURCE",
+      "existing_ledger_remaining_obligation": "The required uniform determinant/height-decay bounds and asymptotic constants remain unproved. Preserve paper constants0.23310 and3.73980 separately from historical Stage08 constants0.23338 and3.73872.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    },
+    {
+      "ordinal": 20,
+      "manuscript_item": "4.7",
+      "title": "Root collapse and separation",
+      "status": "Partially formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "A finite cap-and-average counting inequality applies to actual spectral log magnitudes; a factor above threshold gives an actual root within the corresponding exponential radius.",
+      "remaining_obligations": "Prove uniform spectral caps, average lower bounds and the actual asymptotic collapse/separation constants.",
+      "exact_hypotheses": "The spectral cap and average bounds are supplied; the finite conversion is proved.",
+      "baseline_endpoints": [
+        {
+          "name": "LeanPaper.Section4ManuscriptBridge.manuscript_spectral_cluster_fraction",
+          "source": "src/LeanPaper/Section4ManuscriptBridge.lean",
+          "source_sha256": "c7d82a2dda22fb92ae2b9d7ecbce560fd1dc14f3fbe21637f165ca17467eec52"
+        },
+        {
+          "name": "LeanPaper.Section4ManuscriptBridge.manuscript_large_exponent_gives_close_root",
+          "source": "src/LeanPaper/Section4ManuscriptBridge.lean",
+          "source_sha256": "c7d82a2dda22fb92ae2b9d7ecbce560fd1dc14f3fbe21637f165ca17467eec52"
+        }
+      ],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "manuscript_component",
+      "baseline_component_audit": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "PARTIAL_SOURCE",
+      "existing_ledger_remaining_obligation": "Uniform spectral caps and average lower bounds are explicit hypotheses. The actual asymptotic root-collapse/separation rates are not supplied by the finite counting theorem.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    },
+    {
+      "ordinal": 21,
+      "manuscript_item": "4.8",
+      "title": "Rational root exclusion and cluster degree bounds",
+      "status": "Partially formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "Finite rational/integer factor-distance upper and lower bounds and actual primitive-polynomial data.",
+      "remaining_obligations": "Effective family-wide coefficient/height budgets, nonvanishing, and uniform rational-root exclusion/cluster-degree estimates remain open.",
+      "exact_hypotheses": "Finite factorization and bound hypotheses are explicit; no asymptotic budget is constructed.",
+      "baseline_endpoints": [
+        {
+          "name": "PaperOrder.Section4.proposition_4_8_factor_evaluation_bounds",
+          "source": "src/LeanPaper/ImportedSection4/Proposition_4_8_Factor_Distance_Bounds.lean",
+          "source_sha256": "2aa7dc533a96d1bcd3d758856d06a86c77a7b4536a38bae6272490bb9d117b45"
+        }
+      ],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "manuscript_component",
+      "baseline_component_audit": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "PARTIAL_SOURCE",
+      "existing_ledger_remaining_obligation": "Effective family-wide coefficient/height budgets, nonvanishing inputs and the claimed uniform quantitative rational-root/cluster-degree endpoint remain open.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    },
+    {
+      "ordinal": 22,
+      "manuscript_item": "5.1",
+      "title": "Two-variable Beukers measure for zeta(7)",
+      "status": "Partially formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "Actual dual rational moments, affine entries and determinant; exact symmetry and coefficient-Gram slope C*C^T.",
+      "remaining_obligations": "Continuous two-variable Beukers measure evaluation, convergence and identification with these rational moments are not constructed.",
+      "exact_hypotheses": "Finite polynomial coefficient arrays and explicit rational moment formulas; a definition matching the desired moments is not a proof of the integral formula.",
+      "baseline_endpoints": [
+        {
+          "name": "PaperOrder.CoreAlgebra.dualSlopeMatrix_eq_CCT",
+          "source": "src/LeanPaper/ImportedSection56/DualPencilCCT.lean",
+          "source_sha256": "9f871cec066a61c3e1875518c6d6373f111f7bed5ba36cc61e9ee63e3cf2b92f"
+        },
+        {
+          "name": "PaperOrder.CoreAlgebra.dualPencil_decomposition",
+          "source": "src/LeanPaper/ImportedSection56/DualPencilCCT.lean",
+          "source_sha256": "9f871cec066a61c3e1875518c6d6373f111f7bed5ba36cc61e9ee63e3cf2b92f"
+        }
+      ],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "manuscript_component",
+      "baseline_component_audit": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "PARTIAL_SOURCE",
+      "existing_ledger_remaining_obligation": "The complete continuous two-variable Beukers moment evaluation and its analytic calibration remain separate. Finite coefficient algebra alone does not establish the integral representation.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    },
+    {
+      "ordinal": 23,
+      "manuscript_item": "5.2",
+      "title": "Dual hyperbolicity and Krein decomposition",
+      "status": "Partially formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "Coefficient-Gram SOS/nullspace and row-separation positivity, actual dual degree/real spectrum, basis/weight invariance, finite Krein identities/cones. A genuine zeta(7)<38/37 estimate proves the explicit 37X-38 witness is negative at true zeta(7).",
+      "remaining_obligations": "Continuous/infinite Krein decomposition, constructed general positive/negative subspaces and tail admissions remain open. The rank-one sign does not prove the paper-wide cones or irrationality.",
+      "exact_hypotheses": "Row separation/full coefficient rank where required; selected monomial families discharge it. Finite Krein cone hypotheses remain explicit.",
+      "baseline_endpoints": [
+        {
+          "name": "LeanPaper.Section5DualSpectrum.actual_dual_zeros_real",
+          "source": "src/LeanPaper/Section5DualSpectrum.lean",
+          "source_sha256": "a0d4969609d9ddcd6c00fa7f57b3a27d8f6060fee3178f9428b3da50b4f0ca41"
+        },
+        {
+          "name": "PaperOrder.PrincipalTheorems.finiteKreinGram_posDef",
+          "source": "src/LeanPaper/ImportedSection56/FiniteKreinCone.lean",
+          "source_sha256": "fe887a6f8bd5e51cc58ae337e19e4ba46e54596fc071f6811396fa47c133b63b"
+        },
+        {
+          "name": "PaperOrder.PrincipalTheorems.weightSeven_rankOne_negative_unconditional",
+          "source": "src/LeanPaper/ImportedSection56/ZetaSevenBound.lean",
+          "source_sha256": "91e315b9b416d21c586dcc9f0b4ffc6a7523e08bef9b99861f60b69000563a58"
+        }
+      ],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "manuscript_component",
+      "baseline_component_audit": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "CONDITIONAL_CANDIDATE_SOURCE",
+      "existing_ledger_remaining_obligation": "The all-dimensional infinite analytic Krein cones, actual weight-seven tail estimate and general finite positivity admissions remain open. The accepted rank-one sign calculation is not a witness for those universal claims or for irrationality; analytic series identities retain their summability hypotheses.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    },
+    {
+      "ordinal": 24,
+      "manuscript_item": "5.3",
+      "title": "Beukers measure and dual pencil for beta(4)",
+      "status": "Partially formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "Finite two/three-node beta Gram strictness, tensor-grid identities and orientation-corrected residue positivity.",
+      "remaining_obligations": "Construct the continuous beta(4) Beukers measure and identify the actual dual moments/pencil and full claimed spectrum.",
+      "exact_hypotheses": "Positive finite node weights and injective evaluation data; the two/three-node cases supply their finite injectivity.",
+      "baseline_endpoints": [
+        {
+          "name": "PaperChronology.Paper10.PAPER10_BETA_BILINEAR_TENSOR_GRID_STRICT",
+          "source": "src/LeanPaper/Section6BetaFinite.lean",
+          "source_sha256": "8ddc495445da978b7942982ae66b75c97d934624a86ed43c03e8ccf03fcde92f"
+        },
+        {
+          "name": "PaperChronology.Paper10.PAPER10_BETA_THREE_NODE_PENCIL_STRICT",
+          "source": "src/LeanPaper/Section6BetaFinite.lean",
+          "source_sha256": "8ddc495445da978b7942982ae66b75c97d934624a86ed43c03e8ccf03fcde92f"
+        }
+      ],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "manuscript_component",
+      "baseline_component_audit": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "PARTIAL_SOURCE",
+      "existing_ledger_remaining_obligation": "The continuous beta(4) two-variable measure, exact moment evaluation and full dual-pencil analytic identification remain open.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    },
+    {
+      "ordinal": 25,
+      "manuscript_item": "5.4",
+      "title": "Higher-zeta cancellation on even pole pairs",
+      "status": "Partially formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "Simple-pole pullback and even pole-pair generator identities are retained.",
+      "remaining_obligations": "Extend to the full manuscript rational functional by representation independence/linearity and prove the stated higher-zeta cancellation with exact pole restrictions.",
+      "exact_hypotheses": "Simple poles and k>=1; unsupported higher-order poles are not silently admitted.",
+      "baseline_endpoints": [
+        {
+          "name": "Zetahyperbolic.pullback_identity_pole",
+          "source": "src/Zetahyperbolic/Section2Checked.lean",
+          "source_sha256": "97a3eebe510a69450ce92a8c880ed7341f90017d52748152e44786f8ea612822"
+        }
+      ],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "manuscript_component",
+      "baseline_component_audit": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "PARTIAL_SOURCE",
+      "existing_ledger_remaining_obligation": "Simple-pole identities must be connected to full functional; exclude unsupported higher-order poles.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    },
+    {
+      "ordinal": 26,
+      "manuscript_item": "5.6",
+      "title": "Weight-seven prime-sum evaluation and pole refinement",
+      "status": "Not formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "No mapped active proof of this complete result or its specific prime-sum integrals.",
+      "remaining_obligations": "Construct the piecewise floor-function prime sums, prove the exact outer integral 453803/288000, inner tail bounds/prime-sum limit and pole-ordered residue refinement.",
+      "exact_hypotheses": "",
+      "baseline_endpoints": [],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "no_active_manuscript_proof",
+      "baseline_component_audit": "NO_MAPPED_ACTIVE_ENDPOINT",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "NOT_YET_MAPPED",
+      "existing_ledger_remaining_obligation": "Prime-sum limit and exact rational residue expression not established in focused active-source review.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    },
+    {
+      "ordinal": 27,
+      "manuscript_item": "5.7",
+      "title": "Double-pole determinant for 1,zeta(5),zeta(6)",
+      "status": "Not formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "No mapped active proof of the simultaneous double-pole determinant.",
+      "remaining_obligations": "Construct the explicit double-pole partial fractions and functional, prove q-adic valuation v_q(J_(2m))=-36m for the stated primes, and the local minor valuation lower bound.",
+      "exact_hypotheses": "",
+      "baseline_endpoints": [],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "no_active_manuscript_proof",
+      "baseline_component_audit": "NO_MAPPED_ACTIVE_ENDPOINT",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "NOT_YET_MAPPED",
+      "existing_ledger_remaining_obligation": "Actual q-adic nonvanishing and double-pole minor valuation require mapping/proof.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    },
+    {
+      "ordinal": 28,
+      "manuscript_item": "6.1",
+      "title": "Divided-difference valuation and intrinsic p^-6 barrier",
+      "status": "Not formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "No mapped active proof of the complete divided-difference/valuation result.",
+      "remaining_obligations": "Prove the two-variable to Mellin integral change of variables, off-diagonal harmonic divided-difference valuation -7, and invertible local pole obstruction block for the actual family.",
+      "exact_hypotheses": "",
+      "baseline_endpoints": [],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "no_active_manuscript_proof",
+      "baseline_component_audit": "NO_MAPPED_ACTIVE_ENDPOINT",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "NOT_YET_MAPPED",
+      "existing_ledger_remaining_obligation": "Retain this manuscript obligation. No manuscript-equivalent native certification established by this focused review; historical theorem filenames/blueprints are not proof evidence.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    },
+    {
+      "ordinal": 29,
+      "manuscript_item": "6.2",
+      "title": "Simultaneous weight-(6,7) Beukers functional",
+      "status": "Not formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "No mapped active proof of the simultaneous weight-(6,7) integral formula.",
+      "remaining_obligations": "Evaluate the shifted Beukers moments, derive the exact zeta(7)/zeta(6) linear form, and prove the common denominator 6*d_K^7 with no added overhead.",
+      "exact_hypotheses": "",
+      "baseline_endpoints": [],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "no_active_manuscript_proof",
+      "baseline_component_audit": "NO_MAPPED_ACTIVE_ENDPOINT",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "NOT_YET_MAPPED",
+      "existing_ledger_remaining_obligation": "Retain this manuscript obligation. No manuscript-equivalent native certification established by this focused review; historical theorem filenames/blueprints are not proof evidence.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    },
+    {
+      "ordinal": 30,
+      "manuscript_item": "6.3",
+      "title": "q-adic nonvanishing and positive-cone approximations",
+      "status": "Not formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "No mapped active proof of the stated q-adic determinant or explicit infinite-cone approximation family.",
+      "remaining_obligations": "For A_rho=x^rho+x^(rho+q), prove valuation -7q and rational nonvanishing; construct the negative-mode annihilating subspace, dimension bound, positive evaluation and exponential determinant decay.",
+      "exact_hypotheses": "",
+      "baseline_endpoints": [],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "no_active_manuscript_proof",
+      "baseline_component_audit": "NO_MAPPED_ACTIVE_ENDPOINT",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "NOT_YET_MAPPED",
+      "existing_ledger_remaining_obligation": "Retain this manuscript obligation. No manuscript-equivalent native certification established by this focused review; historical theorem filenames/blueprints are not proof evidence.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    },
+    {
+      "ordinal": 31,
+      "manuscript_item": "6.4",
+      "title": "Character-Vandermonde sign cancellation and beta hyperbolicity",
+      "status": "Partially formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "Raw alternating character/Vandermonde sign and its corrected normalization, finite positive residues and finite beta Gram strictness.",
+      "remaining_obligations": "Identify the actual analytic character-weight moment measure/pencil and prove the q-adic nonvanishing and full claimed hyperbolicity statement. Raw sign at odd N must be retained.",
+      "exact_hypotheses": "Positive finite weight/evaluation assumptions are explicit; normalization removes the raw (-1)^N orientation rather than proving it was always positive.",
+      "baseline_endpoints": [
+        {
+          "name": "PaperChronology.Paper10.PAPER10_BETA_VANDERMONDE_RESIDUAL_SIGN",
+          "source": "src/LeanPaper/Section6BetaFinite.lean",
+          "source_sha256": "8ddc495445da978b7942982ae66b75c97d934624a86ed43c03e8ccf03fcde92f"
+        },
+        {
+          "name": "PaperChronology.Paper10.PAPER10_BETA_NORMALIZED_RESIDUES_POSITIVE",
+          "source": "src/LeanPaper/Section6BetaFinite.lean",
+          "source_sha256": "8ddc495445da978b7942982ae66b75c97d934624a86ed43c03e8ccf03fcde92f"
+        }
+      ],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "manuscript_component",
+      "baseline_component_audit": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "PARTIAL_SOURCE",
+      "existing_ledger_remaining_obligation": "Analytic character-weight identification and q-adic nonvanishing remain open. A raw positive-sign claim at odd N is not substituted for the proved orientation-corrected formula.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    },
+    {
+      "ordinal": 32,
+      "manuscript_item": "6.5",
+      "title": "q-adic nonvanishing at zero",
+      "status": "Not formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "No mapped active proof of the actual beta determinant valuation at zero.",
+      "remaining_obligations": "For q>7 and q=1 mod 8 with the specified N,K, prove v_q(Delta_K(0))=-(3m_q-2), including exact local residue/minor arithmetic.",
+      "exact_hypotheses": "",
+      "baseline_endpoints": [],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "no_active_manuscript_proof",
+      "baseline_component_audit": "NO_MAPPED_ACTIVE_ENDPOINT",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "NOT_YET_MAPPED",
+      "existing_ledger_remaining_obligation": "Retain this manuscript obligation. No manuscript-equivalent native certification established by this focused review; historical theorem filenames/blueprints are not proof evidence.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    },
+    {
+      "ordinal": 33,
+      "manuscript_item": "6.6",
+      "title": "Generalized multi-weight positive-definite pencil",
+      "status": "Partially formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "Finite positive matrix cones and nonnegative semidefinite cones with a positively weighted positive-definite anchor give positive direction, exact finite degree, real spectrum and Turan inequalities.",
+      "remaining_obligations": "Construct the actual infinite multiweight density, uniform two-sided analytic comparison, arithmetic multiplier and universal signature/asymptotic claims.",
+      "exact_hypotheses": "Finite component PSD/PD and coefficient nonnegativity/positive anchor are assumptions; no infinite analytic density is instantiated.",
+      "baseline_endpoints": [
+        {
+          "name": "PaperAdvances.Theorem6_6_FiniteMultiweightCone.FINITE_MULTIWEIGHT_SPECTRAL_HYPERBOLICITY",
+          "source": "src/LeanPaper/ImportedMultiweight/FiniteMultiweightCone.lean",
+          "source_sha256": "dfb37d5c7f21259b35f66e35e10e193fdba6727423057d099bb27f5828cf04c0"
+        },
+        {
+          "name": "PaperAdvances.Theorem6_6_AnchoredSemidefiniteCone.ANCHORED_FINITE_CONE_SPECTRAL_PACKAGE",
+          "source": "src/LeanPaper/ImportedMultiweight/AnchoredSemidefiniteCone.lean",
+          "source_sha256": "64605801036b4d12260bf6dd5c7fc8c27af69993ca6fbb926ddc408b0e7b6764"
+        }
+      ],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "manuscript_component",
+      "baseline_component_audit": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "PARTIAL_REBUILT_SOURCE",
+      "existing_ledger_remaining_obligation": "The actual infinite multiweight density, uniform two-sided analytic comparison, arithmetic multiplier and universal signature claims remain open. Finite component positivity and the anchor are explicit matrix hypotheses.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    },
+    {
+      "ordinal": 34,
+      "manuscript_item": "6.7",
+      "title": "Universal multi-weight Beukers Krein decomposition",
+      "status": "Not formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "No active manuscript-equivalent universal multiweight Beukers construction.",
+      "remaining_obligations": "Construct the actual multiweight signed measure, its moment identity and coefficient Gram bridge; prove infinite-rank Krein positive/negative subspaces and arithmetic nonvanishing. The weight-seven finite algebra of 5.2 is not this general theorem.",
+      "exact_hypotheses": "",
+      "baseline_endpoints": [],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "no_active_manuscript_proof",
+      "baseline_component_audit": "NO_MAPPED_ACTIVE_ENDPOINT",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "NOT_YET_MAPPED",
+      "existing_ledger_remaining_obligation": "Retain this manuscript obligation. No manuscript-equivalent native certification established by this focused review; historical theorem filenames/blueprints are not proof evidence.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    },
+    {
+      "ordinal": 35,
+      "manuscript_item": "6.8",
+      "title": "Three-term linear-independence cone",
+      "status": "Not formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "No active proof of the unconditional three-term linear-independence cone.",
+      "remaining_obligations": "Construct the actual cone/linear-form approximants and all arithmetic nonvanishing, height and decay estimates needed to deduce independence of 1,zeta(3),zeta(5).",
+      "exact_hypotheses": "",
+      "baseline_endpoints": [],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "no_active_manuscript_proof",
+      "baseline_component_audit": "NO_MAPPED_ACTIVE_ENDPOINT",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "NOT_YET_MAPPED",
+      "existing_ledger_remaining_obligation": "Retain this manuscript obligation. No manuscript-equivalent native certification established by this focused review; historical theorem filenames/blueprints are not proof evidence.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    },
+    {
+      "ordinal": 36,
+      "manuscript_item": "6.9",
+      "title": "Triple-pole and multi-weight determinants",
+      "status": "Partially formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "Finite triple-pole Hermite-jet functional multiplication, block congruence and determinant factorization/nonvanishing.",
+      "remaining_obligations": "Prove exact global pole order, actual-family distinct-node Hermite-table invertibility and nonzero local factors, then q-adic/arithmetic transfer.",
+      "exact_hypotheses": "The nonzero Hermite-table determinant and highest local jet/block coefficients remain explicit hypotheses.",
+      "baseline_endpoints": [
+        {
+          "name": "Zetahyperbolic.TriplePoleRepair.hermite_congruence",
+          "source": "src/LeanPaper/ImportedSection56/TriplePoleHermite.lean",
+          "source_sha256": "ba8dc313f5e120fec29da378c89312bbdd4d88b2f689b4b135317e27a32e9408"
+        },
+        {
+          "name": "Zetahyperbolic.TriplePoleRepair.momentMatrix_det_ne_zero",
+          "source": "src/LeanPaper/ImportedSection56/TriplePoleHermite.lean",
+          "source_sha256": "ba8dc313f5e120fec29da378c89312bbdd4d88b2f689b4b135317e27a32e9408"
+        }
+      ],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "manuscript_component",
+      "baseline_component_audit": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "PARTIAL_SOURCE",
+      "existing_ledger_remaining_obligation": "Global exact pole order, distinct-node/Hermite-table invertibility for the manuscript family and q-adic/arithmetic transfer remain separate obligations; nonzero block/table factors remain explicit where used.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    },
+    {
+      "ordinal": 37,
+      "manuscript_item": "6.10",
+      "title": "Potential-gap identity and quadratic derivative growth",
+      "status": "Partially formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "Finite centered/normalized determinant, leading coefficient and relative/symmetric spectral determinant identities, including constructed positive square root.",
+      "remaining_obligations": "Prove the asymptotic positive potential gap and quadratic derivative-growth limits for the stated one/two-variable families.",
+      "exact_hypotheses": "Finite positive-definite base and nonzero scale/direction where degree is asserted; no large-K growth estimate follows from the identity alone.",
+      "baseline_endpoints": [
+        {
+          "name": "Zetahyperbolic.Theorem6_10.abs_leadingCoeff_eq_eval_mul_sqrt_det",
+          "source": "src/LeanPaper/ImportedSection56/FiniteDeterminant.lean",
+          "source_sha256": "2c9005cb6d0a53f6a199fe49bf6d1ed9f4d2bb3147d8d2720cb57400fbe62f5d"
+        }
+      ],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "manuscript_component",
+      "baseline_component_audit": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "PARTIAL_SOURCE",
+      "existing_ledger_remaining_obligation": "The asymptotic positive potential gap and quadratic derivative-growth claims remain open. A finite determinant identity does not establish the needed growth estimates.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    },
+    {
+      "ordinal": 38,
+      "manuscript_item": "6.11",
+      "title": "Distribution growth and 2-adic quotient obstruction",
+      "status": "Not formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "No active proof of the distribution growth law or complete dyadic quotient obstruction.",
+      "remaining_obligations": "Prove Euler distribution identities, local prime weights and their growth in k, the archimedean rate independence, and the exact 2-adic polynomial-quotient leading coefficient/valuation obstruction.",
+      "exact_hypotheses": "",
+      "baseline_endpoints": [],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "no_active_manuscript_proof",
+      "baseline_component_audit": "NO_MAPPED_ACTIVE_ENDPOINT",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "NOT_YET_MAPPED",
+      "existing_ledger_remaining_obligation": "Retain this manuscript obligation. No manuscript-equivalent native certification established by this focused review; historical theorem filenames/blueprints are not proof evidence.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    },
+    {
+      "ordinal": 39,
+      "manuscript_item": "6.12",
+      "title": "Full-dimension sign-flip positivity and q-adic nonvanishing",
+      "status": "Not formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "No active proof of full-dimension sign-flip restoration for actual beta(4).",
+      "remaining_obligations": "Construct the sign-flipped actual pencil, prove oriented slope, construct rational cutoffs sufficiently close to the sign-change point to establish full Gram positivity, and preserve exact q-adic nonvanishing.",
+      "exact_hypotheses": "",
+      "baseline_endpoints": [],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "no_active_manuscript_proof",
+      "baseline_component_audit": "NO_MAPPED_ACTIVE_ENDPOINT",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "NOT_YET_MAPPED",
+      "existing_ledger_remaining_obligation": "Retain this manuscript obligation. No manuscript-equivalent native certification established by this focused review; historical theorem filenames/blueprints are not proof evidence.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    },
+    {
+      "ordinal": 40,
+      "manuscript_item": "6.13",
+      "title": "Central-factorial secant differential identity",
+      "status": "Not formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "No active proof of the central-factorial secant differential identity or its analytic consequences.",
+      "remaining_obligations": "Prove the differential identity, Laplace-mode annihilation/convergence and positive accelerated weight; identify the coupled actual pencil and prove the stated unilateral signature.",
+      "exact_hypotheses": "",
+      "baseline_endpoints": [],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "no_active_manuscript_proof",
+      "baseline_component_audit": "NO_MAPPED_ACTIVE_ENDPOINT",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "NOT_YET_MAPPED",
+      "existing_ledger_remaining_obligation": "Retain this manuscript obligation. No manuscript-equivalent native certification established by this focused review; historical theorem filenames/blueprints are not proof evidence.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    },
+    {
+      "ordinal": 41,
+      "manuscript_item": "6.14",
+      "title": "Even-pole cosh scaling and coupled pencils",
+      "status": "Not formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "No active proof of the even-pole beta/cosh analytic scaling and coupled zeta-beta theorem.",
+      "remaining_obligations": "Prove exact beta even-pole/moment formulas and cosh scaling, uniform positive comparison constants, coupled-pencil identification/signature and the claimed exponential disk estimates.",
+      "exact_hypotheses": "",
+      "baseline_endpoints": [],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "no_active_manuscript_proof",
+      "baseline_component_audit": "NO_MAPPED_ACTIVE_ENDPOINT",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "NOT_YET_MAPPED",
+      "existing_ledger_remaining_obligation": "Retain this manuscript obligation. No manuscript-equivalent native certification established by this focused review; historical theorem filenames/blueprints are not proof evidence.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    },
+    {
+      "ordinal": 42,
+      "manuscript_item": "6.15",
+      "title": "Arithmetic transcendence, positive measure and rank-one law",
+      "status": "Not formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "No active proof of the full odd-beta arithmetic/measure/rank-one result.",
+      "remaining_obligations": "Identify odd beta values as nonzero rational multiples of odd powers of pi; establish the claimed effective measures, continuous positive moments and total positivity; connect the rank-one pencil and prove its geometric convergence asymptotic.",
+      "exact_hypotheses": "",
+      "baseline_endpoints": [],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "no_active_manuscript_proof",
+      "baseline_component_audit": "NO_MAPPED_ACTIVE_ENDPOINT",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "NOT_YET_MAPPED",
+      "existing_ledger_remaining_obligation": "Retain this manuscript obligation. No manuscript-equivalent native certification established by this focused review; historical theorem filenames/blueprints are not proof evidence.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    },
+    {
+      "ordinal": 43,
+      "manuscript_item": "6.16",
+      "title": "Generalized multi-weight Zeta-Beta pencil",
+      "status": "Not formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "No active proof of the full multiweight Zeta-Beta positive-density construction.",
+      "remaining_obligations": "Construct its actual combined analytic density and moment/pencil identity; prove positivity-cone comparison, universal signature and quantitative/arithmetic conclusions. Finite cone modules do not instantiate these data.",
+      "exact_hypotheses": "",
+      "baseline_endpoints": [],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "no_active_manuscript_proof",
+      "baseline_component_audit": "NO_MAPPED_ACTIVE_ENDPOINT",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "NOT_YET_MAPPED",
+      "existing_ledger_remaining_obligation": "Retain this manuscript obligation. No manuscript-equivalent native certification established by this focused review; historical theorem filenames/blueprints are not proof evidence.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    },
+    {
+      "ordinal": 44,
+      "manuscript_item": "6.17",
+      "title": "Universal two-variable Zeta-Beta pencil",
+      "status": "Not formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "No active proof of the universal two-variable Zeta-Beta theorem.",
+      "remaining_obligations": "Construct actual coupled signed measures and moments, full-rank coefficient slope with growth control, infinite Krein subspaces and highest-weight q-adic determinant valuations.",
+      "exact_hypotheses": "",
+      "baseline_endpoints": [],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "no_active_manuscript_proof",
+      "baseline_component_audit": "NO_MAPPED_ACTIVE_ENDPOINT",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "NOT_YET_MAPPED",
+      "existing_ledger_remaining_obligation": "Retain this manuscript obligation. No manuscript-equivalent native certification established by this focused review; historical theorem filenames/blueprints are not proof evidence.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    },
+    {
+      "ordinal": 45,
+      "manuscript_item": "6.18",
+      "title": "Principal-minor 2-adic integrality and dyadic heights",
+      "status": "Not formalized",
+      "full_printed_statement_verified": false,
+      "proved_scope": "No active proof of the full principal-minor dyadic integrality/height and effective-measure theorem.",
+      "remaining_obligations": "Prove the exact sub-threshold quotient disappearance and pole integrality, full-dimension dyadic height loss and odd-prime multiplier estimates, then the printed measure 25687 for the stated cones. Historical degree/quotient lemmas are not an active proof of these arithmetic claims.",
+      "exact_hypotheses": "",
+      "baseline_endpoints": [],
+      "active_work": "",
+      "printed_correction": "",
+      "evidence_kind": "no_active_manuscript_proof",
+      "baseline_component_audit": "NO_MAPPED_ACTIVE_ENDPOINT",
+      "new_work_verification": "NOT_APPLICABLE",
+      "existing_ledger_source_state": "NOT_YET_MAPPED",
+      "existing_ledger_remaining_obligation": "Retain this manuscript obligation. No manuscript-equivalent native certification established by this focused review; historical theorem filenames/blueprints are not proof evidence.",
+      "candidate_endpoints": [],
+      "new_verified_endpoints": []
+    }
+  ],
+  "definitions_and_constructions": {
+    "counted_in_45_results": false,
+    "numbered_definitions_found": [
+      "2.1"
+    ],
+    "scope": "The manuscript contains one numbered Definition (2.1). Main surrounding constructions are mapped separately below. Additional modified-family constructions are recorded with their numbered theorem rows; listing a definition does not certify its analytic/arithmetic claims.",
+    "items": [
+      {
+        "construction_id": "Definition 2.1",
+        "label": "Order-s rational moment functional",
+        "status": "Partially formalized",
+        "constructed_scope": "The printed Bernoulli monomial moments and harmonic simple-pole moments are defined over Q; arbitrary polynomial plus finite simple-pole normal forms have an explicit polynomial-valued mu. Representation uniqueness and the exact algebraic rational-function domain are new compiled and independently axiom-audited constructions.",
+        "remaining_obligation": "Lift mu and tau as linear maps on their RatFunc subspaces and assemble their substitution identities. Defined moment values do not themselves prove linear-functional domain identification or analytic realization.",
+        "endpoints": [
+          {
+            "name": "ManuscriptChain.Real.monomialMoment",
+            "source": "src/Definition_2_1_Order_s_Rational_Moment_Functional.lean",
+            "source_sha256": "73e1d6c965990ba7f241ffb732194bab7763eea93f6b07d3d71302a515936c5c"
+          },
+          {
+            "name": "ManuscriptChain.Real.polynomialMoment",
+            "source": "src/Definition_2_1_Order_s_Rational_Moment_Functional.lean",
+            "source_sha256": "73e1d6c965990ba7f241ffb732194bab7763eea93f6b07d3d71302a515936c5c"
+          },
+          {
+            "name": "ManuscriptChain.Real.poleConstant",
+            "source": "src/Definition_2_1_Order_s_Rational_Moment_Functional.lean",
+            "source_sha256": "73e1d6c965990ba7f241ffb732194bab7763eea93f6b07d3d71302a515936c5c"
+          },
+          {
+            "name": "Zetahyperbolic.RatMomentElem",
+            "source": "src/Zetahyperbolic/Section2Checked.lean",
+            "source_sha256": "97a3eebe510a69450ce92a8c880ed7341f90017d52748152e44786f8ea612822"
+          },
+          {
+            "name": "Zetahyperbolic.muFunctionalPoly",
+            "source": "src/Zetahyperbolic/Section2Checked.lean",
+            "source_sha256": "97a3eebe510a69450ce92a8c880ed7341f90017d52748152e44786f8ea612822"
+          },
+          {
+            "name": "LeanPaper.Section2RepresentationIndependence.muOnDomain",
+            "source": "src/LeanPaper/Section2RepresentationIndependence.lean",
+            "source_sha256": "b66b7810f05862d4a9e64c33949aa7c33d8454d783aeaff3acd39118fca6a02b"
+          },
+          {
+            "name": "LeanPaper.Section2RationalDomains.muDomain_iff_denom_dvd",
+            "source": "src/LeanPaper/Section2RationalDomains.lean",
+            "source_sha256": "b1b19199280667a2b13ec3b7d60dba867049477c4980245a31d45e5c8c4f7c29"
+          }
+        ]
+      },
+      {
+        "construction_id": "parameters",
+        "label": "Parameters, denominators and quotient/residue data",
+        "status": "Constructed and retained",
+        "constructed_scope": "Actual k,m,N,K, weight 2k+1, h=K-N, admissibility, D_N, tail denominator, polynomial quotient and residues are explicit.",
+        "remaining_obligation": "No extra arithmetic/asymptotic theorem follows from these definitions.",
+        "endpoints": [
+          {
+            "name": "ManuscriptChain.Real.Parameters",
+            "source": "src/Definition_2_1_Order_s_Rational_Moment_Functional.lean",
+            "source_sha256": "73e1d6c965990ba7f241ffb732194bab7763eea93f6b07d3d71302a515936c5c"
+          },
+          {
+            "name": "ManuscriptChain.Real.Admissible",
+            "source": "src/Definition_2_1_Order_s_Rational_Moment_Functional.lean",
+            "source_sha256": "73e1d6c965990ba7f241ffb732194bab7763eea93f6b07d3d71302a515936c5c"
+          },
+          {
+            "name": "ManuscriptChain.Real.D",
+            "source": "src/Definition_2_1_Order_s_Rational_Moment_Functional.lean",
+            "source_sha256": "73e1d6c965990ba7f241ffb732194bab7763eea93f6b07d3d71302a515936c5c"
+          },
+          {
+            "name": "ManuscriptChain.Real.tailD",
+            "source": "src/Definition_2_1_Order_s_Rational_Moment_Functional.lean",
+            "source_sha256": "73e1d6c965990ba7f241ffb732194bab7763eea93f6b07d3d71302a515936c5c"
+          },
+          {
+            "name": "ManuscriptChain.Real.quotient",
+            "source": "src/Definition_2_1_Order_s_Rational_Moment_Functional.lean",
+            "source_sha256": "73e1d6c965990ba7f241ffb732194bab7763eea93f6b07d3d71302a515936c5c"
+          },
+          {
+            "name": "ManuscriptChain.Real.residue",
+            "source": "src/Definition_2_1_Order_s_Rational_Moment_Functional.lean",
+            "source_sha256": "73e1d6c965990ba7f241ffb732194bab7763eea93f6b07d3d71302a515936c5c"
+          }
+        ]
+      },
+      {
+        "construction_id": "zeta_center",
+        "label": "Harmonic sums and true zeta center",
+        "status": "Constructed and retained",
+        "constructed_scope": "The rational harmonic sums and convergent positive real zeta series are defined; the series is identified with the real part of Mathlib riemannZeta.",
+        "remaining_obligation": "The identification supplies no irrationality statement.",
+        "endpoints": [
+          {
+            "name": "ManuscriptChain.Real.harmonic",
+            "source": "src/Definition_2_1_Order_s_Rational_Moment_Functional.lean",
+            "source_sha256": "73e1d6c965990ba7f241ffb732194bab7763eea93f6b07d3d71302a515936c5c"
+          },
+          {
+            "name": "ManuscriptChain.Real.zeta",
+            "source": "src/Definition_2_1_Order_s_Rational_Moment_Functional.lean",
+            "source_sha256": "73e1d6c965990ba7f241ffb732194bab7763eea93f6b07d3d71302a515936c5c"
+          },
+          {
+            "name": "ManuscriptChain.Real.zeta_eq_riemannZeta_re",
+            "source": "src/Definition_2_1_Order_s_Rational_Moment_Functional.lean",
+            "source_sha256": "73e1d6c965990ba7f241ffb732194bab7763eea93f6b07d3d71302a515936c5c"
+          }
+        ]
+      },
+      {
+        "construction_id": "tau",
+        "label": "Tau functional and its simple integer-pole domain",
+        "status": "Partially formalized",
+        "constructed_scope": "Bernoulli tau monomial/pole generators and finite-span tau are explicit; the new TauDomain is exactly the rational functions whose denominator divides a finite product of distinct integer linear factors.",
+        "remaining_obligation": "Lifted RatFunc linearity and actual substitution/reflection maps remain open; finite moment identities and representation independence are separate verified components under the current audit.",
+        "endpoints": [
+          {
+            "name": "Zetahyperbolic.tauMonomial",
+            "source": "src/Zetahyperbolic/Section2Checked.lean",
+            "source_sha256": "97a3eebe510a69450ce92a8c880ed7341f90017d52748152e44786f8ea612822"
+          },
+          {
+            "name": "Zetahyperbolic.tauPolePoly",
+            "source": "src/Zetahyperbolic/Section2Checked.lean",
+            "source_sha256": "97a3eebe510a69450ce92a8c880ed7341f90017d52748152e44786f8ea612822"
+          },
+          {
+            "name": "LeanPaper.PullbackReflection.tauFiniteSpan",
+            "source": "src/LeanPaper/PullbackReflection.lean",
+            "source_sha256": "9a621ff7a04196929931c41b359674d0d96b4131b4bb7a72c05f57d0dec535fc"
+          },
+          {
+            "name": "LeanPaper.Section2TauRepresentation.TauDomain",
+            "source": "src/LeanPaper/Section2TauRepresentation.lean",
+            "source_sha256": "449cd161c55e9d6050f2e7eb0fa191a02de0168ba428027e3f8b0f29f868020a"
+          },
+          {
+            "name": "LeanPaper.Section2TauRepresentation.tauOnDomain",
+            "source": "src/LeanPaper/Section2TauRepresentation.lean",
+            "source_sha256": "449cd161c55e9d6050f2e7eb0fa191a02de0168ba428027e3f8b0f29f868020a"
+          },
+          {
+            "name": "LeanPaper.Section2RationalDomains.tauDomain_iff_denom_dvd",
+            "source": "src/LeanPaper/Section2RationalDomains.lean",
+            "source_sha256": "b1b19199280667a2b13ec3b7d60dba867049477c4980245a31d45e5c8c4f7c29"
+          }
+        ]
+      },
+      {
+        "construction_id": "pencil",
+        "label": "Actual affine pencil, determinant, Gram matrix and direction",
+        "status": "Constructed and retained",
+        "constructed_scope": "The residue-defined rational pencil, determinant delta, evaluated real Gram matrix and derivative matrix are actual definitions. The positive analytic moment realization is proved for admissible odd-weight parameters.",
+        "remaining_obligation": "Later modified beta/multiweight families and their analytic measures must be constructed separately.",
+        "endpoints": [
+          {
+            "name": "ManuscriptChain.Real.pencil",
+            "source": "src/Definition_2_1_Order_s_Rational_Moment_Functional.lean",
+            "source_sha256": "73e1d6c965990ba7f241ffb732194bab7763eea93f6b07d3d71302a515936c5c"
+          },
+          {
+            "name": "ManuscriptChain.Real.delta",
+            "source": "src/Definition_2_1_Order_s_Rational_Moment_Functional.lean",
+            "source_sha256": "73e1d6c965990ba7f241ffb732194bab7763eea93f6b07d3d71302a515936c5c"
+          },
+          {
+            "name": "ManuscriptChain.Real.gram",
+            "source": "src/Definition_2_1_Order_s_Rational_Moment_Functional.lean",
+            "source_sha256": "73e1d6c965990ba7f241ffb732194bab7763eea93f6b07d3d71302a515936c5c"
+          },
+          {
+            "name": "ManuscriptChain.Real.derivativeMatrix",
+            "source": "src/Definition_2_1_Order_s_Rational_Moment_Functional.lean",
+            "source_sha256": "73e1d6c965990ba7f241ffb732194bab7763eea93f6b07d3d71302a515936c5c"
+          },
+          {
+            "name": "ManuscriptChain.REALIZATION",
+            "source": "src/MAIN_CHAIN_ASSEMBLED.lean",
+            "source_sha256": "b4d72cddd0f4a3c6c13005d4b080c43883b714ca565fa571b740aa02d1ddbdbe"
+          }
+        ]
+      },
+      {
+        "construction_id": "primitive",
+        "label": "Primitive integer polynomial",
+        "status": "Constructed and retained",
+        "constructed_scope": "A nonzero rational determinant is normalized by clearing denominators, removing content and fixing a positive scale; an actual primitive Z-polynomial, degree and center positivity are proved.",
+        "remaining_obligation": "The legacy rational-valued P_prim and the constructed integer polynomial are not counted as separate paper theorems. Quantitative integral multipliers/height bounds remain open.",
+        "endpoints": [
+          {
+            "name": "ManuscriptChain.BasisInvariance.primitiveNormalization",
+            "source": "src/Theorem_2_4_Canonical_Basis_Invariance.lean",
+            "source_sha256": "72d310e0b344c2aa6310e99aee1fe672dfd43b3c93cadd958ca9abf43b90af34"
+          },
+          {
+            "name": "ManuscriptChain.GeneralIrrationality.primitivePolynomial",
+            "source": "src/MAIN_CHAIN_IRRATIONALITY.lean",
+            "source_sha256": "abbe4440ff1b6123024787987387789a544c7b4205a9ad73852936d5ab914b69"
+          },
+          {
+            "name": "ManuscriptChain.GeneralIrrationality.primitivePolynomial_isPrimitive",
+            "source": "src/MAIN_CHAIN_IRRATIONALITY.lean",
+            "source_sha256": "abbe4440ff1b6123024787987387789a544c7b4205a9ad73852936d5ab914b69"
+          }
+        ]
+      },
+      {
+        "construction_id": "spectral",
+        "label": "Normalized spectral matrix and exact norm radius",
+        "status": "Constructed and verified",
+        "constructed_scope": "The actual whitening matrix is (sqrt G)^(-1) M (sqrt G)^(-1), with Euclidean operator norm. The new endpoint identifies the retained spectral-factor radius with inverse norm and transports to the actual primitive polynomial.",
+        "remaining_obligation": "No missing definition or norm bridge for Theorem 3.1. Later exponential estimates remain open.",
+        "endpoints": [
+          {
+            "name": "LeanPaper.OperatorNormDisk.whitened",
+            "source": "src/LeanPaper/OperatorNormDisk.lean",
+            "source_sha256": "ab9c8623bce41acfac9168240752dc1e02035a88f0d64701a8c0ee2d0739dcd1"
+          },
+          {
+            "name": "ManuscriptChain.General.zeroFreeRadius",
+            "source": "src/Theorem_3_1_General_Odd_Weight_Endpoint.lean",
+            "source_sha256": "0f54be96d9835151343900d072344700cd843e11d0c399340a172e91b2c90d68"
+          },
+          {
+            "name": "LeanPaper.PrimitiveNormDisk.primitive_theorem_3_1",
+            "source": "src/LeanPaper/PrimitiveNormDisk.lean",
+            "source_sha256": "f89e272dde8b836a61b197f8e48ef2e76ba69419e32f970588fc2e0f803f3e2c"
+          }
+        ]
+      },
+      {
+        "construction_id": "reciprocal",
+        "label": "Reciprocal root moments and Hankel matrices",
+        "status": "Constructed and retained",
+        "constructed_scope": "The actual root vector, inverse-square atoms, finite moments, coalesced support/multiplicities and Hankel matrices are defined. Their finite-support positivity/rank laws are proved.",
+        "remaining_obligation": "The corrected finite objects do not validate literal all-order strict positivity. Higher logarithmic-moment identification remains separately open.",
+        "endpoints": [
+          {
+            "name": "LeanPaper.ReciprocalRootMoments.manuscriptRoots",
+            "source": "src/LeanPaper/ReciprocalRootMoments.lean",
+            "source_sha256": "ece204374616708b3ec393e06f99d03a7e324e0d8398be670cd954c1250b1c34"
+          },
+          {
+            "name": "LeanPaper.ReciprocalRootMoments.reciprocalEvenMoment",
+            "source": "src/LeanPaper/ReciprocalRootMoments.lean",
+            "source_sha256": "ece204374616708b3ec393e06f99d03a7e324e0d8398be670cd954c1250b1c34"
+          },
+          {
+            "name": "LeanPaper.ReciprocalRootMoments.reciprocalHankel",
+            "source": "src/LeanPaper/ReciprocalRootMoments.lean",
+            "source_sha256": "ece204374616708b3ec393e06f99d03a7e324e0d8398be670cd954c1250b1c34"
+          }
+        ]
+      },
+      {
+        "construction_id": "dual",
+        "label": "Dual rational coefficient pencil",
+        "status": "Finite construction retained",
+        "constructed_scope": "Actual rational dual constants, entries and determinant, with coefficient-Gram slope and its spectral theorem under row separation.",
+        "remaining_obligation": "The continuous Beukers measures and infinite Krein subspaces/analytic identifications are not thereby constructed; see 5.1-5.3 and 6.7/6.17.",
+        "endpoints": [
+          {
+            "name": "ManuscriptChain.Real.dualConstant",
+            "source": "src/LeanPaper/ImportedSection56/DualMoments.lean",
+            "source_sha256": "14852b541baf30fd75ddda6075a8810b7af0c1fc7f164cef65debb3defe4a006"
+          },
+          {
+            "name": "ManuscriptChain.Real.dualEntry",
+            "source": "src/LeanPaper/ImportedSection56/DualMoments.lean",
+            "source_sha256": "14852b541baf30fd75ddda6075a8810b7af0c1fc7f164cef65debb3defe4a006"
+          },
+          {
+            "name": "ManuscriptChain.Real.dualDelta",
+            "source": "src/LeanPaper/ImportedSection56/DualMoments.lean",
+            "source_sha256": "14852b541baf30fd75ddda6075a8810b7af0c1fc7f164cef65debb3defe4a006"
+          }
+        ]
+      },
+      {
+        "construction_id": "quantitative_inputs",
+        "label": "Decay and comparison targets",
+        "status": "Defined hypotheses; not supplied witnesses",
+        "constructed_scope": "Named normalized quadratic decay, local comparison and index-budget propositions make the missing arithmetic inputs explicit.",
+        "remaining_obligation": "These definitions are obligations rather than proofs. No accepted family-specific decay/height witness or unconditional odd-zeta irrationality endpoint is supplied.",
+        "endpoints": [
+          {
+            "name": "ManuscriptChain.GeneralIrrationality.NormalizedQuadraticDecay",
+            "source": "src/MAIN_CHAIN_IRRATIONALITY.lean",
+            "source_sha256": "abbe4440ff1b6123024787987387789a544c7b4205a9ad73852936d5ab914b69"
+          },
+          {
+            "name": "ManuscriptChain.RealTransfer.LocalComparison",
+            "source": "src/Theorem_4_1_Spectral_Irrationality_Measure_Criterion.lean",
+            "source_sha256": "7a4e4762865d8346f9d8ba1b36099850fc31ef4ee452960ca16770dc4d2ffa92"
+          },
+          {
+            "name": "ManuscriptChain.RealTransfer.IndexBudget",
+            "source": "src/Theorem_4_1_Spectral_Irrationality_Measure_Criterion.lean",
+            "source_sha256": "7a4e4762865d8346f9d8ba1b36099850fc31ef4ee452960ca16770dc4d2ffa92"
+          }
+        ]
+      }
+    ]
+  },
+  "latest_completed_global_receipt": "validation/linux/acceptance.json",
+  "latest_completed_global_receipt_sha256": "b8bea543e27ba58c4e25c34671f1c17e2f4a63e7a30c1d39c160e51de9a0a31e",
+  "current_validation": {
+    "version": "v0_1_4_construction",
+    "platform": "LINUX_LOCAL",
+    "compiled_modules": 166,
+    "compiler": "Lean4.33.0",
+    "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d",
+    "axiom_method": "INDEPENDENT_VISITED_SET_GRAPH",
+    "axiom_allowlist": [
+      "propext",
+      "Quot.sound",
+      "Classical.choice"
+    ],
+    "audit_log_sha256": "434014a4ca757d85c3828a7b6372ae72adb1f49d93e92e3b6b24e305c9d42c2a",
+    "summary_sha256": "da4dde3776d9d3131918f585d7c7ba9ddb8cb71918b461c7ca90837025ec0d79",
+    "source_inventory": "provenance/active_module_hashes.json",
+    "native_windows_status": "NOT_RUN",
+    "full_manuscript_equivalence": "NOT_CERTIFIED",
+    "AUDITED_PROJECT_DECLARATIONS": 2248,
+    "AUDITED_DEPENDENCY_DECLARATIONS": 77529,
+    "new_intake_modules": 12,
+    "AUDITED_PROJECT_THEOREM_DECLARATIONS": 1710,
+    "theorem_count_scope": "KERNEL_THEOREM_DECLARATIONS_INCLUDING_GENERATED_AND_PRIVATE;NOT_COMPLETE_PAPER_THEOREMS"
+  },
+  "current_increment_modules": [
+    {
+      "module": "LeanPaper.Section2RepresentationIndependence",
+      "source": "src/LeanPaper/Section2RepresentationIndependence.lean",
+      "source_sha256": "b66b7810f05862d4a9e64c33949aa7c33d8454d783aeaff3acd39118fca6a02b",
+      "compiler_status": "LINUX_LEAN433_PASS",
+      "axiom_audit_status": "INDEPENDENT_TRANSITIVE_AXIOM_PASS"
+    },
+    {
+      "module": "LeanPaper.Section2TauRepresentation",
+      "source": "src/LeanPaper/Section2TauRepresentation.lean",
+      "source_sha256": "449cd161c55e9d6050f2e7eb0fa191a02de0168ba428027e3f8b0f29f868020a",
+      "compiler_status": "LINUX_LEAN433_PASS",
+      "axiom_audit_status": "INDEPENDENT_TRANSITIVE_AXIOM_PASS"
+    },
+    {
+      "module": "LeanPaper.Section2RationalDomains",
+      "source": "src/LeanPaper/Section2RationalDomains.lean",
+      "source_sha256": "b1b19199280667a2b13ec3b7d60dba867049477c4980245a31d45e5c8c4f7c29",
+      "compiler_status": "LINUX_LEAN433_PASS",
+      "axiom_audit_status": "INDEPENDENT_TRANSITIVE_AXIOM_PASS"
+    },
+    {
+      "module": "LeanPaper.ReciprocalNearestRootLimit",
+      "source": "src/LeanPaper/ReciprocalNearestRootLimit.lean",
+      "source_sha256": "d3b33ca2f2ce9fa2485e489d7ecd1c50bd9f231a8c42b19ece6bb4ab5a3a87fd",
+      "compiler_status": "LINUX_LEAN433_PASS",
+      "axiom_audit_status": "INDEPENDENT_TRANSITIVE_AXIOM_PASS"
+    },
+    {
+      "module": "LeanPaper.ReciprocalLogDerivative",
+      "source": "src/LeanPaper/ReciprocalLogDerivative.lean",
+      "source_sha256": "aeee3e906b085cd45e8d335fb04b8b5fe07b718404503d3ed5206098343501c9",
+      "compiler_status": "LINUX_LEAN433_PASS",
+      "axiom_audit_status": "INDEPENDENT_TRANSITIVE_AXIOM_PASS"
+    },
+    {
+      "module": "LeanPaper.ReciprocalSecondMoment",
+      "source": "src/LeanPaper/ReciprocalSecondMoment.lean",
+      "source_sha256": "ccbdc753878b1a4023de6762943ca25030f1c416045ba6c5f23806ad2adbaeb7",
+      "compiler_status": "LINUX_LEAN433_PASS",
+      "axiom_audit_status": "INDEPENDENT_TRANSITIVE_AXIOM_PASS"
+    },
+    {
+      "module": "LeanPaper.PrincipalMinorRank",
+      "source": "src/LeanPaper/PrincipalMinorRank.lean",
+      "source_sha256": "3194228ec8e733c596daca64f8531bffce0629b63ba163f1e6d3e67420ee0eca",
+      "compiler_status": "LINUX_LEAN433_PASS",
+      "axiom_audit_status": "INDEPENDENT_TRANSITIVE_AXIOM_PASS"
+    },
+    {
+      "module": "LeanPaper.HigherDerivativeTuran",
+      "source": "src/LeanPaper/HigherDerivativeTuran.lean",
+      "source_sha256": "7adf339e150a6834d6fdc038d77b5776204bbd6bdf076d45466575506d937a07",
+      "compiler_status": "LINUX_LEAN433_PASS",
+      "axiom_audit_status": "INDEPENDENT_TRANSITIVE_AXIOM_PASS"
+    },
+    {
+      "module": "LeanPaper.ManuscriptObstructions",
+      "source": "src/LeanPaper/ManuscriptObstructions.lean",
+      "source_sha256": "8bfb250a4822bc4e5d9068d97d90ae4473dcd8fb4e5bda7ffac1960625758dec",
+      "compiler_status": "LINUX_LEAN433_PASS",
+      "axiom_audit_status": "INDEPENDENT_TRANSITIVE_AXIOM_PASS"
+    },
+    {
+      "module": "LeanPaper.NormalizedNewton",
+      "source": "src/LeanPaper/NormalizedNewton.lean",
+      "source_sha256": "24bca9092b39987bb86666c7cd5f0a2ffdd78c8b82622623674c9d5277d8c9f6",
+      "compiler_status": "LINUX_LEAN433_PASS",
+      "axiom_audit_status": "INDEPENDENT_TRANSITIVE_AXIOM_PASS"
+    },
+    {
+      "module": "LeanPaper.OperatorNormDisk",
+      "source": "src/LeanPaper/OperatorNormDisk.lean",
+      "source_sha256": "ab9c8623bce41acfac9168240752dc1e02035a88f0d64701a8c0ee2d0739dcd1",
+      "compiler_status": "LINUX_LEAN433_PASS",
+      "axiom_audit_status": "INDEPENDENT_TRANSITIVE_AXIOM_PASS"
+    },
+    {
+      "module": "LeanPaper.PrimitiveNormDisk",
+      "source": "src/LeanPaper/PrimitiveNormDisk.lean",
+      "source_sha256": "f89e272dde8b836a61b197f8e48ef2e76ba69419e32f970588fc2e0f803f3e2c",
+      "compiler_status": "LINUX_LEAN433_PASS",
+      "axiom_audit_status": "INDEPENDENT_TRANSITIVE_AXIOM_PASS"
+    }
+  ],
+  "global_validation_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+  "current_receipt": "validation/linux/acceptance.json",
+  "current_receipt_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+  "current_receipt_sha256": "b8bea543e27ba58c4e25c34671f1c17e2f4a63e7a30c1d39c160e51de9a0a31e"
+}

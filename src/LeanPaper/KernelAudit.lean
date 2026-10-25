@@ -151,10 +151,22 @@ import LeanPaper.ImportedSection56.DualNullspace
 import LeanPaper.ImportedSection56.SelectedMonomial
 import LeanPaper.ImportedSection56.UnimodularMonomial
 import LeanPaper.Section5DualSpectrum
+import LeanPaper.HigherDerivativeTuran
+import LeanPaper.ManuscriptObstructions
+import LeanPaper.NormalizedNewton
+import LeanPaper.OperatorNormDisk
+import LeanPaper.PrimitiveNormDisk
+import LeanPaper.PrincipalMinorRank
+import LeanPaper.ReciprocalLogDerivative
+import LeanPaper.ReciprocalNearestRootLimit
+import LeanPaper.ReciprocalSecondMoment
+import LeanPaper.Section2RepresentationIndependence
+import LeanPaper.Section2TauRepresentation
+import LeanPaper.Section2RationalDomains
 import Lean
 
-/-! Every active project declaration is independently traversed for forbidden axioms.
-Exact Lean statements and explicit hypotheses are certified; full manuscript equivalence is separate. -/
+/-! Independent transitive axiom audit of every active imported project declaration.
+Compilation certifies the exact statements; full manuscript correspondence is tracked separately. -/
 set_option maxHeartbeats 0
 set_option maxRecDepth 100000
 open Lean
@@ -390,6 +402,134 @@ open Lean
 #check LeanPaper.Section5DualSpectrum.actualDualPencil_polynomialMatrix
 #check LeanPaper.Section5DualSpectrum.actualDualPencil_detPolynomial
 #check LeanPaper.Section5DualSpectrum.selected_monomial_rows_separate
+#check LeanPaper.HigherDerivativeTuran.real_splits_derivative
+#check LeanPaper.HigherDerivativeTuran.real_splits_iterated_derivative
+#check LeanPaper.HigherDerivativeTuran.iterated_derivative_natDegree
+#check LeanPaper.HigherDerivativeTuran.turan_nonnegative_of_real_splits
+#check LeanPaper.HigherDerivativeTuran.turan_strict_of_real_splits
+#check LeanPaper.HigherDerivativeTuran.iterated_turan_nonnegative
+#check LeanPaper.HigherDerivativeTuran.iterated_turan_strict
+#check LeanPaper.HigherDerivativeTuran.iterated_turan_eq_zero_iff
+#check LeanPaper.HigherDerivativeTuran.spectral_polynomial_splits
+#check LeanPaper.HigherDerivativeTuran.actual_determinant_splits
+#check LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial
+#check LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial_identity
+#check LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial_splits
+#check LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial_natDegree
+#check LeanPaper.HigherDerivativeTuran.actual_primitive_all_derivative_turan
+#check LeanPaper.HigherDerivativeTuran.actual_primitive_all_derivative_turan_strict
+#check LeanPaper.HigherDerivativeTuran.actual_primitive_all_derivative_turan_equality
+#check LeanPaper.ManuscriptObstructions.manuscript_hankel_det_succ_eq_zero
+#check LeanPaper.ManuscriptObstructions.manuscript_hankel_not_positive_at_all_orders
+#check LeanPaper.ManuscriptObstructions.normalized_fraction_printed_formula_fails
+#check LeanPaper.ManuscriptObstructions.first_logarithmic_ratio_sign_fails
+#check LeanPaper.NormalizedNewton.laguerre
+#check LeanPaper.NormalizedNewton.laguerre_mul_root_identity
+#check LeanPaper.NormalizedNewton.laguerre_nonnegative_of_real_splits
+#check LeanPaper.NormalizedNewton.normalizedJet
+#check LeanPaper.NormalizedNewton.normalizedJet_newton
+#check LeanPaper.NormalizedNewton.normalizedJet_zero
+#check LeanPaper.NormalizedNewton.coefficient_newton
+#check LeanPaper.NormalizedNewton.shifted_coefficient_newton
+#check LeanPaper.NormalizedNewton.normalized_shifted_newton
+#check LeanPaper.NormalizedNewton.actual_primitive_laguerre
+#check LeanPaper.NormalizedNewton.actual_primitive_coefficient_newton
+#check LeanPaper.NormalizedNewton.actual_primitive_shifted_newton
+#check LeanPaper.NormalizedNewton.actual_primitive_centered_newton
+#check LeanPaper.OperatorNormDisk.whitened
+#check LeanPaper.OperatorNormDisk.hermitian_norm_eq_eigenvalue_norm
+#check LeanPaper.OperatorNormDisk.norm_compatible_factorization
+#check LeanPaper.OperatorNormDisk.complex_root_distance
+#check LeanPaper.OperatorNormDisk.complex_root_on_boundary
+#check LeanPaper.OperatorNormDisk.actual_radius_eq_inverse_norm
+#check LeanPaper.OperatorNormDisk.actual_root_distance
+#check LeanPaper.OperatorNormDisk.actual_exact_norm_disk
+#check LeanPaper.OperatorNormDisk.original_root_distance
+#check LeanPaper.PrimitiveNormDisk.normalization_eval_complex
+#check LeanPaper.PrimitiveNormDisk.normalization_complex_root_iff
+#check LeanPaper.PrimitiveNormDisk.primitive_complex_root_iff
+#check LeanPaper.PrimitiveNormDisk.primitive_root_distance
+#check LeanPaper.PrimitiveNormDisk.primitive_exact_norm_disk
+#check LeanPaper.PrimitiveNormDisk.primitive_theorem_3_1
+#check LeanPaper.PrincipalMinorRank.nonzeroCount
+#check LeanPaper.PrincipalMinorRank.spectralFactor_degree_indicator
+#check LeanPaper.PrincipalMinorRank.degree_eq_nonzeroCount
+#check LeanPaper.PrincipalMinorRank.weak_factorization_splits
+#check LeanPaper.PrincipalMinorRank.roots_card_eq_nonzeroCount
+#check LeanPaper.PrincipalMinorRank.rank_compatible_factorization
+#check LeanPaper.PrincipalMinorRank.degree_eq_direction_rank
+#check LeanPaper.PrincipalMinorRank.real_roots_card_eq_direction_rank
+#check LeanPaper.PrincipalMinorRank.nonzeroCount_eq_direction_rank
+#check LeanPaper.PrincipalMinorRank.root_count_le_dimension
+#check LeanPaper.PrincipalMinorRank.zero_direction_has_no_roots
+#check LeanPaper.PrincipalMinorRank.original_principal_degree_eq_rank
+#check LeanPaper.PrincipalMinorRank.original_principal_real_roots_card_eq_rank
+#check LeanPaper.PrincipalMinorRank.original_leading_degree_and_root_count
+#check LeanPaper.ReciprocalLogDerivative.factorization_logDeriv
+#check LeanPaper.ReciprocalLogDerivative.actual_logDeriv
+#check LeanPaper.ReciprocalLogDerivative.actual_opposite_gap_sum
+#check LeanPaper.ReciprocalLogDerivative.evalQ_at_rat
+#check LeanPaper.ReciprocalLogDerivative.rational_logDeriv
+#check LeanPaper.ReciprocalLogDerivative.actual_first_inverse_gap_sum_rational
+#check LeanPaper.ReciprocalLogDerivative.actual_log_hasDerivAt
+#check LeanPaper.ReciprocalNearestRootLimit.finite_power_root_bounds
+#check LeanPaper.ReciprocalNearestRootLimit.finite_power_root_tendsto
+#check LeanPaper.ReciprocalNearestRootLimit.reciprocal_atom_negative_half
+#check LeanPaper.ReciprocalNearestRootLimit.pow_negative_root
+#check LeanPaper.ReciprocalNearestRootLimit.reciprocal_negative_root_bounds
+#check LeanPaper.ReciprocalNearestRootLimit.reciprocal_negative_root_tendsto
+#check LeanPaper.ReciprocalNearestRootLimit.actual_nearest_root_limit
+#check LeanPaper.ReciprocalSecondMoment.polynomial_logDeriv_hasDerivAt
+#check LeanPaper.ReciprocalSecondMoment.actual_logDeriv_hasDerivAt
+#check LeanPaper.ReciprocalSecondMoment.actual_log_second_hasDerivAt
+#check LeanPaper.ReciprocalSecondMoment.actual_second_moment_formula
+#check LeanPaper.ReciprocalSecondMoment.actual_second_moment_rational
+#check LeanPaper.Section2RationalDomains.poleProduct
+#check LeanPaper.Section2RationalDomains.poleProduct_ne_zero
+#check LeanPaper.Section2RationalDomains.commonNumerator
+#check LeanPaper.Section2RationalDomains.realization_eq_fraction
+#check LeanPaper.Section2RationalDomains.realization_denom_dvd
+#check LeanPaper.Section2RationalDomains.fraction_representation_exists
+#check LeanPaper.Section2RationalDomains.range_realization_iff_denom_dvd
+#check LeanPaper.Section2RationalDomains.muPoleProduct
+#check LeanPaper.Section2RationalDomains.muPoleProduct_eq
+#check LeanPaper.Section2RationalDomains.muDomain_iff_denom_dvd
+#check LeanPaper.Section2RationalDomains.tauDomain_iff_denom_dvd
+#check LeanPaper.Section2RationalDomains.fraction_mem_muDomain
+#check LeanPaper.Section2RepresentationIndependence.SimplePoleForm
+#check LeanPaper.Section2RepresentationIndependence.effectiveResidue
+#check LeanPaper.Section2RepresentationIndependence.realization
+#check LeanPaper.Section2RepresentationIndependence.sum_extend
+#check LeanPaper.Section2RepresentationIndependence.realization_extend
+#check LeanPaper.Section2RepresentationIndependence.realization_unique
+#check LeanPaper.Section2RepresentationIndependence.realization_eq_of_data
+#check LeanPaper.Section2RepresentationIndependence.realization_eq_iff
+#check LeanPaper.Section2RepresentationIndependence.moment
+#check LeanPaper.Section2RepresentationIndependence.moment_representation_independent
+#check LeanPaper.Section2RepresentationIndependence.muForm
+#check LeanPaper.Section2RepresentationIndependence.muRatFunc
+#check LeanPaper.Section2RepresentationIndependence.mu_representation_unique
+#check LeanPaper.Section2RepresentationIndependence.muFunctionalPoly_representation_independent
+#check LeanPaper.Section2RepresentationIndependence.MuDomain
+#check LeanPaper.Section2RepresentationIndependence.muOnDomain
+#check LeanPaper.Section2RepresentationIndependence.muOnDomain_eq
+#check LeanPaper.Section2RepresentationIndependence.pulledMoment_representation_independent
+#check LeanPaper.Section2TauRepresentation.tauPolynomial
+#check LeanPaper.Section2TauRepresentation.tauPolynomial_monomial
+#check LeanPaper.Section2TauRepresentation.finiteForm
+#check LeanPaper.Section2TauRepresentation.finiteSpanRatFunc
+#check LeanPaper.Section2TauRepresentation.finiteForm_coefficient
+#check LeanPaper.Section2TauRepresentation.tauFiniteSpan_eq_moment
+#check LeanPaper.Section2TauRepresentation.tauFiniteSpan_representation_independent
+#check LeanPaper.Section2TauRepresentation.TauDomain
+#check LeanPaper.Section2TauRepresentation.tauOnDomain
+#check LeanPaper.Section2TauRepresentation.tauOnDomain_eq
+#check LeanPaper.Section2TauRepresentation.tauOnDomain_eq_finiteSpan
+#check LeanPaper.Section2TauRepresentation.reflectedMoment_representation_independent
+#check LeanPaper.Section2TauRepresentation.differenceCorrection
+#check LeanPaper.Section2TauRepresentation.differenceCorrection_eq_moment
+#check LeanPaper.Section2TauRepresentation.differenceCorrection_representation_independent
+#check LeanPaper.Section2TauRepresentation.translatedMoment_representation_independent
 run_cmd Elab.Command.liftCoreM do
   let env := (← getEnv).setExporting false
   let allowed : List Name := [``propext, ``Quot.sound, ``Classical.choice]
@@ -546,7 +686,19 @@ run_cmd Elab.Command.liftCoreM do
     `LeanPaper.ImportedSection56.DualNullspace,
     `LeanPaper.ImportedSection56.SelectedMonomial,
     `LeanPaper.ImportedSection56.UnimodularMonomial,
-    `LeanPaper.Section5DualSpectrum]
+    `LeanPaper.Section5DualSpectrum,
+    `LeanPaper.HigherDerivativeTuran,
+    `LeanPaper.ManuscriptObstructions,
+    `LeanPaper.NormalizedNewton,
+    `LeanPaper.OperatorNormDisk,
+    `LeanPaper.PrimitiveNormDisk,
+    `LeanPaper.PrincipalMinorRank,
+    `LeanPaper.ReciprocalLogDerivative,
+    `LeanPaper.ReciprocalNearestRootLimit,
+    `LeanPaper.ReciprocalSecondMoment,
+    `LeanPaper.Section2RepresentationIndependence,
+    `LeanPaper.Section2TauRepresentation,
+    `LeanPaper.Section2RationalDomains]
   let mut roots : Array Name := #[]
   for (decl, _) in env.constants do
     if let some idx := env.getModuleIdxFor? decl then

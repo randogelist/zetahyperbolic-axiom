@@ -151,3 +151,15 @@ LeanPaper.ImportedSection56.DualNullspace
 LeanPaper.ImportedSection56.SelectedMonomial
 LeanPaper.ImportedSection56.UnimodularMonomial
 LeanPaper.Section5DualSpectrum
+LeanPaper.HigherDerivativeTuran
+LeanPaper.ManuscriptObstructions
+LeanPaper.NormalizedNewton
+LeanPaper.OperatorNormDisk
+LeanPaper.PrimitiveNormDisk
+LeanPaper.PrincipalMinorRank
+LeanPaper.ReciprocalLogDerivative
+LeanPaper.ReciprocalNearestRootLimit
+LeanPaper.ReciprocalSecondMoment
+LeanPaper.Section2RepresentationIndependence
+LeanPaper.Section2TauRepresentation
+LeanPaper.Section2RationalDomains

@@ -1,0 +1,6 @@
+'LeanPaper.ReciprocalSecondMoment.actual_second_moment_formula' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'LeanPaper.ReciprocalSecondMoment.actual_second_moment_rational' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

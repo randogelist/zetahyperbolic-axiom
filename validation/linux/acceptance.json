@@ -1,7 +1,7 @@
 {
-  "version": "v0_1_3_construction",
+  "version": "v0_1_4_construction",
   "platform": "LINUX_LOCAL",
-  "compiled_modules": 154,
+  "compiled_modules": 166,
   "compiler": "Lean4.33.0",
   "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d",
   "axiom_method": "INDEPENDENT_VISITED_SET_GRAPH",
@@ -10,14 +10,14 @@
     "Quot.sound",
     "Classical.choice"
   ],
-  "audit_log_sha256": "4138e3da2406833eb92e709c0459461861c01e4520e1afb169680c6bc0baebe1",
-  "summary_sha256": "165d0137acacddaa9cc9b2ccd9d8e0568e9a6734cda42660addaaccc9c3a9ecf",
+  "audit_log_sha256": "434014a4ca757d85c3828a7b6372ae72adb1f49d93e92e3b6b24e305c9d42c2a",
+  "summary_sha256": "da4dde3776d9d3131918f585d7c7ba9ddb8cb71918b461c7ca90837025ec0d79",
   "source_inventory": "provenance/active_module_hashes.json",
   "native_windows_status": "NOT_RUN",
   "full_manuscript_equivalence": "NOT_CERTIFIED",
-  "AUDITED_PROJECT_DECLARATIONS": 2023,
-  "AUDITED_DEPENDENCY_DECLARATIONS": 75684,
-  "new_intake_modules": 58,
-  "AUDITED_PROJECT_THEOREM_DECLARATIONS": 1523,
+  "AUDITED_PROJECT_DECLARATIONS": 2248,
+  "AUDITED_DEPENDENCY_DECLARATIONS": 77529,
+  "new_intake_modules": 12,
+  "AUDITED_PROJECT_THEOREM_DECLARATIONS": 1710,
   "theorem_count_scope": "KERNEL_THEOREM_DECLARATIONS_INCLUDING_GENERATED_AND_PRIVATE;NOT_COMPLETE_PAPER_THEOREMS"
 }

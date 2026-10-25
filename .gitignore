@@ -1,4 +1,5 @@
 .build/
+.lake/
 .cache/
 logs/
 *.olean

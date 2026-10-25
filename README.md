@@ -1,55 +1,51 @@
-# Leaned Paper — YOU_ARE_GOODWORKFLOWFRONTIER
+# Leaned Paper
 
-The [`leaned-paper`](https://github.com/randogelist/zetahyperbolic-axiom/tree/leaned-paper) branch builds a manuscript-aligned Lean formalization from the supplied project archives, commit-pinned cross-branch Lean bases and documented research inputs. This increment is `v0_1_3_construction`, with 154 active modules in `modules.txt`.
+This branch formalizes the supplied 52-page manuscript, *Spectral Theory and Diophantine Bounds for Hankel Determinants of Odd Zeta Values*, using its project sources, pinned cross-repository inputs and newly constructed Lean proofs.
 
-**Local Linux validation passed: 154/154 modules and the independent transitive axiom audit. Native Windows validation remains pending. The complete paper and its quantitative irrationality endpoints are not proved by this increment.**
+**The manuscript is not completely formalized or ready to be certified as printed.** Theorems and corollaries are tracked by their actual statements, separately from successful compilation. The printed statements of 3.4, 3.5 and 3.6 require correction; quantitative arithmetic and analytic endpoints remain open.
 
-On 2026-10-25 the user explicitly authorized local Lean installation and compilation. Local validation uses Lean 4.33.0 and commit-pinned Mathlib; its compiler logs, source/environment fingerprints and axiom receipt are recorded separately under `validation/linux/`. The current local status is `LINUX_LEAN433_PASS_AXIOM_AUDITED`; see [acceptance](validation/linux/acceptance.json) and [compiler summary](validation/linux/summary.json). A successful Linux run does not certify the Windows CMD runner or permit reuse of Linux `.olean` files as native Windows artifacts.
+Version `v0_1_4_construction` contains **166 active modules**. All compile under Lean 4.33.0 and pass the independent transitive axiom audit; see the [local acceptance receipt](validation/linux/acceptance.json). All 153 prior mathematical and audit-helper source files are unchanged. The final audit module is extended to include the 12 new modules.
 
-## Expanded theorem intake
+## Manuscript coverage
 
-This increment adds 58 modules covering substantive inputs for 21 of the 45 manuscript ledger rows. The [theorem intake report](docs/THEOREM_REBUILD_INTAKE.md) records exact hypotheses and remaining obligations; [provenance](provenance/theorem_intake.json) verifies each imported source against its supplied or commit-pinned archive. All 95 prior mathematical/audit-helper source files are byte-identical, and the native runner is unchanged.
+The [formalization status](docs/FORMALIZATION_STATUS.md) and its [structured companion](docs/formalization_status.json) review all 45 numbered results, with Definition 2.1 and supporting constructions recorded separately. Of the complete printed results, **Theorem 3.1 is newly verified and Proposition 4.3 is retained as verified**. The other 43 comprise 24 partial developments, 16 not formalized and 3 blocked literal statements. These counts concern complete printed statements, not the much larger number of compiled Lean lemmas.
 
-The additions include explicit Lagrange basis transport and full finite-span tau difference; first Turan and Jacobi/Taylor identities; finite root-moment bounds; character and finite multiweight spectra; Q_p/C_p zero-free disks; actual primitive-polynomial and spectral-cluster bridges; dual-pencil degree/real roots under coefficient independence; an explicit rank-one zeta(7) sign witness; and finite beta, tensor and Hermite identities. These component proofs do not certify all 45 complete printed items or unconditional irrationality.
+The [45-item ledger](docs/manuscript_45_ledger.csv) preserves manuscript numbering and records exact remaining obligations. A conditional helper, finite-dimensional model, corrected variant or theorem-name wrapper is not counted as a complete manuscript theorem.
 
-## Previous source exchange
+## New mathematical proofs
 
-The [comparison with snditeration](docs/SNDITERATION_EXCHANGE.md) selects its three direct partial-fraction modules and connects them to the actual kernel and Gram integral. The imported declarations retain their proof bodies; only import paths change. The new algebraic identity holds for every real square argument and arbitrary parameter data. The Gram integral theorem requires only a positive odd-weight index. All 91 previous mathematical/auditor-helper sources remain byte-identical; the final audit is extended. The stronger assembled Gram, singular-slope, principal-minor and arithmetic transfer results are retained.
+| Development | Exact contribution |
+| --- | --- |
+| [Rational-function domains](src/LeanPaper/Section2RationalDomains.lean) | μ and τ are independent of polynomial/simple-pole representations, including different supports; their domains are characterized by reduced-denominator divisibility. Lifted linearity and actual rational substitution still need assembly. |
+| [Principal-minor rank](src/LeanPaper/PrincipalMinorRank.lean) | Determinant degree and real-root count with multiplicity equal the rank of the actual slope, including singular cases. Interlacing is separate. |
+| [Operator-norm disk](src/LeanPaper/OperatorNormDisk.lean) and [primitive theorem](src/LeanPaper/PrimitiveNormDisk.lean) | Identifies the exact radius with the inverse Euclidean operator norm of the whitened matrix and assembles Theorem 3.1 for the actual primitive integer polynomial, including a boundary root. |
+| [Higher Turán inequalities](src/LeanPaper/HigherDerivativeTuran.lean) and [normalized Newton inequalities](src/LeanPaper/NormalizedNewton.lean) | All derivative orders, strict Turán away from roots, its equality criterion, and the complete weak Newton hierarchy for ordinary and normalized shifted coefficients. Strict Newton assertions remain separate. |
+| [Nearest-root limit](src/LeanPaper/ReciprocalNearestRootLimit.lean) | Corrected finite negative-root bounds and convergence to an attained nearest actual determinant root, with multiplicities allowed. |
+| [Logarithmic derivative](src/LeanPaper/ReciprocalLogDerivative.lean) and [second moment](src/LeanPaper/ReciprocalSecondMoment.lean) | Exact first and second derivatives and rational witnesses at rational non-root shifts. Orders three and above remain open. |
+| [Manuscript obstructions](src/LeanPaper/ManuscriptObstructions.lean) | The actual root family's Hankel determinant vanishes at order h+1. Separate scalar examples diagnose the printed normalized fraction and odd-order sign errors. |
 
-## Preserved previous increment
+The [increment provenance](provenance/completion_increment.json) records exact files, imports and compiler evidence. Earlier source intakes remain documented in [the theorem rebuild report](docs/THEOREM_REBUILD_INTAKE.md) and [the snditeration exchange](docs/SNDITERATION_EXCHANGE.md).
 
-Five mathematical modules extend the selected paper core and cross-branch sources:
+## Build and verify
 
-| Source | Exact contribution | Remaining boundary |
-| --- | --- | --- |
-| `LeanPaper/PullbackReflection.lean` | Function-level square-pole substitution with the entire polynomial quotient; its canonical normal-form moment equality; finite-span reflection and finite-pole difference. | Arbitrary `RatFunc` representation independence and full polynomial-plus-pole difference assembly remain open. |
-| `LeanPaper/SingularSlope.lean` | Constructs spectral factors for a symmetric affine pencil with positive definite base, allowing zero slope eigenvalues. Every existing complex determinant zero is real. | No nonsingularity, fixed root count or interlacing is inferred for a restricted slope. |
-| `LeanPaper/PrincipalMinorRealRoots.lean` | Identifies each actual rational principal determinant with its real affine pencil, derives its positive base from the original analytic Gram construction, and proves all its complex zeros real. | Exact degree/rank and rank-sensitive interlacing remain separate. |
-| `LeanPaper/SingularPrincipalMinorExample.lean` | Computes the actual residue formula at `k=2,m=1,N=1,K=6`, obtains zero first slope, and derives a positive constant leading minor with no roots. | This corrects the printed universal root-enumeration clause of Theorem 3.4; it does not refute eigenvalue interlacing or Dodgson condensation. |
-| `LeanPaper/ReciprocalRootMoments.lean` | Constructs the actual determinant root vector and coalesces equal inverse-square gaps into distinct atoms with positive multiplicities. At a rational non-root shift, ordinary and shifted Hankel matrices are PSD at every order; strict determinant positivity holds exactly through distinct support size. | Log-derivative identification, rationality and the nearest-root limit/rate remain open. |
+The toolchain is **Lean 4.33.0**. Mathlib is pinned to **`db584cd6d46c92f209a44c0f1c829460d327499d`**, with all transitive dependencies locked in `lake-manifest.json`. The new Lake configuration exposes every active source module under `src/`.
 
-The preserved principal-minor center result establishes positive evaluation at the true odd-zeta center. The corrected reciprocal-root result no longer assumes that distinct roots have distinct squared gaps. Opposite gaps are explicitly allowed to coalesce. No finite Gram statement supplies the missing arithmetic growth estimates.
+See [BUILD.md](docs/BUILD.md) for standard Linux setup and sequential compilation. The GitHub Actions workflow uses pinned actions, validates the complete module inventory, compiles sequentially and executes the independent audit. Workflow configuration is not itself evidence of a successful remote run; consult the actual Actions run for the commit.
 
-## Evidence and manuscript scope
+The existing fingerprinted local runner remains unchanged; its setup and command are in [LOCAL_TESTING.md](docs/LOCAL_TESTING.md). The local receipt revalidates compiler, dependencies, source, object and log fingerprints before reusing prior passes.
 
-The [45-item ledger](docs/manuscript_45_ledger.csv) separates source scope, local compiler status and native Windows status. Its [JSON version](docs/manuscript_45_ledger.json) retains the same items and open obligations. Compilation and an axiom audit certify the exact Lean statements; semantic equivalence to each complete printed theorem is an additional obligation.
+The offline native Windows workflow is still the single unchanged `run.cmd`, documented in [NATIVE_RUNNER.md](docs/NATIVE_RUNNER.md). Native Windows execution has not been performed here. Linux objects and receipts do not certify Windows compilation.
 
-[Manuscript issues](docs/manuscript_issues.txt) preserve the literal claims and corrections separately. Theorem 3.4 can have a constant first principal minor. Corollary 3.6 cannot have strictly positive finite-support Hankel determinants at every order, and its displayed factor bound and odd log-derivative sign require correction. Historical numerical target variants are not silently substituted for the uploaded paper's constants.
+## Proof integrity and organization
 
-The exhaustive project audit checks transitive axioms for declarations owned by the active modules and permits only `propext`, `Quot.sound` and `Classical.choice`. It rejects `sorryAx`, custom axioms and native-decide assumptions. `LeanPaper/AxiomWalk.lean` provides the audit traversal and `LeanPaper/KernelAudit.lean` applies the gate. An audit pass does not discharge explicit mathematical hypotheses or certify still-open ledger rows.
+`LeanPaper/` contains manuscript-facing bridges and the new proofs; retained `Paper/`, `PaperChain/`, `ProofAdvances/`, `Zetahyperbolic/` and original root modules preserve their public APIs and source provenance. `modules.txt` is the complete dependency-ordered build plan, ending with `LeanPaper.KernelAudit`.
 
-## Native Windows run and cache reuse
+The audit independently traverses every imported project declaration and its dependencies, including private declarations. Only `propext`, `Quot.sound` and `Classical.choice` are permitted. The active proof scope contains no `sorry`, `admit` or project-specific axioms. Deliberate rejection fixtures under `tests/axiom_walk` are excluded from the active project. See [proof integrity](validation/linux/proof_integrity.json).
 
-Extract the ZIP and call its sole `run.cmd` from Windows CMD. Use installed native Lean 4.33.0 and compatible cached Mathlib. The runner is offline and does not run Lake setup, Python, PowerShell or WSL. [Native runner documentation](docs/NATIVE_RUNNER.md) describes cache paths, provenance checks and receipts.
+An axiom-audit pass checks exact Lean statements; it does not discharge explicit mathematical hypotheses or establish manuscript equivalence. Historical source comments retain their original status language; the current receipts and status report control present claims.
 
-Only previously passed native objects with matching source, object, import, toolchain, Mathlib, flags and environment fingerprints are reusable. New or invalidated modules are compiled, and any source, dependency or final audit failure stops acceptance. The local Linux receipt is separate evidence and cannot stand in for these native cache checks.
+## Remaining mathematical obligations
 
-## Next execution targets
+[Manuscript issues](docs/manuscript_issues.txt) record the literal errors and their separate corrections. Other open work includes rational-functional assembly, continuous real-parameter and character integral constructions, principal interlacing and signature results, strict Newton assertions, all higher reciprocal-moment rationality, and effective spectral, determinant, height and arithmetic estimates. No irrationality, linear-independence or RH conclusion follows merely from the finite Gram results.
 
-1. Obtain a separate native Windows receipt; preserve the compatible local and native passed artifacts under their separate fingerprints.
-2. Close representation independence and the remaining full-domain identities for Lemmas 2.2–2.3.
-3. Prove the principal degree/rank law and corrected interlacing; separately address mixed-minor total positivity and signature counts.
-4. Connect reciprocal-root moments to the corrected log-derivative formula, rationality and nearest-root limit.
-5. Assemble real-parameter, character and arithmetic growth inputs in manuscript order, keeping every quantitative endpoint explicit.
-
-`provenance/` records attachment hashes, source choices, collisions, pinned repository origins, research inputs and the local environment. See [cross-repository source intake](docs/REMOTE_BASE_AUDIT.md) for the earlier selection and its scope. Archived status prose is historical evidence only. The exact names `YOU_ARE_GOODWORKFLOWFRONTIER`, `LEAN_ANCHORINGS` and all seven `ZETA_HYPERBOLIC_ANCHOR` identifiers are preserved.
+The frozen workflow identifiers remain `YOU_ARE_GOODWORKFLOWFRONTIER`, `LEAN_ANCHORINGS`, and `ZETA_HYPERBOLIC_ANCHOR_1` through `ZETA_HYPERBOLIC_ANCHOR_7`.

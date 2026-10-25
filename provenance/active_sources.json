@@ -528,9 +528,9 @@
   {
     "active": "src/LeanPaper/KernelAudit.lean",
     "origin": "NEW_OR_ADAPTED_SOURCE_v0_1_1_construction",
-    "sha256": "2c1aa6cad0466f3d5af6dbf589e1f2905cfe5bcfa7e30fca15e447e793a9eef8",
+    "sha256": "43d4554b6c7906eb22c6cfbf6be279ec7392a951a5f4b3b4d9981a40e12f15fa",
     "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
-    "previous_active_sha256": "becd51fc0f4ed94121f84dadd28cb35e613a9d80d204e83a9e3b5933515ff462"
+    "previous_active_sha256": "2c1aa6cad0466f3d5af6dbf589e1f2905cfe5bcfa7e30fca15e447e793a9eef8"
   },
   {
     "active": "src/LeanPaper/PrincipalMinorRealRoots.lean",
@@ -3323,5 +3323,158 @@
     "origin": "THEOREM_REBUILD_INTAKE_v0_1_3_construction",
     "sha256": "8ddc495445da978b7942982ae66b75c97d934624a86ed43c03e8ccf03fcde92f",
     "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json"
+  },
+  {
+    "module": "LeanPaper.HigherDerivativeTuran",
+    "active": "src/LeanPaper/HigherDerivativeTuran.lean",
+    "origin": "NEW_PROOF_CONSTRUCTION_v0_1_4_construction",
+    "sha256": "7adf339e150a6834d6fdc038d77b5776204bbd6bdf076d45466575506d937a07",
+    "imports": [
+      "LeanPaper.ImportedSection3.StrictTuranRolle",
+      "MAIN_CHAIN_IRRATIONALITY",
+      "Mathlib.Algebra.Polynomial.Splits",
+      "Mathlib.Analysis.Calculus.LocalExtr.Polynomial"
+    ],
+    "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+    "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+  },
+  {
+    "module": "LeanPaper.ManuscriptObstructions",
+    "active": "src/LeanPaper/ManuscriptObstructions.lean",
+    "origin": "NEW_PROOF_CONSTRUCTION_v0_1_4_construction",
+    "sha256": "8bfb250a4822bc4e5d9068d97d90ae4473dcd8fb4e5bda7ffac1960625758dec",
+    "imports": [
+      "LeanPaper.ReciprocalRootMoments",
+      "LeanPaper.ImportedSection3.NormalizedContinuedFraction"
+    ],
+    "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+    "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+  },
+  {
+    "module": "LeanPaper.NormalizedNewton",
+    "active": "src/LeanPaper/NormalizedNewton.lean",
+    "origin": "NEW_PROOF_CONSTRUCTION_v0_1_4_construction",
+    "sha256": "24bca9092b39987bb86666c7cd5f0a2ffdd78c8b82622623674c9d5277d8c9f6",
+    "imports": [
+      "LeanPaper.HigherDerivativeTuran",
+      "Mathlib.Algebra.Polynomial.Taylor"
+    ],
+    "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+    "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+  },
+  {
+    "module": "LeanPaper.OperatorNormDisk",
+    "active": "src/LeanPaper/OperatorNormDisk.lean",
+    "origin": "NEW_PROOF_CONSTRUCTION_v0_1_4_construction",
+    "sha256": "ab9c8623bce41acfac9168240752dc1e02035a88f0d64701a8c0ee2d0739dcd1",
+    "imports": [
+      "MAIN_CHAIN_ASSEMBLED",
+      "Mathlib.Analysis.CStarAlgebra.Matrix",
+      "Mathlib.Analysis.Matrix.Spectrum"
+    ],
+    "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+    "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+  },
+  {
+    "module": "LeanPaper.PrimitiveNormDisk",
+    "active": "src/LeanPaper/PrimitiveNormDisk.lean",
+    "origin": "NEW_PROOF_CONSTRUCTION_v0_1_4_construction",
+    "sha256": "f89e272dde8b836a61b197f8e48ef2e76ba69419e32f970588fc2e0f803f3e2c",
+    "imports": [
+      "LeanPaper.OperatorNormDisk",
+      "MAIN_CHAIN_IRRATIONALITY"
+    ],
+    "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+    "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+  },
+  {
+    "module": "LeanPaper.PrincipalMinorRank",
+    "active": "src/LeanPaper/PrincipalMinorRank.lean",
+    "origin": "NEW_PROOF_CONSTRUCTION_v0_1_4_construction",
+    "sha256": "3194228ec8e733c596daca64f8531bffce0629b63ba163f1e6d3e67420ee0eca",
+    "imports": [
+      "LeanPaper.PrincipalMinorRealRoots",
+      "Mathlib.Analysis.Matrix.Spectrum",
+      "Mathlib.Algebra.Polynomial.Splits"
+    ],
+    "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+    "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+  },
+  {
+    "module": "LeanPaper.ReciprocalLogDerivative",
+    "active": "src/LeanPaper/ReciprocalLogDerivative.lean",
+    "origin": "NEW_PROOF_CONSTRUCTION_v0_1_4_construction",
+    "sha256": "aeee3e906b085cd45e8d335fb04b8b5fe07b718404503d3ed5206098343501c9",
+    "imports": [
+      "LeanPaper.ReciprocalRootMoments",
+      "Mathlib.Analysis.Calculus.LogDeriv",
+      "Mathlib.Analysis.Calculus.Deriv.Polynomial",
+      "Mathlib.Analysis.SpecialFunctions.Log.Deriv"
+    ],
+    "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+    "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+  },
+  {
+    "module": "LeanPaper.ReciprocalNearestRootLimit",
+    "active": "src/LeanPaper/ReciprocalNearestRootLimit.lean",
+    "origin": "NEW_PROOF_CONSTRUCTION_v0_1_4_construction",
+    "sha256": "d3b33ca2f2ce9fa2485e489d7ecd1c50bd9f231a8c42b19ece6bb4ab5a3a87fd",
+    "imports": [
+      "LeanPaper.ImportedSection3.RootMomentBounds",
+      "Mathlib.Analysis.SpecialFunctions.Pow.Continuity",
+      "Mathlib.Analysis.SpecificLimits.Basic"
+    ],
+    "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+    "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+  },
+  {
+    "module": "LeanPaper.ReciprocalSecondMoment",
+    "active": "src/LeanPaper/ReciprocalSecondMoment.lean",
+    "origin": "NEW_PROOF_CONSTRUCTION_v0_1_4_construction",
+    "sha256": "ccbdc753878b1a4023de6762943ca25030f1c416045ba6c5f23806ad2adbaeb7",
+    "imports": [
+      "LeanPaper.ReciprocalLogDerivative"
+    ],
+    "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+    "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+  },
+  {
+    "module": "LeanPaper.Section2RationalDomains",
+    "active": "src/LeanPaper/Section2RationalDomains.lean",
+    "origin": "NEW_PROOF_CONSTRUCTION_v0_1_4_construction",
+    "sha256": "b1b19199280667a2b13ec3b7d60dba867049477c4980245a31d45e5c8c4f7c29",
+    "imports": [
+      "LeanPaper.Section2TauRepresentation",
+      "LeanPaper.Rebuild.PartialFractionsQuotient"
+    ],
+    "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+    "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+  },
+  {
+    "module": "LeanPaper.Section2RepresentationIndependence",
+    "active": "src/LeanPaper/Section2RepresentationIndependence.lean",
+    "origin": "NEW_PROOF_CONSTRUCTION_v0_1_4_construction",
+    "sha256": "b66b7810f05862d4a9e64c33949aa7c33d8454d783aeaff3acd39118fca6a02b",
+    "imports": [
+      "LeanPaper.Section2LagrangeIdentification",
+      "LeanPaper.PullbackReflection",
+      "Mathlib.Algebra.Polynomial.PartialFractions",
+      "Mathlib.Algebra.Polynomial.RingDivision",
+      "Mathlib.FieldTheory.RatFunc.Basic"
+    ],
+    "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+    "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+  },
+  {
+    "module": "LeanPaper.Section2TauRepresentation",
+    "active": "src/LeanPaper/Section2TauRepresentation.lean",
+    "origin": "NEW_PROOF_CONSTRUCTION_v0_1_4_construction",
+    "sha256": "449cd161c55e9d6050f2e7eb0fa191a02de0168ba428027e3f8b0f29f868020a",
+    "imports": [
+      "LeanPaper.Section2RepresentationIndependence",
+      "LeanPaper.Section2FiniteDifference"
+    ],
+    "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+    "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
   }
 ]

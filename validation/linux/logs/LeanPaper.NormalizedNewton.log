@@ -1,0 +1,9 @@
+'LeanPaper.NormalizedNewton.laguerre_nonnegative_of_real_splits' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'LeanPaper.NormalizedNewton.actual_primitive_laguerre' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanPaper.NormalizedNewton.actual_primitive_coefficient_newton' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'LeanPaper.NormalizedNewton.actual_primitive_shifted_newton' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanPaper.NormalizedNewton.actual_primitive_centered_newton' depends on axioms: [propext, Classical.choice, Quot.sound]

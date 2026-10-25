@@ -3,8 +3,8 @@
   "lean_version": "Lean (version 4.33.0, x86_64-unknown-linux-gnu, commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)",
   "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d",
   "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
-  "total": 154,
-  "passed": 154,
+  "total": 166,
+  "passed": 166,
   "failed": [],
   "blocked": [],
   "axiom_audit_accepted": true,
@@ -3248,13 +3248,271 @@
       "log_sha256": "3ca1c0d82fdf31b0ec32450ab1ce140a85e38e952c80a912d4e6c77351d58892"
     },
     {
+      "module": "LeanPaper.HigherDerivativeTuran",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 5.134,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "7adf339e150a6834d6fdc038d77b5776204bbd6bdf076d45466575506d937a07",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection3.StrictTuranRolle": {
+            "LeanPaper/ImportedSection3/StrictTuranRolle.olean": "19476787d8e6acba8dca9cec00f32f84e342b129b73e3634582ad3aeac280973"
+          },
+          "MAIN_CHAIN_IRRATIONALITY": {
+            "MAIN_CHAIN_IRRATIONALITY.olean": "a8002917d27085553718b8c746fd9ee3cfe4af56a04596363e6e5c3330eaba8f"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/HigherDerivativeTuran.olean": "c3bc103ed0ea1c871c03fd34299d64714c185da4ad875ed497ddb8389d6af54b"
+      },
+      "log_sha256": "3b37ffb8f48279dedaacba529c896ac942d9f58710ee0c09ed29f2815e3734b9"
+    },
+    {
+      "module": "LeanPaper.ManuscriptObstructions",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 27.232,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "8bfb250a4822bc4e5d9068d97d90ae4473dcd8fb4e5bda7ffac1960625758dec",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ReciprocalRootMoments": {
+            "LeanPaper/ReciprocalRootMoments.olean": "ac94b20a96186c8aed0a5fd2bb4963fd859ec2f65d587f12494e729674f125fd"
+          },
+          "LeanPaper.ImportedSection3.NormalizedContinuedFraction": {
+            "LeanPaper/ImportedSection3/NormalizedContinuedFraction.olean": "977c40bd306ed04f9a812584d0b9800c4da0a4571e4387b7f63e70d41a7ee574"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ManuscriptObstructions.olean": "9a91591c4686a264c1f14e06f76ef2c2cf87f29a65fb985ccde41262e8190a63"
+      },
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "LeanPaper.NormalizedNewton",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 5.823,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "24bca9092b39987bb86666c7cd5f0a2ffdd78c8b82622623674c9d5277d8c9f6",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.HigherDerivativeTuran": {
+            "LeanPaper/HigherDerivativeTuran.olean": "c3bc103ed0ea1c871c03fd34299d64714c185da4ad875ed497ddb8389d6af54b"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/NormalizedNewton.olean": "692ada4ab9ac4e438d8bd89d6aea8b66c538808785bdfaa241480b8ef32453cb"
+      },
+      "log_sha256": "885ac8f0c2cc01c1618dd4f4e6f300164533b75750418316a4c7f26f7cdd883e"
+    },
+    {
+      "module": "LeanPaper.OperatorNormDisk",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 5.281,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "ab9c8623bce41acfac9168240752dc1e02035a88f0d64701a8c0ee2d0739dcd1",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "MAIN_CHAIN_ASSEMBLED": {
+            "MAIN_CHAIN_ASSEMBLED.olean": "0a253bac1e5ea3178716fe3cfc3542321ef9f18e6a33a80a25edc1dc03beefb2"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/OperatorNormDisk.olean": "50daf04b90ae3310535b5935dfd2bd679e78e0438cc53c7394ea9da5fa657877"
+      },
+      "log_sha256": "226daa6ed1922ad763cebc9a483e9455111effa72879cb48b65e632947d61600"
+    },
+    {
+      "module": "LeanPaper.PrimitiveNormDisk",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 4.614,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "f89e272dde8b836a61b197f8e48ef2e76ba69419e32f970588fc2e0f803f3e2c",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.OperatorNormDisk": {
+            "LeanPaper/OperatorNormDisk.olean": "50daf04b90ae3310535b5935dfd2bd679e78e0438cc53c7394ea9da5fa657877"
+          },
+          "MAIN_CHAIN_IRRATIONALITY": {
+            "MAIN_CHAIN_IRRATIONALITY.olean": "a8002917d27085553718b8c746fd9ee3cfe4af56a04596363e6e5c3330eaba8f"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/PrimitiveNormDisk.olean": "d49456b63fcd5df77e17bf99aaa87cd364aca5ecc5fee8879fe997534aec2167"
+      },
+      "log_sha256": "a2d940b48dea5fbadbbeff240fe963ad9269a41651153423134385c27617d68e"
+    },
+    {
+      "module": "LeanPaper.PrincipalMinorRank",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 5.492,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "3194228ec8e733c596daca64f8531bffce0629b63ba163f1e6d3e67420ee0eca",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.PrincipalMinorRealRoots": {
+            "LeanPaper/PrincipalMinorRealRoots.olean": "9cb7982c61e8f76df9b9a806848949beede454a3295a466bb1fb1998fd4370d6"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/PrincipalMinorRank.olean": "785fa783b148153bedfb39bca17118f1465b9d2ce431d2c7e5067ee4aba9b5a7"
+      },
+      "log_sha256": "6633246b8fac67e5318dbd260cf15a38d8505681731c93abffc5ffd0a8032fa6"
+    },
+    {
+      "module": "LeanPaper.ReciprocalLogDerivative",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 4.804,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "aeee3e906b085cd45e8d335fb04b8b5fe07b718404503d3ed5206098343501c9",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ReciprocalRootMoments": {
+            "LeanPaper/ReciprocalRootMoments.olean": "ac94b20a96186c8aed0a5fd2bb4963fd859ec2f65d587f12494e729674f125fd"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ReciprocalLogDerivative.olean": "9bcbad406966767d029da51fd448470adb57b1f8b94d9e9089d2ddbe1a07f546"
+      },
+      "log_sha256": "bd6459e0ab99c15c968aa21e3a6ac3abcf2009852071f568e5359bc6cb472c7a"
+    },
+    {
+      "module": "LeanPaper.ReciprocalNearestRootLimit",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 4.947,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "d3b33ca2f2ce9fa2485e489d7ecd1c50bd9f231a8c42b19ece6bb4ab5a3a87fd",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection3.RootMomentBounds": {
+            "LeanPaper/ImportedSection3/RootMomentBounds.olean": "91b97e99c33c333091db88249f63ed78150e389f2c367fc998f1693a0d2be463"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ReciprocalNearestRootLimit.olean": "d877c4ff5986e55bb23cdef3fd4af930bd79273ee43ccbeef791108864e12f8c"
+      },
+      "log_sha256": "630ebc4ec3340864719b57ef3977d31b35f8e50088416a61865f892d10905383"
+    },
+    {
+      "module": "LeanPaper.ReciprocalSecondMoment",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 4.724,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "ccbdc753878b1a4023de6762943ca25030f1c416045ba6c5f23806ad2adbaeb7",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ReciprocalLogDerivative": {
+            "LeanPaper/ReciprocalLogDerivative.olean": "9bcbad406966767d029da51fd448470adb57b1f8b94d9e9089d2ddbe1a07f546"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ReciprocalSecondMoment.olean": "85483a8c8a831e7308aa75ec514e83dbd2ffa10a4b892b96fac6b70e1e42fbb0"
+      },
+      "log_sha256": "4ba8bc6f9c45decfbf141c520f03417192aafcfce095d89ac2f9a0a79b807b6a"
+    },
+    {
+      "module": "LeanPaper.Section2RepresentationIndependence",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 5.425,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "b66b7810f05862d4a9e64c33949aa7c33d8454d783aeaff3acd39118fca6a02b",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.Section2LagrangeIdentification": {
+            "LeanPaper/Section2LagrangeIdentification.olean": "204ed6dd2b46c0d2bc460af416d21d7d6a293c64f897b0a279c6e82458453402"
+          },
+          "LeanPaper.PullbackReflection": {
+            "LeanPaper/PullbackReflection.olean": "758f43321b6ed083d1f06ebff9ea210efe09a868e3ba9a01904f64e6b5089d7b"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/Section2RepresentationIndependence.olean": "7eb282df24a34bab83ed4b26529f81916ce149d751874eedf0e8cc929428c7b5"
+      },
+      "log_sha256": "045386f99977b5d049917d48b63e48d9384bdf122649d3132641031aa4e57352"
+    },
+    {
+      "module": "LeanPaper.Section2TauRepresentation",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 4.561,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "449cd161c55e9d6050f2e7eb0fa191a02de0168ba428027e3f8b0f29f868020a",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.Section2RepresentationIndependence": {
+            "LeanPaper/Section2RepresentationIndependence.olean": "7eb282df24a34bab83ed4b26529f81916ce149d751874eedf0e8cc929428c7b5"
+          },
+          "LeanPaper.Section2FiniteDifference": {
+            "LeanPaper/Section2FiniteDifference.olean": "81a49c8c0ed71f50dfcbff36e4007c01bd4838e3e6121cab82cf9fb8f6742855"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/Section2TauRepresentation.olean": "cf7956f4ff05a6b968a5b9822626cc2d7cd31ce04417a523e47424e859a58375"
+      },
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "LeanPaper.Section2RationalDomains",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 5.458,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "b1b19199280667a2b13ec3b7d60dba867049477c4980245a31d45e5c8c4f7c29",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.Section2TauRepresentation": {
+            "LeanPaper/Section2TauRepresentation.olean": "cf7956f4ff05a6b968a5b9822626cc2d7cd31ce04417a523e47424e859a58375"
+          },
+          "LeanPaper.Rebuild.PartialFractionsQuotient": {
+            "LeanPaper/Rebuild/PartialFractionsQuotient.olean": "0793dc8776f15b71f1f6631572613fa14f31398460145c2dad7cd3d45c7c61fd"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/Section2RationalDomains.olean": "4599b3edb4904059c7f85749ff6ed3e831f40f4720f5cf301306f5790cbed996"
+      },
+      "log_sha256": "af88f451a383a7c3fe286dd9470e059c6e41dbc3e8d5b5b05341cfbe36685def"
+    },
+    {
       "module": "LeanPaper.KernelAudit",
       "status": "PASS",
       "action": "COMPILED",
-      "seconds": 313.074,
+      "seconds": 427.042,
       "returncode": 0,
       "inputs": {
-        "source_sha256": "2c1aa6cad0466f3d5af6dbf589e1f2905cfe5bcfa7e30fca15e447e793a9eef8",
+        "source_sha256": "43d4554b6c7906eb22c6cfbf6be279ec7392a951a5f4b3b4d9981a40e12f15fa",
         "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
         "dependencies": {
           "Definition_2_1_Order_s_Rational_Moment_Functional": {
@@ -3715,13 +3973,49 @@
           },
           "LeanPaper.Section5DualSpectrum": {
             "LeanPaper/Section5DualSpectrum.olean": "cfb768016c016484d781dc38bbd5ebec5289c8c098953881a716bc857c364ba2"
+          },
+          "LeanPaper.HigherDerivativeTuran": {
+            "LeanPaper/HigherDerivativeTuran.olean": "c3bc103ed0ea1c871c03fd34299d64714c185da4ad875ed497ddb8389d6af54b"
+          },
+          "LeanPaper.ManuscriptObstructions": {
+            "LeanPaper/ManuscriptObstructions.olean": "9a91591c4686a264c1f14e06f76ef2c2cf87f29a65fb985ccde41262e8190a63"
+          },
+          "LeanPaper.NormalizedNewton": {
+            "LeanPaper/NormalizedNewton.olean": "692ada4ab9ac4e438d8bd89d6aea8b66c538808785bdfaa241480b8ef32453cb"
+          },
+          "LeanPaper.OperatorNormDisk": {
+            "LeanPaper/OperatorNormDisk.olean": "50daf04b90ae3310535b5935dfd2bd679e78e0438cc53c7394ea9da5fa657877"
+          },
+          "LeanPaper.PrimitiveNormDisk": {
+            "LeanPaper/PrimitiveNormDisk.olean": "d49456b63fcd5df77e17bf99aaa87cd364aca5ecc5fee8879fe997534aec2167"
+          },
+          "LeanPaper.PrincipalMinorRank": {
+            "LeanPaper/PrincipalMinorRank.olean": "785fa783b148153bedfb39bca17118f1465b9d2ce431d2c7e5067ee4aba9b5a7"
+          },
+          "LeanPaper.ReciprocalLogDerivative": {
+            "LeanPaper/ReciprocalLogDerivative.olean": "9bcbad406966767d029da51fd448470adb57b1f8b94d9e9089d2ddbe1a07f546"
+          },
+          "LeanPaper.ReciprocalNearestRootLimit": {
+            "LeanPaper/ReciprocalNearestRootLimit.olean": "d877c4ff5986e55bb23cdef3fd4af930bd79273ee43ccbeef791108864e12f8c"
+          },
+          "LeanPaper.ReciprocalSecondMoment": {
+            "LeanPaper/ReciprocalSecondMoment.olean": "85483a8c8a831e7308aa75ec514e83dbd2ffa10a4b892b96fac6b70e1e42fbb0"
+          },
+          "LeanPaper.Section2RepresentationIndependence": {
+            "LeanPaper/Section2RepresentationIndependence.olean": "7eb282df24a34bab83ed4b26529f81916ce149d751874eedf0e8cc929428c7b5"
+          },
+          "LeanPaper.Section2TauRepresentation": {
+            "LeanPaper/Section2TauRepresentation.olean": "cf7956f4ff05a6b968a5b9822626cc2d7cd31ce04417a523e47424e859a58375"
+          },
+          "LeanPaper.Section2RationalDomains": {
+            "LeanPaper/Section2RationalDomains.olean": "4599b3edb4904059c7f85749ff6ed3e831f40f4720f5cf301306f5790cbed996"
           }
         }
       },
       "output_hashes": {
-        "LeanPaper/KernelAudit.olean": "a1b21790a457174900897ffe57bad35602160ae3d0fc29a4bddca14248ebddbb"
+        "LeanPaper/KernelAudit.olean": "5eb584869d29655665dd4b98c23604ce6915ef368a2ded191213be8305724711"
       },
-      "log_sha256": "4138e3da2406833eb92e709c0459461861c01e4520e1afb169680c6bc0baebe1"
+      "log_sha256": "434014a4ca757d85c3828a7b6372ae72adb1f49d93e92e3b6b24e305c9d42c2a"
     }
   ]
 }

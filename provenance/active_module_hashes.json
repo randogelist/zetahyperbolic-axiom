@@ -18,6 +18,12 @@
     "native_status": "PENDING_WINDOWS"
   },
   {
+    "module": "LeanPaper.HigherDerivativeTuran",
+    "sha256": "7adf339e150a6834d6fdc038d77b5776204bbd6bdf076d45466575506d937a07",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
     "module": "LeanPaper.ImportedCharacter.CharacterPositive",
     "sha256": "563b89fd4f1c9c8061e3e9496f818ed547a6e928563ebaac3ccd90e44b93cdd0",
     "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
@@ -325,7 +331,37 @@
   },
   {
     "module": "LeanPaper.KernelAudit",
-    "sha256": "2c1aa6cad0466f3d5af6dbf589e1f2905cfe5bcfa7e30fca15e447e793a9eef8",
+    "sha256": "43d4554b6c7906eb22c6cfbf6be279ec7392a951a5f4b3b4d9981a40e12f15fa",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.ManuscriptObstructions",
+    "sha256": "8bfb250a4822bc4e5d9068d97d90ae4473dcd8fb4e5bda7ffac1960625758dec",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.NormalizedNewton",
+    "sha256": "24bca9092b39987bb86666c7cd5f0a2ffdd78c8b82622623674c9d5277d8c9f6",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.OperatorNormDisk",
+    "sha256": "ab9c8623bce41acfac9168240752dc1e02035a88f0d64701a8c0ee2d0739dcd1",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.PrimitiveNormDisk",
+    "sha256": "f89e272dde8b836a61b197f8e48ef2e76ba69419e32f970588fc2e0f803f3e2c",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.PrincipalMinorRank",
+    "sha256": "3194228ec8e733c596daca64f8531bffce0629b63ba163f1e6d3e67420ee0eca",
     "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
     "native_status": "PENDING_WINDOWS"
   },
@@ -366,8 +402,26 @@
     "native_status": "PENDING_WINDOWS"
   },
   {
+    "module": "LeanPaper.ReciprocalLogDerivative",
+    "sha256": "aeee3e906b085cd45e8d335fb04b8b5fe07b718404503d3ed5206098343501c9",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.ReciprocalNearestRootLimit",
+    "sha256": "d3b33ca2f2ce9fa2485e489d7ecd1c50bd9f231a8c42b19ece6bb4ab5a3a87fd",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
     "module": "LeanPaper.ReciprocalRootMoments",
     "sha256": "ece204374616708b3ec393e06f99d03a7e324e0d8398be670cd954c1250b1c34",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.ReciprocalSecondMoment",
+    "sha256": "ccbdc753878b1a4023de6762943ca25030f1c416045ba6c5f23806ad2adbaeb7",
     "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
     "native_status": "PENDING_WINDOWS"
   },
@@ -392,6 +446,24 @@
   {
     "module": "LeanPaper.Section2LagrangeIdentification",
     "sha256": "0aaf7f41c3e2e1221a58feb849cf4c89a32688d2685b18b652003e238fc6bc9b",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.Section2RationalDomains",
+    "sha256": "b1b19199280667a2b13ec3b7d60dba867049477c4980245a31d45e5c8c4f7c29",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.Section2RepresentationIndependence",
+    "sha256": "b66b7810f05862d4a9e64c33949aa7c33d8454d783aeaff3acd39118fca6a02b",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.Section2TauRepresentation",
+    "sha256": "449cd161c55e9d6050f2e7eb0fa191a02de0168ba428027e3f8b0f29f868020a",
     "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
     "native_status": "PENDING_WINDOWS"
   },
