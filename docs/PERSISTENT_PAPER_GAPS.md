@@ -1,0 +1,140 @@
+# Zetahyperbolic — persistent manuscript gap register
+
+**Repository:** [randogelist/zetahyperbolic-axiom](https://github.com/randogelist/zetahyperbolic-axiom)  
+**Tracking branch:** `persistent/zetahyperbolic-paper-gap-tracker`  
+**Authoritative source snapshot:** `main` at [86ca99a](https://github.com/randogelist/zetahyperbolic-axiom/commit/86ca99a23d65cde4880a9005a49076c43e7bc968), 25 October 2026.  
+**Manuscript:** original 52-page *Spectral Theory and Diophantine Bounds for Hankel Determinants of Odd Zeta Values* (21 October 2026).
+
+This register is a **gap analysis and research handoff**, not a theorem or proof receipt. It documents the open steps of the printed paper **after** substantial existing Lean proofs. Consult the [source-ledger](../docs/formalization_status.json), [status report](FORMALIZATION_STATUS.md), and [Axiom audit](../validation/linux/acceptance.json) for exact declarations, source hashes and audit boundaries. No Lean source is changed in this branch.
+
+## Proof baseline — do not undercount it
+
+The pinned `main` has **219 active Lean modules** with local Lean 4.33 compilation and independent transitive axiom auditing of **3,135 declarations** (2,489 theorem declarations including generated/private declarations). CI for that exact [commit passed](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40188664869). This is **not** a claim of 2,489 complete paper results. Native Windows verification of this revision remains pending.
+
+At the level of literal numbered manuscript claims: **7 fully proved** (2.2, 2.3, 2.4, 2.5, 3.1, 4.3, 5.4), **21 partial**, **10 not formalized** and **7 blocked by literal mistakes**. The already proved mathematics includes actual rational functionals, unconditional exact hyperbolicity of the paper's Hankel pencil, root-gap geometry, strict normalized Newton results, a corrected all-order reciprocal-moment theorem, generalized transfer/resultant mathematics, and unconditional odd-beta transcendence/finite independence. Do not reclassify these as only hypothetical or abstract prototypes.
+
+**Status meanings:** `Verified` / `Already proved and retained` = entire printed statement audited; `Partially formalized` = substantive audited mathematics remains insufficient for the whole printed item; `Not formalized` = no manuscript-equivalent active endpoint mapped; `Blocked` = literal claim/formula conflicts with an exact calculation or established obstruction. Proof of a corrected variant never changes a false literal item to verified.
+
+## All 45 items — specific remaining mathematical bridge
+
+The `Crosscut` groups are **workstreams** not chronological dependency assertions: F0 foundations, F1 spectral, F2 arithmetic/ζ(5), F3 ζ(7)/β, F4 multiweight/prime arithmetic. The original item numbers and full-state labels come from the pinned repository ledger.
+
+| Item | Original item / topic | Verified status | Crosscut | Open mathematical bridge / disposition |
+|:---|:---|:---|:---:|:---|
+| 2.2 | Rational functional pullback | Verified | F0 | None for printed item. Freeze the audited rational-function pullback; preserve Bernoulli and generator bridges. |
+| 2.3 | Reflection and difference identities for Tau | Verified | F0 | None for the printed reflection/difference theorem. Keep exceptional Bernoulli B₁ proof repair explicit. |
+| 2.4 | Canonical basis invariance | Verified | F0 | None for the complete original basis-invariance statement. Do not reopen without changed imports. |
+| 2.5 | Lagrange pole diagonalization | Verified | F0 | None for exact functional Lagrange diagonalization; optional alternative closed-product spelling only. |
+| 3.1 | Universal hyperbolicity and zero-free disk | Verified | F0 | None for unconditional actual-family hyperbolicity, primitive degree or sharp norm disk. Quantitative exponential bounds belong to 4.4. |
+| 3.2 | Continuous hyperbolic pencil for all real s > 1 | Blocked | F1 | Literal coincidence fails from the π/2 density prefactor; the corrected continuous all-s theorem is proved. Publish a corrected statement, not a proof of the original. |
+| 3.3 | Total positivity, leading sign, universal signature | Partially formalized | F1 | Mixed, nonprincipal strict Hankel minors via Andréief and generalized Vandermonde; Stieltjes uniqueness via Carleman; check primitive multiplicity/count assembly. |
+| 3.4 | Root interlacing and Dodgson condensation | Blocked | F1 | Correct the universal 'r finite roots' clause when principal slope is singular. Prove compatible whitening/Cholesky and rank-sensitive Cauchy eigenvalue interlacing; condensation is already proved. |
+| 3.5 | Stieltjes J-fraction from interlacing roots | Blocked | F1 | Repair (I+tT) resolvent scaling, det(G_{h−1})/det(G_h) factor, Lanczos cyclicity; separate spectral edge rate from 4.7. |
+| 3.6 | Stieltjes reciprocal-root power sums | Blocked | F1 | Printed all-order strict positive moments / signed logarithmic formula / estimate orientation are false. The corrected finite-rank theorem is already proved; retain that and split off K-uniform edge rate. |
+| 3.7 | Turanian non-negativity and Newton log-concavity | Partially formalized | F1 | Actual centered-coefficient nonvanishing needs family-specific proof or statement correction. Strict Turán/Newton hierarchy is substantially proved, not universally nonzero individual coefficients. |
+| 3.8 | Christoffel-Darboux pole representation and Jacobi derivative | Partially formalized | F1 | Construct monic polynomials from actual moment measure and prove their Christoffel–Darboux inverse-Gram kernel; dominated differentiation for the Laplace-Jacobi integral identity. |
+| 3.9 | Hurwitz and Dirichlet hyperbolicity | Partially formalized | F1 | Hurwitz shifted analytic pole integrals and partial fractions; identify all five real-character Fekete kernels with true Dirichlet integral Gram pencil. Finite kernel signs alone insufficient. |
+| 4.1 | Spectral irrationality measure criterion | Partially formalized | F2 | Existential irrationality transfer largely proved. State effective modulus/onset and construct computable threshold from actual estimates; do not claim effective b₀ from bare eventual premises. |
+| 4.2 | Transfer for algebraic approximations | Partially formalized | F2 | Close general degree-d algebraic approximation wrapper: resultant over minimal polynomial, conjugate-height product, lattice budget, uniform limsup height interpretation. |
+| 4.3 | Ultrametric zero-free disk | Already proved and retained | F2 | None for printed p-adic zero-free disk. No family-specific prime estimates implied. |
+| 4.4 | Spectral bound and irrationality measure for zeta(5) | Partially formalized | F2 | Prove K=30n/N=3n integer-valued determinant and p-adic multiplier; actual rate exp(−K²/2500) and norm exp(11.411K); then instantiate exponent 25687. Do not substitute Fauzan K=40n. |
+| 4.5 | Irrationality and measure for b*zeta(5)+a*zeta(3) | Partially formalized | F2 | Actual combined ζ(5),ζ(3) positive-density comparison and same-slope functional; prime cancellation, multiplier, determinant decay and positive cone at the printed condition. |
+| 4.6 | Determinant bounds and coefficient heights | Partially formalized | F2 | Uniform normalized determinant/height bounds and constants (0.23310,3.73980). Repair logically invalid lower bound from A_M≤−2.32425; a separate lower estimate is needed. |
+| 4.7 | Root collapse and separation | Partially formalized | F2 | Use proved actual norm cap/det growth to bound root cluster fraction, exponential edge and arithmetic root separation; preserve the distinct constants and multiplicity conditions. |
+| 4.8 | Rational root exclusion and cluster degree bounds | Partially formalized | F2 | Rational-root exclusion and factor-degree bounds need genuine arithmetic argument. Norm bound gives a *lower*, not upper, root-distance estimate; printed blanket exclusion proof reverses it. |
+| 5.1 | Two-variable Beukers measure for zeta(7) | Partially formalized | F3 | Actual convergent two-variable Beukers integral with ζ(7) diagonal and rational harmonic divided differences off diagonal, not only abstract finite dual moments. |
+| 5.2 | Dual hyperbolicity and Krein decomposition | Partially formalized | F3 | Lift finite dual positive-slope spectrum to infinite signed Krein expansion, prove convergence/tail control and rational polynomial cone existence. Repair impossible fixed K=h dimension case. |
+| 5.3 | Beukers measure and dual pencil for beta(4) | Partially formalized | F3 | Actual β(4) two-variable measure and moments; identify dual pencil and full claimed spectrum. |
+| 5.4 | Higher-zeta cancellation on even pole pairs | Verified | F3 | None for theorem's even-pole cancellation; preserve corrected intermediate signs and pullback hypotheses. |
+| 5.6 | Weight-seven prime-sum evaluation and pole refinement | Not formalized | F3 | Piecewise floor formulas and outer integral 453803/288000; correct table endpoint continuity, 25→16 variance coefficient and surviving-pole classes; reprove inner gain (not automatic +1/3). |
+| 5.7 | Double-pole determinant for 1,zeta(5),zeta(6) | Not formalized | F3 | Actual double-pole partial fractions; q-adic v_q(J_{2m})=−36m and p-adic minor valuation using a fully instantiated Hermite basis. |
+| 6.1 | Divided-difference valuation and intrinsic p^-6 barrier | Not formalized | F4 | Actual two-variable Mellin bridge, non-diagonal harmonic denominators and pole-class valuation −7; prove intrinsic p⁻⁶ obstruction, not from heuristic reduction. |
+| 6.2 | Simultaneous weight-(6,7) Beukers functional | Partially formalized | F4 | Infinite Beukers (ζ6,ζ7) moments, asymmetric evaluation, cancellation of denominator overhead; finite common-denominator lemma already available. |
+| 6.3 | q-adic nonvanishing and positive-cone approximations | Blocked | F4 | Printed strict positive cone is false at h=4,K=28. Design a genuinely tail-controlled alternative cone with new parameter bounds; independently prove q-adic nonvanishing part (1). |
+| 6.4 | Character-Vandermonde sign cancellation and beta hyperbolicity | Partially formalized | F4 | Real β analytic character weight, oriented residue sign (raw sign depends on N), actual hyperbolic Gram, local q-adic nonvanishing. |
+| 6.5 | q-adic nonvanishing at zero | Not formalized | F4 | Prove q≡1 (mod 8) explicit valuation v_q(Δ_K(0))=−(3m_q−2) for the exact pole set using an invertible local block. |
+| 6.6 | Generalized multi-weight positive-definite pencil | Partially formalized | F4 | Actual infinite multiweight density/positive comparison, universal root signature and uniform arithmetic multiplier; finite semidefinite cone identities are helpers only. |
+| 6.7 | Universal multi-weight Beukers Krein decomposition | Not formalized | F4 | Actual multivariable signed measure, entire infinite Krein positive/negative subspaces, moment bridge and local arithmetic nonvanishing. |
+| 6.8 | Three-term linear-independence cone | Not formalized | F4 | Concrete linear forms with nonvanishing, integrality, height and decay sufficient for Q-linear independence of 1,ζ(3),ζ(5). |
+| 6.9 | Triple-pole and multi-weight determinants | Partially formalized | F4 | Actual triple-pole Hermite interpolation at all distinct nodes, finite determinant and p-adic valuation dominance; finite symbolic Hermite identities do not complete it. |
+| 6.10 | Potential-gap identity and quadratic derivative growth | Partially formalized | F4 | Real one/two-variable families' limiting logarithmic potentials, strict gap and quadratic asymptotic rates; retain finite energy identities but prove limit interchange. |
+| 6.11 | Distribution growth and 2-adic quotient obstruction | Not formalized | F4 | Prime distribution and 2-adic polynomial quotient growth; exact valuations and uniform k-dependence, not only dyadic degree threshold. |
+| 6.12 | Full-dimension sign-flip positivity and q-adic nonvanishing | Not formalized | F4 | Actual sign-flipped Gram integral, positive cone at rational cutoffs, and matching q-adic nonvanishing under the original parameter constraints. |
+| 6.13 | Central-factorial secant differential identity | Blocked | F4 | Fix (−1)^(k−1) factor in printed secant series; justified uniform termwise differentiation and bridge to actual β-pencil/signature/strict Newton. Finite differential identity is proved. |
+| 6.14 | Even-pole cosh scaling and coupled pencils | Not formalized | F4 | Explicit β even-pole/cosh-scaled integral identities, positive comparison constants, actual coupled spectrum and quantitative exponential disks. |
+| 6.15 | Arithmetic transcendence, positive measure and rank-one law | Blocked | F4 | Repair false fixed-exterior h⁻²ᵏ factor (k≥1) using justified Szegő/exterior-polynomial asymptotic; independent effective transcendence, rank-one and total positivity. |
+| 6.16 | Generalized multi-weight Zeta-Beta pencil | Not formalized | F4 | Actual infinite zeta–beta mixed density and moments, cone estimates, universal spectral signature and arithmetic multiplier for the prescribed parameters. |
+| 6.17 | Universal two-variable Zeta-Beta pencil | Partially formalized | F4 | Correct odd q-pole harmonic arithmetic (2n₀<q does not ensure q-free denominator); repair highest-weight local block, then coupled infinite Krein/multimeasure transfer. |
+| 6.18 | Principal-minor 2-adic integrality and dyadic heights | Partially formalized | F4 | Finish exact 2-adic residue principal-minor integrality, odd-prime multipliers and quantitative height budget; no irrationality exponent without all estimates. |
+
+## High-impact proof architecture
+
+### F2 — ζ(5): what actually blocks the claimed irrationality exponent
+
+The on-paper implication is **conditional** until the actual polynomial family satisfies *both* inequalities with proofs:
+
+```text
+Q_K ∈ ℤ[X], deg(Q_K) ≤ (9/10) K, K = 30 n, N = 3 n, h = 27 n
+0 < |Q_K(ζ(5))| ≤ exp(-K²/2500)      [actual integer multiplier + decay]
+all roots r: |r - ζ(5)| ≥ exp(-11.411 K)  [actual Gram/slope norm]
+---------------------------------------------------------------
+effective rational approximation bound with exponent 25687
+```
+
+The exact operator-norm disk and general integer-polynomial transfer are well-developed; they **do not supply these family-specific rates**.
+
+**Critical source mismatch:** the cited Fauzan proof's `K=40n, N=3n, h=37n` family and normalization do **not** imply the manuscript's `K=30n, N=3n, h=27n` decay constants. Exact comparison of kernels, arithmetic multipliers and equilibrium integrals is a new theorem. Relevant analysis: [Section 4 review](SECTION4_CONTINUATION_REVIEW.md).
+
+**Two further proof-direction errors:** Theorem 4.6(2)'s lower height bound cannot follow from the printed `A_M ≤ -2.32425` upper bound; an independent lower estimate is needed. Proposition 4.8(1) applies `|r-ζ(5)| ≤ exp(-τK)` to all roots, but Theorem 4.4 only gives `|r-ζ(5)| ≥ exp(-11.411K)`. This invalidates the universal rational-root exclusion argument as written; it does not by itself refute the underlying theorem.
+
+**Targeted construction order F2.1–F2.6:**
+1. F2.1 — Define actual `K=30n` rational functional, exact residue factorials, determinant normalization and integer primitive multiplier. Audit every local prime denominator.
+2. F2.2 — Independently reconstruct `A_M` and `U` for the *same* family, proving explicit rate inequalities with effective onset, not importing `40n` constants.
+3. F2.3 — Formalize the actual Remez/Legendre bound and strictly concave residue potential, with an exact interval/rational enclosure of the maximum yielding `ρ≤11.411`.
+4. F2.4 — Combine positive nonvanishing and arithmetic decay to obtain the actual integer `Q_K` estimate, not merely conditional `IndexBudget`.
+5. F2.5 — Instantiate the already proved transfer with concrete modulus of eventual inequalities; derive `25687`, then prove coupling for `bζ(5)+aζ(3)`.
+6. F2.6 — Prove determinant/height/root-cluster outputs, while correcting 4.6 and replacing the invalid 4.8 blanket argument.
+
+**Acceptance:** precise Lean theorems on `RiemannZeta`-valued actual moments, successful kernel elaboration, transitive standard-axiom allowlist, no proof-field witness or newly assumed quantitative lemma hidden inside the claimed conclusion.
+
+### F1 — spectral geometry: correct claims versus published false formulas
+
+1. **3.3(1):** strict positivity for **mixed** Hankel minors is not supplied by positive Gram or principal-minor positivity. Build Andréief integral for two ordered exponent sets, show generalized Vandermonde products have fixed strictly positive sign on the ordered simplex, and prove all moments finite. Establish Carleman sum divergence/uniqueness using explicit growth bounds.
+2. **3.4:** the paper's `r`-root enumeration is false when slope rank falls below `r`. Prove a compatible principal matrix compression and rank-aware Cauchy interlacing (nonzero generalized eigenvalues), with degree equal to nonzero slope rank. All-rank Dodgson identity already exists — reuse it, do not rewrite.
+3. **3.5–3.6:** the printed J-fraction uses wrong normalization; the finite-supported reciprocal moments cannot have positive Hankel determinants of *every* order. Proven corrected rank and moment identities should be exported as corrected propositions with explicit hypotheses; prove cyclic Lanczos positivity only where no breakdown is established.
+4. **3.7:** actual-family strict normalized Newton inequality is proved in substantial scope; an additional family-specific argument is needed for *each individual centered coefficient's nonvanishing*. Distinct roots do not suffice.
+5. **3.8–3.9:** extend exact finite Gram algebra to true monic orthogonal-polynomial kernels, Laplace-deformed integral derivatives and genuine character/Hurwitz measures, justifying dominated convergence. These are analytical bridges, not matrix bookkeeping.
+
+**Acceptance:** all the actual functional/measure bridges must be in the type of the original manuscript data, not a new independent abstract positive matrix with unproved identification.
+
+### F3 — ζ(7), Beukers and Dirichlet beta
+
+1. **5.1–5.3:** instantiate the two-dimensional `dΩ_7` and `dΩ_{β(4)}` densities; prove exact diagonal ζ/β harmonic tails and off-diagonal rational divided differences by dominated series/integral exchanges. Lift finite pencil algebra to infinite Krein decomposition with controlled tails.
+2. **5.6:** derive the eleven affine pieces directly from the floor-defined integrand and prove `I_out = 453803/288000`. Audit records false printed continuity endpoints at `1/3,1/2,1`; the variance coefficient is **16 rather than 25** for `b=4ℓ`. The supposed universal remaining-pole classes and `+1/3` gain are not justified. Recompute actual residues by pole class and derive a valid replacement gain (the suggested `121/1200` integral is a proposal, not a theorem).
+3. **5.7 and 6.1–6.2:** actual double-pole Hermite functional, q-adic block nonvanishing and the two-variable/multiplier bridge, not only rank arithmetic.
+4. **6.3(2):** exact rational `h=4, K=28` data show a negative direction in the printed cone. The arithmetic certificate plus analytic ζ(7) enclosure are reviewed; this is **not yet a Lean kernel counterexample**. The literal cone must be replaced with a construction preserving the infinite negative-tail budget and effective decay. [Counterexample review](BEUKERS_POSITIVITY_COUNTEREXAMPLE.md). The independent q-adic part (1) is still open.
+
+**Acceptance:** actual infinite series and tails; positivity certified for the same polynomial subspace and rational cutoffs that appear in the arithmetic approximation, not for a different finite toy cone.
+
+### F4 — generalized odd zeta, beta and prime arithmetic
+
+1. **6.4–6.9:** prove actual character- and multiweight-valued analytic moments, oriented sign of the derivative matrix and the local q-adic Hermite block. The finite algebra, odd-beta transcendence and centrally factored identities are valuable proved components but do not supply the global asymptotic/prime estimates.
+2. **6.10–6.12:** family-specific logarithmic potential limits and 2-adic quotient/valuation estimates; assemble sign-flipped positive cone without assuming it.
+3. **6.13–6.14:** correct the central factorial product series sign by `(-1)^(k-1)`, then prove termwise convergence and identify it with the actual β moment pencil.
+4. **6.15:** the printed fixed-exterior `h^(-2k)` factor conflicts with the stated Szegő asymptotic for `k≥1`; correct the asymptotic before formalizing rank-one growth/measure. Independent exact odd-beta transcendence is already a proved *other* result.
+5. **6.16–6.18:** construct the full coupled infinite zeta–beta measure and exact local prime arithmetic. The 6.17 proof's `2n₀<q` hypothesis does not exclude the denominator `q` from `H_{2n₀}^{β,s}` (odd denominator indices extend to `4n₀-1`), and the claimed highest-weight local scalar block requires recalculation.
+
+## Cross-branch reuse: `snditeration` is an input, not the target repository
+
+Use [`randogelist/snditeration`](https://github.com/randogelist/snditeration) as a proof source. Its pinned [main checkpoint](https://github.com/randogelist/snditeration/blob/c521749190cce9981b0f108a8edc8034420f6420/CHECKPOINT.json) reports **846 audited Lean theorem declarations** including generated ones; its already proved actual density, root geometry, pole transfer and rational identities have substantially informed this repository. [`snditeration` CI](https://github.com/randogelist/snditeration/actions/runs/40186793090) passed on that recorded main commit.
+
+The [broader `snditeration` continuation](https://github.com/randogelist/snditeration/tree/feat/zetahyperbolic-continuation-20261025) adds candidate Section 2–6 proofs but [its latest inspected CI failed](https://github.com/randogelist/snditeration/actions/runs/40188938699). These are useful research candidates **without** new PASS credit. Import only an exact commit-pinned, license-compatible, dependency-closed Lean theorem, prove the original manuscript object identification, then build and independently audit against this repository's Lean 4.33.0 and Mathlib pin. A theorem name, imported `.olean` from a different platform or a GitHub README cannot replace such evidence.
+
+The cited Fauzan `ζ(5)` source is a separate additional research input; its different `K=40n` parameters and toolchain must not be silently identified with the paper's `K=30n` data.
+
+## Durable update protocol
+
+- This **branch-only** register is a live research queue, not a replacement for the audited `docs/formalization_status.json`. When the main branch actually advances, update both the pinned baseline and this ledger in a new tracker commit. Do not silently increase completion counts.
+- Every promoted statement must link to **exact numbered printed clause → original mathematical data → Lean fully qualified theorem → source SHA → compiler version/Mathlib commit → passing CI/native receipt → transitive axiom audit**. If a corrected theorem replaces false print, retain the original as blocked and link both.
+- Keep `YOU_ARE_GOODWORKFLOWFRONTIER`, `LEAN_ANCHORINGS` and `ZETA_HYPERBOLIC_ANCHOR_1` through `ZETA_HYPERBOLIC_ANCHOR_7` frozen. Reuse unchanged cached Mathlib/project objects only with compatible integrity-verified provenance.
+- A partial or conditional Lean proof is real progress, but it is not the missing quantitative transfer conclusion. No full-manuscript closure, new ζ(5)/ζ(7) irrationality theorem **from this paper's family**, or S-tier finite-witness admission is certified by opening this tracking branch.
