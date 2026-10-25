@@ -24,20 +24,31 @@ The **YOU_ARE_GOODWORKFLOWFRONTIER** tierlist (from [WORKFLOW.txt](WORKFLOW.txt)
 
 | Whole printed item | Item numbers | Count |
 |:---|:---|---:|
-| `!!` A-Tier — complete printed result | 2.2, 2.3, 2.4, 2.5, 3.1, 4.3, 5.4 | 7 |
+| **RESOLVED** — `!!` A-Tier complete printed result | ~~2.2~~, ~~2.3~~, ~~2.4~~, ~~2.5~~, ~~3.1~~, ~~4.3~~, ~~5.4~~ | **7** |
 | A-Tier components — whole printed result **open** | 3.3, 3.7, 3.8, 3.9, 4.1, 4.2, 4.4, 4.5, 4.6, 4.7, 4.8, 5.1, 5.2, 5.3, 6.2, 6.4, 6.6, 6.9, 6.10, 6.17, 6.18 | 21 |
 | Not formally established at item level | 5.6, 5.7, 6.1, 6.5, 6.7, 6.8, 6.11, 6.12, 6.14, 6.16 | 10 |
 | Literal printed statement **blocked** | 3.2, 3.4, 3.5, 3.6, 6.3, 6.13, 6.15 | 7 |
 
-**All 45 items**, their names, exact outstanding mathematical bridges and individual whole-item tier ratings appear in the [full register](docs/PERSISTENT_PAPER_GAPS.md), **immediately after its tier definitions**. A completed component does not remove the remaining obligations of a partially proved theorem.
+**All 45 items** and the exact proof components now crossed off, with fully proved items struck through, appear in the [updated resolution register](docs/PERSISTENT_PAPER_GAPS.md). A completed subcomponent does not remove remaining obligations of its unfinished parent theorem.
 
-## 3. Verified mathematical baseline (25 October 2026)
+## 3. Cross-branch resolutions already available
+
+The audit of passing `zetahyperbolic-axiom` and `snditeration` branches also confirmed these **resolved subproofs** (not complete parent statements):
+
+- **3.3:** Actual intrinsic signature locally; **ζ(5) primitive sign and exact root-side counts** already passed in [`snditeration/main`](https://github.com/randogelist/snditeration/actions/runs/40186793090). Mixed minors/Carleman are not yet closed.
+- **3.4, 3.6, 3.7:** All-rank Dodgson + rank-sensitive principal reality, the **entire corrected** finite-rank reciprocal corollary, and actual all-derivative Turán/strict Newton criteria have already been audited locally.
+- **4.1–4.2:** Conditional real/lattice transfer, a computable denominator threshold **given effective rate inputs**, integer resultants and conditional algebraic transfer are proved. The concrete `K=30n` prime/decay estimates are still absent.
+- **5.2, 6.13, 6.15:** Finite dual real-root spectra, corrected central-factorial differential identities, and odd Dirichlet-beta transcendence/finite independence are already proved components.
+
+Exact theorem names, sources, proof scope and remaining bridges are in the [45-item crossed-off register](docs/PERSISTENT_PAPER_GAPS.md). The `snditeration` broad continuation branch **failed CI** and supplies candidates only. This tracker revision modifies no Lean source and claims no new compiler result.
+
+## 4. Verified mathematical baseline (25 October 2026)
 
 **219 Lean modules passed compilation and independent transitive axiom auditing**, covering 3,135 declarations, including 2,489 kernel theorem declarations (private/generated included). [Passing build](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40188664869). The corresponding Leaned Paper is substantially advanced mathematically, with real rational-moment identities, positive actual Gram pencils, unconditional hyperbolicity and zero-free disks, spectral and strict Newton/reciprocal-moment results, algebraic transfer, and independent odd-beta transcendence.
 
 Printed manuscript classification: **7 complete**, **21 partial**, **10 not formalized**, **7 literally blocked**. The 7 fully proved numbered results are **2.2, 2.3, 2.4, 2.5, 3.1, 4.3 and 5.4**. These numbers count whole paper statements, **not** Lean declarations. Source: [audited 45-result manuscript status](docs/FORMALIZATION_STATUS.md).
 
-## 4. Missing-work priorities
+## 5. Missing-work priorities
 
 | Workstream | Necessary closure |
 |:---|:---|
@@ -48,7 +59,7 @@ Printed manuscript classification: **7 complete**, **21 partial**, **10 not form
 
 **Key diagnostic:** the paper's 4.6 lower height bound uses an upper bound in the wrong direction; 4.8's claimed global rational-root exclusion similarly applies a lower root-gap as an upper bound. These are *unproved paper inferences*, not reasons to discard the certified structural mathematics.
 
-## 5. Persistent tracking procedure
+## 6. Persistent tracking procedure
 
 - Work from the actual manuscript and the existing [machine-readable item ledger](docs/formalization_status.json), preserve all 45 item IDs, and freeze unchanged certified Lean modules.
 - For each improvement record **the literal paper claim, exact constructed function/matrix, fully qualified Lean theorem, audited commit/runner receipt, retained hypotheses, and next open endpoint**.
