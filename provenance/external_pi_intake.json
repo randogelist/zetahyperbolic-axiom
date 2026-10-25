@@ -1,0 +1,48 @@
+{
+  "repository": "https://github.com/gotrevor/lean-formalizations",
+  "commit": "a216ec2d29bbb3f76403a62358e9ca606d0b42f1",
+  "toolchain_original": "Lean 4.31.0",
+  "license": "Apache-2.0",
+  "source_root": "src/LeanFormalizations/NumberTheory/Transcendence",
+  "adaptation": "Local import path mapping; SubsetSumEsymm empty-multiset case supplies explicit Mathlib powersetCard_zero_left and powersetCard_zero_right simp lemmas for Lean 4.33.0. Mathematical statements unchanged.",
+  "status": "TARGETED_COMPILE_PASS_GLOBAL_AXIOM_AUDIT_PENDING",
+  "files": [
+    {
+      "source_path": "ETranscendental.lean",
+      "source_sha256": "9a629261092c708e8dc2cd40470152a1d0ec407bbe8feba1687c0d0f69a8060b",
+      "local_path": "src/LeanPaper/ExternalPi/ETranscendental.lean",
+      "local_sha256": "9a629261092c708e8dc2cd40470152a1d0ec407bbe8feba1687c0d0f69a8060b"
+    },
+    {
+      "source_path": "PiLindemann.lean",
+      "source_sha256": "d58c9b68fd37187f7313750199b35027aa71f7cf828a10ef4b12db4c96238072",
+      "local_path": "src/LeanPaper/ExternalPi/PiLindemann.lean",
+      "local_sha256": "9ed5dc448a47d79345b74516f0cb1c1ecd1d4c30d27de3b43e5d0375b603eee8"
+    },
+    {
+      "source_path": "SubsetSumEsymm.lean",
+      "source_sha256": "b7ca64189eb633f354b0efcf6a37b378112411b8b1bda01d11aea41823f6608f",
+      "local_path": "src/LeanPaper/ExternalPi/SubsetSumEsymm.lean",
+      "local_sha256": "3084d5fd3b491452da871b43e7980c15ee83ecdf972117f7bbfe4003b2106f0d"
+    },
+    {
+      "source_path": "PiTranscendental.lean",
+      "source_sha256": "5372aaab6e6468e09e85023e9d37f58d5b295a3818ea54eb215d829f321f20ad",
+      "local_path": "src/LeanPaper/ExternalPi/PiTranscendental.lean",
+      "local_sha256": "e46ced19b2be3e8c1ab51d451eaf91735378f7f15309f593305df1b469079144"
+    },
+    {
+      "source_path": "MonicRootSums.lean",
+      "source_sha256": "faff28ea6e3a401389dd7a44fe74c074e827b058dba813c1634b55442aea0e43",
+      "local_path": "src/LeanPaper/ExternalPi/MonicRootSums.lean",
+      "local_sha256": "a68ad55d04622eec471cf95c5fcdd9e93a8657fa10983bf76ecaaeece718d25a"
+    },
+    {
+      "source_path": "HermiteLindemann.lean",
+      "source_sha256": "a14f3c4259df80783abfd4303ffdf8a4e399e69089da1fe9e1d24eec538bbf32",
+      "local_path": "src/LeanPaper/ExternalPi/HermiteLindemann.lean",
+      "local_sha256": "a14f3c4259df80783abfd4303ffdf8a4e399e69089da1fe9e1d24eec538bbf32"
+    }
+  ],
+  "toolchain_target": "Lean 4.33.0"
+}

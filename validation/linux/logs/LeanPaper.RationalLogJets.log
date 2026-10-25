@@ -1,0 +1,1 @@
+'LeanPaper.RationalLogJets.iterated_log_rational' depends on axioms: [propext, Classical.choice, Quot.sound]

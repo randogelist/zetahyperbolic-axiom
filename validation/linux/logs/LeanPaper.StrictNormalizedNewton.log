@@ -1,0 +1,6 @@
+'LeanPaper.StrictNormalizedNewton.coefficient_newton_strict_criterion' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'LeanPaper.StrictNormalizedNewton.normalized_shifted_newton_strict' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

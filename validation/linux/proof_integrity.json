@@ -1,6 +1,6 @@
 {
-  "version": "v0_1_4_construction",
-  "active_modules": 166,
+  "version": "v0_1_5_construction",
+  "active_modules": 219,
   "unproved_placeholder_tokens": {},
   "placeholder_count": 0,
   "project_specific_axioms": 0,
@@ -10,6 +10,6 @@
     "Quot.sound",
     "Classical.choice"
   ],
-  "excluded_negative_test_fixtures": "tests/axiom_walk;deliberate rejection tests, never imported",
-  "semantic_hypotheses": "See formalization_status.json; zero forbidden axioms does not discharge explicit conditional premises"
+  "excluded_negative_test_fixtures": "tests/axiom_walk;deliberate rejection tests never imported",
+  "semantic_hypotheses": "See formalization_status.json; conditional premises are not discharged by an axiom audit."
 }
