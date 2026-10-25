@@ -41,8 +41,9 @@
       "title": "Universal hyperbolicity and zero-free disk",
       "source_state": "COMPLETE_CANDIDATE_SOURCE",
       "native_status": "PENDING_CURRENT_RECEIPT",
-      "sources": "20:MAIN_CHAIN_ASSEMBLED;20:PaperChain/Stage03UnconditionalBridge",
-      "remaining_obligation": "Native compiler/axiom audit and exact statement review required. Source discharges Gram positivity and pole integral; this does not imply irrationality."
+      "sources": "20:MAIN_CHAIN_ASSEMBLED;20:PaperChain/Stage03UnconditionalBridge;LeanPaper/RebuildKernelBridge",
+      "remaining_obligation": "Native compiler/axiom audit and exact statement review required. Source discharges Gram positivity and pole integral; this does not imply irrationality.",
+      "local_compiler_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED;DIRECT_RATIONAL_KERNEL_INTEGRAL_FOR_0_LT_K"
     },
     {
       "manuscript_item": "3.2",
@@ -368,6 +369,7 @@
       "remaining_obligation": "Retain this manuscript obligation. No manuscript-equivalent native certification established by this focused review; historical theorem filenames/blueprints are not proof evidence."
     }
   ],
-  "local_validation": "92_ACTIVE_MODULES_COMPILED_AND_AXIOM_AUDITED;EXACT_STATEMENT_SCOPE_ONLY",
-  "local_receipt": "validation/linux/acceptance.json"
+  "local_validation": "96_ACTIVE_MODULES_COMPILED_AND_AXIOM_AUDITED;EXACT_STATEMENT_SCOPE_ONLY",
+  "local_receipt": "validation/linux/acceptance.json",
+  "source_exchange": "docs/SNDITERATION_EXCHANGE.md"
 }

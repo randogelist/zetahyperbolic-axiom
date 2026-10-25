@@ -109,8 +109,31 @@ LeanPaper.SingularPrincipalMinorExample.first_minor_natDegree_zero :
   (ManuscriptChain.PrincipalMinors.determinant LeanPaper.SingularPrincipalMinorExample.parameters
         LeanPaper.SingularPrincipalMinorExample.firstIndex).natDegree =
     0
-AUDITED_PROJECT_DECLARATIONS=1447
-AUDITED_DEPENDENCY_DECLARATIONS=66351
+ManuscriptChain.PartialFractions.data_quotient_eq_actual (p : ManuscriptChain.Real.Parameters) (i j : ℕ) :
+  (ManuscriptChain.PartialFractions.data p (i + j)).quotient = ManuscriptChain.Real.quotient p i j
+ManuscriptChain.PartialFractions.residueCoeff_eq_actual (p : ManuscriptChain.Real.Parameters) (i j a : ℕ)
+  (ha : a ∈ Finset.Icc (p.N + 1) p.K) :
+  ManuscriptChain.PartialFractions.residueCoeff p (i + j) a = ManuscriptChain.Real.residue p i j a
+ManuscriptChain.PartialFractions.rational_kernel_decomposition (p : ManuscriptChain.Real.Parameters) (i j : ℕ) :
+  ManuscriptChain.Real.numerator p i j =
+    ManuscriptChain.Real.quotient p i j * ManuscriptChain.Real.tailD p +
+      ∑ a ∈ Finset.Icc (p.N + 1) p.K,
+        Polynomial.C (ManuscriptChain.Real.residue p i j a) *
+          ∏ b ∈ (Finset.Icc (p.N + 1) p.K).erase a, (Polynomial.X + Polynomial.C (↑b ^ 2))
+LeanPaper.RebuildKernelBridge.resolvedKernel_eq_fraction_all_real (p : ManuscriptChain.Real.Parameters) (i j : ℕ)
+  (y : ℝ) :
+  ManuscriptChain.Hyperbolic.resolvedKernel p i j y =
+    Polynomial.eval₂ (algebraMap ℚ ℝ) (y ^ 2) (ManuscriptChain.Real.numerator p i j) /
+      Polynomial.eval₂ (algebraMap ℚ ℝ) (y ^ 2) (ManuscriptChain.Real.tailD p)
+LeanPaper.RebuildKernelBridge.gram_eq_fraction_integral (p : ManuscriptChain.Real.Parameters) (hk : 0 < p.k)
+  (i j : Fin p.h) :
+  ManuscriptChain.Real.gram p (ManuscriptChain.Real.zeta p.weight) i j =
+    ∫ (y : ℝ) in Set.Ioi 0,
+      Polynomial.eval₂ (algebraMap ℚ ℝ) (y ^ 2) (ManuscriptChain.Real.numerator p ↑i ↑j) /
+          Polynomial.eval₂ (algebraMap ℚ ℝ) (y ^ 2) (ManuscriptChain.Real.tailD p) *
+        ManuscriptChain.Hyperbolic.density p.k y
+AUDITED_PROJECT_DECLARATIONS=1490
+AUDITED_DEPENDENCY_DECLARATIONS=66394
 AUDITED_AXIOMS=[Quot.sound, Classical.choice, propext]
 AXIOM_AUDIT_METHOD=INDEPENDENT_VISITED_SET_GRAPH
 AXIOM_AUDIT_ACCEPTED=ALL_PROJECT_DECLARATIONS

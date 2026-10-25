@@ -1,3 +1,7 @@
+LeanPaper.RebuildKernelBridge
+LeanPaper.Rebuild.PartialFractionsCore
+LeanPaper.Rebuild.PartialFractionsQuotient
+LeanPaper.Rebuild.PartialFractionsResidues
 LeanPaper.PullbackReflection
 LeanPaper.SingularSlope
 LeanPaper.PrincipalMinorRealRoots

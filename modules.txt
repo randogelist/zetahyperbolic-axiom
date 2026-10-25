@@ -89,4 +89,8 @@ LeanPaper.PrincipalMinorRealRoots
 LeanPaper.ReciprocalRootMoments
 LeanPaper.SingularPrincipalMinorExample
 LeanPaper.AxiomWalk
+LeanPaper.Rebuild.PartialFractionsCore
+LeanPaper.Rebuild.PartialFractionsQuotient
+LeanPaper.Rebuild.PartialFractionsResidues
+LeanPaper.RebuildKernelBridge
 LeanPaper.KernelAudit

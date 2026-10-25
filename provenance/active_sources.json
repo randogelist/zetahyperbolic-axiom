@@ -528,8 +528,9 @@
   {
     "active": "src/LeanPaper/KernelAudit.lean",
     "origin": "NEW_OR_ADAPTED_SOURCE_v0_1_1_construction",
-    "sha256": "05fb280898cd558dce55e7ebfd9c18bba6613d64344b786d61d7373b28224d25",
-    "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json"
+    "sha256": "becd51fc0f4ed94121f84dadd28cb35e613a9d80d204e83a9e3b5933515ff462",
+    "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+    "previous_active_sha256": "05fb280898cd558dce55e7ebfd9c18bba6613d64344b786d61d7373b28224d25"
   },
   {
     "active": "src/LeanPaper/PrincipalMinorRealRoots.lean",
@@ -679,6 +680,48 @@
     "active": "src/ProofAdvances/Theorem_3_4.lean",
     "origin": "NEW_OR_ADAPTED_SOURCE_v0_1_1_construction",
     "sha256": "bc3cd6ebca0f343c27a5adc8184ff2f304b8e9473c3f1f810dfb7b9262219a8d",
+    "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json"
+  },
+  {
+    "active": "src/LeanPaper/Rebuild/PartialFractionsCore.lean",
+    "source_repository": "randogelist/snditeration",
+    "source_commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+    "source_path": "Zetahyperbolic/Section3/PartialFractionsCore.lean",
+    "upstream_blob_sha": "e57b32d5fb782c4f53ad1f8d6262a081b9275fc6",
+    "upstream_sha256": "3f5bb573f35ad8c644de4cfcbad08630eff383cb24e23abc4930b06d59692b27",
+    "active_sha256": "bb123fe5edf0a5cb47b34a91ba4284e306f4b503b61521903e6d8ba0caa9e674",
+    "modifications": "IMPORT_PATHS_ONLY",
+    "sha256": "bb123fe5edf0a5cb47b34a91ba4284e306f4b503b61521903e6d8ba0caa9e674",
+    "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json"
+  },
+  {
+    "active": "src/LeanPaper/Rebuild/PartialFractionsQuotient.lean",
+    "source_repository": "randogelist/snditeration",
+    "source_commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+    "source_path": "Zetahyperbolic/Section3/PartialFractionsQuotient.lean",
+    "upstream_blob_sha": "8910129ecc26e0d57fa93c2f41a3d6b9246e4ad1",
+    "upstream_sha256": "ac3d8764d7385053a106d7ed436afd87bb4243c8fb2d9aefb4ced30a7209a539",
+    "active_sha256": "9220e92772fcc73dc8044177ee54f337dde7febb923f984a2e6f973e1d30272c",
+    "modifications": "IMPORT_PATHS_ONLY",
+    "sha256": "9220e92772fcc73dc8044177ee54f337dde7febb923f984a2e6f973e1d30272c",
+    "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json"
+  },
+  {
+    "active": "src/LeanPaper/Rebuild/PartialFractionsResidues.lean",
+    "source_repository": "randogelist/snditeration",
+    "source_commit": "ec90bd0be7c3889b71be719ec1404dae385b27a6",
+    "source_path": "Zetahyperbolic/Section3/PartialFractionsResidues.lean",
+    "upstream_blob_sha": "140b3099daf7f671fb3ea2ed02654f1ec6b92cc2",
+    "upstream_sha256": "0b9837504a645a1e4b0d5109e80728c099e842dca1c91f4f6758cbe0970f4c3e",
+    "active_sha256": "c8c058b8b59bf6e310bba9d16d5b90eebf2f130e181b3989c71332894843e49d",
+    "modifications": "IMPORT_PATHS_ONLY",
+    "sha256": "c8c058b8b59bf6e310bba9d16d5b90eebf2f130e181b3989c71332894843e49d",
+    "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json"
+  },
+  {
+    "active": "src/LeanPaper/RebuildKernelBridge.lean",
+    "origin": "NEW_BRIDGE_v0_1_2_construction",
+    "sha256": "7f00c2b88daa91d966f00a4445546127111d47bf00f3d50b585f3d1fdba053e9",
     "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json"
   }
 ]

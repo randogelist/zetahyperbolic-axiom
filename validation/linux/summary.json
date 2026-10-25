@@ -3,8 +3,8 @@
   "lean_version": "Lean (version 4.33.0, x86_64-unknown-linux-gnu, commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)",
   "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d",
   "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
-  "total": 92,
-  "passed": 92,
+  "total": 96,
+  "passed": 96,
   "failed": [],
   "blocked": [],
   "axiom_audit_accepted": true,
@@ -1940,7 +1940,7 @@
     {
       "module": "LeanPaper.SingularPrincipalMinorExample",
       "status": "PASS",
-      "action": "COMPILED",
+      "action": "REUSED_LOCAL_PASS",
       "seconds": 31.153,
       "returncode": 0,
       "inputs": {
@@ -1974,15 +1974,113 @@
       "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
+      "module": "LeanPaper.Rebuild.PartialFractionsCore",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 4.569,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "bb123fe5edf0a5cb47b34a91ba4284e306f4b503b61521903e6d8ba0caa9e674",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "Theorem_2_5_Lagrange_Pole_Diagonalization": {
+            "Theorem_2_5_Lagrange_Pole_Diagonalization.olean": "3f175e0a2305f7c586ef07e2863467e72758a2ccf62568845ffb1657e4f68094"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/Rebuild/PartialFractionsCore.olean": "f597040a0b1a3f06d362cdd3dbcf232fceb6ebf29f99f30aa2444c4283b73ecd"
+      },
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "LeanPaper.Rebuild.PartialFractionsQuotient",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 2.519,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "9220e92772fcc73dc8044177ee54f337dde7febb923f984a2e6f973e1d30272c",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.Rebuild.PartialFractionsCore": {
+            "LeanPaper/Rebuild/PartialFractionsCore.olean": "f597040a0b1a3f06d362cdd3dbcf232fceb6ebf29f99f30aa2444c4283b73ecd"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/Rebuild/PartialFractionsQuotient.olean": "0793dc8776f15b71f1f6631572613fa14f31398460145c2dad7cd3d45c7c61fd"
+      },
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "LeanPaper.Rebuild.PartialFractionsResidues",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 3.57,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "c8c058b8b59bf6e310bba9d16d5b90eebf2f130e181b3989c71332894843e49d",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.Rebuild.PartialFractionsQuotient": {
+            "LeanPaper/Rebuild/PartialFractionsQuotient.olean": "0793dc8776f15b71f1f6631572613fa14f31398460145c2dad7cd3d45c7c61fd"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/Rebuild/PartialFractionsResidues.olean": "304ac5725a10d08a070bb1a884893287eb9c825a6248827559e9343cbc119938"
+      },
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "LeanPaper.RebuildKernelBridge",
+      "status": "PASS",
+      "action": "COMPILED",
+      "seconds": 23.461,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "7f00c2b88daa91d966f00a4445546127111d47bf00f3d50b585f3d1fdba053e9",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.Rebuild.PartialFractionsResidues": {
+            "LeanPaper/Rebuild/PartialFractionsResidues.olean": "304ac5725a10d08a070bb1a884893287eb9c825a6248827559e9343cbc119938"
+          },
+          "Theorem_3_1_Rational_Integral_Bridge": {
+            "Theorem_3_1_Rational_Integral_Bridge.olean": "9fab3731a93f6402e6bdd70c6859f4f89c84ec37f5605f90ec72919ac6742c50"
+          },
+          "Theorem_3_1_Pole_Integral_Identity": {
+            "Theorem_3_1_Pole_Integral_Identity.olean": "bace8256202067a4fb74ba8e339b5ce67cfbf03258b4d2dcf5140e0af6373986"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/RebuildKernelBridge.olean": "d78b96f5627188e7ea49d1c2069ef07f75e92889254321bfc9fbc0d7fbf3d07c"
+      },
+      "log_sha256": "89d87dc5fde23694933729885b9be9426743770f2794ee7b80d01b3143f64355"
+    },
+    {
       "module": "LeanPaper.KernelAudit",
       "status": "PASS",
       "action": "COMPILED",
-      "seconds": 312.434,
+      "seconds": 313.875,
       "returncode": 0,
       "inputs": {
-        "source_sha256": "05fb280898cd558dce55e7ebfd9c18bba6613d64344b786d61d7373b28224d25",
+        "source_sha256": "becd51fc0f4ed94121f84dadd28cb35e613a9d80d204e83a9e3b5933515ff462",
         "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
         "dependencies": {
+          "LeanPaper.RebuildKernelBridge": {
+            "LeanPaper/RebuildKernelBridge.olean": "d78b96f5627188e7ea49d1c2069ef07f75e92889254321bfc9fbc0d7fbf3d07c"
+          },
+          "LeanPaper.Rebuild.PartialFractionsCore": {
+            "LeanPaper/Rebuild/PartialFractionsCore.olean": "f597040a0b1a3f06d362cdd3dbcf232fceb6ebf29f99f30aa2444c4283b73ecd"
+          },
+          "LeanPaper.Rebuild.PartialFractionsQuotient": {
+            "LeanPaper/Rebuild/PartialFractionsQuotient.olean": "0793dc8776f15b71f1f6631572613fa14f31398460145c2dad7cd3d45c7c61fd"
+          },
+          "LeanPaper.Rebuild.PartialFractionsResidues": {
+            "LeanPaper/Rebuild/PartialFractionsResidues.olean": "304ac5725a10d08a070bb1a884893287eb9c825a6248827559e9343cbc119938"
+          },
           "LeanPaper.PullbackReflection": {
             "LeanPaper/PullbackReflection.olean": "758f43321b6ed083d1f06ebff9ea210efe09a868e3ba9a01904f64e6b5089d7b"
           },
@@ -2259,9 +2357,9 @@
         }
       },
       "output_hashes": {
-        "LeanPaper/KernelAudit.olean": "4c7e88eab1073f93c9dad05cb975df25ca8b702ea70d306cc6fa1aadfa647595"
+        "LeanPaper/KernelAudit.olean": "c5750222196df0d699a6de16492d10719844e35a4e8898f02d0aae97f07e60a3"
       },
-      "log_sha256": "e8e916561cab4a08061eed3d8ad268a69f3e52568eee997c547a298634ea3a3a"
+      "log_sha256": "6a0c115a8297df7304ab9833b12f9696e8cb0c10574f0269309c3e4444f4faf4"
     }
   ]
 }

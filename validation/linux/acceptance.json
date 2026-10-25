@@ -1,7 +1,7 @@
 {
-  "version": "v0_1_1_construction",
+  "version": "v0_1_2_construction",
   "platform": "LINUX_LOCAL",
-  "compiled_modules": 92,
+  "compiled_modules": 96,
   "compiler": "Lean4.33.0",
   "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d",
   "axiom_method": "INDEPENDENT_VISITED_SET_GRAPH",
@@ -10,11 +10,11 @@
     "Quot.sound",
     "Classical.choice"
   ],
-  "audit_log_sha256": "e8e916561cab4a08061eed3d8ad268a69f3e52568eee997c547a298634ea3a3a",
-  "summary_sha256": "fbcc330604703148a24a5f9a004ba8355900f4736b8937deed68cf459cb9d8f4",
+  "audit_log_sha256": "6a0c115a8297df7304ab9833b12f9696e8cb0c10574f0269309c3e4444f4faf4",
+  "summary_sha256": "b453647d58044a4db1015edcacf28a569b580232fcedaaa95aa6f9ad9ec3d376",
   "source_inventory": "provenance/active_module_hashes.json",
   "native_windows_status": "NOT_RUN",
   "full_manuscript_equivalence": "NOT_CERTIFIED",
-  "AUDITED_PROJECT_DECLARATIONS": 1447,
-  "AUDITED_DEPENDENCY_DECLARATIONS": 66351
+  "AUDITED_PROJECT_DECLARATIONS": 1490,
+  "AUDITED_DEPENDENCY_DECLARATIONS": 66394
 }

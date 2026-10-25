@@ -400,7 +400,28 @@
   "LeanPaper.AxiomWalk": [
     "Lean"
   ],
+  "LeanPaper.Rebuild.PartialFractionsCore": [
+    "Theorem_2_5_Lagrange_Pole_Diagonalization",
+    "Mathlib.Algebra.Polynomial.PartialFractions",
+    "Mathlib.Tactic"
+  ],
+  "LeanPaper.Rebuild.PartialFractionsQuotient": [
+    "LeanPaper.Rebuild.PartialFractionsCore"
+  ],
+  "LeanPaper.Rebuild.PartialFractionsResidues": [
+    "LeanPaper.Rebuild.PartialFractionsQuotient",
+    "Mathlib.Tactic"
+  ],
+  "LeanPaper.RebuildKernelBridge": [
+    "LeanPaper.Rebuild.PartialFractionsResidues",
+    "Theorem_3_1_Rational_Integral_Bridge",
+    "Theorem_3_1_Pole_Integral_Identity"
+  ],
   "LeanPaper.KernelAudit": [
+    "LeanPaper.RebuildKernelBridge",
+    "LeanPaper.Rebuild.PartialFractionsCore",
+    "LeanPaper.Rebuild.PartialFractionsQuotient",
+    "LeanPaper.Rebuild.PartialFractionsResidues",
     "LeanPaper.PullbackReflection",
     "LeanPaper.SingularSlope",
     "LeanPaper.PrincipalMinorRealRoots",

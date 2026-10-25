@@ -1,3 +1,7 @@
+import LeanPaper.RebuildKernelBridge
+import LeanPaper.Rebuild.PartialFractionsCore
+import LeanPaper.Rebuild.PartialFractionsQuotient
+import LeanPaper.Rebuild.PartialFractionsResidues
 import LeanPaper.PullbackReflection
 import LeanPaper.SingularSlope
 import LeanPaper.PrincipalMinorRealRoots
@@ -122,10 +126,20 @@ open Lean
 #check LeanPaper.SingularPrincipalMinorExample.first_slope_zero
 #check LeanPaper.SingularPrincipalMinorExample.first_minor_no_real_zero
 #check LeanPaper.SingularPrincipalMinorExample.first_minor_natDegree_zero
+#check ManuscriptChain.PartialFractions.data_quotient_eq_actual
+#check ManuscriptChain.PartialFractions.residueCoeff_eq_actual
+#check ManuscriptChain.PartialFractions.rational_kernel_decomposition
+#check LeanPaper.RebuildKernelBridge.resolvedKernel_eq_fraction_all_real
+#check LeanPaper.RebuildKernelBridge.gram_eq_fraction_integral
 run_cmd Elab.Command.liftCoreM do
   let env := (← getEnv).setExporting false
   let allowed : List Name := [``propext, ``Quot.sound, ``Classical.choice]
   let projectModules : Array Name := #[
+    `LeanPaper.Rebuild.PartialFractionsCore,
+    `LeanPaper.Rebuild.PartialFractionsQuotient,
+    `LeanPaper.Rebuild.PartialFractionsResidues,
+    `LeanPaper.RebuildKernelBridge,
+
     `Definition_2_1_Order_s_Rational_Moment_Functional,
     `Theorem_2_4_Canonical_Basis_Invariance,
     `Theorem_2_5_Lagrange_Pole_Diagonalization,

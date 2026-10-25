@@ -1,0 +1,379 @@
+{
+  "version": "v0_1_2_construction",
+  "repository": "https://github.com/randogelist/snditeration",
+  "main_commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+  "residue_branch_commit": "ec90bd0be7c3889b71be719ec1404dae385b27a6",
+  "branches": [
+    {
+      "name": "feat/zetahyperbolic-explicit-pole-residues",
+      "commit": "ec90bd0be7c3889b71be719ec1404dae385b27a6",
+      "lean_paths_different_from_main": [
+        "Zetahyperbolic.lean",
+        "Zetahyperbolic/Audit.lean",
+        "Zetahyperbolic/Section3/PartialFractionsResidues.lean"
+      ]
+    },
+    {
+      "name": "feat/zetahyperbolic-hyperbolic-density",
+      "commit": "9d563549e8b9b470b9e287501805619387924098",
+      "lean_paths_different_from_main": [
+        "Zetahyperbolic.lean",
+        "Zetahyperbolic/Audit.lean"
+      ]
+    },
+    {
+      "name": "feat/zetahyperbolic-lean433-foundation",
+      "commit": "4e275175b8441159d49b19d31657aea23a97406b",
+      "lean_paths_different_from_main": [
+        "Zetahyperbolic.lean",
+        "Zetahyperbolic/Audit.lean"
+      ]
+    },
+    {
+      "name": "feat/zetahyperbolic-partial-fractions",
+      "commit": "d9e5f1e0cad68902c475d7a727a20b0870cf3810",
+      "lean_paths_different_from_main": []
+    },
+    {
+      "name": "feat/zetahyperbolic-pole-resolvent-scaling",
+      "commit": "6063bfd2b5b94357b5589128bf09ffe9db2485ef",
+      "lean_paths_different_from_main": [
+        "Zetahyperbolic.lean",
+        "Zetahyperbolic/Audit.lean"
+      ]
+    },
+    {
+      "name": "feat/zetahyperbolic-positive-moment-bridge",
+      "commit": "1675e7214e210049face63a0da45cd803b356717",
+      "lean_paths_different_from_main": [
+        "Zetahyperbolic.lean",
+        "Zetahyperbolic/Audit.lean"
+      ]
+    },
+    {
+      "name": "feat/zetahyperbolic-section2-pole-diagonalization",
+      "commit": "ef9beea7cb3f58a4047aed7e5a2974dfb94fba30",
+      "lean_paths_different_from_main": [
+        "Zetahyperbolic.lean",
+        "Zetahyperbolic/Audit.lean"
+      ]
+    },
+    {
+      "name": "feat/zetahyperbolic-section3-gram-pencil",
+      "commit": "d532fd4361cd2798f40a7aa16fedd7afe3d0f965",
+      "lean_paths_different_from_main": [
+        "Zetahyperbolic.lean",
+        "Zetahyperbolic/Audit.lean"
+      ]
+    },
+    {
+      "name": "feat/zetahyperbolic-theorem3-1-hyperbolicity",
+      "commit": "154810daa9d3a7a65a6112464730557ce51facd1",
+      "lean_paths_different_from_main": [
+        "Zetahyperbolic.lean",
+        "Zetahyperbolic/Audit.lean"
+      ]
+    },
+    {
+      "name": "feat/zetahyperbolic-theorem4-transfer",
+      "commit": "dec6e2d5c178b5b83cdf62164dbfdeb929b71d7e",
+      "lean_paths_different_from_main": [
+        "Zetahyperbolic.lean",
+        "Zetahyperbolic/Audit.lean"
+      ]
+    },
+    {
+      "name": "feat/zetahyperbolic-zeta-tail-pole",
+      "commit": "8bc0bbe2fc7a2edea1783cbf0ad09f4fe8f53bac",
+      "lean_paths_different_from_main": [
+        "Zetahyperbolic.lean",
+        "Zetahyperbolic/Audit.lean"
+      ]
+    },
+    {
+      "name": "main",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "lean_paths_different_from_main": []
+    }
+  ],
+  "source_inventory": [
+    {
+      "path": ".github/workflows/lean.yml",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "db701a1b02ab6589642e8ba217d4daae4a26a696",
+      "sha256": "31001d9a3ccda1d0065603cc513aeb1aa7c6e3aab4df934530d03cdc44fd37a0"
+    },
+    {
+      "path": ".gitignore",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "326971acb54c166b2ac715047dcc364eb06f429b",
+      "sha256": "a4977610a85393cd4b17cf9d91592512c0a6ce5ee1e5a6ee1259820c5ab346e5"
+    },
+    {
+      "path": "README.md",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "d61fd7679611cebce0e66692c0626757e8fe9c61",
+      "sha256": "b82ceb24d7568f848e9eb8930927d56a310adc1a262da9294b8c58aa8ccdf79c"
+    },
+    {
+      "path": "Zetahyperbolic.lean",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "cd7dfa535015111fa18502781d7b59c3389e8c15",
+      "sha256": "f35cf915ff86f565a3a58e73430602b91fe7db2d142d7a12a0e86e85ae1b06f5"
+    },
+    {
+      "path": "Zetahyperbolic/Audit.lean",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "d54db5c914d5a8f9498d6e0060d55f6d4f38ac9d",
+      "sha256": "c4b8c4b00415765ab5bb5c0373d10d92485c4c005f5d9d9605d3cf1af38d5eb8"
+    },
+    {
+      "path": "Zetahyperbolic/Section2/BasisInvariance.lean",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "d15bb5fcfdb6d37db45a7c02206bce1d77c6fbab",
+      "sha256": "99d59a6c3c90e4071590c90df11bdf242106bde6268d009ffd1b436cbd92598b"
+    },
+    {
+      "path": "Zetahyperbolic/Section2/Moments.lean",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "094e435fe4c1483d65e976b67efca15611e8e3e2",
+      "sha256": "046d11411175fdc68810d58a829bc5c114ff5ed86569163a5813194d8758705c"
+    },
+    {
+      "path": "Zetahyperbolic/Section2/PoleDiagonalization.lean",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "49626eefdafaf8d5737a66b4b046f1ddc2ddfee6",
+      "sha256": "60426011ddc459ca30aecbaa1493d7436c6e435b56c71ce63773a4fcadf898e8"
+    },
+    {
+      "path": "Zetahyperbolic/Section3/BoseTailCore.lean",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "48c9e5d1d675467740092661974dc794ed1784a4",
+      "sha256": "9104a6bd6d8653283fc1f4d5e4f7a1738b654aa16f73a030a4e912909f98e59b"
+    },
+    {
+      "path": "Zetahyperbolic/Section3/BoseTailFormula.lean",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "bef2c8f0a2ce12b12daf0c5211271d07118f8010",
+      "sha256": "f28cec62f57de89368a780f501b2fc4b0bec89b2cf0388ab2e55cf8c0613360b"
+    },
+    {
+      "path": "Zetahyperbolic/Section3/ConcretePencil.lean",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "48856cc303df5b54b50ef4cea93a869f8c6f3b03",
+      "sha256": "092f8dea1fee81cc8b39cdf1b300cdd40a3d64cd436aff6609850cec3ddc6d45"
+    },
+    {
+      "path": "Zetahyperbolic/Section3/CothCore.lean",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "164c26afab04def0c1218472afc3eea1f41b973f",
+      "sha256": "d68384ff200e04c3a0f67fe2ee1a8a16a8fbe57f47be5fe4387581650c6f53a0"
+    },
+    {
+      "path": "Zetahyperbolic/Section3/CothFormula.lean",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "126d39acc1a2f6fc356dcde93296b8c7cba84e51",
+      "sha256": "60ced9d9b40b9b270b78f13fc4f535ee04fd1476c9689035ce8cfad999833376"
+    },
+    {
+      "path": "Zetahyperbolic/Section3/GeneralRootCore.lean",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "27025753563ce8e0373c5202af5d5da069c556ff",
+      "sha256": "270ad76cecf42df1f66859926fe5610edd7b087796a60ea023c5fffcc233b98a"
+    },
+    {
+      "path": "Zetahyperbolic/Section3/GeneralRootGap.lean",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "abaf2f18571a6a872d4c30b50ffb73308b7cb0de",
+      "sha256": "852565284661d3572bcb7ff584f51a1760425f96dd75b37f2552fffb7156c3aa"
+    },
+    {
+      "path": "Zetahyperbolic/Section3/HermitianFactorization.lean",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "2875fd3267d680e9ded289af9946d95be5ca411f",
+      "sha256": "c1384cddf83a22df65b0c433614ce4bfeace015166cd80a3d8cf9a3edd4ccd8f"
+    },
+    {
+      "path": "Zetahyperbolic/Section3/HyperbolicDensity.lean",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "10a74466ab0b5418dc37b53fb5f0bf1650d6b026",
+      "sha256": "b2a616cac298a10d7ecfaa3625322abc2b16c0583bf81aa44477753132486200"
+    },
+    {
+      "path": "Zetahyperbolic/Section3/HyperbolicMeasure.lean",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "828dcf7508f2f4a2b0efeb35ac91a700a7e60034",
+      "sha256": "1b74ee72aa1316558069e471adb3668948c0f089a238cc3495274037ba280d7c"
+    },
+    {
+      "path": "Zetahyperbolic/Section3/HyperbolicMomentBernoulli.lean",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "afef2f367770257ce832a31a7e93b2bec1de49d9",
+      "sha256": "5b0562d7ac358b44e3a21b97abc6145a5f7e9784f4dcf5fdae6eab719a203509"
+    },
+    {
+      "path": "Zetahyperbolic/Section3/HyperbolicMomentExp.lean",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "efe73cbbdcaf30128d6872b4b04fb27fb1735782",
+      "sha256": "6c148b9b18efad54b618f5bed3d72717dc482f92b42522ab6ccddc9e280aa431"
+    },
+    {
+      "path": "Zetahyperbolic/Section3/MomentPositivity.lean",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "bd8a1ab3db4cffa742370d41a8d3eab6686eeca7",
+      "sha256": "7285c968f840b5ab0babb5125d9b9b12a895c9b91d7e33678746f90ed6a88868"
+    },
+    {
+      "path": "Zetahyperbolic/Section3/PartialFractionsCore.lean",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "e57b32d5fb782c4f53ad1f8d6262a081b9275fc6",
+      "sha256": "3f5bb573f35ad8c644de4cfcbad08630eff383cb24e23abc4930b06d59692b27"
+    },
+    {
+      "path": "Zetahyperbolic/Section3/PartialFractionsQuotient.lean",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "8910129ecc26e0d57fa93c2f41a3d6b9246e4ad1",
+      "sha256": "ac3d8764d7385053a106d7ed436afd87bb4243c8fb2d9aefb4ced30a7209a539"
+    },
+    {
+      "path": "Zetahyperbolic/Section3/PoleIntegralIdentity.lean",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "95a29944c102a303bca82db40205da4f020e9c0f",
+      "sha256": "eea46036ff65106581d8327c936d380e12b4e5e470b75950886d69472ce2222d"
+    },
+    {
+      "path": "Zetahyperbolic/Section3/PoleKernelAlgebra.lean",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "a09afc72192ebd3d41e3aeca732d55f69ef66eb7",
+      "sha256": "8546062991f7a69e3403465923bb2431250744aa2d19b0a0a2f91084e5ba671a"
+    },
+    {
+      "path": "Zetahyperbolic/Section3/PoleScalingCore.lean",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "90271308ccccd9d238f5d4b6b5f0e9ba5b1c584a",
+      "sha256": "16f89f5324094a94c51a618cf2c1c1b97974bc2cfdd22a467ec641ba14d43c06"
+    },
+    {
+      "path": "Zetahyperbolic/Section3/PoleScalingIntegral.lean",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "fa033ba5047ac4c0e585a08214a79ec514f3f6b4",
+      "sha256": "a0ff6ebd87c36b0fd85c1ad01650a06000f476aaaee2a0cfa1ea976cb096c3bc"
+    },
+    {
+      "path": "Zetahyperbolic/Section3/PositiveMomentRealization.lean",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "b80c3d3e81bef61632482876165081c17a0d96eb",
+      "sha256": "7e08815d40a0af28e08bb33a55e16c13bcd9d85c2ae00fdce692fbbb8f58b0ef"
+    },
+    {
+      "path": "Zetahyperbolic/Section3/RootFactorization.lean",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "541dc76c4110107b85cc2cee2390bb35541c32da",
+      "sha256": "7fc79dc5162494d6097c47846904503d6c02453b1cf0ce026c36e0e362f0c9b0"
+    },
+    {
+      "path": "Zetahyperbolic/Section3/RootZeros.lean",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "101f354f9fd8f8f47a8310330565375791fd6f95",
+      "sha256": "c2f0df8258acae08ab49a86ade545ef34e584ee0c4cb51b2ee2c6b139f21b9c4"
+    },
+    {
+      "path": "Zetahyperbolic/Section3/SymmetricAffinePencil.lean",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "954373b6c2d5e31687b1bf11636078d02aa2b456",
+      "sha256": "77d3219d1fab9173394691b18406d3ae479a679acd32bfc17e1c790e5b5739c1"
+    },
+    {
+      "path": "Zetahyperbolic/Section3/ZetaTail.lean",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "065dd5ef7c5f332d9a5dd62c23034d60b4f9421b",
+      "sha256": "d53593da169386df63731c023133659adf12c100bd0ad8e7e7435e253759d76e"
+    },
+    {
+      "path": "Zetahyperbolic/Section4/Transfer.lean",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "a135c6b99995b49ca23de85dcbc595ff335fdcf0",
+      "sha256": "296975a5dd3cfb322400ebefd03365263de65761a5d744620ea9b9044545d7e5"
+    },
+    {
+      "path": "docs/FORMALIZATION_LEDGER.md",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "8caeb73885f6b783fdc1c43213ef6c8b5592a692",
+      "sha256": "fad4b125d10d8b72a08d30bc17f18cb4fec9bc316bf68a5bb96cb9ca53c4ee88"
+    },
+    {
+      "path": "lake-manifest.json",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "d97833f315c7dc50c158cc4df4509b3bbc445c09",
+      "sha256": "328cc85a1030445860dcad2fbf78cb2a0d3190d58f32701c4049c42337a97bbc"
+    },
+    {
+      "path": "lakefile.lean",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "a12e10e090d3fbe33db143b14764105f108854e0",
+      "sha256": "32b41cf800a750b3d63afd5809bd9272040a5d6e1173b1da0e0ef37bec0ffb8a"
+    },
+    {
+      "path": "lean-toolchain",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "025e59548e48cf71f2744154e2890beefe30a258",
+      "sha256": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+    },
+    {
+      "path": "run.cmd",
+      "commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "blob_sha": "98d3e23ad3ff59878e71a8c48bd7ed42451ad6ed",
+      "sha256": "824443f5528b853a7281f1f9cc0ffecda4f1380db64c0e6f50817f862e8ef2a8"
+    },
+    {
+      "path": "Zetahyperbolic/Section3/PartialFractionsResidues.lean",
+      "commit": "ec90bd0be7c3889b71be719ec1404dae385b27a6",
+      "blob_sha": "140b3099daf7f671fb3ea2ed02654f1ec6b92cc2",
+      "sha256": "0b9837504a645a1e4b0d5109e80728c099e842dca1c91f4f6758cbe0970f4c3e"
+    }
+  ],
+  "imported_sources": [
+    {
+      "active": "src/LeanPaper/Rebuild/PartialFractionsCore.lean",
+      "source_repository": "randogelist/snditeration",
+      "source_commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "source_path": "Zetahyperbolic/Section3/PartialFractionsCore.lean",
+      "upstream_blob_sha": "e57b32d5fb782c4f53ad1f8d6262a081b9275fc6",
+      "upstream_sha256": "3f5bb573f35ad8c644de4cfcbad08630eff383cb24e23abc4930b06d59692b27",
+      "active_sha256": "bb123fe5edf0a5cb47b34a91ba4284e306f4b503b61521903e6d8ba0caa9e674",
+      "modifications": "IMPORT_PATHS_ONLY"
+    },
+    {
+      "active": "src/LeanPaper/Rebuild/PartialFractionsQuotient.lean",
+      "source_repository": "randogelist/snditeration",
+      "source_commit": "97802e189e668e4d3b36707497ed0b25255f6400",
+      "source_path": "Zetahyperbolic/Section3/PartialFractionsQuotient.lean",
+      "upstream_blob_sha": "8910129ecc26e0d57fa93c2f41a3d6b9246e4ad1",
+      "upstream_sha256": "ac3d8764d7385053a106d7ed436afd87bb4243c8fb2d9aefb4ced30a7209a539",
+      "active_sha256": "9220e92772fcc73dc8044177ee54f337dde7febb923f984a2e6f973e1d30272c",
+      "modifications": "IMPORT_PATHS_ONLY"
+    },
+    {
+      "active": "src/LeanPaper/Rebuild/PartialFractionsResidues.lean",
+      "source_repository": "randogelist/snditeration",
+      "source_commit": "ec90bd0be7c3889b71be719ec1404dae385b27a6",
+      "source_path": "Zetahyperbolic/Section3/PartialFractionsResidues.lean",
+      "upstream_blob_sha": "140b3099daf7f671fb3ea2ed02654f1ec6b92cc2",
+      "upstream_sha256": "0b9837504a645a1e4b0d5109e80728c099e842dca1c91f4f6758cbe0970f4c3e",
+      "active_sha256": "c8c058b8b59bf6e310bba9d16d5b90eebf2f130e181b3989c71332894843e49d",
+      "modifications": "IMPORT_PATHS_ONLY"
+    }
+  ],
+  "bridge": "src/LeanPaper/RebuildKernelBridge.lean",
+  "bridge_sha256": "7f00c2b88daa91d966f00a4445546127111d47bf00f3d50b585f3d1fdba053e9",
+  "report": "docs/SNDITERATION_EXCHANGE.md",
+  "existing_mathematical_sources_replaced": 0,
+  "exact_claim": "Direct actual-parameter decomposition; existing resolved kernel equality for all real arguments; actual Gram integral for 0 < p.k",
+  "excluded_claims": [
+    "General RatFunc representation independence",
+    "Full manuscript equivalence",
+    "Unconditional irrationality"
+  ],
+  "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+  "native_status": "NOT_RUN"
+}

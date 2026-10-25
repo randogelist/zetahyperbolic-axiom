@@ -19,7 +19,7 @@
   },
   {
     "module": "LeanPaper.KernelAudit",
-    "sha256": "05fb280898cd558dce55e7ebfd9c18bba6613d64344b786d61d7373b28224d25",
+    "sha256": "becd51fc0f4ed94121f84dadd28cb35e613a9d80d204e83a9e3b5933515ff462",
     "native_status": "PENDING_WINDOWS",
     "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED"
   },
@@ -32,6 +32,30 @@
   {
     "module": "LeanPaper.PullbackReflection",
     "sha256": "9a621ff7a04196929931c41b359674d0d96b4131b4bb7a72c05f57d0dec535fc",
+    "native_status": "PENDING_WINDOWS",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED"
+  },
+  {
+    "module": "LeanPaper.Rebuild.PartialFractionsCore",
+    "sha256": "bb123fe5edf0a5cb47b34a91ba4284e306f4b503b61521903e6d8ba0caa9e674",
+    "native_status": "PENDING_WINDOWS",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED"
+  },
+  {
+    "module": "LeanPaper.Rebuild.PartialFractionsQuotient",
+    "sha256": "9220e92772fcc73dc8044177ee54f337dde7febb923f984a2e6f973e1d30272c",
+    "native_status": "PENDING_WINDOWS",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED"
+  },
+  {
+    "module": "LeanPaper.Rebuild.PartialFractionsResidues",
+    "sha256": "c8c058b8b59bf6e310bba9d16d5b90eebf2f130e181b3989c71332894843e49d",
+    "native_status": "PENDING_WINDOWS",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED"
+  },
+  {
+    "module": "LeanPaper.RebuildKernelBridge",
+    "sha256": "7f00c2b88daa91d966f00a4445546127111d47bf00f3d50b585f3d1fdba053e9",
     "native_status": "PENDING_WINDOWS",
     "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED"
   },
