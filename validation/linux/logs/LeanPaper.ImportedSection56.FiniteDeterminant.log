@@ -1,0 +1,12 @@
+'Zetahyperbolic.Theorem6_10.abs_top_coefficient_eq_eval_mul_relative_det' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zetahyperbolic.Theorem6_10.abs_top_coefficient_eq_eval_mul_spectral_det' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zetahyperbolic.Theorem6_10.abs_top_coefficient_eq_eval_mul_sqrt_det' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zetahyperbolic.Theorem6_10.abs_leadingCoeff_eq_eval_mul_sqrt_det' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

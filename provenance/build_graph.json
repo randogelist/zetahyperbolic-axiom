@@ -417,16 +417,260 @@
     "Theorem_3_1_Rational_Integral_Bridge",
     "Theorem_3_1_Pole_Integral_Identity"
   ],
+  "LeanPaper.ImportedCharacter.ShiftedPole": [
+    "Theorem_3_1_Universal_Hyperbolicity_And_Zero_Free_Disk",
+    "Mathlib.LinearAlgebra.Vandermonde",
+    "Mathlib.Tactic"
+  ],
+  "LeanPaper.ImportedMultiweight.PositiveSlopeSpectrum": [
+    "Theorem_3_1_Universal_Hyperbolicity_And_Zero_Free_Disk",
+    "Mathlib.Analysis.Matrix.Order",
+    "Mathlib.Algebra.Polynomial.BigOperators",
+    "Mathlib.Tactic"
+  ],
+  "LeanPaper.ImportedSection3.CubicNewton": [
+    "Mathlib.Tactic",
+    "Mathlib.Tactic.Ring",
+    "Mathlib.Tactic.Linarith"
+  ],
+  "LeanPaper.ImportedSection3.CubicTuran": [
+    "ProofAdvances.Corollary_3_6",
+    "Mathlib.Tactic"
+  ],
+  "LeanPaper.ImportedSection3.NormalizedContinuedFraction": [
+    "Mathlib.LinearAlgebra.Matrix.Determinant.Basic",
+    "Mathlib.Tactic"
+  ],
+  "LeanPaper.ImportedSection3.PowerSumExtrema": [
+    "ProofAdvances.Corollary_3_6_ExactFiniteRank",
+    "Mathlib.Tactic"
+  ],
+  "LeanPaper.ImportedSection3.RealExponent": [
+    "Theorem_2_5_Lagrange_Pole_Diagonalization",
+    "Theorem_3_1_Universal_Hyperbolicity_And_Zero_Free_Disk",
+    "Mathlib.Tactic"
+  ],
+  "LeanPaper.ImportedSection4.Proposition_4_2_Resultant_Product_Barrier": [
+    "Mathlib"
+  ],
+  "LeanPaper.ImportedSection4.Proposition_4_3_PadicDisk": [
+    "Mathlib.NumberTheory.Padics.PadicIntegers",
+    "Mathlib.Analysis.Normed.Group.Ultra",
+    "Mathlib.Algebra.Polynomial.Eval.Degree",
+    "Mathlib.Tactic"
+  ],
+  "LeanPaper.ImportedSection56.DualMoments": [
+    "Definition_2_1_Order_s_Rational_Moment_Functional"
+  ],
+  "LeanPaper.ImportedSection56.FiniteDeterminant": [
+    "Mathlib.LinearAlgebra.Matrix.Polynomial",
+    "Mathlib.LinearAlgebra.Matrix.NonsingularInverse",
+    "Mathlib.Analysis.Matrix.Order",
+    "Mathlib.Tactic"
+  ],
+  "LeanPaper.ImportedSection56.TriplePoleHermite": [
+    "Mathlib"
+  ],
+  "LeanPaper.Section2FiniteDifference": [
+    "LeanPaper.PullbackReflection"
+  ],
+  "LeanPaper.Section2LagrangeBasis": [
+    "Mathlib.LinearAlgebra.Lagrange",
+    "Mathlib.LinearAlgebra.Matrix.Determinant.Basic",
+    "Mathlib.Tactic"
+  ],
+  "LeanPaper.Section6BetaFinite": [
+    "Mathlib.Tactic"
+  ],
+  "LeanPaper.ImportedCharacter.CharacterPositive": [
+    "LeanPaper.ImportedCharacter.ShiftedPole",
+    "Mathlib.Tactic"
+  ],
+  "LeanPaper.ImportedSection3.AllDegreeTuran": [
+    "LeanPaper.ImportedMultiweight.PositiveSlopeSpectrum",
+    "LeanPaper.ImportedSection3.CubicTuran",
+    "MAIN_CHAIN_ASSEMBLED",
+    "Mathlib.Algebra.Polynomial.Derivative",
+    "Mathlib.Tactic"
+  ],
+  "LeanPaper.ImportedSection3.PoleKernel": [
+    "LeanPaper.ImportedSection3.CubicTuran",
+    "Mathlib.LinearAlgebra.Matrix.Charpoly.Basic",
+    "Mathlib.LinearAlgebra.Matrix.Trace",
+    "Mathlib.Tactic"
+  ],
+  "LeanPaper.ImportedSection3.RootMomentBounds": [
+    "LeanPaper.ImportedSection3.PowerSumExtrema",
+    "LeanPaper.ReciprocalRootMoments"
+  ],
+  "LeanPaper.ImportedSection3.SignStructure": [
+    "LeanPaper.ImportedSection3.RealExponent",
+    "MAIN_CHAIN_ASSEMBLED"
+  ],
+  "LeanPaper.ImportedSection4.Proposition_4_3_IsometricExtension": [
+    "LeanPaper.ImportedSection4.Proposition_4_3_PadicDisk",
+    "Mathlib.Analysis.Normed.Group.Ultra",
+    "Mathlib.Tactic"
+  ],
+  "LeanPaper.ImportedSection4.Theorem_4_6_Leading_Coefficient_Determinant_Barrier": [
+    "LeanPaper.ImportedSection4.Proposition_4_2_Resultant_Product_Barrier"
+  ],
+  "LeanPaper.ImportedSection56.DualAffineAlgebra": [
+    "Mathlib.Tactic",
+    "LeanPaper.ImportedSection56.DualMoments"
+  ],
+  "LeanPaper.Section2LagrangeBridge": [
+    "LeanPaper.Section2LagrangeBasis",
+    "Theorem_2_5_Lagrange_Pole_Diagonalization"
+  ],
+  "LeanPaper.ImportedCharacter.PositiveSlope": [
+    "LeanPaper.ImportedCharacter.CharacterPositive",
+    "Mathlib.LinearAlgebra.Matrix.PosDef",
+    "Mathlib.LinearAlgebra.Matrix.NonsingularInverse",
+    "Mathlib.Tactic"
+  ],
+  "LeanPaper.ImportedSection3.SlopeSign": [
+    "LeanPaper.ImportedSection3.SignStructure",
+    "Mathlib.Tactic"
+  ],
+  "LeanPaper.ImportedSection3.StrictTuranRolle": [
+    "LeanPaper.ImportedSection3.AllDegreeTuran",
+    "Mathlib.Analysis.Calculus.LocalExtr.Polynomial",
+    "Mathlib.Tactic"
+  ],
+  "LeanPaper.ImportedSection4.Proposition_4_3_ComplexPadicDisk": [
+    "LeanPaper.ImportedSection4.Proposition_4_3_IsometricExtension",
+    "Mathlib.NumberTheory.Padics.Complex",
+    "Mathlib.Tactic"
+  ],
+  "LeanPaper.ImportedSection4.Theorem_4_7_Finite_Root_Cluster_Count": [
+    "LeanPaper.ImportedSection4.Theorem_4_6_Leading_Coefficient_Determinant_Barrier"
+  ],
+  "LeanPaper.ImportedSection56.DualPencilCCT": [
+    "LeanPaper.ImportedSection56.DualAffineAlgebra"
+  ],
+  "LeanPaper.ImportedSection56.KreinIdentity": [
+    "LeanPaper.ImportedSection56.DualAffineAlgebra",
+    "Mathlib.Tactic.Ring",
+    "Mathlib.Tactic.NormNum"
+  ],
+  "LeanPaper.Section2LagrangeIdentification": [
+    "LeanPaper.Section2LagrangeBridge"
+  ],
+  "LeanPaper.ImportedMultiweight.FiniteMultiweightCone": [
+    "LeanPaper.ImportedSection3.StrictTuranRolle",
+    "LeanPaper.ImportedMultiweight.PositiveSlopeSpectrum",
+    "Mathlib.LinearAlgebra.Matrix.PosDef",
+    "Mathlib.Tactic"
+  ],
+  "LeanPaper.ImportedSection3.ActualPoleKernel": [
+    "LeanPaper.ImportedSection3.PoleKernel",
+    "LeanPaper.ImportedSection3.RealExponent",
+    "LeanPaper.ImportedSection3.SlopeSign",
+    "Mathlib.Tactic"
+  ],
+  "LeanPaper.ImportedSection4.Proposition_4_8_Factor_Distance_Bounds": [
+    "LeanPaper.ImportedSection4.Theorem_4_7_Finite_Root_Cluster_Count"
+  ],
+  "LeanPaper.ImportedSection56.CoefficientGram": [
+    "LeanPaper.ImportedSection56.DualPencilCCT",
+    "Theorem_3_1_Universal_Hyperbolicity_And_Zero_Free_Disk",
+    "Mathlib.Tactic.Ring"
+  ],
+  "LeanPaper.ImportedSection56.DualDiscriminant": [
+    "LeanPaper.ImportedSection56.DualPencilCCT",
+    "Mathlib.Tactic.Ring"
+  ],
+  "LeanPaper.ImportedSection56.DualTopCoefficient": [
+    "LeanPaper.ImportedSection56.DualPencilCCT"
+  ],
+  "LeanPaper.ImportedSection56.RankOneWitness": [
+    "LeanPaper.ImportedSection56.KreinIdentity",
+    "LeanPaper.ImportedSection56.DualMoments",
+    "Mathlib.Tactic.NormNum",
+    "Mathlib.Tactic.Ring",
+    "Mathlib.Tactic.Linarith"
+  ],
+  "LeanPaper.Section4ManuscriptBridge": [
+    "LeanPaper.ImportedSection4.Theorem_4_6_Leading_Coefficient_Determinant_Barrier",
+    "LeanPaper.ImportedSection4.Theorem_4_7_Finite_Root_Cluster_Count",
+    "LeanPaper.ImportedSection4.Proposition_4_3_ComplexPadicDisk",
+    "Theorem_4_1_Leading_Coefficient_Gap"
+  ],
+  "LeanPaper.ImportedMultiweight.AnchoredSemidefiniteCone": [
+    "LeanPaper.ImportedMultiweight.FiniteMultiweightCone",
+    "Mathlib.LinearAlgebra.Matrix.PosDef",
+    "Mathlib.Tactic"
+  ],
+  "LeanPaper.ImportedSection3.Jacobi": [
+    "LeanPaper.ImportedSection3.ActualPoleKernel",
+    "LeanPaper.ImportedSection3.SignStructure",
+    "Mathlib.LinearAlgebra.Matrix.Charpoly.Coeff",
+    "Mathlib.Analysis.Calculus.Deriv.Polynomial",
+    "Mathlib.Analysis.SpecialFunctions.Log.Deriv",
+    "Mathlib.Tactic"
+  ],
+  "LeanPaper.ImportedSection56.DualQuadraticRoot": [
+    "LeanPaper.ImportedSection56.DualDiscriminant",
+    "Mathlib.Tactic"
+  ],
+  "LeanPaper.ImportedSection56.DualSOS": [
+    "LeanPaper.ImportedSection56.DualTopCoefficient",
+    "Mathlib.Tactic.Positivity"
+  ],
+  "LeanPaper.ImportedSection56.DualStrictDiscriminant": [
+    "LeanPaper.ImportedSection56.DualDiscriminant"
+  ],
+  "LeanPaper.ImportedSection56.DualWeightInvariance": [
+    "LeanPaper.ImportedSection56.DualTopCoefficient"
+  ],
+  "LeanPaper.ImportedSection56.FiniteKreinCone": [
+    "LeanPaper.ImportedSection56.CoefficientGram",
+    "LeanPaper.ImportedSection56.KreinIdentity"
+  ],
+  "LeanPaper.ImportedSection56.PositiveSlopeSpectrum": [
+    "LeanPaper.ImportedSection56.CoefficientGram",
+    "Theorem_3_1_Universal_Hyperbolicity_And_Zero_Free_Disk"
+  ],
+  "LeanPaper.ImportedSection56.ZetaSevenBound": [
+    "LeanPaper.ImportedSection56.RankOneWitness",
+    "Theorem_3_1_Zeta_Tail",
+    "Mathlib.Tactic.Linarith",
+    "Mathlib.Tactic.FieldSimp"
+  ],
+  "LeanPaper.ImportedSection3.ExactTaylor": [
+    "LeanPaper.ImportedSection3.Jacobi",
+    "Mathlib.LinearAlgebra.Matrix.Charpoly.Coeff",
+    "Mathlib.Tactic"
+  ],
+  "LeanPaper.ImportedSection56.DualBasisCongruence": [
+    "LeanPaper.ImportedSection56.DualWeightInvariance"
+  ],
+  "LeanPaper.ImportedSection56.DualRowSeparation": [
+    "LeanPaper.ImportedSection56.DualSOS",
+    "Mathlib.Tactic.Ring"
+  ],
+  "LeanPaper.ImportedSection56.FullMonomial": [
+    "LeanPaper.ImportedSection56.DualSOS"
+  ],
+  "LeanPaper.ImportedSection56.DualNonsingularDegree": [
+    "LeanPaper.ImportedSection56.DualBasisCongruence"
+  ],
+  "LeanPaper.ImportedSection56.DualNullspace": [
+    "LeanPaper.ImportedSection56.DualRowSeparation"
+  ],
+  "LeanPaper.ImportedSection56.SelectedMonomial": [
+    "LeanPaper.ImportedSection56.FullMonomial"
+  ],
+  "LeanPaper.ImportedSection56.UnimodularMonomial": [
+    "LeanPaper.ImportedSection56.DualBasisCongruence",
+    "LeanPaper.ImportedSection56.SelectedMonomial"
+  ],
+  "LeanPaper.Section5DualSpectrum": [
+    "LeanPaper.ImportedSection56.PositiveSlopeSpectrum",
+    "LeanPaper.ImportedSection56.SelectedMonomial"
+  ],
   "LeanPaper.KernelAudit": [
-    "LeanPaper.RebuildKernelBridge",
-    "LeanPaper.Rebuild.PartialFractionsCore",
-    "LeanPaper.Rebuild.PartialFractionsQuotient",
-    "LeanPaper.Rebuild.PartialFractionsResidues",
-    "LeanPaper.PullbackReflection",
-    "LeanPaper.SingularSlope",
-    "LeanPaper.PrincipalMinorRealRoots",
-    "LeanPaper.ReciprocalRootMoments",
-    "LeanPaper.SingularPrincipalMinorExample",
     "Definition_2_1_Order_s_Rational_Moment_Functional",
     "Theorem_2_4_Canonical_Basis_Invariance",
     "Theorem_2_5_Lagrange_Pole_Diagonalization",
@@ -512,7 +756,74 @@
     "ProofAdvances.Corollary_3_6_WeightedCorrected",
     "ProofAdvances.Corollary_3_6_ExactFiniteRank",
     "ProofAdvances.Corollary_3_6_AllPrincipalMinors",
+    "LeanPaper.PullbackReflection",
+    "LeanPaper.SingularSlope",
+    "LeanPaper.PrincipalMinorRealRoots",
+    "LeanPaper.ReciprocalRootMoments",
+    "LeanPaper.SingularPrincipalMinorExample",
     "LeanPaper.AxiomWalk",
+    "LeanPaper.Rebuild.PartialFractionsCore",
+    "LeanPaper.Rebuild.PartialFractionsQuotient",
+    "LeanPaper.Rebuild.PartialFractionsResidues",
+    "LeanPaper.RebuildKernelBridge",
+    "LeanPaper.ImportedCharacter.ShiftedPole",
+    "LeanPaper.ImportedMultiweight.PositiveSlopeSpectrum",
+    "LeanPaper.ImportedSection3.CubicNewton",
+    "LeanPaper.ImportedSection3.CubicTuran",
+    "LeanPaper.ImportedSection3.NormalizedContinuedFraction",
+    "LeanPaper.ImportedSection3.PowerSumExtrema",
+    "LeanPaper.ImportedSection3.RealExponent",
+    "LeanPaper.ImportedSection4.Proposition_4_2_Resultant_Product_Barrier",
+    "LeanPaper.ImportedSection4.Proposition_4_3_PadicDisk",
+    "LeanPaper.ImportedSection56.DualMoments",
+    "LeanPaper.ImportedSection56.FiniteDeterminant",
+    "LeanPaper.ImportedSection56.TriplePoleHermite",
+    "LeanPaper.Section2FiniteDifference",
+    "LeanPaper.Section2LagrangeBasis",
+    "LeanPaper.Section6BetaFinite",
+    "LeanPaper.ImportedCharacter.CharacterPositive",
+    "LeanPaper.ImportedSection3.AllDegreeTuran",
+    "LeanPaper.ImportedSection3.PoleKernel",
+    "LeanPaper.ImportedSection3.RootMomentBounds",
+    "LeanPaper.ImportedSection3.SignStructure",
+    "LeanPaper.ImportedSection4.Proposition_4_3_IsometricExtension",
+    "LeanPaper.ImportedSection4.Theorem_4_6_Leading_Coefficient_Determinant_Barrier",
+    "LeanPaper.ImportedSection56.DualAffineAlgebra",
+    "LeanPaper.Section2LagrangeBridge",
+    "LeanPaper.ImportedCharacter.PositiveSlope",
+    "LeanPaper.ImportedSection3.SlopeSign",
+    "LeanPaper.ImportedSection3.StrictTuranRolle",
+    "LeanPaper.ImportedSection4.Proposition_4_3_ComplexPadicDisk",
+    "LeanPaper.ImportedSection4.Theorem_4_7_Finite_Root_Cluster_Count",
+    "LeanPaper.ImportedSection56.DualPencilCCT",
+    "LeanPaper.ImportedSection56.KreinIdentity",
+    "LeanPaper.Section2LagrangeIdentification",
+    "LeanPaper.ImportedMultiweight.FiniteMultiweightCone",
+    "LeanPaper.ImportedSection3.ActualPoleKernel",
+    "LeanPaper.ImportedSection4.Proposition_4_8_Factor_Distance_Bounds",
+    "LeanPaper.ImportedSection56.CoefficientGram",
+    "LeanPaper.ImportedSection56.DualDiscriminant",
+    "LeanPaper.ImportedSection56.DualTopCoefficient",
+    "LeanPaper.ImportedSection56.RankOneWitness",
+    "LeanPaper.Section4ManuscriptBridge",
+    "LeanPaper.ImportedMultiweight.AnchoredSemidefiniteCone",
+    "LeanPaper.ImportedSection3.Jacobi",
+    "LeanPaper.ImportedSection56.DualQuadraticRoot",
+    "LeanPaper.ImportedSection56.DualSOS",
+    "LeanPaper.ImportedSection56.DualStrictDiscriminant",
+    "LeanPaper.ImportedSection56.DualWeightInvariance",
+    "LeanPaper.ImportedSection56.FiniteKreinCone",
+    "LeanPaper.ImportedSection56.PositiveSlopeSpectrum",
+    "LeanPaper.ImportedSection56.ZetaSevenBound",
+    "LeanPaper.ImportedSection3.ExactTaylor",
+    "LeanPaper.ImportedSection56.DualBasisCongruence",
+    "LeanPaper.ImportedSection56.DualRowSeparation",
+    "LeanPaper.ImportedSection56.FullMonomial",
+    "LeanPaper.ImportedSection56.DualNonsingularDegree",
+    "LeanPaper.ImportedSection56.DualNullspace",
+    "LeanPaper.ImportedSection56.SelectedMonomial",
+    "LeanPaper.ImportedSection56.UnimodularMonomial",
+    "LeanPaper.Section5DualSpectrum",
     "Lean"
   ]
 }

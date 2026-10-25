@@ -1,0 +1,6 @@
+'PaperOrder.CoreAlgebra.dualUnimodularSelectedMonomial_top_coeff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PaperOrder.CoreAlgebra.dualUnimodularSelectedMonomial_degree' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

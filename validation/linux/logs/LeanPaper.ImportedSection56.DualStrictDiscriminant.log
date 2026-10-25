@@ -1,0 +1,3 @@
+'PaperOrder.CoreAlgebra.dualTwoByTwo_discriminant_pos_of_nonproportional' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

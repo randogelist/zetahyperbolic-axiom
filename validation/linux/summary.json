@@ -3,8 +3,8 @@
   "lean_version": "Lean (version 4.33.0, x86_64-unknown-linux-gnu, commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)",
   "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d",
   "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
-  "total": 96,
-  "passed": 96,
+  "total": 154,
+  "passed": 154,
   "failed": [],
   "blocked": [],
   "axiom_audit_accepted": true,
@@ -2036,7 +2036,7 @@
     {
       "module": "LeanPaper.RebuildKernelBridge",
       "status": "PASS",
-      "action": "COMPILED",
+      "action": "REUSED_LOCAL_PASS",
       "seconds": 23.461,
       "returncode": 0,
       "inputs": {
@@ -2060,42 +2060,1203 @@
       "log_sha256": "89d87dc5fde23694933729885b9be9426743770f2794ee7b80d01b3143f64355"
     },
     {
-      "module": "LeanPaper.KernelAudit",
+      "module": "LeanPaper.ImportedCharacter.ShiftedPole",
       "status": "PASS",
-      "action": "COMPILED",
-      "seconds": 313.875,
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 3.118,
       "returncode": 0,
       "inputs": {
-        "source_sha256": "becd51fc0f4ed94121f84dadd28cb35e613a9d80d204e83a9e3b5933515ff462",
+        "source_sha256": "60877a28cd1d2b7e3eaa2a1dc5f4e128d54e9f84fb32161aa364827f09a71638",
         "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
         "dependencies": {
-          "LeanPaper.RebuildKernelBridge": {
-            "LeanPaper/RebuildKernelBridge.olean": "d78b96f5627188e7ea49d1c2069ef07f75e92889254321bfc9fbc0d7fbf3d07c"
+          "Theorem_3_1_Universal_Hyperbolicity_And_Zero_Free_Disk": {
+            "Theorem_3_1_Universal_Hyperbolicity_And_Zero_Free_Disk.olean": "7be6e826dc5cb0815d932fadf23ac20cab6d03ed8fcb74dd766cb8b825729369"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedCharacter/ShiftedPole.olean": "d3f78d7b97a7d589e7b3a32e18038d664b65a520d491688c41867d254160f264"
+      },
+      "log_sha256": "e122cc61e89d2e672aa4185e40e31c5fd742d95cecfd2aab84973fb8c8fa940d"
+    },
+    {
+      "module": "LeanPaper.ImportedMultiweight.PositiveSlopeSpectrum",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 3.499,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "e4f1ac80a4f1644a509b890b6a48d2fc47a902105e808f11362a91985308bb83",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "Theorem_3_1_Universal_Hyperbolicity_And_Zero_Free_Disk": {
+            "Theorem_3_1_Universal_Hyperbolicity_And_Zero_Free_Disk.olean": "7be6e826dc5cb0815d932fadf23ac20cab6d03ed8fcb74dd766cb8b825729369"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedMultiweight/PositiveSlopeSpectrum.olean": "0c74437ecd6007b902b45b1c6239ccf060d554090003df1ebc3d7bf079f6986c"
+      },
+      "log_sha256": "d2e6cf3c41b26040045ca0abbe3534df0dd2544e4173c71b8a57b6fa7c6643ae"
+    },
+    {
+      "module": "LeanPaper.ImportedSection3.CubicNewton",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 2.815,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "1d379107faccd026202e67f068199e15a2f63aa3784c4966c7ad2d22dba403ef",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {}
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection3/CubicNewton.olean": "176de4cc2a6d4707588c0566b48d72a5bd785704bb938b60aa46c64498f092e7"
+      },
+      "log_sha256": "c32f17a9b5a8d8c1247625af06fe6f0baf274c8fc5aba0ab543a7a7f3fdb98fa"
+    },
+    {
+      "module": "LeanPaper.ImportedSection3.CubicTuran",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 5.342,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "9b7047eab4eddc4ec1392f6b8d53f1555da37d54079a7cbb51a696e19896896f",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "ProofAdvances.Corollary_3_6": {
+            "ProofAdvances/Corollary_3_6.olean": "d442757f654d17d87e81726bba1991c67797ee53a9c72421926fdb5f3a948fc5"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection3/CubicTuran.olean": "279a6f5f587855b2ebd01e5461ca3987e97d1529f5112094c4a7429a607d1478"
+      },
+      "log_sha256": "e63e67352bd80500a1ec40e27ab19bf0d14f078206024d593cbc23798dee9985"
+    },
+    {
+      "module": "LeanPaper.ImportedSection3.NormalizedContinuedFraction",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 2.598,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "ecdf53f5c92f768eb120c277177b74cd879cbb8c400dfb87a19ccb65a4ab3b10",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {}
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection3/NormalizedContinuedFraction.olean": "977c40bd306ed04f9a812584d0b9800c4da0a4571e4387b7f63e70d41a7ee574"
+      },
+      "log_sha256": "601bcd5b601240644e3054bdaf5c37c5254bdbe9947ea3284c00811d65d4f664"
+    },
+    {
+      "module": "LeanPaper.ImportedSection3.PowerSumExtrema",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 4.724,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "e460fb2f4cf391a29188d5a9ec407bbd4cd6f80e9834e410773c33e5bdc7ed52",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "ProofAdvances.Corollary_3_6_ExactFiniteRank": {
+            "ProofAdvances/Corollary_3_6_ExactFiniteRank.olean": "bb63d6b2c47dc26076f83582101fe7815ceb3c7f172f66f9db91bb24406d68be"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection3/PowerSumExtrema.olean": "080f0a33fd79adc9e4b10d20fd5687ec030a54c26c47dcb028a8299a3941c98d"
+      },
+      "log_sha256": "3f3043cc91f5802413deb8d858a43dc7cbf20f18c9e5c38ba038a0af2e0e0fb1"
+    },
+    {
+      "module": "LeanPaper.ImportedSection3.RealExponent",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 2.747,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "bc68cd5659844b9945bdee522fb0b22f16643e5bfaa53c4a7ed89203143adde4",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "Theorem_2_5_Lagrange_Pole_Diagonalization": {
+            "Theorem_2_5_Lagrange_Pole_Diagonalization.olean": "3f175e0a2305f7c586ef07e2863467e72758a2ccf62568845ffb1657e4f68094"
           },
-          "LeanPaper.Rebuild.PartialFractionsCore": {
-            "LeanPaper/Rebuild/PartialFractionsCore.olean": "f597040a0b1a3f06d362cdd3dbcf232fceb6ebf29f99f30aa2444c4283b73ecd"
-          },
-          "LeanPaper.Rebuild.PartialFractionsQuotient": {
-            "LeanPaper/Rebuild/PartialFractionsQuotient.olean": "0793dc8776f15b71f1f6631572613fa14f31398460145c2dad7cd3d45c7c61fd"
-          },
-          "LeanPaper.Rebuild.PartialFractionsResidues": {
-            "LeanPaper/Rebuild/PartialFractionsResidues.olean": "304ac5725a10d08a070bb1a884893287eb9c825a6248827559e9343cbc119938"
-          },
+          "Theorem_3_1_Universal_Hyperbolicity_And_Zero_Free_Disk": {
+            "Theorem_3_1_Universal_Hyperbolicity_And_Zero_Free_Disk.olean": "7be6e826dc5cb0815d932fadf23ac20cab6d03ed8fcb74dd766cb8b825729369"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection3/RealExponent.olean": "cc7e09609ddc518142ffd5b033691702c5be1e949564ee03fe5ca4c5f6d8e6fe"
+      },
+      "log_sha256": "71ccdbcc73ec2e84e07be62e20e7a261ca17b914f3860bcb8ccb1febdd3a7b87"
+    },
+    {
+      "module": "LeanPaper.ImportedSection4.Proposition_4_2_Resultant_Product_Barrier",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 21.121,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "0dcc50333b9e60a5cbd14da00e70bad9731b49bbb838b4060799b1240172e921",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {}
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection4/Proposition_4_2_Resultant_Product_Barrier.olean": "a190186ebea2ddfe64c07877aa707c9793bb5b3a9370e4d176605235d4aeb2b4"
+      },
+      "log_sha256": "cec238340829638e18e97396aa1286617415817b28e3e90c9fad46cf5025a094"
+    },
+    {
+      "module": "LeanPaper.ImportedSection4.Proposition_4_3_PadicDisk",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 2.857,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "1fa99942090f8457c26f9d12aa26042e9b4fadfb0e3286f335093100be824851",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {}
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection4/Proposition_4_3_PadicDisk.olean": "867a204fd01b431b8d0292cd63be811efad2cc52b60ce64e6e396bb8c015dc93"
+      },
+      "log_sha256": "eaab23f9e1054e156d50878fac2f9454b6351c6c5594c7e546919a4b69c60206"
+    },
+    {
+      "module": "LeanPaper.ImportedSection56.DualMoments",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 2.086,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "14852b541baf30fd75ddda6075a8810b7af0c1fc7f164cef65debb3defe4a006",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "Definition_2_1_Order_s_Rational_Moment_Functional": {
+            "Definition_2_1_Order_s_Rational_Moment_Functional.olean": "34a1976fdc0192b645f954ed1dc03a2b523c09a51b53c017c7286f6c074de6a3"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection56/DualMoments.olean": "cb45dc0eae01c498c0dfaa7880af9f89478d8a1cc4deb6518614db8b153f4563"
+      },
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "LeanPaper.ImportedSection56.FiniteDeterminant",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 2.742,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "2c9005cb6d0a53f6a199fe49bf6d1ed9f4d2bb3147d8d2720cb57400fbe62f5d",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {}
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection56/FiniteDeterminant.olean": "56ba16ea823c6de68f86e4b4c15b6fc911725b94a459eb542ea126fbbeda4d38"
+      },
+      "log_sha256": "25d6bf292449c4c4189ec350712165d43eeebfe6878991c32ee639067a9afd6c"
+    },
+    {
+      "module": "LeanPaper.ImportedSection56.TriplePoleHermite",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 5.142,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "ba8dc313f5e120fec29da378c89312bbdd4d88b2f689b4b135317e27a32e9408",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {}
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection56/TriplePoleHermite.olean": "b0da63a17948a16fd2d5ceb73649bf86a8bf204f7d14b013321105f974d93322"
+      },
+      "log_sha256": "5b322b110a65330889ab0f9476212c6e8afe2f4e16fcc18e60594f98bc5590c3"
+    },
+    {
+      "module": "LeanPaper.Section2FiniteDifference",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 4.906,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "c7975335df6a7c3df8e15477a1cf80bfb6d0daa4a59f47da59769c10cbeae17e",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
           "LeanPaper.PullbackReflection": {
             "LeanPaper/PullbackReflection.olean": "758f43321b6ed083d1f06ebff9ea210efe09a868e3ba9a01904f64e6b5089d7b"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/Section2FiniteDifference.olean": "81a49c8c0ed71f50dfcbff36e4007c01bd4838e3e6121cab82cf9fb8f6742855"
+      },
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "LeanPaper.Section2LagrangeBasis",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 6.085,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "2b7a1d657571156d95d8f39b6525079414a07fda786b45ac8cbeaac032186494",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {}
+      },
+      "output_hashes": {
+        "LeanPaper/Section2LagrangeBasis.olean": "a97b4f690f5dd7e4642596275fb2e8363d6afb5b66708708eb4c53801aeeafb0"
+      },
+      "log_sha256": "160bd14834e47f4f70f68416d51be0ba6d3d0f4b24a902f2bd7bf8f015c19d80"
+    },
+    {
+      "module": "LeanPaper.Section6BetaFinite",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 4.235,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "8ddc495445da978b7942982ae66b75c97d934624a86ed43c03e8ccf03fcde92f",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {}
+      },
+      "output_hashes": {
+        "LeanPaper/Section6BetaFinite.olean": "ccbce09e33147f7b7d2ca482dcd4ec8cd8f95d7081eb1d806d6702c1f85c7506"
+      },
+      "log_sha256": "2e390bca9e74e0bfdd720b24d2c1f61e0096c22ab2d6a91a0add774d7e40b4de"
+    },
+    {
+      "module": "LeanPaper.ImportedCharacter.CharacterPositive",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 3.19,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "563b89fd4f1c9c8061e3e9496f818ed547a6e928563ebaac3ccd90e44b93cdd0",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedCharacter.ShiftedPole": {
+            "LeanPaper/ImportedCharacter/ShiftedPole.olean": "d3f78d7b97a7d589e7b3a32e18038d664b65a520d491688c41867d254160f264"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedCharacter/CharacterPositive.olean": "dbe6b243cfcb8f93f15d0f44246fef1f0b55b0da604749d0a67de28e27e5b17c"
+      },
+      "log_sha256": "53d82220f6b6ce88bf82392fa360190f40005f09b9715876fdd319f192c3a086"
+    },
+    {
+      "module": "LeanPaper.ImportedSection3.AllDegreeTuran",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 5.559,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "13770f083202156d188dfaaaa16a042121ba58ae58a2a5b11ead99c6e1172853",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedMultiweight.PositiveSlopeSpectrum": {
+            "LeanPaper/ImportedMultiweight/PositiveSlopeSpectrum.olean": "0c74437ecd6007b902b45b1c6239ccf060d554090003df1ebc3d7bf079f6986c"
           },
-          "LeanPaper.SingularSlope": {
-            "LeanPaper/SingularSlope.olean": "39c1e113cfed4c7bb9502fcad70fd7b824f706bdb3961e40fe1fa016cf408c62"
+          "LeanPaper.ImportedSection3.CubicTuran": {
+            "LeanPaper/ImportedSection3/CubicTuran.olean": "279a6f5f587855b2ebd01e5461ca3987e97d1529f5112094c4a7429a607d1478"
           },
-          "LeanPaper.PrincipalMinorRealRoots": {
-            "LeanPaper/PrincipalMinorRealRoots.olean": "9cb7982c61e8f76df9b9a806848949beede454a3295a466bb1fb1998fd4370d6"
+          "MAIN_CHAIN_ASSEMBLED": {
+            "MAIN_CHAIN_ASSEMBLED.olean": "0a253bac1e5ea3178716fe3cfc3542321ef9f18e6a33a80a25edc1dc03beefb2"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection3/AllDegreeTuran.olean": "099dcc9c3315dd136dea0a504c792a28b408b2aaa7821f343c5e6b6244500900"
+      },
+      "log_sha256": "a3064b382977bef0eb8e7e82fc38bee57f3135e19c7d64e4cb439d6b7456fbec"
+    },
+    {
+      "module": "LeanPaper.ImportedSection3.PoleKernel",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 4.933,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "47f5b6a4b86de985e98ff4732f9066d42aa94843a90ad11c222114a5e16d9ea6",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection3.CubicTuran": {
+            "LeanPaper/ImportedSection3/CubicTuran.olean": "279a6f5f587855b2ebd01e5461ca3987e97d1529f5112094c4a7429a607d1478"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection3/PoleKernel.olean": "93ced60e7c5a674592a76ef78777034ac77f0955198e4c8b677ea8a129601259"
+      },
+      "log_sha256": "e4b3ac312e8cf7b0d8cd887a6698ccc8a73364cbad8fdce28f34f15a7afe8abf"
+    },
+    {
+      "module": "LeanPaper.ImportedSection3.RootMomentBounds",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 4.405,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "1440ed9939652092043c93fd25fb0a41807afe9a5c5113fe046f29de36fcbacc",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection3.PowerSumExtrema": {
+            "LeanPaper/ImportedSection3/PowerSumExtrema.olean": "080f0a33fd79adc9e4b10d20fd5687ec030a54c26c47dcb028a8299a3941c98d"
           },
           "LeanPaper.ReciprocalRootMoments": {
             "LeanPaper/ReciprocalRootMoments.olean": "ac94b20a96186c8aed0a5fd2bb4963fd859ec2f65d587f12494e729674f125fd"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection3/RootMomentBounds.olean": "91b97e99c33c333091db88249f63ed78150e389f2c367fc998f1693a0d2be463"
+      },
+      "log_sha256": "cc2241f25379454d95aff21f5bd247428e58145e587d2e55317f5d74c61e367a"
+    },
+    {
+      "module": "LeanPaper.ImportedSection3.SignStructure",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 4.361,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "eaf34fcf093c1fe16eaa2d38c781061b3f806af9866c898b7bddf41f5af81c16",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection3.RealExponent": {
+            "LeanPaper/ImportedSection3/RealExponent.olean": "cc7e09609ddc518142ffd5b033691702c5be1e949564ee03fe5ca4c5f6d8e6fe"
           },
-          "LeanPaper.SingularPrincipalMinorExample": {
-            "LeanPaper/SingularPrincipalMinorExample.olean": "9268ca6ce94af3a74e20472c7cb6b12d1b5eaece31dd5b6f9d6d331922991523"
+          "MAIN_CHAIN_ASSEMBLED": {
+            "MAIN_CHAIN_ASSEMBLED.olean": "0a253bac1e5ea3178716fe3cfc3542321ef9f18e6a33a80a25edc1dc03beefb2"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection3/SignStructure.olean": "dd8d60ba7f06046a64c72176f6aa4ff0739a44773cf16e312be5eff5392f1e18"
+      },
+      "log_sha256": "ad76a3fc1da082f184ff77a7ddeeb54ed90b48dae0c917e02224a74e6abbd918"
+    },
+    {
+      "module": "LeanPaper.ImportedSection4.Proposition_4_3_IsometricExtension",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 2.683,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "41198a17c8e079cf8e217835077a9228795e5c39bc45287a2aa446b899fe6d71",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection4.Proposition_4_3_PadicDisk": {
+            "LeanPaper/ImportedSection4/Proposition_4_3_PadicDisk.olean": "867a204fd01b431b8d0292cd63be811efad2cc52b60ce64e6e396bb8c015dc93"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection4/Proposition_4_3_IsometricExtension.olean": "11d0d017d3b6664771fe0731d638a297106d2cee1fb27397222258b2fca13111"
+      },
+      "log_sha256": "4203e21811baaa7431a27d77dbf301051f058f49c3be3b94fbfa0e3e0a9041f2"
+    },
+    {
+      "module": "LeanPaper.ImportedSection4.Theorem_4_6_Leading_Coefficient_Determinant_Barrier",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 6.563,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "6eb6b77871c702f6f35b4bff4c11366010489acf1539ce6f8ab9bd439377941d",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection4.Proposition_4_2_Resultant_Product_Barrier": {
+            "LeanPaper/ImportedSection4/Proposition_4_2_Resultant_Product_Barrier.olean": "a190186ebea2ddfe64c07877aa707c9793bb5b3a9370e4d176605235d4aeb2b4"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection4/Theorem_4_6_Leading_Coefficient_Determinant_Barrier.olean": "70b5c853b9cee992ad9b1655f52bc7fb59fb806e77aabc466ff36de7730f19c4"
+      },
+      "log_sha256": "73944faeb1dc41cf6109a340191400b9625cf80e9549d0d8785b2a391db0e42b"
+    },
+    {
+      "module": "LeanPaper.ImportedSection56.DualAffineAlgebra",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 2.683,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "a0682f8dca7c21cd699daa30939c4dc350b107ee13d48eb4a06ccd13119a0f50",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection56.DualMoments": {
+            "LeanPaper/ImportedSection56/DualMoments.olean": "cb45dc0eae01c498c0dfaa7880af9f89478d8a1cc4deb6518614db8b153f4563"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection56/DualAffineAlgebra.olean": "d07a33aa3a4ecd18b44b7e0cf4a1b3e20160377e6fadb5906ae3e716dfd41452"
+      },
+      "log_sha256": "208b8c0fbee0ce71a45f0256fa939b3d2100118db3b51f9892cd7a3840b5f8ee"
+    },
+    {
+      "module": "LeanPaper.Section2LagrangeBridge",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 2.809,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "c0c0057321ab2d77a207f9dd83ca4893628655f4e2d30d3fabc495fd875b6395",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.Section2LagrangeBasis": {
+            "LeanPaper/Section2LagrangeBasis.olean": "a97b4f690f5dd7e4642596275fb2e8363d6afb5b66708708eb4c53801aeeafb0"
           },
+          "Theorem_2_5_Lagrange_Pole_Diagonalization": {
+            "Theorem_2_5_Lagrange_Pole_Diagonalization.olean": "3f175e0a2305f7c586ef07e2863467e72758a2ccf62568845ffb1657e4f68094"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/Section2LagrangeBridge.olean": "56e1b2495bff665a9bb8aa41457ba57aef54721b47a51150097a799ff04f0c4e"
+      },
+      "log_sha256": "39db0add81d59dbe7b5fbb133f528a05d2bedeec37544c76c63ec89a41c3a1b0"
+    },
+    {
+      "module": "LeanPaper.ImportedCharacter.PositiveSlope",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 2.695,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "8ea7754ebdbd36660edc476cd4c451055da319d64602e1b5cec514ca56812298",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedCharacter.CharacterPositive": {
+            "LeanPaper/ImportedCharacter/CharacterPositive.olean": "dbe6b243cfcb8f93f15d0f44246fef1f0b55b0da604749d0a67de28e27e5b17c"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedCharacter/PositiveSlope.olean": "16381f3a8da73b3af98b24372f0a176031b66aeb3ab8e19533fe331119dae3b9"
+      },
+      "log_sha256": "66e92a186dc8d120dd76d2100cd42a54fb4bec8eba2fcd8a35bff2297a361b42"
+    },
+    {
+      "module": "LeanPaper.ImportedSection3.SlopeSign",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 4.327,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "a5d9a78b08dce1d6d90e7c1e8dd9c52bb42069d4f4e1f030a289f1525f7b9760",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection3.SignStructure": {
+            "LeanPaper/ImportedSection3/SignStructure.olean": "dd8d60ba7f06046a64c72176f6aa4ff0739a44773cf16e312be5eff5392f1e18"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection3/SlopeSign.olean": "2f62af0780df891401e6a8d98237325da4ef084657458be50ed9b53c7d69cab5"
+      },
+      "log_sha256": "0b55c37cf067946579d08b15839a031f20fb5c42be7959c5fe92d8a7b596fd9a"
+    },
+    {
+      "module": "LeanPaper.ImportedSection3.StrictTuranRolle",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 4.58,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "155ea149cad0a873f6e63270cadccf170808db693e79b41a0ac14759d6e1e5bb",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection3.AllDegreeTuran": {
+            "LeanPaper/ImportedSection3/AllDegreeTuran.olean": "099dcc9c3315dd136dea0a504c792a28b408b2aaa7821f343c5e6b6244500900"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection3/StrictTuranRolle.olean": "19476787d8e6acba8dca9cec00f32f84e342b129b73e3634582ad3aeac280973"
+      },
+      "log_sha256": "f48872fab5eb83841d242eda7d06ef9a8f07084c21037d520e7add9c90b9c8b0"
+    },
+    {
+      "module": "LeanPaper.ImportedSection4.Proposition_4_3_ComplexPadicDisk",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 2.538,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "3aaece22dd1443bfb43d4a03979f1c46db35c65d9a556b7cb55b55137b0ec953",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection4.Proposition_4_3_IsometricExtension": {
+            "LeanPaper/ImportedSection4/Proposition_4_3_IsometricExtension.olean": "11d0d017d3b6664771fe0731d638a297106d2cee1fb27397222258b2fca13111"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection4/Proposition_4_3_ComplexPadicDisk.olean": "1077c5f34ecd29e97ff0df54a7ee672f6411668492b3644357d5ef7486aeff64"
+      },
+      "log_sha256": "b47184c4fc960b8dde9f072dc62a312b670816d93627fc02bef74771361d1604"
+    },
+    {
+      "module": "LeanPaper.ImportedSection4.Theorem_4_7_Finite_Root_Cluster_Count",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 5.175,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "d27f1980c7fc3b0dfc9dd3ef24ec7a1e6b20146c44ddaed426a8e732b90f21b3",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection4.Theorem_4_6_Leading_Coefficient_Determinant_Barrier": {
+            "LeanPaper/ImportedSection4/Theorem_4_6_Leading_Coefficient_Determinant_Barrier.olean": "70b5c853b9cee992ad9b1655f52bc7fb59fb806e77aabc466ff36de7730f19c4"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection4/Theorem_4_7_Finite_Root_Cluster_Count.olean": "74b26772b675fc116c4fc3cc32faaa5a8816bb91c7ad81debfb7db4cb1035336"
+      },
+      "log_sha256": "21c31205de0606afb2ed7459421459f35a04732fbc049771f4f2ce61074a00c7"
+    },
+    {
+      "module": "LeanPaper.ImportedSection56.DualPencilCCT",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 2.556,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "9f871cec066a61c3e1875518c6d6373f111f7bed5ba36cc61e9ee63e3cf2b92f",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection56.DualAffineAlgebra": {
+            "LeanPaper/ImportedSection56/DualAffineAlgebra.olean": "d07a33aa3a4ecd18b44b7e0cf4a1b3e20160377e6fadb5906ae3e716dfd41452"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection56/DualPencilCCT.olean": "30b305538a413800e7199dfe070b525738e0bf4499db5180e7d8973da573b3c9"
+      },
+      "log_sha256": "4a013fc4568757b4a6f3ede4809ed75105f73617116f1848b87deac3d73de4a4"
+    },
+    {
+      "module": "LeanPaper.ImportedSection56.KreinIdentity",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 2.723,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "bc04452f1d2cb72e19fbeb29109bea521614bdbba6b67065a9b4dad261e4a237",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection56.DualAffineAlgebra": {
+            "LeanPaper/ImportedSection56/DualAffineAlgebra.olean": "d07a33aa3a4ecd18b44b7e0cf4a1b3e20160377e6fadb5906ae3e716dfd41452"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection56/KreinIdentity.olean": "552a8fefbd80ace30135f7a79575dbe96627d4c1c012b1ceee08516ab42d985a"
+      },
+      "log_sha256": "3714fadb9d41ec8833fc39067d759dd27d5b4bd5d2937d50dfa26c8fb89a1aa1"
+    },
+    {
+      "module": "LeanPaper.Section2LagrangeIdentification",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 2.888,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "0aaf7f41c3e2e1221a58feb849cf4c89a32688d2685b18b652003e238fc6bc9b",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.Section2LagrangeBridge": {
+            "LeanPaper/Section2LagrangeBridge.olean": "56e1b2495bff665a9bb8aa41457ba57aef54721b47a51150097a799ff04f0c4e"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/Section2LagrangeIdentification.olean": "204ed6dd2b46c0d2bc460af416d21d7d6a293c64f897b0a279c6e82458453402"
+      },
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "LeanPaper.ImportedMultiweight.FiniteMultiweightCone",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 4.652,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "dfb37d5c7f21259b35f66e35e10e193fdba6727423057d099bb27f5828cf04c0",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection3.StrictTuranRolle": {
+            "LeanPaper/ImportedSection3/StrictTuranRolle.olean": "19476787d8e6acba8dca9cec00f32f84e342b129b73e3634582ad3aeac280973"
+          },
+          "LeanPaper.ImportedMultiweight.PositiveSlopeSpectrum": {
+            "LeanPaper/ImportedMultiweight/PositiveSlopeSpectrum.olean": "0c74437ecd6007b902b45b1c6239ccf060d554090003df1ebc3d7bf079f6986c"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedMultiweight/FiniteMultiweightCone.olean": "c020003b26ccb60613a6f4fabb7f3dd59ad9942fe87b6dfaf5edef4eda36e674"
+      },
+      "log_sha256": "4f95b5d32d14c178e3f14227e7a91842d4748bca0a4a0efe1ca5af9995baab4c"
+    },
+    {
+      "module": "LeanPaper.ImportedSection3.ActualPoleKernel",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 4.305,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "4acd980feeb1cd1aa9e59b21457f69bd3924649ffbed98f4a6a616d3c3a26a93",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection3.PoleKernel": {
+            "LeanPaper/ImportedSection3/PoleKernel.olean": "93ced60e7c5a674592a76ef78777034ac77f0955198e4c8b677ea8a129601259"
+          },
+          "LeanPaper.ImportedSection3.RealExponent": {
+            "LeanPaper/ImportedSection3/RealExponent.olean": "cc7e09609ddc518142ffd5b033691702c5be1e949564ee03fe5ca4c5f6d8e6fe"
+          },
+          "LeanPaper.ImportedSection3.SlopeSign": {
+            "LeanPaper/ImportedSection3/SlopeSign.olean": "2f62af0780df891401e6a8d98237325da4ef084657458be50ed9b53c7d69cab5"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection3/ActualPoleKernel.olean": "d21f307ed53cb4bfb9f8b232ea0726c23d4622a43ed412a6b0a6a02ae46d8d12"
+      },
+      "log_sha256": "e7a896e1ff3001e40d737d220ab8009daca4b69f19051163df0ffbe56dae3ef5"
+    },
+    {
+      "module": "LeanPaper.ImportedSection4.Proposition_4_8_Factor_Distance_Bounds",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 4.88,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "2aa7dc533a96d1bcd3d758856d06a86c77a7b4536a38bae6272490bb9d117b45",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection4.Theorem_4_7_Finite_Root_Cluster_Count": {
+            "LeanPaper/ImportedSection4/Theorem_4_7_Finite_Root_Cluster_Count.olean": "74b26772b675fc116c4fc3cc32faaa5a8816bb91c7ad81debfb7db4cb1035336"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection4/Proposition_4_8_Factor_Distance_Bounds.olean": "967d2646ee7f8548fc2749a408c4a0e166b6d2a57a75aeba091ebd7ce0aa9f4d"
+      },
+      "log_sha256": "6eea67c664be70c0f8f7cdfbfaf524a95e8e2076ccae9245bcea32a73885ebda"
+    },
+    {
+      "module": "LeanPaper.ImportedSection56.CoefficientGram",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 2.75,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "dbb79b1fc60fcfed2b605fca9d5ade7baa41d8d809d24bfbab411ca146f3d850",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection56.DualPencilCCT": {
+            "LeanPaper/ImportedSection56/DualPencilCCT.olean": "30b305538a413800e7199dfe070b525738e0bf4499db5180e7d8973da573b3c9"
+          },
+          "Theorem_3_1_Universal_Hyperbolicity_And_Zero_Free_Disk": {
+            "Theorem_3_1_Universal_Hyperbolicity_And_Zero_Free_Disk.olean": "7be6e826dc5cb0815d932fadf23ac20cab6d03ed8fcb74dd766cb8b825729369"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection56/CoefficientGram.olean": "2451f316880e39377975616a692cca402978cd909bfdbddcf2c2d8c74e1e9330"
+      },
+      "log_sha256": "23bde9611882ab697ff5fc963f562a3a77aea4c1be0112f833eeda7012ab61c9"
+    },
+    {
+      "module": "LeanPaper.ImportedSection56.DualDiscriminant",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 2.801,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "3046c251a2407293496775518bf51b5ea4ed4374bb17538861bfcdc58f7bd9ab",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection56.DualPencilCCT": {
+            "LeanPaper/ImportedSection56/DualPencilCCT.olean": "30b305538a413800e7199dfe070b525738e0bf4499db5180e7d8973da573b3c9"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection56/DualDiscriminant.olean": "840118baf94f58b3cef383856317c6f7357108b8c08bbe2c5810ef1295a6e9fa"
+      },
+      "log_sha256": "6f313db7644a15395b14f776c877614d29091a8499240d4aa59ad68bcadd6a79"
+    },
+    {
+      "module": "LeanPaper.ImportedSection56.DualTopCoefficient",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 2.518,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "9a3a19c732cc61198f235c87b8a4758fa6625afeba209ddf1ce8c33107692bdd",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection56.DualPencilCCT": {
+            "LeanPaper/ImportedSection56/DualPencilCCT.olean": "30b305538a413800e7199dfe070b525738e0bf4499db5180e7d8973da573b3c9"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection56/DualTopCoefficient.olean": "09db5e26568b1c34bb046a51dce2a0d40d77f6c2a174a188ec291245aca769f3"
+      },
+      "log_sha256": "345dc28a9d7205dc7e2624a7e3138c4a1c1bb1244727a8e5e4e4d1b924e7c204"
+    },
+    {
+      "module": "LeanPaper.ImportedSection56.RankOneWitness",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 3.253,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "0971767527a27efeffaa908c49b27b8f4fb7e5531e2c6dc2a4cb09f4eb61f7d0",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection56.KreinIdentity": {
+            "LeanPaper/ImportedSection56/KreinIdentity.olean": "552a8fefbd80ace30135f7a79575dbe96627d4c1c012b1ceee08516ab42d985a"
+          },
+          "LeanPaper.ImportedSection56.DualMoments": {
+            "LeanPaper/ImportedSection56/DualMoments.olean": "cb45dc0eae01c498c0dfaa7880af9f89478d8a1cc4deb6518614db8b153f4563"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection56/RankOneWitness.olean": "32abd0216ccf6e902b7b7a12854371ef3640eeab46de365a147f72070213181f"
+      },
+      "log_sha256": "79e8ee12199ab9bab6cc758274f77bfea27c9e3da15fa3f92e41d050c18515da"
+    },
+    {
+      "module": "LeanPaper.Section4ManuscriptBridge",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 5.367,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "c7d82a2dda22fb92ae2b9d7ecbce560fd1dc14f3fbe21637f165ca17467eec52",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection4.Theorem_4_6_Leading_Coefficient_Determinant_Barrier": {
+            "LeanPaper/ImportedSection4/Theorem_4_6_Leading_Coefficient_Determinant_Barrier.olean": "70b5c853b9cee992ad9b1655f52bc7fb59fb806e77aabc466ff36de7730f19c4"
+          },
+          "LeanPaper.ImportedSection4.Theorem_4_7_Finite_Root_Cluster_Count": {
+            "LeanPaper/ImportedSection4/Theorem_4_7_Finite_Root_Cluster_Count.olean": "74b26772b675fc116c4fc3cc32faaa5a8816bb91c7ad81debfb7db4cb1035336"
+          },
+          "LeanPaper.ImportedSection4.Proposition_4_3_ComplexPadicDisk": {
+            "LeanPaper/ImportedSection4/Proposition_4_3_ComplexPadicDisk.olean": "1077c5f34ecd29e97ff0df54a7ee672f6411668492b3644357d5ef7486aeff64"
+          },
+          "Theorem_4_1_Leading_Coefficient_Gap": {
+            "Theorem_4_1_Leading_Coefficient_Gap.olean": "093eacce81dac2c0a515c81506f38e12bf3778b68683b24711f922972fdc7531"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/Section4ManuscriptBridge.olean": "997753275fb4034ac50387cea9fa2a45ba9812c2fc9e5d7376ec5bf7277228cd"
+      },
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "LeanPaper.ImportedMultiweight.AnchoredSemidefiniteCone",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 4.524,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "64605801036b4d12260bf6dd5c7fc8c27af69993ca6fbb926ddc408b0e7b6764",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedMultiweight.FiniteMultiweightCone": {
+            "LeanPaper/ImportedMultiweight/FiniteMultiweightCone.olean": "c020003b26ccb60613a6f4fabb7f3dd59ad9942fe87b6dfaf5edef4eda36e674"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedMultiweight/AnchoredSemidefiniteCone.olean": "21a1a760bd0c97e19a53c59f282e655b05616e52d4e8d65c8d02c2359986a9a1"
+      },
+      "log_sha256": "8d906935f8c15a25138e3373814d457b0ce3f98e6e77cfcc91f43d8f93a508f0"
+    },
+    {
+      "module": "LeanPaper.ImportedSection3.Jacobi",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 4.775,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "9b31ffbeb4d813719312ebc365d9983b0f46e8866da417cbd75bd55b61d31c4c",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection3.ActualPoleKernel": {
+            "LeanPaper/ImportedSection3/ActualPoleKernel.olean": "d21f307ed53cb4bfb9f8b232ea0726c23d4622a43ed412a6b0a6a02ae46d8d12"
+          },
+          "LeanPaper.ImportedSection3.SignStructure": {
+            "LeanPaper/ImportedSection3/SignStructure.olean": "dd8d60ba7f06046a64c72176f6aa4ff0739a44773cf16e312be5eff5392f1e18"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection3/Jacobi.olean": "685200aa9b4c2d7402b6983b634606853f6d7e074c2d06ba787cb7d472f98269"
+      },
+      "log_sha256": "052cf51eb74398f486ffae59d7cb30822573887eff01e828ba7bb6f7b9f08b92"
+    },
+    {
+      "module": "LeanPaper.ImportedSection56.DualQuadraticRoot",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 2.481,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "cb544bf462618090585d743cf35566983dbbeeca46cf74b1083edbeb49bf6246",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection56.DualDiscriminant": {
+            "LeanPaper/ImportedSection56/DualDiscriminant.olean": "840118baf94f58b3cef383856317c6f7357108b8c08bbe2c5810ef1295a6e9fa"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection56/DualQuadraticRoot.olean": "0b95c07e97c5edfe434786647fde5591f22c17a8dcbca097f466ef68b1736a99"
+      },
+      "log_sha256": "fd3852430ad388ded6d0fa1207464303d60d75e5791d461e8016b0de89734fa8"
+    },
+    {
+      "module": "LeanPaper.ImportedSection56.DualSOS",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 2.614,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "9b25599db50719e8fe8b8a7034a7e403357a48c241b9c10e94a47605c47975a9",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection56.DualTopCoefficient": {
+            "LeanPaper/ImportedSection56/DualTopCoefficient.olean": "09db5e26568b1c34bb046a51dce2a0d40d77f6c2a174a188ec291245aca769f3"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection56/DualSOS.olean": "e89690a0e6a6f0a63aac46a7e50a53196e5eff9245534363753cb852fb47798a"
+      },
+      "log_sha256": "cdcf750ca4c5d65413eee8a456d6c3e8414231c67ee5e4fdcd57c1eaf02f8f23"
+    },
+    {
+      "module": "LeanPaper.ImportedSection56.DualStrictDiscriminant",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 2.459,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "edd907d7b7203689cda4a58a72f6bf0c57f58ce25be92ec49761ae9badf6eddb",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection56.DualDiscriminant": {
+            "LeanPaper/ImportedSection56/DualDiscriminant.olean": "840118baf94f58b3cef383856317c6f7357108b8c08bbe2c5810ef1295a6e9fa"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection56/DualStrictDiscriminant.olean": "95ddc5539dfc92cd006d7879b71ca135c596981d7f7fc2e0ec740327a05dba07"
+      },
+      "log_sha256": "35ef5fb30dc18c9c542d580d3a920f74c218fb7fd9294f77d880aca9d3f56d87"
+    },
+    {
+      "module": "LeanPaper.ImportedSection56.DualWeightInvariance",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 2.362,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "59dd99126fddd893b69c5adc4596b895cba7bbca13bf83c4790481047965d6a3",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection56.DualTopCoefficient": {
+            "LeanPaper/ImportedSection56/DualTopCoefficient.olean": "09db5e26568b1c34bb046a51dce2a0d40d77f6c2a174a188ec291245aca769f3"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection56/DualWeightInvariance.olean": "3788a44728aa5a95b8e53063743cb67ad523fca79fe5400856af88d060452208"
+      },
+      "log_sha256": "0f3df149e8e9aad845a9561a043a0f2e8341874e01e4070a7db5449f7c1bbeb7"
+    },
+    {
+      "module": "LeanPaper.ImportedSection56.FiniteKreinCone",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 2.646,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "fe887a6f8bd5e51cc58ae337e19e4ba46e54596fc071f6811396fa47c133b63b",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection56.CoefficientGram": {
+            "LeanPaper/ImportedSection56/CoefficientGram.olean": "2451f316880e39377975616a692cca402978cd909bfdbddcf2c2d8c74e1e9330"
+          },
+          "LeanPaper.ImportedSection56.KreinIdentity": {
+            "LeanPaper/ImportedSection56/KreinIdentity.olean": "552a8fefbd80ace30135f7a79575dbe96627d4c1c012b1ceee08516ab42d985a"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection56/FiniteKreinCone.olean": "e1440199212509ef60594d401f00575161905663a368d73cee84ac7db31da1f7"
+      },
+      "log_sha256": "e175eef4f206db71f35d95a3ffc0f997eb83fe70a4c68747be0a190fac68efa8"
+    },
+    {
+      "module": "LeanPaper.ImportedSection56.PositiveSlopeSpectrum",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 3.154,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "079b5ba80991754ecd3fc9a26250431e090d1ad6e7ad191e6f96f53ec3418934",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection56.CoefficientGram": {
+            "LeanPaper/ImportedSection56/CoefficientGram.olean": "2451f316880e39377975616a692cca402978cd909bfdbddcf2c2d8c74e1e9330"
+          },
+          "Theorem_3_1_Universal_Hyperbolicity_And_Zero_Free_Disk": {
+            "Theorem_3_1_Universal_Hyperbolicity_And_Zero_Free_Disk.olean": "7be6e826dc5cb0815d932fadf23ac20cab6d03ed8fcb74dd766cb8b825729369"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection56/PositiveSlopeSpectrum.olean": "01775cb9e8b3bc3a736a62e1d4a832d953f1518e8a519765d00fda10cbdc4036"
+      },
+      "log_sha256": "fd26766cebeb93b7056e7df3809f5a6949acc0f03bbc38e373596a12e997ea55"
+    },
+    {
+      "module": "LeanPaper.ImportedSection56.ZetaSevenBound",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 3.011,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "91e315b9b416d21c586dcc9f0b4ffc6a7523e08bef9b99861f60b69000563a58",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection56.RankOneWitness": {
+            "LeanPaper/ImportedSection56/RankOneWitness.olean": "32abd0216ccf6e902b7b7a12854371ef3640eeab46de365a147f72070213181f"
+          },
+          "Theorem_3_1_Zeta_Tail": {
+            "Theorem_3_1_Zeta_Tail.olean": "64bc626d2a4d4be581267d40af333c3a279ff683c6b0aedc6b0c183f2968e338"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection56/ZetaSevenBound.olean": "6987f6989dc11b6d9be397c0fb65f47e88247dae5c4721f26f41a842150dafab"
+      },
+      "log_sha256": "0a0bee9a2489d7206e75a45385ce63dbada8d9e7f70b896935cf01636baaee3b"
+    },
+    {
+      "module": "LeanPaper.ImportedSection3.ExactTaylor",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 4.532,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "c33e48d4d7521257aaafd870a7df8d8acb660d16038113ad64964fc1f69165e9",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection3.Jacobi": {
+            "LeanPaper/ImportedSection3/Jacobi.olean": "685200aa9b4c2d7402b6983b634606853f6d7e074c2d06ba787cb7d472f98269"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection3/ExactTaylor.olean": "00175b119053a76852cea21b72e292d3a1bda91d3bb379989b9c059e64c4d562"
+      },
+      "log_sha256": "cac2a1a6669e3c7f9bcc35aef181ff81f4fe089fa096f8cfe57d0795a2d81bcb"
+    },
+    {
+      "module": "LeanPaper.ImportedSection56.DualBasisCongruence",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 2.499,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "d3322325193227927628a7e65ffb5e047449817afbbbbb160021f8e60d92d916",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection56.DualWeightInvariance": {
+            "LeanPaper/ImportedSection56/DualWeightInvariance.olean": "3788a44728aa5a95b8e53063743cb67ad523fca79fe5400856af88d060452208"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection56/DualBasisCongruence.olean": "e0c8c162d3437a3390eecb698c5336ad87b18509ff6ad39087f8d97640692df8"
+      },
+      "log_sha256": "d64556e0c98f07d27d48c01794ee3a9ae34bdfa0e01d4796087d51f7a1e32e1a"
+    },
+    {
+      "module": "LeanPaper.ImportedSection56.DualRowSeparation",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 2.579,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "d88e0b70f5d0420913c192dfedc9515cf365ca5238a5937170ee3d388cdbeeae",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection56.DualSOS": {
+            "LeanPaper/ImportedSection56/DualSOS.olean": "e89690a0e6a6f0a63aac46a7e50a53196e5eff9245534363753cb852fb47798a"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection56/DualRowSeparation.olean": "f1323de6dbd797d4b051360e4efaa0e1ad022a4f363b52d86770fe6726a546df"
+      },
+      "log_sha256": "6e7f7b515c4c58e08d1cba0dc1bc25513e278242298caf4cbb33a784b5aaaa95"
+    },
+    {
+      "module": "LeanPaper.ImportedSection56.FullMonomial",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 2.397,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "dc92a4303905ccb247afbc7894ae26a14a5ef85c670eeb3b7d38c99d9338024c",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection56.DualSOS": {
+            "LeanPaper/ImportedSection56/DualSOS.olean": "e89690a0e6a6f0a63aac46a7e50a53196e5eff9245534363753cb852fb47798a"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection56/FullMonomial.olean": "3f5c60927868e3730810dc27a8ad30d7fa87b5ad8176c1bca006fc3ed2e1247d"
+      },
+      "log_sha256": "1fa86d2e491711ace1328d45d74f77bd6adc1de76c4d53050a6428abe495901e"
+    },
+    {
+      "module": "LeanPaper.ImportedSection56.DualNonsingularDegree",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 2.447,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "248058e921b12ee1f3e686d8734aec3f62ba778a1c840b3610d7d13d548efe0d",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection56.DualBasisCongruence": {
+            "LeanPaper/ImportedSection56/DualBasisCongruence.olean": "e0c8c162d3437a3390eecb698c5336ad87b18509ff6ad39087f8d97640692df8"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection56/DualNonsingularDegree.olean": "64d6b170b69daaf785fed907d006a534bde4ee80ff29ff043c8cc9e68bf01402"
+      },
+      "log_sha256": "0c1209e9b733f5bd1cdba364d5d4f7fe2e57b082efea49677e0a7080099c2ad6"
+    },
+    {
+      "module": "LeanPaper.ImportedSection56.DualNullspace",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 2.657,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "e7ec0de4231e3913994a8bd5e8d0fd62c29f1721265aecc4c5a36aea1a37c344",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection56.DualRowSeparation": {
+            "LeanPaper/ImportedSection56/DualRowSeparation.olean": "f1323de6dbd797d4b051360e4efaa0e1ad022a4f363b52d86770fe6726a546df"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection56/DualNullspace.olean": "7d5877773e539f339d2a6efb2b3c1421f783214a84d47e6ff50d078eeef34386"
+      },
+      "log_sha256": "5e3d3e02eb8081097942262b3df4839cbc21774f6c07f579a804bfc219ea7c0e"
+    },
+    {
+      "module": "LeanPaper.ImportedSection56.SelectedMonomial",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 2.415,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "929df10b0cada59bf899efefebc43e4fdf7e3a1032781456d1c10e4e8a7f3ab0",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection56.FullMonomial": {
+            "LeanPaper/ImportedSection56/FullMonomial.olean": "3f5c60927868e3730810dc27a8ad30d7fa87b5ad8176c1bca006fc3ed2e1247d"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection56/SelectedMonomial.olean": "fe5616bf6fb9ead70dd9069030ad12b38d0f945d876d4370d127cb4705f48dda"
+      },
+      "log_sha256": "17c8c0010fa8d5d59e22feaf8c3e5e8e9934dda18d63406c38f2fdff97664bf7"
+    },
+    {
+      "module": "LeanPaper.ImportedSection56.UnimodularMonomial",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 2.47,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "68ef66bf080a7b1bc7d16666ee6a5766f1994d280bdc4ac2dd23fa264551fa08",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection56.DualBasisCongruence": {
+            "LeanPaper/ImportedSection56/DualBasisCongruence.olean": "e0c8c162d3437a3390eecb698c5336ad87b18509ff6ad39087f8d97640692df8"
+          },
+          "LeanPaper.ImportedSection56.SelectedMonomial": {
+            "LeanPaper/ImportedSection56/SelectedMonomial.olean": "fe5616bf6fb9ead70dd9069030ad12b38d0f945d876d4370d127cb4705f48dda"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ImportedSection56/UnimodularMonomial.olean": "2f80cc7597c8706a6925805830c4c774e6611cc01a4eaf6d4fd2efb0f9192b68"
+      },
+      "log_sha256": "38ac2cc4e0bfc4cd773831240471b4cc5b835dc6c23defab9c58c8a41e0ced12"
+    },
+    {
+      "module": "LeanPaper.Section5DualSpectrum",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 2.765,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "a0d4969609d9ddcd6c00fa7f57b3a27d8f6060fee3178f9428b3da50b4f0ca41",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection56.PositiveSlopeSpectrum": {
+            "LeanPaper/ImportedSection56/PositiveSlopeSpectrum.olean": "01775cb9e8b3bc3a736a62e1d4a832d953f1518e8a519765d00fda10cbdc4036"
+          },
+          "LeanPaper.ImportedSection56.SelectedMonomial": {
+            "LeanPaper/ImportedSection56/SelectedMonomial.olean": "fe5616bf6fb9ead70dd9069030ad12b38d0f945d876d4370d127cb4705f48dda"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/Section5DualSpectrum.olean": "cfb768016c016484d781dc38bbd5ebec5289c8c098953881a716bc857c364ba2"
+      },
+      "log_sha256": "3ca1c0d82fdf31b0ec32450ab1ce140a85e38e952c80a912d4e6c77351d58892"
+    },
+    {
+      "module": "LeanPaper.KernelAudit",
+      "status": "PASS",
+      "action": "COMPILED",
+      "seconds": 313.074,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "2c1aa6cad0466f3d5af6dbf589e1f2905cfe5bcfa7e30fca15e447e793a9eef8",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
           "Definition_2_1_Order_s_Rational_Moment_Functional": {
             "Definition_2_1_Order_s_Rational_Moment_Functional.olean": "34a1976fdc0192b645f954ed1dc03a2b523c09a51b53c017c7286f6c074de6a3"
           },
@@ -2351,15 +3512,216 @@
           "ProofAdvances.Corollary_3_6_AllPrincipalMinors": {
             "ProofAdvances/Corollary_3_6_AllPrincipalMinors.olean": "69614338cab10fe41cd14f3963457422c4d9f57414c9383731804ce5917d98c4"
           },
+          "LeanPaper.PullbackReflection": {
+            "LeanPaper/PullbackReflection.olean": "758f43321b6ed083d1f06ebff9ea210efe09a868e3ba9a01904f64e6b5089d7b"
+          },
+          "LeanPaper.SingularSlope": {
+            "LeanPaper/SingularSlope.olean": "39c1e113cfed4c7bb9502fcad70fd7b824f706bdb3961e40fe1fa016cf408c62"
+          },
+          "LeanPaper.PrincipalMinorRealRoots": {
+            "LeanPaper/PrincipalMinorRealRoots.olean": "9cb7982c61e8f76df9b9a806848949beede454a3295a466bb1fb1998fd4370d6"
+          },
+          "LeanPaper.ReciprocalRootMoments": {
+            "LeanPaper/ReciprocalRootMoments.olean": "ac94b20a96186c8aed0a5fd2bb4963fd859ec2f65d587f12494e729674f125fd"
+          },
+          "LeanPaper.SingularPrincipalMinorExample": {
+            "LeanPaper/SingularPrincipalMinorExample.olean": "9268ca6ce94af3a74e20472c7cb6b12d1b5eaece31dd5b6f9d6d331922991523"
+          },
           "LeanPaper.AxiomWalk": {
             "LeanPaper/AxiomWalk.olean": "de243a9601abdaaafbfffe2c861c2aec948e0403fb88ddc7746627917f50f3d3"
+          },
+          "LeanPaper.Rebuild.PartialFractionsCore": {
+            "LeanPaper/Rebuild/PartialFractionsCore.olean": "f597040a0b1a3f06d362cdd3dbcf232fceb6ebf29f99f30aa2444c4283b73ecd"
+          },
+          "LeanPaper.Rebuild.PartialFractionsQuotient": {
+            "LeanPaper/Rebuild/PartialFractionsQuotient.olean": "0793dc8776f15b71f1f6631572613fa14f31398460145c2dad7cd3d45c7c61fd"
+          },
+          "LeanPaper.Rebuild.PartialFractionsResidues": {
+            "LeanPaper/Rebuild/PartialFractionsResidues.olean": "304ac5725a10d08a070bb1a884893287eb9c825a6248827559e9343cbc119938"
+          },
+          "LeanPaper.RebuildKernelBridge": {
+            "LeanPaper/RebuildKernelBridge.olean": "d78b96f5627188e7ea49d1c2069ef07f75e92889254321bfc9fbc0d7fbf3d07c"
+          },
+          "LeanPaper.ImportedCharacter.ShiftedPole": {
+            "LeanPaper/ImportedCharacter/ShiftedPole.olean": "d3f78d7b97a7d589e7b3a32e18038d664b65a520d491688c41867d254160f264"
+          },
+          "LeanPaper.ImportedMultiweight.PositiveSlopeSpectrum": {
+            "LeanPaper/ImportedMultiweight/PositiveSlopeSpectrum.olean": "0c74437ecd6007b902b45b1c6239ccf060d554090003df1ebc3d7bf079f6986c"
+          },
+          "LeanPaper.ImportedSection3.CubicNewton": {
+            "LeanPaper/ImportedSection3/CubicNewton.olean": "176de4cc2a6d4707588c0566b48d72a5bd785704bb938b60aa46c64498f092e7"
+          },
+          "LeanPaper.ImportedSection3.CubicTuran": {
+            "LeanPaper/ImportedSection3/CubicTuran.olean": "279a6f5f587855b2ebd01e5461ca3987e97d1529f5112094c4a7429a607d1478"
+          },
+          "LeanPaper.ImportedSection3.NormalizedContinuedFraction": {
+            "LeanPaper/ImportedSection3/NormalizedContinuedFraction.olean": "977c40bd306ed04f9a812584d0b9800c4da0a4571e4387b7f63e70d41a7ee574"
+          },
+          "LeanPaper.ImportedSection3.PowerSumExtrema": {
+            "LeanPaper/ImportedSection3/PowerSumExtrema.olean": "080f0a33fd79adc9e4b10d20fd5687ec030a54c26c47dcb028a8299a3941c98d"
+          },
+          "LeanPaper.ImportedSection3.RealExponent": {
+            "LeanPaper/ImportedSection3/RealExponent.olean": "cc7e09609ddc518142ffd5b033691702c5be1e949564ee03fe5ca4c5f6d8e6fe"
+          },
+          "LeanPaper.ImportedSection4.Proposition_4_2_Resultant_Product_Barrier": {
+            "LeanPaper/ImportedSection4/Proposition_4_2_Resultant_Product_Barrier.olean": "a190186ebea2ddfe64c07877aa707c9793bb5b3a9370e4d176605235d4aeb2b4"
+          },
+          "LeanPaper.ImportedSection4.Proposition_4_3_PadicDisk": {
+            "LeanPaper/ImportedSection4/Proposition_4_3_PadicDisk.olean": "867a204fd01b431b8d0292cd63be811efad2cc52b60ce64e6e396bb8c015dc93"
+          },
+          "LeanPaper.ImportedSection56.DualMoments": {
+            "LeanPaper/ImportedSection56/DualMoments.olean": "cb45dc0eae01c498c0dfaa7880af9f89478d8a1cc4deb6518614db8b153f4563"
+          },
+          "LeanPaper.ImportedSection56.FiniteDeterminant": {
+            "LeanPaper/ImportedSection56/FiniteDeterminant.olean": "56ba16ea823c6de68f86e4b4c15b6fc911725b94a459eb542ea126fbbeda4d38"
+          },
+          "LeanPaper.ImportedSection56.TriplePoleHermite": {
+            "LeanPaper/ImportedSection56/TriplePoleHermite.olean": "b0da63a17948a16fd2d5ceb73649bf86a8bf204f7d14b013321105f974d93322"
+          },
+          "LeanPaper.Section2FiniteDifference": {
+            "LeanPaper/Section2FiniteDifference.olean": "81a49c8c0ed71f50dfcbff36e4007c01bd4838e3e6121cab82cf9fb8f6742855"
+          },
+          "LeanPaper.Section2LagrangeBasis": {
+            "LeanPaper/Section2LagrangeBasis.olean": "a97b4f690f5dd7e4642596275fb2e8363d6afb5b66708708eb4c53801aeeafb0"
+          },
+          "LeanPaper.Section6BetaFinite": {
+            "LeanPaper/Section6BetaFinite.olean": "ccbce09e33147f7b7d2ca482dcd4ec8cd8f95d7081eb1d806d6702c1f85c7506"
+          },
+          "LeanPaper.ImportedCharacter.CharacterPositive": {
+            "LeanPaper/ImportedCharacter/CharacterPositive.olean": "dbe6b243cfcb8f93f15d0f44246fef1f0b55b0da604749d0a67de28e27e5b17c"
+          },
+          "LeanPaper.ImportedSection3.AllDegreeTuran": {
+            "LeanPaper/ImportedSection3/AllDegreeTuran.olean": "099dcc9c3315dd136dea0a504c792a28b408b2aaa7821f343c5e6b6244500900"
+          },
+          "LeanPaper.ImportedSection3.PoleKernel": {
+            "LeanPaper/ImportedSection3/PoleKernel.olean": "93ced60e7c5a674592a76ef78777034ac77f0955198e4c8b677ea8a129601259"
+          },
+          "LeanPaper.ImportedSection3.RootMomentBounds": {
+            "LeanPaper/ImportedSection3/RootMomentBounds.olean": "91b97e99c33c333091db88249f63ed78150e389f2c367fc998f1693a0d2be463"
+          },
+          "LeanPaper.ImportedSection3.SignStructure": {
+            "LeanPaper/ImportedSection3/SignStructure.olean": "dd8d60ba7f06046a64c72176f6aa4ff0739a44773cf16e312be5eff5392f1e18"
+          },
+          "LeanPaper.ImportedSection4.Proposition_4_3_IsometricExtension": {
+            "LeanPaper/ImportedSection4/Proposition_4_3_IsometricExtension.olean": "11d0d017d3b6664771fe0731d638a297106d2cee1fb27397222258b2fca13111"
+          },
+          "LeanPaper.ImportedSection4.Theorem_4_6_Leading_Coefficient_Determinant_Barrier": {
+            "LeanPaper/ImportedSection4/Theorem_4_6_Leading_Coefficient_Determinant_Barrier.olean": "70b5c853b9cee992ad9b1655f52bc7fb59fb806e77aabc466ff36de7730f19c4"
+          },
+          "LeanPaper.ImportedSection56.DualAffineAlgebra": {
+            "LeanPaper/ImportedSection56/DualAffineAlgebra.olean": "d07a33aa3a4ecd18b44b7e0cf4a1b3e20160377e6fadb5906ae3e716dfd41452"
+          },
+          "LeanPaper.Section2LagrangeBridge": {
+            "LeanPaper/Section2LagrangeBridge.olean": "56e1b2495bff665a9bb8aa41457ba57aef54721b47a51150097a799ff04f0c4e"
+          },
+          "LeanPaper.ImportedCharacter.PositiveSlope": {
+            "LeanPaper/ImportedCharacter/PositiveSlope.olean": "16381f3a8da73b3af98b24372f0a176031b66aeb3ab8e19533fe331119dae3b9"
+          },
+          "LeanPaper.ImportedSection3.SlopeSign": {
+            "LeanPaper/ImportedSection3/SlopeSign.olean": "2f62af0780df891401e6a8d98237325da4ef084657458be50ed9b53c7d69cab5"
+          },
+          "LeanPaper.ImportedSection3.StrictTuranRolle": {
+            "LeanPaper/ImportedSection3/StrictTuranRolle.olean": "19476787d8e6acba8dca9cec00f32f84e342b129b73e3634582ad3aeac280973"
+          },
+          "LeanPaper.ImportedSection4.Proposition_4_3_ComplexPadicDisk": {
+            "LeanPaper/ImportedSection4/Proposition_4_3_ComplexPadicDisk.olean": "1077c5f34ecd29e97ff0df54a7ee672f6411668492b3644357d5ef7486aeff64"
+          },
+          "LeanPaper.ImportedSection4.Theorem_4_7_Finite_Root_Cluster_Count": {
+            "LeanPaper/ImportedSection4/Theorem_4_7_Finite_Root_Cluster_Count.olean": "74b26772b675fc116c4fc3cc32faaa5a8816bb91c7ad81debfb7db4cb1035336"
+          },
+          "LeanPaper.ImportedSection56.DualPencilCCT": {
+            "LeanPaper/ImportedSection56/DualPencilCCT.olean": "30b305538a413800e7199dfe070b525738e0bf4499db5180e7d8973da573b3c9"
+          },
+          "LeanPaper.ImportedSection56.KreinIdentity": {
+            "LeanPaper/ImportedSection56/KreinIdentity.olean": "552a8fefbd80ace30135f7a79575dbe96627d4c1c012b1ceee08516ab42d985a"
+          },
+          "LeanPaper.Section2LagrangeIdentification": {
+            "LeanPaper/Section2LagrangeIdentification.olean": "204ed6dd2b46c0d2bc460af416d21d7d6a293c64f897b0a279c6e82458453402"
+          },
+          "LeanPaper.ImportedMultiweight.FiniteMultiweightCone": {
+            "LeanPaper/ImportedMultiweight/FiniteMultiweightCone.olean": "c020003b26ccb60613a6f4fabb7f3dd59ad9942fe87b6dfaf5edef4eda36e674"
+          },
+          "LeanPaper.ImportedSection3.ActualPoleKernel": {
+            "LeanPaper/ImportedSection3/ActualPoleKernel.olean": "d21f307ed53cb4bfb9f8b232ea0726c23d4622a43ed412a6b0a6a02ae46d8d12"
+          },
+          "LeanPaper.ImportedSection4.Proposition_4_8_Factor_Distance_Bounds": {
+            "LeanPaper/ImportedSection4/Proposition_4_8_Factor_Distance_Bounds.olean": "967d2646ee7f8548fc2749a408c4a0e166b6d2a57a75aeba091ebd7ce0aa9f4d"
+          },
+          "LeanPaper.ImportedSection56.CoefficientGram": {
+            "LeanPaper/ImportedSection56/CoefficientGram.olean": "2451f316880e39377975616a692cca402978cd909bfdbddcf2c2d8c74e1e9330"
+          },
+          "LeanPaper.ImportedSection56.DualDiscriminant": {
+            "LeanPaper/ImportedSection56/DualDiscriminant.olean": "840118baf94f58b3cef383856317c6f7357108b8c08bbe2c5810ef1295a6e9fa"
+          },
+          "LeanPaper.ImportedSection56.DualTopCoefficient": {
+            "LeanPaper/ImportedSection56/DualTopCoefficient.olean": "09db5e26568b1c34bb046a51dce2a0d40d77f6c2a174a188ec291245aca769f3"
+          },
+          "LeanPaper.ImportedSection56.RankOneWitness": {
+            "LeanPaper/ImportedSection56/RankOneWitness.olean": "32abd0216ccf6e902b7b7a12854371ef3640eeab46de365a147f72070213181f"
+          },
+          "LeanPaper.Section4ManuscriptBridge": {
+            "LeanPaper/Section4ManuscriptBridge.olean": "997753275fb4034ac50387cea9fa2a45ba9812c2fc9e5d7376ec5bf7277228cd"
+          },
+          "LeanPaper.ImportedMultiweight.AnchoredSemidefiniteCone": {
+            "LeanPaper/ImportedMultiweight/AnchoredSemidefiniteCone.olean": "21a1a760bd0c97e19a53c59f282e655b05616e52d4e8d65c8d02c2359986a9a1"
+          },
+          "LeanPaper.ImportedSection3.Jacobi": {
+            "LeanPaper/ImportedSection3/Jacobi.olean": "685200aa9b4c2d7402b6983b634606853f6d7e074c2d06ba787cb7d472f98269"
+          },
+          "LeanPaper.ImportedSection56.DualQuadraticRoot": {
+            "LeanPaper/ImportedSection56/DualQuadraticRoot.olean": "0b95c07e97c5edfe434786647fde5591f22c17a8dcbca097f466ef68b1736a99"
+          },
+          "LeanPaper.ImportedSection56.DualSOS": {
+            "LeanPaper/ImportedSection56/DualSOS.olean": "e89690a0e6a6f0a63aac46a7e50a53196e5eff9245534363753cb852fb47798a"
+          },
+          "LeanPaper.ImportedSection56.DualStrictDiscriminant": {
+            "LeanPaper/ImportedSection56/DualStrictDiscriminant.olean": "95ddc5539dfc92cd006d7879b71ca135c596981d7f7fc2e0ec740327a05dba07"
+          },
+          "LeanPaper.ImportedSection56.DualWeightInvariance": {
+            "LeanPaper/ImportedSection56/DualWeightInvariance.olean": "3788a44728aa5a95b8e53063743cb67ad523fca79fe5400856af88d060452208"
+          },
+          "LeanPaper.ImportedSection56.FiniteKreinCone": {
+            "LeanPaper/ImportedSection56/FiniteKreinCone.olean": "e1440199212509ef60594d401f00575161905663a368d73cee84ac7db31da1f7"
+          },
+          "LeanPaper.ImportedSection56.PositiveSlopeSpectrum": {
+            "LeanPaper/ImportedSection56/PositiveSlopeSpectrum.olean": "01775cb9e8b3bc3a736a62e1d4a832d953f1518e8a519765d00fda10cbdc4036"
+          },
+          "LeanPaper.ImportedSection56.ZetaSevenBound": {
+            "LeanPaper/ImportedSection56/ZetaSevenBound.olean": "6987f6989dc11b6d9be397c0fb65f47e88247dae5c4721f26f41a842150dafab"
+          },
+          "LeanPaper.ImportedSection3.ExactTaylor": {
+            "LeanPaper/ImportedSection3/ExactTaylor.olean": "00175b119053a76852cea21b72e292d3a1bda91d3bb379989b9c059e64c4d562"
+          },
+          "LeanPaper.ImportedSection56.DualBasisCongruence": {
+            "LeanPaper/ImportedSection56/DualBasisCongruence.olean": "e0c8c162d3437a3390eecb698c5336ad87b18509ff6ad39087f8d97640692df8"
+          },
+          "LeanPaper.ImportedSection56.DualRowSeparation": {
+            "LeanPaper/ImportedSection56/DualRowSeparation.olean": "f1323de6dbd797d4b051360e4efaa0e1ad022a4f363b52d86770fe6726a546df"
+          },
+          "LeanPaper.ImportedSection56.FullMonomial": {
+            "LeanPaper/ImportedSection56/FullMonomial.olean": "3f5c60927868e3730810dc27a8ad30d7fa87b5ad8176c1bca006fc3ed2e1247d"
+          },
+          "LeanPaper.ImportedSection56.DualNonsingularDegree": {
+            "LeanPaper/ImportedSection56/DualNonsingularDegree.olean": "64d6b170b69daaf785fed907d006a534bde4ee80ff29ff043c8cc9e68bf01402"
+          },
+          "LeanPaper.ImportedSection56.DualNullspace": {
+            "LeanPaper/ImportedSection56/DualNullspace.olean": "7d5877773e539f339d2a6efb2b3c1421f783214a84d47e6ff50d078eeef34386"
+          },
+          "LeanPaper.ImportedSection56.SelectedMonomial": {
+            "LeanPaper/ImportedSection56/SelectedMonomial.olean": "fe5616bf6fb9ead70dd9069030ad12b38d0f945d876d4370d127cb4705f48dda"
+          },
+          "LeanPaper.ImportedSection56.UnimodularMonomial": {
+            "LeanPaper/ImportedSection56/UnimodularMonomial.olean": "2f80cc7597c8706a6925805830c4c774e6611cc01a4eaf6d4fd2efb0f9192b68"
+          },
+          "LeanPaper.Section5DualSpectrum": {
+            "LeanPaper/Section5DualSpectrum.olean": "cfb768016c016484d781dc38bbd5ebec5289c8c098953881a716bc857c364ba2"
           }
         }
       },
       "output_hashes": {
-        "LeanPaper/KernelAudit.olean": "c5750222196df0d699a6de16492d10719844e35a4e8898f02d0aae97f07e60a3"
+        "LeanPaper/KernelAudit.olean": "a1b21790a457174900897ffe57bad35602160ae3d0fc29a4bddca14248ebddbb"
       },
-      "log_sha256": "6a0c115a8297df7304ab9833b12f9696e8cb0c10574f0269309c3e4444f4faf4"
+      "log_sha256": "4138e3da2406833eb92e709c0459461861c01e4520e1afb169680c6bc0baebe1"
     }
   ]
 }

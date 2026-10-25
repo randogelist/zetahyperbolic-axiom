@@ -1,0 +1,3 @@
+'PaperAdvances.Theorem3_3.actual_gram_det_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PaperAdvances.Theorem3_3.leading_coefficient_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PaperAdvances.Theorem3_3.positive_pole_count_constant' depends on axioms: [propext, Classical.choice, Quot.sound]

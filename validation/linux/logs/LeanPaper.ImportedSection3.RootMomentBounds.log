@@ -1,0 +1,3 @@
+'LeanPaper.Section3RootMomentBounds.actual_reciprocal_moment_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,12 +1,18 @@
 # Leaned Paper — YOU_ARE_GOODWORKFLOWFRONTIER
 
-The [`leaned-paper`](https://github.com/randogelist/zetahyperbolic-axiom/tree/leaned-paper) branch builds a manuscript-aligned Lean formalization from the supplied project archives, commit-pinned cross-branch Lean bases and documented research inputs. This increment is `v0_1_2_construction`, with 96 active modules in `modules.txt`.
+The [`leaned-paper`](https://github.com/randogelist/zetahyperbolic-axiom/tree/leaned-paper) branch builds a manuscript-aligned Lean formalization from the supplied project archives, commit-pinned cross-branch Lean bases and documented research inputs. This increment is `v0_1_3_construction`, with 154 active modules in `modules.txt`.
 
-**Local Linux validation passed: 96/96 modules and the independent transitive axiom audit. Native Windows validation remains pending. The complete paper and its quantitative irrationality endpoints are not proved by this increment.**
+**Local Linux validation passed: 154/154 modules and the independent transitive axiom audit. Native Windows validation remains pending. The complete paper and its quantitative irrationality endpoints are not proved by this increment.**
 
 On 2026-10-25 the user explicitly authorized local Lean installation and compilation. Local validation uses Lean 4.33.0 and commit-pinned Mathlib; its compiler logs, source/environment fingerprints and axiom receipt are recorded separately under `validation/linux/`. The current local status is `LINUX_LEAN433_PASS_AXIOM_AUDITED`; see [acceptance](validation/linux/acceptance.json) and [compiler summary](validation/linux/summary.json). A successful Linux run does not certify the Windows CMD runner or permit reuse of Linux `.olean` files as native Windows artifacts.
 
-## Exchange with the from-scratch rebuild
+## Expanded theorem intake
+
+This increment adds 58 modules covering substantive inputs for 21 of the 45 manuscript ledger rows. The [theorem intake report](docs/THEOREM_REBUILD_INTAKE.md) records exact hypotheses and remaining obligations; [provenance](provenance/theorem_intake.json) verifies each imported source against its supplied or commit-pinned archive. All 95 prior mathematical/audit-helper source files are byte-identical, and the native runner is unchanged.
+
+The additions include explicit Lagrange basis transport and full finite-span tau difference; first Turan and Jacobi/Taylor identities; finite root-moment bounds; character and finite multiweight spectra; Q_p/C_p zero-free disks; actual primitive-polynomial and spectral-cluster bridges; dual-pencil degree/real roots under coefficient independence; an explicit rank-one zeta(7) sign witness; and finite beta, tensor and Hermite identities. These component proofs do not certify all 45 complete printed items or unconditional irrationality.
+
+## Previous source exchange
 
 The [comparison with snditeration](docs/SNDITERATION_EXCHANGE.md) selects its three direct partial-fraction modules and connects them to the actual kernel and Gram integral. The imported declarations retain their proof bodies; only import paths change. The new algebraic identity holds for every real square argument and arbitrary parameter data. The Gram integral theorem requires only a positive odd-weight index. All 91 previous mathematical/auditor-helper sources remain byte-identical; the final audit is extended. The stronger assembled Gram, singular-slope, principal-minor and arithmetic transfer results are retained.
 

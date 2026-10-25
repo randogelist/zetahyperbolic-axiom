@@ -16,9 +16,13 @@
       "title": "Reflection and difference identities for Tau",
       "source_state": "PARTIAL_SOURCE",
       "native_status": "PENDING_CURRENT_RECEIPT",
-      "sources": "19:Section2MomentPoles;19:Section2PolynomialTau;23:Paper10Section2PoleReflection;23:Paper10Section2TauPoleDifference;NEW:LeanPaper/PullbackReflection",
-      "remaining_obligation": "New source assembles reflection for finite monomial-plus-integer-pole spans and difference for admissible finite pole spans. Full polynomial-plus-pole difference assembly, pointwise reflection/difference representation bridges, and independence of arbitrary rational-function representations remain open.",
-      "local_compiler_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED_EXACT_NEW_DECLARATIONS"
+      "sources": "19:Section2MomentPoles;19:Section2PolynomialTau;23:Paper10Section2PoleReflection;23:Paper10Section2TauPoleDifference;NEW:LeanPaper/PullbackReflection;NEW:LeanPaper/Section2FiniteDifference",
+      "remaining_obligation": "General RatFunc representation independence, the complete manuscript-domain identification and the pointwise reflection representation bridge remain open. The complete finite polynomial-plus-pole difference is now supplied as source; final local audit and native Windows validation remain required.",
+      "local_compiler_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED_COMPONENTS_ONLY",
+      "intake_scope": "Complete polynomial-plus-simple-pole finite-span tau difference, including its degree-2k coefficient; pointwise x-to-x+1 translation is connected to the same finite input. The moment theorem assumes k>=1 and excludes pole labels 0 and1.",
+      "intake_modules": [
+        "LeanPaper.Section2FiniteDifference"
+      ]
     },
     {
       "manuscript_item": "2.4",
@@ -33,8 +37,15 @@
       "title": "Lagrange pole diagonalization",
       "source_state": "COMPLETE_CANDIDATE_SOURCE",
       "native_status": "PENDING_CURRENT_RECEIPT",
-      "sources": "20:Theorem_2_5_Lagrange_Pole_Diagonalization",
-      "remaining_obligation": "Native compiler and axiom verification required for exact original residue and basis identities."
+      "sources": "20:Theorem_2_5_Lagrange_Pole_Diagonalization;NEW:LeanPaper/Section2LagrangeBasis;NEW:LeanPaper/Section2LagrangeBridge;NEW:LeanPaper/Section2LagrangeIdentification",
+      "remaining_obligation": "The explicit polynomial interpolation/basis gap is addressed by the new source. Final local audit, native Windows validation and any additional general rational-functional domain claims remain separate.",
+      "local_compiler_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED_COMPONENTS_ONLY",
+      "intake_scope": "Constructed Lagrange polynomials evaluate to Kronecker delta, have the required degree bound, and have coefficient matrix equal to the inverse actual pole Vandermonde. The archived polynomial formula is identified with the constructed Mathlib basis; the actual transformed-pencil entries and diagonal slope are connected.",
+      "intake_modules": [
+        "LeanPaper.Section2LagrangeBasis",
+        "LeanPaper.Section2LagrangeBridge",
+        "LeanPaper.Section2LagrangeIdentification"
+      ]
     },
     {
       "manuscript_item": "3.1",
@@ -50,17 +61,27 @@
       "title": "Continuous hyperbolic pencil for all real s > 1",
       "source_state": "PARTIAL_SOURCE",
       "native_status": "PENDING_CURRENT_RECEIPT",
-      "sources": "20:Theorem_3_1_Universal_Hyperbolicity_And_Zero_Free_Disk",
-      "remaining_obligation": "Generic positive-pencil argument exists; continuous-weight integral and real-s realization are not assembled in selected active sources."
+      "sources": "20:Theorem_3_1_Universal_Hyperbolicity_And_Zero_Free_Disk;NEW:LeanPaper/ImportedSection3/RealExponent",
+      "remaining_obligation": "The continuous-weight moment integral and its identification with the manuscript real-s base matrix remain open. Positive definiteness of the supplied base is an explicit hypothesis; the finite real-power algebra does not discharge it.",
+      "local_compiler_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED_COMPONENTS_ONLY",
+      "intake_scope": "Actual pole residues are scaled by positive real powers. Their sign and nonvanishing are preserved; the finite real-exponent slope is nonsingular, and a supplied positive-definite symmetric base yields real complex roots.",
+      "intake_modules": [
+        "LeanPaper.ImportedSection3.RealExponent"
+      ]
     },
     {
       "manuscript_item": "3.3",
       "title": "Total positivity, leading sign, universal signature",
       "source_state": "PARTIAL_SOURCE",
       "native_status": "PENDING_CURRENT_RECEIPT",
-      "sources": "20:Theorem_2_5_Lagrange_Pole_Diagonalization;19:Section3SignatureCounts;NEW:PaperChain/Stage04PrincipalMinorCenter;NEW:LeanPaper/PrincipalMinorRealRoots",
-      "remaining_obligation": "Actual principal Gram submatrices are positive definite at the true odd-zeta center. The new restriction bridge retains that positivity for arbitrary principal subpencils. Arbitrary mixed-minor total positivity, Stieltjes determinacy, exact original signature/count transfer and leading sign remain separate obligations.",
-      "local_compiler_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED_EXACT_NEW_DECLARATIONS"
+      "sources": "20:Theorem_2_5_Lagrange_Pole_Diagonalization;19:Section3SignatureCounts;NEW:PaperChain/Stage04PrincipalMinorCenter;NEW:LeanPaper/PrincipalMinorRealRoots;NEW:LeanPaper/ImportedSection3/SignStructure;NEW:LeanPaper/ImportedSection3/SlopeSign",
+      "remaining_obligation": "Arbitrary mixed-minor total positivity, Stieltjes determinacy and full manuscript-equivalent signature/count formulas remain separate obligations. Weight-invariant residue sign sets and determinant sign products are not the full inertia theorem.",
+      "local_compiler_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED_COMPONENTS_ONLY",
+      "intake_scope": "Actual Gram determinant positivity, the actual leading-coefficient product formula, real-weight invariance of positive/negative residue index sets and determinant-sign equivalences are supplied.",
+      "intake_modules": [
+        "LeanPaper.ImportedSection3.SignStructure",
+        "LeanPaper.ImportedSection3.SlopeSign"
+      ]
     },
     {
       "manuscript_item": "3.4",
@@ -74,43 +95,76 @@
     {
       "manuscript_item": "3.5",
       "title": "Stieltjes J-fraction from interlacing roots",
-      "source_state": "STATED_TARGET",
+      "source_state": "PRINTED_STATEMENT_REQUIRES_CORRECTION",
       "native_status": "PENDING_CURRENT_RECEIPT",
-      "sources": "20:PaperChain/Stage04",
-      "remaining_obligation": "Construct actual finite fraction and prove its spectral edge estimate; the latter depends on Section4 growth."
+      "sources": "20:PaperChain/Stage04;NEW:LeanPaper/ImportedSection3/NormalizedContinuedFraction",
+      "remaining_obligation": "The printed formula for I+tB uses unscaled a_i+t and b_i^2; corrected finite cases are tracked separately. Constructing the general Lanczos/Jacobi chain, proving all-depth interlacing/fraction identities and obtaining its spectral-edge growth bound remain open.",
+      "local_compiler_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED_COMPONENTS_ONLY",
+      "intake_scope": "Correct normalized 2x2 and3x3 determinant, continuant and nested Schur identities for I+tB, with required nonzero Schur denominators. The identities retain 1+t*a entries and t^2 off-diagonal factors.",
+      "intake_modules": [
+        "LeanPaper.ImportedSection3.NormalizedContinuedFraction"
+      ]
     },
     {
       "manuscript_item": "3.6",
       "title": "Stieltjes reciprocal-root power sums",
       "source_state": "PRINTED_STATEMENT_REQUIRES_CORRECTION",
       "native_status": "PENDING_CURRENT_RECEIPT",
-      "sources": "PDF:p11;REMOTE:v1_2_55/Corollary_3_6_ExactFiniteRank;REMOTE:v1_2_55/Corollary_3_6_AllPrincipalMinors;NEW:LeanPaper/ReciprocalRootMoments",
-      "remaining_obligation": "New source constructs the actual determinant root vector and coalesces repeated inverse-square gaps into distinct atoms with positive multiplicities. At a rational shift where the actual determinant is nonzero, both Hankel and shifted Hankel matrices are PSD at every order; determinant positivity holds exactly through the distinct-support size and vanishes above it. Log-derivative identification, rationality and nearest-root limit/rate remain open. Literal all-order strictness is false, the printed factor bound is reversed, and the odd log-derivative sign requires correction.",
-      "local_compiler_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED_EXACT_NEW_DECLARATIONS"
+      "sources": "PDF:p11;REMOTE:v1_2_55/Corollary_3_6_ExactFiniteRank;REMOTE:v1_2_55/Corollary_3_6_AllPrincipalMinors;NEW:LeanPaper/ReciprocalRootMoments;NEW:LeanPaper/ImportedSection3/PowerSumExtrema;NEW:LeanPaper/ImportedSection3/RootMomentBounds",
+      "remaining_obligation": "The prior exact finite-support rank and positivity corrections remain in force. Full higher log-derivative identification, rationality and the nearest-root limit/rate remain open. The literal all-order strictness is false; the printed factor bound and odd log-derivative sign require the recorded corrections.",
+      "local_compiler_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED_COMPONENTS_ONLY",
+      "intake_scope": "An attained maximum inverse-square gap is constructed from the actual determinant root family. Every finite moment satisfies U^m <= sum_i u_i^m <= h*U^m, preserving repeated roots and repeated squared gaps.",
+      "intake_modules": [
+        "LeanPaper.ImportedSection3.PowerSumExtrema",
+        "LeanPaper.ImportedSection3.RootMomentBounds"
+      ]
     },
     {
       "manuscript_item": "3.7",
       "title": "Turanian non-negativity and Newton log-concavity",
       "source_state": "PARTIAL_SOURCE",
       "native_status": "PENDING_CURRENT_RECEIPT",
-      "sources": "23:Paper10Section3RankTwoNewton;NEW:Stage04PrincipalMinorCenter",
-      "remaining_obligation": "Rank-two pieces only; full orders and strictness cases require independent proof."
+      "sources": "23:Paper10Section3RankTwoNewton;NEW:Stage04PrincipalMinorCenter;NEW:LeanPaper/ImportedSection3/CubicTuran;NEW:LeanPaper/ImportedSection3/AllDegreeTuran;NEW:LeanPaper/ImportedSection3/StrictTuranRolle;NEW:LeanPaper/ImportedSection3/CubicNewton",
+      "remaining_obligation": "A complete all-orders Newton/log-concavity hierarchy and all manuscript strictness/interlacing formulations remain separate from the proved first-Turan and cubic statements.",
+      "local_compiler_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED_COMPONENTS_ONLY",
+      "intake_scope": "The first Turan expression is nonnegative for all degrees of the actual determinant. Finite-factor strictness/equality and Rolle consequences, plus explicit cubic Newton sum-of-squares identities, are supplied.",
+      "intake_modules": [
+        "LeanPaper.ImportedSection3.CubicTuran",
+        "LeanPaper.ImportedSection3.AllDegreeTuran",
+        "LeanPaper.ImportedSection3.StrictTuranRolle",
+        "LeanPaper.ImportedSection3.CubicNewton"
+      ]
     },
     {
       "manuscript_item": "3.8",
       "title": "Christoffel-Darboux pole representation and Jacobi derivative",
-      "source_state": "NOT_YET_MAPPED",
+      "source_state": "PARTIAL_REBUILT_SOURCE",
       "native_status": "PENDING_CURRENT_RECEIPT",
-      "sources": "",
-      "remaining_obligation": "Exact all-rank Jacobi/CD declaration not established by this focused review."
+      "sources": "NEW:LeanPaper/ImportedSection3/PoleKernel;NEW:LeanPaper/ImportedSection3/ActualPoleKernel;NEW:LeanPaper/ImportedSection3/Jacobi;NEW:LeanPaper/ImportedSection3/ExactTaylor",
+      "remaining_obligation": "The complete orthogonal-polynomial Christoffel-Darboux interpretation and any asymptotic remainder bounds are not certified by these finite matrix identities. Inverse/logarithm identities retain their nonvanishing hypotheses.",
+      "local_compiler_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED_COMPONENTS_ONLY",
+      "intake_scope": "The finite pole operator has the same characteristic polynomial and trace as the relative matrix; this is connected to the actual pencil. Exact affine determinant/logarithmic derivative and polynomial Taylor-remainder identities are supplied.",
+      "intake_modules": [
+        "LeanPaper.ImportedSection3.PoleKernel",
+        "LeanPaper.ImportedSection3.ActualPoleKernel",
+        "LeanPaper.ImportedSection3.Jacobi",
+        "LeanPaper.ImportedSection3.ExactTaylor"
+      ]
     },
     {
       "manuscript_item": "3.9",
       "title": "Hurwitz and Dirichlet hyperbolicity",
       "source_state": "PARTIAL_SOURCE",
       "native_status": "PENDING_CURRENT_RECEIPT",
-      "sources": "24:PaperChain/Character;20:Zetahyperbolic/Section3Elementary",
-      "remaining_obligation": "Elementary Fekete pieces do not alone establish all shifted/character moment identities and nondegenerate slopes."
+      "sources": "24:PaperChain/Character;20:Zetahyperbolic/Section3Elementary;NEW:LeanPaper/ImportedCharacter/ShiftedPole;NEW:LeanPaper/ImportedCharacter/CharacterPositive;NEW:LeanPaper/ImportedCharacter/PositiveSlope",
+      "remaining_obligation": "Actual Hurwitz/Dirichlet Mellin moment identities and analytic Gram realization remain open. Generic finite spectral transfer retains its base positivity hypothesis; character-polynomial positivity alone does not prove the analytic theorem.",
+      "local_compiler_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED_COMPONENTS_ONLY",
+      "intake_scope": "All-dimensional shifted negative-square pole interpolation, real-power residue scaling and finite spectral transfer are supplied. The five explicit Fekete numerators and their rational generating kernels are positive on the unit interval; positive residue weights yield positive slopes.",
+      "intake_modules": [
+        "LeanPaper.ImportedCharacter.ShiftedPole",
+        "LeanPaper.ImportedCharacter.CharacterPositive",
+        "LeanPaper.ImportedCharacter.PositiveSlope"
+      ]
     },
     {
       "manuscript_item": "4.1",
@@ -123,18 +177,31 @@
     {
       "manuscript_item": "4.2",
       "title": "Transfer for algebraic approximations",
-      "source_state": "NOT_YET_MAPPED",
+      "source_state": "PARTIAL_REBUILT_SOURCE",
       "native_status": "PENDING_CURRENT_RECEIPT",
-      "sources": "",
-      "remaining_obligation": "Extend integer polynomial lower bound to bounded-degree algebraic approximation with actual height controls."
+      "sources": "NEW:LeanPaper/ImportedSection4/Proposition_4_2_Resultant_Product_Barrier",
+      "remaining_obligation": "Constructing the actual integer resultant, proving its nonvanishing and obtaining bounded-degree algebraic-approximation height estimates remain open. The product identity and smallness estimate are explicit hypotheses.",
+      "local_compiler_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED_COMPONENTS_ONLY",
+      "intake_scope": "A nonzero integer resultant-product barrier is supplied: an assumed exact product identity cannot have product norm below one.",
+      "intake_modules": [
+        "LeanPaper.ImportedSection4.Proposition_4_2_Resultant_Product_Barrier"
+      ]
     },
     {
       "manuscript_item": "4.3",
       "title": "Ultrametric zero-free disk",
-      "source_state": "NOT_YET_MAPPED",
+      "source_state": "PARTIAL_REBUILT_SOURCE",
       "native_status": "PENDING_CURRENT_RECEIPT",
-      "sources": "",
-      "remaining_obligation": "Actual p-adic coefficient/valuation estimates not established by focused review."
+      "sources": "NEW:LeanPaper/ImportedSection4/Proposition_4_3_PadicDisk;NEW:LeanPaper/ImportedSection4/Proposition_4_3_IsometricExtension;NEW:LeanPaper/ImportedSection4/Proposition_4_3_ComplexPadicDisk;NEW:LeanPaper/Section4ManuscriptBridge",
+      "remaining_obligation": "Center-value nonvanishing and disk membership remain explicit. No p-adic zeta identification, family-specific valuation asymptotic or irrationality endpoint is supplied. Final local audit and native Windows validation remain required.",
+      "local_compiler_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED_COMPONENTS_ONLY",
+      "intake_scope": "Actual Z_p/integer-polynomial norm preservation and zero exclusion are supplied on the open C_p disk centered at an integral point, with radius equal to the nonzero center-value norm. The theorem is applied to the constructed manuscript primitive integer polynomial.",
+      "intake_modules": [
+        "LeanPaper.ImportedSection4.Proposition_4_3_PadicDisk",
+        "LeanPaper.ImportedSection4.Proposition_4_3_IsometricExtension",
+        "LeanPaper.ImportedSection4.Proposition_4_3_ComplexPadicDisk",
+        "LeanPaper.Section4ManuscriptBridge"
+      ]
     },
     {
       "manuscript_item": "4.4",
@@ -157,48 +224,103 @@
       "title": "Determinant bounds and coefficient heights",
       "source_state": "PARTIAL_SOURCE",
       "native_status": "PENDING_CURRENT_RECEIPT",
-      "sources": "20:PaperChain/Stage08;20:Theorem_4_1_Determinant_Log_Energy;20:Theorem_4_1_Content_Gram_Cancellation",
-      "remaining_obligation": "Finite identities exist; asymptotic constants/height-decay bounds unproved. Paper 0.23310 and3.73980 differ from Stage08 0.23338 and3.73872."
+      "sources": "20:PaperChain/Stage08;20:Theorem_4_1_Determinant_Log_Energy;20:Theorem_4_1_Content_Gram_Cancellation;NEW:LeanPaper/ImportedSection4/Theorem_4_6_Leading_Coefficient_Determinant_Barrier;NEW:LeanPaper/Section4ManuscriptBridge",
+      "remaining_obligation": "The required uniform determinant/height-decay bounds and asymptotic constants remain unproved. Preserve paper constants0.23310 and3.73980 separately from historical Stage08 constants0.23338 and3.73872.",
+      "local_compiler_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED_COMPONENTS_ONLY",
+      "intake_scope": "The actual primitive leading coefficient is identified with the center value times the inverse Gram/slope determinant ratio. A finite upper bound on that ratio yields a reciprocal lower bound on the center evaluation.",
+      "intake_modules": [
+        "LeanPaper.ImportedSection4.Theorem_4_6_Leading_Coefficient_Determinant_Barrier",
+        "LeanPaper.Section4ManuscriptBridge"
+      ]
     },
     {
       "manuscript_item": "4.7",
       "title": "Root collapse and separation",
       "source_state": "PARTIAL_SOURCE",
       "native_status": "PENDING_CURRENT_RECEIPT",
-      "sources": "23:Paper10Section8QuantitativeMassFraction;20:PaperChain/Stage08",
-      "remaining_obligation": "Finite counting inequality needs actual determinant-rate and spectral growth hypotheses."
+      "sources": "23:Paper10Section8QuantitativeMassFraction;20:PaperChain/Stage08;NEW:LeanPaper/ImportedSection4/Theorem_4_7_Finite_Root_Cluster_Count;NEW:LeanPaper/Section4ManuscriptBridge",
+      "remaining_obligation": "Uniform spectral caps and average lower bounds are explicit hypotheses. The actual asymptotic root-collapse/separation rates are not supplied by the finite counting theorem.",
+      "local_compiler_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED_COMPONENTS_ONLY",
+      "intake_scope": "A cap-and-average finite counting inequality is applied to the logarithmic magnitudes of the actual spectral factors. Each exponent above threshold yields an actual determinant root within the corresponding exponential radius.",
+      "intake_modules": [
+        "LeanPaper.ImportedSection4.Theorem_4_7_Finite_Root_Cluster_Count",
+        "LeanPaper.Section4ManuscriptBridge"
+      ]
     },
     {
       "manuscript_item": "4.8",
       "title": "Rational root exclusion and cluster degree bounds",
       "source_state": "PARTIAL_SOURCE",
       "native_status": "PENDING_CURRENT_RECEIPT",
-      "sources": "23:Paper10Section4CenterRationalObstruction;23:Paper10Section4IntegerPolynomialTransfer",
-      "remaining_obligation": "Actual effective irrationality measure/height budgets are not supplied by rational-floor algebra."
+      "sources": "23:Paper10Section4CenterRationalObstruction;23:Paper10Section4IntegerPolynomialTransfer;NEW:LeanPaper/ImportedSection4/Proposition_4_8_Factor_Distance_Bounds;NEW:LeanPaper/Section4ManuscriptBridge",
+      "remaining_obligation": "Effective family-wide coefficient/height budgets, nonvanishing inputs and the claimed uniform quantitative rational-root/cluster-degree endpoint remain open.",
+      "local_compiler_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED_COMPONENTS_ONLY",
+      "intake_scope": "Finite rational/integer factor-distance inequalities and actual primitive polynomial inputs are integrated.",
+      "intake_modules": [
+        "LeanPaper.ImportedSection4.Proposition_4_8_Factor_Distance_Bounds",
+        "LeanPaper.Section4ManuscriptBridge"
+      ]
     },
     {
       "manuscript_item": "5.1",
       "title": "Two-variable Beukers measure for zeta(7)",
       "source_state": "PARTIAL_SOURCE",
       "native_status": "PENDING_CURRENT_RECEIPT",
-      "sources": "18:Theorem_5_1_Two_Variable_Beukers_Measure_For_Zeta_7;23:Paper10Section5TensorGridEnergy",
-      "remaining_obligation": "Rational dual entries/normalization are defined; full continuous integral and moment evaluation require audit/assembly."
+      "sources": "18:Theorem_5_1_Two_Variable_Beukers_Measure_For_Zeta_7;23:Paper10Section5TensorGridEnergy;NEW:LeanPaper/ImportedSection56/DualMoments;NEW:LeanPaper/ImportedSection56/DualAffineAlgebra;NEW:LeanPaper/ImportedSection56/DualPencilCCT;NEW:LeanPaper/Section5DualSpectrum",
+      "remaining_obligation": "The complete continuous two-variable Beukers moment evaluation and its analytic calibration remain separate. Finite coefficient algebra alone does not establish the integral representation.",
+      "local_compiler_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED_COMPONENTS_ONLY",
+      "intake_scope": "The actual rational dual constant, entry and determinant are defined; symmetry, affine coefficient algebra and the exact coefficient Gram slope C*C^T are connected to the actual dual polynomial.",
+      "intake_modules": [
+        "LeanPaper.ImportedSection56.DualMoments",
+        "LeanPaper.ImportedSection56.DualAffineAlgebra",
+        "LeanPaper.ImportedSection56.DualPencilCCT",
+        "LeanPaper.Section5DualSpectrum"
+      ]
     },
     {
       "manuscript_item": "5.2",
       "title": "Dual hyperbolicity and Krein decomposition",
       "source_state": "CONDITIONAL_CANDIDATE_SOURCE",
       "native_status": "PENDING_CURRENT_RECEIPT",
-      "sources": "18:Theorem_5_2_Dual_Hyperbolicity_And_Krein_Space_Decomposition_Of_The_Two_Variable_Zeta_7_Pencil",
-      "remaining_obligation": "Finite sign transfer requires actual WeightSevenTailBound and finite positive/negative certificates; acceptance not supplied."
+      "sources": "18:Theorem_5_2_Dual_Hyperbolicity_And_Krein_Space_Decomposition_Of_The_Two_Variable_Zeta_7_Pencil;NEW:LeanPaper/ImportedSection56/CoefficientGram;NEW:LeanPaper/ImportedSection56/DualSOS;NEW:LeanPaper/ImportedSection56/DualRowSeparation;NEW:LeanPaper/ImportedSection56/DualNullspace;NEW:LeanPaper/ImportedSection56/DualTopCoefficient;NEW:LeanPaper/ImportedSection56/DualWeightInvariance;NEW:LeanPaper/ImportedSection56/DualBasisCongruence;NEW:LeanPaper/ImportedSection56/DualNonsingularDegree;NEW:LeanPaper/ImportedSection56/FullMonomial;NEW:LeanPaper/ImportedSection56/SelectedMonomial;NEW:LeanPaper/ImportedSection56/UnimodularMonomial;NEW:LeanPaper/ImportedSection56/PositiveSlopeSpectrum;NEW:LeanPaper/ImportedSection56/DualDiscriminant;NEW:LeanPaper/ImportedSection56/DualQuadraticRoot;NEW:LeanPaper/ImportedSection56/DualStrictDiscriminant;NEW:LeanPaper/ImportedSection56/FiniteKreinCone;NEW:LeanPaper/ImportedSection56/KreinIdentity;NEW:LeanPaper/ImportedSection56/RankOneWitness;NEW:LeanPaper/ImportedSection56/ZetaSevenBound;NEW:LeanPaper/Section5DualSpectrum",
+      "remaining_obligation": "The all-dimensional infinite analytic Krein cones, actual weight-seven tail estimate and general finite positivity admissions remain open. The accepted rank-one sign calculation is not a witness for those universal claims or for irrationality; analytic series identities retain their summability hypotheses.",
+      "local_compiler_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED_COMPONENTS_ONLY",
+      "intake_scope": "Coefficient-Gram SOS/nullspace laws, row-separation positivity, exact degree and complex-root reality are connected to the actual dual determinant. Selected monomial families discharge row separation. Basis/weight invariance and finite Krein/binomial identities are included. An elementary zeta(7)<38/37 bound discharges the negative sign of the explicit rank-one rational dual witness.",
+      "intake_modules": [
+        "LeanPaper.ImportedSection56.CoefficientGram",
+        "LeanPaper.ImportedSection56.DualSOS",
+        "LeanPaper.ImportedSection56.DualRowSeparation",
+        "LeanPaper.ImportedSection56.DualNullspace",
+        "LeanPaper.ImportedSection56.DualTopCoefficient",
+        "LeanPaper.ImportedSection56.DualWeightInvariance",
+        "LeanPaper.ImportedSection56.DualBasisCongruence",
+        "LeanPaper.ImportedSection56.DualNonsingularDegree",
+        "LeanPaper.ImportedSection56.FullMonomial",
+        "LeanPaper.ImportedSection56.SelectedMonomial",
+        "LeanPaper.ImportedSection56.UnimodularMonomial",
+        "LeanPaper.ImportedSection56.PositiveSlopeSpectrum",
+        "LeanPaper.ImportedSection56.DualDiscriminant",
+        "LeanPaper.ImportedSection56.DualQuadraticRoot",
+        "LeanPaper.ImportedSection56.DualStrictDiscriminant",
+        "LeanPaper.ImportedSection56.FiniteKreinCone",
+        "LeanPaper.ImportedSection56.KreinIdentity",
+        "LeanPaper.ImportedSection56.RankOneWitness",
+        "LeanPaper.ImportedSection56.ZetaSevenBound",
+        "LeanPaper.Section5DualSpectrum"
+      ]
     },
     {
       "manuscript_item": "5.3",
       "title": "Beukers measure and dual pencil for beta(4)",
       "source_state": "PARTIAL_SOURCE",
       "native_status": "PENDING_CURRENT_RECEIPT",
-      "sources": "23:Paper10Section6BetaTensorGrid;20:PaperChain/Stage10",
-      "remaining_obligation": "Character parity/tensor identities alone do not close continuous beta measure."
+      "sources": "23:Paper10Section6BetaTensorGrid;20:PaperChain/Stage10;NEW:LeanPaper/Section6BetaFinite",
+      "remaining_obligation": "The continuous beta(4) two-variable measure, exact moment evaluation and full dual-pencil analytic identification remain open.",
+      "local_compiler_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED_COMPONENTS_ONLY",
+      "intake_scope": "Finite two/three-node and bilinear tensor-grid Gram strictness are supplied, with actual alternating beta sign normalization formulas.",
+      "intake_modules": [
+        "LeanPaper.Section6BetaFinite"
+      ]
     },
     {
       "manuscript_item": "5.4",
@@ -253,8 +375,15 @@
       "title": "Character-Vandermonde sign cancellation and beta hyperbolicity",
       "source_state": "PARTIAL_SOURCE",
       "native_status": "PENDING_CURRENT_RECEIPT",
-      "sources": "20:PaperChain/Stage10;23:Paper10Section6BetaSign;23:Paper10Section6BetaNormalizedSign",
-      "remaining_obligation": "Raw character-Vandermonde sign is (-1)^N; positive claim for odd N needs the separate orientation factor. Analytic/q-adic endpoints unclosed."
+      "sources": "20:PaperChain/Stage10;23:Paper10Section6BetaSign;23:Paper10Section6BetaNormalizedSign;NEW:LeanPaper/Section6BetaFinite;NEW:LeanPaper/ImportedCharacter/CharacterPositive;NEW:LeanPaper/ImportedCharacter/PositiveSlope",
+      "remaining_obligation": "Analytic character-weight identification and q-adic nonvanishing remain open. A raw positive-sign claim at odd N is not substituted for the proved orientation-corrected formula.",
+      "local_compiler_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED_COMPONENTS_ONLY",
+      "intake_scope": "Raw character-Vandermonde sign (-1)^N and its required orientation factor are separated. Normalized residue positivity, finite weighted Gram strictness and shifted positive-slope mechanisms are integrated.",
+      "intake_modules": [
+        "LeanPaper.Section6BetaFinite",
+        "LeanPaper.ImportedCharacter.CharacterPositive",
+        "LeanPaper.ImportedCharacter.PositiveSlope"
+      ]
     },
     {
       "manuscript_item": "6.5",
@@ -267,10 +396,17 @@
     {
       "manuscript_item": "6.6",
       "title": "Generalized multi-weight positive-definite pencil",
-      "source_state": "NOT_YET_MAPPED",
+      "source_state": "PARTIAL_REBUILT_SOURCE",
       "native_status": "PENDING_CURRENT_RECEIPT",
-      "sources": "",
-      "remaining_obligation": "Retain this manuscript obligation. No manuscript-equivalent native certification established by this focused review; historical theorem filenames/blueprints are not proof evidence."
+      "sources": "NEW:LeanPaper/ImportedMultiweight/PositiveSlopeSpectrum;NEW:LeanPaper/ImportedMultiweight/FiniteMultiweightCone;NEW:LeanPaper/ImportedMultiweight/AnchoredSemidefiniteCone",
+      "remaining_obligation": "The actual infinite multiweight density, uniform two-sided analytic comparison, arithmetic multiplier and universal signature claims remain open. Finite component positivity and the anchor are explicit matrix hypotheses.",
+      "local_compiler_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED_COMPONENTS_ONLY",
+      "intake_scope": "Arbitrary finite positive matrix cones, and nonnegative semidefinite cones with one positively weighted positive-definite anchor, yield positive directions and the finite spectral/Turan package.",
+      "intake_modules": [
+        "LeanPaper.ImportedMultiweight.PositiveSlopeSpectrum",
+        "LeanPaper.ImportedMultiweight.FiniteMultiweightCone",
+        "LeanPaper.ImportedMultiweight.AnchoredSemidefiniteCone"
+      ]
     },
     {
       "manuscript_item": "6.7",
@@ -293,16 +429,26 @@
       "title": "Triple-pole and multi-weight determinants",
       "source_state": "PARTIAL_SOURCE",
       "native_status": "PENDING_CURRENT_RECEIPT",
-      "sources": "18:Zetahyperbolic/Theorem_6_9_Triple_Pole_Hermite_Repair",
-      "remaining_obligation": "Constructed finite Hermite block congruence and determinant. Global exact pole order, node invertibility and arithmetic transfer still require review."
+      "sources": "18:Zetahyperbolic/Theorem_6_9_Triple_Pole_Hermite_Repair;NEW:LeanPaper/ImportedSection56/TriplePoleHermite",
+      "remaining_obligation": "Global exact pole order, distinct-node/Hermite-table invertibility for the manuscript family and q-adic/arithmetic transfer remain separate obligations; nonzero block/table factors remain explicit where used.",
+      "local_compiler_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED_COMPONENTS_ONLY",
+      "intake_scope": "Finite triple-pole jet multiplication and Hermite-block congruence/determinant identities are supplied, with exact local determinant nonvanishing criteria.",
+      "intake_modules": [
+        "LeanPaper.ImportedSection56.TriplePoleHermite"
+      ]
     },
     {
       "manuscript_item": "6.10",
       "title": "Potential-gap identity and quadratic derivative growth",
       "source_state": "PARTIAL_SOURCE",
       "native_status": "PENDING_CURRENT_RECEIPT",
-      "sources": "18:Zetahyperbolic/Theorem_6_10_Finite_Determinant_Identity;20:Theorem_4_1_Determinant_Log_Energy",
-      "remaining_obligation": "Finite determinant and log identities do not imply asymptotic positive gap or vanishing derivative-growth law."
+      "sources": "18:Zetahyperbolic/Theorem_6_10_Finite_Determinant_Identity;20:Theorem_4_1_Determinant_Log_Energy;NEW:LeanPaper/ImportedSection56/FiniteDeterminant",
+      "remaining_obligation": "The asymptotic positive potential gap and quadratic derivative-growth claims remain open. A finite determinant identity does not establish the needed growth estimates.",
+      "local_compiler_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED_COMPONENTS_ONLY",
+      "intake_scope": "Finite centered-pencil and normalized determinant coefficient/degree identities are supplied; absolute leading coefficient equals center evaluation times the relative/symmetric spectral determinant under the stated invertibility hypotheses.",
+      "intake_modules": [
+        "LeanPaper.ImportedSection56.FiniteDeterminant"
+      ]
     },
     {
       "manuscript_item": "6.11",
@@ -369,7 +515,12 @@
       "remaining_obligation": "Retain this manuscript obligation. No manuscript-equivalent native certification established by this focused review; historical theorem filenames/blueprints are not proof evidence."
     }
   ],
-  "local_validation": "96_ACTIVE_MODULES_COMPILED_AND_AXIOM_AUDITED;EXACT_STATEMENT_SCOPE_ONLY",
+  "local_validation": "154_ACTIVE_MODULES_COMPILED_AND_AXIOM_AUDITED;EXACT_STATEMENT_SCOPE_ONLY",
   "local_receipt": "validation/linux/acceptance.json",
-  "source_exchange": "docs/SNDITERATION_EXCHANGE.md"
+  "source_exchange": "docs/SNDITERATION_EXCHANGE.md",
+  "baseline_local_validation": "96_ACTIVE_MODULES_COMPILED_AND_AXIOM_AUDITED;EXACT_STATEMENT_SCOPE_ONLY",
+  "theorem_rebuild_intake": "docs/THEOREM_REBUILD_INTAKE.md",
+  "intake_new_source_modules": 58,
+  "intake_full_manuscript_equivalence": "NOT_CERTIFIED",
+  "theorem_intake": "docs/THEOREM_REBUILD_INTAKE.md"
 }

@@ -1,0 +1,6 @@
+'PaperOrder.CoreAlgebra.dualCoefficientRowsSeparate_exists_nonzero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PaperOrder.CoreAlgebra.dualSlopeQuadraticForm_pos_of_separation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

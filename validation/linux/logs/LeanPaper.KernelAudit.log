@@ -132,8 +132,746 @@ LeanPaper.RebuildKernelBridge.gram_eq_fraction_integral (p : ManuscriptChain.Rea
       Polynomial.eval₂ (algebraMap ℚ ℝ) (y ^ 2) (ManuscriptChain.Real.numerator p ↑i ↑j) /
           Polynomial.eval₂ (algebraMap ℚ ℝ) (y ^ 2) (ManuscriptChain.Real.tailD p) *
         ManuscriptChain.Hyperbolic.density p.k y
-AUDITED_PROJECT_DECLARATIONS=1490
-AUDITED_DEPENDENCY_DECLARATIONS=66394
+PaperOrder.CoreAlgebra.dualConstant_swap (s r t : ℕ) :
+  ManuscriptChain.Real.dualConstant s r t = ManuscriptChain.Real.dualConstant s t r
+PaperOrder.CoreAlgebra.dualEntry_derivative {h K : ℕ} (s : ℕ) (c : Fin h → Fin (K + 1) → ℚ) (i j : Fin h) :
+  Polynomial.derivative (ManuscriptChain.Real.dualEntry s c i j) =
+    Polynomial.C (PaperOrder.CoreAlgebra.dualSlopeMatrix c i j)
+PaperOrder.CoreAlgebra.dualSlopeMatrix_symmetric {h K : ℕ} (c : Fin h → Fin (K + 1) → ℚ) :
+  (PaperOrder.CoreAlgebra.dualSlopeMatrix c).IsSymm
+PaperOrder.CoreAlgebra.dualSlopeMatrix_eq_CCT {h K : ℕ} (c : Fin h → Fin (K + 1) → ℚ) :
+  PaperOrder.CoreAlgebra.dualSlopeMatrix c =
+    PaperOrder.CoreAlgebra.dualCoefficientMatrix c * (PaperOrder.CoreAlgebra.dualCoefficientMatrix c).transpose
+PaperOrder.CoreAlgebra.dualPencil_decomposition {h K : ℕ} (s : ℕ) (c : Fin h → Fin (K + 1) → ℚ) :
+  (fun i j => ManuscriptChain.Real.dualEntry s c i j) =
+    Polynomial.X • (PaperOrder.CoreAlgebra.dualSlopeMatrix c).map ⇑Polynomial.C +
+      (PaperOrder.CoreAlgebra.dualConstantMatrix s c).map ⇑Polynomial.C
+PaperOrder.CoreAlgebra.dualConstantMatrix_symmetric {h K : ℕ} (s : ℕ) (c : Fin h → Fin (K + 1) → ℚ) :
+  (PaperOrder.CoreAlgebra.dualConstantMatrix s c).IsSymm
+PaperOrder.PrincipalTheorems.coefficientSlope_quadratic_sos {h K : ℕ} (c : Fin h → Fin (K + 1) → ℝ) (v : Fin h → ℝ) :
+  ∑ i, ∑ j, v i * PaperOrder.PrincipalTheorems.coefficientSlope c i j * v j = ∑ r, (∑ i, v i * c i r) ^ 2
+PaperOrder.PrincipalTheorems.coefficientSlope_posDef {h K : ℕ} (c : Fin h → Fin (K + 1) → ℝ)
+  (hc : PaperOrder.PrincipalTheorems.coefficientRowsSeparate c) :
+  (PaperOrder.PrincipalTheorems.coefficientSlope c).PosDef
+PaperOrder.PrincipalTheorems.positiveSlopePencil_factorization_exists {h : ℕ}
+  (p : PaperOrder.PrincipalTheorems.PositiveSlopePencil h) :
+  ∃ beta, p.detPolynomial = Polynomial.C p.slope.det * ∏ i, (Polynomial.X + Polynomial.C (beta i))
+PaperOrder.PrincipalTheorems.positiveSlopePencil_degree {h : ℕ}
+  (p : PaperOrder.PrincipalTheorems.PositiveSlopePencil h) : p.detPolynomial.natDegree = h
+PaperOrder.PrincipalTheorems.positiveSlopePencil_every_complex_root_real {h : ℕ}
+  (p : PaperOrder.PrincipalTheorems.PositiveSlopePencil h) (z : ℂ)
+  (hz : Polynomial.eval₂ (algebraMap ℝ ℂ) z p.detPolynomial = 0) : z.im = 0
+PaperOrder.PrincipalTheorems.independent_coefficients_full_hyperbolicity {h K : ℕ} (c : Fin h → Fin (K + 1) → ℝ)
+  (constant : Matrix (Fin h) (Fin h) ℝ) (hconstant : constant.IsSymm)
+  (hc : PaperOrder.PrincipalTheorems.coefficientRowsSeparate c) :
+  ∃ beta,
+    (Matrix.det fun i j =>
+        Polynomial.C (constant i j) +
+          Polynomial.X * Polynomial.C (PaperOrder.PrincipalTheorems.coefficientSlope c i j)) =
+      Polynomial.C (PaperOrder.PrincipalTheorems.coefficientSlope c).det * ∏ i, (Polynomial.X + Polynomial.C (beta i))
+PaperOrder.CoreAlgebra.dualDelta_coefficient_dimension {h K : ℕ} (s : ℕ) (c : Fin h → Fin (K + 1) → ℚ) :
+  (ManuscriptChain.Real.dualDelta s c).coeff h = (PaperOrder.CoreAlgebra.dualSlopeMatrix c).det
+PaperOrder.CoreAlgebra.dualDelta_natDegree_le {h K : ℕ} (s : ℕ) (c : Fin h → Fin (K + 1) → ℚ) :
+  (ManuscriptChain.Real.dualDelta s c).natDegree ≤ h
+PaperOrder.CoreAlgebra.dualSlopeQuadraticForm_sos {h K : ℕ} (c : Fin h → Fin (K + 1) → ℚ) (v : Fin h → ℚ) :
+  PaperOrder.CoreAlgebra.dualSlopeQuadraticForm c v = ∑ r, (∑ i, v i * c i r) ^ 2
+PaperOrder.CoreAlgebra.dualSlopeQuadraticForm_nonneg {h K : ℕ} (c : Fin h → Fin (K + 1) → ℚ) (v : Fin h → ℚ) :
+  0 ≤ PaperOrder.CoreAlgebra.dualSlopeQuadraticForm c v
+PaperOrder.CoreAlgebra.dualCoefficientRowsSeparate_exists_nonzero {h K : ℕ} (c : Fin h → Fin (K + 1) → ℚ)
+  (hc : PaperOrder.CoreAlgebra.dualCoefficientRowsSeparate c) (v : Fin h → ℚ) (hv : v ≠ 0) : ∃ r, ∑ i, v i * c i r ≠ 0
+PaperOrder.CoreAlgebra.dualSlopeQuadraticForm_pos_of_separation {h K : ℕ} (c : Fin h → Fin (K + 1) → ℚ)
+  (hc : PaperOrder.CoreAlgebra.dualCoefficientRowsSeparate c) (v : Fin h → ℚ) (hv : v ≠ 0) :
+  0 < PaperOrder.CoreAlgebra.dualSlopeQuadraticForm c v
+PaperOrder.CoreAlgebra.dualSlopeQuadraticForm_zero_iff {h K : ℕ} (c : Fin h → Fin (K + 1) → ℚ) (v : Fin h → ℚ) :
+  PaperOrder.CoreAlgebra.dualSlopeQuadraticForm c v = 0 ↔ ∀ (r : Fin (K + 1)), ∑ i, v i * c i r = 0
+PaperOrder.CoreAlgebra.dualSlopeQuadraticForm_pos_iff_rowsSeparate {h K : ℕ} (c : Fin h → Fin (K + 1) → ℚ) :
+  (∀ (v : Fin h → ℚ), v ≠ 0 → 0 < PaperOrder.CoreAlgebra.dualSlopeQuadraticForm c v) ↔
+    PaperOrder.CoreAlgebra.dualCoefficientRowsSeparate c
+PaperOrder.CoreAlgebra.dualEntry_derivative_weight_independent {h K : ℕ} (s t : ℕ) (c : Fin h → Fin (K + 1) → ℚ)
+  (i j : Fin h) :
+  Polynomial.derivative (ManuscriptChain.Real.dualEntry s c i j) =
+    Polynomial.derivative (ManuscriptChain.Real.dualEntry t c i j)
+PaperOrder.CoreAlgebra.dualDelta_top_coefficient_weight_independent {h K : ℕ} (s t : ℕ) (c : Fin h → Fin (K + 1) → ℚ) :
+  (ManuscriptChain.Real.dualDelta s c).coeff h = (ManuscriptChain.Real.dualDelta t c).coeff h
+PaperOrder.CoreAlgebra.dualSlopeMatrix_rowChange {h K : ℕ} (A : Matrix (Fin h) (Fin h) ℚ)
+  (c : Fin h → Fin (K + 1) → ℚ) :
+  PaperOrder.CoreAlgebra.dualSlopeMatrix (PaperOrder.CoreAlgebra.dualRowChange A c) =
+    A * PaperOrder.CoreAlgebra.dualSlopeMatrix c * A.transpose
+PaperOrder.CoreAlgebra.dualDelta_top_coeff_rowChange {h K : ℕ} (s : ℕ) (A : Matrix (Fin h) (Fin h) ℚ)
+  (c : Fin h → Fin (K + 1) → ℚ) :
+  (ManuscriptChain.Real.dualDelta s (PaperOrder.CoreAlgebra.dualRowChange A c)).coeff h =
+    A.det ^ 2 * (ManuscriptChain.Real.dualDelta s c).coeff h
+PaperOrder.CoreAlgebra.dualDelta_degree_rowChange {h K : ℕ} (s : ℕ) (A : Matrix (Fin h) (Fin h) ℚ)
+  (c : Fin h → Fin (K + 1) → ℚ) (hA : A.det ≠ 0) (hc : (ManuscriptChain.Real.dualDelta s c).coeff h ≠ 0) :
+  (ManuscriptChain.Real.dualDelta s (PaperOrder.CoreAlgebra.dualRowChange A c)).natDegree = h
+PaperOrder.CoreAlgebra.dualDelta_degree_of_nonsingular_slope {h K : ℕ} (s : ℕ) (c : Fin h → Fin (K + 1) → ℚ)
+  (hslope : (PaperOrder.CoreAlgebra.dualSlopeMatrix c).det ≠ 0) : (ManuscriptChain.Real.dualDelta s c).natDegree = h
+PaperOrder.CoreAlgebra.dualDelta_topCoeff_nonzero_rowChange_iff {h K : ℕ} (s : ℕ) (A : Matrix (Fin h) (Fin h) ℚ)
+  (c : Fin h → Fin (K + 1) → ℚ) (hA : A.det ≠ 0) :
+  (ManuscriptChain.Real.dualDelta s (PaperOrder.CoreAlgebra.dualRowChange A c)).coeff h ≠ 0 ↔
+    (ManuscriptChain.Real.dualDelta s c).coeff h ≠ 0
+PaperOrder.CoreAlgebra.dualDelta_degree_rowChange_of_nonsingular_slope {h K : ℕ} (s : ℕ) (A : Matrix (Fin h) (Fin h) ℚ)
+  (c : Fin h → Fin (K + 1) → ℚ) (hA : A.det ≠ 0) (hslope : (PaperOrder.CoreAlgebra.dualSlopeMatrix c).det ≠ 0) :
+  (ManuscriptChain.Real.dualDelta s (PaperOrder.CoreAlgebra.dualRowChange A c)).natDegree = h
+PaperOrder.CoreAlgebra.dualFullMonomialSlope_one (K : ℕ) :
+  PaperOrder.CoreAlgebra.dualSlopeMatrix (PaperOrder.CoreAlgebra.dualFullMonomialCoefficients K) = 1
+PaperOrder.CoreAlgebra.dualFullMonomialDelta_degree (K s : ℕ) :
+  (ManuscriptChain.Real.dualDelta s (PaperOrder.CoreAlgebra.dualFullMonomialCoefficients K)).natDegree = K + 1
+PaperOrder.CoreAlgebra.dualSelectedMonomialSlope_one {h K : ℕ} (f : Fin h → Fin (K + 1)) (hf : Function.Injective f) :
+  PaperOrder.CoreAlgebra.dualSlopeMatrix (PaperOrder.CoreAlgebra.dualSelectedMonomialCoefficients f) = 1
+PaperOrder.CoreAlgebra.dualSelectedMonomialDelta_degree {h K : ℕ} (s : ℕ) (f : Fin h → Fin (K + 1))
+  (hf : Function.Injective f) :
+  (ManuscriptChain.Real.dualDelta s (PaperOrder.CoreAlgebra.dualSelectedMonomialCoefficients f)).natDegree = h
+PaperOrder.CoreAlgebra.dualUnimodularSelectedMonomial_top_coeff {h K : ℕ} (s : ℕ) (A : Matrix (Fin h) (Fin h) ℚ)
+  (f : Fin h → Fin (K + 1)) (hf : Function.Injective f) (hA : A.det ^ 2 = 1) :
+  (ManuscriptChain.Real.dualDelta s
+          (PaperOrder.CoreAlgebra.dualRowChange A (PaperOrder.CoreAlgebra.dualSelectedMonomialCoefficients f))).coeff
+      h =
+    1
+PaperOrder.CoreAlgebra.dualUnimodularSelectedMonomial_degree {h K : ℕ} (s : ℕ) (A : Matrix (Fin h) (Fin h) ℚ)
+  (f : Fin h → Fin (K + 1)) (hf : Function.Injective f) (hA : A.det ^ 2 = 1) :
+  (ManuscriptChain.Real.dualDelta s
+        (PaperOrder.CoreAlgebra.dualRowChange A
+          (PaperOrder.CoreAlgebra.dualSelectedMonomialCoefficients f))).natDegree =
+    h
+PaperOrder.CoreAlgebra.dualTwoByTwo_det_expansion (a b c u v w x : ℝ) :
+  !![a + x * u, b + x * v; b + x * v, c + x * w].det =
+    (u * w - v ^ 2) * x ^ 2 + (a * w + c * u - 2 * b * v) * x + (a * c - b ^ 2)
+PaperOrder.CoreAlgebra.dualTwoByTwo_discriminant_sos (a b c u v w : ℝ) :
+  u ^ 2 * PaperOrder.CoreAlgebra.dualTwoByTwoDiscriminant a b c u v w =
+    (a * (u * w - v ^ 2) - c * u ^ 2 + 2 * b * u * v - a * v ^ 2) ^ 2 + 4 * (u * w - v ^ 2) * (b * u - a * v) ^ 2
+PaperOrder.CoreAlgebra.dualTwoByTwo_discriminant_nonneg (a b c u v w : ℝ) (hu : 0 < u) (hM : 0 < u * w - v ^ 2) :
+  0 ≤ PaperOrder.CoreAlgebra.dualTwoByTwoDiscriminant a b c u v w
+PaperOrder.CoreAlgebra.dualTwoByTwo_discriminant_pos_of_nonproportional (a b c u v w : ℝ) (hu : 0 < u)
+  (hM : 0 < u * w - v ^ 2) (hsep : b * u - a * v ≠ 0) : 0 < PaperOrder.CoreAlgebra.dualTwoByTwoDiscriminant a b c u v w
+PaperOrder.CoreAlgebra.realQuadratic_has_root_of_discriminant_nonneg (A B C : ℝ) (hA : A ≠ 0)
+  (hdisc : 0 ≤ B ^ 2 - 4 * A * C) : ∃ x, A * x ^ 2 + B * x + C = 0
+PaperOrder.CoreAlgebra.dualTwoByTwo_det_has_real_zero (a b c u v w : ℝ) (hu : 0 < u) (hM : 0 < u * w - v ^ 2) :
+  ∃ x, !![a + x * u, b + x * v; b + x * v, c + x * w].det = 0
+PaperOrder.PrincipalTheorems.weightSeven_binomial (u v : ℝ) :
+  (u + v) ^ 5 = ∑ ν ∈ Finset.range 6, ↑(Nat.choose 5 ν) * u ^ ν * v ^ (5 - ν)
+PaperOrder.PrincipalTheorems.weightSeven_Krein_bilinear (a b : ℕ → ℝ) :
+  PaperOrder.PrincipalTheorems.weightSevenPairing a b = PaperOrder.PrincipalTheorems.weightSevenKreinPairing a b
+PaperOrder.PrincipalTheorems.weightSeven_Krein_quadratic (a : ℕ → ℝ) :
+  PaperOrder.PrincipalTheorems.weightSevenPairing a a =
+    1 / 1440 * ∑ ν ∈ Finset.range 3, ↑(Nat.choose 5 ν) * ((a ν + a (5 - ν)) ^ 2 - (a ν - a (5 - ν)) ^ 2)
+PaperOrder.PrincipalTheorems.weightSeven_Krein_infinite_modes (a b : ℕ → ℕ → ℝ)
+  (hsum : Summable fun m => PaperOrder.PrincipalTheorems.weightSevenPairing (a m) (b m)) :
+  (Summable fun m => PaperOrder.PrincipalTheorems.weightSevenKreinPairing (a m) (b m)) ∧
+    ∑' (m : ℕ), PaperOrder.PrincipalTheorems.weightSevenPairing (a m) (b m) =
+      ∑' (m : ℕ), PaperOrder.PrincipalTheorems.weightSevenKreinPairing (a m) (b m)
+PaperOrder.PrincipalTheorems.finiteKreinGram_posDef {h K : ℕ} (plus minus : Fin h → Fin (K + 1) → ℝ)
+  (hminus : ∀ (i : Fin h) (r : Fin (K + 1)), minus i r = 0)
+  (hplus : PaperOrder.PrincipalTheorems.coefficientRowsSeparate plus) :
+  (PaperOrder.PrincipalTheorems.finiteKreinGram plus minus).PosDef
+PaperOrder.PrincipalTheorems.finiteKreinGram_neg_posDef {h K : ℕ} (plus minus : Fin h → Fin (K + 1) → ℝ)
+  (hplus : ∀ (i : Fin h) (r : Fin (K + 1)), plus i r = 0)
+  (hminus : PaperOrder.PrincipalTheorems.coefficientRowsSeparate minus) :
+  (-PaperOrder.PrincipalTheorems.finiteKreinGram plus minus).PosDef
+PaperOrder.PrincipalTheorems.negativeWeightSeven_actual_pencil :
+  ManuscriptChain.Real.dualDelta 7 PaperOrder.PrincipalTheorems.negativeWeightSevenRow =
+    Polynomial.C 37 * Polynomial.X - Polynomial.C 38
+PaperOrder.PrincipalTheorems.negativeWeightSeven_rational_root :
+  Polynomial.eval (38 / 37) (ManuscriptChain.Real.dualDelta 7 PaperOrder.PrincipalTheorems.negativeWeightSevenRow) = 0
+PaperOrder.PrincipalTheorems.negativeWeightSeven_below_zero_at_zeta (hzeta : ManuscriptChain.Real.zeta 7 < 38 / 37) :
+  ManuscriptChain.Real.evalQ (ManuscriptChain.Real.dualDelta 7 PaperOrder.PrincipalTheorems.negativeWeightSevenRow)
+      (ManuscriptChain.Real.zeta 7) <
+    0
+PaperOrder.PrincipalTheorems.positiveWeightSeven_at_zeta :
+  0 <
+    ManuscriptChain.Real.evalQ (ManuscriptChain.Real.dualDelta 7 PaperOrder.PrincipalTheorems.positiveWeightSevenRow)
+      (ManuscriptChain.Real.zeta 7)
+PaperOrder.PrincipalTheorems.zetaSeven_tail_le_one_div_64 : ∑' (n : ℕ), 1 / ↑(n + 2) ^ 7 ≤ 1 / 64
+PaperOrder.PrincipalTheorems.zetaSeven_lt_38_div_37 : ManuscriptChain.Real.zeta 7 < 38 / 37
+PaperOrder.PrincipalTheorems.weightSeven_rankOne_negative_unconditional :
+  ManuscriptChain.Real.evalQ (ManuscriptChain.Real.dualDelta 7 PaperOrder.PrincipalTheorems.negativeWeightSevenRow)
+      (ManuscriptChain.Real.zeta 7) <
+    0
+Zetahyperbolic.TriplePoleRepair.hermite_congruence {n : ℕ} (nodes : Fin n → ℚ) (c u : Fin n → Fin 3 → ℚ)
+  (basis : Zetahyperbolic.TriplePoleRepair.JetIndex n → Polynomial ℚ) :
+  Zetahyperbolic.TriplePoleRepair.momentMatrix nodes c u basis =
+    (Zetahyperbolic.TriplePoleRepair.jetTable nodes basis *
+        Matrix.blockDiagonal fun a =>
+          Zetahyperbolic.TriplePoleRepair.localBlock (Zetahyperbolic.TriplePoleRepair.jetWeights (c a) (u a))) *
+      (Zetahyperbolic.TriplePoleRepair.jetTable nodes basis).transpose
+Zetahyperbolic.TriplePoleRepair.momentMatrix_det_ne_zero {n : ℕ} (nodes : Fin n → ℚ) (c u : Fin n → Fin 3 → ℚ)
+  (basis : Zetahyperbolic.TriplePoleRepair.JetIndex n → Polynomial ℚ)
+  (hbasis : (Zetahyperbolic.TriplePoleRepair.jetTable nodes basis).det ≠ 0) (htriple : ∀ (a : Fin n), c a 2 ≠ 0)
+  (hpole : ∀ (a : Fin n), u a 0 ≠ 0) : (Zetahyperbolic.TriplePoleRepair.momentMatrix nodes c u basis).det ≠ 0
+Zetahyperbolic.Theorem6_10.abs_top_coefficient_eq_eval_mul_relative_det {n : ℕ} (A M : Matrix (Fin n) (Fin n) ℝ)
+  (xi scale : ℝ) (hA : A.det ≠ 0) :
+  |(Zetahyperbolic.Theorem6_10.normalizedDet A M xi scale).coeff n| =
+    |Polynomial.eval xi (Zetahyperbolic.Theorem6_10.normalizedDet A M xi scale)| *
+      |(Zetahyperbolic.Theorem6_10.relativeMatrix A M).det|
+Zetahyperbolic.Theorem6_10.abs_top_coefficient_eq_eval_mul_spectral_det {n : ℕ} (A M S : Matrix (Fin n) (Fin n) ℝ)
+  (xi scale : ℝ) (hS : S * S = A) (hdet : S.det ≠ 0) :
+  |(Zetahyperbolic.Theorem6_10.normalizedDet A M xi scale).coeff n| =
+    |Polynomial.eval xi (Zetahyperbolic.Theorem6_10.normalizedDet A M xi scale)| *
+      |(Zetahyperbolic.Theorem6_10.symmetricRelativeMatrix S M).det|
+Zetahyperbolic.Theorem6_10.abs_top_coefficient_eq_eval_mul_sqrt_det {n : ℕ} (A M : Matrix (Fin n) (Fin n) ℝ)
+  (xi scale : ℝ) (hA : A.PosDef) :
+  |(Zetahyperbolic.Theorem6_10.normalizedDet A M xi scale).coeff n| =
+    |Polynomial.eval xi (Zetahyperbolic.Theorem6_10.normalizedDet A M xi scale)| *
+      |(Zetahyperbolic.Theorem6_10.symmetricRelativeMatrix (CFC.sqrt A) M).det|
+Zetahyperbolic.Theorem6_10.abs_leadingCoeff_eq_eval_mul_sqrt_det {n : ℕ} (A M : Matrix (Fin n) (Fin n) ℝ) (xi scale : ℝ)
+  (hA : A.PosDef) (hscale : scale ≠ 0) (hM : M.det ≠ 0) :
+  |(Zetahyperbolic.Theorem6_10.normalizedDet A M xi scale).leadingCoeff| =
+    |Polynomial.eval xi (Zetahyperbolic.Theorem6_10.normalizedDet A M xi scale)| *
+      |(Zetahyperbolic.Theorem6_10.symmetricRelativeMatrix (CFC.sqrt A) M).det|
+PaperChronology.Paper10.PAPER10_BETA_VANDERMONDE_RESIDUAL_SIGN (j N : ℕ) (h : N ≤ j) :
+  (-1) ^ j * (-1) ^ (j - N) = (-1) ^ N
+PaperChronology.Paper10.PAPER10_BETA_VANDERMONDE_EVEN_BASE (j t : ℕ) (h : 2 * t ≤ j) : (-1) ^ j * (-1) ^ (j - 2 * t) = 1
+PaperChronology.Paper10.PAPER10_BETA_VANDERMONDE_ODD_BASE (j t : ℕ) (h : 2 * t + 1 ≤ j) :
+  (-1) ^ j * (-1) ^ (j - (2 * t + 1)) = -1
+PaperChronology.Paper10.PAPER10_BETA_FULL_CHARACTER_VANDERMONDE_CANCELLATION (j N : ℕ) (h : N ≤ j) :
+  (-1) ^ N * ((-1) ^ j * (-1) ^ (j - N)) = 1
+PaperChronology.Paper10.PAPER10_POSITIVE_DIAGONAL_NONNEG {n : ℕ} (gamma v : Fin n → ℝ)
+  (hgamma : ∀ (i : Fin n), 0 < gamma i) : 0 ≤ ∑ i, gamma i * v i ^ 2
+PaperChronology.Paper10.PAPER10_POSITIVE_DIAGONAL_STRICT {n : ℕ} (gamma v : Fin n → ℝ)
+  (hgamma : ∀ (i : Fin n), 0 < gamma i) (hnonzero : ∃ i, v i ≠ 0) : 0 < ∑ i, gamma i * v i ^ 2
+PaperChronology.Paper10.PAPER10_TWO_NODE_VANDERMONDE_ZERO (u v a b : ℝ) (huv : u ≠ v) (hfirst : a + u * b = 0)
+  (hsecond : a + v * b = 0) : a = 0 ∧ b = 0
+PaperChronology.Paper10.PAPER10_TWO_NODE_VANDERMONDE_GRAM_STRICT (u v w0 w1 a b : ℝ) (huv : u ≠ v) (hw0 : 0 < w0)
+  (hw1 : 0 < w1) (hcoeff : a ≠ 0 ∨ b ≠ 0) : 0 < w0 * (a + u * b) ^ 2 + w1 * (a + v * b) ^ 2
+PaperChronology.Paper10.PAPER10_FINITE_WEIGHTED_GRAM_STRICT {m n : ℕ} (A : Fin m → Fin n → ℝ) (gamma : Fin m → ℝ)
+  (v : Fin n → ℝ) (hgamma : ∀ (i : Fin m), 0 < gamma i) (hinj : Function.Injective fun t i => ∑ j, A i j * t j)
+  (hv : v ≠ 0) : 0 < ∑ i, gamma i * (∑ j, A i j * v j) ^ 2
+PaperChronology.Paper10.PAPER10_BILINEAR_TENSOR_GRID_ZERO (u v s t a b c d : ℝ) (huv : u ≠ v) (hst : s ≠ t)
+  (h00 : a + u * b + s * c + u * s * d = 0) (h01 : a + u * b + t * c + u * t * d = 0)
+  (h10 : a + v * b + s * c + v * s * d = 0) (h11 : a + v * b + t * c + v * t * d = 0) : a = 0 ∧ b = 0 ∧ c = 0 ∧ d = 0
+PaperChronology.Paper10.PAPER10_BILINEAR_TENSOR_GRID_GRAM_STRICT (u v s t w00 w01 w10 w11 a b c d : ℝ) (huv : u ≠ v)
+  (hst : s ≠ t) (hw00 : 0 < w00) (hw01 : 0 < w01) (hw10 : 0 < w10) (hw11 : 0 < w11)
+  (hcoeff : a ≠ 0 ∨ b ≠ 0 ∨ c ≠ 0 ∨ d ≠ 0) :
+  0 <
+    w00 * (a + u * b + s * c + u * s * d) ^ 2 + w01 * (a + u * b + t * c + u * t * d) ^ 2 +
+        w10 * (a + v * b + s * c + v * s * d) ^ 2 +
+      w11 * (a + v * b + t * c + v * t * d) ^ 2
+PaperChronology.Paper10.PAPER10_BETA_REAL_SIGN_NORMALIZATION (j N : ℕ) (hj : N ≤ j) :
+  (-1) ^ N * ((-1) ^ j * (-1) ^ (j - N)) = 1
+PaperChronology.Paper10.PAPER10_BETA_NORMALIZED_RESIDUE_EQ (N j : ℕ) (hNj : N ≤ j) (q : ℝ) :
+  PaperChronology.Paper10.PAPER10_BETA_NORMALIZED_RESIDUE N j q = q
+PaperChronology.Paper10.PAPER10_BETA_NORMALIZED_RESIDUES_POSITIVE (N m : ℕ) (q : Fin m → ℝ)
+  (hq : ∀ (i : Fin m), 0 < q i) (i : Fin m) :
+  0 < PaperChronology.Paper10.PAPER10_BETA_NORMALIZED_RESIDUE N (N + ↑i) (q i)
+PaperChronology.Paper10.PAPER10_BETA_INJECTIVE_PENCIL_STRICT {m n : ℕ} (N : ℕ) (A : Fin m → Fin n → ℝ) (q : Fin m → ℝ)
+  (v : Fin n → ℝ) (hq : ∀ (i : Fin m), 0 < q i) (hinj : Function.Injective fun t i => ∑ j, A i j * t j) (hv : v ≠ 0) :
+  0 < ∑ i, PaperChronology.Paper10.PAPER10_BETA_NORMALIZED_RESIDUE N (N + ↑i) (q i) * (∑ j, A i j * v j) ^ 2
+PaperChronology.Paper10.PAPER10_BETA_TWO_NODE_PENCIL_STRICT (N : ℕ) (u v q0 q1 a b : ℝ) (huv : u ≠ v) (hq0 : 0 < q0)
+  (hq1 : 0 < q1) (hcoeff : a ≠ 0 ∨ b ≠ 0) :
+  0 <
+    PaperChronology.Paper10.PAPER10_BETA_NORMALIZED_RESIDUE N N q0 * (a + u * b) ^ 2 +
+      PaperChronology.Paper10.PAPER10_BETA_NORMALIZED_RESIDUE N (N + 1) q1 * (a + v * b) ^ 2
+PaperChronology.Paper10.PAPER10_BETA_BILINEAR_TENSOR_GRID_STRICT (N : ℕ) (u v s t w00 w01 w10 w11 a b c d : ℝ)
+  (huv : u ≠ v) (hst : s ≠ t) (hw00 : 0 < w00) (hw01 : 0 < w01) (hw10 : 0 < w10) (hw11 : 0 < w11)
+  (hcoeff : a ≠ 0 ∨ b ≠ 0 ∨ c ≠ 0 ∨ d ≠ 0) :
+  0 <
+    PaperChronology.Paper10.PAPER10_BETA_NORMALIZED_RESIDUE N N w00 * (a + u * b + s * c + u * s * d) ^ 2 +
+          PaperChronology.Paper10.PAPER10_BETA_NORMALIZED_RESIDUE N (N + 1) w01 * (a + u * b + t * c + u * t * d) ^ 2 +
+        PaperChronology.Paper10.PAPER10_BETA_NORMALIZED_RESIDUE N (N + 2) w10 * (a + v * b + s * c + v * s * d) ^ 2 +
+      PaperChronology.Paper10.PAPER10_BETA_NORMALIZED_RESIDUE N (N + 3) w11 * (a + v * b + t * c + v * t * d) ^ 2
+PaperChronology.Paper10.PAPER10_TWO_NODE_GRAM_DETERMINANT (u v q0 q1 : ℝ) :
+  (q0 + q1) * (q0 * u ^ 2 + q1 * v ^ 2) - (q0 * u + q1 * v) ^ 2 = q0 * q1 * (u - v) ^ 2
+PaperChronology.Paper10.PAPER10_TWO_NODE_GRAM_DETERMINANT_POSITIVE (u v q0 q1 : ℝ) (huv : u ≠ v) (hq0 : 0 < q0)
+  (hq1 : 0 < q1) : 0 < (q0 + q1) * (q0 * u ^ 2 + q1 * v ^ 2) - (q0 * u + q1 * v) ^ 2
+PaperChronology.Paper10.PAPER10_THREE_NODE_VANDERMONDE_ZERO (u v w a b c : ℝ) (huv : u ≠ v) (huw : u ≠ w) (hvw : v ≠ w)
+  (hu : a + u * b + u ^ 2 * c = 0) (hv : a + v * b + v ^ 2 * c = 0) (hw : a + w * b + w ^ 2 * c = 0) :
+  a = 0 ∧ b = 0 ∧ c = 0
+PaperChronology.Paper10.PAPER10_THREE_NODE_WEIGHTED_GRAM_STRICT (u v w q0 q1 q2 a b c : ℝ) (huv : u ≠ v) (huw : u ≠ w)
+  (hvw : v ≠ w) (hq0 : 0 < q0) (hq1 : 0 < q1) (hq2 : 0 < q2) (hcoeff : a ≠ 0 ∨ b ≠ 0 ∨ c ≠ 0) :
+  0 < q0 * (a + u * b + u ^ 2 * c) ^ 2 + q1 * (a + v * b + v ^ 2 * c) ^ 2 + q2 * (a + w * b + w ^ 2 * c) ^ 2
+PaperChronology.Paper10.PAPER10_BETA_THREE_NODE_PENCIL_STRICT (N : ℕ) (u v w q0 q1 q2 a b c : ℝ) (huv : u ≠ v)
+  (huw : u ≠ w) (hvw : v ≠ w) (hq0 : 0 < q0) (hq1 : 0 < q1) (hq2 : 0 < q2) (hcoeff : a ≠ 0 ∨ b ≠ 0 ∨ c ≠ 0) :
+  0 <
+    PaperChronology.Paper10.PAPER10_BETA_NORMALIZED_RESIDUE N N q0 * (a + u * b + u ^ 2 * c) ^ 2 +
+        PaperChronology.Paper10.PAPER10_BETA_NORMALIZED_RESIDUE N (N + 1) q1 * (a + v * b + v ^ 2 * c) ^ 2 +
+      PaperChronology.Paper10.PAPER10_BETA_NORMALIZED_RESIDUE N (N + 2) q2 * (a + w * b + w ^ 2 * c) ^ 2
+PaperChronology.Paper10.PAPER10_DIFFERENTIAL_SHIFT_POLE_ALIGNMENT (j k m : ℕ) (hm : m ≤ k) :
+  ↑j ^ (2 * (k - m)) * ↑j ^ (2 * m) = ↑j ^ (2 * k)
+PaperChronology.Paper10.PAPER10_DIFFERENTIAL_SHIFT_FINITE_COUPLING (j k : ℕ) (a X : ℕ → ℚ) :
+  ∑ m ∈ Finset.Icc 1 k, a m * (↑j ^ (2 * (k - m)) * ↑j ^ (2 * m)) * X m = ↑j ^ (2 * k) * ∑ m ∈ Finset.Icc 1 k, a m * X m
+LeanPaper.Section5DualSpectrum.actual_dual_degree {h K : ℕ} (s : ℕ) (c : Fin h → Fin (K + 1) → ℚ)
+  (hc : PaperOrder.PrincipalTheorems.coefficientRowsSeparate (LeanPaper.Section5DualSpectrum.realCoefficients c)) :
+  (ManuscriptChain.Real.dualDelta s c).natDegree = h
+LeanPaper.Section5DualSpectrum.actual_dual_zeros_real {h K : ℕ} (s : ℕ) (c : Fin h → Fin (K + 1) → ℚ)
+  (hc : PaperOrder.PrincipalTheorems.coefficientRowsSeparate (LeanPaper.Section5DualSpectrum.realCoefficients c))
+  (z : ℂ) (hz : Polynomial.eval₂ (algebraMap ℚ ℂ) z (ManuscriptChain.Real.dualDelta s c) = 0) : z.im = 0
+LeanPaper.Section5DualSpectrum.selected_monomial_dual_zeros_real {h K : ℕ} (s : ℕ) (f : Fin h → Fin (K + 1))
+  (hf : Function.Injective f) (z : ℂ)
+  (hz :
+    Polynomial.eval₂ (algebraMap ℚ ℂ) z
+        (ManuscriptChain.Real.dualDelta s (PaperOrder.CoreAlgebra.dualSelectedMonomialCoefficients f)) =
+      0) :
+  z.im = 0
+PaperAdvances.Theorem3_9_ShiftedPole.hurwitz_slope_nonsingular {n : ℕ} (N : ℕ) (theta s : ℝ) (htheta : 0 < theta)
+  (residue : Fin n → ℝ) (hres : ∀ (a : Fin n), residue a ≠ 0) :
+  (PaperAdvances.Theorem3_9_ShiftedPole.poleM (PaperAdvances.Theorem3_9_ShiftedPole.shiftedSquareNode N theta)
+        (PaperAdvances.Theorem3_9_ShiftedPole.shiftedGamma N theta s residue)).det ≠
+    0
+PaperAdvances.Theorem3_9_ShiftedPole.hurwitz_complex_roots_real {n : ℕ} (N : ℕ) (theta s center : ℝ)
+  (htheta : 0 < theta) (residue : Fin n → ℝ) (hres : ∀ (a : Fin n), residue a ≠ 0) (G : Matrix (Fin n) (Fin n) ℝ)
+  (hG : G.IsSymm) (hpos : G.PosDef) (z : ℂ)
+  (hz :
+    Polynomial.eval₂ (algebraMap ℝ ℂ) z
+        (PaperAdvances.Theorem3_9_ShiftedPole.polePencil
+            (PaperAdvances.Theorem3_9_ShiftedPole.shiftedSquareNode N theta)
+            (PaperAdvances.Theorem3_9_ShiftedPole.shiftedGamma N theta s residue) center G hG).detPolynomial =
+      0) :
+  z.im = 0
+PaperAdvances.Theorem3_9_CharacterPositive.all_fekete_laplace_numerators_pos (q y : ℝ) (hq : 0 < q) (hy : 0 < y) :
+  0 < PaperAdvances.Theorem3_9_CharacterPositive.f3 (PaperAdvances.Theorem3_9_CharacterPositive.qParameter q y) ∧
+    0 < PaperAdvances.Theorem3_9_CharacterPositive.f4 (PaperAdvances.Theorem3_9_CharacterPositive.qParameter q y) ∧
+      0 < PaperAdvances.Theorem3_9_CharacterPositive.f5 (PaperAdvances.Theorem3_9_CharacterPositive.qParameter q y) ∧
+        0 <
+            PaperAdvances.Theorem3_9_CharacterPositive.f8pos
+              (PaperAdvances.Theorem3_9_CharacterPositive.qParameter q y) ∧
+          0 <
+            PaperAdvances.Theorem3_9_CharacterPositive.f8neg (PaperAdvances.Theorem3_9_CharacterPositive.qParameter q y)
+PaperAdvances.Theorem3_9_CharacterPositive.all_rational_character_kernels_pos (z : ℝ) (hz : 0 < z) (h1 : z < 1) :
+  0 < PaperAdvances.Theorem3_9_CharacterPositive.f3 z / (1 - z ^ 3) ∧
+    0 < PaperAdvances.Theorem3_9_CharacterPositive.f4 z / (1 - z ^ 4) ∧
+      0 < PaperAdvances.Theorem3_9_CharacterPositive.f5 z / (1 - z ^ 5) ∧
+        0 < PaperAdvances.Theorem3_9_CharacterPositive.f8pos z / (1 - z ^ 8) ∧
+          0 < PaperAdvances.Theorem3_9_CharacterPositive.f8neg z / (1 - z ^ 8)
+PaperAdvances.Theorem3_9_PositiveSlope.poleM_posDef {n : ℕ} (nodes gamma : Fin n → ℝ) (hn : Function.Injective nodes)
+  (hgamma : ∀ (a : Fin n), 0 < gamma a) : (PaperAdvances.Theorem3_9_ShiftedPole.poleM nodes gamma).PosDef
+PaperAdvances.Theorem3_9_PositiveSlope.shiftedSlope_posDef {n : ℕ} (N : ℕ) (theta s : ℝ) (htheta : 0 < theta)
+  (residue : Fin n → ℝ) (hres : ∀ (a : Fin n), 0 < residue a) :
+  (PaperAdvances.Theorem3_9_ShiftedPole.poleM (PaperAdvances.Theorem3_9_ShiftedPole.shiftedSquareNode N theta)
+      (PaperAdvances.Theorem3_9_ShiftedPole.shiftedGamma N theta s residue)).PosDef
+PaperAdvances.Theorem5_2_RealRoots.positive_slope_factorization {n : ℕ}
+  (p : ManuscriptChain.Spectral.SymmetricAffinePencil n) (hp : p.direction.PosDef) :
+  ∃ beta, p.detPolynomial = Polynomial.C p.direction.det * ∏ i, (Polynomial.X + Polynomial.C (beta i - p.center))
+PaperAdvances.Theorem5_2_RealRoots.positive_slope_exact_degree {n : ℕ}
+  (p : ManuscriptChain.Spectral.SymmetricAffinePencil n) (hp : p.direction.PosDef) : p.detPolynomial.natDegree = n
+PaperAdvances.Theorem5_2_RealRoots.positive_slope_complex_roots_real {n : ℕ}
+  (p : ManuscriptChain.Spectral.SymmetricAffinePencil n) (hp : p.direction.PosDef) (z : ℂ)
+  (hz : Polynomial.eval₂ (algebraMap ℝ ℂ) z p.detPolynomial = 0) : z.im = 0
+PaperAdvances.Theorem6_6_FiniteMultiweightCone.FINITE_MULTIWEIGHT_SPECTRAL_HYPERBOLICITY.{u_1} {n : ℕ} {ι : Type u_1}
+  [DecidableEq ι] (p : ManuscriptChain.Spectral.SymmetricAffinePencil n) (s : Finset ι) (hs : s.Nonempty)
+  (A : ι → Matrix (Fin n) (Fin n) ℝ) (w : ι → ℝ) (hA : ∀ i ∈ s, (A i).PosDef) (hw : ∀ i ∈ s, 0 < w i)
+  (hdir : p.direction = ∑ i ∈ s, w i • A i) :
+  p.detPolynomial.natDegree = n ∧
+    (∀ (z : ℂ), Polynomial.eval₂ (algebraMap ℝ ℂ) z p.detPolynomial = 0 → z.im = 0) ∧
+      ∀ (x : ℝ), 0 ≤ PaperAdvances.Theorem3_7_AllDegrees.turan p.detPolynomial x
+PaperAdvances.Theorem6_6_FiniteMultiweightCone.FINITE_MULTIWEIGHT_STRICT_TURAN.{u_1} {n : ℕ} {ι : Type u_1}
+  [DecidableEq ι] (p : ManuscriptChain.Spectral.SymmetricAffinePencil n) (s : Finset ι) (hs : s.Nonempty)
+  (A : ι → Matrix (Fin n) (Fin n) ℝ) (w : ι → ℝ) (hA : ∀ i ∈ s, (A i).PosDef) (hw : ∀ i ∈ s, 0 < w i)
+  (hdir : p.direction = ∑ i ∈ s, w i • A i) (hn : 0 < n) (x : ℝ) (hx : Polynomial.eval x p.detPolynomial ≠ 0) :
+  0 < PaperAdvances.Theorem3_7_AllDegrees.turan p.detPolynomial x
+PaperAdvances.Theorem6_6_AnchoredSemidefiniteCone.ANCHORED_FINITE_CONE_POSDEF.{u_1} {n : ℕ} {ι : Type u_1}
+  [DecidableEq ι] (s : Finset ι) (A : ι → Matrix (Fin n) (Fin n) ℝ) (w : ι → ℝ) (hA : ∀ i ∈ s, (A i).PosSemidef)
+  (hw : ∀ i ∈ s, 0 ≤ w i) (j : ι) (hj : j ∈ s) (hAj : (A j).PosDef) (hwj : 0 < w j) : (∑ i ∈ s, w i • A i).PosDef
+PaperAdvances.Theorem6_6_AnchoredSemidefiniteCone.ANCHORED_FINITE_CONE_SPECTRAL_PACKAGE.{u_1} {n : ℕ} {ι : Type u_1}
+  [DecidableEq ι] (p : ManuscriptChain.Spectral.SymmetricAffinePencil n) (s : Finset ι)
+  (A : ι → Matrix (Fin n) (Fin n) ℝ) (w : ι → ℝ) (hA : ∀ i ∈ s, (A i).PosSemidef) (hw : ∀ i ∈ s, 0 ≤ w i) (j : ι)
+  (hj : j ∈ s) (hAj : (A j).PosDef) (hwj : 0 < w j) (hdir : p.direction = ∑ i ∈ s, w i • A i) :
+  (∃ beta, p.detPolynomial = Polynomial.C p.direction.det * ∏ i, (Polynomial.X + Polynomial.C (beta i - p.center))) ∧
+    p.detPolynomial.natDegree = n ∧
+      (∀ (z : ℂ), Polynomial.eval₂ (algebraMap ℝ ℂ) z p.detPolynomial = 0 → z.im = 0) ∧
+        (∀ (x : ℝ), 0 ≤ PaperAdvances.Theorem3_7_AllDegrees.turan p.detPolynomial x) ∧
+          (0 < n →
+            ∀ (x : ℝ),
+              Polynomial.eval x p.detPolynomial ≠ 0 → 0 < PaperAdvances.Theorem3_7_AllDegrees.turan p.detPolynomial x)
+PaperAdvances.Theorem3_9_CharacterPositive.all_fekete_numerators_pos (z : ℝ) (hz : 0 < z) (h1 : z < 1) :
+  0 < PaperAdvances.Theorem3_9_CharacterPositive.f3 z ∧
+    0 < PaperAdvances.Theorem3_9_CharacterPositive.f4 z ∧
+      0 < PaperAdvances.Theorem3_9_CharacterPositive.f5 z ∧
+        0 < PaperAdvances.Theorem3_9_CharacterPositive.f8pos z ∧ 0 < PaperAdvances.Theorem3_9_CharacterPositive.f8neg z
+PaperAdvances.Theorem3_9_CharacterPositive.alternating_character_vandermonde_cancellation (j : ℕ) (u v : ℝ) (hu : 0 < u)
+  (hv : 0 < v) : 0 < (-1) ^ j * u * ((-1) ^ j * v)
+PaperAdvances.Theorem3_9_ShiftedPole.poleM_det_ne_zero {n : ℕ} (nodes gamma : Fin n → ℝ) (hn : Function.Injective nodes)
+  (hgamma : ∀ (a : Fin n), gamma a ≠ 0) : (PaperAdvances.Theorem3_9_ShiftedPole.poleM nodes gamma).det ≠ 0
+PaperAdvances.Theorem3_9_ShiftedPole.polePencil_complex_roots_real {n : ℕ} (nodes gamma : Fin n → ℝ)
+  (hn : Function.Injective nodes) (hgamma : ∀ (a : Fin n), gamma a ≠ 0) (center : ℝ) (G : Matrix (Fin n) (Fin n) ℝ)
+  (hG : G.IsSymm) (hpos : G.PosDef) (z : ℂ)
+  (hz :
+    Polynomial.eval₂ (algebraMap ℝ ℂ) z
+        (PaperAdvances.Theorem3_9_ShiftedPole.polePencil nodes gamma center G hG).detPolynomial =
+      0) :
+  z.im = 0
+PaperAdvances.Theorem6_6_FiniteMultiweightCone.FINITE_MULTIWEIGHT_POSITIVE_DIRECTION.{u_1} {n : ℕ} {ι : Type u_1}
+  [DecidableEq ι] (s : Finset ι) (hs : s.Nonempty) (A : ι → Matrix (Fin n) (Fin n) ℝ) (w : ι → ℝ)
+  (hA : ∀ i ∈ s, (A i).PosDef) (hw : ∀ i ∈ s, 0 < w i) : (∑ i ∈ s, w i • A i).PosDef
+PaperAdvances.Theorem5_2_RealRoots.det_add_scalar_of_hermitian {n : ℕ} (B : Matrix (Fin n) (Fin n) ℝ)
+  (hB : B.IsHermitian) (t : ℝ) : (B + t • 1).det = ∏ i, (hB.eigenvalues i + t)
+PaperAdvances.Theorem3_8_Actual.actual_derivative_eq_real_slope (p : ManuscriptChain.Real.Parameters) :
+  ManuscriptChain.Real.derivativeMatrix p = PaperAdvances.Proposition3_2.slope p ↑p.weight
+PaperAdvances.Theorem3_8_Actual.actual_relative_charpoly_eq_pole (p : ManuscriptChain.Real.Parameters) :
+  ((PaperAdvances.Theorem3_8_Actual.actualGram p)⁻¹ * ManuscriptChain.Real.derivativeMatrix p).charpoly =
+    (PaperAdvances.Theorem3_8_Kernel.poleOperator (PaperAdvances.Theorem3_8_Actual.actualGram p)
+        (PaperAdvances.Theorem3_8_Actual.actualV p) (PaperAdvances.Theorem3_8_Actual.actualGamma p)).charpoly
+PaperAdvances.Theorem3_8_Actual.actual_relative_trace_eq_pole (p : ManuscriptChain.Real.Parameters) :
+  ((PaperAdvances.Theorem3_8_Actual.actualGram p)⁻¹ * ManuscriptChain.Real.derivativeMatrix p).trace =
+    (PaperAdvances.Theorem3_8_Kernel.poleOperator (PaperAdvances.Theorem3_8_Actual.actualGram p)
+        (PaperAdvances.Theorem3_8_Actual.actualV p) (PaperAdvances.Theorem3_8_Actual.actualGamma p)).trace
+PaperAdvances.Theorem3_7_AllDegrees.turan_mul_linear (P L : Polynomial ℝ) (a x : ℝ)
+  (hL : Polynomial.derivative L = Polynomial.C a) :
+  PaperAdvances.Theorem3_7_AllDegrees.turan (L * P) x =
+    Polynomial.eval x L ^ 2 * PaperAdvances.Theorem3_7_AllDegrees.turan P x + a ^ 2 * Polynomial.eval x P ^ 2
+PaperAdvances.Theorem3_7_AllDegrees.finite_affine_turan_nonnegative.{u_1} {ι : Type u_1} [DecidableEq ι] (s : Finset ι)
+  (a b : ι → ℝ) (x : ℝ) :
+  0 ≤ PaperAdvances.Theorem3_7_AllDegrees.turan (∏ i ∈ s, (Polynomial.C (a i) * Polynomial.X + Polynomial.C (b i))) x
+PaperAdvances.Theorem3_7_AllDegrees.THEOREM_3_7_ACTUAL_ALL_DEGREES (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (x : ℝ) :
+  0 ≤ PaperAdvances.Theorem3_7_AllDegrees.turan (ManuscriptChain.Real.realPolynomial (ManuscriptChain.Real.delta p)) x
+LeanPaper.Section3Newton.cubic_newton_first (a b c : ℝ) :
+  3 * LeanPaper.Section3Newton.cubicSym2 a b c ≤ LeanPaper.Section3Newton.cubicSym1 a b c ^ 2
+LeanPaper.Section3Newton.cubic_newton_second (a b c : ℝ) :
+  3 * LeanPaper.Section3Newton.cubicSym1 a b c * LeanPaper.Section3Newton.cubicSym3 a b c ≤
+    LeanPaper.Section3Newton.cubicSym2 a b c ^ 2
+PaperAdvances.Theorem3_7.cubic_first_turan_nonnegative (x a b c : ℝ) :
+  0 ≤
+    ((x - b) * (x - c) + (x - a) * (x - c) + (x - a) * (x - b)) ^ 2 -
+      (x - a) * (x - b) * (x - c) * (2 * (x - a + (x - b) + (x - c)))
+PaperAdvances.Theorem3_7.cubic_second_turan_nonnegative (x a b c : ℝ) :
+  0 ≤ (2 * (x - a + (x - b) + (x - c))) ^ 2 - 6 * ((x - a) * (x - b) + (x - a) * (x - c) + (x - b) * (x - c))
+PaperAdvances.Theorem3_7.three_mode_taylor_bound (a b c : ℝ) : 3 * (2 * (a * b + a * c + b * c)) ≤ 2 * (a + b + c) ^ 2
+PaperAdvances.Theorem3_8_ExactTaylor.unit_det_linear_coeff {n : ℕ} (A : Matrix (Fin n) (Fin n) ℝ) :
+  (PaperAdvances.Theorem3_8_Jacobi.unitDetPoly A).coeff 1 = A.trace
+PaperAdvances.Theorem3_8_ExactTaylor.affine_det_exact_second_order {n : ℕ} (G H : Matrix (Fin n) (Fin n) ℝ)
+  (hG : G.det ≠ 0) (t : ℝ) :
+  (G + t • H).det =
+    G.det *
+      (1 + (G⁻¹ * H).trace * t +
+        Polynomial.eval t (PaperAdvances.Theorem3_8_Jacobi.unitDetPoly (G⁻¹ * H)).divX.divX * t ^ 2)
+PaperAdvances.Theorem3_8_Jacobi.unitDetPoly_derivative {n : ℕ} (A : Matrix (Fin n) (Fin n) ℝ) :
+  Polynomial.eval 0 (Polynomial.derivative (PaperAdvances.Theorem3_8_Jacobi.unitDetPoly A)) = A.trace
+PaperAdvances.Theorem3_8_Jacobi.unitDetPoly_eval {n : ℕ} (A : Matrix (Fin n) (Fin n) ℝ) (t : ℝ) :
+  Polynomial.eval t (PaperAdvances.Theorem3_8_Jacobi.unitDetPoly A) = (1 + t • A).det
+PaperAdvances.Theorem3_8_Jacobi.unitDet_hasDerivAt {n : ℕ} (A : Matrix (Fin n) (Fin n) ℝ) :
+  HasDerivAt (fun t => (1 + t • A).det) A.trace 0
+PaperAdvances.Theorem3_8_Jacobi.affineDet_factor_pointwise {n : ℕ} (G H : Matrix (Fin n) (Fin n) ℝ) (hG : G.det ≠ 0)
+  (t : ℝ) : (G + t • H).det = G.det * (1 + t • (G⁻¹ * H)).det
+PaperAdvances.Theorem3_8_Jacobi.affineDet_hasDerivAt {n : ℕ} (G H : Matrix (Fin n) (Fin n) ℝ) (hG : G.det ≠ 0) :
+  HasDerivAt (fun t => (G + t • H).det) (G.det * (G⁻¹ * H).trace) 0
+PaperAdvances.Theorem3_8_Jacobi.affineDet_log_hasDerivAt {n : ℕ} (G H : Matrix (Fin n) (Fin n) ℝ) (hG : 0 < G.det) :
+  HasDerivAt (fun t => Real.log (G + t • H).det) (G⁻¹ * H).trace 0
+PaperAdvances.Theorem3_8_Jacobi.actual_affine_log_jacobi (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) :
+  HasDerivAt
+    (fun t => Real.log (PaperAdvances.Theorem3_8_Actual.actualGram p + t • ManuscriptChain.Real.derivativeMatrix p).det)
+    (PaperAdvances.Theorem3_8_Kernel.poleOperator (PaperAdvances.Theorem3_8_Actual.actualGram p)
+        (PaperAdvances.Theorem3_8_Actual.actualV p) (PaperAdvances.Theorem3_8_Actual.actualGamma p)).trace
+    0
+LeanPaper.Section3ContinuedFractions.corollary_3_5_normalized_two_det (a b c t : ℝ) :
+  Matrix.det ![![1 + t * a, t * b], ![t * b, 1 + t * c]] = LeanPaper.Section3ContinuedFractions.normalizedTwoDet a b c t
+LeanPaper.Section3ContinuedFractions.corollary_3_5_two_level_schur_identity (a b c t : ℝ) (h : 1 + t * a ≠ 0) :
+  (1 + t * a) * (1 + t * c - (t * b) ^ 2 / (1 + t * a)) = LeanPaper.Section3ContinuedFractions.normalizedTwoDet a b c t
+LeanPaper.Section3ContinuedFractions.normalized_three_continuant_recurrence (a b c d e t : ℝ) :
+  LeanPaper.Section3ContinuedFractions.normalizedThreeContinuant a b c d e t =
+    (1 + t * e) * ((1 + t * a) * (1 + t * c) - (t * b) ^ 2) - (t * d) ^ 2 * (1 + t * a)
+LeanPaper.Section3ContinuedFractions.normalized_three_schur_identity (a b c d e t : ℝ) (h1 : 1 + t * a ≠ 0)
+  (h2 : 1 + t * c - (t * b) ^ 2 / (1 + t * a) ≠ 0) :
+  (1 + t * a) * (1 + t * c - (t * b) ^ 2 / (1 + t * a)) *
+      (1 + t * e - (t * d) ^ 2 / (1 + t * c - (t * b) ^ 2 / (1 + t * a))) =
+    LeanPaper.Section3ContinuedFractions.normalizedThreeContinuant a b c d e t
+LeanPaper.Section3ContinuedFractions.normalized_three_continuant_eq_det (a b c d e t : ℝ) :
+  LeanPaper.Section3ContinuedFractions.normalizedThreeContinuant a b c d e t =
+    !![1 + t * a, t * b, 0; t * b, 1 + t * c, t * d; 0, t * d, 1 + t * e].det
+PaperAdvances.Theorem3_8_Kernel.charpoly_relative_eq_pole {n : ℕ} (G V : Matrix (Fin n) (Fin n) ℝ) (γ : Fin n → ℝ) :
+  (G⁻¹ * (V * Matrix.diagonal γ * V.transpose)).charpoly = (PaperAdvances.Theorem3_8_Kernel.poleOperator G V γ).charpoly
+PaperAdvances.Theorem3_8_Kernel.trace_relative_eq_pole {n : ℕ} (G V : Matrix (Fin n) (Fin n) ℝ) (γ : Fin n → ℝ) :
+  (G⁻¹ * (V * Matrix.diagonal γ * V.transpose)).trace = (PaperAdvances.Theorem3_8_Kernel.poleOperator G V γ).trace
+PaperAdvances.Theorem3_8_Kernel.kernelMatrix_entry {n : ℕ} (G V : Matrix (Fin n) (Fin n) ℝ) (a b : Fin n) :
+  PaperAdvances.Theorem3_8_Kernel.kernelMatrix G V a b = ∑ j, ∑ i, V i a * G⁻¹ i j * V j b
+PaperAdvances.Corollary3_6_PowerSumExtrema.positive_atomic_moment_bounds {h : ℕ} (u : Fin h → ℝ)
+  (hu : ∀ (i : Fin h), 0 ≤ u i) (j : Fin h) (hj : ∀ (i : Fin h), u i ≤ u j) (r : ℕ) :
+  u j ^ r ≤ ∑ i, u i ^ r ∧ ∑ i, u i ^ r ≤ ↑h * u j ^ r
+PaperAdvances.Corollary3_6_PowerSumExtrema.even_atomic_moment_bounds {h : ℕ} (u : Fin h → ℝ)
+  (hu : ∀ (i : Fin h), 0 ≤ u i) (j : Fin h) (hj : ∀ (i : Fin h), u i ≤ u j) (r : ℕ) :
+  u j ^ (2 * r) ≤ ∑ i, u i ^ (2 * r) ∧ ∑ i, u i ^ (2 * r) ≤ ↑h * u j ^ (2 * r)
+PaperAdvances.Proposition3_2.slope_det_ne_zero (p : ManuscriptChain.Real.Parameters) (s : ℝ) :
+  (PaperAdvances.Proposition3_2.slope p s).det ≠ 0
+PaperAdvances.Proposition3_2.all_complex_roots_real (p : ManuscriptChain.Real.Parameters) (s center : ℝ)
+  (A : Matrix (Fin p.h) (Fin p.h) ℝ) (hA : A.IsSymm) (hpos : A.PosDef) (z : ℂ)
+  (hz : Polynomial.eval₂ (algebraMap ℝ ℂ) z (PaperAdvances.Proposition3_2.pencil p s center A hA).detPolynomial = 0) :
+  z.im = 0
+LeanPaper.Section3RootMomentBounds.actual_reciprocal_moment_bounds (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (q : ℚ)
+  (hq : ManuscriptChain.Real.evalQ (ManuscriptChain.Real.delta p) ↑q ≠ 0) :
+  ∃ j,
+    0 < LeanPaper.ReciprocalRootMoments.reciprocalAtom (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) (↑q) j ∧
+      (∀ (i : Fin p.h),
+          LeanPaper.ReciprocalRootMoments.reciprocalAtom (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) (↑q) i ≤
+            LeanPaper.ReciprocalRootMoments.reciprocalAtom (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) (↑q)
+              j) ∧
+        ∀ (m : ℕ),
+          LeanPaper.ReciprocalRootMoments.reciprocalAtom (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) (↑q) j ^
+                m ≤
+              LeanPaper.ReciprocalRootMoments.reciprocalEvenMoment
+                (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) (↑q) m ∧
+            LeanPaper.ReciprocalRootMoments.reciprocalEvenMoment (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp)
+                (↑q) m ≤
+              ↑p.h *
+                LeanPaper.ReciprocalRootMoments.reciprocalAtom (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp)
+                    (↑q) j ^
+                  m
+PaperAdvances.Theorem3_3.actual_gram_det_pos (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) : 0 < (ManuscriptChain.Real.gram p (ManuscriptChain.Real.zeta p.weight)).det
+PaperAdvances.Theorem3_3.leading_coefficient_product (p : ManuscriptChain.Real.Parameters) :
+  (ManuscriptChain.Real.delta p).leadingCoeff =
+    (ManuscriptChain.PoleDiagonalization.poleVandermonde p).det ^ 2 *
+      ∏ a, ManuscriptChain.PoleDiagonalization.poleWeight p a
+PaperAdvances.Theorem3_3.positive_pole_count_constant (p : ManuscriptChain.Real.Parameters) (s t : ℝ) :
+  {a | 0 < PaperAdvances.Proposition3_2.gamma p s a}.card = {a | 0 < PaperAdvances.Proposition3_2.gamma p t a}.card
+PaperAdvances.Theorem3_3_Sign.slope_det_pos_iff (p : ManuscriptChain.Real.Parameters) (s : ℝ) :
+  0 < (PaperAdvances.Proposition3_2.slope p s).det ↔ 0 < ∏ a, PaperAdvances.Proposition3_2.gamma p s a
+PaperAdvances.Theorem3_3_Sign.slope_det_neg_iff (p : ManuscriptChain.Real.Parameters) (s : ℝ) :
+  (PaperAdvances.Proposition3_2.slope p s).det < 0 ↔ ∏ a, PaperAdvances.Proposition3_2.gamma p s a < 0
+PaperAdvances.Theorem3_7_StrictRolle.finite_affine_turan_strict_offroots.{u_1} {ι : Type u_1} [DecidableEq ι]
+  (s : Finset ι) (a b : ι → ℝ) (x : ℝ) (i : ι) (hi : i ∈ s) (hai : a i ≠ 0)
+  (hx : Polynomial.eval x (∏ j ∈ s, (Polynomial.C (a j) * Polynomial.X + Polynomial.C (b j))) ≠ 0) :
+  0 < PaperAdvances.Theorem3_7_AllDegrees.turan (∏ j ∈ s, (Polynomial.C (a j) * Polynomial.X + Polynomial.C (b j))) x
+PaperAdvances.Theorem3_7_StrictRolle.THEOREM_3_7_ACTUAL_TURAN_STRICT (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (x : ℝ)
+  (hx : Polynomial.eval x (ManuscriptChain.Real.realPolynomial (ManuscriptChain.Real.delta p)) ≠ 0) :
+  0 < PaperAdvances.Theorem3_7_AllDegrees.turan (ManuscriptChain.Real.realPolynomial (ManuscriptChain.Real.delta p)) x
+PaperAdvances.Theorem3_7_StrictRolle.THEOREM_3_7_ACTUAL_TURAN_EQUALITY (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (x : ℝ) :
+  PaperAdvances.Theorem3_7_AllDegrees.turan (ManuscriptChain.Real.realPolynomial (ManuscriptChain.Real.delta p)) x = 0 ↔
+    Polynomial.eval x (ManuscriptChain.Real.realPolynomial (ManuscriptChain.Real.delta p)) = 0 ∧
+      Polynomial.eval x (Polynomial.derivative (ManuscriptChain.Real.realPolynomial (ManuscriptChain.Real.delta p))) = 0
+PaperAdvances.Theorem3_7_StrictRolle.THEOREM_3_7_ACTUAL_CRITICAL_POINT_SEPARATION (p : ManuscriptChain.Real.Parameters)
+  (a b : ℝ) (hab : a < b)
+  (ha : Polynomial.eval a (ManuscriptChain.Real.realPolynomial (ManuscriptChain.Real.delta p)) = 0)
+  (hb : Polynomial.eval b (ManuscriptChain.Real.realPolynomial (ManuscriptChain.Real.delta p)) = 0) :
+  ∃ x,
+    a < x ∧
+      x < b ∧
+        Polynomial.eval x (Polynomial.derivative (ManuscriptChain.Real.realPolynomial (ManuscriptChain.Real.delta p))) =
+          0
+PaperOrder.Section4.proposition_4_2_resultant_product_barrier {d : ℕ} (z : ℤ) (hz : z ≠ 0) (leading : ℝ)
+  (conjugateEval : Fin d → ℝ) (hresultant : ↑z = leading * ∏ i, conjugateEval i)
+  (hsmall : |leading| * ∏ i, |conjugateEval i| < 1) : False
+PaperAdvances.Proposition4_3_ComplexPadicDisk.PROPOSITION_4_3_INTEGRAL_COMPLEX_PADIC {p : ℕ} [Fact (Nat.Prime p)]
+  (Q : Polynomial ℤ_[p]) (ξ : ℤ_[p]) (α : ℂ_[p]) (hQ : Polynomial.eval ξ Q ≠ 0)
+  (hα : ‖α - ↑((algebraMap ℚ_[p] (PadicAlgCl p)) ↑ξ)‖ < ‖↑(Polynomial.eval ξ Q)‖) :
+  ‖Polynomial.eval α (Polynomial.map (algebraMap ℚ_[p] ℂ_[p]) (Polynomial.map PadicInt.Coe.ringHom Q))‖ =
+      ‖↑(Polynomial.eval ξ Q)‖ ∧
+    Polynomial.eval α (Polynomial.map (algebraMap ℚ_[p] ℂ_[p]) (Polynomial.map PadicInt.Coe.ringHom Q)) ≠ 0
+PaperAdvances.Proposition4_3_ComplexPadicDisk.PROPOSITION_4_3_INTEGER_COMPLEX_PADIC {p : ℕ} [Fact (Nat.Prime p)]
+  (Q : Polynomial ℤ) (ξ : ℤ_[p]) (α : ℂ_[p]) (hQ : Polynomial.eval ξ (Polynomial.map (Int.castRingHom ℤ_[p]) Q) ≠ 0)
+  (hα :
+    ‖α - ↑((algebraMap ℚ_[p] (PadicAlgCl p)) ↑ξ)‖ < ‖↑(Polynomial.eval ξ (Polynomial.map (Int.castRingHom ℤ_[p]) Q))‖) :
+  ‖Polynomial.eval α
+          (Polynomial.map (algebraMap ℚ_[p] ℂ_[p])
+            (Polynomial.map PadicInt.Coe.ringHom (Polynomial.map (Int.castRingHom ℤ_[p]) Q)))‖ =
+      ‖↑(Polynomial.eval ξ (Polynomial.map (Int.castRingHom ℤ_[p]) Q))‖ ∧
+    Polynomial.eval α
+        (Polynomial.map (algebraMap ℚ_[p] ℂ_[p])
+          (Polynomial.map PadicInt.Coe.ringHom (Polynomial.map (Int.castRingHom ℤ_[p]) Q))) ≠
+      0
+PaperAdvances.Proposition4_3_IsometricExtension.ISOMETRIC_EXTENSION_UNIT_DISK.{u_1, u_2} {K : Type u_1} {L : Type u_2}
+  [NontriviallyNormedField K] [IsUltrametricDist K] [NontriviallyNormedField L] [IsUltrametricDist L] (φ : K →+* L)
+  (hφ : ∀ (y : K), ‖φ y‖ = ‖y‖) (P : Polynomial K) (z : L) (h0 : P.coeff 0 ≠ 0)
+  (hcoeff : ∀ (k : ℕ), 0 < k → ‖P.coeff k‖ ≤ 1) (hcenter : ‖P.coeff 0‖ ≤ 1) (hz : ‖z‖ < ‖P.coeff 0‖) :
+  ‖Polynomial.eval z (Polynomial.map φ P)‖ = ‖P.coeff 0‖ ∧ Polynomial.eval z (Polynomial.map φ P) ≠ 0
+PaperAdvances.Proposition4_3_IsometricExtension.PROPOSITION_4_3_INTEGRAL_ISOMETRIC_EXTENSION.{u_1} {p : ℕ}
+  [Fact (Nat.Prime p)] {L : Type u_1} [NontriviallyNormedField L] [IsUltrametricDist L] (φ : ℚ_[p] →+* L)
+  (hφ : ∀ (y : ℚ_[p]), ‖φ y‖ = ‖y‖) (Q : Polynomial ℤ_[p]) (ξ : ℤ_[p]) (α : L) (hQ : Polynomial.eval ξ Q ≠ 0)
+  (hα : ‖α - φ ↑ξ‖ < ‖↑(Polynomial.eval ξ Q)‖) :
+  ‖Polynomial.eval α (Polynomial.map φ (Polynomial.map PadicInt.Coe.ringHom Q))‖ = ‖↑(Polynomial.eval ξ Q)‖ ∧
+    Polynomial.eval α (Polynomial.map φ (Polynomial.map PadicInt.Coe.ringHom Q)) ≠ 0
+PaperAdvances.Proposition4_3_PadicDisk.finite_ultrametric_sum_strict.{u_1, u_2} {K : Type u_1}
+  [NontriviallyNormedField K] [IsUltrametricDist K] {ι : Type u_2} [DecidableEq ι] (s : Finset ι) (f : ι → K) (B : ℝ)
+  (hB : 0 < B) (hf : ∀ i ∈ s, ‖f i‖ < B) : ‖∑ i ∈ s, f i‖ < B
+PaperAdvances.Proposition4_3_PadicDisk.ultrametric_eval_norm_eq_constant.{u_1} {K : Type u_1}
+  [NontriviallyNormedField K] [IsUltrametricDist K] (P : Polynomial K) (x : K) (h0 : P.coeff 0 ≠ 0)
+  (hterms : ∀ (k : ℕ), 0 < k → ‖P.coeff k * x ^ k‖ < ‖P.coeff 0‖) : ‖Polynomial.eval x P‖ = ‖P.coeff 0‖
+PaperAdvances.Proposition4_3_PadicDisk.ultrametric_unit_coeff_disk.{u_1} {K : Type u_1} [NontriviallyNormedField K]
+  [IsUltrametricDist K] (P : Polynomial K) (x : K) (h0 : P.coeff 0 ≠ 0) (hcoeff : ∀ (k : ℕ), 0 < k → ‖P.coeff k‖ ≤ 1)
+  (hcenter : ‖P.coeff 0‖ ≤ 1) (hx : ‖x‖ < ‖P.coeff 0‖) : ‖Polynomial.eval x P‖ = ‖P.coeff 0‖ ∧ Polynomial.eval x P ≠ 0
+PaperAdvances.Proposition4_3_PadicDisk.PROPOSITION_4_3_INTEGRAL_QPADIC {p : ℕ} [Fact (Nat.Prime p)]
+  (Q : Polynomial ℤ_[p]) (ξ : ℤ_[p]) (α : ℚ_[p]) (hQ : Polynomial.eval ξ Q ≠ 0)
+  (hα : ‖α - ↑ξ‖ < ‖↑(Polynomial.eval ξ Q)‖) :
+  ‖Polynomial.eval α (Polynomial.map PadicInt.Coe.ringHom Q)‖ = ‖↑(Polynomial.eval ξ Q)‖ ∧
+    Polynomial.eval α (Polynomial.map PadicInt.Coe.ringHom Q) ≠ 0
+PaperAdvances.Proposition4_3_PadicDisk.PROPOSITION_4_3_INTEGER_QPADIC {p : ℕ} [Fact (Nat.Prime p)] (Q : Polynomial ℤ)
+  (ξ : ℤ_[p]) (α : ℚ_[p]) (hQ : Polynomial.eval ξ (Polynomial.map (Int.castRingHom ℤ_[p]) Q) ≠ 0)
+  (hα : ‖α - ↑ξ‖ < ‖↑(Polynomial.eval ξ (Polynomial.map (Int.castRingHom ℤ_[p]) Q))‖) :
+  ‖Polynomial.eval α (Polynomial.map PadicInt.Coe.ringHom (Polynomial.map (Int.castRingHom ℤ_[p]) Q))‖ =
+      ‖↑(Polynomial.eval ξ (Polynomial.map (Int.castRingHom ℤ_[p]) Q))‖ ∧
+    Polynomial.eval α (Polynomial.map PadicInt.Coe.ringHom (Polynomial.map (Int.castRingHom ℤ_[p]) Q)) ≠ 0
+PaperOrder.Section4.proposition_4_8_distance_product_nonnegative (ξ : ℝ) (xs : List ℝ) :
+  0 ≤ (List.map (fun r => |ξ - r|) xs).prod
+PaperOrder.Section4.proposition_4_8_distance_product_lower (ξ δ : ℝ) (xs : List ℝ) (hδ : 0 ≤ δ) :
+  (∀ r ∈ xs, δ ≤ |ξ - r|) → δ ^ xs.length ≤ (List.map (fun r => |ξ - r|) xs).prod
+PaperOrder.Section4.proposition_4_8_distance_product_upper (ξ η : ℝ) (xs : List ℝ) (hη : 0 ≤ η) :
+  (∀ r ∈ xs, |ξ - r| ≤ η) → (List.map (fun r => |ξ - r|) xs).prod ≤ η ^ xs.length
+PaperOrder.Section4.proposition_4_8_factor_evaluation_bounds (ξ c δ η : ℝ) (xs : List ℝ) (hδ : 0 ≤ δ) (hη : 0 ≤ η)
+  (hlower : ∀ r ∈ xs, δ ≤ |ξ - r|) (hupper : ∀ r ∈ xs, |ξ - r| ≤ η) :
+  |c| * δ ^ xs.length ≤ |c| * (List.map (fun r => |ξ - r|) xs).prod ∧
+    |c| * (List.map (fun r => |ξ - r|) xs).prod ≤ |c| * η ^ xs.length
+PaperOrder.Section4.theorem_4_6_integer_leading_coefficient_barrier (c : ℤ) (ξvalue detValue : ℝ) (hc : c ≠ 0)
+  (hidentity : ↑|c| = |ξvalue| * |detValue|) : 1 ≤ |ξvalue| * |detValue|
+PaperOrder.Section4.theorem_4_6_integer_evaluation_lower_bound (c : ℤ) (ξvalue detValue T : ℝ) (hc : c ≠ 0)
+  (hidentity : ↑|c| = |ξvalue| * |detValue|) (hdet : |detValue| ≤ T) : 1 ≤ |ξvalue| * T
+PaperOrder.Section4.theorem_4_6_reciprocal_evaluation_lower_bound (c : ℤ) (ξvalue detValue T : ℝ) (hc : c ≠ 0)
+  (hidentity : ↑|c| = |ξvalue| * |detValue|) (hT : 0 < T) (hdet : |detValue| ≤ T) : 1 / T ≤ |ξvalue|
+PaperOrder.Section4.theorem_4_7_finite_cluster_sum_bound (xs : List ℝ) (U τ : ℝ) :
+  (∀ x ∈ xs, x ≤ U) → xs.sum ≤ τ * ↑xs.length + (U - τ) * ↑(PaperOrder.Section4.countAtLeastThreshold τ xs)
+PaperOrder.Section4.theorem_4_7_cluster_fraction_lower_bound (xs : List ℝ) (U τ μ : ℝ) (hU : τ < U)
+  (hcap : ∀ x ∈ xs, x ≤ U) (haverage : μ * ↑xs.length ≤ xs.sum) :
+  (μ - τ) / (U - τ) * ↑xs.length ≤ ↑(PaperOrder.Section4.countAtLeastThreshold τ xs)
+PaperOrder.Section4.theorem_4_7_cluster_percentage_arithmetic :
+  14 / 1000 < (2589 / 10000 - 1 / 10) / (11411 / 1000 - 1 / 10)
+LeanPaper.Section2FiniteDifference.tau_monomial_difference (k d : ℕ) (hk : 1 ≤ k) :
+  ∑ i ∈ Finset.range (d + 1), ↑(d.choose i) * Zetahyperbolic.tauMonomial k i - Zetahyperbolic.tauMonomial k d =
+    if d = 2 * k then 1 else 0
+LeanPaper.Section2FiniteDifference.finite_span_difference (k : ℕ) (hk : 1 ≤ k) (es : Finset ℕ) (u : ℕ → ℚ)
+  (rs : Finset ℤ) (v : ℤ → ℚ) (hr : ∀ r ∈ rs, r ≠ 0 ∧ r ≠ 1) :
+  LeanPaper.Section2FiniteDifference.translatedMoment k es u rs v -
+      LeanPaper.PullbackReflection.tauFiniteSpan k es u rs v =
+    ∑ d ∈ es, Polynomial.C (u d * if d = 2 * k then 1 else 0) + ∑ r ∈ rs, Polynomial.C (v r * -(↑r ^ (2 * k + 1))⁻¹)
+LeanPaper.Section2FiniteDifference.finite_span_difference_coefficient (k : ℕ) (hk : 1 ≤ k) (es : Finset ℕ) (u : ℕ → ℚ)
+  (rs : Finset ℤ) (v : ℤ → ℚ) (hr : ∀ r ∈ rs, r ≠ 0 ∧ r ≠ 1) :
+  LeanPaper.Section2FiniteDifference.translatedMoment k es u rs v -
+      LeanPaper.PullbackReflection.tauFiniteSpan k es u rs v =
+    Polynomial.C (if 2 * k ∈ es then u (2 * k) else 0) + ∑ r ∈ rs, Polynomial.C (v r * -(↑r ^ (2 * k + 1))⁻¹)
+LeanPaper.Section2FiniteDifference.finite_span_translation (es : Finset ℕ) (u : ℕ → ℚ) (rs : Finset ℤ) (v : ℤ → ℚ)
+  (x : ℚ) :
+  LeanPaper.Section2FiniteDifference.finiteSpanValue es u rs v (x + 1) =
+    LeanPaper.Section2FiniteDifference.translatedSpanValue es u rs v x
+LeanPaper.Section2FiniteDifference.function_and_moment_difference (k : ℕ) (hk : 1 ≤ k) (es : Finset ℕ) (u : ℕ → ℚ)
+  (rs : Finset ℤ) (v : ℤ → ℚ) (hr : ∀ r ∈ rs, r ≠ 0 ∧ r ≠ 1) (x : ℚ) :
+  LeanPaper.Section2FiniteDifference.finiteSpanValue es u rs v (x + 1) =
+      LeanPaper.Section2FiniteDifference.translatedSpanValue es u rs v x ∧
+    LeanPaper.Section2FiniteDifference.translatedMoment k es u rs v -
+        LeanPaper.PullbackReflection.tauFiniteSpan k es u rs v =
+      Polynomial.C (if 2 * k ∈ es then u (2 * k) else 0) + ∑ r ∈ rs, Polynomial.C (v r * -(↑r ^ (2 * k + 1))⁻¹)
+Zetahyperbolic.lagrangePolePolynomial_eval_self (N K a : ℕ) (ha : a ∈ Finset.Icc (N + 1) K) :
+  Polynomial.eval (-↑a ^ 2) (Zetahyperbolic.lagrangePolePolynomial N K a) = 1
+Zetahyperbolic.lagrangePolePolynomial_eval_ne (N K a b : ℕ) (ha : a ∈ Finset.Icc (N + 1) K)
+  (hb : b ∈ Finset.Icc (N + 1) K) (hab : a ≠ b) :
+  Polynomial.eval (-↑b ^ 2) (Zetahyperbolic.lagrangePolePolynomial N K a) = 0
+Zetahyperbolic.lagrangePolePolynomial_eval (N K a b : ℕ) (ha : a ∈ Finset.Icc (N + 1) K)
+  (hb : b ∈ Finset.Icc (N + 1) K) :
+  Polynomial.eval (-↑b ^ 2) (Zetahyperbolic.lagrangePolePolynomial N K a) = if a = b then 1 else 0
+Zetahyperbolic.lagrangePolePolynomial_eval_eq_one_iff (N K a b : ℕ) (ha : a ∈ Finset.Icc (N + 1) K)
+  (hb : b ∈ Finset.Icc (N + 1) K) : Polynomial.eval (-↑b ^ 2) (Zetahyperbolic.lagrangePolePolynomial N K a) = 1 ↔ a = b
+Zetahyperbolic.lagrangePoleEvaluationMatrix_eq_one (N K : ℕ) : Zetahyperbolic.lagrangePoleEvaluationMatrix N K = 1
+Zetahyperbolic.det_lagrangePoleEvaluationMatrix (N K : ℕ) : (Zetahyperbolic.lagrangePoleEvaluationMatrix N K).det = 1
+Zetahyperbolic.lagrangePoleEvaluationMatrix_det_ne_zero (N K : ℕ) :
+  (Zetahyperbolic.lagrangePoleEvaluationMatrix N K).det ≠ 0
+Zetahyperbolic.lagrangePoleEvaluationMatrix_mulVec (N K : ℕ) (v : ↥(Finset.Icc (N + 1) K) → ℚ) :
+  (Zetahyperbolic.lagrangePoleEvaluationMatrix N K).mulVec v = v
+LeanPaper.Section2LagrangeBridge.polePolynomial_eval (p : ManuscriptChain.Real.Parameters) (a b : Fin p.h) :
+  Polynomial.eval (ManuscriptChain.PoleDiagonalization.poleNode p b)
+      (LeanPaper.Section2LagrangeBridge.polePolynomial p a) =
+    if a = b then 1 else 0
+LeanPaper.Section2LagrangeBridge.polePolynomial_natDegree (p : ManuscriptChain.Real.Parameters) (a : Fin p.h) :
+  (LeanPaper.Section2LagrangeBridge.polePolynomial p a).natDegree = p.h - 1
+LeanPaper.Section2LagrangeBridge.polePolynomial_ne_zero (p : ManuscriptChain.Real.Parameters) (a : Fin p.h) :
+  LeanPaper.Section2LagrangeBridge.polePolynomial p a ≠ 0
+LeanPaper.Section2LagrangeBridge.polePolynomial_eval_sum (p : ManuscriptChain.Real.Parameters) (a : Fin p.h) (x : ℚ) :
+  Polynomial.eval x (LeanPaper.Section2LagrangeBridge.polePolynomial p a) =
+    ∑ i, LeanPaper.Section2LagrangeBridge.coefficientMatrix p a i * x ^ ↑i
+LeanPaper.Section2LagrangeBridge.coefficientMatrix_mul_vandermonde (p : ManuscriptChain.Real.Parameters) :
+  LeanPaper.Section2LagrangeBridge.coefficientMatrix p * ManuscriptChain.PoleDiagonalization.poleVandermonde p = 1
+LeanPaper.Section2LagrangeBridge.coefficientMatrix_eq_inverse (p : ManuscriptChain.Real.Parameters) :
+  LeanPaper.Section2LagrangeBridge.coefficientMatrix p = (ManuscriptChain.PoleDiagonalization.poleVandermonde p)⁻¹
+LeanPaper.Section2LagrangeBridge.coefficientMatrix_det_ne_zero (p : ManuscriptChain.Real.Parameters) :
+  (LeanPaper.Section2LagrangeBridge.coefficientMatrix p).det ≠ 0
+LeanPaper.Section2LagrangeBridge.lagrange_pencil_eq_actual (p : ManuscriptChain.Real.Parameters) :
+  ManuscriptChain.BasisInvariance.changeBasisPencil (ManuscriptChain.Real.pencil p)
+      (LeanPaper.Section2LagrangeBridge.coefficientMatrix p) (LeanPaper.Section2LagrangeBridge.coefficientMatrix p) =
+    ManuscriptChain.PoleDiagonalization.poleDiagonalPencil p
+LeanPaper.Section2LagrangeBridge.actual_lagrange_entries (p : ManuscriptChain.Real.Parameters) (a b : Fin p.h) :
+  ManuscriptChain.PoleDiagonalization.poleDiagonalPencil p a b =
+    ∑ i,
+      ∑ j,
+        Polynomial.C
+            ((LeanPaper.Section2LagrangeBridge.polePolynomial p a).coeff ↑i *
+              (LeanPaper.Section2LagrangeBridge.polePolynomial p b).coeff ↑j) *
+          ManuscriptChain.Real.pencil p i j
+LeanPaper.Section2LagrangeBridge.actual_lagrange_slope (p : ManuscriptChain.Real.Parameters) :
+  LeanPaper.Section2LagrangeBridge.coefficientMatrix p *
+        ManuscriptChain.PoleDiagonalization.rationalDerivativeMatrix p *
+      (LeanPaper.Section2LagrangeBridge.coefficientMatrix p).transpose =
+    Matrix.diagonal (ManuscriptChain.PoleDiagonalization.poleWeight p)
+LeanPaper.Section2LagrangeIdentification.negative_square_injective : Function.Injective fun a => -↑a ^ 2
+LeanPaper.Section2LagrangeIdentification.archive_polynomial_eq_mathlib (N K a : ℕ) :
+  Zetahyperbolic.lagrangePolePolynomial N K a = Lagrange.basis (Finset.Icc (N + 1) K) (fun b => -↑b ^ 2) a
+LeanPaper.Section2LagrangeIdentification.archive_polynomial_natDegree (p : ManuscriptChain.Real.Parameters)
+  (a : Fin p.h) :
+  (Zetahyperbolic.lagrangePolePolynomial p.N p.K (ManuscriptChain.PoleDiagonalization.poleIndex p a)).natDegree =
+    p.h - 1
+LeanPaper.Section2LagrangeIdentification.archive_polynomial_eval (p : ManuscriptChain.Real.Parameters) (a b : Fin p.h) :
+  Polynomial.eval (ManuscriptChain.PoleDiagonalization.poleNode p b)
+      (Zetahyperbolic.lagrangePolePolynomial p.N p.K (ManuscriptChain.PoleDiagonalization.poleIndex p a)) =
+    if a = b then 1 else 0
+LeanPaper.Section2LagrangeIdentification.archive_polynomial_eq_constructed (p : ManuscriptChain.Real.Parameters)
+  (a : Fin p.h) :
+  Zetahyperbolic.lagrangePolePolynomial p.N p.K (ManuscriptChain.PoleDiagonalization.poleIndex p a) =
+    LeanPaper.Section2LagrangeBridge.polePolynomial p a
+LeanPaper.Section2LagrangeIdentification.archive_coefficients_eq_inverse (p : ManuscriptChain.Real.Parameters)
+  (a i : Fin p.h) :
+  (Zetahyperbolic.lagrangePolePolynomial p.N p.K (ManuscriptChain.PoleDiagonalization.poleIndex p a)).coeff ↑i =
+    (ManuscriptChain.PoleDiagonalization.poleVandermonde p)⁻¹ a i
+LeanPaper.Section4ManuscriptBridge.primitive_leading_barrier_identity (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) :
+  ↑|(ManuscriptChain.GeneralIrrationality.primitivePolynomial p).leadingCoeff| =
+    |ManuscriptChain.RealTransfer.evalReal (ManuscriptChain.GeneralIrrationality.primitivePolynomial p)
+          (ManuscriptChain.Real.zeta p.weight)| *
+      |1 / ManuscriptChain.LeadingCoefficientGap.determinantRatio p|
+LeanPaper.Section4ManuscriptBridge.primitive_evaluation_lower_of_inverse_ratio_bound
+  (p : ManuscriptChain.Real.Parameters) (hp : ManuscriptChain.Real.Admissible p) (T : ℝ) (hT : 0 < T)
+  (hbound : |1 / ManuscriptChain.LeadingCoefficientGap.determinantRatio p| ≤ T) :
+  1 / T ≤
+    |ManuscriptChain.RealTransfer.evalReal (ManuscriptChain.GeneralIrrationality.primitivePolynomial p)
+        (ManuscriptChain.Real.zeta p.weight)|
+LeanPaper.Section4ManuscriptBridge.manuscript_spectral_cluster_fraction (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (U τ μ : ℝ) (hU : τ < U)
+  (hcap : ∀ (i : Fin p.h), LeanPaper.Section4ManuscriptBridge.spectralExponent p hp i ≤ U)
+  (haverage : μ * ↑p.h ≤ ∑ i, LeanPaper.Section4ManuscriptBridge.spectralExponent p hp i) :
+  (μ - τ) / (U - τ) * ↑p.h ≤
+    ↑(PaperOrder.Section4.countAtLeastThreshold τ (LeanPaper.Section4ManuscriptBridge.spectralExponentList p hp))
+LeanPaper.Section4ManuscriptBridge.manuscript_large_exponent_gives_close_root (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (τ : ℝ) (i : Fin p.h)
+  (hlarge : τ ≤ LeanPaper.Section4ManuscriptBridge.spectralExponent p hp i) :
+  have r := (ManuscriptChain.General.factorization p ⋯).root i;
+  ManuscriptChain.Real.evalQ (ManuscriptChain.Real.delta p) r = 0 ∧
+    |r - ManuscriptChain.Real.zeta p.weight| ≤ Real.exp (-τ)
+LeanPaper.Section4ManuscriptBridge.manuscript_primitive_complex_padic_disk (params : ManuscriptChain.Real.Parameters)
+  {q : ℕ} [Fact (Nat.Prime q)] (ξ : ℤ_[q]) (α : ℂ_[q])
+  (hQ :
+    Polynomial.eval ξ
+        (Polynomial.map (Int.castRingHom ℤ_[q]) (ManuscriptChain.GeneralIrrationality.primitivePolynomial params)) ≠
+      0)
+  (hα :
+    ‖α - ↑((algebraMap ℚ_[q] (PadicAlgCl q)) ↑ξ)‖ <
+      ‖↑(Polynomial.eval ξ
+            (Polynomial.map (Int.castRingHom ℤ_[q])
+              (ManuscriptChain.GeneralIrrationality.primitivePolynomial params)))‖) :
+  ‖Polynomial.eval α
+          (Polynomial.map (algebraMap ℚ_[q] ℂ_[q])
+            (Polynomial.map PadicInt.Coe.ringHom
+              (Polynomial.map (Int.castRingHom ℤ_[q])
+                (ManuscriptChain.GeneralIrrationality.primitivePolynomial params))))‖ =
+      ‖↑(Polynomial.eval ξ
+            (Polynomial.map (Int.castRingHom ℤ_[q])
+              (ManuscriptChain.GeneralIrrationality.primitivePolynomial params)))‖ ∧
+    Polynomial.eval α
+        (Polynomial.map (algebraMap ℚ_[q] ℂ_[q])
+          (Polynomial.map PadicInt.Coe.ringHom
+            (Polynomial.map (Int.castRingHom ℤ_[q])
+              (ManuscriptChain.GeneralIrrationality.primitivePolynomial params)))) ≠
+      0
+LeanPaper.Section5DualSpectrum.actualDualPencil_polynomialMatrix {h K : ℕ} (s : ℕ) (c : Fin h → Fin (K + 1) → ℚ)
+  (hc : PaperOrder.PrincipalTheorems.coefficientRowsSeparate (LeanPaper.Section5DualSpectrum.realCoefficients c)) :
+  (LeanPaper.Section5DualSpectrum.actualDualPencil s c hc).polynomialMatrix = fun i j =>
+    (Polynomial.mapRingHom (Rat.castHom ℝ)) (ManuscriptChain.Real.dualEntry s c i j)
+LeanPaper.Section5DualSpectrum.actualDualPencil_detPolynomial {h K : ℕ} (s : ℕ) (c : Fin h → Fin (K + 1) → ℚ)
+  (hc : PaperOrder.PrincipalTheorems.coefficientRowsSeparate (LeanPaper.Section5DualSpectrum.realCoefficients c)) :
+  (LeanPaper.Section5DualSpectrum.actualDualPencil s c hc).detPolynomial =
+    ManuscriptChain.Real.realPolynomial (ManuscriptChain.Real.dualDelta s c)
+LeanPaper.Section5DualSpectrum.selected_monomial_rows_separate {h K : ℕ} (f : Fin h → Fin (K + 1))
+  (hf : Function.Injective f) :
+  PaperOrder.PrincipalTheorems.coefficientRowsSeparate
+    (LeanPaper.Section5DualSpectrum.realCoefficients (PaperOrder.CoreAlgebra.dualSelectedMonomialCoefficients f))
+AUDITED_PROJECT_THEOREM_DECLARATIONS=1523
+AUDITED_PROJECT_DECLARATIONS=2023
+AUDITED_DEPENDENCY_DECLARATIONS=75684
 AUDITED_AXIOMS=[Quot.sound, Classical.choice, propext]
 AXIOM_AUDIT_METHOD=INDEPENDENT_VISITED_SET_GRAPH
 AXIOM_AUDIT_ACCEPTED=ALL_PROJECT_DECLARATIONS
