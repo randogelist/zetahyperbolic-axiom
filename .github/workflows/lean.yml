@@ -1,0 +1,38 @@
+name: Lean 4.33 manuscript formalization
+
+on:
+  push:
+    branches:
+      - main
+      - feat/zetahyperbolic-lean433-foundation
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lean:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Lean project (pinned Mathlib with cache)
+        uses: leanprover/lean-action@v1
+        with:
+          build: true
+          use-mathlib-cache: true
+      - name: Print and audit axioms of completed declarations
+        shell: bash
+        run: |
+          lake env lean Zetahyperbolic/Audit.lean | tee axioms.log
+          if grep -Eq 'sorryAx|Lean\.ofReduceBool|unsafe' axioms.log; then
+            echo "Unexpected axiom or unsafe construction" >&2
+            exit 1
+          fi
+      - name: Reject proof placeholders in source
+        shell: bash
+        run: |
+          if grep -REn '(^|[[:space:]])(sorry|admit|axiom)[[:space:]]' Zetahyperbolic --include='*.lean'; then
+            echo "Placeholder or bare axiom found" >&2
+            exit 1
+          fi
