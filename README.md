@@ -20,16 +20,61 @@ The **YOU_ARE_GOODWORKFLOWFRONTIER** tierlist (from [WORKFLOW.txt](WORKFLOW.txt)
 
 **Partial proof:** `!!` may already apply to individual mathematical components, **not** to the whole printed theorem. `Partially formalized`, `Not formalized` and `Blocked` describe manuscript coverage, **not** extra proof tiers. A false literal claim remains blocked even if a corrected proposition is fully A-Tier. No manuscript-wide `!!!` or `!!!!` certificate is asserted.
 
-## 2. Manuscript items, grouped by proof status
+## 2. All 45 manuscript items — immediately after the tier definitions
 
-| Whole printed item | Item numbers | Count |
-|:---|:---|---:|
-| **RESOLVED** — `!!` A-Tier complete printed result | ~~2.2~~, ~~2.3~~, ~~2.4~~, ~~2.5~~, ~~3.1~~, ~~4.3~~, ~~5.4~~ | **7** |
-| A-Tier components — whole printed result **open** | 3.3, 3.7, 3.8, 3.9, 4.1, 4.2, 4.4, 4.5, 4.6, 4.7, 4.8, 5.1, 5.2, 5.3, 6.2, 6.4, 6.6, 6.9, 6.10, 6.17, 6.18 | 21 |
-| Not formally established at item level | 5.6, 5.7, 6.1, 6.5, 6.7, 6.8, 6.11, 6.12, 6.14, 6.16 | 10 |
-| Literal printed statement **blocked** | 3.2, 3.4, 3.5, 3.6, 6.3, 6.13, 6.15 | 7 |
+The ~~struck-through titles~~ are the **seven complete literal A-Tier paper results**. A `✓` after any other item marks **only its already-proved subclaim**, not the original complete theorem. `BLOCKED` denotes a false printed clause requiring a corrected mathematical statement. No complete manuscript item currently reaches `!!!` or `!!!!`.
 
-**All 45 items** and the exact proof components now crossed off, with fully proved items struck through, appear in the [updated resolution register](docs/PERSISTENT_PAPER_GAPS.md). A completed subcomponent does not remove remaining obligations of its unfinished parent theorem.
+| Paper item | Original manuscript statement | Whole-item proof gate | Already crossed / exact scope |
+|:---|:---|:---|:---|
+| 2.2 | ~~Rational functional pullback~~ | **!! RESOLVED** | ✓ Actual RatFunc pullback and μ functional |
+| 2.3 | ~~Reflection and difference identities for Tau~~ | **!! RESOLVED** | ✓ Full τ reflection, finite difference, derivative bridge |
+| 2.4 | ~~Canonical basis invariance~~ | **!! RESOLVED** | ✓ Arbitrary-basis primitive invariance |
+| 2.5 | ~~Lagrange pole diagonalization~~ | **!! RESOLVED** | ✓ Actual Lagrange rational-functional diagonalization |
+| 3.1 | ~~Universal hyperbolicity and zero-free disk~~ | **!! RESOLVED** | ✓ Actual primitive hyperbolicity; sharp norm disk |
+| 3.2 | Continuous hyperbolic pencil for all real s > 1 | **BLOCKED** literal claim | ✓ Corrected real-s pencil; printed normalization false |
+| 3.3 | Total positivity, leading sign, universal signature | Partial — A-Tier subproofs | ✓ Actual signature; ζ(5) sign/root counts in snditeration |
+| 3.4 | Root interlacing and Dodgson condensation | **BLOCKED** literal claim | ✓ Rank-aware root reality; all-rank Dodgson |
+| 3.5 | Stieltjes J-fraction from interlacing roots | **BLOCKED** literal claim | ✓ Actual rank-one counterexample and corrected fraction |
+| 3.6 | Stieltjes reciprocal-root power sums | **BLOCKED** literal claim | ✓ Entire corrected finite-rank reciprocal corollary |
+| 3.7 | Turanian non-negativity and Newton log-concavity | Partial — A-Tier subproofs | ✓ All-derivative Turán and centered strict Newton |
+| 3.8 | Christoffel-Darboux pole representation and Jacobi derivative | Partial — A-Tier subproofs | ✓ Actual finite pole characteristic spectrum |
+| 3.9 | Hurwitz and Dirichlet hyperbolicity | Partial — A-Tier subproofs | ✓ Finite Fekete kernels and shifted-pole spectrum |
+| 4.1 | Spectral irrationality measure criterion | Partial — A-Tier subproofs | ✓ Conditional rational transfer, effective-onset version |
+| 4.2 | Transfer for algebraic approximations | Partial — A-Tier subproofs | ✓ Integer resultants and limsup algebraic transfer |
+| 4.3 | ~~Ultrametric zero-free disk~~ | **!! RESOLVED** | ✓ Complete ultrametric zero-free disk |
+| 4.4 | Spectral bound and irrationality measure for zeta(5) | Partial — A-Tier subproofs | ✓ Norm–root gap and arithmetic rate comparisons *only* |
+| 4.5 | Irrationality and measure for b*zeta(5)+a*zeta(3) | Partial — A-Tier subproofs | ✓ Finite coupled-shift algebra *only* |
+| 4.6 | Determinant bounds and coefficient heights | Partial — A-Tier subproofs | ✓ Finite determinant/leading-coefficient identity |
+| 4.7 | Root collapse and separation | Partial — A-Tier subproofs | ✓ Finite cluster-count implication |
+| 4.8 | Rational root exclusion and cluster degree bounds | Partial — A-Tier subproofs | ✓ Conditional factor-distance inequalities |
+| 5.1 | Two-variable Beukers measure for zeta(7) | Partial — A-Tier subproofs | ✓ Finite coefficient/slope Gram identity |
+| 5.2 | Dual hyperbolicity and Krein decomposition | Partial — A-Tier subproofs | ✓ Real roots of finite dual pencil; dimension obstruction |
+| 5.3 | Beukers measure and dual pencil for beta(4) | Partial — A-Tier subproofs | ✓ Finite β weighted-Gram models only |
+| 5.4 | ~~Higher-zeta cancellation on even pole pairs~~ | **!! RESOLVED** | ✓ Exact even-pole τ cancellation |
+| 5.6 | Weight-seven prime-sum evaluation and pole refinement | Open — no full item | ✓ Rational sign check, **not** integral evaluation |
+| 5.7 | Double-pole determinant for 1,zeta(5),zeta(6) | Open — no full item | — actual double-pole valuation open |
+| 6.1 | Divided-difference valuation and intrinsic p^-6 barrier | Open — no full item | — p-adic divided-difference valuation open |
+| 6.2 | Simultaneous weight-(6,7) Beukers functional | Partial — A-Tier subproofs | ✓ Exact finite harmonic common denominator |
+| 6.3 | q-adic nonvanishing and positive-cone approximations | **BLOCKED** literal claim | ⚠ Printed cone refuted by non-Lean rational certificate |
+| 6.4 | Character-Vandermonde sign cancellation and beta hyperbolicity | Partial — A-Tier subproofs | ✓ Oriented finite character/Vandermonde sign |
+| 6.5 | q-adic nonvanishing at zero | Open — no full item | — q-adic nonvanishing open |
+| 6.6 | Generalized multi-weight positive-definite pencil | Partial — A-Tier subproofs | ✓ Finite multiweight anchored cone |
+| 6.7 | Universal multi-weight Beukers Krein decomposition | Open — no full item | — infinite Krein measure open |
+| 6.8 | Three-term linear-independence cone | Open — no full item | — full 3-term arithmetic linear forms open |
+| 6.9 | Triple-pole and multi-weight determinants | Partial — A-Tier subproofs | ✓ Corrected finite triple-pole Hermite algebra |
+| 6.10 | Potential-gap identity and quadratic derivative growth | Partial — A-Tier subproofs | ✓ Finite determinant identities |
+| 6.11 | Distribution growth and 2-adic quotient obstruction | Open — no full item | ✓ Odd-square scaling and parity identities |
+| 6.12 | Full-dimension sign-flip positivity and q-adic nonvanishing | Open — no full item | — full sign-flip pencil open |
+| 6.13 | Central-factorial secant differential identity | **BLOCKED** literal claim | ✓ Finite secant identity and corrected sign |
+| 6.14 | Even-pole cosh scaling and coupled pencils | Open — no full item | — even-pole cosh estimates open |
+| 6.15 | Arithmetic transcendence, positive measure and rank-one law | **BLOCKED** literal claim | ✓ Independent odd-beta transcendence and independence |
+| 6.16 | Generalized multi-weight Zeta-Beta pencil | Open — no full item | — actual combined infinite density open |
+| 6.17 | Universal two-variable Zeta-Beta pencil | Partial — A-Tier subproofs | ✓ Counterexamples to local harmonic pole argument |
+| 6.18 | Principal-minor 2-adic integrality and dyadic heights | Partial — A-Tier subproofs | ✓ Exact quotient threshold and degree |
+
+**Outside these 45 numbered results:** the order-s moment-functional foundation in **Definition 2.1** is constructed and audited. It is not silently counted as an eighth completed item.
+
+[See the complete, source-linked 45-item residual proof register](docs/PERSISTENT_PAPER_GAPS.md) and the [six-round source/CI audit](docs/MULTIROUND_RESOLUTION_AUDIT.md) for hypotheses, literal errors, cross-branch receipt distinctions and remaining theorem statements.
 
 ## 3. Cross-branch resolutions already available
 
