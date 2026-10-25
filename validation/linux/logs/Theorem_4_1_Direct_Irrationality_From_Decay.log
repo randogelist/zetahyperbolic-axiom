@@ -1,0 +1,3 @@
+'ManuscriptChain.RealTransfer.irrational_of_decay_and_denominator_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

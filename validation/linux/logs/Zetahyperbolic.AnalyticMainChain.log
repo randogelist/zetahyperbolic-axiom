@@ -1,0 +1,6 @@
+'Zetahyperbolic.GRAM_POSITIVE_ORIGINAL_FROM_POLE_INTEGRALS' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zetahyperbolic.MAIN_CHAIN_FROM_POLE_INTEGRALS' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zetahyperbolic.MAIN_CHAIN_ORIGINAL_ROOTS_FROM_POLE_INTEGRALS' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Zetahyperbolic.MAIN_CHAIN_UNIFORM_FROM_POLE_INTEGRALS' depends on axioms: [propext, Classical.choice, Quot.sound]

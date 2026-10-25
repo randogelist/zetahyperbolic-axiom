@@ -83,4 +83,10 @@ ProofAdvances.Corollary_3_6_FullGram
 ProofAdvances.Corollary_3_6_WeightedCorrected
 ProofAdvances.Corollary_3_6_ExactFiniteRank
 ProofAdvances.Corollary_3_6_AllPrincipalMinors
+LeanPaper.PullbackReflection
+LeanPaper.SingularSlope
+LeanPaper.PrincipalMinorRealRoots
+LeanPaper.ReciprocalRootMoments
+LeanPaper.SingularPrincipalMinorExample
+LeanPaper.AxiomWalk
 LeanPaper.KernelAudit

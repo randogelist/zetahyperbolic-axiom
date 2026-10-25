@@ -1,0 +1,28 @@
+SINGULAR PRINCIPAL MINOR SOURCE REVIEW
+Status: SOURCE_CANDIDATE_NATIVE_COMPILATION_PENDING; no Lean compiler invoked.
+New file: src/LeanPaper/SingularPrincipalMinorExample.lean
+Import: PaperChain.Stage04PrincipalMinorCenter
+
+Actual definitions: Parameters=(k=2,m=1,N=1,K=6); h=5; numerator p 0 0=X+1;
+tailD=(X+4)(X+9)(X+16)(X+25)(X+36).
+Weighted residues eval(numerator,-a^2)/eval(derivative tailD,-a^2)*a^4:
+a=2 -1/840; a=3 3/70; a=4 -16/63; a=5 625/1386; a=6 -21/88.
+Independent exact Python Fraction algebra re-evaluated this formula and sum=0.
+This is exact rational arithmetic, not numerical root sampling or proof certification.
+
+Source proof sequence:
+parameters_admissible -> weighted_residue_table (actual residue definitions,
+ordinary kernel norm_num/decide) -> first_slope_zero (actual entryM finite sum)
+-> first_minor_eq_constant (actual leading index and Matrix.det_fin_one)
+-> first_constant_pos (existing original-pencil determinant_center_pos)
+-> first_minor_eval_pos/no_real_zero and first_minor_natDegree_zero.
+No input assumption asserts the slope computation, positivity, degree or roots.
+Native checking may reveal tactic/API elaboration problems; no PASS is claimed.
+
+Research origin: pinned randogelist/snditeration commit
+8e6f44efbde00d49c44859de6b382f71a7d5ab98, principal archive Git blob
+e96aca8cd872cfcc4c6ff4380164c2602fb789bb, archive SHA256
+3588a70fdd6437624fea6df67ac567edf3ac4349e4f8013fc53c23cccfb7d5ac.
+Archive member PaperAudit/Theorem_3_4_Principal_Minor_Counterexample.lean
+supplied the five-term arithmetic observation. New module connects this to
+actual active source definitions, rather than merely reproducing that sum.

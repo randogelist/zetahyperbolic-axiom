@@ -1,0 +1,4 @@
+'ManuscriptChain.Hyperbolic.integral_polynomial_density' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptChain.Hyperbolic.integrableOn_pole_density' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptChain.Hyperbolic.gram_eq_resolvedKernel_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptChain.Hyperbolic.gram_eq_weighted_integral' depends on axioms: [propext, Classical.choice, Quot.sound]

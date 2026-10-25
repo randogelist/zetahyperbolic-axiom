@@ -1,0 +1,185 @@
+Zetahyperbolic/Section2Checked.lean:273:35: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Zetahyperbolic/Section2Checked.lean:273:35: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Zetahyperbolic/Section2Checked.lean:399:47: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+Zetahyperbolic/Section2Checked.lean:412:18: warning: This simp argument is unused:
+  Int.toNat_of_nonneg (by omega : (0 : ℤ) ≤ (j : ℤ))
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [dIndex]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Zetahyperbolic/Section2Checked.lean:454:46: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Zetahyperbolic/Section2Checked.lean:460:10: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Zetahyperbolic/Section2Checked.lean:487:55: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Zetahyperbolic/Section2Checked.lean:493:51: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Zetahyperbolic/Section2Checked.lean:487:55: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Zetahyperbolic/Section2Checked.lean:582:33: warning: This simp argument is unused:
+  Polynomial.C_sub
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Polynomial.C_add, Polynomial.C_neg, neg_one_mul, inv_neg]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Zetahyperbolic/Section2Checked.lean:606:33: warning: This simp argument is unused:
+  Polynomial.C_sub
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Polynomial.C_add, Polynomial.C_neg]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Zetahyperbolic/Section2Checked.lean:617:5: warning: Variable name `ha` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ha
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Zetahyperbolic/Section2Checked.lean:723:9: warning: Variable name `hj` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hj
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Zetahyperbolic/Section2Checked.lean:830:40: warning: Variable name `hMA` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hMA
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Zetahyperbolic/Section2Checked.lean:830:62: warning: Variable name `hMB` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hMB
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Zetahyperbolic/Section2Checked.lean:977:29: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Zetahyperbolic/Section2Checked.lean:977:29: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Zetahyperbolic/Section2Checked.lean:1145:24: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Zetahyperbolic/Section2Checked.lean:1145:24: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Zetahyperbolic/Section2Checked.lean:1166:49: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Zetahyperbolic/Section2Checked.lean:1179:43: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+Zetahyperbolic/Section2Checked.lean:1207:47: warning: This simp argument is unused:
+  mul_left_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [V_pole, Matrix.mul_apply, Matrix.diagonal_apply, Matrix.transpose_apply, pow_add, mul_comm, mul_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Zetahyperbolic/Section2Checked.lean:1296:5: warning: Variable name `hG` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hG
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Zetahyperbolic/Section2Checked.lean:1367:75: warning: This simp argument is unused:
+  hn1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Polynomial.coeff_sub, Polynomial.coeff_C, Polynomial.coeff_X, hn0, h1n]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Zetahyperbolic/Section2Checked.lean:1382:46: warning: This simp argument is unused:
+  hn1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [muFunctionalPoly, Polynomial.coeff_C_mul, Polynomial.coeff_C, muPolePoly_coeff_zero_of_one_lt, hn, hn0]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Zetahyperbolic/Section2Checked.lean:1439:19: warning: This simp argument is unused:
+  Polynomial.coeff_C_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [c, g, H, Polynomial.coeff_sub, Polynomial.coeff_C, Polynomial.coeff_X]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Zetahyperbolic/Section2Checked.lean:1449:17: warning: This simp argument is unused:
+  hn1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hn0, h1n, hn, g, H, G_lagrange_coeff_zero_of_one_lt p k i i n hn, coeff_C_mul_X_sub_C_zero,
+    Polynomial.coeff_C_mul, Polynomial.coeff_sub, Polynomial.coeff_C, Polynomial.coeff_X]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Zetahyperbolic/Section2Checked.lean:1449:27: warning: This simp argument is unused:
+  hn
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hn0, hn1, h1n, g, H, G_lagrange_coeff_zero_of_one_lt p k i i n hn, coeff_C_mul_X_sub_C_zero,
+    Polynomial.coeff_C_mul, Polynomial.coeff_sub, Polynomial.coeff_C, Polynomial.coeff_X]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Zetahyperbolic/Section2Checked.lean:1449:31: warning: This simp argument is unused:
+  g
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hn0, hn1, h1n, hn, H, G_lagrange_coeff_zero_of_one_lt p k i i n hn, coeff_C_mul_X_sub_C_zero,
+    Polynomial.coeff_C_mul, Polynomial.coeff_sub, Polynomial.coeff_C, Polynomial.coeff_X]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Zetahyperbolic/Section2Checked.lean:1449:34: warning: This simp argument is unused:
+  H
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hn0, hn1, h1n, hn, g, G_lagrange_coeff_zero_of_one_lt p k i i n hn, coeff_C_mul_X_sub_C_zero,
+    Polynomial.coeff_C_mul, Polynomial.coeff_sub, Polynomial.coeff_C, Polynomial.coeff_X]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Zetahyperbolic/Section2Checked.lean:1451:8: warning: This simp argument is unused:
+  coeff_C_mul_X_sub_C_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hn0, hn1, h1n, hn, g, H, G_lagrange_coeff_zero_of_one_lt p k i i n hn, Polynomial.coeff_C_mul,
+    Polynomial.coeff_sub, Polynomial.coeff_C, Polynomial.coeff_X]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Zetahyperbolic/Section2Checked.lean:1440:50: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+Zetahyperbolic/Section2Checked.lean:1440:50: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Zetahyperbolic/Section2Checked.lean:1457:66: warning: Variable name `hk` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hk
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`

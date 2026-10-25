@@ -1,0 +1,44 @@
+{
+  "native_compilation": "NOT_RUN_USER_AUTHORITY",
+  "proof_tier": "SOURCE_CANDIDATE_ONLY",
+  "source_repository": "randogelist/BATCH-ONE",
+  "source_commit": "387cdfd27efcedccc12780daaed7121a00148678",
+  "source_archive": "ZETAHYPERBOLIC_PRINCIPAL_THEOREMS_LEAN_v0_1_9_ZETA7_UNCONDITIONAL (2).zip",
+  "source_archive_git_blob": "e96aca8cd872cfcc4c6ff4380164c2602fb789bb",
+  "source_archive_sha256": "3588a70fdd6437624fea6df67ac567edf3ac4349e4f8013fc53c23cccfb7d5ac",
+  "source_members": [
+    {
+      "path": "PaperOrder/Theorem_3_4_Singular_Slope_Real_Rootedness.lean",
+      "sha256": "500296ac6a47ad6f79e2ddc6b9e0d3896a80ff27fcd953003e898107c19e7738"
+    },
+    {
+      "path": "PaperOrder/Principal_Theorem_3_4_All_Principal_Minors_Real_Rooted.lean",
+      "sha256": "ddcd305e6de54c364d34b4ac41d14420a87a6a9baac7a2e6435efb0012cbafad"
+    }
+  ],
+  "active_modules": [
+    {
+      "path": "src/LeanPaper/SingularSlope.lean",
+      "sha256": "7e67da369d41eeeedee376264e512460a628bbf3c7d6f3d06ef8b131f4dac46d",
+      "status": "SOURCE_PENDING_NATIVE"
+    },
+    {
+      "path": "src/LeanPaper/PrincipalMinorRealRoots.lean",
+      "sha256": "25cd2a12f3e6bd1cde01cbb24b871d5560914670e86aba828342ffbed0024c2c",
+      "status": "SOURCE_PENDING_NATIVE"
+    }
+  ],
+  "mathematical_scope": "Every complex zero of every actual original principal determinant is real under manuscript admissibility and an injective principal index selection, including singular restricted slopes. No exact degree, fixed number of roots, or interlacing asserted.",
+  "translation_bridge": "originalPencil_detPolynomial proves exact coefficient embedding of PrincipalMinors.determinant into the selected symmetric affine determinant. complex_eval_transport proves exact complex evaluation equality. Base positivity uses the existing actual GRAM_POSITIVE result, restricted to the principal submatrix.",
+  "removed_import": "MAIN_CHAIN_CORE_ALGEBRA_95_ADVANCED: unused in the copied weak factorization proof. All used spectral and CFC APIs are already imported by the active Theorem_3_1_Universal_Hyperbolicity_And_Zero_Free_Disk.",
+  "hypotheses": [
+    "Real.Admissible p",
+    "index : Fin r \u21aa Fin p.h",
+    "polynomial evaluation equals zero"
+  ],
+  "remaining_obligations": [
+    "Native Windows Lean 4.33 elaboration and exhaustive axiom audit",
+    "Exact degree under additional nondegeneracy if required",
+    "Interlacing formulation allowing singular principal slopes"
+  ]
+}

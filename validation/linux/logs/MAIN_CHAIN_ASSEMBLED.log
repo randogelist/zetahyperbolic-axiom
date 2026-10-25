@@ -1,0 +1,7 @@
+'ManuscriptChain.REALIZATION' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptChain.GRAM_POSITIVE' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptChain.MAIN_CHAIN_UNCONDITIONAL' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptChain.EXACT_ZERO_FREE_DISK' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zetahyperbolic.GRAM_POSITIVE_ORIGINAL' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zetahyperbolic.MAIN_CHAIN_UNCONDITIONAL' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zetahyperbolic.ORIGINAL_EXACT_ZERO_FREE_DISK' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,30 @@
+'ManuscriptChain.AdjacentLogIncrement.primitiveValue_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptChain.AdjacentLogIncrement.log_primitiveValue_eq_affineEnergy' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ManuscriptChain.AdjacentLogIncrement.affineEnergy_increment_eq_log_ratio' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ManuscriptChain.AdjacentLogIncrement.eventual_quadratic_bound_of_adjacent_drift' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ManuscriptChain.AdjacentLogIncrement.affine_K' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptChain.AdjacentLogIncrement.normalizedQuadraticDecay_of_adjacent_energy_drift' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ManuscriptChain.AdjacentLogIncrement.normalizedQuadraticDecay_of_two_adjacent_log_rates' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ManuscriptChain.AdjacentLogIncrement.normalizedQuadraticDecay_of_adjacent_primitive_ratio' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PaperChain.stage05_affine_original_adjacent_log_ratio' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PaperChain.stage05_zeta5_irrational_if_adjacent_energy_drift' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PaperChain.stage05_zeta5_irrational_if_adjacent_content_gram_rates' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PaperChain.stage05_zeta5_irrational_if_adjacent_primitive_ratio' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

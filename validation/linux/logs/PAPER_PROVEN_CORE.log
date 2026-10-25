@@ -1,0 +1,24 @@
+ManuscriptChain.BasisInvariance.theorem_2_4_canonical_basis_invariance (p : ManuscriptChain.Real.Parameters)
+  (A B : Matrix (Fin p.h) (Fin p.h) ℚ) (hA : A.det ≠ 0) (hB : B.det ≠ 0)
+  (n₀ : ManuscriptChain.BasisInvariance.PrimitiveNormalization (ManuscriptChain.Real.delta p))
+  (nAB :
+    ManuscriptChain.BasisInvariance.PrimitiveNormalization
+      (ManuscriptChain.BasisInvariance.changeBasisPencil (ManuscriptChain.Real.pencil p) A B).det) :
+  nAB.polynomial = n₀.polynomial ∨ nAB.polynomial = -n₀.polynomial
+ManuscriptChain.PoleDiagonalization.derivativeMatrix_det_ne_zero (p : ManuscriptChain.Real.Parameters) :
+  (ManuscriptChain.Real.derivativeMatrix p).det ≠ 0
+ManuscriptChain.LeadingCoefficientGap.primitivePolynomial_eval_eq (p : ManuscriptChain.Real.Parameters) :
+  ManuscriptChain.RealTransfer.evalReal (ManuscriptChain.GeneralIrrationality.primitivePolynomial p)
+      (ManuscriptChain.Real.zeta p.weight) =
+    ManuscriptChain.LeadingCoefficientGap.leadingSize p * ManuscriptChain.LeadingCoefficientGap.determinantRatio p
+ManuscriptChain.PoleDiagonalization.delta_leadingCoeff_reweight_add (p : ManuscriptChain.Real.Parameters) (k step : ℕ) :
+  (ManuscriptChain.Real.delta (ManuscriptChain.PoleDiagonalization.reweight p (k + step))).leadingCoeff =
+    (ManuscriptChain.Real.delta (ManuscriptChain.PoleDiagonalization.reweight p k)).leadingCoeff *
+      ∏ a, ↑(ManuscriptChain.PoleDiagonalization.poleIndex p a) ^ (2 * step)
+'ZetaPaperNoGaps.ALL_ODD_WEIGHT_SPECTRAL_NO_PREMISES' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaPaperNoGaps.ODD_WEIGHT_SPECTRAL' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaPaperNoGaps.ODD_WEIGHT_EXACT_ZERO_FREE_DISK' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaPaperNoGaps.ORIGINAL_PENCIL_SPECTRAL' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptChain.LeadingCoefficientGap.primitivePolynomial_eval_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

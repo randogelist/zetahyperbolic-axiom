@@ -1,0 +1,116 @@
+ManuscriptChain.MAIN_CHAIN_UNCONDITIONAL (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) : ManuscriptChain.General.GeneralStatement p
+Zetahyperbolic.ORIGINAL_EXACT_ZERO_FREE_DISK (p : Zetahyperbolic.HankelParams) (k : ℕ) (hk : 1 ≤ k) :
+  ∃ radius,
+    0 < radius ∧
+      (∀ (z : ℂ),
+          Polynomial.eval₂ (algebraMap ℚ ℂ) z (Zetahyperbolic.Delta_poly p k) = 0 →
+            z.im = 0 ∧
+              z ≠ ↑(ManuscriptChain.Real.zeta (2 * k + 1)) ∧ radius ≤ ‖z - ↑(ManuscriptChain.Real.zeta (2 * k + 1))‖) ∧
+        ∃ z,
+          Polynomial.eval₂ (algebraMap ℚ ℂ) z (Zetahyperbolic.Delta_poly p k) = 0 ∧
+            ‖z - ↑(ManuscriptChain.Real.zeta (2 * k + 1))‖ = radius
+ManuscriptChain.PrincipalMinors.determinant_center_pos (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) {r : ℕ} (index : Fin r ↪ Fin p.h) :
+  0 <
+    ManuscriptChain.Real.evalQ (ManuscriptChain.PrincipalMinors.determinant p index)
+      (ManuscriptChain.Real.zeta p.weight)
+ManuscriptChain.PrincipalMinors.determinant_ne_zero (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) {r : ℕ} (index : Fin r ↪ Fin p.h) :
+  ManuscriptChain.PrincipalMinors.determinant p index ≠ 0
+ManuscriptChain.PrincipalMinors.leading_determinant_center_pos (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (r : ℕ) (hr : r ≤ p.h) :
+  0 <
+    ManuscriptChain.Real.evalQ
+      (ManuscriptChain.PrincipalMinors.determinant p (ManuscriptChain.PrincipalMinors.leadingIndex p r hr))
+      (ManuscriptChain.Real.zeta p.weight)
+ManuscriptChain.PrincipalMinors.two_index_strict (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (i j : Fin p.h) (hij : i ≠ j) :
+  ManuscriptChain.Real.gram p (ManuscriptChain.Real.zeta p.weight) i j *
+      ManuscriptChain.Real.gram p (ManuscriptChain.Real.zeta p.weight) j i <
+    ManuscriptChain.Real.gram p (ManuscriptChain.Real.zeta p.weight) i i *
+      ManuscriptChain.Real.gram p (ManuscriptChain.Real.zeta p.weight) j j
+PaperAdvances.Corollary3_6_WeightedCorrected.weighted_hankel_posSemidef {h : ℕ} (u w : Fin h → ℝ) (n : ℕ)
+  (hw : ∀ (k : Fin h), 0 ≤ w k) : (PaperAdvances.Corollary3_6_WeightedCorrected.weightedHankel u w n).PosSemidef
+PaperAdvances.Corollary3_6_WeightedCorrected.weighted_hankel_det_zero_above_support {h : ℕ} (u w : Fin h → ℝ) (n : ℕ)
+  (hn : h < n) : (PaperAdvances.Corollary3_6_WeightedCorrected.weightedHankel u w n).det = 0
+PaperAdvances.Corollary3_6_ExactFiniteRank.weighted_det_pos_iff_order_le_support {h : ℕ} (u w : Fin h → ℝ)
+  (hu : Function.Injective u) (hw : ∀ (i : Fin h), 0 < w i) (n : ℕ) :
+  0 < (PaperAdvances.Corollary3_6_WeightedCorrected.weightedHankel u w n).det ↔ n ≤ h
+PaperAdvances.Corollary3_6_AllPrincipalMinors.weighted_all_principal_minors_positive {h n m : ℕ} (u w : Fin h → ℝ)
+  (hu : Function.Injective u) (hw : ∀ (k : Fin h), 0 < w k) (hn : n ≤ h) (e : Fin m → Fin n)
+  (he : Function.Injective e) :
+  0 < ((PaperAdvances.Corollary3_6_WeightedCorrected.weightedHankel u w n).submatrix e e).det
+LeanPaper.PullbackReflection.rationalValue_pullback (k : ℕ) (R : Zetahyperbolic.RatMomentElem) (x : ℚ)
+  (hAvoid : ∀ j ∈ Finset.Icc 1 R.maxPole, x ≠ ↑j ∧ x ≠ -↑j) :
+  x ^ (2 * k + 1) * LeanPaper.PullbackReflection.rationalValue R (-x ^ 2) =
+    LeanPaper.PullbackReflection.pulledValue k R x
+LeanPaper.PullbackReflection.muFunctionalPoly_eq_pulledMoment (k : ℕ) (hk : 1 ≤ k) (R : Zetahyperbolic.RatMomentElem) :
+  Zetahyperbolic.muFunctionalPoly k R = LeanPaper.PullbackReflection.pulledMoment k R
+LeanPaper.PullbackReflection.finite_span_reflection (k : ℕ) (hk : 1 ≤ k) (es : Finset ℕ) (u : ℕ → ℚ) (rs : Finset ℤ)
+  (v : ℤ → ℚ) :
+  LeanPaper.PullbackReflection.reflectedMoment k es u rs v = -LeanPaper.PullbackReflection.tauFiniteSpan k es u rs v
+LeanPaper.PullbackReflection.finite_pole_difference (k : ℕ) (rs : Finset ℤ) (v : ℤ → ℚ) (hr : ∀ r ∈ rs, r ≠ 0 ∧ r ≠ 1) :
+  ∑ r ∈ rs, Polynomial.C (v r) * (Zetahyperbolic.tauPolePoly k (r - 1) - Zetahyperbolic.tauPolePoly k r) =
+    ∑ r ∈ rs, Polynomial.C (v r * -(↑r ^ (2 * k + 1))⁻¹)
+LeanPaper.SingularSlope.all_complex_roots_real_even_if_slope_singular {n : ℕ}
+  (p : ManuscriptChain.Spectral.SymmetricAffinePencil n) (positive : p.base.PosDef) (z : ℂ)
+  (hz : Polynomial.eval₂ (algebraMap ℝ ℂ) z p.detPolynomial = 0) : z.im = 0
+LeanPaper.PrincipalMinorRealRoots.original_principal_zeros_real (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) {r : ℕ} (index : Fin r ↪ Fin p.h) (z : ℂ)
+  (hz : Polynomial.eval₂ (algebraMap ℚ ℂ) z (ManuscriptChain.PrincipalMinors.determinant p index) = 0) : z.im = 0
+LeanPaper.PrincipalMinorRealRoots.original_leading_principal_zeros_real (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (r : ℕ) (hr : r ≤ p.h) (z : ℂ)
+  (hz :
+    Polynomial.eval₂ (algebraMap ℚ ℂ) z
+        (ManuscriptChain.PrincipalMinors.determinant p (ManuscriptChain.PrincipalMinors.leadingIndex p r hr)) =
+      0) :
+  z.im = 0
+LeanPaper.ReciprocalRootMoments.manuscript_reciprocal_moments (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (q : ℚ)
+  (hq : ManuscriptChain.Real.evalQ (ManuscriptChain.Real.delta p) ↑q ≠ 0) (n : ℕ) :
+  (∀ (i : Fin p.h),
+      0 <
+        LeanPaper.ReciprocalRootMoments.reciprocalAtom (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) (↑q) i) ∧
+    (LeanPaper.ReciprocalRootMoments.reciprocalHankel (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) (↑q)
+          n).PosSemidef ∧
+      (Matrix.PosSemidef fun i j =>
+          LeanPaper.ReciprocalRootMoments.reciprocalEvenMoment (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp)
+            (↑q) (↑i + ↑j + 1)) ∧
+        (0 <
+              (LeanPaper.ReciprocalRootMoments.reciprocalHankel (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp)
+                  (↑q) n).det ↔
+            n ≤
+              (LeanPaper.ReciprocalRootMoments.atomSupport
+                  (LeanPaper.ReciprocalRootMoments.reciprocalAtom (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp)
+                    ↑q)).card) ∧
+          ((LeanPaper.ReciprocalRootMoments.atomSupport
+                  (LeanPaper.ReciprocalRootMoments.reciprocalAtom (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp)
+                    ↑q)).card <
+              n →
+            (LeanPaper.ReciprocalRootMoments.reciprocalHankel (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp)
+                  (↑q) n).det =
+              0)
+LeanPaper.ReciprocalRootMoments.reciprocalHankel_det_pos_iff {h : ℕ} (r : Fin h → ℝ) (q : ℝ) (n : ℕ) :
+  0 < (LeanPaper.ReciprocalRootMoments.reciprocalHankel r q n).det ↔
+    n ≤ (LeanPaper.ReciprocalRootMoments.atomSupport (LeanPaper.ReciprocalRootMoments.reciprocalAtom r q)).card
+LeanPaper.ReciprocalRootMoments.reciprocalHankel_det_zero_above_distinct_support {h : ℕ} (r : Fin h → ℝ) (q : ℝ) (n : ℕ)
+  (hn : (LeanPaper.ReciprocalRootMoments.atomSupport (LeanPaper.ReciprocalRootMoments.reciprocalAtom r q)).card < n) :
+  (LeanPaper.ReciprocalRootMoments.reciprocalHankel r q n).det = 0
+LeanPaper.SingularPrincipalMinorExample.first_slope_zero :
+  ManuscriptChain.Real.entryM LeanPaper.SingularPrincipalMinorExample.parameters 0 0 = 0
+LeanPaper.SingularPrincipalMinorExample.first_minor_no_real_zero (x : ℝ) :
+  ManuscriptChain.Real.evalQ
+      (ManuscriptChain.PrincipalMinors.determinant LeanPaper.SingularPrincipalMinorExample.parameters
+        LeanPaper.SingularPrincipalMinorExample.firstIndex)
+      x ≠
+    0
+LeanPaper.SingularPrincipalMinorExample.first_minor_natDegree_zero :
+  (ManuscriptChain.PrincipalMinors.determinant LeanPaper.SingularPrincipalMinorExample.parameters
+        LeanPaper.SingularPrincipalMinorExample.firstIndex).natDegree =
+    0
+AUDITED_PROJECT_DECLARATIONS=1447
+AUDITED_DEPENDENCY_DECLARATIONS=66351
+AUDITED_AXIOMS=[Quot.sound, Classical.choice, propext]
+AXIOM_AUDIT_METHOD=INDEPENDENT_VISITED_SET_GRAPH
+AXIOM_AUDIT_ACCEPTED=ALL_PROJECT_DECLARATIONS

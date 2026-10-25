@@ -1,0 +1,28 @@
+'PaperChain.stage01_pullback_monomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PaperChain.stage01_pullback_simple_pole' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PaperChain.stage01_tau_reflection_monomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PaperChain.stage01_tau_reflection_pole' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PaperChain.stage01_tau_difference_all_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PaperChain.stage02_derivative_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PaperChain.stage02_derivative_nonsingular' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PaperChain.stage02_raw_rational_pencil_exact_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PaperChain.stage03_spectral_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PaperChain.stage03_all_roots_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PaperChain.stage03_zero_free_disk' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PaperChain.stage04_expected_degree_le_size' depends on axioms: [propext]
+'PaperChain.stage04_expected_degree_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PaperChain.stage05_irrational_from_quadratic_decay' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PaperChain.stage05_conditional_rational_measure' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PaperChain.stage06_sharpened_implies_standard' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PaperChain.stage07_coupled_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PaperChain.stage09_qadic_nonvanishing_sign' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PaperChain.stage09_weight7_rational_signs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PaperChain.stage10_character_vandermonde_sign' depends on axioms: [propext, Quot.sound]
+'PaperChain.stage10_even_start_positive' depends on axioms: [propext, Quot.sound]
+PaperChain.ExactMinorRankLaw (degree : ℕ → ℕ) (T h : ℕ) : Prop
+PaperChain.HasZeta5StandardSpectralEstimate (normB : ℕ → ℝ) (K₀ : ℕ) : Prop
+PaperChain.HasZeta5SharpenedSpectralEstimate (normB : ℕ → ℝ) (K₀ : ℕ) : Prop
+PaperChain.WeightSandwich (base coupled : ℝ → ℝ) (c₁ c₂ : ℝ) : Prop
+PaperChain.DeterminantAsymptoticWindow (logDetB : ℕ → ℝ) : Prop
+PaperChain.StrictTailCertificate {n : ℕ} (H L : Matrix (Fin n) (Fin n) ℝ) (M : ℕ) : Prop
+PaperChain.BetaPadeRate (error : ℕ → ℝ) (C : ℝ) : Prop

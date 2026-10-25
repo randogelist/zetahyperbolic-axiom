@@ -1,3 +1,8 @@
+import LeanPaper.PullbackReflection
+import LeanPaper.SingularSlope
+import LeanPaper.PrincipalMinorRealRoots
+import LeanPaper.ReciprocalRootMoments
+import LeanPaper.SingularPrincipalMinorExample
 import Definition_2_1_Order_s_Rational_Moment_Functional
 import Theorem_2_4_Canonical_Basis_Invariance
 import Theorem_2_5_Lagrange_Pole_Diagonalization
@@ -83,13 +88,14 @@ import ProofAdvances.Corollary_3_6_FullGram
 import ProofAdvances.Corollary_3_6_WeightedCorrected
 import ProofAdvances.Corollary_3_6_ExactFiniteRank
 import ProofAdvances.Corollary_3_6_AllPrincipalMinors
+import LeanPaper.AxiomWalk
 import Lean
 
 /-! Transitive allowlist audit for EVERY declaration from the active project
 modules. Module ownership includes private/generated declarations. The three
 permitted foundational axioms are explicit; sorryAx and custom assumptions
 are rejected. A successful audit does not discharge explicit theorem hypotheses
-or establish equivalence with a manuscript paragraph. Native execution pending. -/
+or establish equivalence with a manuscript paragraph. Local Linux compilation authorized; native Windows execution remains separate. -/
 set_option maxHeartbeats 0
 set_option maxRecDepth 100000
 open Lean
@@ -103,6 +109,19 @@ open Lean
 #check PaperAdvances.Corollary3_6_WeightedCorrected.weighted_hankel_det_zero_above_support
 #check PaperAdvances.Corollary3_6_ExactFiniteRank.weighted_det_pos_iff_order_le_support
 #check PaperAdvances.Corollary3_6_AllPrincipalMinors.weighted_all_principal_minors_positive
+#check LeanPaper.PullbackReflection.rationalValue_pullback
+#check LeanPaper.PullbackReflection.muFunctionalPoly_eq_pulledMoment
+#check LeanPaper.PullbackReflection.finite_span_reflection
+#check LeanPaper.PullbackReflection.finite_pole_difference
+#check LeanPaper.SingularSlope.all_complex_roots_real_even_if_slope_singular
+#check LeanPaper.PrincipalMinorRealRoots.original_principal_zeros_real
+#check LeanPaper.PrincipalMinorRealRoots.original_leading_principal_zeros_real
+#check LeanPaper.ReciprocalRootMoments.manuscript_reciprocal_moments
+#check LeanPaper.ReciprocalRootMoments.reciprocalHankel_det_pos_iff
+#check LeanPaper.ReciprocalRootMoments.reciprocalHankel_det_zero_above_distinct_support
+#check LeanPaper.SingularPrincipalMinorExample.first_slope_zero
+#check LeanPaper.SingularPrincipalMinorExample.first_minor_no_real_zero
+#check LeanPaper.SingularPrincipalMinorExample.first_minor_natDegree_zero
 run_cmd Elab.Command.liftCoreM do
   let env := (← getEnv).setExporting false
   let allowed : List Name := [``propext, ``Quot.sound, ``Classical.choice]
@@ -191,18 +210,26 @@ run_cmd Elab.Command.liftCoreM do
     `ProofAdvances.Corollary_3_6_FullGram,
     `ProofAdvances.Corollary_3_6_WeightedCorrected,
     `ProofAdvances.Corollary_3_6_ExactFiniteRank,
-    `ProofAdvances.Corollary_3_6_AllPrincipalMinors]
-  let mut count := 0
+    `ProofAdvances.Corollary_3_6_AllPrincipalMinors,
+    `LeanPaper.PullbackReflection,
+    `LeanPaper.SingularSlope,
+    `LeanPaper.PrincipalMinorRealRoots,
+    `LeanPaper.ReciprocalRootMoments,
+    `LeanPaper.SingularPrincipalMinorExample,
+    `LeanPaper.AxiomWalk]
+  let mut roots : Array Name := #[]
   for (decl, _) in env.constants do
     if let some idx := env.getModuleIdxFor? decl then
       if projectModules.contains env.header.moduleNames[idx.toNat]! then
-        let axioms ← collectAxioms decl
-        let extra := axioms.filter (fun ax => !(allowed.contains ax))
-        unless extra.isEmpty do
-          throwError m!"UNTRUSTED_AXIOMS {decl}: {extra.toList}"
-        count := count + 1
-  if count == 0 then
+        roots := roots.push decl
+  if roots.isEmpty then
     throwError "EMPTY_PROJECT_AUDIT"
-  liftIO <| IO.println s!"AUDITED_PROJECT_DECLARATIONS={count}"
-  liftIO <| IO.println "AXIOM_AUDIT_ACCEPTED=ALL_PROJECT_DECLARATIONS"
-
+  let result := LeanPaper.AxiomWalk.collect env roots
+  match LeanPaper.AxiomWalk.check result allowed with
+  | .error msg => throwError msg
+  | .ok () => pure ()
+  IO.println s!"AUDITED_PROJECT_DECLARATIONS={roots.size}"
+  IO.println s!"AUDITED_DEPENDENCY_DECLARATIONS={result.visited.toArray.size}"
+  IO.println s!"AUDITED_AXIOMS={result.axioms.toArray.toList}"
+  IO.println "AXIOM_AUDIT_METHOD=INDEPENDENT_VISITED_SET_GRAPH"
+  IO.println "AXIOM_AUDIT_ACCEPTED=ALL_PROJECT_DECLARATIONS"

@@ -1,0 +1,15 @@
+'ManuscriptChain.PoleDiagonalization.rationalDerivativeMatrix_det_reweight_add' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ManuscriptChain.PoleDiagonalization.rationalDerivativeMatrix_det_reweight_cross' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ManuscriptChain.PoleDiagonalization.rationalDerivativeMatrix_det_reweight_ratio' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ManuscriptChain.PoleDiagonalization.delta_leadingCoeff_reweight_add' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ManuscriptChain.PoleDiagonalization.delta_leadingCoeff_reweight_cross' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

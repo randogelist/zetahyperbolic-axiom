@@ -14,11 +14,17 @@ call "C:\path\to\package\run.cmd"
 
 `MATHLIB_CACHE` can be an existing project root, an existing Mathlib checkout, or the compiled directory containing `Mathlib.olean`. A genuine aggregate `Mathlib.olean` is required; this runner does not generate or substitute a local Mathlib facade. It discovers compiled dependencies in the containing project's `.lake\packages`, Mathlib's own `.lake\packages`, and sibling package caches. For a nonstandard packages directory, set `LEAN_PAPER_PACKAGES_DIR` to the existing directory containing the package checkouts. No dependency is downloaded or rebuilt.
 
-The native toolchain path must name the actual installed compiler, not an elan shim. `LEAN_PAPER_CACHE` can override the default `%USERPROFILE%\lean-native\zetahyperbolic_leaned_paper_strict_v1` cache. `VERSION` supplies the package's canonical log version without changing runner source bytes between releases.
+The native toolchain path must name the actual installed compiler, not an elan shim. `LEAN_PAPER_CACHE` can override the default `%USERPROFILE%\lean-native\zetahyperbolic_leaned_paper_strict_v1` cache. `VERSION` is required and supplies the package's canonical log version without changing runner source bytes between releases. A missing or empty file stops startup before a native build; no hard-coded release version is substituted.
 
 The runner deliberately ignores inherited `LEAN_PATH`. Imports resolve through a temporary view containing only project objects already verified in the current run, followed by explicitly discovered compiled external packages and the installed Lean standard library.
 
 Paths containing `!` or `%` are unsupported and are rejected before delayed expansion is enabled. Use ordinary Windows paths; spaces are supported. The toolchain, external caches and package sources must remain unchanged while the runner is executing. A cache writer lock prevents two copies of this runner from writing the same project cache concurrently. A stale lock is reported rather than silently removed.
+
+## Runner correction in v0_1_1_construction
+
+The external-cache discovery path now clears CMD's inherited error status before appending a newly discovered root. Previously a normal `findstr` no-match returned status 1, and a successful `echo` append could leave that value in place, incorrectly stopping at `EXTERNAL_ROOT_LIST_FAILED`. The append still checks for an actual write failure. This change was reviewed statically; native Windows execution remains a separate check.
+
+The runner hash is part of the environment fingerprint. This correction intentionally invalidates any receipts produced by the earlier runner; the cache schema is unchanged. Future version-only increments can keep the runner bytes identical.
 
 ## Reuse and audit boundaries
 
@@ -34,7 +40,7 @@ A successfully elaborated module receives a **COMPILED_ONLY** receipt. This pres
 AXIOM_AUDIT_ACCEPTED=ALL_PROJECT_DECLARATIONS
 ```
 
-The intended allowed axioms are `propext`, `Quot.sound`, and `Classical.choice`. The Lean audit source owns the actual allowlist check. Unknown/custom axioms, `sorryAx`, and trusted native-decision bridges are not accepted. The final audit may itself be reused only when all its source, targets, full module plan, imports, object and log fingerprints match; its required sentinel is checked again. The run-wide `audit.accepted` receipt is written only after the final audit succeeds, through a verified temporary copy followed by rename. Any package-level acceptance marker from a previous run is removed at startup.
+The intended allowed axioms are `propext`, `Quot.sound`, and `Classical.choice`. The Lean audit source owns the actual allowlist check. `LeanPaper.AxiomWalk` walks declaration types and bodies directly with one visited set for the complete root union; it does not trust exported per-declaration axiom-cache results. This avoids the imported-inductive under-reporting mechanism documented in [Lean issue 15226](https://github.com/leanprover/lean4/issues/15226). Missing constants cause rejection. The helper has passed focused Linux Lean 4.33.0 regression checks, including imported/private/opaque/custom-axiom cases; that result is distinct from this native Windows runner's execution. Unknown/custom axioms, `sorryAx`, and trusted native-decision bridges are not accepted. The final audit may itself be reused only when all its source, targets, full module plan, imports, object and log fingerprints match; its required sentinel is checked again. The run-wide `audit.accepted` receipt is written only after the final audit succeeds, through a verified temporary copy followed by rename. Any package-level acceptance marker from a previous run is removed at startup.
 
 `BUILD_RECEIPT.txt` records the final build summary, new compilations, verified compilation reuse, rejected reuse and module count. A successful native build and axiom audit still leave manuscript equivalence and conditional mathematical endpoints at their separately recorded status. The runner never turns an assumed premise into an unconditional theorem.
 

@@ -1,0 +1,35 @@
+Zetahyperbolic/Foundations.lean:58:8: warning: This simp argument is unused:
+  Polynomial.eval_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Polynomial.eval_add, Polynomial.eval_X, Polynomial.eval_C]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Zetahyperbolic/Foundations.lean:59:4: warning: This simp argument is unused:
+  Polynomial.eval_C
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Polynomial.eval_mul, Polynomial.eval_add, Polynomial.eval_X]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Zetahyperbolic/Foundations.lean:69:8: warning: This simp argument is unused:
+  Polynomial.eval_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Polynomial.eval_add, Polynomial.eval_X, Polynomial.eval_C]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Zetahyperbolic/Foundations.lean:70:4: warning: This simp argument is unused:
+  Polynomial.eval_C
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Polynomial.eval_mul, Polynomial.eval_add, Polynomial.eval_X]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Zetahyperbolic/Foundations.lean:100:41: warning: This simp argument is unused:
+  one_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Polynomial.derivative_add, Polynomial.derivative_X, Polynomial.derivative_C, add_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

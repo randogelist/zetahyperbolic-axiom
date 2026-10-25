@@ -2,7 +2,7 @@
 
 Read WORKFLOW.txt and BRANCH_PURPOSE.txt. Preserve YOU_ARE_GOODWORKFLOWFRONTIER and all exact anchor names.
 
-The user alone runs native Windows Lean 4.33.0. Do not run Lean compilation elsewhere or manufacture PASS evidence. Prepare source increments and use the single native run.cmd with installed cached Mathlib; no runtime Python, PowerShell, WSL, Lake setup or network.
+The user explicitly authorized local Lean installation and compilation on 2026-10-25. Test locally with Lean 4.33.0 and commit-pinned Mathlib; retain compiler logs, environment and source fingerprints. A Linux pass is not a native Windows runner pass. Keep the single Windows run.cmd offline with cached Mathlib and no runtime Python, PowerShell, WSL or Lake setup. Never manufacture PASS evidence.
 
 Keep unchanged previously passed source and dependencies frozen. Reuse objects only when native provenance and source/object/import/environment fingerprints match. Source hashes, archive names and historical prose do not establish a native pass.
 

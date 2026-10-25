@@ -1,0 +1,3 @@
+'Zetahyperbolic.ManuscriptCompatibility.G_pencil_eq_pencil' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zetahyperbolic.ManuscriptCompatibility.Delta_poly_eq_delta' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zetahyperbolic.ManuscriptCompatibility.M_deriv_entry_eq' depends on axioms: [propext, Classical.choice, Quot.sound]

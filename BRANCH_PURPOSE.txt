@@ -1,12 +1,12 @@
 WORKFLOW=YOU_ARE_GOODWORKFLOWFRONTIER
-VERSION=v0_1_0_construction
+VERSION=v0_1_1_construction
 REPOSITORY=https://github.com/randogelist/zetahyperbolic-axiom
 PURPOSE=Build the Leaned Paper from the original 52-page manuscript, supplied project sources and commit-pinned cross-branch Lean bases.
 RESEARCH_INPUTS=ALLOWED; record exact source, hypotheses and translation bridge; no imported assertion becomes an axiom or a proof receipt.
 CURRENT_MODE=A_TIER_EXECUTION
 SECONDARY_MODES=A_TIER_PLANNING;B_TIER_DERIVATION
-COMPILER_AUTHORITY=USER_NATIVE_WINDOWS_LEAN_4_33_0
-CURRENT_PROOF_STATUS=SOURCE_CANDIDATES;NATIVE_BUILD_PENDING;AXIOM_AUDIT_PENDING
+COMPILER_AUTHORITY=USER_AUTHORIZED_LOCAL_LEAN_4_33_0_AND_NATIVE_WINDOWS
+CURRENT_PROOF_STATUS=LOCAL_LINUX_92_OF_92_COMPILE_PASS;LOCAL_TRANSITIVE_AXIOM_AUDIT_PASS;NATIVE_WINDOWS_PENDING;FULL_PAPER_OPEN
 PAPER_POLICY=Preserve literal statement; track errors and corrected variants separately; never report a corrected theorem as proof of a false original.
 SOURCE_POLICY=Retain immutable hashes; select coherent dependency closure; no blind merge or shadow Mathlib.
 CACHE_POLICY=LEAN_ANCHORINGS; strict compatible provenance only; unverifiable old cache receipts are not proof evidence.

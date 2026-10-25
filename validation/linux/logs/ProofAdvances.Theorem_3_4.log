@@ -1,0 +1,2 @@
+'PaperAdvances.Theorem3_4.symmetric_3x3_dodgson' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PaperAdvances.Theorem3_4.symmetric_3x3_sign_at_minor_zero' depends on axioms: [propext, Classical.choice, Quot.sound]

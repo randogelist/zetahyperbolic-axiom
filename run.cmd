@@ -1,6 +1,9 @@
 @echo off
 setlocal EnableExtensions DisableDelayedExpansion
 set "PACKAGE_ROOT=%~dp0"
+set "VERSION="
+if exist "%~dp0VERSION" set /p VERSION=<"%~dp0VERSION"
+if not defined VERSION goto MISSING_VERSION
 rem CALL reparses percent signs; delayed expansion reparses exclamation marks.
 rem Reject these paths before either can corrupt the original path value.
 for %%V in (PACKAGE_ROOT USERPROFILE LEAN_PAPER_CACHE LEAN_EXE LEAN433_EXE MATHLIB_CACHE MATHLIB_CACHE_ROOT MATHLIB_ROOT_OVERRIDE MATHLIB_OLEAN_DIR MATHLIB_DIR LEAN_PAPER_PACKAGES_DIR) do (
@@ -10,8 +13,6 @@ for %%V in (PACKAGE_ROOT USERPROFILE LEAN_PAPER_CACHE LEAN_EXE LEAN433_EXE MATHL
 setlocal EnableDelayedExpansion
 rem Native Windows only. No Lake, Python, PowerShell, WSL or network setup.
 rem COMPILED_ONLY receipts never certify a mathematical theorem. KernelAudit is final.
-set "VERSION=v0_1_0_construction"
-if exist "%~dp0VERSION" set /p VERSION=<"%~dp0VERSION"
 set "PREFIX=GOODWORKFLOWFRONTIER::!VERSION!::"
 set "SCHEMA=LEANED_PAPER_NATIVE_COMPILED_ONLY_SHA256_V1"
 set "FLAGS=-j 16"
@@ -476,6 +477,8 @@ if not exist "%~1\" exit /b 0
 for %%D in ("%~1") do set "EXTERNAL_CANDIDATE=%%~fD"
 findstr /X /L /C:"!EXTERNAL_CANDIDATE!" "!EXTERNAL_ROOTS!" >nul 2>&1
 if not errorlevel 1 exit /b 0
+rem FINDSTR no-match leaves ERRORLEVEL 1; successful ECHO does not clear it.
+call :ClearError
 >>"!EXTERNAL_ROOTS!" echo !EXTERNAL_CANDIDATE!
 if errorlevel 1 exit /b 1
 if defined EXTERNAL_PATH (
@@ -483,6 +486,9 @@ if defined EXTERNAL_PATH (
 ) else (
   set "EXTERNAL_PATH=!EXTERNAL_CANDIDATE!"
 )
+exit /b 0
+
+:ClearError
 exit /b 0
 
 :Emit
@@ -502,6 +508,11 @@ if "!LOCK_HELD!"=="1" rd "!CACHE_ROOT!\writer.lock" >nul 2>&1
 exit /b 1
 
 :UNSUPPORTED_PATH
-echo GOODWORKFLOWFRONTIER::v0_1_0_construction::ERROR=UNSUPPORTED_EXCLAMATION_OR_PERCENT_IN_PATH
- echo GOODWORKFLOWFRONTIER::v0_1_0_construction::SUMMARY=NATIVE_BUILD_OR_AXIOM_AUDIT_FAILED
+echo GOODWORKFLOWFRONTIER::%VERSION%::ERROR=UNSUPPORTED_EXCLAMATION_OR_PERCENT_IN_PATH
+echo GOODWORKFLOWFRONTIER::%VERSION%::SUMMARY=NATIVE_BUILD_OR_AXIOM_AUDIT_FAILED
+exit /b 2
+
+:MISSING_VERSION
+echo GOODWORKFLOWFRONTIER::UNKNOWN_VERSION::ERROR=VERSION_FILE_MISSING_OR_EMPTY
+echo GOODWORKFLOWFRONTIER::UNKNOWN_VERSION::SUMMARY=NATIVE_BUILD_OR_AXIOM_AUDIT_FAILED
 exit /b 2

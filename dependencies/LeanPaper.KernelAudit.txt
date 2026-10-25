@@ -1,3 +1,8 @@
+LeanPaper.PullbackReflection
+LeanPaper.SingularSlope
+LeanPaper.PrincipalMinorRealRoots
+LeanPaper.ReciprocalRootMoments
+LeanPaper.SingularPrincipalMinorExample
 Definition_2_1_Order_s_Rational_Moment_Functional
 Theorem_2_4_Canonical_Basis_Invariance
 Theorem_2_5_Lagrange_Pole_Diagonalization
@@ -83,3 +88,4 @@ ProofAdvances.Corollary_3_6_FullGram
 ProofAdvances.Corollary_3_6_WeightedCorrected
 ProofAdvances.Corollary_3_6_ExactFiniteRank
 ProofAdvances.Corollary_3_6_AllPrincipalMinors
+LeanPaper.AxiomWalk

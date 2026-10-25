@@ -1,5 +1,5 @@
 {
-  "scope": "Focused source audit, not full proof certification; package IDs refer to source_inventory",
+  "scope": "Manuscript-aligned source and semantic ledger; local Linux compiler/axiom evidence is tracked separately from native Windows receipts. A successful build does not close open or corrected manuscript clauses.",
   "proof_marker": "NONE",
   "rows": [
     {
@@ -7,16 +7,18 @@
       "title": "Rational functional pullback",
       "source_state": "PARTIAL_SOURCE",
       "native_status": "PENDING_CURRENT_RECEIPT",
-      "sources": "19:Section2FunctionLevelPullback;19:Stage01FullRationalPullback;23:Paper10Section2OddPoleAllWeights",
-      "remaining_obligation": "Reconcile function-level partial fractions and polynomial Tau domain with actual manuscript functional; native audit required."
+      "sources": "19:Section2FunctionLevelPullback;19:Stage01FullRationalPullback;23:Paper10Section2OddPoleAllWeights;NEW:LeanPaper/PullbackReflection",
+      "remaining_obligation": "New source connects exact pointwise substitution outside the finite pole set with the canonical normal-form moment identity, retaining the whole polynomial quotient and proving its lower moments vanish. Representation independence under equality of arbitrary RatFunc expressions and complete manuscript-domain identification remain open.",
+      "local_compiler_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED_EXACT_NEW_DECLARATIONS"
     },
     {
       "manuscript_item": "2.3",
       "title": "Reflection and difference identities for Tau",
       "source_state": "PARTIAL_SOURCE",
       "native_status": "PENDING_CURRENT_RECEIPT",
-      "sources": "19:Section2MomentPoles;19:Section2PolynomialTau;23:Paper10Section2PoleReflection;23:Paper10Section2TauPoleDifference",
-      "remaining_obligation": "Combine polynomial and pole identities on the full rational-function domain."
+      "sources": "19:Section2MomentPoles;19:Section2PolynomialTau;23:Paper10Section2PoleReflection;23:Paper10Section2TauPoleDifference;NEW:LeanPaper/PullbackReflection",
+      "remaining_obligation": "New source assembles reflection for finite monomial-plus-integer-pole spans and difference for admissible finite pole spans. Full polynomial-plus-pole difference assembly, pointwise reflection/difference representation bridges, and independence of arbitrary rational-function representations remain open.",
+      "local_compiler_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED_EXACT_NEW_DECLARATIONS"
     },
     {
       "manuscript_item": "2.4",
@@ -55,16 +57,18 @@
       "title": "Total positivity, leading sign, universal signature",
       "source_state": "PARTIAL_SOURCE",
       "native_status": "PENDING_CURRENT_RECEIPT",
-      "sources": "20:Theorem_2_5_Lagrange_Pole_Diagonalization;19:Section3SignatureCounts;NEW:Stage04PrincipalMinorCenter",
-      "remaining_obligation": "New candidate closes principal-minor positivity only. Arbitrary mixed minors, Stieltjes determinacy, actual signature transfer/counts and exact leading sign remain separate."
+      "sources": "20:Theorem_2_5_Lagrange_Pole_Diagonalization;19:Section3SignatureCounts;NEW:PaperChain/Stage04PrincipalMinorCenter;NEW:LeanPaper/PrincipalMinorRealRoots",
+      "remaining_obligation": "Actual principal Gram submatrices are positive definite at the true odd-zeta center. The new restriction bridge retains that positivity for arbitrary principal subpencils. Arbitrary mixed-minor total positivity, Stieltjes determinacy, exact original signature/count transfer and leading sign remain separate obligations.",
+      "local_compiler_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED_EXACT_NEW_DECLARATIONS"
     },
     {
       "manuscript_item": "3.4",
       "title": "Root interlacing and Dodgson condensation",
-      "source_state": "PARTIAL_SOURCE",
+      "source_state": "PRINTED_STATEMENT_REQUIRES_CORRECTION",
       "native_status": "PENDING_CURRENT_RECEIPT",
-      "sources": "20:PaperChain/Stage04;NEW:Stage04PrincipalMinorCenter;23:Paper10Section3TwoByTwoInterlacing",
-      "remaining_obligation": "New source proves actual principal determinant center positivity/nonzero; all-rank exact degree/interlacing/Dodgson remain open."
+      "sources": "PDF:pp9-10;20:PaperChain/Stage04;NEW:PaperChain/Stage04PrincipalMinorCenter;NEW:LeanPaper/SingularSlope;NEW:LeanPaper/PrincipalMinorRealRoots;NEW:LeanPaper/SingularPrincipalMinorExample;23:Paper10Section3TwoByTwoInterlacing",
+      "remaining_obligation": "New sources construct real-rootedness of every actual principal determinant even with singular slope, and an actual admissible k=2,m=1,N=1,K=6 first minor that is positive constant and has no roots. The printed universal r-root enumeration/closest-root-minimum clause requires correction. Exact degree/rank law, rank-sensitive interlacing and all-rank Dodgson assembly remain open; the counterexample does not reject eigenvalue interlacing or Dodgson itself.",
+      "local_compiler_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED_EXACT_NEW_DECLARATIONS"
     },
     {
       "manuscript_item": "3.5",
@@ -79,8 +83,9 @@
       "title": "Stieltjes reciprocal-root power sums",
       "source_state": "PRINTED_STATEMENT_REQUIRES_CORRECTION",
       "native_status": "PENDING_CURRENT_RECEIPT",
-      "sources": "PDF:p11;REMOTE:v1_2_55/Corollary_3_6_ExactFiniteRank;REMOTE:v1_2_55/Corollary_3_6_AllPrincipalMinors",
-      "remaining_obligation": "Literal all-order strictness false for finite support; corrected sharp order bound uses number of DISTINCT inverse-square atoms. Printed convergence factor bound reversed and odd log-derivative sign inconsistent. See manuscript_issues.txt. Original-root injectivity NOT supplied."
+      "sources": "PDF:p11;REMOTE:v1_2_55/Corollary_3_6_ExactFiniteRank;REMOTE:v1_2_55/Corollary_3_6_AllPrincipalMinors;NEW:LeanPaper/ReciprocalRootMoments",
+      "remaining_obligation": "New source constructs the actual determinant root vector and coalesces repeated inverse-square gaps into distinct atoms with positive multiplicities. At a rational shift where the actual determinant is nonzero, both Hankel and shifted Hankel matrices are PSD at every order; determinant positivity holds exactly through the distinct-support size and vanishes above it. Log-derivative identification, rationality and nearest-root limit/rate remain open. Literal all-order strictness is false, the printed factor bound is reversed, and the odd log-derivative sign requires correction.",
+      "local_compiler_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED_EXACT_NEW_DECLARATIONS"
     },
     {
       "manuscript_item": "3.7",
@@ -362,5 +367,7 @@
       "sources": "",
       "remaining_obligation": "Retain this manuscript obligation. No manuscript-equivalent native certification established by this focused review; historical theorem filenames/blueprints are not proof evidence."
     }
-  ]
+  ],
+  "local_validation": "92_ACTIVE_MODULES_COMPILED_AND_AXIOM_AUDITED;EXACT_STATEMENT_SCOPE_ONLY",
+  "local_receipt": "validation/linux/acceptance.json"
 }

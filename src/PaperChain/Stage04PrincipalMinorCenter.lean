@@ -77,7 +77,7 @@ def leadingIndex (p : Real.Parameters) (r : ℕ) (hr : r ≤ p.h) :
   inj' := by
     intro i j hij
     apply Fin.ext
-    exact congrArg Fin.val hij
+    exact congrArg (fun a : Fin p.h => a.val) hij
 
 /-- Every leading principal determinant is positive at the actual zeta
 center. This gives the required nonzero starting point for the minor chain. -/

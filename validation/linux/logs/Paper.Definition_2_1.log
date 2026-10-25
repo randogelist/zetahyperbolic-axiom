@@ -1,0 +1,4 @@
+ManuscriptChain.Real.monomialMoment (k e : ℕ) : ℚ
+ManuscriptChain.Real.poleConstant (k a : ℕ) : ℚ
+ManuscriptChain.Real.pencil (p : ManuscriptChain.Real.Parameters) : Matrix (Fin p.h) (Fin p.h) ℚ[X]
+ManuscriptChain.Real.delta (p : ManuscriptChain.Real.Parameters) : ℚ[X]

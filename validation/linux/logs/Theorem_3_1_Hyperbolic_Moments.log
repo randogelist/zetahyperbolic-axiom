@@ -1,0 +1,8 @@
+'ManuscriptChain.Hyperbolic.integral_pow_mul_exp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptChain.Hyperbolic.integral_tsum_momentTerm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptChain.Hyperbolic.integrableOn_tsum_momentTerm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptChain.Hyperbolic.integrableOn_monomial_density' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptChain.Hyperbolic.integral_monomial_density' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptChain.Hyperbolic.integral_monomial_density_eq_monomialMoment' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
