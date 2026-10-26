@@ -235,4 +235,7 @@ LeanPaper.BeukersOffDiagonalKernel
 LeanPaper.Section4AlgebraicHeight
 LeanPaper.Section5RationalIndependence
 LeanPaper.WeightFiveSignatureCount
+LeanPaper.Section3OrthogonalKernel
+LeanPaper.Section4FactorDegreeBounds
+LeanPaper.BeukersIntegralPencil
 LeanPaper.KernelAudit
