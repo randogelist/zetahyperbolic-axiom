@@ -1,0 +1,2 @@
+MAIN_CHAIN_ASSEMBLED
+Theorem_3_1_Pole_Integral_Identity

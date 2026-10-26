@@ -272,5 +272,8 @@ roots = [
   "LeanPaper.Section5OuterPrimeIntegral",
   "LeanPaper.BetaCouplingDerivative",
   "LeanPaper.BeukersOuterValuation",
+  "LeanPaper.PadicDominantDeterminant",
+  "LeanPaper.BeukersHarmonicRemainders",
+  "LeanPaper.BeukersPrimeMatrix",
   "LeanPaper.KernelAudit",
 ]

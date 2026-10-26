@@ -56,7 +56,11 @@ jobs:
           order = {m:i for i,m in enumerate(modules)}
           for m in modules:
               source = (root / 'src' / (m.replace('.', '/') + '.lean')).read_text()
-              for dep in re.findall(r'^import\s+([A-Za-z0-9_.]+)', source, re.M):
+              imports = re.findall(r'^import\s+([A-Za-z0-9_.]+)', source, re.M)
+              declared = [d.strip() for d in (root / 'dependencies' / (m + '.txt')).read_text().splitlines() if d.strip() and not d.lstrip().startswith('#')]
+              assert len(declared) == len(set(declared)), ('DUPLICATE_DEPENDENCY', m)
+              assert set(declared) == {d for d in imports if d in order}, ('DEPENDENCY_PLAN_MISMATCH', m)
+              for dep in imports:
                   if dep in order:
                       assert order[dep] < order[m], (m, dep)
                   else:
