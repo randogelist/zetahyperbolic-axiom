@@ -99,3 +99,82 @@ The most efficient *genuinely new* theorem completions to target are:
 6. For **5–6**, prove true infinite two-variable moments/tail estimates and local p/q-adic valuations; replace false positive-cone claims and erroneous pole classifications.
 
 Each new crossing requires **the exact theorem**, **same mathematical data**, **passing Lean build**, **independent full transitive axiom audit**, **source/Mathlib SHA**, and **proof dependencies from the claimed hypotheses to the original paper clause**. Work on this tracker is documentation; `main` was not modified.
+
+
+## 9. Round 7 — literal PDF clauses versus exact source signatures
+
+This pass compared the supplied **52-page manuscript** directly against the checked theorem signatures, not just file titles:
+
+- **3.4(2) fully resolved as its own clause:** [`LeanPaper.DodgsonCondensation.manuscript_at_minor_root`](../src/LeanPaper/DodgsonCondensation.lean) proves the exact signed-square Jacobi evaluation and `≤ 0`, for the actual manuscript pencil and arbitrary embedded principal blocks. The general determinant condensation formula is also proved. Original **3.4(1)** is still blocked by the universal rank-`r` root enumeration and missing rank-compatible interlacing.
+- **3.7(1) is resolved:** [`actual_primitive_all_derivative_turan`](../src/LeanPaper/HigherDerivativeTuran.lean) and [`actual_primitive_all_derivative_turan_strict`](../src/LeanPaper/HigherDerivativeTuran.lean) prove every derivative Turán inequality and strictness off derivative zeros. [`theorem_3_7_strict_center`](../src/LeanPaper/ActualStrictCenter.lean) proves the precise strict center bound. **3.7(2) is resolved** by [`actual_coefficient_strict_criterion`](../src/LeanPaper/ActualStrictNewton.lean), with the actual coefficient zero/nonzero equality cases. For **3.7(3)**, [`actual_centered_newton_strict`](../src/LeanPaper/ActualStrictNewton.lean) proves the full centered strict normalized inequality; the manuscript additionally asserts **every individual** centered coefficient is nonzero, which the source does not prove. The symbol `HasDistinctRoots` in these source modules means at least two *different* roots, not pairwise simple roots. Do not credit that missing nonvanishing clause.
+- **5.2(1) is resolved as a finite clause:** [`Section5DualSpectrum.actual_dual_degree`](../src/LeanPaper/Section5DualSpectrum.lean) and [`actual_dual_zeros_real`](../src/LeanPaper/Section5DualSpectrum.lean) work on the paper's exact **rational** `Real.dualDelta`, with `coefficientRowsSeparate` equivalent to the stated independent coefficient rows. The infinite signed-integral decomposition **5.2(2)** and tail-controlled polynomial cones **5.2(3)** are still missing.
+- **6.15(1), two independent subclaims resolved:** [`OddBetaValues.betaOdd_transcendental`](../src/LeanPaper/OddBetaValues.lean) and [`betaOdd_linearIndependent`](../src/LeanPaper/OddBetaValues.lean) prove the actual ordered beta series are transcendental and each finite family, together with 1, is rationally linearly independent. The printed **effective irrationality-measure** clause of 6.15(1) remains open; 6.15(2)'s positive measure and exterior asymptotic remain open/incorrect respectively.
+
+**Round 7 receipt:** crossed **3.4(2), 3.7(1)–(2) and centered strict inequality, 5.2(1), and the first two arithmetic claims of 6.15(1)**. None of these promotes an entire additional item to complete; each parent's remaining clause is real.
+
+## 10. Round 8 — exact `K=30n` primitive ζ(5) family, degree, positivity
+
+The original Theorem 4.4 uses `K=30n,N=3n,h=27n,m=3,k=2` and a primitive integer polynomial. [`MAIN_CHAIN_IRRATIONALITY.lean`](../src/MAIN_CHAIN_IRRATIONALITY.lean) contains the **exactly matched** family
+
+```lean
+def affineFamily (k n : ℕ) : Real.Parameters :=
+  ⟨k, 3, 3 * (n + 1), 30 * (n + 1)⟩
+```
+
+so `affineFamily 2 n` runs through the manuscript's positive-index weight-five family, merely reindexed by `n+1`. The source proves:
+
+1. **Fully crossed off:** [`primitivePolynomial_isPrimitive`](../src/MAIN_CHAIN_IRRATIONALITY.lean), [`primitivePolynomial_eval`](../src/MAIN_CHAIN_IRRATIONALITY.lean), [`primitivePolynomial_natDegree`](../src/MAIN_CHAIN_IRRATIONALITY.lean), [`primitivePolynomial_eval_pos`](../src/MAIN_CHAIN_IRRATIONALITY.lean) and `affineFamily_admissible`, `affineFamily_h`, `affineFamily_unbounded`. Thus integer primitiveness, exact `h=27(n+1)` degree, actual zeta(5) center positivity/nonvanishing and unbounded admissible indices are already Lean-proved. Calling the *existence of a primitive integer normalization* an open obstacle is too broad; only the **effective arithmetic multiplier/height growth** and **decay** remain open.
+2. [`PaperChain.Stage05RateGapBridge.stage05_original_primitive_gap_identity`](../src/PaperChain/Stage05RateGapBridge.lean) proves the **exact finite leading-size × determinant-ratio identity**, while `stage05_original_determinant_ratio_pos` proves positivity. [`stage05_zeta5_irrational_if_leading_ratio_gap`](../src/PaperChain/Stage05RateGapBridge.lean) proves **a conditional** `Irrational (Real.zeta 5)` from explicit uniform leading and determinant log-rate hypotheses. It does **not** discharge either hypothesis.
+3. [`Section4EffectiveBudget.manuscript_effective_rate_margins`](../src/LeanPaper/Section4EffectiveBudget.lean) settles the *arithmetic comparisons of constants*, not the analytic rates.
+
+**Still open:** actual prime/determinant multiplier size, the required `exp(-K²/2500)` bound, `‖B_K‖ ≤ exp(11.411K)` and effective onset; without them **Theorem 4.4 remains partial**. A conditional `irrational_zeta...` theorem in the repo is a valid A-Tier implication, **never** an unconditional zeta result.
+
+## 11. Round 9 — a genuine ζ(7) inequality and negative dual direction
+
+[`ImportedSection56/ZetaSevenBound.lean`](../src/LeanPaper/ImportedSection56/ZetaSevenBound.lean) contains the following **unconditional, kernel-audited** actual-value results:
+
+- `zetaSeven_tail_le_one_div_64`: an explicitly proved tail bound for `Σ_{n≥2}n⁻⁷`.
+- `zetaSeven_lt_38_div_37`: `Real.zeta 7 < 38/37`.
+- `weightSeven_rankOne_negative_unconditional`: an **actual weight-seven rational dual determinant** is strictly negative at the true `Real.zeta 7`.
+
+These are more than generic finite matrix algebra, and should be marked crossed off as actual analytic/finite-sign components of **5.2**. They do **not** prove the *arbitrary-`h` infinite positive and negative Krein subspaces* or the two-variable Beukers integral identity, and therefore do not make 5.2 a complete printed theorem.
+
+## 12. Round 10 — actual finite energy, content/Gram identity and adjacent drift
+
+Already audited and now explicitly crossed off as **actual manuscript-family** finite identities:
+
+- [`FiniteEnergy.finite_potential_conservation`](../src/Theorem_4_1_Determinant_Log_Energy.lean): `leadingLog + valueDecayLog = determinantEnergy` **for every admissible parameter tuple**, and `finite_potential_conservation_per_K_sq`: exact equality after division by `K²` for each finite `K`.
+- [`Stage08FinitePotentialBridge.stage08_original_finite_potential_conservation_per_K_sq`](../src/PaperChain/Stage08FinitePotentialBridge.lean) explicitly transports the normalized identity to the original manuscript parameter wrapper.
+- [`ContentGramCancellation.primitive_eval_log_eq_content_add_gram`](../src/Theorem_4_1_Content_Gram_Cancellation.lean) and [`Stage05ContentGramBridge.stage08_original_content_gram_energy_identity`](../src/PaperChain/Stage05ContentGramBridge.lean) give the exact content + Gram decomposition.
+- [`AdjacentLogIncrement.affineEnergy_increment_eq_log_ratio`](../src/Theorem_4_1_Adjacent_Log_Increment.lean) and [`Stage05AdjacentDriftBridge.stage05_affine_original_adjacent_log_ratio`](../src/PaperChain/Stage05AdjacentDriftBridge.lean) give the **exact adjacent step** for the actual affine family.
+- All four bridge families have separate conditional theorems `..._irrational_if_...`; these are genuine A-Tier **conditional implications**, not the yet-unproved uniform decay/gap premise.
+
+Mark these finite **4.4/4.6/6.10** identities as resolved. **Theorem 6.10's quadratic limiting potential gap/derivative-growth asymptotics remain open**; an identity valid at each finite `K` cannot supply the sign of a `K→∞` limit.
+
+## 13. Round 11 — finite arithmetic vs global claim, and counterexample scope
+
+Reviewing actual source rather than module names:
+
+- **5.6:** [`PaperChain.Stage09.stage09_weight7_rational_signs`](../src/PaperChain/Stage09.lean) proves numerical **signs of given rational numbers**, **not** the table's floor-piece integral `453803/288000`. Cross off the rational sign only.
+- **6.2:** [`BeukersDenominator.dualConstant_seven_denominator`](../src/LeanPaper/BeukersDenominator.lean) proves the finite `6d_K^7` denominator. The two-variable integral to those rational moments remains open.
+- **6.11/6.18:** [`DyadicQuotientThreshold`](../src/LeanPaper/DyadicQuotientThreshold.lean) settles the exact polynomial quotient cutoff and odd-square/parity identities, **not** the Euler distribution, 2-adic local residue valuation and effective dyadic multiplier.
+- **6.3(2):** [the signed Beukers negative-cone counterexample](BEUKERS_POSITIVITY_COUNTEREXAMPLE.md) has exact rational arithmetic and a justified elementary analytic enclosure, but the **full counterexample certificate has not been compiled in Lean**. Thus the literal paper claim is blocked on mathematical grounds, without inventing a Lean theorem.
+- **6.13:** [finite secant differential and sign-correction proof](../src/LeanPaper/CentralFactorialSecant.lean) is A-Tier; original infinite-series sign is wrong, and the corrected termwise differentiation/β-pencil transfer remains unproved.
+- **6.15(2):** the published fixed-exterior `h^(-2k)` asymptotic factor conflicts with the Szegő regime for `k≥1`; the necessary analytic replacement itself is not a Lean-verified asymptotic.
+- **6.17:** [`BetaHarmonicIndexObstruction`](../src/LeanPaper/BetaHarmonicIndexObstruction.lean) proves the **specific** `q=11` denominator and `q=41` leading-diagonal diagnostics; do not infer a general refutation of the separately conditional whole theorem.
+
+## 14. Round 12 — branch acceptance and terminal reconciliation
+
+Checked the following source heads against their actual build receipts:
+
+| Branch / proof source | Exact status | Consequence for crossings |
+|:--|:--|:--|
+| [`zetahyperbolic-axiom/main@86ca99a`](https://github.com/randogelist/zetahyperbolic-axiom/commit/86ca99a23d65cde4880a9005a49076c43e7bc968) | [CI PASS 40188664869](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40188664869): sequential Lean 4.33 build and independent transitive axiom check, 219 modules | A-Tier for exact compiled source signatures, not hypothetical printed scope |
+| `zetahyperbolic-axiom/leaned-paper`, `feat/leaned-paper-source-assembly-v0_1_0` | Historical PASS, ancestor/reusable sources | No upgrade over the more complete current `main` |
+| [`zetahyperbolic-axiom/continuation-in-progress`](https://github.com/randogelist/zetahyperbolic-axiom/tree/continuation-in-progress) | `CONTINUATION_CHECKPOINT.json` explicitly labels **IN_PROGRESS_NOT_VERIFIED_BUILD** | Its `Section2LagrangeFormula` and other candidates are **not** accepted new crossings |
+| [`snditeration/main@c521749`](https://github.com/randogelist/snditeration/commit/c521749190cce9981b0f108a8edc8034420f6420) | [CI PASS 40186793090](https://github.com/randogelist/snditeration/actions/runs/40186793090), 846 audited theorem declarations (including generated ones) | Exact `3.3(2)` weight-five primitive sign and `3.3(3)` root-side count can be independently considered proved **externally**; receiving-project bridge still separate |
+| [`snditeration` broad continuation](https://github.com/randogelist/snditeration/tree/feat/zetahyperbolic-continuation-20261025) | [CI FAILED 40188938699](https://github.com/randogelist/snditeration/actions/runs/40188938699) | No crossing from unaccepted `CarlemanDivergence`, `CauchyInterlacing`, `ChristoffelDarboux` etc. |
+
+**This extended 12-round audit does not find an eighth manuscript item with a proven **complete literal** Lean statement.** Seven remain `!!` A-Tier complete. Numerous important *exact* subtheorems have been crossed off (including the real manuscript `K=30n` primitive integer family), while the remaining proof bridges, failed printed clauses and analytic/asymptotic endpoints are retained without inflation. No `!!!` / `!!!!` certificate is claimed.
+
+**Subsequent audit policy:** New status promotions require a *new* successful proof receipt plus exact original-statement matching, not repeated reviews of the same unchanged accepted source.
