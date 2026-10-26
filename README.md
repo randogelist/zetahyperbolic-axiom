@@ -4,7 +4,7 @@ This repository formalizes the supplied manuscript, *Spectral Theory and Diophan
 
 ## Showcase — three strongest theorem chains
 
-Selected for completed endpoints, breadth of the proved mathematics and direct connection to the manuscript. **`!! A-Tier` means the exact original or separately stated alternative has compiled and passed the transitive axiom audit.** Current receiving verification is tied to commit `7250b47ba4d20ba934e890966a9b77a559689cfd`, [GitHub Actions run 40327942655](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40327942655), and [its matching receipt](validation/github/20261026/acceptance.json). Historical [Linux acceptance](validation/linux/acceptance.json), [axiom audit](validation/linux/proof_integrity.json) and [source inventory](provenance/active_module_hashes.json) remain historical evidence. Neither checkpoint completes the paper.
+Selected for completed endpoints, breadth of the proved mathematics and direct connection to the manuscript. **`!! A-Tier` means the exact original or separately stated alternative has compiled and passed the transitive axiom audit.** Current receiving verification is tied to commit `cdcb1935aa73a7c7e65006c1c198d114e9dcc6db`, [GitHub Actions run 40339809027](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40339809027), and [its matching receipt](validation/github/20261026-prime/acceptance.json). Historical [Linux acceptance](validation/linux/acceptance.json), [axiom audit](validation/linux/proof_integrity.json) and [source inventory](provenance/active_module_hashes.json) remain historical evidence. Neither checkpoint completes the paper.
 
 Green nodes are proved components within the stated scope. The maps summarize mathematical connections, not module import order. The full [chapter routes and deadpoints](#reading-the-chapter-flowcharts) follow below.
 
@@ -117,7 +117,9 @@ is linearly independent over `ℚ`. Independence uses polynomial evaluation at t
 
 The recorded `v0_1_5_construction` Linux checkpoint contains **219 modules**, all compiled and independently audited in that historical environment. That historical 53-module increment preserved all 165 then-prior mathematical/helper sources byte for byte. The audit traverses **3,135 project declarations** and their dependencies, including private declarations; the only axioms are `propext`, `Quot.sound` and `Classical.choice`. See [acceptance](validation/linux/acceptance.json) and [proof integrity](validation/linux/proof_integrity.json). These declaration counts are not counts of manuscript theorems.
 
-**Current GitHub CI checkpoint:** `7250b47ba4d20ba934e890966a9b77a559689cfd`, [run 40327942655](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40327942655), verifies all **260 registered modules**, including a fresh `ALL_PROJECT_DECLARATIONS` audit and fresh negative-audit regressions. [Matching source, compiler, object and log receipt](validation/github/20261026/acceptance.json). This is a GitHub CI result; native Windows execution is not claimed.
+The preceding integrated 260-module tree also passed a fresh, zero-reuse [main build 40331767740](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40331767740); its [immutable receipt](validation/github/20261026-main/acceptance.json) is retained.
+
+**Current GitHub CI checkpoint:** `cdcb1935aa73a7c7e65006c1c198d114e9dcc6db`, [run 40339809027](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40339809027), verifies all **263 registered modules**, including a fresh `ALL_PROJECT_DECLARATIONS` audit and fresh negative-audit regressions. [Matching source, compiler, object and log receipt](validation/github/20261026-prime/acceptance.json). This is a GitHub CI result; native Windows execution is not claimed.
 
 ## Paper chapters and theorem tiers
 
@@ -143,7 +145,7 @@ Five separately stated alternatives have whole-endpoint `!!` evidence: **3.2.alt
 
 **Coverage after the receiving audit:** **12/45 full original results** have A-Tier evidence: **2.2, 2.3, 2.4, 2.5, 3.1, 3.8, 4.2, 4.3, 5.1, 5.3, 5.4 and 6.2**. The five additions are **3.8, 4.2, 5.1, 5.3 and 6.2**; the seven historical originals remain proved. The remaining originals are **17 partial, 7 open and 9 blocked**. The two newly identified literal obstructions are **5.6 endpoint continuity** and **6.4's page-34 differential coupling**. In particular, the complete three-factor residue sign in 6.4 is valid. See the [current repair ledger](docs/formalization_repair_status.json), [correction log](docs/AUTONOMOUS_CORRECTIONS.md) and linked clause reviews. Each original row covers the whole printed statement; its immediately following alternative has a separately stated scope.
 
-**Evidence history:** the [current semantic report](docs/FORMALIZATION_STATUS.md), [structured evidence with retained prior states](docs/formalization_status.json) and [45-item ledger](docs/manuscript_45_ledger.csv) distinguish current proofs from the unchanged historical 219-module Linux receipts. The earlier 238-module [run 40281351796](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40281351796) and the earlier repair runs failed; they are not accepted full-project checkpoints. The later full PASS is only the exact `7250b47ba4d20ba934e890966a9b77a559689cfd` / `40327942655` receipt recorded above. A separately audited completed subset may support same-target object reuse but never a full-project PASS. All original manuscript text and proof statements remain available; corrections are documented separately.
+**Evidence history:** the [current semantic report](docs/FORMALIZATION_STATUS.md), [structured evidence with retained prior states](docs/formalization_status.json) and [45-item ledger](docs/manuscript_45_ledger.csv) distinguish current proofs from the unchanged historical 219-module Linux receipts. The earlier 238-module [run 40281351796](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40281351796) and the earlier repair runs failed; they are not accepted full-project checkpoints. The current proof checkpoint is the exact `cdcb1935aa73a7c7e65006c1c198d114e9dcc6db` / `40339809027` receipt recorded above. A separately audited completed subset may support same-target object reuse but never a full-project PASS. All original manuscript text and proof statements remain available; corrections are documented separately.
 
 ### Chapter list
 
@@ -426,7 +428,7 @@ flowchart TD
 
 ### Chapter 6 — Structural Barriers, Multi-Weight Couplings, and Further Diophantine Advances
 
-**Selected route: 1/18 full A-Tier original** — 6.2, the actual simultaneous Beukers functional with exact denominator clearing. The valid full three-factor residue sign in 6.4 is retained; its page-34 differential coupling needs a separate sign/normalization repair. The prescribed 6.3 cone is refuted, and the 6.17 proof-step failures leave its full conditional theorem unresolved. Odd-beta arithmetic in the top showcase remains a component of 6.15.
+**Selected route: 1/18 full A-Tier original** — 6.2, the actual simultaneous Beukers functional with exact denominator clearing. The valid full three-factor residue sign in 6.4 is retained; its page-34 differential coupling needs a separate sign/normalization repair. Original 6.3(1) now has its exact q-adic determinant proof for every prime q≥5 and every rational input with q-unit denominator. The prescribed 6.3(2) cone is refuted, and the 6.17 proof-step failures leave its full conditional theorem unresolved. Odd-beta arithmetic in the top showcase remains a component of 6.15.
 
 ```mermaid
 flowchart TD
@@ -434,10 +436,11 @@ flowchart TD
         R61["6.1 · Off-diagonal valuation proved; Mellin and local block open"]
         R62["6.2 · Actual simultaneous integrals and exact denominator"]
         R63["6.3.alt · Construct a new tail-controlled cone"]
-        O63["OPEN · New tail-controlled cone and local valuations"]
+        P63["6.3(1) · Actual prime determinant valuation -7q"]
+        O63["OPEN · New tail-controlled cone with dimension and decay bounds"]
         D63["DEAD · 6.3 prescribed cone fails at h = 4"]
         R62 --> R63
-        R61 --> O63
+        R61 --> P63
         R63 --> O63
         R63 -.-> D63
     end
@@ -512,7 +515,7 @@ flowchart TD
     classDef dead fill:#fff1f1,stroke:#cf222e,color:#a40e26,stroke-width:2px;
     classDef open fill:#fff8c5,stroke:#9a6700,color:#633c01;
     classDef verified fill:#e8f5e9,stroke:#238636,color:#196127,stroke-width:2px;
-    class R62 verified;
+    class R62,P63 verified;
     class D63,D64,D613,D615,D617 dead;
     class O63,O65,O67,O610,O611,O613,O615,O617,O618 open;
 ```
@@ -523,8 +526,8 @@ flowchart TD
 | **↳ 6.1.alt** | **Alternative / corrected version:** Separate analytic identity and local obstruction | — Partial; off-diagonal arithmetic proved | Retain the exact prime/index conditions. The actual off-diagonal valuation is now proved without a valuation premise; the two-variable/Mellin identity and full local obstruction block remain separate. This does not certify the whole barrier theorem. [Source](src/LeanPaper/BeukersOuterValuation.lean). |
 | 🟢 [$\color{green}\textsf{Theorem 6.2}$](Zetahyperbolic%20(3)%20(1)%20(1).pdf#page=31) | $\color{green}\textsf{Simultaneous weight-(6, 7) Beukers functional with zero denominator overhead}$ | **!! A — GitHub CI** | Complete actual-measure simultaneous zeta-six/zeta-seven polynomial identity, integrability and justified series exchange, exact printed harmonic diagonal/off-diagonal rational part, and clearing by 6*d_K^7 for integral coefficients. [Endpoint](src/LeanPaper/BeukersSimultaneous.lean) · [Review](docs/repair_reviews/section6.md). |
 | 🟢 **↳** $\color{green}\textsf{6.2.alt}$ | $\color{green}\textsf{Alternative / corrected version: Original retained}$ | Same statement; original tier retained | Retain the full original. Both the actual extra-denominator integral and the printed rational-part expansion are proved; denominator clearing is not used as a substitute for the analytic identity. [Source](src/LeanPaper/BeukersSimultaneous.lean). |
-| [Theorem 6.3](Zetahyperbolic%20(3)%20(1)%20(1).pdf#page=32) | Unconditional q-adic non-vanishing and explicit positive-cone approximations for G_A⁽⁷⁾(X) | **— Blocked** | Part (2) has an exact rational/analytic h=4 counterexample, explicitly not a Lean proof. New cone/tail construction is needed; part (1) q-adic proof remains. |
-| **↳ 6.3.alt** | **Alternative / corrected version:** New tail-controlled positive cone | — Proposed corrected construction; open | Replace the refuted fixed `m₀=2h, K=7h` cone by a newly constructed subspace whose negative-tail quadratic contribution has magnitude uniformly smaller than the retained positive spectral margin. Choose degree/truncation from that bound and reprove dimension, positivity and decay; q-adic part (1) remains separate. [Source](docs/BEUKERS_POSITIVITY_COUNTEREXAMPLE.md). |
+| [Theorem 6.3](Zetahyperbolic%20(3)%20(1)%20(1).pdf#page=32) | Unconditional q-adic non-vanishing and explicit positive-cone approximations for G_A⁽⁷⁾(X) | **— Blocked** | Part (1) is fully proved for the actual two-monomial basis: determinant valuation −7q and nonvanishing at every rational a/b with q∤b, for every prime q≥5. A q=7 certificate repairs its overly strong intermediate congruence. Part (2) retains its exact rational/analytic h=4 counterexample, explicitly not a Lean proof; a new tail-controlled cone remains. [Endpoint](src/LeanPaper/BeukersPrimeMatrix.lean) · [Review](docs/repair_reviews/semantic_63_1.md). |
+| **↳ 6.3.alt** | **Alternative / corrected version:** New tail-controlled positive cone | — Proposed corrected construction; open | Replace the refuted fixed `m₀=2h, K=7h` cone by a newly constructed subspace whose negative-tail quadratic contribution has magnitude uniformly smaller than the retained positive spectral margin. Choose degree/truncation from that bound and reprove dimension, positivity and decay; the now proved q-adic part (1) is retained separately and does not repair this cone. [Source](docs/BEUKERS_POSITIVITY_COUNTEREXAMPLE.md). |
 | [Theorem 6.4](Zetahyperbolic%20(3)%20(1)%20(1).pdf#page=33) | Character–Vandermonde sign cancellation and unconditional hyperbolicity for β(4) | **— Blocked** | On page 34, the printed operator D−(4/π²)D³ gives −π*y^4*sinh(π*y/2)/(16*cosh(π*y/2)^4), negative for y>0, contrary to its positive displayed formula. The complete three-factor residue sign is valid and proved. Actual beta functional/pencil identification still remains. [Review](docs/repair_reviews/section6.md). |
 | **↳ 6.4.alt** | **Alternative / corrected version:** Corrected differential coupling with original residue positivity | — Corrected target; exact finite corrections proved | Multiply the page-34 differential expression by −π to recover its printed positive π² closed form. Retain the literal odd-square prefix/derivative/character residue formula: all three signs cancel, without changing orientation. This does not complete the analytic functional or identify its slope. The page-33 signed density is a separate formula. [Derivative correction](src/LeanPaper/BetaCouplingDerivative.lean) · [Actual residues](src/LeanPaper/BetaOddResidueSigns.lean). |
 | [Theorem 6.5](Zetahyperbolic%20(3)%20(1)%20(1).pdf#page=34) | Unconditional q-adic non-vanishing for Δ_K(0) | **— Open** | Exact stated local residue/minor arithmetic and v_q(Δ_K(0)) = −(3m_q − 2) remain. |
@@ -640,7 +643,7 @@ The original offline Windows `run.cmd` remains unchanged; [NATIVE_RUNNER.md](doc
 
 ## Provenance and open work
 
-[Historical increment provenance](provenance/completion_increment.json) records the earlier accepted source hashes and audit receipt. The current receiving checkpoint is identified separately by `7250b47ba4d20ba934e890966a9b77a559689cfd`, [run 40327942655](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40327942655), and [its matching receipt](validation/github/20261026/acceptance.json). The [external pi intake](provenance/external_pi_intake.json) records the exact source commit, license, port adjustments and dependency closure. Earlier source and build evidence is retained.
+[Historical increment provenance](provenance/completion_increment.json) records the earlier accepted source hashes and audit receipt. The current receiving checkpoint is identified separately by `cdcb1935aa73a7c7e65006c1c198d114e9dcc6db`, [run 40339809027](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40339809027), and [its matching receipt](validation/github/20261026-prime/acceptance.json). The [external pi intake](provenance/external_pi_intake.json) records the exact source commit, license, port adjustments and dependency closure. Earlier source and build evidence is retained.
 
 The remaining work includes mixed-minor positivity and determinacy, corrected ordered interlacing and Jacobi chains, actual Hurwitz/character and higher coupled-weight functional identifications, infinite Krein constructions with proved tails, and substantial family-specific spectral, denominator, height and decay estimates. The actual 3.8 Laplace identities and the 5.1/5.3/6.2 Beukers measure chains are completed at the recorded CI checkpoint. False formulas and remaining proof-step obstructions are documented separately. No full-paper or odd-zeta irrationality claim is inferred from compilation.
 

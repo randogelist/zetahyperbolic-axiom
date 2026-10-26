@@ -1,6 +1,6 @@
 # Theorem 6.3(1): actual prime matrix and local determinant
 
-Verification status: source-complete candidate, pending receiving-branch GitHub CI and transitive axiom audit. The previously accepted 260-module main receipt remains authoritative until this follow-up passes. No local Lean/compiler execution was used.
+Verification status: all 263 registered modules passed [GitHub CI](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40339809027) at proof commit `cdcb1935aa73a7c7e65006c1c198d114e9dcc6db`, including the fresh transitive axiom audit and negative regressions. See the [matching receipt](../../validation/github/20261026-prime/acceptance.json). Original part (1) is complete; whole Theorem 6.3 remains blocked by part (2). No local Lean/compiler execution was used.
 
 The endpoint `ManuscriptChain.Beukers.PrimeMatrix.theorem_6_3_1` preserves the original hypotheses: q is any prime with q≥5, K=2q−1, h=q, and the coefficient rows are exactly `A_r(x)=x^r+x^(r+q)` for 0≤r<q. Its first conclusion is the exact valuation `v_q(Δ_Aq(0))=−7q`; it also proves nonvanishing at zero and, for every pair of integers a,b with q∤b, nonvanishing and the same valuation at a/b. There is no assumed matrix valuation, determinant nonvanishing, local congruence or spectral input.
 
@@ -16,7 +16,7 @@ The printed proof states its unscaled diagonal congruence modulo Z_q. This is st
 
 `G_A7(0)_(0,0) + 2/(3·7⁷) = −18809799306101/19595520000000`.
 
-The reduced denominator is divisible by 7 and the numerator is not. The candidate Lean theorems `seven_diagonal_remainder_exact` and `seven_diagonal_remainder_not_integral` prove these finite arithmetic facts. The corrected proof only requires the normalized remainder to have norm less than one (equivalently, the unscaled error has valuation greater than −7). The stronger integral-remainder assertion is neither assumed nor needed, and the original determinant statement is unchanged.
+The reduced denominator is divisible by 7 and the numerator is not. The verified Lean theorems `seven_diagonal_remainder_exact` and `seven_diagonal_remainder_not_integral` prove these finite arithmetic facts. The corrected proof only requires the normalized remainder to have norm less than one (equivalently, the unscaled error has valuation greater than −7). The stronger integral-remainder assertion is neither assumed nor needed, and the original determinant statement is unchanged.
 
 ## Separate status of part (2)
 
