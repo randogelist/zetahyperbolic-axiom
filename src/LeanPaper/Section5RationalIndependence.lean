@@ -19,15 +19,34 @@ open ManuscriptChain PaperOrder.PrincipalTheorems LeanPaper.Section5DualSpectrum
 /-- Rational row independence is preserved by coefficient embedding into R.
 The proof uses the nonzero rational Gram determinant, not a scalar-extension
 independence premise. -/
-set_option maxHeartbeats 3000000 in
 theorem real_rows_separate_of_rational_injective {h K : ℕ}
     (c : Matrix (Fin h) (Fin (K+1)) ℚ) (hc : Function.Injective c.vecMul) :
     coefficientRowsSeparate (realCoefficients c) := by
   have hqpd : (c * c.transpose).PosDef := by
-    simpa [Matrix.conjTranspose_eq_transpose_of_trivial] using
-      Matrix.PosDef.mul_conjTranspose_self c hc
+    apply Matrix.PosDef.of_dotProduct_mulVec_pos
+    · simpa only [Matrix.conjTranspose_eq_transpose_of_trivial] using
+        Matrix.isHermitian_mul_conjTranspose_self c
+    · intro v hv
+      have hvc : c.vecMul v ≠ 0 := by
+        intro hz
+        apply hv
+        apply hc
+        simpa using hz
+      obtain ⟨r, hr⟩ : ∃ r, c.vecMul v r ≠ 0 := by
+        by_contra hn
+        push_neg at hn
+        exact hvc (funext hn)
+      have hid : star v ⬝ᵥ ((c * c.transpose).mulVec v) =
+          ∑ r : Fin (K+1), (c.vecMul v r)^2 := by
+        rw [← Matrix.mulVec_mulVec, star_trivial, Matrix.dotProduct_mulVec,
+          Matrix.mulVec_transpose]
+        simp only [dotProduct, pow_two]
+      rw [hid]
+      exact lt_of_lt_of_le (sq_pos_of_ne_zero hr)
+        (Finset.single_le_sum (fun i _ => sq_nonneg (c.vecMul v i))
+          (Finset.mem_univ r))
   have hqdet : (c * c.transpose).det ≠ 0 :=
-    ne_of_gt hqpd.det_pos
+    ((Matrix.isUnit_iff_isUnit_det _).mp hqpd.isUnit).ne_zero
   have hmap : coefficientSlope (realCoefficients c) =
       (c * c.transpose).map (Rat.castHom ℝ) := by
     ext i j
@@ -40,8 +59,11 @@ theorem real_rows_separate_of_rational_injective {h K : ℕ}
     rw [hGram]
     exact Matrix.posSemidef_self_mul_conjTranspose _
   have hrdet : (coefficientSlope (realCoefficients c)).det ≠ 0 := by
-    rw [hmap, (Rat.castHom ℝ).map_det]
-    exact_mod_cast hqdet
+    have hcastdet := (Rat.castHom ℝ).map_det (c * c.transpose)
+    simp only [RingHom.mapMatrix_apply] at hcastdet
+    rw [hmap, ← hcastdet]
+    simp only [Rat.coe_castHom]
+    exact (Rat.cast_ne_zero (α := ℝ)).2 hqdet
   have hpd := hps.posDef_iff_det_ne_zero.mpr hrdet
   intro v hv
   by_contra hnone

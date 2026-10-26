@@ -236,6 +236,28 @@ import LeanPaper.Section4AlgebraicHeight
 import LeanPaper.Section5RationalIndependence
 import LeanPaper.WeightFiveSignatureCount
 import Lean
+import LeanPaper.Section3OrthogonalKernel
+import LeanPaper.Section4FactorDegreeBounds
+import LeanPaper.BeukersIntegralPencil
+import LeanPaper.Section3RestrictedSpectral
+import LeanPaper.LaplaceDensityDerivative
+import LeanPaper.LaplaceMomentBounds
+import LeanPaper.Section4RationalCluster
+import LeanPaper.BeukersPolynomialSpectrum
+import LeanPaper.BetaBeukersMoments
+import LeanPaper.BetaBeukersSpectrum
+import LeanPaper.BeukersSimultaneous
+import LeanPaper.CentralFactorialMoments
+import LeanPaper.BetaOddResidueSigns
+import LeanPaper.DoublePoleZeroCoefficientObstruction
+import LeanPaper.Section4FactorHeight
+import LeanPaper.LaplaceMomentDerivative
+import LeanPaper.LaplaceGram
+import LeanPaper.LaplaceKernelJacobi
+import LeanPaper.Section4ClosestRoot
+import LeanPaper.Section5OuterPrimeIntegral
+import LeanPaper.BetaCouplingDerivative
+import LeanPaper.BeukersOuterValuation
 
 /-! Independent transitive axiom audit of every active imported project declaration.
 Manuscript correspondence is certified separately. -/
@@ -889,7 +911,29 @@ run_cmd Elab.Command.liftCoreM do
     `LeanPaper.BeukersOffDiagonalKernel,
     `LeanPaper.Section4AlgebraicHeight,
     `LeanPaper.Section5RationalIndependence,
-    `LeanPaper.WeightFiveSignatureCount]
+    `LeanPaper.WeightFiveSignatureCount,
+    `LeanPaper.Section3OrthogonalKernel,
+    `LeanPaper.Section4FactorDegreeBounds,
+    `LeanPaper.BeukersIntegralPencil,
+    `LeanPaper.Section3RestrictedSpectral,
+    `LeanPaper.LaplaceDensityDerivative,
+    `LeanPaper.LaplaceMomentBounds,
+    `LeanPaper.Section4RationalCluster,
+    `LeanPaper.BeukersPolynomialSpectrum,
+    `LeanPaper.BetaBeukersMoments,
+    `LeanPaper.BetaBeukersSpectrum,
+    `LeanPaper.BeukersSimultaneous,
+    `LeanPaper.CentralFactorialMoments,
+    `LeanPaper.BetaOddResidueSigns,
+    `LeanPaper.DoublePoleZeroCoefficientObstruction,
+    `LeanPaper.Section4FactorHeight,
+    `LeanPaper.LaplaceMomentDerivative,
+    `LeanPaper.LaplaceGram,
+    `LeanPaper.LaplaceKernelJacobi,
+    `LeanPaper.Section4ClosestRoot,
+    `LeanPaper.Section5OuterPrimeIntegral,
+    `LeanPaper.BetaCouplingDerivative,
+    `LeanPaper.BeukersOuterValuation]
   let mut roots : Array Name := #[]
   for (decl, _) in env.constants do
     if let some idx := env.getModuleIdxFor? decl then

@@ -1,0 +1,3 @@
+LeanPaper.Section3MonicOrthogonal
+LeanPaper.ShiftedSolidMinors
+LeanPaper.SymmetricPoleSpectrum

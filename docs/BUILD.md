@@ -53,12 +53,33 @@ downloads; it does not make a missing dependency checkout available offline.
 
 ## GitHub Actions
 
-`.github/workflows/lean.yml` pins its actions by commit, obtains the locked
-Mathlib cache, validates the source/module/audit inventory, and uses the same
-sequential loop. It uploads logs even when compilation fails. It invokes the
-project's `LeanPaper.KernelAudit`, which permits only `propext`, `Quot.sound`
-and `Classical.choice`; printed theorem names are not treated as an audit.
-The workflow's existence alone is not a passing CI receipt.
+The current repair uses `GITHUB_CI`; no local Lean or Lake command was run.
+`.github/workflows/lean.yml` checks out the exact pull-request head, pins its
+actions by commit, obtains the locked Mathlib artifacts, and validates the
+complete source/module/audit inventory. It runs `scripts/ci_verify.py` in GitHub
+Actions with two dependency-aware compiler workers. A failed module does not
+prevent unrelated modules from being checked; failed dependents are skipped.
+
+Project output starts in a fresh isolated directory. Reuse requires a prior
+same-target transitive audit and matching compiler, dependency, runner, policy,
+source, imported-object, output and log fingerprints. A failing run may cache
+only its separately audited dependency-closed completed subset. Its receipt
+remains `FAIL` with scope `COMPLETED_PROJECT_SUBSET`; that cache is never a
+full-project acceptance.
+
+Full acceptance requires every registered module, a fresh
+`LeanPaper.KernelAudit` over all project declarations, and fresh isolated
+negative-audit regression checks. The permitted foundational axioms are only
+`propext`, `Quot.sound` and `Classical.choice`. Printed theorem names and a
+workflow's existence are not proof receipts. The Python scheduler/cache tests
+also run before compilation.
+
+The artifact retains `.build/ci-lean/summary.json`, the environment manifest,
+per-module logs/states, source/import/object hashes, the global audit and the
+negative-regression evidence, even if compilation fails. Current accepted
+receipts are recorded under `validation/github/`; historical Linux and Windows
+receipts remain separate. Exact theorem scope is recorded in the manuscript
+ledger and correction log, independently of build success.
 
 ## Existing cached local and native workflows
 
