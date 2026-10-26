@@ -240,5 +240,7 @@ roots = [
   "LeanPaper.BeukersOffDiagonalActual",
   "LeanPaper.BeukersDensityActual",
   "LeanPaper.BeukersRationalityActual",
+  "LeanPaper.BeukersKreinMonomialActual",
+  "LeanPaper.BeukersKreinPolynomialActual",
   "LeanPaper.KernelAudit",
 ]
