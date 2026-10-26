@@ -232,6 +232,7 @@ import LeanPaper.BeukersKreinMonomialActual
 import LeanPaper.BeukersKreinPolynomialActual
 import LeanPaper.ShiftedSolidMinors
 import LeanPaper.BeukersOffDiagonalKernel
+import LeanPaper.Section4AlgebraicHeight
 import LeanPaper.Section5RationalIndependence
 import Lean
 
@@ -885,6 +886,7 @@ run_cmd Elab.Command.liftCoreM do
     `LeanPaper.BeukersKreinPolynomialActual,
     `LeanPaper.ShiftedSolidMinors,
     `LeanPaper.BeukersOffDiagonalKernel,
+    `LeanPaper.Section4AlgebraicHeight,
     `LeanPaper.Section5RationalIndependence]
   let mut roots : Array Name := #[]
   for (decl, _) in env.constants do
