@@ -233,4 +233,5 @@ LeanPaper.BeukersKreinPolynomialActual
 LeanPaper.ShiftedSolidMinors
 LeanPaper.BeukersOffDiagonalKernel
 LeanPaper.Section4AlgebraicHeight
+LeanPaper.Section5RationalIndependence
 LeanPaper.KernelAudit
