@@ -230,4 +230,5 @@ LeanPaper.BeukersDensityActual
 LeanPaper.BeukersRationalityActual
 LeanPaper.BeukersKreinMonomialActual
 LeanPaper.BeukersKreinPolynomialActual
+LeanPaper.ShiftedSolidMinors
 LeanPaper.KernelAudit
