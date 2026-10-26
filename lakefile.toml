@@ -231,6 +231,7 @@ roots = [
   "LeanPaper.SlopeSignature",
   "LeanPaper.SymmetricPoleSpectrum",
   "LeanPaper.UnitLogMoments",
+  "LeanPaper.BeukersMomentSeries",
   "Zeta5Merge.Theorem6_17",
   "LeanPaper.KernelAudit",
 ]
