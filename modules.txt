@@ -152,7 +152,6 @@ LeanPaper.ImportedSection56.DualNullspace
 LeanPaper.ImportedSection56.SelectedMonomial
 LeanPaper.ImportedSection56.UnimodularMonomial
 LeanPaper.Section5DualSpectrum
-LeanPaper.Section5RationalIndependence
 LeanPaper.HigherDerivativeTuran
 LeanPaper.ManuscriptObstructions
 LeanPaper.NormalizedNewton
@@ -187,6 +186,7 @@ LeanPaper.ReciprocalAllOrders
 LeanPaper.CorrectedReciprocalCorollary
 LeanPaper.DodgsonCondensation
 LeanPaper.DyadicQuotientThreshold
+LeanPaper.CoefficientGramGrowth
 LeanPaper.ExternalPi.ETranscendental
 LeanPaper.ExternalPi.HermiteLindemann
 LeanPaper.ExternalPi.PiLindemann
@@ -219,5 +219,19 @@ LeanPaper.Section4TransferComplete
 LeanPaper.SlopeSignature
 LeanPaper.SymmetricPoleSpectrum
 LeanPaper.UnitLogMoments
+Zeta5.HermiteBasisCore
 Zeta5Merge.Theorem6_17
+LeanPaper.SignatureRestriction
+LeanPaper.Section3MonicOrthogonal
+LeanPaper.MatrixCurveJacobi
+LeanPaper.BeukersMomentSeries
+LeanPaper.BeukersOffDiagonalActual
+LeanPaper.BeukersDensityActual
+LeanPaper.BeukersRationalityActual
+LeanPaper.BeukersKreinMonomialActual
+LeanPaper.BeukersKreinPolynomialActual
+LeanPaper.ShiftedSolidMinors
+LeanPaper.BeukersOffDiagonalKernel
+LeanPaper.Section4AlgebraicHeight
+LeanPaper.Section5RationalIndependence
 LeanPaper.KernelAudit

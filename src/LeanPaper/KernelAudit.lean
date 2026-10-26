@@ -152,7 +152,6 @@ import LeanPaper.ImportedSection56.DualNullspace
 import LeanPaper.ImportedSection56.SelectedMonomial
 import LeanPaper.ImportedSection56.UnimodularMonomial
 import LeanPaper.Section5DualSpectrum
-import LeanPaper.Section5RationalIndependence
 import LeanPaper.HigherDerivativeTuran
 import LeanPaper.ManuscriptObstructions
 import LeanPaper.NormalizedNewton
@@ -187,6 +186,7 @@ import LeanPaper.ReciprocalAllOrders
 import LeanPaper.CorrectedReciprocalCorollary
 import LeanPaper.DodgsonCondensation
 import LeanPaper.DyadicQuotientThreshold
+import LeanPaper.CoefficientGramGrowth
 import LeanPaper.ExternalPi.ETranscendental
 import LeanPaper.ExternalPi.HermiteLindemann
 import LeanPaper.ExternalPi.PiLindemann
@@ -219,7 +219,21 @@ import LeanPaper.Section4TransferComplete
 import LeanPaper.SlopeSignature
 import LeanPaper.SymmetricPoleSpectrum
 import LeanPaper.UnitLogMoments
+import Zeta5.HermiteBasisCore
 import Zeta5Merge.Theorem6_17
+import LeanPaper.SignatureRestriction
+import LeanPaper.Section3MonicOrthogonal
+import LeanPaper.MatrixCurveJacobi
+import LeanPaper.BeukersMomentSeries
+import LeanPaper.BeukersOffDiagonalActual
+import LeanPaper.BeukersDensityActual
+import LeanPaper.BeukersRationalityActual
+import LeanPaper.BeukersKreinMonomialActual
+import LeanPaper.BeukersKreinPolynomialActual
+import LeanPaper.ShiftedSolidMinors
+import LeanPaper.BeukersOffDiagonalKernel
+import LeanPaper.Section4AlgebraicHeight
+import LeanPaper.Section5RationalIndependence
 import Lean
 
 /-! Independent transitive axiom audit of every active imported project declaration.
@@ -792,7 +806,6 @@ run_cmd Elab.Command.liftCoreM do
     `LeanPaper.ImportedSection56.SelectedMonomial,
     `LeanPaper.ImportedSection56.UnimodularMonomial,
     `LeanPaper.Section5DualSpectrum,
-    `LeanPaper.Section5RationalIndependence,
     `LeanPaper.HigherDerivativeTuran,
     `LeanPaper.ManuscriptObstructions,
     `LeanPaper.NormalizedNewton,
@@ -827,6 +840,7 @@ run_cmd Elab.Command.liftCoreM do
     `LeanPaper.CorrectedReciprocalCorollary,
     `LeanPaper.DodgsonCondensation,
     `LeanPaper.DyadicQuotientThreshold,
+    `LeanPaper.CoefficientGramGrowth,
     `LeanPaper.ExternalPi.ETranscendental,
     `LeanPaper.ExternalPi.HermiteLindemann,
     `LeanPaper.ExternalPi.PiLindemann,
@@ -859,7 +873,21 @@ run_cmd Elab.Command.liftCoreM do
     `LeanPaper.SlopeSignature,
     `LeanPaper.SymmetricPoleSpectrum,
     `LeanPaper.UnitLogMoments,
-    `Zeta5Merge.Theorem6_17]
+    `Zeta5.HermiteBasisCore,
+    `Zeta5Merge.Theorem6_17,
+    `LeanPaper.SignatureRestriction,
+    `LeanPaper.Section3MonicOrthogonal,
+    `LeanPaper.MatrixCurveJacobi,
+    `LeanPaper.BeukersMomentSeries,
+    `LeanPaper.BeukersOffDiagonalActual,
+    `LeanPaper.BeukersDensityActual,
+    `LeanPaper.BeukersRationalityActual,
+    `LeanPaper.BeukersKreinMonomialActual,
+    `LeanPaper.BeukersKreinPolynomialActual,
+    `LeanPaper.ShiftedSolidMinors,
+    `LeanPaper.BeukersOffDiagonalKernel,
+    `LeanPaper.Section4AlgebraicHeight,
+    `LeanPaper.Section5RationalIndependence]
   let mut roots : Array Name := #[]
   for (decl, _) in env.constants do
     if let some idx := env.getModuleIdxFor? decl then

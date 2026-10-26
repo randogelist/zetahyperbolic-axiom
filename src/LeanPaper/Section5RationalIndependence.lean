@@ -19,6 +19,7 @@ open ManuscriptChain PaperOrder.PrincipalTheorems LeanPaper.Section5DualSpectrum
 /-- Rational row independence is preserved by coefficient embedding into R.
 The proof uses the nonzero rational Gram determinant, not a scalar-extension
 independence premise. -/
+set_option maxHeartbeats 3000000 in
 theorem real_rows_separate_of_rational_injective {h K : ℕ}
     (c : Matrix (Fin h) (Fin (K+1)) ℚ) (hc : Function.Injective c.vecMul) :
     coefficientRowsSeparate (realCoefficients c) := by
