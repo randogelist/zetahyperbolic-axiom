@@ -155,3 +155,15 @@ until the receiving commit compiles and passes the independent transitive audit.
   and explicitly simplified `Function.comp_def`. Statements are unchanged.
 - Checked the queued `Section4ClosestRoot` source for these patterns; none
   occurs. Corrected cluster proof awaits the next receiving CI run.
+
+### Receiving CI repair, run 40320889232
+
+- `Section4RationalCluster` completed compilation after the preceding repairs.
+- `Section4ClosestRoot`'s generic complex and integer-polynomial endpoints
+  elaborated without nonstandard axioms. The actual manuscript wrapper failed
+  because `simp only` did not unfold the `Polynomial.IsRoot` predicate returned
+  by `mem_roots` before applying `eval_map`.
+- Correction: first give the root fact the explicit evaluation-equals-zero
+  type, then transport it with `eval_map`. This is the same transport pattern
+  already compiled in `Section4FactorDegreeBounds`; no hypotheses or conclusion
+  changed. The repaired wrapper awaits the next receiving run.

@@ -48,7 +48,8 @@ theorem summable_integral_norm_momentTerm (m e : ℕ) {τ : ℝ} (hτ : 0 < τ) 
     intro y hy
     apply Real.norm_of_nonneg
     unfold momentTerm
-    positivity
+    exact mul_nonneg (by positivity)
+      (mul_nonneg (pow_nonneg (show 0 ≤ y from le_of_lt hy) _) (Real.exp_pos _).le)
   simp_rw [h]
   exact (ManuscriptChain.Real.zeta_series_summable (s := 2 * e + 2) (by omega)).mul_left _
 

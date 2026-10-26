@@ -53,7 +53,7 @@ lemma tail_derivative_eval (N K j : ℕ) (hj : j ∈ Finset.Ico N K) :
       ∏ b ∈ (Finset.Ico N K).erase j, (oddSquare b - oddSquare j) := by
   classical
   simp only [tail, derivative_prod_finset, derivative_add, derivative_X,
-    derivative_C, add_zero, Polynomial.eval_sum, Polynomial.eval_mul, Polynomial.eval_one, one_mul, mul_one,
+    derivative_C, add_zero, Polynomial.eval_finsetSum, Polynomial.eval_mul, Polynomial.eval_one, one_mul, mul_one,
     Polynomial.eval_prod, Polynomial.eval_add, Polynomial.eval_X, Polynomial.eval_C]
   rw [Finset.sum_eq_single j]
   · apply Finset.prod_congr rfl

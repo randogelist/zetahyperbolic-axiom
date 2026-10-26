@@ -42,7 +42,9 @@ theorem poleCofactorOne_at_zero (k : Fin 7) :
     Polynomial.eval_X, Polynomial.eval_C, zero_add]
   by_cases hk : k = 0
   · subst k
-    norm_num [Fin.prod_univ_succ, Fin.ext_iff]
+    rw [if_pos rfl, Fin.prod_univ_succ]
+    simp only [if_pos rfl, Fin.succ_ne_zero, if_false, one_mul, Fin.val_succ]
+    norm_num [Fin.prod_univ_succ]
   · rw [if_neg hk]
     apply Finset.prod_eq_zero (Finset.mem_univ (0 : Fin 7))
     simp [Ne.symm hk]

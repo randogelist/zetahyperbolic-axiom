@@ -6,6 +6,12 @@ functional, Gram, signature, principal-minor, Newton, pole-kernel, Jacobi and ch
 the exact pinned Mathlib LDL, matrix inverse/multiplication and SmoothSeries APIs; manuscript
 PDF pp.12–13 for the precise two clauses of Theorem 3.8.
 
+The contribution contains 64 named theorem declarations across seven source modules; this
+count includes intermediate lemmas and does not mean 64 additional manuscript theorems.
+An independent semantic review confirmed the fixed density power, parameter scaling,
+rational weights, and kernel normalization. The last three analytic modules also received
+an independent pinned-API review; receiving CI remains authoritative.
+
 ## Implemented corrections and additions
 
 ### Section3OrthogonalKernel.lean — Theorem 3.8(1)
@@ -42,7 +48,8 @@ PDF pp.12–13 for the precise two clauses of Theorem 3.8.
 - CI2 exposed scalar normed-module instance diamonds in tactic conversions, a no-progress
   simplification and an already-reduced interval-membership goal. Corrected with default-
   transparency `convert!`, optional power simplification before `ring`, and explicit inequality
-  `change`. The analytic statements and their premises are unchanged. Await CI3.
+  `change`. The analytic statements and their premises are unchanged.
+- CI3: the density derivative module compiled successfully with the allowed axiom set.
 - Does not alone exchange derivative with improper integral.
 
 ### LaplaceMomentBounds.lean — all scaled density/derivative moments
@@ -53,7 +60,10 @@ PDF pp.12–13 for the precise two clauses of Theorem 3.8.
   all moments and polynomial-weighted integrability of the actual scaled density and derivative.
 - The odd exponent in the derivative series is handled explicitly, not silently identified with
   an odd-weight density that has a different exponent.
-- Verification: CI2 skipped after the density module failed; awaiting CI3. Rational-weight and local-domination assembly
+- CI3: the moment-bounds module reached all proofs but one positivity tactic did not use
+  half-line membership as an explicit nonnegativity fact. Replaced it with explicit multiplication
+  and power nonnegativity using `le_of_lt hy`. No statement changed; await CI4.
+- Rational-weight and local-domination assembly
   have now been implemented in the following modules.
 
 ### LaplaceMomentDerivative.lean — actual integral differentiation

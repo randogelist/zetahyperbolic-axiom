@@ -116,6 +116,7 @@ theorem integrableOn_rationalWeight_mul (p : Real.Parameters) (e : ℕ)
     IntegrableOn (fun y : ℝ => rationalWeight p e y * v y) (Ioi 0) := by
   apply hint.norm.mono' ((measurable_rationalWeight p e).mul hv).aestronglyMeasurable
   filter_upwards [ae_restrict_mem measurableSet_Ioi] with y hy
+  have hypos : 0 < y := hy
   have hD := Zetahyperbolic.D_real_pos p.K (show 0 < y^2 by positivity)
   have heq : rationalWeight p e y * v y =
       ((numeratorPolynomial p e).eval (y^2) * v y) / Zetahyperbolic.D_real p.K (y^2) := by

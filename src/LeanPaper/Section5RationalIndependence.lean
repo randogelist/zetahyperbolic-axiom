@@ -62,7 +62,8 @@ theorem real_rows_separate_of_rational_injective {h K : ℕ}
     have hcastdet := (Rat.castHom ℝ).map_det (c * c.transpose)
     simp only [RingHom.mapMatrix_apply] at hcastdet
     rw [hmap, ← hcastdet]
-    exact_mod_cast hqdet
+    simp only [Rat.coe_castHom]
+    exact (Rat.cast_ne_zero (α := ℝ)).2 hqdet
   have hpd := hps.posDef_iff_det_ne_zero.mpr hrdet
   intro v hv
   by_contra hnone

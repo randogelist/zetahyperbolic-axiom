@@ -22,8 +22,9 @@ lemma halfSech_deriv_differentiable : Differentiable ℝ (deriv halfSech) := by
   unfold halfSech
   rw [deriv_const_mul_sech, deriv_sechPower]
   intro z
-  exact ((((Real.hasDerivAt_sinh z).const_mul (-(1 : ℝ))).mul
-    (hasDerivAt_sechPower 2 z)).const_mul (1 / 2 : ℝ)).differentiableAt
+  simpa [sechPower] using
+    ((((Real.hasDerivAt_sinh z).const_mul (-(1 : ℝ))).mul
+      (hasDerivAt_sechPower 2 z)).const_mul (1 / 2 : ℝ)).differentiableAt
 
 lemma halfSech_second : deriv (deriv halfSech) =
     fun z => halfSech z - sechPower 3 z := by

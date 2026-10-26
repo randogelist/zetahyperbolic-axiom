@@ -46,123 +46,145 @@ private theorem floor_reciprocal_eq (n : ℤ) {y : ℝ} (hy : 0 < y)
 theorem outerT_piece_1 {y : ℝ} (ha : 1/3 < y) (hb : y < 43/120) :
     outerT y = 51/8+(-5)*y := by
   have hf : ⌊1/y⌋ = (2 : ℤ) :=
-    floor_reciprocal_eq 2 (by linarith) (by norm_num; linarith) (by norm_num; linarith)
+    floor_reciprocal_eq 2 (by linarith) (by norm_num <;> linarith) (by norm_num <;> linarith)
   have hh : y < 1/2 := by linarith
   have h1 : y < 1 := by linarith
   norm_num [outerT, outerR, alpha, lambda, v, u, t, r, hf, hh, h1,
     Fin.sum_univ_succ]
-  simp (disch := linarith) only [max_eq_left, max_eq_right, min_eq_left, min_eq_right]
-  ring
+  try simp only [max_def, min_def]
+  all_goals
+    repeat' (split <;> try linarith)
+  all_goals linarith
 
 theorem outerT_piece_2 {y : ℝ} (ha : 43/120 < y) (hb : y < 29/80) :
     outerT y = 513/40+(-23)*y := by
   have hf : ⌊1/y⌋ = (2 : ℤ) :=
-    floor_reciprocal_eq 2 (by linarith) (by norm_num; linarith) (by norm_num; linarith)
+    floor_reciprocal_eq 2 (by linarith) (by norm_num <;> linarith) (by norm_num <;> linarith)
   have hh : y < 1/2 := by linarith
   have h1 : y < 1 := by linarith
   norm_num [outerT, outerR, alpha, lambda, v, u, t, r, hf, hh, h1,
     Fin.sum_univ_succ]
-  simp (disch := linarith) only [max_eq_left, max_eq_right, min_eq_left, min_eq_right]
-  ring
+  try simp only [max_def, min_def]
+  all_goals
+    repeat' (split <;> try linarith)
+  all_goals linarith
 
 theorem outerT_piece_3 {y : ℝ} (ha : 29/80 < y) (hb : y < 37/100) :
     outerT y = 571/40+(-27)*y := by
   have hf : ⌊1/y⌋ = (2 : ℤ) :=
-    floor_reciprocal_eq 2 (by linarith) (by norm_num; linarith) (by norm_num; linarith)
+    floor_reciprocal_eq 2 (by linarith) (by norm_num <;> linarith) (by norm_num <;> linarith)
   have hh : y < 1/2 := by linarith
   have h1 : y < 1 := by linarith
   norm_num [outerT, outerR, alpha, lambda, v, u, t, r, hf, hh, h1,
     Fin.sum_univ_succ]
-  simp (disch := linarith) only [max_eq_left, max_eq_right, min_eq_left, min_eq_right]
-  ring
+  try simp only [max_def, min_def]
+  all_goals
+    repeat' (split <;> try linarith)
+  all_goals linarith
 
 theorem outerT_piece_4 {y : ℝ} (ha : 37/100 < y) (hb : y < 37/80) :
     outerT y = 497/40+(-22)*y := by
   have hf : ⌊1/y⌋ = (2 : ℤ) :=
-    floor_reciprocal_eq 2 (by linarith) (by norm_num; linarith) (by norm_num; linarith)
+    floor_reciprocal_eq 2 (by linarith) (by norm_num <;> linarith) (by norm_num <;> linarith)
   have hh : y < 1/2 := by linarith
   have h1 : y < 1 := by linarith
   norm_num [outerT, outerR, alpha, lambda, v, u, t, r, hf, hh, h1,
     Fin.sum_univ_succ]
-  simp (disch := linarith) only [max_eq_left, max_eq_right, min_eq_left, min_eq_right]
-  ring
+  try simp only [max_def, min_def]
+  all_goals
+    repeat' (split <;> try linarith)
+  all_goals linarith
 
 theorem outerT_piece_5 {y : ℝ} (ha : 37/80 < y) (hb : y < 29/60) :
     outerT y = 41/10+(-4)*y := by
   have hf : ⌊1/y⌋ = (2 : ℤ) :=
-    floor_reciprocal_eq 2 (by linarith) (by norm_num; linarith) (by norm_num; linarith)
+    floor_reciprocal_eq 2 (by linarith) (by norm_num <;> linarith) (by norm_num <;> linarith)
   have hh : y < 1/2 := by linarith
   have h1 : y < 1 := by linarith
   norm_num [outerT, outerR, alpha, lambda, v, u, t, r, hf, hh, h1,
     Fin.sum_univ_succ]
-  simp (disch := linarith) only [max_eq_left, max_eq_right, min_eq_left, min_eq_right]
-  ring
+  try simp only [max_def, min_def]
+  all_goals
+    repeat' (split <;> try linarith)
+  all_goals linarith
 
 theorem outerT_piece_6 {y : ℝ} (ha : 29/60 < y) (hb : y < 1/2) :
     outerT y = 53/20+(-1)*y := by
   have hf : ⌊1/y⌋ = (2 : ℤ) :=
-    floor_reciprocal_eq 2 (by linarith) (by norm_num; linarith) (by norm_num; linarith)
+    floor_reciprocal_eq 2 (by linarith) (by norm_num <;> linarith) (by norm_num <;> linarith)
   have hh : y < 1/2 := by linarith
   have h1 : y < 1 := by linarith
   norm_num [outerT, outerR, alpha, lambda, v, u, t, r, hf, hh, h1,
     Fin.sum_univ_succ]
-  simp (disch := linarith) only [max_eq_left, max_eq_right, min_eq_left, min_eq_right]
-  ring
+  try simp only [max_def, min_def]
+  all_goals
+    repeat' (split <;> try linarith)
+  all_goals linarith
 
 theorem outerT_piece_7 {y : ℝ} (ha : 1/2 < y) (hb : y < 43/80) :
     outerT y = 7/2+(1)*y := by
   have hf : ⌊1/y⌋ = (1 : ℤ) :=
-    floor_reciprocal_eq 1 (by linarith) (by norm_num; linarith) (by norm_num; linarith)
+    floor_reciprocal_eq 1 (by linarith) (by norm_num <;> linarith) (by norm_num <;> linarith)
   have hh : ¬y < 1/2 := by linarith
   have h1 : y < 1 := by linarith
   norm_num [outerT, outerR, alpha, lambda, v, u, t, r, hf, hh, h1,
     Fin.sum_univ_succ]
-  simp (disch := linarith) only [max_eq_left, max_eq_right, min_eq_left, min_eq_right]
-  ring
+  try simp only [max_def, min_def]
+  all_goals
+    repeat' (split <;> try linarith)
+  all_goals linarith
 
 theorem outerT_piece_8 {y : ℝ} (ha : 43/80 < y) (hb : y < 37/60) :
     outerT y = 121/10+(-15)*y := by
   have hf : ⌊1/y⌋ = (1 : ℤ) :=
-    floor_reciprocal_eq 1 (by linarith) (by norm_num; linarith) (by norm_num; linarith)
+    floor_reciprocal_eq 1 (by linarith) (by norm_num <;> linarith) (by norm_num <;> linarith)
   have hh : ¬y < 1/2 := by linarith
   have h1 : y < 1 := by linarith
   norm_num [outerT, outerR, alpha, lambda, v, u, t, r, hf, hh, h1,
     Fin.sum_univ_succ]
-  simp (disch := linarith) only [max_eq_left, max_eq_right, min_eq_left, min_eq_right]
-  ring
+  try simp only [max_def, min_def]
+  all_goals
+    repeat' (split <;> try linarith)
+  all_goals linarith
 
 theorem outerT_piece_9 {y : ℝ} (ha : 37/60 < y) (hb : y < 37/40) :
     outerT y = 41/4+(-12)*y := by
   have hf : ⌊1/y⌋ = (1 : ℤ) :=
-    floor_reciprocal_eq 1 (by linarith) (by norm_num; linarith) (by norm_num; linarith)
+    floor_reciprocal_eq 1 (by linarith) (by norm_num <;> linarith) (by norm_num <;> linarith)
   have hh : ¬y < 1/2 := by linarith
   have h1 : y < 1 := by linarith
   norm_num [outerT, outerR, alpha, lambda, v, u, t, r, hf, hh, h1,
     Fin.sum_univ_succ]
-  simp (disch := linarith) only [max_eq_left, max_eq_right, min_eq_left, min_eq_right]
-  ring
+  try simp only [max_def, min_def]
+  all_goals
+    repeat' (split <;> try linarith)
+  all_goals linarith
 
 theorem outerT_piece_10 {y : ℝ} (ha : 37/40 < y) (hb : y < 1) :
     outerT y = 1+(-2)*y := by
   have hf : ⌊1/y⌋ = (1 : ℤ) :=
-    floor_reciprocal_eq 1 (by linarith) (by norm_num; linarith) (by norm_num; linarith)
+    floor_reciprocal_eq 1 (by linarith) (by norm_num <;> linarith) (by norm_num <;> linarith)
   have hh : ¬y < 1/2 := by linarith
   have h1 : y < 1 := by linarith
   norm_num [outerT, outerR, alpha, lambda, v, u, t, r, hf, hh, h1,
     Fin.sum_univ_succ]
-  simp (disch := linarith) only [max_eq_left, max_eq_right, min_eq_left, min_eq_right]
-  ring
+  try simp only [max_def, min_def]
+  all_goals
+    repeat' (split <;> try linarith)
+  all_goals linarith
 
 theorem outerT_piece_11 {y : ℝ} (ha : 1 < y) (hb : y < 37/20) :
     outerT y = 37/20+(-1)*y := by
   have hf : ⌊1/y⌋ = (0 : ℤ) :=
-    floor_reciprocal_eq 0 (by linarith) (by norm_num; linarith) (by norm_num; linarith)
+    floor_reciprocal_eq 0 (by linarith) (by norm_num <;> linarith) (by norm_num <;> linarith)
   have hh : ¬y < 1/2 := by linarith
   have h1 : ¬y < 1 := by linarith
   norm_num [outerT, outerR, alpha, lambda, v, u, t, r, hf, hh, h1,
     Fin.sum_univ_succ]
-  simp (disch := linarith) only [max_eq_left, max_eq_right, min_eq_left, min_eq_right]
-  ring
+  try simp only [max_def, min_def]
+  all_goals
+    repeat' (split <;> try linarith)
+  all_goals linarith
 
 /-- Open-interval equality is enough for both integrability and evaluation. -/
 private theorem integral_of_affine_piece {a b B C : ℝ} (hab : a ≤ b)
@@ -170,13 +192,17 @@ private theorem integral_of_affine_piece {a b B C : ℝ} (hab : a ≤ b)
     IntervalIntegrable outerT volume a b ∧
     (∫ y in a..b, outerT y) = B*(b-a)+C*(b^2-a^2)/2 := by
   have he : EqOn outerT (fun y => B+C*y) (uIoo a b) := by
-    simpa only [uIoo_of_le hab] using hp
+    intro y hy
+    exact hp y (by simpa only [uIoo_of_le hab] using hy)
+  have hB : IntervalIntegrable (fun _ : ℝ => B) volume a b :=
+    continuous_const.intervalIntegrable a b
+  have hCy : IntervalIntegrable (fun y : ℝ => C*y) volume a b :=
+    (continuous_const.mul continuous_id).intervalIntegrable a b
   have hi : IntervalIntegrable (fun y => B+C*y) volume a b :=
-    (continuous_const.add (continuous_const.mul continuous_id)).intervalIntegrable a b
+    hB.add hCy
   refine ⟨(intervalIntegrable_congr_uIoo he).mpr hi, ?_⟩
   rw [intervalIntegral.integral_congr_uIoo he,
-    intervalIntegral.integral_add (continuous_const.intervalIntegrable a b)
-      ((continuous_const.mul continuous_id).intervalIntegrable a b),
+    intervalIntegral.integral_add hB hCy,
     intervalIntegral.integral_const_mul, intervalIntegral.integral_const,
     intervalIntegral.integral_id]
   simp only [smul_eq_mul]

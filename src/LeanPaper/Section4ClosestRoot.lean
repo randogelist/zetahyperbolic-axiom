@@ -106,10 +106,11 @@ theorem manuscript_real_close_root (p : Real.Parameters) (hp : Real.Admissible p
   obtain ⟨z, hz, hdist⟩ := integer_polynomial_close_root
     (GeneralIrrationality.primitivePolynomial p) (Real.zeta p.weight : ℂ) t hdegree
     (by simpa only [GeneralIrrationality.primitivePolynomial_natDegree] using hvalue)
+  have hroot : (complexPolynomial (GeneralIrrationality.primitivePolynomial p)).eval z = 0 :=
+    (Polynomial.mem_roots (Polynomial.ne_zero_of_mem_roots hz)).mp hz
   have heval : (GeneralIrrationality.primitivePolynomial p).eval₂
       (algebraMap ℤ ℂ) z = 0 := by
-    simpa only [complexPolynomial, Polynomial.eval_map] using
-      (Polynomial.mem_roots (Polynomial.ne_zero_of_mem_roots hz)).mp hz
+    simpa only [complexPolynomial, Polynomial.eval_map] using hroot
   have him := General.roots_real p (GRAM_POSITIVE p hp) z
     ((PrimitiveNormDisk.primitive_complex_root_iff p z).mp heval)
   have hreal : (z.re : ℂ) = z := by
