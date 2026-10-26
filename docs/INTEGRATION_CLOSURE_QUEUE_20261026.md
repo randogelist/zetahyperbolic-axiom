@@ -25,6 +25,10 @@ Checkpoint: **2026-10-26**, GitHub source state verified. Owner role: **INTEGRAT
 
 All six frozen mathematical targets are **subcomponents**. Their current presence never proves the whole printed 4.2/6.9/6.10/6.16/6.17 claims, and never upgrades the 45-item full-manuscript count without a new literal-statement audit.
 
+## Closure-only integration preflight
+
+[Draft PR #9](https://github.com/randogelist/zetahyperbolic-axiom/pull/9) is a **non-mergeable-by-policy preflight**, not a new mathematical target. It starts from exact PR #3 source head `9814065ae1cba0098f873fea4fc0782dcba23187` and adds the source file from independently axiom-PASSed PR #4 **byte-for-byte** (`src/LeanPaper/Section4AlgebraicLattice.lean` Git blob `3288229e9a0a9b6bd826a09181065c15897fa33b`) plus precisely three module/Lake/axiom-audit registrations. Its manifest contains **222 modules**, including targets 6.17, 6.16 and 4.2. [CI run 40264760621](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40264760621) checks combined compilation and independent axiom closure **on the frozen preview head** `5e1c935eaeb137e7de36795dd3d67e7a7dcae0f9`. **Do not merge PR #9** or credit a new A-Tier result until CI passes. After PR #3 merges, reconcile original PR #4 to the then-current main and repeat the exact 222-module acceptance gate before merging PR #4. Derivation sources and original PR heads are untouched by this preflight.
+
 ## Separate protected research work
 
 - [PR #1 — Leaned Paper Section 2 assembly](https://github.com/randogelist/zetahyperbolic-axiom/pull/1), `feat/leaned-paper-source-assembly-v0_1_0`: **research-owned; no closure edits** until explicit handoff. Its namespace/build architecture differs from the 220-module receiving base.
