@@ -2,6 +2,115 @@
 
 This repository formalizes the supplied manuscript, *Spectral Theory and Diophantine Bounds for Hankel Determinants of Odd Zeta Values*, with Lean 4.33.0 and pinned Mathlib.
 
+## Showcase — three strongest theorem chains
+
+Selected for completed endpoints, breadth of the proved mathematics and direct connection to the manuscript. **`!! A-Tier` here means the recorded Lean 4.33.0 Linux checkpoint**, supported by the [acceptance receipt](validation/linux/acceptance.json), [transitive axiom audit](validation/linux/proof_integrity.json) and [source inventory](provenance/active_module_hashes.json). It does not certify the current receiving tree or complete the paper.
+
+Green nodes are proved components within the stated scope. The maps summarize mathematical connections, not module import order. The full [chapter routes and deadpoints](#reading-the-chapter-flowcharts) follow below.
+
+### 1. Exact rational functionals → canonical determinant and diagonal slope
+
+**Original endpoints — `!!`:** the exact functional identities of **2.2–2.3**, basis invariance **2.4**, and Lagrange pole diagonalization **2.5**.
+
+**↳ Alternative / corrected version:** retain these statements; correct the Bernoulli `B₁` proof prose in 2.3. No weakened replacement is needed.
+
+```mermaid
+flowchart TD
+    F["Rational-functional matrix construction"]
+    B["Constructed change of polynomial basis"]
+    L["Actual Lagrange functional identification"]
+    I["2.4 · Primitive determinant invariant up to sign"]
+    D["2.5 · Diagonal slope and exact constant entries"]
+
+    F --> B
+    B --> I
+    F --> L
+    L --> D
+
+    classDef verified fill:#e8f5e9,stroke:#238636,color:#196127,stroke-width:2px;
+    class F,B,L,I,D verified;
+```
+
+**Payoff:** genuine polynomial bases give the same nonzero primitive determinant up to sign. For the actual Lagrange pencil, the off-diagonal entries are constant and the diagonal slopes are explicitly nonzero. The diagonalization concerns the **slope**, not the entire affine pencil. The exact hypotheses include a nonzero determinant for 2.4 and `m > 0, N ≤ K` for 2.5.
+
+[Functional foundations](docs/SECTION2_FUNCTIONAL_COMPLETION.md) · [2.4 endpoint](src/LeanPaper/Section2FunctionalBasis.lean#L109) · [2.5 endpoint](src/LeanPaper/Section2LagrangeFunctional.lean#L232)
+
+### 2. Positive Gram geometry → exact zero-free disk → nearest-root recovery
+
+**Original route:** **3.1 is `!!`**; the printed normalizations/signs/strictness in **3.2 and 3.6 remain blocked**.
+
+**↳ Selected corrected route — `!!`:** **3.2.alt** supplies the correctly normalized continuous extension for real `s > 1`; **3.6.alt** supplies the complete finite-support reciprocal corollary.
+
+```mermaid
+flowchart TD
+    G["Constructed positive Gram realizations"]
+    H["3.1 · Real roots and exact norm disk"]
+    C["3.2.alt · Correct continuous pencil for real s > 1"]
+    Q["Input: rational q with P(q) nonzero"]
+    R["3.6.alt · Rational moments and finite-support Hankel laws"]
+    N["Nearest-root distance recovered by a moment limit"]
+
+    G -->|Actual family| H
+    G -->|Real-s extension| C
+    C -->|Odd-weight coincidence| H
+    H --> Q
+    Q --> R
+    R --> N
+
+    classDef verified fill:#e8f5e9,stroke:#238636,color:#196127,stroke-width:2px;
+    class G,H,C,R,N verified;
+```
+
+**Payoff:** under the manuscript's structural admissibility conditions, the actual primitive polynomial has degree `h`, real roots and an exact zero-free disk about the actual zeta value, with a root on its boundary. For its roots `ρᵢ`, counted with multiplicity, and a rational non-root `q`, set, for integers `n ≥ 1`,
+
+$$
+S_n(q)=\sum_{i=1}^{h}|\rho_i-q|^{-2n},
+\qquad
+S_n(q)^{-1/(2n)}\longrightarrow\min_i|\rho_i-q|.
+$$
+
+This is a proved **fixed-family** recovery result. Uniform large-parameter decay and an odd-zeta irrationality conclusion remain open.
+
+[3.1 endpoint](src/LeanPaper/PrimitiveNormDisk.lean#L77) · [3.2.alt and odd-weight coincidence](src/LeanPaper/ContinuousGram.lean#L232) · [3.6.alt endpoint](src/LeanPaper/CorrectedReciprocalCorollary.lean#L40)
+
+### 3. Actual odd-beta values → transcendence and finite rational independence
+
+**Original component — `!!`:** the transcendence and finite-independence component of **6.15**, for every odd beta value including `β(1)`. The full printed 6.15 remains blocked.
+
+**↳ Alternative / corrected version:** retain this proved component; the full **6.15.alt** still needs effective measures, corrected asymptotics and the analytic construction. Neither whole-result tier changes.
+
+```mermaid
+flowchart TD
+    S["Actual ordered beta series"]
+    V["Nonzero rational c_k with beta(2k+1) = c_k pi^(2k+1)"]
+    P["Audited transcendence of pi"]
+    E["Injective polynomial evaluation at pi"]
+    T["Every odd-beta value is transcendental"]
+    I["Finite rational independence, including 1"]
+
+    S --> V
+    V --> T
+    P --> T
+    P --> E
+    E --> I
+    V --> I
+
+    classDef verified fill:#e8f5e9,stroke:#238636,color:#196127,stroke-width:2px;
+    class S,V,P,E,T,I verified;
+```
+
+**Payoff:** for every `k ∈ ℕ`, the actual ordered series value `β(2k+1)` is transcendental over `ℚ`. For every `N ∈ ℕ`, the family
+
+$$
+\{1\}\cup\{\beta(2j+1):0\le j<N\}
+$$
+
+is linearly independent over `ℚ`. Independence uses polynomial evaluation at transcendental `π`, distinct exponents and nonzero rational coefficients; individual transcendence alone would not establish it. These are **odd-beta arithmetic endpoints**, not an odd-zeta irrationality theorem or completion of 6.15.
+
+[Ordered-series identification](src/LeanPaper/OddBetaValues.lean#L116) · [Transcendence](src/LeanPaper/OddBetaValues.lean#L126) · [Finite independence](src/LeanPaper/OddBetaValues.lean#L132) · [π-power transfers](src/LeanPaper/OddPiPowers.lean)
+
+## Recorded formalization status
+
 **The paper is not fully formalized.** Some printed statements are false, and ordinary analytic and arithmetic proof obligations remain. The repository retains verified continuation checkpoints alongside later source integrations; it is not a claim that only fatal blockers remain.
 
 The recorded `v0_1_5_construction` Linux checkpoint contains **219 modules**, all compiled and independently audited in that historical environment. The 53 new modules preserve all 165 prior mathematical/helper sources byte for byte. The audit traverses **3,135 project declarations** and their dependencies, including private declarations; the only axioms are `propext`, `Quot.sound` and `Classical.choice`. See [acceptance](validation/linux/acceptance.json) and [proof integrity](validation/linux/proof_integrity.json). These declaration counts are not counts of manuscript theorems.
