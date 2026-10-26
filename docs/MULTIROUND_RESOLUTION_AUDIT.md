@@ -180,3 +180,72 @@ Checked the following source heads against their actual build receipts:
 **This extended 12-round audit does not find an eighth manuscript item with a proven **complete literal** Lean statement.** Seven remain `!!` A-Tier complete. Numerous important *exact* subtheorems have been crossed off (including the real manuscript `K=30n` primitive integer family), while the remaining proof bridges, failed printed clauses and analytic/asymptotic endpoints are retained without inflation. No `!!!` / `!!!!` certificate is claimed.
 
 **Subsequent audit policy:** New status promotions require a *new* successful proof receipt plus exact original-statement matching, not repeated reviews of the same unchanged accepted source.
+
+
+## 15. Round 13 — source-membership, SHA and acceptance verification (26 October 2026)
+
+The latest inspected repository heads remain frozen: [`zetahyperbolic-axiom/main@86ca99a`](https://github.com/randogelist/zetahyperbolic-axiom/commit/86ca99a23d65cde4880a9005a49076c43e7bc968) and [`snditeration/main@c521749`](https://github.com/randogelist/snditeration/commit/c521749190cce9981b0f108a8edc8034420f6420). The relevant GitHub Actions runs still show **PASS** for those exact heads; `snditeration/feat/zetahyperbolic-continuation-20261025` still reports **FAILED**, and `zetahyperbolic-axiom/continuation-in-progress` has no accepted new head receipt.
+
+Rather than assuming a file's presence implies verification, I checked **all nine newly noticed proof modules** below against both [`modules.txt`](../modules.txt) and [`provenance/active_module_hashes.json`](../provenance/active_module_hashes.json). **All nine belong to the accepted 219-module source inventory and are covered by the same [successful CI compilation/transitive axiom gate](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40188664869)**. Accepted modules:
+
+- `LeanPaper.ImportedSection56.KreinIdentity`
+- `LeanPaper.ImportedSection56.RankOneWitness`
+- `LeanPaper.ImportedSection56.DualWeightInvariance`
+- `LeanPaper.ImportedSection56.SelectedMonomial`
+- `LeanPaper.ImportedSection56.UnimodularMonomial`
+- `LeanPaper.BetaOneMoments`
+- `LeanPaper.UnitLogMoments`
+- `LeanPaper.SymmetricPoleSpectrum`
+- `LeanPaper.ImportedCharacter.PositiveSlope`
+
+This is **A-Tier evidence for exact theorem statements** and not evidence of new compiler runs or whole-paper closure. The receipt permits only `propext`, `Quot.sound` and `Classical.choice` as transitive axioms.
+
+## 16. Round 14 — weight-independent and monic dual pencils (5.1–5.2)
+
+The **actual rational** dual pencil is stronger than the previously noted finite `CCᵀ` identity:
+
+- [`PaperOrder.CoreAlgebra.dualEntry_derivative_weight_independent`](../src/LeanPaper/ImportedSection56/DualWeightInvariance.lean) proves its entrywise `X`-derivative **does not depend on the weight `s`**. [`dualDelta_top_coefficient_weight_independent`](../src/LeanPaper/ImportedSection56/DualWeightInvariance.lean) proves the determinant's degree-`h` coefficient is weight-independent, **even for dependent coefficient rows** (when it may be zero). Both are crossed off.
+- [`dualSelectedMonomialSlope_one`](../src/LeanPaper/ImportedSection56/SelectedMonomial.lean), [`dualSelectedMonomialDelta_monic`](../src/LeanPaper/ImportedSection56/SelectedMonomial.lean), and [`dualSelectedMonomialDelta_degree`](../src/LeanPaper/ImportedSection56/SelectedMonomial.lean) prove **exact leading coefficient 1 and degree `h`** when `h` distinct monomials are selected from `ℚ[x]≤K`, in any order.
+- [`dualUnimodularSelectedMonomial_top_coeff`](../src/LeanPaper/ImportedSection56/UnimodularMonomial.lean) retains monicity under a rational row basis transform satisfying `det(A)^2=1`; [`dualUnimodularSelectedMonomial_degree`](../src/LeanPaper/ImportedSection56/UnimodularMonomial.lean) preserves full degree. The full-monomial family likewise has a monic determinant of degree `K+1`: [`dualFullMonomialDelta_degree`](../src/LeanPaper/ImportedSection56/FullMonomial.lean).
+
+**Crossed:** actual derivative independence, actual selected-monomial monicity, exact full degree and unimodular stability. **Still missing:** identification with the genuine double-integral Beukers measure in 5.1, and infinite Krein cones in 5.2.
+
+## 17. Round 15 — finite and summable infinite Krein polarization (5.2(2))
+
+[`PaperOrder.PrincipalTheorems.weightSeven_Krein_bilinear`](../src/LeanPaper/ImportedSection56/KreinIdentity.lean) proves the **full six-channel bilinear identity** by pairing complementary logarithmic powers with exact factor `1/1440`. The source also proves:
+
+- `weightSeven_Krein_quadratic`: exact positive-square-minus-negative-square polarization.
+- `weightSeven_Krein_finite_modes`: summed identity for **every finite mode cutoff `M`**.
+- `weightSeven_Krein_infinite_modes`: equality of the two infinite mode sums **when `Summable (fun m => weightSevenPairing (a m) (b m))` is provided**.
+
+The infinite-sum theorem is valid A-Tier mathematics; its **summability hypothesis is a real hypothesis**, and the mode channels `a,b : ℕ→ℕ→ℝ` are abstract real sequences. It does **not** establish Fubini/Tonelli for `ψ_{m,ν}^{±}` built from an arbitrary `f∈L²(0,1)`, nor identify the left side with the true **`dΩ₇` double integral of paper equation (5.4)**.
+
+**Crossed:** exact finite algebra, quadratic/bilinear polarization, and *conditional summable-series equality*. **Not crossed:** original analytic 5.2(2) whole clause or its all-`f` domain.
+
+## 18. Round 16 — unconditional positive **and** negative rank-one ζ(7) witnesses (5.2(3))
+
+The accepted files include **both signs**, not just the negative instance previously highlighted:
+
+- [`negativeWeightSeven_actual_pencil`](../src/LeanPaper/ImportedSection56/RankOneWitness.lean): the exact polynomial for rational row `A(x)=1−6x` is **`37X−38`**, with exact rational root `38/37`.
+- [`zetaSeven_lt_38_div_37`](../src/LeanPaper/ImportedSection56/ZetaSevenBound.lean) and [`weightSeven_rankOne_negative_unconditional`](../src/LeanPaper/ImportedSection56/ZetaSevenBound.lean): **`G_A(ζ(7))<0`**, no supplied ζ bound.
+- [`positiveWeightSeven_actual_pencil`](../src/LeanPaper/ImportedSection56/RankOneWitness.lean): the rational constant row `A(x)=1` gives **`Δ_A(X)=X`**; [`positiveWeightSeven_at_zeta`](../src/LeanPaper/ImportedSection56/RankOneWitness.lean) proves **`G_A(ζ(7))>0`**.
+
+For **`h=1, K≥1`**, these are explicit rational positive/negative **one-dimensional finite pencil instances**. They genuinely resolve that restricted case of the sign-choice construction in 5.2(3). They do **not** prove positive/negative rational subspaces of **arbitrary dimension `h`**, nor the untruncated infinite analytic Krein tail needed in the paper's general statement. The printed quantifier `K≥h` and its `M≥h` construction still require a rank/dimension repair at large `h`.
+
+## 19. Round 17 — true Mellin integral and the special `k=0` β measure (5.1, 6.1–6.2, 6.15)
+
+- [`LeanPaper.UnitLogMoments.integral_exp_neg_substitution`](../src/LeanPaper/UnitLogMoments.lean) proves the actual one-variable exponential change of variables, and [`integral_pow_log`](../src/LeanPaper/UnitLogMoments.lean) proves, with endpoints, `∫₀¹ u^a (−log u)^m du = m!/(a+1)^(m+1)`. [`integrable_pow_log`](../src/LeanPaper/UnitLogMoments.lean) proves integrability. These are important already completed **analytic primitives** for Sections 5–6, but not the paper's two-variable `dΩ₇` or its q-adic factorization.
+- [`LeanPaper.BetaOneMoments.zeroth_moment`](../src/LeanPaper/BetaOneMoments.lean): **`∫₀¹ du/(1+u²)=π/4`**. [`first_moment`](../src/LeanPaper/BetaOneMoments.lean): **`∫₀¹ u du/(1+u²)=log(2)/2`**. Positivity of the actual density and first moment is proved.
+- [`eta_at_one_needs_removable_value`](../src/LeanPaper/BetaOneMoments.lean) proves that replacing `η(1)=log 2` with the **totalized** product `(1−2^(1−1))ζ(1)` incorrectly gives zero, not the above positive first moment. This is a verified diagnostic of the manuscript's **`k=0` endpoint notation**, *not* a full refutation of all higher-`k` moments.
+
+**Crossed:** exact one-variable Mellin/Gamma moments and the `k=0` density's first two integrals. **Still missing:** the fully identified `k≥0`, all-`r` β moments, strictly totally positive Hankel matrix and correct rank-one asymptotic in printed 6.15(2).
+
+## 20. Round 18 — symmetric spectral equality and positive-character slope (3.8–3.9, 6.4)
+
+- [`LeanPaper.SymmetricPoleSpectrum.actual_symmetric_charpoly_eq_pole`](../src/LeanPaper/SymmetricPoleSpectrum.lean) proves that the **actual symmetric whitened matrix** `B=G^(−1/2) M G^(−1/2)` has **the exact same characteristic polynomial** as the signed pole-kernel matrix; [`actual_symmetric_roots_eq_pole`](../src/LeanPaper/SymmetricPoleSpectrum.lean) transfers the entire root **multiset**, including algebraic multiplicities. This is a genuine completed component of **3.8(1)** beyond a mere abstract `G^-1 M` identity. Still missing: constructing the *monic orthogonal polynomials* and Christoffel–Darboux kernel from the actual measure, and 3.8(2)'s differentiated Laplace integral.
+- [`LeanPaper.ImportedCharacter.PositiveSlope.poleM_posDef`](../src/LeanPaper/ImportedCharacter/PositiveSlope.lean) proves positive definiteness of `V diag(γ) Vᵀ` for **injective nodes and positive residues**, at **all finite dimensions**. [`shiftedSlope_posDef`](../src/LeanPaper/ImportedCharacter/PositiveSlope.lean) instantiates it at the positive shifted pole lattice. [`CharacterPositive.all_fekete_laplace_numerators_pos`](../src/LeanPaper/ImportedCharacter/CharacterPositive.lean) supplies positivity of the manuscript's five rational character numerators. These are already proved subcomponents of **3.9/6.4**. They do not construct the Hurwitz/Dirichlet **analytic moment functional**, hence do not close either whole theorem.
+- Final provenance gate: the inspected new subproofs exist in the **accepted** 219-module manifest. The [`snditeration` broad continuation](https://github.com/randogelist/snditeration/tree/feat/zetahyperbolic-continuation-20261025) still has no passing CI for its novel files. No claim is upgraded by filename or by an unverified helper.
+
+**Round 18 verdict:** **7/45 complete printed results remain the only entire-item `!!` claims**. Additional A-Tier subproofs crossed include **actual 5.2 weight-independent monicity, mode polarization under an explicit summability condition, h=1 genuine two-sign ζ(7) witnesses; actual `k=0` β integrals; the exact symmetric 3.8 pole-kernel spectrum and positive shifted-node slopes**. The substantial remaining Beukers infinite-tail, mixed-minor, arithmetic-rate, q-adic and corrected-claim obligations have not vanished.
+
+A new complete-item status requires **fresh exact-proposition equivalence + a passing Lean/axiom audit**, not further reading of unchanged sources.
