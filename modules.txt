@@ -225,4 +225,5 @@ LeanPaper.SignatureRestriction
 LeanPaper.Section3MonicOrthogonal
 LeanPaper.MatrixCurveJacobi
 LeanPaper.BeukersMomentSeries
+LeanPaper.BeukersOffDiagonalKernel
 LeanPaper.KernelAudit
