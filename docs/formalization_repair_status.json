@@ -12,8 +12,8 @@
     "genuinely blocked"
   ],
   "source_base": "41674aac3544bf314a53b4302266ad22a30ae707",
-  "current_receiving_commit": "1a72973e4713b7f5e732329a253e5a94659b3022",
-  "current_receiving_run": 40335811634,
+  "current_receiving_commit": "d258e166caa7e129dfd7e9962738d4ef51e38e84",
+  "current_receiving_run": 40337056961,
   "full_project_verified": false,
   "rows": [
     {
@@ -637,7 +637,7 @@
       "original_statement_preserved": true,
       "whole_original_verified": false,
       "verification": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-      "investigation": "Constructed actual harmonic remainders and leading coefficient control; new harmonic module compiled. Repairing an extensionality type mismatch in the generic dominant determinant lemma before receiving compilation of the actual Aq matrix endpoint.",
+      "investigation": "Actual harmonic remainder and dominant determinant modules compiled. Repairing explicit Fin-index typing, matrix function notation and one rational normalization in the actual Aq matrix module; exact q=7 discrepancy declarations elaborated within that still-failed module. The original part(1) endpoint still awaits a successful module and global audit.",
       "remaining_obstacle": "The actual h=4,K=28 exact rational certificate in `BEUKERS_POSITIVITY_COUNTEREXAMPLE.md` contradicts the printed positive cone in part (2). Its rational arithmetic and analytic ζ(7) enclosure are external checks, not a Lean kernel theorem. Orthogonality to finitely many negative modes does not control the infinite negative tail. A corrected tail-controlled cone with new parameter estimates is required; part (1) separately requires actual q-adic harmonic/matrix valuations. No cone positivity was assumed.",
       "review": "docs/repair_reviews/section6.md",
       "github_verification": {
@@ -990,13 +990,13 @@
   ],
   "latest_completed_verification": {
     "state": "FAIL",
-    "compiled": 260,
+    "compiled": 261,
     "registered": 263,
     "subset_audit": "PASS",
     "scope": "COMPLETED_PROJECT_SUBSET",
     "full_project_verified": false,
-    "commit": "1a72973e4713b7f5e732329a253e5a94659b3022",
-    "run_id": 40335811634
+    "commit": "d258e166caa7e129dfd7e9962738d4ef51e38e84",
+    "run_id": 40337056961
   },
   "pre_autonomous_metadata": {
     "schema_version": 1,

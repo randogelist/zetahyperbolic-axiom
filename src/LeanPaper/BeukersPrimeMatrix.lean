@@ -28,7 +28,8 @@ def upperIndex {q : ℕ} (i : Fin q) : Fin (2 * q - 1 + 1) :=
   constructor
   · intro h
     apply Fin.ext
-    exact congrArg Fin.val h
+    simpa only [lowerIndex] using
+      congrArg (fun x : Fin (2 * q - 1 + 1) => x.val) h
   · rintro rfl
     rfl
 
@@ -73,7 +74,8 @@ lemma sum_coefficients_mul {q : ℕ} (i : Fin q) (f : Fin (2 * q - 1 + 1) → �
 
 /-- Disjoint two-monomial rows are genuinely independent. -/
 theorem coefficients_vecMul_injective (q : ℕ) :
-    Function.Injective (coefficients q).vecMul := by
+    Function.Injective
+      (coefficients q : Matrix (Fin q) (Fin (2 * q - 1 + 1)) ℚ).vecMul := by
   intro a b hab
   funext i
   have h := congrFun hab (lowerIndex i)
@@ -84,7 +86,7 @@ lemma slope_entry {q : ℕ} (i j : Fin q) :
   rw [sum_coefficients_mul]
   by_cases hij : i = j
   · subst j
-    simp [coefficients]
+    norm_num [coefficients]
   · simp [coefficients, hij]
 
 lemma constant_entry {q : ℕ} (i j : Fin q) :
