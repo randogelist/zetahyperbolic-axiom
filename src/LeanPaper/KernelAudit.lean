@@ -214,6 +214,7 @@ import LeanPaper.Section4AlgebraicLimsup
 import LeanPaper.Section4EffectiveBudget
 import LeanPaper.Section4TransferComplete
 import LeanPaper.SlopeSignature
+import LeanPaper.SignatureRestriction
 import LeanPaper.SymmetricPoleSpectrum
 import LeanPaper.UnitLogMoments
 import Zeta5Merge.Theorem6_17
@@ -851,6 +852,7 @@ run_cmd Elab.Command.liftCoreM do
     `LeanPaper.Section4EffectiveBudget,
     `LeanPaper.Section4TransferComplete,
     `LeanPaper.SlopeSignature,
+    `LeanPaper.SignatureRestriction,
     `LeanPaper.SymmetricPoleSpectrum,
     `LeanPaper.UnitLogMoments,
     `Zeta5Merge.Theorem6_17]
