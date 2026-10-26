@@ -140,6 +140,7 @@ import LeanPaper.ImportedSection56.DualSOS
 import LeanPaper.ImportedSection56.DualStrictDiscriminant
 import LeanPaper.ImportedSection56.DualWeightInvariance
 import LeanPaper.ImportedSection56.FiniteKreinCone
+import Zeta5Merge.Theorem6_16
 import LeanPaper.ImportedSection56.PositiveSlopeSpectrum
 import LeanPaper.ImportedSection56.ZetaSevenBound
 import LeanPaper.ImportedSection3.ExactTaylor
@@ -777,6 +778,7 @@ run_cmd Elab.Command.liftCoreM do
     `LeanPaper.ImportedSection56.DualStrictDiscriminant,
     `LeanPaper.ImportedSection56.DualWeightInvariance,
     `LeanPaper.ImportedSection56.FiniteKreinCone,
+    `Zeta5Merge.Theorem6_16,
     `LeanPaper.ImportedSection56.PositiveSlopeSpectrum,
     `LeanPaper.ImportedSection56.ZetaSevenBound,
     `LeanPaper.ImportedSection3.ExactTaylor,
