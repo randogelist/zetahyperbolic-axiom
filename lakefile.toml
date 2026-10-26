@@ -236,6 +236,9 @@ roots = [
   "LeanPaper.UnitLogMoments",
   "Zeta5.HermiteBasisCore",
   "Zeta5Merge.Theorem6_17",
+  "LeanPaper.SignatureRestriction",
+  "LeanPaper.Section3MonicOrthogonal",
+  "LeanPaper.MatrixCurveJacobi",
   "LeanPaper.BeukersMomentSeries",
   "LeanPaper.KernelAudit",
 ]
