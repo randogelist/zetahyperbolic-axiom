@@ -195,6 +195,7 @@ roots = [
   "LeanPaper.CentralFactorialDecay",
   "LeanPaper.ContinuousDensityNormalization",
   "LeanPaper.ContinuousWeightMoments",
+  "LeanPaper.CarlemanFactorialCriterion",
   "LeanPaper.ContinuousGram",
   "LeanPaper.RationalLogJets",
   "LeanPaper.ReciprocalAllOrders",
