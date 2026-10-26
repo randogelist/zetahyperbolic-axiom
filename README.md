@@ -87,6 +87,8 @@ Newly sharpened crossings include actual **3.4(2)** Jacobi/Dodgson evaluation; *
 
 This is **convergence of the audit's knowledge of the fixed source base, not convergence of the mathematical proof**. The file defines reproducible metrics, exact historical checkpoint commits, and a saturation rule for redirecting effort from further reviews to `A_TIER_PLANNING` and `A_TIER_EXECUTION` on outstanding mathematical bridges.
 
+**Zero-novelty sign:** **⛔ REINFERENCE SATURATED — Δ = 0**. Display it only after another scoped re-audit finds **no** new verified subclaim, previously uncredited relevant source evidence, changed open obligation, or verified downstream implication. Merely maintaining the same whole-item count does not trigger the sign. The round-40 checkpoint **has not met** this condition. The [convergence log](docs/AUDIT_CONVERGENCE.md) defines the four required zero deltas and evidence checks.
+
 ## 6. Persistent update policy
 
 This branch `persistent/zetahyperbolic-paper-gap-tracker` is a **documentation and missing-work branch**, not the active mathematical proof base. After *genuinely new* Lean results, record **paper clause → exact original objects → fully qualified proof → source commit/SHA → Lean/Mathlib fingerprint → passing build + transitive axiom receipt → discharged hypotheses and remaining gaps**. Preserve `LEAN_ANCHORINGS` and `ZETA_HYPERBOLIC_ANCHOR_1` to `ZETA_HYPERBOLIC_ANCHOR_7`; freeze unchanged A-Tier source.
