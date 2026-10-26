@@ -231,6 +231,7 @@ import LeanPaper.BeukersRationalityActual
 import LeanPaper.BeukersKreinMonomialActual
 import LeanPaper.BeukersKreinPolynomialActual
 import LeanPaper.ShiftedSolidMinors
+import LeanPaper.BeukersOffDiagonalKernel
 import Lean
 
 /-! Independent transitive axiom audit of every active imported project declaration.
@@ -881,7 +882,8 @@ run_cmd Elab.Command.liftCoreM do
     `LeanPaper.BeukersRationalityActual,
     `LeanPaper.BeukersKreinMonomialActual,
     `LeanPaper.BeukersKreinPolynomialActual,
-    `LeanPaper.ShiftedSolidMinors]
+    `LeanPaper.ShiftedSolidMinors,
+    `LeanPaper.BeukersOffDiagonalKernel]
   let mut roots : Array Name := #[]
   for (decl, _) in env.constants do
     if let some idx := env.getModuleIdxFor? decl then

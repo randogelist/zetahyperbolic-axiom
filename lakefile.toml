@@ -246,5 +246,6 @@ roots = [
   "LeanPaper.BeukersKreinMonomialActual",
   "LeanPaper.BeukersKreinPolynomialActual",
   "LeanPaper.ShiftedSolidMinors",
+  "LeanPaper.BeukersOffDiagonalKernel",
   "LeanPaper.KernelAudit",
 ]
