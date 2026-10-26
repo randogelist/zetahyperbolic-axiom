@@ -65,12 +65,16 @@ theorem posDef_det_le_prod_diagonal {n : ℕ} {G : Matrix (Fin n) (Fin n) ℝ}
   have hdetL := Matrix.det_of_isLowerTriangular (LDL.lower hG) hL
   have hentry (i : Fin n) : G i i =
       ∑ j, LDL.lower hG i j ^ 2 * LDL.diagEntries hG j := by
-    rw [← LDL.lower_conj_diag hG,
-      Matrix.conjTranspose_eq_transpose_of_trivial, Matrix.mul_apply]
-    simp only [LDL.diag, Matrix.mul_diagonal, Matrix.transpose_apply]
-    apply Finset.sum_congr rfl
-    intro j hj
-    ring
+    calc
+      G i i = (LDL.lower hG * LDL.diag hG * (LDL.lower hG)ᴴ) i i :=
+        (congrArg (fun A : Matrix (Fin n) (Fin n) ℝ => A i i)
+          (LDL.lower_conj_diag hG)).symm
+      _ = _ := by
+        rw [Matrix.conjTranspose_eq_transpose_of_trivial, Matrix.mul_apply]
+        simp only [LDL.diag, Matrix.mul_diagonal, Matrix.transpose_apply]
+        apply Finset.sum_congr rfl
+        intro j hj
+        ring
   have hbound (i : Fin n) :
       LDL.lower hG i i ^ 2 * LDL.diagEntries hG i ≤ G i i := by
     rw [hentry]
@@ -78,10 +82,14 @@ theorem posDef_det_le_prod_diagonal {n : ℕ} {G : Matrix (Fin n) (Fin n) ℝ}
       (fun j _ => mul_nonneg (sq_nonneg _) (hD j).le) (Finset.mem_univ i)
   calc
     G.det = ∏ i, LDL.lower hG i i * LDL.diagEntries hG i * LDL.lower hG i i := by
-      rw [← LDL.lower_conj_diag hG]
-      simp only [Matrix.conjTranspose_eq_transpose_of_trivial, Matrix.det_mul,
-        Matrix.det_transpose, LDL.diag, Matrix.det_diagonal, hdetL,
-        Finset.prod_mul_distrib]
+      calc
+        G.det = (LDL.lower hG * LDL.diag hG * (LDL.lower hG)ᴴ).det :=
+          (congrArg (fun A : Matrix (Fin n) (Fin n) ℝ => A.det)
+            (LDL.lower_conj_diag hG)).symm
+        _ = _ := by
+          simp only [Matrix.conjTranspose_eq_transpose_of_trivial, Matrix.det_mul,
+            Matrix.det_transpose, LDL.diag, Matrix.det_diagonal, hdetL,
+            Finset.prod_mul_distrib]
     _ = ∏ i, LDL.lower hG i i ^ 2 * LDL.diagEntries hG i := by
       apply Finset.prod_congr rfl
       intro i hi

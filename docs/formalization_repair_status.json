@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "date": "2026-10-26",
-  "scope": "All45numbered manuscript originals; alternatives and component compilation are separately identified.",
+  "scope": "All 45 numbered manuscript originals; alternatives and component compilation are separately identified.",
   "mode": "A_TIER_LEAN",
   "target": "GITHUB_CI",
   "allowed_statuses": [
@@ -12,8 +12,8 @@
     "genuinely blocked"
   ],
   "source_base": "41674aac3544bf314a53b4302266ad22a30ae707",
-  "current_receiving_commit": "96ffaabc6051e7ebbf66b3f86aeea91cb7602111",
-  "current_receiving_run": 40318924083,
+  "current_receiving_commit": "e83810004eb5e2392beb208e5d85bc3843ae5214",
+  "current_receiving_run": 40323993835,
   "full_project_verified": false,
   "rows": [
     {
@@ -320,8 +320,8 @@
       "original_statement_preserved": true,
       "whole_original_verified": false,
       "verification": "GITHUB_CI_PENDING",
-      "investigation": "Attempted; genuine analytic/arithmetic gaps",
-      "remaining_obstacle": "Read the multiplicative-fiber change of variables and local pole analysis. Existing exact square moments and new 6.2 solve the adjacent integrals, but not the full disintegration/Jacobian theorem. Exact local harmonic valuations and the claimed dominant 2×2 block are not instantiated for the actual family. Prove the fiber substitution with its domain/Jacobian and then the harmonic and determinant local leading terms. No generic valuation interface is substituted.",
+      "investigation": "Constructed actual harmonic-difference and outer-prime divided-difference valuations, congruence reduction and actual-integral identification; verification pending.",
+      "remaining_obstacle": "Full multiplicative-fiber change of variables and the actual local 2-by-2 leading coefficient/congruence obstruction remain; the central off-diagonal -7 valuation has a source candidate without a valuation premise.",
       "review": "docs/repair_reviews/section6.md"
     },
     {
@@ -419,8 +419,8 @@
       "original_statement_preserved": true,
       "whole_original_verified": false,
       "verification": "GITHUB_CI_PENDING",
-      "investigation": "Attempted; important asymptotic component already complete",
-      "remaining_obstacle": "Reviewed `CoefficientGramGrowth`, exact rational-row independence and coefficient casts. Integral full-row-rank coefficient Gram has determinant at least one and a polynomial-entry factorial bound sufficient to prove normalized log determinant/K²→0. The exact printed finite Hadamard bound and the one-variable equilibrium-energy limits/strict gap remain. Searched pinned Mathlib matrix/Gram sources for a reusable Hadamard bound; no direct suitable inequality was found. Do not replace family potential limits with arbitrary constants.",
+      "investigation": "Retained coefficient-Gram quadratic-growth proof; constructed the exact finite coefficient-height Hadamard bound from LDL, verification pending.",
+      "remaining_obstacle": "The actual one-variable equilibrium-energy limits and strict potential gap remain; the new finite coefficient-height bound requires receiving verification.",
       "review": "docs/repair_reviews/section6.md"
     },
     {
@@ -511,5 +511,13 @@
       "remaining_obstacle": "The actual shifted numerator degrees, vanishing quotient on the leading 6n block and full `42n−1` quotient bound are proved. Read the claimed 2-adic residue, determinant-height loss and odd-prime clearing argument. The actual dyadic quotient/residue valuations and effective family height/decay estimates are absent. Correct quotient dimension information alone cannot justify the resulting irrationality estimate.",
       "review": "docs/repair_reviews/section6.md"
     }
-  ]
+  ],
+  "latest_completed_verification": {
+    "state": "FAIL",
+    "compiled": 251,
+    "registered": 259,
+    "subset_audit": "PASS",
+    "scope": "COMPLETED_PROJECT_SUBSET",
+    "full_project_verified": false
+  }
 }

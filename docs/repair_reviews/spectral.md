@@ -62,7 +62,8 @@ an independent pinned-API review; receiving CI remains authoritative.
   an odd-weight density that has a different exponent.
 - CI3: the moment-bounds module reached all proofs but one positivity tactic did not use
   half-line membership as an explicit nonnegativity fact. Replaced it with explicit multiplication
-  and power nonnegativity using `le_of_lt hy`. No statement changed; await CI4.
+  and power nonnegativity using `le_of_lt hy`. No statement changed.
+- CI4: the moment-bounds module compiled successfully with the allowed axiom set.
 - Rational-weight and local-domination assembly
   have now been implemented in the following modules.
 
@@ -77,7 +78,11 @@ an independent pinned-API review; receiving CI remains authoritative.
 - Static review fixed the norm simplification to target the denominator explicitly; rewriting
   the first real norm generically could instead simplify the numerator.
 - Only positive scale is assumed; no caller-provided domination or derivative certificate.
-- Verification: source candidate queued for CI batch 3.
+- CI4 exposed a renamed/qualified infinite-sum order API, an unsupported nonpositive tactic
+  target, missing explicit numerator positivity, and hidden pointwise multiplication/negation
+  obstructing tactic rewriting. Fixed with `Summable.tsum_le_tsum`, explicit sign lemmas and
+  numerator positivity, an explicit pointwise `change`, and AE congruence for negation.
+  All mathematical statements and their hypotheses are unchanged. Await CI5.
 
 ### LaplaceGram.lean — actual positive Gram curve
 

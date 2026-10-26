@@ -49,12 +49,45 @@ theorem outerT_piece_1 {y : ℝ} (ha : 1/3 < y) (hb : y < 43/120) :
     floor_reciprocal_eq 2 (by linarith) (by norm_num <;> linarith) (by norm_num <;> linarith)
   have hh : y < 1/2 := by linarith
   have h1 : y < 1 := by linarith
-  norm_num [outerT, outerR, alpha, lambda, v, u, t, r, hf, hh, h1,
-    Fin.sum_univ_succ]
-  try simp only [max_def, min_def]
-  all_goals
-    repeat' (split <;> try linarith)
-  all_goals linarith
+  have hv : v y = (1-2*y) := by
+    unfold v
+    rw [hf]
+    norm_num <;> ring
+  have hu : u y = (3/40+(1-2*y)-y) := by
+    rw [u, hv]
+    change max (0 : ℝ) (3/40+(1-2*y)-y) = (3/40+(1-2*y)-y)
+    exact max_eq_right (by linarith)
+  have ht : t y = (3/40+(3/40+(1-2*y)-y)) := by
+    rw [t, hv, hu]
+    change min (3/40 : ℝ) (1-2*y)+(3/40+(1-2*y)-y) = (3/40+(3/40+(1-2*y)-y))
+    rw [min_eq_left (show (3/40 : ℝ) ≤ (1-2*y) by linarith)]
+  have hr : r y = (29/20-3*y) := by
+    unfold r
+    exact max_eq_right (by linarith)
+  have hm : min (r y) (y+u y) = (y+(3/40+(1-2*y)-y)) := by
+    rw [hr, hu]
+    exact min_eq_right (by linarith)
+  have hp1 : max (0 : ℝ) (37/20-y) = (37/20-y) :=
+    max_eq_right (by linarith)
+  have hp2 : max (0 : ℝ) (37/20-2*y) = (37/20-2*y) :=
+    max_eq_right (by linarith)
+  have hp3 : max (0 : ℝ) (37/20-3*y) = (37/20-3*y) :=
+    max_eq_right (by linarith)
+  have hp4 : max (0 : ℝ) (37/20-4*y) = (37/20-4*y) :=
+    max_eq_right (by linarith)
+  have hp5 : max (0 : ℝ) (37/20-5*y) = (37/20-5*y) :=
+    max_eq_right (by linarith)
+  have hp6 : max (0 : ℝ) (37/20-6*y) = 0 :=
+    max_eq_left (by linarith)
+  have hp7 : max (0 : ℝ) (37/20-7*y) = 0 :=
+    max_eq_left (by linarith)
+  unfold outerT
+  rw [hf]
+  unfold outerR
+  rw [if_pos hh]
+  rw [ht, hm]
+  norm_num [alpha, lambda, Fin.sum_univ_succ] <;>
+    (try simp only [hp1, hp2, hp3, hp4, hp5, hp6, hp7]) <;> ring
 
 theorem outerT_piece_2 {y : ℝ} (ha : 43/120 < y) (hb : y < 29/80) :
     outerT y = 513/40+(-23)*y := by
@@ -62,12 +95,45 @@ theorem outerT_piece_2 {y : ℝ} (ha : 43/120 < y) (hb : y < 29/80) :
     floor_reciprocal_eq 2 (by linarith) (by norm_num <;> linarith) (by norm_num <;> linarith)
   have hh : y < 1/2 := by linarith
   have h1 : y < 1 := by linarith
-  norm_num [outerT, outerR, alpha, lambda, v, u, t, r, hf, hh, h1,
-    Fin.sum_univ_succ]
-  try simp only [max_def, min_def]
-  all_goals
-    repeat' (split <;> try linarith)
-  all_goals linarith
+  have hv : v y = (1-2*y) := by
+    unfold v
+    rw [hf]
+    norm_num <;> ring
+  have hu : u y = 0 := by
+    rw [u, hv]
+    change max (0 : ℝ) (3/40+(1-2*y)-y) = 0
+    exact max_eq_left (by linarith)
+  have ht : t y = (3/40+0) := by
+    rw [t, hv, hu]
+    change min (3/40 : ℝ) (1-2*y)+0 = (3/40+0)
+    rw [min_eq_left (show (3/40 : ℝ) ≤ (1-2*y) by linarith)]
+  have hr : r y = (29/20-3*y) := by
+    unfold r
+    exact max_eq_right (by linarith)
+  have hm : min (r y) (y+u y) = (y+0) := by
+    rw [hr, hu]
+    exact min_eq_right (by linarith)
+  have hp1 : max (0 : ℝ) (37/20-y) = (37/20-y) :=
+    max_eq_right (by linarith)
+  have hp2 : max (0 : ℝ) (37/20-2*y) = (37/20-2*y) :=
+    max_eq_right (by linarith)
+  have hp3 : max (0 : ℝ) (37/20-3*y) = (37/20-3*y) :=
+    max_eq_right (by linarith)
+  have hp4 : max (0 : ℝ) (37/20-4*y) = (37/20-4*y) :=
+    max_eq_right (by linarith)
+  have hp5 : max (0 : ℝ) (37/20-5*y) = (37/20-5*y) :=
+    max_eq_right (by linarith)
+  have hp6 : max (0 : ℝ) (37/20-6*y) = 0 :=
+    max_eq_left (by linarith)
+  have hp7 : max (0 : ℝ) (37/20-7*y) = 0 :=
+    max_eq_left (by linarith)
+  unfold outerT
+  rw [hf]
+  unfold outerR
+  rw [if_pos hh]
+  rw [ht, hm]
+  norm_num [alpha, lambda, Fin.sum_univ_succ] <;>
+    (try simp only [hp1, hp2, hp3, hp4, hp5, hp6, hp7]) <;> ring
 
 theorem outerT_piece_3 {y : ℝ} (ha : 29/80 < y) (hb : y < 37/100) :
     outerT y = 571/40+(-27)*y := by
@@ -75,12 +141,45 @@ theorem outerT_piece_3 {y : ℝ} (ha : 29/80 < y) (hb : y < 37/100) :
     floor_reciprocal_eq 2 (by linarith) (by norm_num <;> linarith) (by norm_num <;> linarith)
   have hh : y < 1/2 := by linarith
   have h1 : y < 1 := by linarith
-  norm_num [outerT, outerR, alpha, lambda, v, u, t, r, hf, hh, h1,
-    Fin.sum_univ_succ]
-  try simp only [max_def, min_def]
-  all_goals
-    repeat' (split <;> try linarith)
-  all_goals linarith
+  have hv : v y = (1-2*y) := by
+    unfold v
+    rw [hf]
+    norm_num <;> ring
+  have hu : u y = 0 := by
+    rw [u, hv]
+    change max (0 : ℝ) (3/40+(1-2*y)-y) = 0
+    exact max_eq_left (by linarith)
+  have ht : t y = (3/40+0) := by
+    rw [t, hv, hu]
+    change min (3/40 : ℝ) (1-2*y)+0 = (3/40+0)
+    rw [min_eq_left (show (3/40 : ℝ) ≤ (1-2*y) by linarith)]
+  have hr : r y = (29/20-3*y) := by
+    unfold r
+    exact max_eq_right (by linarith)
+  have hm : min (r y) (y+u y) = (29/20-3*y) := by
+    rw [hr, hu]
+    exact min_eq_left (by linarith)
+  have hp1 : max (0 : ℝ) (37/20-y) = (37/20-y) :=
+    max_eq_right (by linarith)
+  have hp2 : max (0 : ℝ) (37/20-2*y) = (37/20-2*y) :=
+    max_eq_right (by linarith)
+  have hp3 : max (0 : ℝ) (37/20-3*y) = (37/20-3*y) :=
+    max_eq_right (by linarith)
+  have hp4 : max (0 : ℝ) (37/20-4*y) = (37/20-4*y) :=
+    max_eq_right (by linarith)
+  have hp5 : max (0 : ℝ) (37/20-5*y) = (37/20-5*y) :=
+    max_eq_right (by linarith)
+  have hp6 : max (0 : ℝ) (37/20-6*y) = 0 :=
+    max_eq_left (by linarith)
+  have hp7 : max (0 : ℝ) (37/20-7*y) = 0 :=
+    max_eq_left (by linarith)
+  unfold outerT
+  rw [hf]
+  unfold outerR
+  rw [if_pos hh]
+  rw [ht, hm]
+  norm_num [alpha, lambda, Fin.sum_univ_succ] <;>
+    (try simp only [hp1, hp2, hp3, hp4, hp5, hp6, hp7]) <;> ring
 
 theorem outerT_piece_4 {y : ℝ} (ha : 37/100 < y) (hb : y < 37/80) :
     outerT y = 497/40+(-22)*y := by
@@ -88,12 +187,45 @@ theorem outerT_piece_4 {y : ℝ} (ha : 37/100 < y) (hb : y < 37/80) :
     floor_reciprocal_eq 2 (by linarith) (by norm_num <;> linarith) (by norm_num <;> linarith)
   have hh : y < 1/2 := by linarith
   have h1 : y < 1 := by linarith
-  norm_num [outerT, outerR, alpha, lambda, v, u, t, r, hf, hh, h1,
-    Fin.sum_univ_succ]
-  try simp only [max_def, min_def]
-  all_goals
-    repeat' (split <;> try linarith)
-  all_goals linarith
+  have hv : v y = (1-2*y) := by
+    unfold v
+    rw [hf]
+    norm_num <;> ring
+  have hu : u y = 0 := by
+    rw [u, hv]
+    change max (0 : ℝ) (3/40+(1-2*y)-y) = 0
+    exact max_eq_left (by linarith)
+  have ht : t y = (3/40+0) := by
+    rw [t, hv, hu]
+    change min (3/40 : ℝ) (1-2*y)+0 = (3/40+0)
+    rw [min_eq_left (show (3/40 : ℝ) ≤ (1-2*y) by linarith)]
+  have hr : r y = (29/20-3*y) := by
+    unfold r
+    exact max_eq_right (by linarith)
+  have hm : min (r y) (y+u y) = (29/20-3*y) := by
+    rw [hr, hu]
+    exact min_eq_left (by linarith)
+  have hp1 : max (0 : ℝ) (37/20-y) = (37/20-y) :=
+    max_eq_right (by linarith)
+  have hp2 : max (0 : ℝ) (37/20-2*y) = (37/20-2*y) :=
+    max_eq_right (by linarith)
+  have hp3 : max (0 : ℝ) (37/20-3*y) = (37/20-3*y) :=
+    max_eq_right (by linarith)
+  have hp4 : max (0 : ℝ) (37/20-4*y) = (37/20-4*y) :=
+    max_eq_right (by linarith)
+  have hp5 : max (0 : ℝ) (37/20-5*y) = 0 :=
+    max_eq_left (by linarith)
+  have hp6 : max (0 : ℝ) (37/20-6*y) = 0 :=
+    max_eq_left (by linarith)
+  have hp7 : max (0 : ℝ) (37/20-7*y) = 0 :=
+    max_eq_left (by linarith)
+  unfold outerT
+  rw [hf]
+  unfold outerR
+  rw [if_pos hh]
+  rw [ht, hm]
+  norm_num [alpha, lambda, Fin.sum_univ_succ] <;>
+    (try simp only [hp1, hp2, hp3, hp4, hp5, hp6, hp7]) <;> ring
 
 theorem outerT_piece_5 {y : ℝ} (ha : 37/80 < y) (hb : y < 29/60) :
     outerT y = 41/10+(-4)*y := by
@@ -101,12 +233,45 @@ theorem outerT_piece_5 {y : ℝ} (ha : 37/80 < y) (hb : y < 29/60) :
     floor_reciprocal_eq 2 (by linarith) (by norm_num <;> linarith) (by norm_num <;> linarith)
   have hh : y < 1/2 := by linarith
   have h1 : y < 1 := by linarith
-  norm_num [outerT, outerR, alpha, lambda, v, u, t, r, hf, hh, h1,
-    Fin.sum_univ_succ]
-  try simp only [max_def, min_def]
-  all_goals
-    repeat' (split <;> try linarith)
-  all_goals linarith
+  have hv : v y = (1-2*y) := by
+    unfold v
+    rw [hf]
+    norm_num <;> ring
+  have hu : u y = 0 := by
+    rw [u, hv]
+    change max (0 : ℝ) (3/40+(1-2*y)-y) = 0
+    exact max_eq_left (by linarith)
+  have ht : t y = ((1-2*y)+0) := by
+    rw [t, hv, hu]
+    change min (3/40 : ℝ) (1-2*y)+0 = ((1-2*y)+0)
+    rw [min_eq_right (show (1-2*y) ≤ (3/40 : ℝ) by linarith)]
+  have hr : r y = (29/20-3*y) := by
+    unfold r
+    exact max_eq_right (by linarith)
+  have hm : min (r y) (y+u y) = (29/20-3*y) := by
+    rw [hr, hu]
+    exact min_eq_left (by linarith)
+  have hp1 : max (0 : ℝ) (37/20-y) = (37/20-y) :=
+    max_eq_right (by linarith)
+  have hp2 : max (0 : ℝ) (37/20-2*y) = (37/20-2*y) :=
+    max_eq_right (by linarith)
+  have hp3 : max (0 : ℝ) (37/20-3*y) = (37/20-3*y) :=
+    max_eq_right (by linarith)
+  have hp4 : max (0 : ℝ) (37/20-4*y) = 0 :=
+    max_eq_left (by linarith)
+  have hp5 : max (0 : ℝ) (37/20-5*y) = 0 :=
+    max_eq_left (by linarith)
+  have hp6 : max (0 : ℝ) (37/20-6*y) = 0 :=
+    max_eq_left (by linarith)
+  have hp7 : max (0 : ℝ) (37/20-7*y) = 0 :=
+    max_eq_left (by linarith)
+  unfold outerT
+  rw [hf]
+  unfold outerR
+  rw [if_pos hh]
+  rw [ht, hm]
+  norm_num [alpha, lambda, Fin.sum_univ_succ] <;>
+    (try simp only [hp1, hp2, hp3, hp4, hp5, hp6, hp7]) <;> ring
 
 theorem outerT_piece_6 {y : ℝ} (ha : 29/60 < y) (hb : y < 1/2) :
     outerT y = 53/20+(-1)*y := by
@@ -114,12 +279,45 @@ theorem outerT_piece_6 {y : ℝ} (ha : 29/60 < y) (hb : y < 1/2) :
     floor_reciprocal_eq 2 (by linarith) (by norm_num <;> linarith) (by norm_num <;> linarith)
   have hh : y < 1/2 := by linarith
   have h1 : y < 1 := by linarith
-  norm_num [outerT, outerR, alpha, lambda, v, u, t, r, hf, hh, h1,
-    Fin.sum_univ_succ]
-  try simp only [max_def, min_def]
-  all_goals
-    repeat' (split <;> try linarith)
-  all_goals linarith
+  have hv : v y = (1-2*y) := by
+    unfold v
+    rw [hf]
+    norm_num <;> ring
+  have hu : u y = 0 := by
+    rw [u, hv]
+    change max (0 : ℝ) (3/40+(1-2*y)-y) = 0
+    exact max_eq_left (by linarith)
+  have ht : t y = ((1-2*y)+0) := by
+    rw [t, hv, hu]
+    change min (3/40 : ℝ) (1-2*y)+0 = ((1-2*y)+0)
+    rw [min_eq_right (show (1-2*y) ≤ (3/40 : ℝ) by linarith)]
+  have hr : r y = 0 := by
+    unfold r
+    exact max_eq_left (by linarith)
+  have hm : min (r y) (y+u y) = 0 := by
+    rw [hr, hu]
+    exact min_eq_left (by linarith)
+  have hp1 : max (0 : ℝ) (37/20-y) = (37/20-y) :=
+    max_eq_right (by linarith)
+  have hp2 : max (0 : ℝ) (37/20-2*y) = (37/20-2*y) :=
+    max_eq_right (by linarith)
+  have hp3 : max (0 : ℝ) (37/20-3*y) = (37/20-3*y) :=
+    max_eq_right (by linarith)
+  have hp4 : max (0 : ℝ) (37/20-4*y) = 0 :=
+    max_eq_left (by linarith)
+  have hp5 : max (0 : ℝ) (37/20-5*y) = 0 :=
+    max_eq_left (by linarith)
+  have hp6 : max (0 : ℝ) (37/20-6*y) = 0 :=
+    max_eq_left (by linarith)
+  have hp7 : max (0 : ℝ) (37/20-7*y) = 0 :=
+    max_eq_left (by linarith)
+  unfold outerT
+  rw [hf]
+  unfold outerR
+  rw [if_pos hh]
+  rw [ht, hm]
+  norm_num [alpha, lambda, Fin.sum_univ_succ] <;>
+    (try simp only [hp1, hp2, hp3, hp4, hp5, hp6, hp7]) <;> ring
 
 theorem outerT_piece_7 {y : ℝ} (ha : 1/2 < y) (hb : y < 43/80) :
     outerT y = 7/2+(1)*y := by
@@ -127,12 +325,46 @@ theorem outerT_piece_7 {y : ℝ} (ha : 1/2 < y) (hb : y < 43/80) :
     floor_reciprocal_eq 1 (by linarith) (by norm_num <;> linarith) (by norm_num <;> linarith)
   have hh : ¬y < 1/2 := by linarith
   have h1 : y < 1 := by linarith
-  norm_num [outerT, outerR, alpha, lambda, v, u, t, r, hf, hh, h1,
-    Fin.sum_univ_succ]
-  try simp only [max_def, min_def]
-  all_goals
-    repeat' (split <;> try linarith)
-  all_goals linarith
+  have hv : v y = (1-1*y) := by
+    unfold v
+    rw [hf]
+    norm_num <;> ring
+  have hu : u y = (3/40+(1-1*y)-y) := by
+    rw [u, hv]
+    change max (0 : ℝ) (3/40+(1-1*y)-y) = (3/40+(1-1*y)-y)
+    exact max_eq_right (by linarith)
+  have ht : t y = (3/40+(3/40+(1-1*y)-y)) := by
+    rw [t, hv, hu]
+    change min (3/40 : ℝ) (1-1*y)+(3/40+(1-1*y)-y) = (3/40+(3/40+(1-1*y)-y))
+    rw [min_eq_left (show (3/40 : ℝ) ≤ (1-1*y) by linarith)]
+  have hr : r y = 0 := by
+    unfold r
+    exact max_eq_left (by linarith)
+  have hm : min (r y) (y-alpha+u y) = 0 := by
+    rw [hr, hu]
+    unfold alpha
+    exact min_eq_left (by linarith)
+  have hp1 : max (0 : ℝ) (37/20-y) = (37/20-y) :=
+    max_eq_right (by linarith)
+  have hp2 : max (0 : ℝ) (37/20-2*y) = (37/20-2*y) :=
+    max_eq_right (by linarith)
+  have hp3 : max (0 : ℝ) (37/20-3*y) = (37/20-3*y) :=
+    max_eq_right (by linarith)
+  have hp4 : max (0 : ℝ) (37/20-4*y) = 0 :=
+    max_eq_left (by linarith)
+  have hp5 : max (0 : ℝ) (37/20-5*y) = 0 :=
+    max_eq_left (by linarith)
+  have hp6 : max (0 : ℝ) (37/20-6*y) = 0 :=
+    max_eq_left (by linarith)
+  have hp7 : max (0 : ℝ) (37/20-7*y) = 0 :=
+    max_eq_left (by linarith)
+  unfold outerT
+  rw [hf]
+  unfold outerR
+  rw [if_neg hh, if_pos h1]
+  rw [ht, hm]
+  norm_num [alpha, lambda, Fin.sum_univ_succ] <;>
+    (try simp only [hp1, hp2, hp3, hp4, hp5, hp6, hp7]) <;> ring
 
 theorem outerT_piece_8 {y : ℝ} (ha : 43/80 < y) (hb : y < 37/60) :
     outerT y = 121/10+(-15)*y := by
@@ -140,12 +372,46 @@ theorem outerT_piece_8 {y : ℝ} (ha : 43/80 < y) (hb : y < 37/60) :
     floor_reciprocal_eq 1 (by linarith) (by norm_num <;> linarith) (by norm_num <;> linarith)
   have hh : ¬y < 1/2 := by linarith
   have h1 : y < 1 := by linarith
-  norm_num [outerT, outerR, alpha, lambda, v, u, t, r, hf, hh, h1,
-    Fin.sum_univ_succ]
-  try simp only [max_def, min_def]
-  all_goals
-    repeat' (split <;> try linarith)
-  all_goals linarith
+  have hv : v y = (1-1*y) := by
+    unfold v
+    rw [hf]
+    norm_num <;> ring
+  have hu : u y = 0 := by
+    rw [u, hv]
+    change max (0 : ℝ) (3/40+(1-1*y)-y) = 0
+    exact max_eq_left (by linarith)
+  have ht : t y = (3/40+0) := by
+    rw [t, hv, hu]
+    change min (3/40 : ℝ) (1-1*y)+0 = (3/40+0)
+    rw [min_eq_left (show (3/40 : ℝ) ≤ (1-1*y) by linarith)]
+  have hr : r y = 0 := by
+    unfold r
+    exact max_eq_left (by linarith)
+  have hm : min (r y) (y-alpha+u y) = 0 := by
+    rw [hr, hu]
+    unfold alpha
+    exact min_eq_left (by linarith)
+  have hp1 : max (0 : ℝ) (37/20-y) = (37/20-y) :=
+    max_eq_right (by linarith)
+  have hp2 : max (0 : ℝ) (37/20-2*y) = (37/20-2*y) :=
+    max_eq_right (by linarith)
+  have hp3 : max (0 : ℝ) (37/20-3*y) = (37/20-3*y) :=
+    max_eq_right (by linarith)
+  have hp4 : max (0 : ℝ) (37/20-4*y) = 0 :=
+    max_eq_left (by linarith)
+  have hp5 : max (0 : ℝ) (37/20-5*y) = 0 :=
+    max_eq_left (by linarith)
+  have hp6 : max (0 : ℝ) (37/20-6*y) = 0 :=
+    max_eq_left (by linarith)
+  have hp7 : max (0 : ℝ) (37/20-7*y) = 0 :=
+    max_eq_left (by linarith)
+  unfold outerT
+  rw [hf]
+  unfold outerR
+  rw [if_neg hh, if_pos h1]
+  rw [ht, hm]
+  norm_num [alpha, lambda, Fin.sum_univ_succ] <;>
+    (try simp only [hp1, hp2, hp3, hp4, hp5, hp6, hp7]) <;> ring
 
 theorem outerT_piece_9 {y : ℝ} (ha : 37/60 < y) (hb : y < 37/40) :
     outerT y = 41/4+(-12)*y := by
@@ -153,12 +419,46 @@ theorem outerT_piece_9 {y : ℝ} (ha : 37/60 < y) (hb : y < 37/40) :
     floor_reciprocal_eq 1 (by linarith) (by norm_num <;> linarith) (by norm_num <;> linarith)
   have hh : ¬y < 1/2 := by linarith
   have h1 : y < 1 := by linarith
-  norm_num [outerT, outerR, alpha, lambda, v, u, t, r, hf, hh, h1,
-    Fin.sum_univ_succ]
-  try simp only [max_def, min_def]
-  all_goals
-    repeat' (split <;> try linarith)
-  all_goals linarith
+  have hv : v y = (1-1*y) := by
+    unfold v
+    rw [hf]
+    norm_num <;> ring
+  have hu : u y = 0 := by
+    rw [u, hv]
+    change max (0 : ℝ) (3/40+(1-1*y)-y) = 0
+    exact max_eq_left (by linarith)
+  have ht : t y = (3/40+0) := by
+    rw [t, hv, hu]
+    change min (3/40 : ℝ) (1-1*y)+0 = (3/40+0)
+    rw [min_eq_left (show (3/40 : ℝ) ≤ (1-1*y) by linarith)]
+  have hr : r y = 0 := by
+    unfold r
+    exact max_eq_left (by linarith)
+  have hm : min (r y) (y-alpha+u y) = 0 := by
+    rw [hr, hu]
+    unfold alpha
+    exact min_eq_left (by linarith)
+  have hp1 : max (0 : ℝ) (37/20-y) = (37/20-y) :=
+    max_eq_right (by linarith)
+  have hp2 : max (0 : ℝ) (37/20-2*y) = (37/20-2*y) :=
+    max_eq_right (by linarith)
+  have hp3 : max (0 : ℝ) (37/20-3*y) = 0 :=
+    max_eq_left (by linarith)
+  have hp4 : max (0 : ℝ) (37/20-4*y) = 0 :=
+    max_eq_left (by linarith)
+  have hp5 : max (0 : ℝ) (37/20-5*y) = 0 :=
+    max_eq_left (by linarith)
+  have hp6 : max (0 : ℝ) (37/20-6*y) = 0 :=
+    max_eq_left (by linarith)
+  have hp7 : max (0 : ℝ) (37/20-7*y) = 0 :=
+    max_eq_left (by linarith)
+  unfold outerT
+  rw [hf]
+  unfold outerR
+  rw [if_neg hh, if_pos h1]
+  rw [ht, hm]
+  norm_num [alpha, lambda, Fin.sum_univ_succ] <;>
+    (try simp only [hp1, hp2, hp3, hp4, hp5, hp6, hp7]) <;> ring
 
 theorem outerT_piece_10 {y : ℝ} (ha : 37/40 < y) (hb : y < 1) :
     outerT y = 1+(-2)*y := by
@@ -166,12 +466,46 @@ theorem outerT_piece_10 {y : ℝ} (ha : 37/40 < y) (hb : y < 1) :
     floor_reciprocal_eq 1 (by linarith) (by norm_num <;> linarith) (by norm_num <;> linarith)
   have hh : ¬y < 1/2 := by linarith
   have h1 : y < 1 := by linarith
-  norm_num [outerT, outerR, alpha, lambda, v, u, t, r, hf, hh, h1,
-    Fin.sum_univ_succ]
-  try simp only [max_def, min_def]
-  all_goals
-    repeat' (split <;> try linarith)
-  all_goals linarith
+  have hv : v y = (1-1*y) := by
+    unfold v
+    rw [hf]
+    norm_num <;> ring
+  have hu : u y = 0 := by
+    rw [u, hv]
+    change max (0 : ℝ) (3/40+(1-1*y)-y) = 0
+    exact max_eq_left (by linarith)
+  have ht : t y = ((1-1*y)+0) := by
+    rw [t, hv, hu]
+    change min (3/40 : ℝ) (1-1*y)+0 = ((1-1*y)+0)
+    rw [min_eq_right (show (1-1*y) ≤ (3/40 : ℝ) by linarith)]
+  have hr : r y = 0 := by
+    unfold r
+    exact max_eq_left (by linarith)
+  have hm : min (r y) (y-alpha+u y) = 0 := by
+    rw [hr, hu]
+    unfold alpha
+    exact min_eq_left (by linarith)
+  have hp1 : max (0 : ℝ) (37/20-y) = (37/20-y) :=
+    max_eq_right (by linarith)
+  have hp2 : max (0 : ℝ) (37/20-2*y) = 0 :=
+    max_eq_left (by linarith)
+  have hp3 : max (0 : ℝ) (37/20-3*y) = 0 :=
+    max_eq_left (by linarith)
+  have hp4 : max (0 : ℝ) (37/20-4*y) = 0 :=
+    max_eq_left (by linarith)
+  have hp5 : max (0 : ℝ) (37/20-5*y) = 0 :=
+    max_eq_left (by linarith)
+  have hp6 : max (0 : ℝ) (37/20-6*y) = 0 :=
+    max_eq_left (by linarith)
+  have hp7 : max (0 : ℝ) (37/20-7*y) = 0 :=
+    max_eq_left (by linarith)
+  unfold outerT
+  rw [hf]
+  unfold outerR
+  rw [if_neg hh, if_pos h1]
+  rw [ht, hm]
+  norm_num [alpha, lambda, Fin.sum_univ_succ] <;>
+    (try simp only [hp1, hp2, hp3, hp4, hp5, hp6, hp7]) <;> ring
 
 theorem outerT_piece_11 {y : ℝ} (ha : 1 < y) (hb : y < 37/20) :
     outerT y = 37/20+(-1)*y := by
@@ -179,12 +513,26 @@ theorem outerT_piece_11 {y : ℝ} (ha : 1 < y) (hb : y < 37/20) :
     floor_reciprocal_eq 0 (by linarith) (by norm_num <;> linarith) (by norm_num <;> linarith)
   have hh : ¬y < 1/2 := by linarith
   have h1 : ¬y < 1 := by linarith
-  norm_num [outerT, outerR, alpha, lambda, v, u, t, r, hf, hh, h1,
-    Fin.sum_univ_succ]
-  try simp only [max_def, min_def]
-  all_goals
-    repeat' (split <;> try linarith)
-  all_goals linarith
+  have hp1 : max (0 : ℝ) (37/20-y) = (37/20-y) :=
+    max_eq_right (by linarith)
+  have hp2 : max (0 : ℝ) (37/20-2*y) = 0 :=
+    max_eq_left (by linarith)
+  have hp3 : max (0 : ℝ) (37/20-3*y) = 0 :=
+    max_eq_left (by linarith)
+  have hp4 : max (0 : ℝ) (37/20-4*y) = 0 :=
+    max_eq_left (by linarith)
+  have hp5 : max (0 : ℝ) (37/20-5*y) = 0 :=
+    max_eq_left (by linarith)
+  have hp6 : max (0 : ℝ) (37/20-6*y) = 0 :=
+    max_eq_left (by linarith)
+  have hp7 : max (0 : ℝ) (37/20-7*y) = 0 :=
+    max_eq_left (by linarith)
+  unfold outerT
+  rw [hf]
+  unfold outerR
+  rw [if_neg hh, if_neg h1]
+  norm_num [alpha, lambda, Fin.sum_univ_succ] <;>
+    (try simp only [hp1, hp2, hp3, hp4, hp5, hp6, hp7]) <;> ring
 
 /-- Open-interval equality is enough for both integrability and evaluation. -/
 private theorem integral_of_affine_piece {a b B C : ℝ} (hab : a ≤ b)
@@ -204,7 +552,7 @@ private theorem integral_of_affine_piece {a b B C : ℝ} (hab : a ≤ b)
   rw [intervalIntegral.integral_congr_uIoo he,
     intervalIntegral.integral_add hB hCy,
     intervalIntegral.integral_const_mul, intervalIntegral.integral_const,
-    intervalIntegral.integral_id]
+    _root_.integral_id]
   simp only [smul_eq_mul]
   ring
 

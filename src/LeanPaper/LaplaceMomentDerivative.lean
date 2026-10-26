@@ -41,7 +41,7 @@ theorem exponentialSeries_nonneg (m : ℕ) (c τ : ℝ) : 0 ≤ exponentialSerie
 theorem exponentialSeries_antitone_scale (m : ℕ) {c a τ : ℝ}
     (hc : 0 < c) (ha : 0 < a) (haτ : a ≤ τ) :
     exponentialSeries m c τ ≤ exponentialSeries m c a := by
-  apply tsum_le_tsum _ (summable_terms m hc (lt_of_lt_of_le ha haτ))
+  apply Summable.tsum_le_tsum _ (summable_terms m hc (lt_of_lt_of_le ha haτ))
     (summable_terms m hc ha)
   intro n
   apply mul_le_mul_of_nonneg_left _ (by positivity)
@@ -63,7 +63,7 @@ theorem densityDerivative_nonpos (k : ℕ) (τ : ℝ) {y : ℝ} (hy : 0 < y) :
     densityDerivative k τ y ≤ 0 := by
   unfold densityDerivative
   apply mul_nonpos_of_nonneg_of_nonpos (by positivity)
-  exact mul_nonpos_of_nonpos_of_nonneg (by positivity)
+  exact mul_nonpos_of_nonpos_of_nonneg (neg_nonpos.mpr (by positivity))
     (exponentialSeries_nonneg _ _ _)
 
 theorem densityDerivative_norm_le (k : ℕ) {a τ y : ℝ}
@@ -106,7 +106,8 @@ theorem rationalWeight_nonneg (p : Real.Parameters) (e : ℕ) {y : ℝ} (hy : 0 
     0 ≤ rationalWeight p e y := by
   unfold rationalWeight
   have hD := Zetahyperbolic.D_real_pos p.K (show 0 < y^2 by positivity)
-  positivity
+  have hN := Zetahyperbolic.D_real_pos p.N (show 0 < y^2 by positivity)
+  exact div_nonneg (mul_nonneg (pow_nonneg hy.le _) (pow_nonneg hN.le _)) hD.le
 
 /-- Dividing by the positive denominator (at least one) preserves the already
 proved polynomial-weighted integrability. -/
@@ -125,6 +126,8 @@ theorem integrableOn_rationalWeight_mul (p : Real.Parameters) (e : ℕ)
     ring
   have hnormD : ‖Zetahyperbolic.D_real p.K (y^2)‖ =
       Zetahyperbolic.D_real p.K (y^2) := Real.norm_of_nonneg hD.le
+  change ‖rationalWeight p e y * v y‖ ≤
+    ‖(numeratorPolynomial p e).eval (y^2) * v y‖
   rw [heq, norm_div, hnormD]
   exact div_le_self (norm_nonneg _)
     (Zetahyperbolic.D_real_ge_one p.K (show 0 < y^2 by positivity))
@@ -150,7 +153,11 @@ theorem weightedMoment_hasDerivAt (p : Real.Parameters) (e : ℕ)
   have hhalf : 0 < τ / 2 := half_pos hτ
   let bound : ℝ → ℝ := fun y => rationalWeight p e y * (-densityDerivative p.k (τ / 2) y)
   have hbound_int : Integrable bound (volume.restrict (Ioi 0)) := by
-    simpa only [bound, mul_neg] using (integrableOn_weightedDerivative p e hhalf).neg
+    apply (integrableOn_weightedDerivative p e hhalf).neg.congr
+    filter_upwards [] with y
+    change -(rationalWeight p e y * densityDerivative p.k (τ / 2) y) =
+      rationalWeight p e y * (-densityDerivative p.k (τ / 2) y)
+    ring
   have h := hasDerivAt_integral_of_dominated_loc_of_deriv_le
     (μ := volume.restrict (Ioi (0 : ℝ)))
     (F := fun t y => rationalWeight p e y * laplaceDensity p.k t y)

@@ -271,5 +271,6 @@ roots = [
   "LeanPaper.Section4ClosestRoot",
   "LeanPaper.Section5OuterPrimeIntegral",
   "LeanPaper.BetaCouplingDerivative",
+  "LeanPaper.BeukersOuterValuation",
   "LeanPaper.KernelAudit",
 ]

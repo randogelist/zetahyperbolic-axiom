@@ -28,3 +28,7 @@ The spectral endpoint quantifies over every family `A : Fin h → ℚ[X]`, with 
 The integral moment identification itself requires only the degree cutoff, not independence. Existing original theorem statements and the original manuscript remain unchanged.
 
 This construction does not prove the infinite-dimensional Krein decomposition or the prescribed polynomial cone construction in 5.2(2)–(3), and does not assert an irrationality measure. It supplies the actual analytic-to-algebraic bridge for the finite positive-slope spectral result.
+
+## First receiving compilation: CI4 follow-up
+
+CI4 first reached this module after `Section5RationalIndependence` passed. It found two elaboration/rewrite details: the generic finite-index sum lemma was not selected by `simp`, and the affine-pencil simplifier would not unfold the semireducible `Matrix` type when checking the coefficient family argument against a function-family API. The coefficient-evaluation proof now applies the explicitly instantiated `Fin.sum_univ_eq_sum_range` equality. The pencil proof introduces the actual coefficient family with its explicit function type, changes to that definitionally equal affine expression, and then applies the same polynomial evaluation/map identities. No hypotheses, conclusions, polynomial families, or integrals were changed. The receiving compile and audit for these two proof corrections remain pending.

@@ -33,8 +33,9 @@ theorem coefficientEval_polynomialCoefficients {h K : ℕ}
       (A i).eval₂ (Rat.castHom ℝ) x := by
   rw [Polynomial.eval₂_eq_sum_range' (Rat.castHom ℝ)
     (Nat.lt_succ_of_le (hdegree i)) x]
-  simp only [coefficientEval, polynomialCoefficients, Rat.coe_castHom,
-    Fin.sum_univ_eq_sum_range]
+  simp only [coefficientEval, polynomialCoefficients, Rat.coe_castHom]
+  exact Fin.sum_univ_eq_sum_range
+    (fun n => ((A i).coeff n : ℝ) * x^n) (K+1)
 
 /-- The polynomial bilinear integrand is genuinely integrable for the actual
 weighted measure, including when its integral vanishes. -/
@@ -97,6 +98,10 @@ theorem integralPolynomialPencil_eq_dualEntry {h K : ℕ}
     (X - C (Real.zeta 7)) *
       C (coefficientSlope (realCoefficients (polynomialCoefficients K A)) i j) = _
   rw [polynomialIntegralMatrix_eq_dualEntry A hdegree, hslope]
+  let c : Fin h → Fin (K+1) → ℚ := fun a r => (A a).coeff r.val
+  change C ((Real.dualEntry 7 c i j).eval₂ (Rat.castHom ℝ) (Real.zeta 7)) +
+    (X - C (Real.zeta 7)) * C (dualSlopeMatrix c i j : ℝ) =
+      (Real.dualEntry 7 c i j).map (Rat.castHom ℝ)
   simp only [dualEntry_affine, Polynomial.eval₂_add, Polynomial.eval₂_mul, Polynomial.eval₂_C,
     Polynomial.eval₂_X, Polynomial.map_add, Polynomial.map_mul,
     Polynomial.map_C, Polynomial.map_X, Rat.coe_castHom,

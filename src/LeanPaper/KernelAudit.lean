@@ -257,6 +257,7 @@ import LeanPaper.LaplaceKernelJacobi
 import LeanPaper.Section4ClosestRoot
 import LeanPaper.Section5OuterPrimeIntegral
 import LeanPaper.BetaCouplingDerivative
+import LeanPaper.BeukersOuterValuation
 
 /-! Independent transitive axiom audit of every active imported project declaration.
 Manuscript correspondence is certified separately. -/
@@ -931,7 +932,8 @@ run_cmd Elab.Command.liftCoreM do
     `LeanPaper.LaplaceKernelJacobi,
     `LeanPaper.Section4ClosestRoot,
     `LeanPaper.Section5OuterPrimeIntegral,
-    `LeanPaper.BetaCouplingDerivative]
+    `LeanPaper.BetaCouplingDerivative,
+    `LeanPaper.BeukersOuterValuation]
   let mut roots : Array Name := #[]
   for (decl, _) in env.constants do
     if let some idx := env.getModuleIdxFor? decl then

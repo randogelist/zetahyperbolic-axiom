@@ -156,6 +156,11 @@ theorem betaIntegralPencil_eq_spectral {h K : ℕ} (A : Fin h → ℚ[X])
     C ((betaConstantMatrix (polynomialCoefficients K A) i j : ℚ) : ℝ) +
       X*C (coefficientSlope (realCoefficients (polynomialCoefficients K A)) i j)
   rw [betaIntegralMatrix_eq A hdegree]
+  let c : Fin h → Fin (K+1) → ℚ := fun a r => (A a).coeff r.val
+  change C ((betaConstantMatrix c i j : ℝ) +
+      betaValue 4 * coefficientSlope (realCoefficients c) i j) +
+      (X-C (betaValue 4)) * C (coefficientSlope (realCoefficients c) i j) =
+    C (betaConstantMatrix c i j : ℝ) + X*C (coefficientSlope (realCoefficients c) i j)
   simp only [Polynomial.C_add, Polynomial.C_mul]
   ring
 
