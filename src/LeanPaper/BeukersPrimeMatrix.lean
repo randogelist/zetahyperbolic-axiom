@@ -74,8 +74,7 @@ lemma sum_coefficients_mul {q : ℕ} (i : Fin q) (f : Fin (2 * q - 1 + 1) → �
 
 /-- Disjoint two-monomial rows are genuinely independent. -/
 theorem coefficients_vecMul_injective (q : ℕ) :
-    Function.Injective
-      (coefficients q : Matrix (Fin q) (Fin (2 * q - 1 + 1)) ℚ).vecMul := by
+    Function.Injective (fun v : Fin q → ℚ => Matrix.vecMul v (coefficients q)) := by
   intro a b hab
   funext i
   have h := congrFun hab (lowerIndex i)
