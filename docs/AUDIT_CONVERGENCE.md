@@ -26,7 +26,7 @@ Let `r` be the audit-round checkpoint.
 - **`ΔU`**: previously unseen source paths appearing since the preceding measured checkpoint; **`v = ΔU / Δr`** is marginal source-discovery rate, **not** a rate of new mathematical proofs.
 - **`n = 100·ΔU/S(r)`**: share of current snapshot's cited modules not seen at earlier checkpoints. A decreasing `n` can indicate documentation/source-discovery saturation, not an absence of mathematical proof routes.
 
-All eight historical readings come from the versioned **45-item `docs/PERSISTENT_PAPER_GAPS.md` table** (the links in the first column), with citations deduplicated by exact repository-relative path. Earlier README formatting was not consistent enough to use as the sole baseline; the register is the stable comparison unit. `✓` is a *recording convention*, and may change with editing.
+All nine historical readings come from the versioned **45-item `docs/PERSISTENT_PAPER_GAPS.md` table** (the links in the first column), with citations deduplicated by exact repository-relative path. Earlier README formatting was not consistent enough to use as the sole baseline; the register is the stable comparison unit. `✓` is a *recording convention*, and may change with editing.
 
 ## 3. Measured checkpoints
 
@@ -40,18 +40,19 @@ All eight historical readings come from the versioned **45-item `docs/PERSISTENT
 | [40](https://github.com/randogelist/zetahyperbolic-axiom/blob/f54eb137af1a11535c7da761d43ed90517b41355/docs/PERSISTENT_PAPER_GAPS.md) | 7 | 37 | 74 | 79 | 4 | 0.50 | 5.4% |
 | [48](https://github.com/randogelist/zetahyperbolic-axiom/blob/242c11f1abdabebd966195eff05f2e104360edf7/docs/PERSISTENT_PAPER_GAPS.md) | 7 | 37 | 83 | 88 | 9 | 1.125 | 10.8% |
 | [56](https://github.com/randogelist/zetahyperbolic-axiom/blob/34e89581b4b19ef47d24f6e817387317b7aa531f/docs/PERSISTENT_PAPER_GAPS.md) | 7 | 37 | 91 | 96 | 8 | 1.000 | 8.8% |
+| [64](https://github.com/randogelist/zetahyperbolic-axiom/blob/c9ff081bd619ec06fd61fd7c7507143491ace6af/docs/PERSISTENT_PAPER_GAPS.md) | 7 | 37 | 99 | 104 | 8 | 1.000 | 8.1% |
 
-The evidence-marking counts were **49, 55, 64, 69, 74, 81, 89, 98** at rounds **6, 12, 18, 25, 32, 40, 48, 56**, respectively. Their growth is *not* treated as new proof constructions: entries can group or split mathematical lemmas, repeat sources, and change wording.
+The evidence-marking counts were **49, 55, 64, 69, 74, 81, 89, 98, 105** at rounds **6, 12, 18, 25, 32, 40, 48, 56, 64**, respectively. Their growth is *not* treated as new proof constructions: entries can group or split mathematical lemmas, repeat sources, and change wording.
 
 ## 4. Interpretation: three different kinds of convergence
 
-**A. Coverage / breadth plateau:** Rows with any marked proof evidence moved **36 → 37 of 45** by round 18, then stayed at **37** through round 56. This is *inventory saturation*: additional audits deepened rows already in view instead of identifying more items with proof-bearing clauses.
+**A. Coverage / breadth plateau:** Rows with any marked proof evidence moved **36 → 37 of 45** by round 18, then stayed at **37** through round 64. This is *inventory saturation*: additional audits deepened rows already in view instead of identifying more items with proof-bearing clauses.
 
-**B. Nonmonotone source discovery:** Marginal accepted-source citations per round moved **1.83, 1.50, 1.29, 0.57, 0.50, 1.125, then 1.000**. Round 56 newly credited **8 previously unseen Lean source paths among 91 current citations (8.8%)**, including direct actual-family counterproofs and representation-independence modules; round 48 credited 9 among 83 (10.8%) after just 4 among 74 (5.4%) at round 40. Cumulative distinct source paths climbed **42 → 79 → 88 → 96**. This rebound falsifies the simple extrapolation of a monotone decline in source discovery. The underlying accepted proof base did not change. These are **discovery counts**, not an asymptotic law, new compiled proofs, or a guarantee that the repository is exhaustively understood.
+**B. Nonmonotone source discovery:** Marginal accepted-source citations per round moved **1.83, 1.50, 1.29, 0.57, 0.50, 1.125, 1.000, 1.000**. The round-64 audit credited **8 previously unseen accepted Lean source paths among 99 current citations (8.1%)**. Cumulative distinct paths rose **42 → 79 → 88 → 96 → 104**. Source-discovery volume has flattened near one previously uncredited file per review round across the last two batches, but it has **not dropped to zero**. The accepted code base did not change; this is *recognition of existing theorems*, not newly built mathematics or a proven asymptotic trend.
 
 **C. Mathematical closure plateau:** `F(r)=7` at every checkpoint, so the **38 remaining literal paper items have not been promoted to complete A-Tier** by any of these reviews. Their count is unchanged: **21 partially formalized, 10 not formalized, 7 blocked**. The latest accepted `main` proof commit remained the same. Every increase in audit evidence refers to **already existing** theorems, not newly constructed Lean proofs.
 
-**Crucial conclusion:** The *breadth of the evidence inventory plateaued*, but the **depth of newly noticed accepted proof components rebounded at round 48 and remained nonzero at round 56**. It has **not** converged to a zero-novelty state and is **not** converging to a proof of the remaining printed theorems. Increasing table size or source links is not a mathematical limit argument.
+**Crucial conclusion:** The *breadth of the evidence inventory plateaued*, but the **depth of newly noticed accepted proof components remained nonzero through round 64**. It has **not** converged to a zero-novelty state and is **not** converging to a proof of the remaining printed theorems. Increasing table size or source links is not a mathematical limit argument.
 
 ## 5. Ongoing telemetry and switching rules
 
@@ -74,9 +75,9 @@ After a defined audit pass over the available branches and accepted Lean sources
 
 Changes in wording, formatting, descriptions, citations to already-counted proof facts, or repeated import paths do **not** count as new evidence. **An unchanged 7/45 complete-item tally alone is insufficient** to display the signal. Label each decision with the source heads, CI receipts, branch scope and the current checkpoint, and distinguish **NO NEW RESULTS FOUND IN SCANNED SOURCES** from a claim of global mathematical impossibility. When the marker appears, stop repeating the same unchanged-source sweep and redirect to `A_TIER_PLANNING` / `A_TIER_EXECUTION`, or resume upon a changed source/dependency fingerprint or new claim.
 
-**Current sign status at the round-56 checkpoint: NOT TRIGGERED.** The latest eight-round batch credited direct Lean negative theorems for the printed 3.5/3.6 formulas, actual nearest-root limit and rational second moment, full μ/τ representation/domain lemmas, and explicit β(1) transcendence dependency proofs. The scoped novelty vector is **ΔP>0, ΔE>0, ΔO=0, ΔF=0** (no newly closed parent theorem, altered open bridge, or final transfer). The strict all-zero signal is therefore unavailable, even though the whole-item tally stayed 7/45.
+**Current sign status at the round-64 checkpoint: NOT TRIGGERED.** The latest eight-round audit credited the already-A-Tier actual affine adjacent-drift and ratio sufficient criteria for quadratic decay, proportional odd-weight conditional transfer, the direct integer-polynomial irrationality squeeze, the genuine odd-weight rational-kernel integral, and finite dual SOS/pure-sign Krein algebra. **ΔP>0 and ΔE>0**; the *original-family decay premises, analytic infinite cones and complete printed theorem count have not changed*. Thus the strict all-zero reinference marker is unavailable. No new Lean compilation is claimed.
 
-**Suggested saturation rule:** Once **two consecutive batches of at least six rounds** reveal *zero newly discharged mathematical proof obligations* and **at most 0.5 newly cited accepted source modules per round**, stop repeating the same frozen-source sweep. The user may choose to continue anyway. The last pair now gives **1.125** then **1.000**, and the current batch again added substantive previously uncredited source evidence. This mechanical trigger is **not met**. Even with remaining uncredited source evidence, **A_TIER_PLANNING → A_TIER_EXECUTION** on a genuine open endpoint would create mathematical progress rather than merely deepen the inventory.
+**Suggested saturation rule:** Once **two consecutive batches of at least six rounds** reveal *zero newly discharged mathematical proof obligations* and **at most 0.5 newly cited accepted source modules per round**, stop repeating the same frozen-source sweep. The user may choose to continue anyway. The last two batches give **1.000** and **1.000** newly cited source files per round and still add substantive, previously uncredited source evidence. This mechanical trigger is **not met**. Even with remaining uncredited source evidence, **A_TIER_PLANNING → A_TIER_EXECUTION** on a genuine open endpoint would create mathematical progress rather than merely deepen the inventory.
 
 **Reset/refresh trigger:** The accepted source SHA, compiler/Mathlib dependencies, statement, or independent audit receipt changes, or a newly discovered *specific clause proof* is brought forward. Recompute counts against the changed proof base and distinguish newly **built** proofs from newly **found** old proofs. Do not guess progress between unmeasured checkpoints.
 
@@ -84,8 +85,8 @@ Changes in wording, formatting, descriptions, citations to already-counted proof
 
 - [Tierlist first, then all 45 items](../README.md).
 - [Detailed open-obligation register](PERSISTENT_PAPER_GAPS.md).
-- [First 56 rounds of detailed cross-branch source audit](MULTIROUND_RESOLUTION_AUDIT.md).
+- [First 64 rounds of detailed cross-branch source audit](MULTIROUND_RESOLUTION_AUDIT.md).
 - [Authoritative printed-item source ledger](formalization_status.json).
 - [Accepted local Lean build receipt](../validation/linux/acceptance.json).
 
-**Convergence status at round 56:** **37/45 item evidence breadth stable; 8 newly cited existing accepted source files; whole-item proof frontier static at 7/45**. Do not emit the saturation sign. No `!!!` formal closure or `!!!!` finite-witness certificate.
+**Convergence status at round 64:** **37/45 item evidence breadth stable; 8 newly cited existing accepted source files; whole-item proof frontier static at 7/45**. Do not emit the saturation sign. No `!!!` formal closure or `!!!!` finite-witness certificate.
