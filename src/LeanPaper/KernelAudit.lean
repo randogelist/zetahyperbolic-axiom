@@ -219,6 +219,7 @@ import LeanPaper.Section4TransferComplete
 import LeanPaper.SlopeSignature
 import LeanPaper.SymmetricPoleSpectrum
 import LeanPaper.UnitLogMoments
+import LeanPaper.BeukersMomentSeries
 import Zeta5.HermiteBasisCore
 import Zeta5Merge.Theorem6_17
 import Lean
@@ -860,6 +861,7 @@ run_cmd Elab.Command.liftCoreM do
     `LeanPaper.SlopeSignature,
     `LeanPaper.SymmetricPoleSpectrum,
     `LeanPaper.UnitLogMoments,
+    `LeanPaper.BeukersMomentSeries,
     `Zeta5.HermiteBasisCore,
     `Zeta5Merge.Theorem6_17]
   let mut roots : Array Name := #[]
