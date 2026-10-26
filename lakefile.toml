@@ -155,6 +155,7 @@ roots = [
   "LeanPaper.ImportedSection56.DualStrictDiscriminant",
   "LeanPaper.ImportedSection56.DualWeightInvariance",
   "LeanPaper.ImportedSection56.FiniteKreinCone",
+  "Zeta5Merge.Theorem6_16",
   "LeanPaper.ImportedSection56.PositiveSlopeSpectrum",
   "LeanPaper.ImportedSection56.ZetaSevenBound",
   "LeanPaper.ImportedSection3.ExactTaylor",
@@ -232,5 +233,6 @@ roots = [
   "LeanPaper.SlopeSignature",
   "LeanPaper.SymmetricPoleSpectrum",
   "LeanPaper.UnitLogMoments",
+  "Zeta5Merge.Theorem6_17",
   "LeanPaper.KernelAudit",
 ]
