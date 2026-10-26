@@ -232,4 +232,5 @@ LeanPaper.BeukersKreinMonomialActual
 LeanPaper.BeukersKreinPolynomialActual
 LeanPaper.ShiftedSolidMinors
 LeanPaper.BeukersOffDiagonalKernel
+LeanPaper.CarlemanFactorialCriterion
 LeanPaper.KernelAudit
