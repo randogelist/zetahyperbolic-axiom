@@ -1,0 +1,277 @@
+[
+  {
+    "id": "01",
+    "zip": "01-ZETA3_EULER_BINOMIAL_ROW_MASS_v0_4_2.zip",
+    "files": 36,
+    "lean": 18,
+    "olean": 0,
+    "size": 97790,
+    "roots": [
+      "ZETA3_EULER_BINOMIAL_ROW_MASS_v0_4_2"
+    ]
+  },
+  {
+    "id": "02",
+    "zip": "02-ZETA3_ELEMENTARY_ANCHOR_SERIES_v0_7_1_FIX1-10-.zip",
+    "files": 31,
+    "lean": 22,
+    "olean": 0,
+    "size": 71071,
+    "roots": [
+      "ZETA3_ELEMENTARY_ANCHOR_SERIES_v0_7_1_FIX1"
+    ]
+  },
+  {
+    "id": "03",
+    "zip": "03-WITNESS_FRONTIER_HANDOFF_20261022.zip",
+    "files": 6,
+    "lean": 1,
+    "olean": 0,
+    "size": 25024,
+    "roots": [
+      "WITNESS_FRONTIER_HANDOFF_20261022"
+    ]
+  },
+  {
+    "id": "04",
+    "zip": "04-ZETA3_R_HALF_UNCONDITIONAL_MAHLER_LEAN_v0_2_3_FASTCORE_FIX3-2-.zip",
+    "files": 22,
+    "lean": 14,
+    "olean": 0,
+    "size": 41357,
+    "roots": [
+      "ZETA3_R_HALF_UNCONDITIONAL_MAHLER_LEAN_v0_2_3_FASTCORE_FIX3"
+    ]
+  },
+  {
+    "id": "05",
+    "zip": "05-CLASSIFIER_64_PI_BKQR_CALIBRATION_v0_5_2_FIX2-1-.zip",
+    "files": 25,
+    "lean": 15,
+    "olean": 0,
+    "size": 60060,
+    "roots": [
+      "CLASSIFIER_64_PI_BKQR_CALIBRATION_v0_5_2_FIX2"
+    ]
+  },
+  {
+    "id": "06",
+    "zip": "06-GP_NATIVE_E_PI_v0_4_0-1-.zip",
+    "files": 18,
+    "lean": 13,
+    "olean": 0,
+    "size": 69450,
+    "roots": [
+      "GP_NATIVE_E_PI_v0_4_0"
+    ]
+  },
+  {
+    "id": "07",
+    "zip": "07-ZETA5_NATIVE_WITNESS_SEARCH_v0_1_0-2-.zip",
+    "files": 1350,
+    "lean": 3,
+    "olean": 0,
+    "size": 24100493,
+    "roots": [
+      "ZETA5_NATIVE_WITNESS_SEARCH_v0_1_0"
+    ]
+  },
+  {
+    "id": "08",
+    "zip": "08-IMPACTG_3X3_LEAN_v0_9_2_BINOMIAL_AVERAGE_FIX1-1-.zip",
+    "files": 50,
+    "lean": 28,
+    "olean": 0,
+    "size": 126133,
+    "roots": [
+      "IMPACTG_3X3_LEAN_v0_9_2_BINOMIAL_AVERAGE_FIX1"
+    ]
+  },
+  {
+    "id": "09",
+    "zip": "09-CHEBYSHEV_MASTERTIER_LEAN_v0_1_37_INV_POW_FIX27-1-.zip",
+    "files": 39,
+    "lean": 22,
+    "olean": 0,
+    "size": 104915,
+    "roots": [
+      "CHEBYSHEV_MASTERTIER_LEAN_v0_1_37_INV_POW_FIX27"
+    ]
+  },
+  {
+    "id": "10",
+    "zip": "10-GP7_UNIFIED_LEAN_BASE_v1_0_1_IMPORT_FIX-2-.zip",
+    "files": 22,
+    "lean": 12,
+    "olean": 0,
+    "size": 47516,
+    "roots": [
+      "GP7_UNIFIED_LEAN_BASE_v1_0_1_IMPORT_FIX"
+    ]
+  },
+  {
+    "id": "11",
+    "zip": "11-CHEBYSHEV_MASTERTIER_LEAN_v0_1_39_EVAL_POW_FIX28.zip",
+    "files": 42,
+    "lean": 24,
+    "olean": 0,
+    "size": 112586,
+    "roots": [
+      "CHEBYSHEV_MASTERTIER_LEAN_v0_1_39_EVAL_POW_FIX28"
+    ]
+  },
+  {
+    "id": "12",
+    "zip": "12-CHEBYSHEV_MASTERTIER_LEAN_v0_1_56_NATIVE_ZETA7_FAST_FRONTIER.zip",
+    "files": 28,
+    "lean": 25,
+    "olean": 0,
+    "size": 112997,
+    "roots": [
+      "CHEBYSHEV_MASTERTIER_LEAN_v0_1_56_NATIVE_ZETA7_FAST_FRONTIER"
+    ]
+  },
+  {
+    "id": "13",
+    "zip": "13-MAIN_CHAIN_LEAN_ONLY-4-.zip",
+    "files": 11,
+    "lean": 11,
+    "olean": 0,
+    "size": 104639,
+    "roots": [
+      "MAIN_CHAIN_LEAN_ONLY"
+    ]
+  },
+  {
+    "id": "14",
+    "zip": "14-ODD_ZETA_3X3_MERGED_v0_3_0.zip",
+    "files": 545,
+    "lean": 162,
+    "olean": 0,
+    "size": 3645803,
+    "roots": [
+      "ODD_ZETA_3X3_MERGED_v0_3_0"
+    ]
+  },
+  {
+    "id": "15",
+    "zip": "15-Zetahyperbolic-general-assembled-lean433-2-.zip",
+    "files": 345,
+    "lean": 60,
+    "olean": 0,
+    "size": 1430477,
+    "roots": [
+      "Zetahyperbolic-general-assembled-lean433"
+    ]
+  },
+  {
+    "id": "16",
+    "zip": "16-RH_FIVE_INDUCTION_LEAN_v0_3_0-1-.zip",
+    "files": 46,
+    "lean": 29,
+    "olean": 0,
+    "size": 194670,
+    "roots": [
+      "RH_FIVE_INDUCTION_LEAN_v0_3_0"
+    ]
+  },
+  {
+    "id": "17",
+    "zip": "17-zeta5-spectral-lean-1-.zip",
+    "files": 225,
+    "lean": 102,
+    "olean": 0,
+    "size": 2564352,
+    "roots": [
+      "zeta5-spectral-lean"
+    ]
+  },
+  {
+    "id": "18",
+    "zip": "18-Zetahyperbolic-general-assembled-lean433-3-.zip",
+    "files": 237,
+    "lean": 54,
+    "olean": 0,
+    "size": 1128271,
+    "roots": [
+      "Zetahyperbolic-general-assembled-lean433"
+    ]
+  },
+  {
+    "id": "19",
+    "zip": "19-ZETAHYPERBOLIC_PAPER45_TEN_STAGE_LEAN_v0_1_20_FINITE_GRAM_AUDIT.zip",
+    "files": 62,
+    "lean": 40,
+    "olean": 0,
+    "size": 184254,
+    "roots": [
+      "ZETAHYPERBOLIC_PAPER45_TEN_STAGE_LEAN_v0_1_20_FINITE_GRAM_AUDIT"
+    ]
+  },
+  {
+    "id": "20",
+    "zip": "20-ZETAHYPERBOLIC_ANCHOR_CHAIN_10_STAGES_v0_2_6_ADJACENT_DRIFT_BRIDGE1.zip",
+    "files": 70,
+    "lean": 66,
+    "olean": 0,
+    "size": 384386,
+    "roots": [
+      "ZETAHYPERBOLIC_ANCHOR_CHAIN_10_STAGES_v0_1_6_CACHE_FIX1"
+    ]
+  },
+  {
+    "id": "21",
+    "zip": "21-ZETAHYPERBOLIC_ANCHOR_CHAIN_10_STAGES_v0_2_6_PROGRESS_AUDIT.zip",
+    "files": 2,
+    "lean": 0,
+    "olean": 0,
+    "size": 4517,
+    "roots": [
+      "ZETAHYPERBOLIC_ANCHOR_CHAIN_10_STAGES_v0_2_6_PROGRESS_AUDIT"
+    ]
+  },
+  {
+    "id": "22",
+    "zip": "22-ZETAHYPERBOLIC_PAPER45_TEN_STAGE_LEAN_v0_1_19_OLEAN_TRANSACTION_FIX.zip",
+    "files": 3,
+    "lean": 0,
+    "olean": 0,
+    "size": 12408,
+    "roots": [
+      "ZETAHYPERBOLIC_PAPER45_TEN_STAGE_LEAN_v0_1_19_OLEAN_TRANSACTION_FIX"
+    ]
+  },
+  {
+    "id": "23",
+    "zip": "23-ZETA_HYPERBOLIC_PAPER10_CHAIN_FASTCORE_v0_2_14_FINITE_MASS_FRACTION_FIX.zip",
+    "files": 42,
+    "lean": 39,
+    "olean": 0,
+    "size": 134369,
+    "roots": [
+      "ZETA_HYPERBOLIC_PAPER10_CHAIN_FASTCORE_v0_2_14_FINITE_MASS_FRACTION_FIX"
+    ]
+  },
+  {
+    "id": "24",
+    "zip": "24-ZETAHYPERBOLIC_10_STAGE_STITCH_v0_1_26_GOODWORKFLOWFRONTIER_TARGETED_COMMUTATIVITY_FIX.zip",
+    "files": 33,
+    "lean": 24,
+    "olean": 0,
+    "size": 480482,
+    "roots": [
+      "ZETAHYPERBOLIC_10_STAGE_STITCH_v0_1_26_GOODWORKFLOWFRONTIER_TARGETED_COMMUTATIVITY_FIX"
+    ]
+  },
+  {
+    "id": "25",
+    "zip": "25-ZETA_HYPERBOLIC_PAPER10_CHAIN_FASTCORE_v0_2_16_WEIGHTED_MONOMIAL_GRAM-1-.zip",
+    "files": 38,
+    "lean": 26,
+    "olean": 0,
+    "size": 165557,
+    "roots": [
+      "ZETA_HYPERBOLIC_PAPER10_CHAIN_FASTCORE_v0_2_16_WEIGHTED_MONOMIAL_GRAM"
+    ]
+  }
+]

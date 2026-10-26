@@ -1,0 +1,4 @@
+'ZetaHyperbolicPaper.CHAPTER_2_DEGREE' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaHyperbolicPaper.CHAPTER_2_DERIVATIVE' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaHyperbolicPaper.CHAPTER_3_SPECTRAL' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZetaHyperbolicPaper.CHAPTER_3_EXACT_DISK' depends on axioms: [propext, Classical.choice, Quot.sound]

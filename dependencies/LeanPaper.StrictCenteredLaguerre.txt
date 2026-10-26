@@ -1,0 +1,2 @@
+LeanPaper.NormalizedNewton
+LeanPaper.ReciprocalSecondMoment

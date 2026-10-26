@@ -1,0 +1,2 @@
+LeanPaper.ActualStrictCenter
+LeanPaper.StrictNormalizedNewton

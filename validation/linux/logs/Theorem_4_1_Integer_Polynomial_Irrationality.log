@@ -1,0 +1,9 @@
+'ManuscriptChain.RealTransfer.irrational_of_denominator_decay' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ManuscriptChain.RealTransfer.exists_index_of_linear_degree_quadratic_decay' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ManuscriptChain.RealTransfer.irrational_of_linear_degree_quadratic_decay' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

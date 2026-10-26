@@ -1,0 +1,44 @@
+MANUSCRIPT_ISSUES_REVIEW
+Source: supplied 52-page PDF, page 11, Corollary 3.6.
+Verification: extracted text checked against rendered PDF page 11.
+Status: retained baseline has local Linux Lean 4.33.0 compilation and an independent transitive axiom audit (154 modules; validation/linux/acceptance.json). Native Windows has NOT_RUN. All 12 new modules and the retained baseline are covered by the expanded 166-module Linux compilation and independent transitive axiom PASS. Sources are frozen. Semantic corrections below are not full-paper certification.
+
+ISSUE_3_6_FINITE_SUPPORT
+The statement claims strictly positive Hankel determinants for the even reciprocal-root moment sequence at fixed K. The same proof represents that sequence by the finite positive measure sum_(j=1)^h delta_(u_j), u_j=(r_j-q0)^(-2)>0.
+For H_n=(sum_j u_j^(a+b))_(0<=a,b<n), H_n=V_n V_n^T, where V_n has h columns. Thus rank H_n<=h and det H_n=0 for every n>h. Literal all-orders strict positivity cannot be certified.
+Sharper correction: merge repeated u_j into distinct atoms v_1,...,v_d with positive integer multiplicities. Then H_n is positive definite exactly for n<=d and has determinant zero for n>d. Distinct roots alone do not give distinct u_j, since roots equidistant from q0 give the same inverse-square atom.
+Historical remote Corollary_3_6_ExactFiniteRank establishes the threshold h under Function.Injective u; that assumption was not discharged for original roots. The retained, Linux-compiled and axiom-audited LeanPaper/ReciprocalRootMoments.lean now coalesces repeated inverse-square atoms with positive multiplicities and proves the exact distinct-support threshold without such injectivity. It is connected to the actual manuscript root vector. All-order positive semidefiniteness and determinant zero above h remain valid.
+
+ISSUE_3_6_BOUND_ORIENTATION
+The printed statement says 1 <= S_(2r)^(-1/(2r))/d_min <= h^(1/(2r)).
+The displayed proof correctly derives h^(-1/(2r))*d_min <= S_(2r)^(-1/(2r)) <= d_min.
+Correct statement: h^(-1/(2r)) <= S_(2r)^(-1/(2r))/d_min <= 1.
+Equivalently: 1 <= d_min / S_(2r)^(-1/(2r)) <= h^(1/(2r)).
+Reason: max u_j^r <= sum_j u_j^r <= h*(max u_j)^r, followed by the decreasing negative-root power. The limit d_min remains valid.
+
+ISSUE_3_6_LOG_DERIVATIVE_SIGN
+The printed definition uses (-1)^(m-1)/(m-1)! times d^m(log P)/dX^m at q0 and equates it to sum_j(r_j-q0)^(-m).
+But d^m(log|P|)/dX^m = (-1)^(m-1)*(m-1)!*sum_j(X-r_j)^(-m) away from the roots. The printed prefactor therefore yields sum_j(q0-r_j)^(-m).
+Correction: replace the denominator r_j-q0 by q0-r_j, or replace the prefactor (-1)^(m-1) by (-1)^m. All even moments are unaffected.
+
+HISTORICAL_NUMERIC_VARIANTS
+Canonical attachment20 PaperChain/Stage06 uses spectral targets 11.407 and 10.954; the supplied PDF Theorem4.4 prints 11.411. These may be proposed stronger bounds, but are not the literal manuscript statement and are not proved by comparing exponentials.
+Canonical attachment20 PaperChain/Stage08 uses determinant-rate bounds 0.23338 and 3.73872; supplied PDF Theorem4.6 prints 0.23310 and 3.73980. Preserve historical source text, label its numeric target variant, and prove an explicit implication if a stronger repaired target is ever certified.
+
+RETAINED_CORRECTED_FORMALIZATION
+Keep the original statement and corrected statement separate. The retained LeanPaper/ReciprocalRootMoments.lean supplies coalescing, exact support-size strictness, all-order semidefiniteness and actual-root application. ImportedSection3/RootMomentBounds.lean supplies an attained maximum and finite moment bounds. The new ReciprocalNearestRootLimit proves the corrected factor bound and fixed-family nearest-root limit. ReciprocalLogDerivative and ReciprocalSecondMoment prove rational first/second inverse-gap moments and the correct first/second logarithmic derivatives, stated for delta. These sources passed targeted compilation and the expanded independent final audit. General orders m>=3 and an explicit primitive-polynomial logarithmic specialization remain separate.
+The retained Stage04PrincipalMinorCenter concerns the continuous original Gram pencil, not the finite reciprocal-root moment sequence. It proves actual-pencil principal-minor positivity only and does not claim strict mixed-minor total positivity.
+NEW_ACTUAL_FAMILY_OBSTRUCTION_AXIOM_AUDITED
+LeanPaper.ManuscriptObstructions.manuscript_hankel_det_succ_eq_zero proves the actual manuscript reciprocal Hankel determinant vanishes at order h+1, for every real shift; manuscript_hankel_not_positive_at_all_orders explicitly rejects all-order strictness. These new declarations are included in the expanded 166-module Linux compilation and independent transitive axiom PASS receipt.
+The same new module contains normalized_fraction_printed_formula_fails and first_logarithmic_ratio_sign_fails. These are general calculation diagnostics at explicit scalar/polynomial examples. They are NOT asserted to be manuscript-parameter-family counterexamples. Their compiled proofs are included in the expanded final independent audit.
+
+ISSUE_3_4_ZERO_SLOPE_PRINCIPAL_MINOR
+Current PDF pages 9-10 were rendered and reviewed. Theorem 3.4(1) uses a list of r finite roots and min_(1<=j<=r)|r_j-zeta(s)| for every leading r-by-r minor. A leading slope can be singular even when the full derivative matrix is nonsingular. Thus that root enumeration/minimum clause requires correction; this observation does not reject the eigenvalue interlacing or Dodgson identity clauses.
+Concrete admissible parameters: k=2, m=1, N=1, K=6, so s=5 and h=5. With D_1(t)=t+1 and tailD(t)=prod_(b=2)^6(t+b^2), the actual entryM(p,0,0) is the sum of
+  gamma_a = (1-a^2)*a^4 / prod_(2<=b<=6,b!=a)(b^2-a^2).
+For a=2,3,4,5,6 these values are respectively -1/840, 3/70, -16/63, 625/1386, -21/88. Their exact rational sum is zero. This was independently recomputed directly from the defining formula with rational arithmetic. Hence the actual first principal pencil entry is constant in X. Its integral Gram realization at zeta(5) is strictly positive, so this first minor is a nonzero constant and has no finite root.
+Evidence boundary: the pinned remote principal archive's PaperAudit/Theorem_3_4_Principal_Minor_Counterexample.lean proves only the displayed rational sum by norm_num; it does not itself identify those constants with the actual entryM definition. The retained LeanPaper/SingularPrincipalMinorExample.lean adds that missing identification by expanding the actual residue/denominator derivative, then derives the constant determinant, positivity, degree zero and absence of real zeros from the actual analytic Gram construction. This source is included in the 154-module local Linux compile/transitive-axiom PASS baseline. Native Windows remains NOT_RUN; this is an actual-family kernel proof rather than only the remote rational-sum calculation.
+Safe repair: retain real-rootedness of every principal determinant, allowing lower degree and zero slope eigenvalues. Enumerate roots only over nonzero normalized-slope eigenvalues. Any closest-root minimum needs a nonconstant-minor hypothesis or an explicit infinity convention. The new PrincipalMinorRank proves actual principal degree and real-root count with multiplicity equal direction rank; it passed targeted compilation and the expanded independent final audit. Rank-sensitive interlacing and all-rank Dodgson assembly remain separate obligations.
+
+ISSUE_3_5_NORMALIZED_CONTINUED_FRACTION
+The uploaded PDF page10 defines the normalized resolvent I+(X-zeta(s))T but prints denominators a_i+(X-zeta(s)) and unscaled b_i^2 in equation(3.6). For t=X-zeta(s), a normalized two-level pencil has determinant (1+t*a)(1+t*c)-t^2*b^2 and Schur denominator 1+t*c-t^2*b^2/(1+t*a). The corresponding three-level recurrence likewise retains t^2. The retained, Linux-compiled and axiom-audited LeanPaper/ImportedSection3/NormalizedContinuedFraction source proves these exact finite formulas. It does not assert full Lanczos correspondence, strict off-diagonal coefficients for the manuscript family, the original unnormalized principal determinant ratio, or the claimed exponential spectral-edge estimate. These obligations and the original printed formula remain separate from the corrected finite result.

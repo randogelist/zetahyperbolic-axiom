@@ -1,0 +1,4 @@
+'PaperOrder.CoreAlgebra.realQuadratic_has_root_of_discriminant_nonneg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PaperOrder.CoreAlgebra.dualTwoByTwo_det_has_real_zero' depends on axioms: [propext, Classical.choice, Quot.sound]

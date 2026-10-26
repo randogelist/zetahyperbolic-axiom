@@ -1,0 +1,2 @@
+LeanPaper.ImportedSection56.PositiveSlopeSpectrum
+LeanPaper.ImportedSection56.SelectedMonomial

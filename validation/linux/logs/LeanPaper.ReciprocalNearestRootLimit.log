@@ -1,0 +1,3 @@
+'LeanPaper.ReciprocalNearestRootLimit.actual_nearest_root_limit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,2 @@
+'PaperAdvances.Corollary3_6.finite_hankel_gram' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PaperAdvances.Corollary3_6.two_atom_order_three_det_zero' depends on axioms: [propext, Classical.choice, Quot.sound]

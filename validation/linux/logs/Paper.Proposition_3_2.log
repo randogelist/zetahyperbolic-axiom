@@ -1,0 +1,3 @@
+ManuscriptChain.Spectral.rootFactorization_nonempty_of_posDef {n : ℕ}
+  (p : ManuscriptChain.Spectral.SymmetricAffinePencil n) (positive : p.base.PosDef)
+  (direction_nonzero : p.direction.det ≠ 0) : Nonempty (ManuscriptChain.Spectral.RootFactorization p)

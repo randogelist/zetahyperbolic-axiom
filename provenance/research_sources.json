@@ -1,0 +1,39 @@
+[
+  {
+    "source": "https://github.com/leanprover/lean4/blob/v4.33.0/src/Lean/Util/CollectAxioms.lean",
+    "blob_sha": "dc9897059a4463dfd143a2b3f8fbb4f4a3c3f154",
+    "use": "Transitive axiom collection API for build audit only",
+    "status": "SOURCE_INSPECTED"
+  },
+  {
+    "source": "https://github.com/leanprover/lean4/blob/v4.33.0/src/Lean/Environment.lean",
+    "use": "Environment module ownership API; not mathematical proof",
+    "status": "SOURCE_INSPECTED"
+  },
+  {
+    "source": "https://github.com/leanprover/lean4/blob/v4.33.0/src/Lean/Data/SMap.lean",
+    "use": "ForIn environment declaration traversal API",
+    "status": "SOURCE_INSPECTED"
+  },
+  {
+    "source": "https://github.com/leanprover-community/mathlib4/blob/master/Mathlib/LinearAlgebra/Matrix/PosDef.lean",
+    "use": "Source API comparison for principal submatrix and determinant positivity; actual cached Mathlib compatibility remains user-native obligation",
+    "status": "SOURCE_INSPECTED_NOT_PINNED_BUILD_DEPENDENCY",
+    "git_file_blob_sha": "72af1f78fb2cc314b755a46b755c5cbbb51b294a"
+  },
+  {
+    "source": "https://github.com/leanprover/lean4/issues/15226",
+    "use": "Reported imported-axiom-cache under-reporting; independent traversal regression design",
+    "status": "SOURCE_INSPECTED;FOCUSED_REGRESSION_PASS"
+  },
+  {
+    "source": "https://github.com/leanprover-community/mathlib4/tree/db584cd6d46c92f209a44c0f1c829460d327499d",
+    "use": "Compatible Lean 4.33.0 compiled Mathlib cache and exact API verification",
+    "status": "PINNED_INSTALLED_BUILD_DEPENDENCY"
+  },
+  {
+    "source": "https://github.com/leanprover/lean4/releases/tag/v4.33.0",
+    "use": "Official Linux compiler installation, verified archive digest",
+    "status": "SHA256_VERIFIED_INSTALLED"
+  }
+]

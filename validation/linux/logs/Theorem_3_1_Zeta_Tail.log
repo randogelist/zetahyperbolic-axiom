@@ -1,0 +1,4 @@
+'ManuscriptChain.Real.zeta_tail_summable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptChain.Real.zeta_tail_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptChain.Real.zeta_odd_tail_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptChain.Real.zeta_tail_pole_value' depends on axioms: [propext, Classical.choice, Quot.sound]

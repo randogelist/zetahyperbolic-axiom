@@ -1,0 +1,2 @@
+LeanPaper.ExternalPi.MonicRootSums
+LeanPaper.ExternalPi.SubsetSumEsymm

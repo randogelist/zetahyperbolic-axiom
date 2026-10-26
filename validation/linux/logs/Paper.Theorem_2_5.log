@@ -1,0 +1,11 @@
+ManuscriptChain.PoleDiagonalization.theorem_2_5_lagrange_pole_diagonalization (p : ManuscriptChain.Real.Parameters) :
+  (∀ (a b : Fin p.h),
+      a ≠ b →
+        ManuscriptChain.PoleDiagonalization.poleDiagonalPencil p a b =
+          C (ManuscriptChain.PoleDiagonalization.poleConstantMatrix p a b)) ∧
+    ∀ (a : Fin p.h),
+      ManuscriptChain.PoleDiagonalization.poleDiagonalPencil p a a =
+          C (ManuscriptChain.PoleDiagonalization.poleWeight p a) *
+              (X - C (ManuscriptChain.Real.harmonic p.weight (ManuscriptChain.PoleDiagonalization.poleIndex p a))) +
+            C (ManuscriptChain.PoleDiagonalization.poleDiagonalRemainder p a) ∧
+        ManuscriptChain.PoleDiagonalization.poleWeight p a ≠ 0

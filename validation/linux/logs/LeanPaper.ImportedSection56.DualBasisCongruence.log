@@ -1,0 +1,3 @@
+'PaperOrder.CoreAlgebra.dualSlopeMatrix_rowChange' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PaperOrder.CoreAlgebra.dualDelta_top_coeff_rowChange' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PaperOrder.CoreAlgebra.dualDelta_degree_rowChange' depends on axioms: [propext, Classical.choice, Quot.sound]

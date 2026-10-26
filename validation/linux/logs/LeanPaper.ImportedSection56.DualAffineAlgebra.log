@@ -1,0 +1,10 @@
+LeanPaper/ImportedSection56/DualAffineAlgebra.lean:62:38: warning: This simp argument is unused:
+  add_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [derivative_add, derivative_mul, derivative_C, derivative_X, zero_mul, zero_add, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'PaperOrder.CoreAlgebra.dualConstant_swap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PaperOrder.CoreAlgebra.dualEntry_derivative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PaperOrder.CoreAlgebra.dualSlopeMatrix_symmetric' depends on axioms: [propext, Classical.choice, Quot.sound]

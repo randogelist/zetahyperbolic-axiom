@@ -1,0 +1,2 @@
+Theorem_4_1_Determinant_Log_Energy
+Theorem_2_5_Lagrange_Pole_Diagonalization

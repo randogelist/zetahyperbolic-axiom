@@ -1,38 +1,94 @@
-name: Lean 4.33 manuscript formalization
+name: Leaned Paper — compile and axiom audit
 
 on:
   push:
-    branches:
-      - main
-      - feat/zetahyperbolic-lean433-foundation
+    branches: [leaned-paper, main]
   pull_request:
   workflow_dispatch:
 
 permissions:
   contents: read
 
+concurrency:
+  group: leaned-paper-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   lean:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
     steps:
-      - uses: actions/checkout@v4
-      - name: Build Lean project (pinned Mathlib with cache)
-        uses: leanprover/lean-action@v1
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Install pinned Lean and obtain matching Mathlib artifacts
+        uses: leanprover/lean-action@24581d74d674803a25a81b10b059c5c0cdd344c6 # v1
         with:
-          build: true
-          use-mathlib-cache: true
-      - name: Print and audit axioms of completed declarations
+          auto-config: "false"
+          build: "false"
+          test: "false"
+          lint: "false"
+          use-mathlib-cache: "true"
+          use-github-cache: "false"
+      - name: Check toolchain, dependency pin and complete module plan
         shell: bash
         run: |
-          lake env lean Zetahyperbolic/Audit.lean | tee axioms.log
-          if grep -Eq 'sorryAx|Lean\.ofReduceBool|unsafe' axioms.log; then
-            echo "Unexpected axiom or unsafe construction" >&2
-            exit 1
-          fi
-      - name: Reject proof placeholders in source
+          set -euo pipefail
+          lean --version
+          python3 - <<'PY'
+          import json, pathlib, re, subprocess, tomllib
+          root = pathlib.Path('.')
+          assert (root / 'lean-toolchain').read_text().strip() == 'leanprover/lean4:v4.33.0'
+          assert 'version 4.33.0,' in subprocess.check_output(['lean', '--version'], text=True)
+          pin = 'db584cd6d46c92f209a44c0f1c829460d327499d'
+          config = tomllib.loads((root / 'lakefile.toml').read_text())
+          assert config['require'][0]['rev'] == pin
+          manifest = json.loads((root / 'lake-manifest.json').read_text())
+          assert next(p['rev'] for p in manifest['packages'] if p['name'] == 'mathlib') == pin
+          actual = subprocess.check_output(['git', '-C', '.lake/packages/mathlib', 'rev-parse', 'HEAD'], text=True).strip()
+          assert actual == pin
+          modules = [s.strip() for s in (root / 'modules.txt').read_text().splitlines() if s.strip() and not s.startswith('#')]
+          assert modules[-1] == 'LeanPaper.KernelAudit'
+          assert len(modules) == len(set(modules))
+          assert config['lean_lib'][0]['roots'] == modules
+          sources = {str(p.relative_to(root / 'src').with_suffix('')).replace('/', '.') for p in (root / 'src').rglob('*.lean')}
+          assert sources == set(modules)
+          order = {m:i for i,m in enumerate(modules)}
+          for m in modules:
+              source = (root / 'src' / (m.replace('.', '/') + '.lean')).read_text()
+              for dep in re.findall(r'^import\s+([A-Za-z0-9_.]+)', source, re.M):
+                  if dep in order:
+                      assert order[dep] < order[m], (m, dep)
+                  else:
+                      assert dep.startswith(('Mathlib', 'Lean', 'Std', 'Init')), (m, dep)
+          audit = (root / 'src/LeanPaper/KernelAudit.lean').read_text()
+          owned = set(re.findall(r'^\s*`([A-Za-z0-9_.]+)[,\]]', audit, re.M))
+          assert owned == set(modules) - {'LeanPaper.KernelAudit'}
+          print(f'MODULE_PLAN_ACCEPTED={len(modules)}')
+          PY
+      - name: Compile sequentially and run the actual transitive axiom gate
         shell: bash
         run: |
-          if grep -REn '(^|[[:space:]])(sorry|admit|axiom)[[:space:]]' Zetahyperbolic --include='*.lean'; then
-            echo "Placeholder or bare axiom found" >&2
-            exit 1
+          set -euo pipefail
+          mkdir -p .build/ci-lean
+          git rev-parse HEAD > .build/ci-lean/commit.txt
+          lean --version > .build/ci-lean/toolchain.txt
+          while IFS= read -r module || [[ -n "$module" ]]; do
+            module="${module%$'\r'}"
+            [[ -z "$module" || "$module" == \#* ]] && continue
+            lake --no-cache build "+${module}:olean" 2>&1 | tee ".build/ci-lean/${module}.log"
+          done < modules.txt
+          if ! grep -Fq 'AXIOM_AUDIT_ACCEPTED=ALL_PROJECT_DECLARATIONS' \
+              .build/ci-lean/LeanPaper.KernelAudit.log; then
+            lake --no-cache env lean -j 2 src/LeanPaper/KernelAudit.lean 2>&1 | \
+              tee -a .build/ci-lean/LeanPaper.KernelAudit.log
           fi
+          grep -Fq 'AXIOM_AUDIT_ACCEPTED=ALL_PROJECT_DECLARATIONS' \
+            .build/ci-lean/LeanPaper.KernelAudit.log
+      - name: Retain compiler and audit logs
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: leaned-paper-linux-${{ github.sha }}
+          path: .build/ci-lean
+          include-hidden-files: true
+          if-no-files-found: ignore
+          retention-days: 30

@@ -1,0 +1,15 @@
+'LeanPaper.Section3ContinuedFractions.corollary_3_5_normalized_two_det' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'LeanPaper.Section3ContinuedFractions.corollary_3_5_two_level_schur_identity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'LeanPaper.Section3ContinuedFractions.normalized_three_continuant_recurrence' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'LeanPaper.Section3ContinuedFractions.normalized_three_schur_identity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'LeanPaper.Section3ContinuedFractions.normalized_three_continuant_eq_det' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

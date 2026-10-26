@@ -1,0 +1,4 @@
+* -text
+*.lean text eol=lf
+*.pdf binary
+*.zip binary

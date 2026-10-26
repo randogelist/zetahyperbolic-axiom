@@ -1,0 +1,3 @@
+ANALYTIC_FRONTIER
+Zetahyperbolic.AnalyticMainChain
+Theorem_3_1_Pole_Integral_Identity

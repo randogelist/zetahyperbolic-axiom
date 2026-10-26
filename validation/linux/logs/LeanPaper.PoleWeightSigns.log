@@ -1,0 +1,1 @@
+'LeanPaper.PoleWeightSigns.poleWeight_sign' depends on axioms: [propext, Classical.choice, Quot.sound]

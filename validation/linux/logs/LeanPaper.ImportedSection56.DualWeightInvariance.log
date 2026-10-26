@@ -1,0 +1,6 @@
+'PaperOrder.CoreAlgebra.dualEntry_derivative_weight_independent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PaperOrder.CoreAlgebra.dualDelta_top_coefficient_weight_independent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

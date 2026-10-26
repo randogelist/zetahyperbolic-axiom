@@ -1,0 +1,2 @@
+'ManuscriptChain.Hyperbolic.coth_partial_fractions' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptChain.Hyperbolic.summable_coth_terms' depends on axioms: [propext, Classical.choice, Quot.sound]

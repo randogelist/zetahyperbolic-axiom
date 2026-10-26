@@ -1,0 +1,12 @@
+'PaperAdvances.Theorem5_2_RealRoots.det_add_scalar_of_hermitian' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PaperAdvances.Theorem5_2_RealRoots.positive_slope_factorization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PaperAdvances.Theorem5_2_RealRoots.positive_slope_exact_degree' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PaperAdvances.Theorem5_2_RealRoots.positive_slope_complex_roots_real' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

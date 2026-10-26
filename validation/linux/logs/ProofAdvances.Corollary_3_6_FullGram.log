@@ -1,0 +1,9 @@
+'PaperAdvances.Corollary3_6_FullGram.finite_hankel_posSemidef' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PaperAdvances.Corollary3_6_FullGram.finite_hankel_full_det_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PaperAdvances.Corollary3_6_FullGram.finite_hankel_full_posDef' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,2 @@
+LeanPaper.Section2TauRepresentation
+LeanPaper.Rebuild.PartialFractionsQuotient

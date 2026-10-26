@@ -1,0 +1,16 @@
+{
+  "lean_version": "Lean (version 4.33.0, x86_64-unknown-linux-gnu, commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)",
+  "compiler_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d",
+  "lean_path": "/workspace/scratch/6026d2aa054f/zetahyperbolic-axiom/.build/local-lean433/objects:/workspace/toolchains/mathlib4-4.33.0/.lake/build/lib/lean:/workspace/toolchains/mathlib4-4.33.0/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/workspace/toolchains/mathlib4-4.33.0/.lake/packages/Qq/.lake/build/lib/lean:/workspace/toolchains/mathlib4-4.33.0/.lake/packages/aesop/.lake/build/lib/lean:/workspace/toolchains/mathlib4-4.33.0/.lake/packages/batteries/.lake/build/lib/lean:/workspace/toolchains/mathlib4-4.33.0/.lake/packages/importGraph/.lake/build/lib/lean:/workspace/toolchains/mathlib4-4.33.0/.lake/packages/plausible/.lake/build/lib/lean:/workspace/toolchains/mathlib4-4.33.0/.lake/packages/proofwidgets/.lake/build/lib/lean:/workspace/toolchains/lean-4.33.0-linux/lib/lean",
+  "flags": [
+    "-j",
+    "2"
+  ],
+  "runner_sha256": "a97ef79773518429db94eb6b78e7eff0ec312382ca0ab3bbe1d1f7181c71d9e6",
+  "compatibility_preload_sha256": "59fe707aea18f065798ea3b028ddafc70b0bf4be5816edb39ec4c6ad19de1712",
+  "binary_tree_files": 55882,
+  "binary_tree_sha256": "853ba48132e6493dde39ba73805c4054d5ad82deaf7fca9fe9c18509eab1e3b3",
+  "full_environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+  "native_windows_status": "NOT_RUN"
+}

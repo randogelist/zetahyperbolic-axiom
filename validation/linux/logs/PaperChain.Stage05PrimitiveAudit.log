@@ -1,0 +1,22 @@
+'ManuscriptChain.GeneralIrrationality.primitivePolynomial_natDegree' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ManuscriptChain.GeneralIrrationality.primitivePolynomial_eval_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ManuscriptChain.GeneralIrrationality.irrational_odd_zeta' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ManuscriptChain.GeneralIrrationality.oddWeightDecayHypothesis_of_affineFamilyDecay' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ManuscriptChain.LINEAR_FAMILY_IRRATIONALITY' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PaperChain.stage05_original_integer_primitive_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PaperChain.stage05_original_integer_primitive_center_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PaperChain.stage05_fixed_odd_zeta_irrational_if_affine_decay' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PaperChain.stage05_zeta5_irrational_if_normalized_quadratic_decay' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PaperChain.stage05_linear_family_irrational_if_decay' depends on axioms: [propext, Classical.choice, Quot.sound]
+ManuscriptChain.GeneralIrrationality.AffineFamilyDecay (k : ℕ) : Prop
+ManuscriptChain.GeneralArithmetic.EventualQuadraticDecay (F : ManuscriptChain.GeneralArithmetic.OddWeightFamily) : Prop

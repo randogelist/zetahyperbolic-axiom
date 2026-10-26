@@ -1,0 +1,2 @@
+PaperChain.Stage01
+Theorem_2_5_Lagrange_Pole_Diagonalization

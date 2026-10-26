@@ -1,0 +1,3 @@
+LeanPaper.Rebuild.PartialFractionsResidues
+Theorem_3_1_Rational_Integral_Bridge
+Theorem_3_1_Pole_Integral_Identity

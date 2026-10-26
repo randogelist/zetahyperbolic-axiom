@@ -1,0 +1,15 @@
+'PaperAdvances.Proposition4_3_PadicDisk.finite_ultrametric_sum_strict' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PaperAdvances.Proposition4_3_PadicDisk.ultrametric_eval_norm_eq_constant' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PaperAdvances.Proposition4_3_PadicDisk.ultrametric_unit_coeff_disk' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PaperAdvances.Proposition4_3_PadicDisk.PROPOSITION_4_3_INTEGRAL_QPADIC' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PaperAdvances.Proposition4_3_PadicDisk.PROPOSITION_4_3_INTEGER_QPADIC' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

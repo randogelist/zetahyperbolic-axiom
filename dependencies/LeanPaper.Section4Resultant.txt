@@ -1,0 +1,2 @@
+LeanPaper.PrimitiveNormDisk
+LeanPaper.ImportedSection4.Proposition_4_2_Resultant_Product_Barrier

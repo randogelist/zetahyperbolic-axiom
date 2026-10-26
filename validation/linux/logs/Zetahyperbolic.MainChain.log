@@ -1,0 +1,3 @@
+'Zetahyperbolic.MAIN_CHAIN' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zetahyperbolic.original_delta_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Zetahyperbolic.MAIN_CHAIN_ORIGINAL_ROOTS' depends on axioms: [propext, Classical.choice, Quot.sound]

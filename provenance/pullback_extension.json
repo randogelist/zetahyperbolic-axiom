@@ -1,0 +1,61 @@
+{
+  "module": "LeanPaper.PullbackReflection",
+  "namespace": "LeanPaper.PullbackReflection",
+  "source_sha256": "9a621ff7a04196929931c41b359674d0d96b4131b4bb7a72c05f57d0dec535fc",
+  "imports": [
+    "Zetahyperbolic.Section2Checked"
+  ],
+  "compiler_status": "NOT_YET_RUN; parent preparing locally authorized Linux compiler; native Windows pending",
+  "proof_status": "SOURCE_CANDIDATE",
+  "archive_source": {
+    "filename": "19-ZETAHYPERBOLIC_PAPER45_TEN_STAGE_LEAN_v0_1_20_FINITE_GRAM_AUDIT.zip",
+    "sha256": "0513e294e315dd500f556c469a7e894eb12166420a997e5a9e8868e1f15ff24e",
+    "members": [
+      "PaperChronology/Section2FunctionLevelPullback.lean",
+      "PaperChronology/Stage01FullRationalPullback.lean"
+    ]
+  },
+  "cross_repository_source": {
+    "repository": "randogelist/snditeration",
+    "commit": "8e6f44efbde00d49c44859de6b382f71a7d5ab98",
+    "archive": "ZETAHYPERBOLIC_CHRONOLOGICAL_LEAN_v1_2_55_KREIN_SIGNATURE_PRINCIPAL_MINORS_FIX1.zip",
+    "archive_git_blob": "4a3b0ba63d7843bacbef643d99798551cdfb2595",
+    "members": [
+      {
+        "name": "Lemma_2_2_FullNormalForm.lean",
+        "sha256": "495c5553ef34bac9e00870a62142827d338805fe98a5d513f28dfbc430c1e066"
+      },
+      {
+        "name": "Lemma_2_3_FullNormalForm.lean",
+        "sha256": "34048f5367ea47eb8e5484e71176322f9e482521d958a35e8ef9dd50d7e8ce4a"
+      }
+    ]
+  },
+  "new_mathematical_work": [
+    "Canonical RatMomentElem actual polynomial eval connected to full pointwise square-pole pullback, away from finite poles.",
+    "Full odd quotient is retained, with a new recursively defined quotientMoment. Lower terms vanish for n < k; at n=k only tauMonomial k (2*k-1) survives.",
+    "muFunctionalPoly equality now covers the entire finite normal form and the full quotientMoment, using existing canonical Bernoulli/harmonic formulas.",
+    "Reflection assembled for finite monomial and integer-pole spans; difference assembled for finite pole sums with r != 0,1."
+  ],
+  "exact_hypotheses": {
+    "rationalValue_pullback": "Every k : Nat, canonical RatMomentElem R, rational x avoiding \u00b1j for every 1 <= j <= R.maxPole.",
+    "muFunctionalPoly_eq_pulledMoment": "k >= 1; all RatMomentElem R; equality in Q[X].",
+    "finite_span_reflection": "k >= 1; arbitrary finite degree and integer-pole sets and rational coefficient functions.",
+    "finite_pole_difference": "all k; arbitrary finite integer-pole sets; every used pole label r differs from 0 and 1."
+  },
+  "not_proved": [
+    "Descent/representation independence under arbitrary RatFunc equality.",
+    "Derivative interpretation for general rational functions, including higher poles.",
+    "Complete manuscript semantic equivalence for Lemmas 2.2/2.3.",
+    "Any analytic Gram or irrationality endpoint."
+  ],
+  "paper_ledger_recommendation": {
+    "2.2": "PARTIAL_SOURCE: canonical normal-form actual substitution plus full quotient moment bridge; quotient-domain independence open.",
+    "2.3": "PARTIAL_SOURCE: complete finite-coordinate reflection and admissible finite-pole difference; quotient-domain independence open."
+  },
+  "static_review": {
+    "new_axiom_declarations": false,
+    "sorry_admissions": false,
+    "modified_existing_sources": false
+  }
+}

@@ -1,0 +1,4 @@
+'PaperOrder.CoreAlgebra.dualSlopeQuadraticForm_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PaperOrder.CoreAlgebra.dualSlopeQuadraticForm_pos_iff_rowsSeparate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

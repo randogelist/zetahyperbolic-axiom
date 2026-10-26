@@ -1,0 +1,12 @@
+'PaperAdvances.Corollary3_6_ExactFiniteRank.weighted_leading_block' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PaperAdvances.Corollary3_6_ExactFiniteRank.weighted_posDef_up_to_support' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PaperAdvances.Corollary3_6_ExactFiniteRank.weighted_det_pos_iff_order_le_support' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PaperAdvances.Corollary3_6_ExactFiniteRank.unweighted_det_pos_iff_order_le_support' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

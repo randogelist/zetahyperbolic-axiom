@@ -1,0 +1,4 @@
+'PaperAdvances.Theorem3_8_ExactTaylor.unit_det_linear_coeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PaperAdvances.Theorem3_8_ExactTaylor.affine_det_exact_second_order' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

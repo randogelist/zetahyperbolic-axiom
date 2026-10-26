@@ -1,0 +1,5 @@
+'PaperOrder.PrincipalTheorems.zetaSeven_tail_le_one_div_64' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PaperOrder.PrincipalTheorems.zetaSeven_lt_38_div_37' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PaperOrder.PrincipalTheorems.weightSeven_rankOne_negative_unconditional' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

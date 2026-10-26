@@ -1,0 +1,2 @@
+'ManuscriptChain.GeneralArithmetic.linearParameters_admissible' does not depend on any axioms
+'ManuscriptChain.GeneralArithmetic.linearFamily_degree' depends on axioms: [propext, Classical.choice, Quot.sound]

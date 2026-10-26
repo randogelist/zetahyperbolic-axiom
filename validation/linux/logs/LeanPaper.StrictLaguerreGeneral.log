@@ -1,0 +1,6 @@
+LeanPaper/StrictLaguerreGeneral.lean:95:2: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'LeanPaper.StrictLaguerreGeneral.laguerre_strict_of_distinct_roots' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

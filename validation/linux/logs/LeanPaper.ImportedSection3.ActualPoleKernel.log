@@ -1,0 +1,9 @@
+'PaperAdvances.Theorem3_8_Actual.actual_derivative_eq_real_slope' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PaperAdvances.Theorem3_8_Actual.actual_relative_charpoly_eq_pole' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PaperAdvances.Theorem3_8_Actual.actual_relative_trace_eq_pole' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

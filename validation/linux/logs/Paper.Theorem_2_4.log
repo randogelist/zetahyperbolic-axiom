@@ -1,0 +1,14 @@
+ManuscriptChain.BasisInvariance.theorem_2_4_canonical_basis_invariance (p : ManuscriptChain.Real.Parameters)
+  (A B : Matrix (Fin p.h) (Fin p.h) ℚ) (hA : A.det ≠ 0) (hB : B.det ≠ 0)
+  (n₀ : ManuscriptChain.BasisInvariance.PrimitiveNormalization (ManuscriptChain.Real.delta p))
+  (nAB :
+    ManuscriptChain.BasisInvariance.PrimitiveNormalization
+      (ManuscriptChain.BasisInvariance.changeBasisPencil (ManuscriptChain.Real.pencil p) A B).det) :
+  nAB.polynomial = n₀.polynomial ∨ nAB.polynomial = -n₀.polynomial
+ManuscriptChain.BasisInvariance.theorem_2_4_constructed_canonical_basis_invariance (p : ManuscriptChain.Real.Parameters)
+  (A B : Matrix (Fin p.h) (Fin p.h) ℚ) (hA : A.det ≠ 0) (hB : B.det ≠ 0) (hdelta : ManuscriptChain.Real.delta p ≠ 0) :
+  have n₀ := ManuscriptChain.BasisInvariance.primitiveNormalization (ManuscriptChain.Real.delta p) hdelta;
+  have nAB :=
+    ManuscriptChain.BasisInvariance.primitiveNormalization
+      (ManuscriptChain.BasisInvariance.changeBasisPencil (ManuscriptChain.Real.pencil p) A B).det ⋯;
+  nAB.polynomial = n₀.polynomial ∨ nAB.polynomial = -n₀.polynomial

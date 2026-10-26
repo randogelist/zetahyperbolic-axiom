@@ -1,0 +1,49 @@
+{
+  "verified_date": "2026-10-25",
+  "retrieval": "Official upstream GitHub references via GitHub connector",
+  "actions": [
+    {
+      "evidence_file": "checkout-v4.json",
+      "official_ref_response": {
+        "ref": "refs/tags/v4",
+        "node_id": "MDM6UmVmMTk3ODE0NjI5OnJlZnMvdGFncy92NA==",
+        "url": "https://api.github.com/repos/actions/checkout/git/refs/tags/v4",
+        "object": {
+          "sha": "11d5960a326750d5838078e36cf38b85af677262",
+          "type": "commit",
+          "url": "https://api.github.com/repos/actions/checkout/git/commits/11d5960a326750d5838078e36cf38b85af677262"
+        }
+      }
+    },
+    {
+      "evidence_file": "lean-action-v1.json",
+      "official_ref_response": {
+        "ref": "refs/tags/v1",
+        "node_id": "REF_kwDOL24AvaxyZWZzL3RhZ3MvdjE",
+        "url": "https://api.github.com/repos/leanprover/lean-action/git/refs/tags/v1",
+        "object": {
+          "sha": "24581d74d674803a25a81b10b059c5c0cdd344c6",
+          "type": "commit",
+          "url": "https://api.github.com/repos/leanprover/lean-action/git/commits/24581d74d674803a25a81b10b059c5c0cdd344c6"
+        }
+      }
+    },
+    {
+      "evidence_file": "upload-artifact-v4.json",
+      "official_ref_response": {
+        "ref": "refs/tags/v4",
+        "node_id": "MDM6UmVmMTkyNjI1OTU1OnJlZnMvdGFncy92NA==",
+        "url": "https://api.github.com/repos/actions/upload-artifact/git/refs/tags/v4",
+        "object": {
+          "sha": "ea165f8d65b6e75b540449e92b4886f43607fa02",
+          "type": "commit",
+          "url": "https://api.github.com/repos/actions/upload-artifact/git/commits/ea165f8d65b6e75b540449e92b4886f43607fa02"
+        }
+      }
+    }
+  ],
+  "lean_action_manifest_url": "https://raw.githubusercontent.com/leanprover/lean-action/24581d74d674803a25a81b10b059c5c0cdd344c6/action.yml",
+  "lean_action_manifest_sha256": "66ec527d1f35d30cb5ba097eda15ffb0f2a7b9b7705d35adb3bae3cd30d1c63e",
+  "configuration_validation": "Lake --packages LOCAL_OVERRIDES --no-cache check-build exited 0; TOML/JSON/YAML and embedded shell/python parsed",
+  "remote_ci_result": "NOT_OBSERVED_AT_CONFIGURATION_VALIDATION; consult the commit Actions run"
+}

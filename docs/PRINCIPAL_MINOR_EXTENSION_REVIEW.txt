@@ -1,0 +1,25 @@
+PRINCIPAL MINOR REAL-ROOT EXTENSION — SOURCE REVIEW ONLY
+
+LeanPaper.SingularSlope adapts the existing positive-square-root spectral
+factorization without assuming nonzero eigenvalues. Positive base determinant
+supplies nonzero scalar factor; any complex zero therefore comes from a
+nonzero slope eigenvalue and has the real value center - beta^-1. Zero
+eigenvalues produce constant factors 1 and introduce no roots.
+
+LeanPaper.PrincipalMinorRealRoots constructs the actual principal affine
+restriction, identifies its real determinant polynomial with the mapped
+rational PrincipalMinors.determinant, transports evaluation to Q -> C, and
+uses actual Gram positivity. Both arbitrary embeddings and leading index
+embeddings are covered. The empty-order determinant has no roots, consistently.
+
+Source-level review: every imported API in the weak factorization proof is
+already present in the active Theorem_3_1_Universal_Hyperbolicity_And_Zero_Free_Disk.
+map_det and eval2 transport use exactly the patterns already employed for the
+full original pencil. Existing active sources are unchanged. No sorry, custom
+axiom, unsafe/native-decide axiom, or assumed spectral factorization is added.
+WeakSpectralFactorization is an internal proved construction, not a caller
+hypothesis or a finite checker witness.
+
+Limits: no compiler was run, so this review is not elaboration, kernel
+verification, an axiom-audit receipt, or A-Tier. No exact degree/root-count law,
+interlacing, irrationality, or complete manuscript Theorem 3.4 is asserted.

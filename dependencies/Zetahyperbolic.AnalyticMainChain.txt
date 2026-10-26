@@ -1,0 +1,3 @@
+ANALYTIC_FRONTIER
+Zetahyperbolic.MainChain
+Zetahyperbolic.ManuscriptCompatibility

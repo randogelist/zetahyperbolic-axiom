@@ -1,0 +1,14 @@
+LeanPaper/ImportedSection56/PositiveSlopeSpectrum.lean:49:76: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'PaperOrder.PrincipalTheorems.coefficientSlope_posDef' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PaperOrder.PrincipalTheorems.positiveSlopePencil_factorization_exists' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PaperOrder.PrincipalTheorems.positiveSlopePencil_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PaperOrder.PrincipalTheorems.positiveSlopePencil_every_complex_root_real' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PaperOrder.PrincipalTheorems.independent_coefficients_full_hyperbolicity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

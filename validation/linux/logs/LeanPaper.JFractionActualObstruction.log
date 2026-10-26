@@ -1,0 +1,25 @@
+LeanPaper/JFractionActualObstruction.lean:60:37: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+LeanPaper/JFractionActualObstruction.lean:60:37: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+LeanPaper/JFractionActualObstruction.lean:80:15: warning: This simp argument is unused:
+  Matrix.det_unique
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Matrix.diagonal_apply_eq, Ring.inverse_eq_inv']
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+LeanPaper/JFractionActualObstruction.lean:85:23: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+LeanPaper/JFractionActualObstruction.lean:85:23: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+'LeanPaper.JFractionActualObstruction.printed_fraction_fails_at_center' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'LeanPaper.JFractionActualObstruction.corrected_rank_one_fraction' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
