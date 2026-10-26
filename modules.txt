@@ -260,4 +260,9 @@ LeanPaper.BeukersOuterValuation
 LeanPaper.PadicDominantDeterminant
 LeanPaper.BeukersHarmonicRemainders
 LeanPaper.BeukersPrimeMatrix
+LeanPaper.ActualMixedAndreief
+LeanPaper.ActualMixedTwoMinors
+LeanPaper.Section4RootMean
+LeanPaper.BetaOddMeasureActual
+LeanPaper.CentralFactorialSeries
 LeanPaper.KernelAudit
