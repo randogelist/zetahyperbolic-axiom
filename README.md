@@ -326,7 +326,7 @@ flowchart TD
     O47["OPEN · Uniform spectral caps and average bounds"]
     T48["4.8.alt · Cluster-restricted rational-root exclusion"]
     D48["DEAD PROOF STEP · Lower separation used as upper closeness"]
-    O48["OPEN · Upper-closeness premise and outside-cluster argument"]
+    O48["OPEN · Actual family budgets and upper-closeness assembly"]
 
     START --> T41
     START --> T42
