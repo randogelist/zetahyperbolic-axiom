@@ -167,6 +167,7 @@ roots = [
   "LeanPaper.ImportedSection56.SelectedMonomial",
   "LeanPaper.ImportedSection56.UnimodularMonomial",
   "LeanPaper.Section5DualSpectrum",
+  "LeanPaper.Section5RationalIndependence",
   "LeanPaper.HigherDerivativeTuran",
   "LeanPaper.ManuscriptObstructions",
   "LeanPaper.NormalizedNewton",
