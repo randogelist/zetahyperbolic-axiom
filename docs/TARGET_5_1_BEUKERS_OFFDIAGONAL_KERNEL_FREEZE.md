@@ -2,7 +2,7 @@
 
 **Anchor:** `ZETA_HYPERBOLIC_TARGET_5_1_OFFDIAGONAL_KERNEL_1`  
 **Status:** `_construction`; one target only, no accepted compilation yet.  
-**Receiving baseline:** `zetahyperbolic-axiom/main@54136b39ec280b200c108ee48e80a5c247b1fa6b`, with 222 existing Lean modules and three previously merged standalone donor components (6.17, 6.16, 4.2). Compiler Lean 4.33.0 and pinned Mathlib `db584cd6d46c92f209a44c0f1c829460d327499d`.  
+**Original preparation baseline:** `main@54136b39ec280b200c108ee48e80a5c247b1fa6b` (222 modules). **Current PR baseline:** `main@9536243c136b88a9a69e921ada7bae4cba6b190c` with **223 accepted modules**, including separately merged 6.17, 6.16, 4.2 and 6.10. This branch adds the 224th module only. Compiler Lean 4.33.0 and pinned Mathlib `db584cd6d46c92f209a44c0f1c829460d327499d`.  
 **New source:** `src/LeanPaper/BeukersOffDiagonalKernel.lean`, Git blob `3b083ed855d2635a7b6355bdcd3528df45fecb25`.
 
 ## Exact mathematical claim and why it is useful
@@ -32,11 +32,11 @@ This module does **not** prove that the Beukers `dΩ₇` two-variable integral e
 ## Separate merge gate
 
 - This branch introduces **one mathematical source file** and only the three necessary build/audit inventory changes (`modules.txt`, `lakefile.toml`, `LeanPaper.KernelAudit.lean`), plus this receipt.
-- The independent branch's 223-module Lean 4.33.0 CI and complete all-declaration axiom gate must pass; permitted axioms only `propext`, `Quot.sound`, and `Classical.choice`.
-- This is intentionally a **draft PR** while earlier frozen merge targets are pending. It must be reconciled against the latest accepted `main` and recompiled/audited with *all* intervening accepted sources before being eligible for merge.
+- The independent branch's **224-module** Lean 4.33.0 CI and complete all-declaration axiom gate must pass; permitted axioms only `propext`, `Quot.sound`, and `Classical.choice`.
+- Create one **draft PR** from this exact isolated branch; do not merge until the recipient's full 224-module Lean CI and independent axiom gate are verified. It must be reconciled against the latest accepted `main` and recompiled/audited with *all* intervening accepted sources before being eligible for merge.
 - For a claim about the actual analytic off-diagonal moments, the stronger PR #7 dependency must independently pass and be merged before the final identification can be promoted. This finite lemma may be merged as a helper without claiming that identification.
 - Preserve the 45-item printed manuscript status at **7 fully proved** until exact remaining clauses are proved. No new rationality/transcendence result is asserted for ζ(7).
 
 ## Receipt fields
 
-Frozen branch: `feat/gwf-target-51-beukers-offdiag-kernel-v0_1_0`. PR, isolated CI run, full combined CI run, final admitted merge SHA, and qualified theorem names must be recorded only after verified GitHub evidence. Never label `!!!!` or `!!!` based solely on a generic finite algebra lemma.
+Frozen branch: `feat/gwf-target-51-beukers-offdiag-kernel-v0_1_0`. Original preparation later rebased/reconciled with current main; PR, isolated CI run, full combined CI run, final admitted merge SHA, and qualified theorem names must be recorded only after verified GitHub evidence. Never label `!!!!` or `!!!` based solely on a generic finite algebra lemma.
