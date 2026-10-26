@@ -1,0 +1,92 @@
+{
+  "scope": "Receiving GitHub CI runs; failed subset receipts never constitute full-project acceptance",
+  "runs": [
+    {
+      "run_id": 40316513854,
+      "commit": "d2a86b7095128cd898f337fb39a1a46f40f94806",
+      "state": "FAIL",
+      "modules": 241,
+      "completed": 237,
+      "failed": [
+        "LeanPaper.Section5RationalIndependence",
+        "LeanPaper.Section3OrthogonalKernel",
+        "LeanPaper.BeukersIntegralPencil"
+      ]
+    },
+    {
+      "run_id": 40318924083,
+      "commit": "96ffaabc6051e7ebbf66b3f86aeea91cb7602111",
+      "state": "FAIL",
+      "modules": 253,
+      "completed": 241,
+      "failed": [
+        "LeanPaper.Section5RationalIndependence",
+        "LeanPaper.LaplaceDensityDerivative",
+        "LeanPaper.Section4RationalCluster",
+        "LeanPaper.BetaBeukersMoments",
+        "LeanPaper.BeukersSimultaneous",
+        "LeanPaper.CentralFactorialMoments",
+        "LeanPaper.BetaOddResidueSigns",
+        "LeanPaper.DoublePoleZeroCoefficientObstruction"
+      ],
+      "artifact_id": 12649305128,
+      "artifact_sha256": "154e4546b499827aa942664ef6bc5d260c9a60f6ab004066cbd082447dd4c989"
+    },
+    {
+      "run_id": 40320889232,
+      "commit": "bdcbb8bbd54d9837e3230cd50c28358eec37ee42",
+      "state": "FAIL",
+      "modules": 259,
+      "completed": 246,
+      "subset_audit": "PASS",
+      "failed": [
+        "LeanPaper.Section5RationalIndependence",
+        "LeanPaper.LaplaceMomentBounds",
+        "LeanPaper.BetaOddResidueSigns",
+        "LeanPaper.DoublePoleZeroCoefficientObstruction",
+        "LeanPaper.Section4ClosestRoot",
+        "LeanPaper.Section5OuterPrimeIntegral",
+        "LeanPaper.BetaCouplingDerivative"
+      ]
+    },
+    {
+      "run_id": 40323993835,
+      "commit": "e83810004eb5e2392beb208e5d85bc3843ae5214",
+      "state": "FAIL",
+      "modules": 259,
+      "completed": 251,
+      "reused": 245,
+      "subset_audit": "PASS",
+      "failed": [
+        "LeanPaper.CoefficientGramGrowth",
+        "LeanPaper.BeukersPolynomialSpectrum",
+        "LeanPaper.LaplaceMomentDerivative",
+        "LeanPaper.Section5OuterPrimeIntegral"
+      ]
+    },
+    {
+      "run_id": 40326559574,
+      "commit": "b1c99c0d25cf94ee2cfbb398f697b7e50c363f89",
+      "state": "FAIL",
+      "modules": 260,
+      "completed": 258,
+      "reused": 251,
+      "subset_audit": "PASS",
+      "failed": [
+        "LeanPaper.BetaBeukersSpectrum"
+      ]
+    },
+    {
+      "run_id": 40327942655,
+      "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
+      "state": "PASS",
+      "modules": 260,
+      "completed": 260,
+      "reused": 257,
+      "global_audit": "PASS",
+      "negative_regressions": "PASS",
+      "artifact_id": 12653156478,
+      "artifact_sha256": "be92255706c1d2c991f48f125886d725cec655ebe379801025987dc444bfbc41"
+    }
+  ]
+}

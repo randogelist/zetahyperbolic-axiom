@@ -1,3 +1,5 @@
+> **Final receiving verification:** All registered Lean sources discussed here are included in the 260-module [GitHub CI PASS](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40327942655) at proof commit `7250b47ba4d20ba934e890966a9b77a559689cfd`, with a fresh all-project transitive axiom audit and negative regressions. See the [matching receipt](../../validation/github/20261026/acceptance.json) and [current whole-result status](../FORMALIZATION_STATUS.md). References below to candidates, pending CI or failed runs describe historical investigation checkpoints; compilation does not extend the exact mathematical scope recorded here.
+
 # Exact semantic review of the already listed Chapter 4 alternatives
 
 Reviewed the fixed README text for 4.1.alt, 4.4.alt, 4.5.alt, 4.7.alt and

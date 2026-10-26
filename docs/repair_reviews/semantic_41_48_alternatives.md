@@ -1,3 +1,5 @@
+> **Final receiving verification:** All registered Lean sources discussed here are included in the 260-module [GitHub CI PASS](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40327942655) at proof commit `7250b47ba4d20ba934e890966a9b77a559689cfd`, with a fresh all-project transitive axiom audit and negative regressions. See the [matching receipt](../../validation/github/20261026/acceptance.json) and [current whole-result status](../FORMALIZATION_STATUS.md). References below to candidates, pending CI or failed runs describe historical investigation checkpoints; compilation does not extend the exact mathematical scope recorded here.
+
 # Fixed README alternatives 4.1 and 4.8: independent coverage review
 
 Reviewed the existing README rows at lines 349 and 363, their linked `SECTION4_CONTINUATION_REVIEW.md`, the printed Proposition 4.8, and the current transfer/effective-budget/rational-cluster modules. No source or target statement was changed for this review.

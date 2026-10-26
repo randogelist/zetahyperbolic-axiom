@@ -1,3 +1,5 @@
+> **Final receiving verification:** All registered Lean sources discussed here are included in the 260-module [GitHub CI PASS](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40327942655) at proof commit `7250b47ba4d20ba934e890966a9b77a559689cfd`, with a fresh all-project transitive axiom audit and negative regressions. See the [matching receipt](../../validation/github/20261026/acceptance.json) and [current whole-result status](../FORMALIZATION_STATUS.md). References below to candidates, pending CI or failed runs describe historical investigation checkpoints; compilation does not extend the exact mathematical scope recorded here.
+
 # Independent semantic review of original Theorem 3.8
 
 Reviewed manuscript pp. 12–13 and the candidate chain through `Section3MonicOrthogonal`, `Section3OrthogonalKernel`, `SymmetricPoleSpectrum`, `LaplaceDensityDerivative`, `LaplaceMomentBounds`, `LaplaceMomentDerivative`, `LaplaceGram`, `MatrixCurveJacobi`, and `LaplaceKernelJacobi`. This is a source-level mathematical/API review, not a receiving compilation receipt.
