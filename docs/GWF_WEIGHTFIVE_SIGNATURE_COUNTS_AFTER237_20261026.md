@@ -1,0 +1,9 @@
+# Section 3.3 original weight-five normalized signature candidate
+
+Receiving base `d431d9ab9dc64c1afc095d5de88ccaba7346352b` (237 source modules); source is a new actual-family specialization of existing `LeanPaper.SlopeSignature.actual_normalized_signature_counts`, retaining the literal k=2, m=3, N=3n, K=30n, n>0. Theorem states positive signature floor(27n/2) and negative signature ceil(27n/2) of the original normalized manuscript pencil. This is a genuine specialization with n-dependent exact counts; not yet proved by a receiving Lean run.
+
+Research input: the donor `randogelist/snditeration` modules `Zetahyperbolic/Section3/PoleSignCounts.lean` and `SpectralInertia.lean` established the corresponding signed-root count, while this source uses the frozen directly imported current-main normal-form theorem. Source constructs no new mathematical assumptions. All 237 accepted mathematical modules, compiler/toolchain, Mathlib pin, Windows run.cmd and prior proof receipts unchanged.
+
+Project module plan 238 unique registrations, new `LeanPaper.WeightFiveSignatureCount`, existing project-wide KernelAudit import and owner registration. Source includes no sorry/admit/project-specific axiom. Must pass exact new-head native Lean 4.33.0 and compatible pinned Mathlib compilation and independent all-project `AXIOM_AUDIT_ACCEPTED=ALL_PROJECT_DECLARATIONS`, permitted `propext`, `Quot.sound`, `Classical.choice`, before a theorem PASS or main merge. Any compiler error should be repaired on branch without weakening theorem. This does not prove all of manuscript 3.3, arbitrary mixed-minor positivity, Stieltjes determinacy or irrationality.
+
+Workflow YOU_ARE_GOODWORKFLOWFRONTIER v1_0_25, tag _construction, proof target LOCAL_COMPILER preserved; GitHub CI solely an integration check.
