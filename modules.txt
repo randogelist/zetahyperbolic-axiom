@@ -187,6 +187,7 @@ LeanPaper.ReciprocalAllOrders
 LeanPaper.CorrectedReciprocalCorollary
 LeanPaper.DodgsonCondensation
 LeanPaper.DyadicQuotientThreshold
+LeanPaper.CoefficientGramGrowth
 LeanPaper.ExternalPi.ETranscendental
 LeanPaper.ExternalPi.HermiteLindemann
 LeanPaper.ExternalPi.PiLindemann

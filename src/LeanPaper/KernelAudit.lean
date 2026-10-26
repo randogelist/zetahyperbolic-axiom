@@ -187,6 +187,7 @@ import LeanPaper.ReciprocalAllOrders
 import LeanPaper.CorrectedReciprocalCorollary
 import LeanPaper.DodgsonCondensation
 import LeanPaper.DyadicQuotientThreshold
+import LeanPaper.CoefficientGramGrowth
 import LeanPaper.ExternalPi.ETranscendental
 import LeanPaper.ExternalPi.HermiteLindemann
 import LeanPaper.ExternalPi.PiLindemann
@@ -827,6 +828,7 @@ run_cmd Elab.Command.liftCoreM do
     `LeanPaper.CorrectedReciprocalCorollary,
     `LeanPaper.DodgsonCondensation,
     `LeanPaper.DyadicQuotientThreshold,
+    `LeanPaper.CoefficientGramGrowth,
     `LeanPaper.ExternalPi.ETranscendental,
     `LeanPaper.ExternalPi.HermiteLindemann,
     `LeanPaper.ExternalPi.PiLindemann,
