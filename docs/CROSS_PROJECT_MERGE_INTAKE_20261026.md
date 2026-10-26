@@ -95,3 +95,20 @@ Compiled-in-failed-workflow modules `Section4.AlgebraicLattice` and `Section6.Po
 Record separately: **(a)** historical source PASS, **(b)** receiving branch COMPILED, **(c)** full independent AXIOM CLEAN, **(d)** source mathematically connected to the original data, and **(e)** full literal manuscript clause discharged. A paper item moves to `!!` only when every exact printed subclaim is formally proved (or the published claim is explicitly corrected and separately labeled, leaving the literal blocked).
 
 **No newly merged proof / no 45-item promotion is claimed in this source-intake report.** The reinference is *not* saturated: credible previously uncollected donor modules and exact code-repair targets have been identified.
+
+## 7. Accepted intake merge ledger — 26 October 2026
+
+**Historical note:** Sections 1–6 above preserve the original pre-merge collection assessment. The following is a later verified GitHub state, not a retroactive claim that these sources were merged when the intake began.
+
+| Target | PR | Main merge SHA | Proof evidence | Exact scope |
+|---|---|---|---|---|
+| **6.17** corrected q-index windows | [#2](https://github.com/randogelist/zetahyperbolic-axiom/pull/2) | [cb1abbe85](https://github.com/randogelist/zetahyperbolic-axiom/commit/cb1abbe85bb277c823f31468142f7fdae8d0e9ba) | [220-module PR CI PASS](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40260089735), `AUDITED_AXIOMS=[Quot.sound, Classical.choice, propext]` | Finite prime denominator windows only; not q-adic determinant valuation |
+| **6.16** compact positive-ratio comparison | [#3](https://github.com/randogelist/zetahyperbolic-axiom/pull/3) | [main status](https://github.com/randogelist/zetahyperbolic-axiom/pull/3) | [221-module combined PR CI PASS](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40262637451) | Abstract continuous positive ratio on compactified [0,1]; actual Zeta–Beta ratio not identified |
+| **4.2** arbitrary `d0` algebraic lattice | [#4](https://github.com/randogelist/zetahyperbolic-axiom/pull/4) | [54136b39](https://github.com/randogelist/zetahyperbolic-axiom/commit/54136b39ec280b200c108ee48e80a5c247b1fa6b) | [222-module source-identical preflight PASS](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40264760621) and full independent axiom audit; the preflight and merged PR had byte-identical 222 `.lean` sources and exact build manifests | Conditional algebraic-height/degree/decay/root-separation transfer only |
+| **6.10** coefficient-Gram growth | [#5 (draft)](https://github.com/randogelist/zetahyperbolic-axiom/pull/5) | **NOT MERGED** | Reconciled PR head `262dda91157c8b3cf650a5917068a0b11ed21df6`; [fresh combined 223-module CI](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40267337819) **in progress at this checkpoint** | Candidate `log det(CCᵀ)/K² → 0` under explicit rank and entry-growth hypotheses; not yet compiler accepted |
+
+**Verified current `main`:** `54136b39ec280b200c108ee48e80a5c247b1fa6b`, registered module count **222**. Sources from #2, #3 and #4 are each present once. The manuscript literal full-item count is unchanged at **7/45**, despite these additional accepted narrow conditional or finite arithmetic lemmas.
+
+**Next single target:** #5 only. The repair source in its branch is the exact byte-verified Git blob `b58764606ad898f27236c293245bfb54365192cf`, taken from the isolated [repair branch #8](https://github.com/randogelist/zetahyperbolic-axiom/pull/8). The auxiliary repair PR must **not** merge to main; PR #5 has the repaired source already. The 223-module axiom-audited CI must finish successfully on its reconciled head before #5 can merge.
+
+**Additional future target drafts** remain independent in GitHub and receive no theorem credit or queue-jump merely by existing.
