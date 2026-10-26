@@ -217,6 +217,7 @@ import LeanPaper.Section4TransferComplete
 import LeanPaper.SlopeSignature
 import LeanPaper.SymmetricPoleSpectrum
 import LeanPaper.UnitLogMoments
+import Zeta5Merge.Theorem6_17
 import Lean
 
 /-! Independent transitive axiom audit of every active imported project declaration.
@@ -853,7 +854,8 @@ run_cmd Elab.Command.liftCoreM do
     `LeanPaper.Section4TransferComplete,
     `LeanPaper.SlopeSignature,
     `LeanPaper.SymmetricPoleSpectrum,
-    `LeanPaper.UnitLogMoments]
+    `LeanPaper.UnitLogMoments,
+    `Zeta5Merge.Theorem6_17]
   let mut roots : Array Name := #[]
   for (decl, _) in env.constants do
     if let some idx := env.getModuleIdxFor? decl then
