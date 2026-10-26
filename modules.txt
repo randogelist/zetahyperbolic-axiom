@@ -212,6 +212,7 @@ LeanPaper.Section4AlgebraicBudget
 LeanPaper.Section4ComplexComparison
 LeanPaper.Section4AlgebraicTransfer
 LeanPaper.Section4AlgebraicLimsup
+LeanPaper.Section4AlgebraicLattice
 LeanPaper.Section4EffectiveBudget
 LeanPaper.Section4TransferComplete
 LeanPaper.SlopeSignature
