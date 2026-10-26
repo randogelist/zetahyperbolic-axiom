@@ -140,6 +140,7 @@ import LeanPaper.ImportedSection56.DualSOS
 import LeanPaper.ImportedSection56.DualStrictDiscriminant
 import LeanPaper.ImportedSection56.DualWeightInvariance
 import LeanPaper.ImportedSection56.FiniteKreinCone
+import Zeta5Merge.Theorem6_16
 import LeanPaper.ImportedSection56.PositiveSlopeSpectrum
 import LeanPaper.ImportedSection56.ZetaSevenBound
 import LeanPaper.ImportedSection3.ExactTaylor
@@ -212,11 +213,13 @@ import LeanPaper.Section4AlgebraicBudget
 import LeanPaper.Section4ComplexComparison
 import LeanPaper.Section4AlgebraicTransfer
 import LeanPaper.Section4AlgebraicLimsup
+import LeanPaper.Section4AlgebraicLattice
 import LeanPaper.Section4EffectiveBudget
 import LeanPaper.Section4TransferComplete
 import LeanPaper.SlopeSignature
 import LeanPaper.SymmetricPoleSpectrum
 import LeanPaper.UnitLogMoments
+import Zeta5Merge.Theorem6_17
 import Lean
 
 /-! Independent transitive axiom audit of every active imported project declaration.
@@ -777,6 +780,7 @@ run_cmd Elab.Command.liftCoreM do
     `LeanPaper.ImportedSection56.DualStrictDiscriminant,
     `LeanPaper.ImportedSection56.DualWeightInvariance,
     `LeanPaper.ImportedSection56.FiniteKreinCone,
+    `Zeta5Merge.Theorem6_16,
     `LeanPaper.ImportedSection56.PositiveSlopeSpectrum,
     `LeanPaper.ImportedSection56.ZetaSevenBound,
     `LeanPaper.ImportedSection3.ExactTaylor,
@@ -849,11 +853,13 @@ run_cmd Elab.Command.liftCoreM do
     `LeanPaper.Section4ComplexComparison,
     `LeanPaper.Section4AlgebraicTransfer,
     `LeanPaper.Section4AlgebraicLimsup,
+    `LeanPaper.Section4AlgebraicLattice,
     `LeanPaper.Section4EffectiveBudget,
     `LeanPaper.Section4TransferComplete,
     `LeanPaper.SlopeSignature,
     `LeanPaper.SymmetricPoleSpectrum,
-    `LeanPaper.UnitLogMoments]
+    `LeanPaper.UnitLogMoments,
+    `Zeta5Merge.Theorem6_17]
   let mut roots : Array Name := #[]
   for (decl, _) in env.constants do
     if let some idx := env.getModuleIdxFor? decl then

@@ -123,7 +123,12 @@ theorem normalized_log_det_tendsto_zero
         2*(2*A+2 : ℕ)*(K : ℝ)*(Real.log 2 + Real.log K) :=
       hlogbound.trans (mul_le_mul hdim hlogsucc (by positivity) (by positivity))
     apply (div_le_iff₀ (sq_pos_of_pos hKpos)).2
-    convert hbound using 1 <;> (try field_simp [ne_of_gt hKpos]) <;> ring
+    calc
+      Real.log (realGram (C K)).det ≤
+          2*(2*A+2 : ℕ)*(K : ℝ)*(Real.log 2 + Real.log K) := hbound
+      _ = _ := by
+        field_simp [ne_of_gt hKpos]
+        <;> ring
 
 end ManuscriptChain.CoefficientGramGrowth
 
