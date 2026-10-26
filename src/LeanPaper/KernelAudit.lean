@@ -135,6 +135,7 @@ import LeanPaper.ImportedSection56.RankOneWitness
 import LeanPaper.Section4ManuscriptBridge
 import LeanPaper.ImportedMultiweight.AnchoredSemidefiniteCone
 import LeanPaper.ImportedSection3.Jacobi
+import LeanPaper.MatrixCurveJacobi
 import LeanPaper.ImportedSection56.DualQuadraticRoot
 import LeanPaper.ImportedSection56.DualSOS
 import LeanPaper.ImportedSection56.DualStrictDiscriminant
@@ -773,6 +774,7 @@ run_cmd Elab.Command.liftCoreM do
     `LeanPaper.Section4ManuscriptBridge,
     `LeanPaper.ImportedMultiweight.AnchoredSemidefiniteCone,
     `LeanPaper.ImportedSection3.Jacobi,
+    `LeanPaper.MatrixCurveJacobi,
     `LeanPaper.ImportedSection56.DualQuadraticRoot,
     `LeanPaper.ImportedSection56.DualSOS,
     `LeanPaper.ImportedSection56.DualStrictDiscriminant,
