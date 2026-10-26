@@ -7,6 +7,17 @@ The goal is to **collect exact mathematics from the user's other Lean projects a
 
 **Canonical receiving source**: [zetahyperbolic-axiom/main@86ca99a](https://github.com/randogelist/zetahyperbolic-axiom/commit/86ca99a23d65cde4880a9005a49076c43e7bc968), [219-module Lean 4.33.0 CI and independent axiom audit PASS](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40188664869), Mathlib `db584cd6d46c92f209a44c0f1c829460d327499d`. Preserve `LEAN_ANCHORINGS`, the named `ZETA_HYPERBOLIC_ANCHOR_1` through `ZETA_HYPERBOLIC_ANCHOR_7`, and PASS-ONCE source/`.olean` reuse. Current 45-item tally remains **7 complete, 21 partial, 10 not formalized, 7 blocked**.
 
+## 0. Frozen-target merge queue and first accepted merger (26 October 2026)
+
+| Order | Target | PR / branch | Verified stage |
+|---:|---|---|---|
+| **1** | **6.17** corrected q-prime harmonic-index windows | [PR #2](https://github.com/randogelist/zetahyperbolic-axiom/pull/2), `feat/gwf-target-617-corrected-q-window-v0_1_0` | **MERGED** at [`cb1abbe85bb277c823f31468142f7fdae8d0e9ba`](https://github.com/randogelist/zetahyperbolic-axiom/commit/cb1abbe85bb277c823f31468142f7fdae8d0e9ba); [CI #40260089735](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40260089735) **PASS**, 220-module plan, independent full transitive axiom audit `AXIOM_AUDIT_ACCEPTED=ALL_PROJECT_DECLARATIONS`, only `propext`, `Classical.choice`, `Quot.sound` |
+| 2 | **6.16** compact positive-ratio finite comparison | [draft PR #3](https://github.com/randogelist/zetahyperbolic-axiom/pull/3), `feat/gwf-target-616-compact-ratio-v0_1_0` | Branch reconciled **after #2 merge** at `9814065ae1cba0098f873fea4fc0782dcba23187`; combined 221-module [CI #40262637451](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40262637451) pending, merge **NOT admitted** |
+| 3 | **4.2** algebraic approximation lattice `d₀` | [draft PR #4](https://github.com/randogelist/zetahyperbolic-axiom/pull/4), `feat/gwf-target-42-algebraic-lattice-v0_1_0` | Independent 220-module diagnostic CI pending; after #3 merge requires 222-module combined verification |
+| 4 | **6.10** coefficient-Gram log growth for polynomially bounded integer matrices | [draft PR #5](https://github.com/randogelist/zetahyperbolic-axiom/pull/5), `feat/gwf-target-610-coefficient-gram-growth-v0_1_0` | One terminal proof-tactic repair to failed `snditeration` donor; independent [CI #40262349310](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40262349310) pending; after #4 merge requires 223-module combined verification |
+
+**Admission distinction:** The verified **finite q-index-window** theorem in #2 is newly merged A-Tier *source mathematics*, **not the original whole printed 6.17 theorem** (whose q-adic valuation and actual dual-basis identification remain open). The manuscript-wide full-item tally stays **7/45**. No claim is made that pending diagnostic or combined CI has passed. Do not merge #3–#5 simultaneously: each subsequent merge must contain earlier admitted mathematical sources and pass a fresh complete axiom gate.
+
 ## 1. Two distinct donor evidence classes
 
 **A — Historically passing donors, collect now for isolated receiving-repo replay.**
