@@ -180,6 +180,7 @@ LeanPaper.CentralFactorialDecay
 LeanPaper.ContinuousDensityNormalization
 LeanPaper.ContinuousWeightMoments
 LeanPaper.ContinuousGram
+LeanPaper.ShiftedSolidMinors
 LeanPaper.RationalLogJets
 LeanPaper.ReciprocalAllOrders
 LeanPaper.CorrectedReciprocalCorollary
