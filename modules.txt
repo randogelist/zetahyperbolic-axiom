@@ -221,4 +221,5 @@ LeanPaper.SymmetricPoleSpectrum
 LeanPaper.UnitLogMoments
 Zeta5.HermiteBasisCore
 Zeta5Merge.Theorem6_17
+LeanPaper.ShiftedSolidMinors
 LeanPaper.KernelAudit
