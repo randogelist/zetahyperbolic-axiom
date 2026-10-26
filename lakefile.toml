@@ -150,6 +150,7 @@ roots = [
   "LeanPaper.Section4ManuscriptBridge",
   "LeanPaper.ImportedMultiweight.AnchoredSemidefiniteCone",
   "LeanPaper.ImportedSection3.Jacobi",
+  "LeanPaper.MatrixCurveJacobi",
   "LeanPaper.ImportedSection56.DualQuadraticRoot",
   "LeanPaper.ImportedSection56.DualSOS",
   "LeanPaper.ImportedSection56.DualStrictDiscriminant",
