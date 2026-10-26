@@ -422,3 +422,36 @@ The source [ContinuousWeightMoments](../src/LeanPaper/ContinuousWeightMoments.le
 ## 42. Round 40 — original-manuscript and cross-branch promotion gate
 
 All newly checked declarations belong to the previously accepted 219-module proof base, not a fresh build. The exact original-paper inventory remains **7 complete A-Tier, 21 partially formalized, 10 not formalized, 7 blocked**. Crossed subclauses include corrected all-real-s analytic moments, 4.7 finite spectral counting, 6.13 secant density decay, 6.18 exact quotient threshold and 6.17 arithmetic diagnostics. No eighth literal printed theorem is fully proved, no actual-family quadratic decay or exponential norm estimate is newly established, and no finite-witness checker has admitted a concrete witness. Future whole-item promotion requires an exact original-claim equivalence, a successful Lean+Mathlib build and transitive axiom audit. The tracker is documentation only; existing Lean sources remain unchanged.
+
+
+## 43. Round 41 — accepted source and branch gate
+
+Receiving repo main@86ca99a still has [PASS CI 40188664869](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40188664869) including the independent Lean 4.33 transitive axiom gate; snditeration main@c521749 also has [PASS CI](https://github.com/randogelist/snditeration/actions/runs/40186793090), but [its broad continuation FAILED](https://github.com/randogelist/snditeration/actions/runs/40188938699). The sources newly credited below already appear in the accepted [build plan](../modules.txt) and [fingerprinted source inventory](../provenance/active_module_hashes.json). These are newly found old proofs, not new compilations.
+
+## 44. Round 42 — exact finite Jacobi Taylor formula (3.8)
+
+[ExactTaylor.affine_det_exact_second_order](../src/LeanPaper/ImportedSection3/ExactTaylor.lean) proves for any nonsingular real matrix G and any real matrix H an exact polynomial formula det(G+tH)=det(G)*(1+trace(G^-1 H)*t+R(t)*t^2), where R is explicitly the double divX of the determinant polynomial. This is a second-order finite algebraic remainder, not a bound. The actual Gram is nonsingular, so this result is applicable to the finite pencil. The true differentiated Laplace integral and orthogonal-polynomial Christoffel-Darboux identification remain open.
+
+## 45. Round 43 — algebraic resultant and all-degree budget (4.2)
+
+[Section4ConjugateBounds.algebraic_approximation_barrier](../src/LeanPaper/Section4ConjugateBounds.lean) derives an explicit product lower bound from a nonzero *integer* resultant, using the actual polynomial degrees and heights. [Section4AlgebraicBudget.eventually_conjugate_budget](../src/LeanPaper/Section4AlgebraicBudget.lean) proves the dangerous upper expression is eventually <1 uniformly over all minimal-polynomial degrees m<=d given explicit eventual degree/height bounds and the strict rate gap (d-1)L+lambda/c<epsilon. These are genuinely proved conditional uniform estimates. The printed arbitrary d0-lattice wrapper and actual-family rates remain unproved.
+
+## 46. Round 44 — no consecutive centered Taylor zeros (3.7)
+
+[ConsecutiveDerivativeZeros.actual_centered_consecutive_nonvanishing](../src/LeanPaper/ConsecutiveDerivativeZeros.lean) proves that for every admissible actual odd-zeta polynomial, any two consecutive Taylor coefficients at the true zeta center cannot both vanish (for k<h). The same file has an explicit split real-root polynomial with a vanishing *individual* coefficient despite two distinct roots, so no false inference is made to nonvanishing of every actual coefficient. [StrictTuranRolle.THEOREM_3_7_ACTUAL_CRITICAL_POINT_SEPARATION](../src/LeanPaper/ImportedSection3/StrictTuranRolle.lean) proves derivative-root separation between two zeros of the actual determinant, not interlacing of successive principal minors.
+
+## 47. Round 45 — actual mixed spectral signs and real-exponent determinant sign (3.3)
+
+[SlopeIndefinite.actual_factorization_has_both_signs](../src/LeanPaper/SlopeIndefinite.lean) constructs strictly positive and strictly negative actual spectral factors when h>=2, and its slope_indefinite theorem proves the real-parameter slope is neither semidefinite sign. [ImportedSection3.SlopeSign.slope_det_pos_iff](../src/LeanPaper/ImportedSection3/SlopeSign.lean) and slope_det_neg_iff identify the real-exponent determinant sign with its entire pole-residue product, using the squared Vandermonde factor. This strengthens the exact finite sign record, not the unproved nonprincipal mixed-minor total positivity or Carleman uniqueness.
+
+## 48. Round 46 — actual coalesced reciprocal moment rank (3.6)
+
+[ReciprocalRootMoments.finiteHankel_eq_coalesced](../src/LeanPaper/ReciprocalRootMoments.lean) constructs the distinct inverse-square atoms with aggregated positive masses and proves equality with the true atomic Hankel matrix. Its reciprocalHankel_det_pos_iff gives the *sharp* strict positivity criterion n<=number of distinct inverse-square atoms, and the actual manuscript_reciprocal_moments theorem transports positivity, shifted semidefiniteness and sharp rank to the actual determinant roots at a rational nonroot shift. Opposite root gaps can coalesce as square atoms. This confirms the corrected endpoint; the printed all-order strict claim remains false.
+
+## 49. Round 47 — explicit real manuscript singular principal minor (3.4)
+
+[SingularPrincipalMinorExample](../src/LeanPaper/SingularPrincipalMinorExample.lean) contains a source-audited original-paper admissible counterexample k=2,m=1,N=1,K=6. The first principal slope is exactly zero; its principal determinant is a strictly positive constant polynomial of degree zero and has no finite real roots. This is an explicit verification that the printed universal r-finite-root enumeration cannot hold. Rank-aware real-root count is already proved separately, but compatible Cauchy eigenvalue interlacing remains open. Inspection of accepted snditeration principal/reciprocal modules yielded no new whole-item completion.
+
+## 50. Round 48 — zero-novelty signal decision
+
+This eight-round re-inference added material *previously uncredited* accepted theorem evidence for 3.3, 3.6, 3.7, 3.8 and 4.2, and newly credited a direct original-data counterexample source for 3.4. Therefore the all-zero-novelty marker is NOT triggered. The whole manuscript remains 7/45 fully A-Tier, with 21 partial, 10 not formalized and 7 blocked. No new mathematical theorem was compiled: this is progress in discovering existing source coverage only. Remaining mixed-minor/Carleman, interlacing, integral, rate, height, beta, and prime-valuation gaps remain open.
