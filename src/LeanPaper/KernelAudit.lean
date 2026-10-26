@@ -176,6 +176,7 @@ import LeanPaper.ActualStrictNewton
 import LeanPaper.BetaHarmonicIndexObstruction
 import LeanPaper.BetaOneMoments
 import LeanPaper.BeukersDenominator
+import LeanPaper.BeukersOffDiagonalKernel
 import LeanPaper.CentralFactorialSecant
 import LeanPaper.CentralFactorialDecay
 import LeanPaper.ContinuousDensityNormalization
@@ -815,6 +816,7 @@ run_cmd Elab.Command.liftCoreM do
     `LeanPaper.BetaHarmonicIndexObstruction,
     `LeanPaper.BetaOneMoments,
     `LeanPaper.BeukersDenominator,
+    `LeanPaper.BeukersOffDiagonalKernel,
     `LeanPaper.CentralFactorialSecant,
     `LeanPaper.CentralFactorialDecay,
     `LeanPaper.ContinuousDensityNormalization,
