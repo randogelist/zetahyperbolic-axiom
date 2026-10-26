@@ -44,6 +44,34 @@ The two `!!` corrected entries below (3.2.alt and 3.6.alt) refer to existing his
 | 6 | Structural Barriers, Multi-Weight Couplings, and Further Diophantine Advances | [29](Zetahyperbolic%20(3)%20(1)%20(1).pdf#page=29) | 18 |
 | 7 | Discussion and Open Problems | [51](Zetahyperbolic%20(3)%20(1)%20(1).pdf#page=51) | 0 |
 
+### Chapter flowchart
+
+The arrows show the paper's conceptual organization, **not a certified theorem-dependency graph**. Counts are numbered endpoints with at least one recorded A-Tier original or corrected alternative: **9/45**, comprising seven originals and two corrected versions. The evidence is the historical Linux checkpoint described above.
+
+A chapter is green only when **every listed endpoint in that chapter** has such an A-Tier option. Partial chapters stay neutral; their qualifying individual endpoint pairs remain green in the detailed tables.
+
+```mermaid
+flowchart TD
+    C1["1 · Introduction"]
+    C2["2 · Algebraic structure · 4/4 A-Tier options"]
+    C3["3 · Spectral structure · 3/9 A-Tier options"]
+    C4["4 · Diophantine approximation · 1/8 A-Tier options"]
+    C5["5 · Weight-seven identities and dual pencils · 1/6 A-Tier options"]
+    C6["6 · Barriers and multi-weight couplings · 0/18 A-Tier options"]
+    C7["7 · Discussion and open problems"]
+
+    C1 --> C2
+    C2 --> C3
+    C3 --> C4
+    C3 --> C5
+    C4 --> C6
+    C5 --> C6
+    C6 --> C7
+
+    classDef complete fill:#e8f5e9,stroke:#238636,color:#196127,stroke-width:2px;
+    class C2 complete;
+```
+
 ### Chapter 2 — Algebraic Structure and Canonical Basis Invariance
 
 | Result | Printed title | Recorded whole-result tier / state | Proved scope, correction or open endpoint |
