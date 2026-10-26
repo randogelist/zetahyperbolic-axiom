@@ -212,6 +212,7 @@ import LeanPaper.Section4AlgebraicBudget
 import LeanPaper.Section4ComplexComparison
 import LeanPaper.Section4AlgebraicTransfer
 import LeanPaper.Section4AlgebraicLimsup
+import LeanPaper.Section4AlgebraicLattice
 import LeanPaper.Section4EffectiveBudget
 import LeanPaper.Section4TransferComplete
 import LeanPaper.SlopeSignature
@@ -850,6 +851,7 @@ run_cmd Elab.Command.liftCoreM do
     `LeanPaper.Section4ComplexComparison,
     `LeanPaper.Section4AlgebraicTransfer,
     `LeanPaper.Section4AlgebraicLimsup,
+    `LeanPaper.Section4AlgebraicLattice,
     `LeanPaper.Section4EffectiveBudget,
     `LeanPaper.Section4TransferComplete,
     `LeanPaper.SlopeSignature,
