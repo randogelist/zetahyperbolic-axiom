@@ -319,3 +319,73 @@ The source also proves the **exact positive ratio of slope determinants**, and a
 - A subsequent crossing to **whole-item `!!`** requires a checked original-clause identity, correct data/quantifiers, and a *new successful* compiler/axiom receipt for any newly introduced imports. `!!!` and `!!!!` remain unavailable without the stipulated finite-witness architecture and checker admission.
 
 **25-round status: seven complete numbered manuscript items, substantial additional verified subresults, no unproved quantitative claim promoted.**
+
+
+## 28. Round 26 — head, manifest, frozen cache and source-hash gate (26 October 2026)
+
+Re-fetched **all visible branches and current GitHub Actions runs** for both `zetahyperbolic-axiom` and `snditeration`. There is **no newly accepted mathematical commit** beyond `zetahyperbolic-axiom/main@86ca99a` ([CI PASS 40188664869](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40188664869)) or `snditeration/main@c521749` ([CI PASS 40186793090](https://github.com/randogelist/snditeration/actions/runs/40186793090)). The broad `snditeration/feat/zetahyperbolic-continuation-20261025` has failed CI at `0cee4ea` and **is not a crossing source**.
+
+Eight exact modules in this round were checked against [`modules.txt`](../modules.txt), their retained [source-hash inventory](../provenance/active_module_hashes.json) and the accepted [219-module axiom-audited receipt](../validation/linux/acceptance.json): `PaperChain.Stage04PrincipalMinorCenter`, `PaperChain.Stage08PoleProductBridge`, `LeanPaper.ImportedSection56.DualNonsingularDegree`, `LeanPaper.ImportedSection56.TriplePoleHermite`, `LeanPaper.Section6BetaFinite`, `PaperChain.Stage10`, `LeanPaper.Section4ManuscriptBridge`, `PaperChain.Stage05PrimitiveBridge`. **All eight are active and fingerprinted**. No fresh Lean run is inferred from this documentary audit. Despite some stale in-file comments saying “candidate”, this exact source set is covered by the subsequent passing full-project receipt; however, each theorem's mathematical hypotheses remain obligatory.
+
+## 29. Round 27 — actual original 3.3 principal center and strict two-index inequality
+
+[`ManuscriptChain.PrincipalMinors.gram_posDef`](../src/PaperChain/Stage04PrincipalMinorCenter.lean) proves strict **positive definiteness of the actual odd-zeta center Gram for every injectively selected principal index family**, including nonconsecutive indices. [`determinant_center_pos`](../src/PaperChain/Stage04PrincipalMinorCenter.lean) proves strict positivity for its actual **rational-polynomial principal determinant** evaluated at the genuine ζ center; [`determinant_ne_zero`](../src/PaperChain/Stage04PrincipalMinorCenter.lean) excludes the zero polynomial. These are not conditional on a *supplied* abstract positive matrix: they use the existing analytic Gram construction and admissibility.
+
+The further [`two_index_strict`](../src/PaperChain/Stage04PrincipalMinorCenter.lean) proves, for every pair of distinct indices `i≠j`, the **actual strict** inequality
+```text
+G(i,j) * G(j,i) < G(i,i) * G(j,j)
+```
+at `ζ(2k+1)`, by positivity of the 2×2 selected principal determinant. Thus **all principal minors and every 2×2 principal gap at the center** can be crossed off for 3.3(1), and the center nonvanishing needed by corrected 3.4 is already proved. **Do not infer strict positivity of mixed minors with different row/column indices** from the principal proof. Andréief/generalized-Vandermonde mixed signs and Carleman uniqueness remain the genuinely open 3.3(1) endpoints.
+
+## 30. Round 28 — arbitrary invertible rational dual-basis degree, beyond monicity (5.2)
+
+[`dualDelta_degree_of_nonsingular_slope`](../src/LeanPaper/ImportedSection56/DualNonsingularDegree.lean) proves the **actual** rational dual determinant has degree `h` under just `det(dualSlopeMatrix c) ≠ 0`, without requiring monomial or identity slopes.
+
+[`dualDelta_topCoeff_nonzero_rowChange_iff`](../src/LeanPaper/ImportedSection56/DualNonsingularDegree.lean) proves an **if-and-only-if nonvanishing criterion** under *any invertible rational row change* `det A≠0`; [`dualDelta_degree_rowChange_of_nonsingular_slope`](../src/LeanPaper/ImportedSection56/DualNonsingularDegree.lean) proves resulting full degree. These generalize the already crossed selected-monomial and unimodular cases from rounds 14/20.
+
+**Crossed:** exact finite full-degree criterion, invertible-change invariance of degree and nonzero leading coefficient for actual dual polynomial data. **Not crossed:** the genuine infinite Beukers moment realization, positive/negative infinite Krein cone, or an unconditional proof of coefficient independence for every manuscript-prescribed polynomial family.
+
+## 31. Round 29 — corrected triple-pole local determinant and 9m-dimensional Hermite count (6.9)
+
+The accepted [`Zetahyperbolic.TriplePoleRepair`](../src/LeanPaper/ImportedSection56/TriplePoleHermite.lean) proves exact arithmetic rather than just naming an interpolation architecture:
+
+- `dimension_9m`: three Taylor jets at each of `3m` nodes have dimension **`9m`**.
+- `localBlock_det`: the symmetric local triple-pole block has exact determinant **`-(w₂)^3`**; `localBlock_det_ne_zero` when `w₂≠0`.
+- `poleFunctional_eq_jetFunctional` and `local_congruence`: the explicit triple-pole functional equals its Hermite-jet representation and its bilinear local block.
+- `hermite_congruence` and `momentMatrix_det`: the arbitrary finite Hermite table gives the exact global determinant **`det(HermiteTable)^2 * ∏_a -(c_{a,2}u_{a,0})^3`**.
+- `momentMatrix_det_ne_zero`: nonzero determinant *conditional on* an invertible jet table, nonzero top Laurent coefficients, and nonzero leading pole factors.
+
+**Crossed:** the entire displayed **generic/corrected finite Hermite determinant algebra** and conditional nonvanishing implication, with no asserted unverified local determinant formula. **Still missing:** identity with *the originally printed triple-pole kernel*, invertibility of the *specific actual* Hermite table, nonzero *actual* Laurent coefficients, q-adic valuations/prime domination and the final 6.9 arithmetic claims. The module's corrected kernel must not silently replace the original.
+
+## 32. Round 30 — actual original finite pole-energy decomposition and four-rate ζ(5) transfer
+
+[`PaperChain.stage08_original_finite_pole_energy`](../src/PaperChain/Stage08PoleProductBridge.lean) proves, **without an asymptotic hypothesis and using the original manuscript parameters**, the exact relation
+```text
+leadingLog + valueDecayLog
+  = 2*log(vandermondeSize) + log(poleProductSize) - gramLog.
+```
+This is a sharper **finite pole-product expansion** of the already certified K²-normalized energy identities from round 10.
+
+[`stage05_zeta5_irrational_if_pole_log_rates`](../src/PaperChain/Stage08PoleProductBridge.lean) then proves a true A-Tier **conditional** endpoint `Irrational (Real.zeta 5)` from four actual-family eventual quadratic rate estimates and their strict gap `A+B < 2*C+D`. The theorem's explicit `hleading`, `hgram`, `hvandermonde` and `hpoles` premises are **not discharged**. It neither proves the manuscript's specific `11.411` spectral constant nor its fixed `1/2500` decay.
+
+**Crossed for 4.4/4.6/6.10:** all-finite original-data Vandermonde/Gram/pole energy equality and the conditional four-rate transfer. **Open:** actual asymptotic evaluation of those four rates, the strict positive gap, the numerical constants and all consequent unconditional odd-zeta claims.
+
+## 33. Round 31 — β finite tensor-grid Gram and exact orientation (5.3, 6.4)
+
+The accepted [`LeanPaper.Section6BetaFinite`](../src/LeanPaper/Section6BetaFinite.lean) proves **strictly positive weighted two-node and three-node polynomial Gram forms**, and also a true `2×2` **tensor interpolation grid** for the four monomials `1,x,y,xy`: `PAPER10_BILINEAR_TENSOR_GRID_ZERO` proves that all four evaluations vanish only when all four polynomial coefficients vanish; `PAPER10_BILINEAR_TENSOR_GRID_GRAM_STRICT` proves the resulting four-node quadratic energy is strictly positive for any nonzero bilinear vector **when all four masses are positive**.
+
+[`PAPER10_BETA_FULL_CHARACTER_VANDERMONDE_CANCELLATION`](../src/LeanPaper/Section6BetaFinite.lean) includes a *global* `(-1)^N` orientation that makes the **normalized** finite residue sign positive. The independent [`PaperChain.stage10_character_vandermonde_sign`](../src/PaperChain/Stage10.lean) confirms the **raw** parity is `(-1)^N`; [`stage10_even_start_positive`](../src/PaperChain/Stage10.lean) proves the special case `Even N` has raw positive sign.
+
+**Crossed:** exact finite positive two/three-node and four-node tensor-grid algebra and corrected parity bookkeeping. These are genuinely proved useful **finite submodels** of 5.3 and 6.4, but **do not identify any actual β(4) Beukers analytic density, its signed residues, or a q-adic valuation**. The raw-sign condition for odd `N` must remain explicit in the paper repair.
+
+## 34. Round 32 — exclude false promotions after proof-body audit
+
+Explicitly tested the remaining tempting shortcut claims against their **declaration types**:
+
+- `PaperChain.Stage04.ExactMinorRankLaw` and `InterlacesFiniteRootLists` are **defined `Prop`s**, not proofs of rank-sensitive interlacing. The valid rank law is separately proved in [`PrincipalMinorRank`](../src/LeanPaper/PrincipalMinorRank.lean); compatible eigenvalue interlacing remains open.
+- `PaperChain.Stage07.WeightSandwich` and `Zeta3Zeta5PositivityCone` are **only definitions**, not a proof of the coupled ζ(5),ζ(3) analytic positive cone.
+- `PaperChain.Stage09.StrictTailCertificate` is **only a declared certificate predicate**, not an accepted actual pole-ordered prime valuation or a concrete passing witness. Its rational-sign theorem does not calculate the printed floor integral.
+- All generic [`Section6BetaFinite`](../src/LeanPaper/Section6BetaFinite.lean) strictly positive finite sums display **positive-amplitude/injective-evaluation hypotheses**, not established positivity of the original character-weight Beukers function.
+- The [`LeanPaper.Section4ManuscriptBridge.manuscript_primitive_complex_padic_disk`](../src/LeanPaper/Section4ManuscriptBridge.lean) is an *actual-primitive-polynomial* specialization of the already **completed 4.3** nonarchimedean disk under explicit nonzero-center and small-radius premises. It **does not establish** 4.4–4.8's missing q-adic multiplier or its archimedean irrationality exponent.
+
+No eighth **whole original printed** item is admitted. The manuscript-wide tally remains **7 full `!!`, 21 partial, 10 not formalized and 7 blocked**, with many individually A-Tier completed clauses. The new tracker changes only documentary evidence; no Lean source was changed, no new Linux or native Windows compilation was performed, and no S-Tier finite witness admission was observed.
