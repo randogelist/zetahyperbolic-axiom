@@ -234,6 +234,7 @@ import LeanPaper.ShiftedSolidMinors
 import LeanPaper.BeukersOffDiagonalKernel
 import LeanPaper.Section4AlgebraicHeight
 import LeanPaper.Section5RationalIndependence
+import LeanPaper.WeightFiveSignatureCount
 import Lean
 
 /-! Independent transitive axiom audit of every active imported project declaration.
@@ -887,7 +888,8 @@ run_cmd Elab.Command.liftCoreM do
     `LeanPaper.ShiftedSolidMinors,
     `LeanPaper.BeukersOffDiagonalKernel,
     `LeanPaper.Section4AlgebraicHeight,
-    `LeanPaper.Section5RationalIndependence]
+    `LeanPaper.Section5RationalIndependence,
+    `LeanPaper.WeightFiveSignatureCount]
   let mut roots : Array Name := #[]
   for (decl, _) in env.constants do
     if let some idx := env.getModuleIdxFor? decl then
