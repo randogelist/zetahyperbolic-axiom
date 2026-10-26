@@ -217,4 +217,5 @@ LeanPaper.SlopeSignature
 LeanPaper.SymmetricPoleSpectrum
 LeanPaper.UnitLogMoments
 Zeta5Merge.Theorem6_17
+Zeta5.HermiteBasisCore
 LeanPaper.KernelAudit
