@@ -1,9 +1,0 @@
-'PaperAdvances.Corollary3_6_AllPrincipalMinors.weighted_all_principal_minors_nonnegative' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]
-'PaperAdvances.Corollary3_6_AllPrincipalMinors.weighted_all_principal_minors_positive' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]
-'PaperAdvances.Corollary3_6_AllPrincipalMinors.weighted_full_order_principal_minors_positive' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]

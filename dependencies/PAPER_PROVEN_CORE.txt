@@ -1,4 +1,0 @@
-MAIN_CHAIN_ASSEMBLED
-Theorem_2_4_Primitive_Normalization_Minimality
-Theorem_2_5_Weight_Change
-Theorem_4_1_Leading_Coefficient_Gap

@@ -1,7 +1,0 @@
-'ManuscriptChain.ConcreteMoment.weightedMeasure_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
-'ManuscriptChain.ConcreteMoment.momentMeasure_nullSingleton' depends on axioms: [propext, Classical.choice, Quot.sound]
-'ManuscriptChain.ConcreteMoment.integral_momentMeasure' depends on axioms: [propext, Classical.choice, Quot.sound]
-'ManuscriptChain.ConcreteMoment.realization' depends on axioms: [propext, Classical.choice, Quot.sound]
-'ManuscriptChain.ConcreteMoment.integrableOn_weightedDensity_moment' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]

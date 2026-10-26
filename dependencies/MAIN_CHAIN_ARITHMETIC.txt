@@ -1,4 +1,0 @@
-MAIN_CHAIN_ASSEMBLED
-Theorem_4_1_General_Odd_Zeta_Application
-Theorem_4_1_Integer_Polynomial_Irrationality
-Theorem_4_1_Linear_Odd_Zeta_Family

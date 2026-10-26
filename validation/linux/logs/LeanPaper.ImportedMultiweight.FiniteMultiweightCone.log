@@ -1,9 +1,0 @@
-'PaperAdvances.Theorem6_6_FiniteMultiweightCone.FINITE_MULTIWEIGHT_POSITIVE_DIRECTION' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]
-'PaperAdvances.Theorem6_6_FiniteMultiweightCone.FINITE_MULTIWEIGHT_SPECTRAL_HYPERBOLICITY' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]
-'PaperAdvances.Theorem6_6_FiniteMultiweightCone.FINITE_MULTIWEIGHT_STRICT_TURAN' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]

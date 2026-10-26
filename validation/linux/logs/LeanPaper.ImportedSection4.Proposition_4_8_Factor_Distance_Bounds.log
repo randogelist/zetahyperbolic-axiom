@@ -1,8 +1,0 @@
-'PaperOrder.Section4.proposition_4_8_distance_product_nonnegative' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]
-'PaperOrder.Section4.proposition_4_8_distance_product_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
-'PaperOrder.Section4.proposition_4_8_distance_product_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
-'PaperOrder.Section4.proposition_4_8_factor_evaluation_bounds' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]

@@ -1,2 +1,0 @@
-'PaperAdvances.Theorem3_9_PositiveSlope.poleM_posDef' depends on axioms: [propext, Classical.choice, Quot.sound]
-'PaperAdvances.Theorem3_9_PositiveSlope.shiftedSlope_posDef' depends on axioms: [propext, Classical.choice, Quot.sound]

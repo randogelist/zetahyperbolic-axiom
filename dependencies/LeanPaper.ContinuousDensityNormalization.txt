@@ -1,2 +1,0 @@
-LeanPaper.RebuildKernelBridge
-MAIN_CHAIN_ASSEMBLED

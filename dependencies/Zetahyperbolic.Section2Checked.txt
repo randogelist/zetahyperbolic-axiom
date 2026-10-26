@@ -1,2 +1,0 @@
-Zetahyperbolic.CoreLinearAlgebra
-Zetahyperbolic.Section3Elementary

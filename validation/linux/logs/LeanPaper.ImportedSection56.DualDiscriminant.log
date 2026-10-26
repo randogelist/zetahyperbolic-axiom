@@ -1,3 +1,0 @@
-'PaperOrder.CoreAlgebra.dualTwoByTwo_det_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
-'PaperOrder.CoreAlgebra.dualTwoByTwo_discriminant_sos' depends on axioms: [propext, Classical.choice, Quot.sound]
-'PaperOrder.CoreAlgebra.dualTwoByTwo_discriminant_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]

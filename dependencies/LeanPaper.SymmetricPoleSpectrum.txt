@@ -1,2 +1,0 @@
-LeanPaper.OperatorNormDisk
-LeanPaper.ImportedSection3.ActualPoleKernel

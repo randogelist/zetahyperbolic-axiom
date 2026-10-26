@@ -1,7 +1,0 @@
-'PaperOrder.Section4.theorem_4_7_finite_cluster_sum_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
-'PaperOrder.Section4.theorem_4_7_cluster_fraction_lower_bound' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]
-'PaperOrder.Section4.theorem_4_7_cluster_percentage_arithmetic' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]

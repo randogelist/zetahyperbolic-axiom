@@ -1,2 +1,0 @@
-LeanPaper.Section4IndexSelection
-LeanPaper.Section4ComplexComparison

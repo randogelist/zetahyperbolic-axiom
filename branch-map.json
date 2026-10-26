@@ -1,0 +1,471 @@
+{
+  "repository": "randogelist/zetahyperbolic-axiom",
+  "snapshot_date": "2026-10-26",
+  "main_sha": "211b362c16ff6ef73e9a5f2f70c5cbb9a444cf80",
+  "archive_branch": "archive/branch-consolidation-20261026",
+  "purpose": "Recovery-only consolidation of branch references; never merge this archive into main. Does not certify any proof.",
+  "original_branch_count": 52,
+  "planned_final_branch_count": 10,
+  "branches": [
+    {
+      "name": "closure/pr5-ring-no-progress-fix-v0_1_0",
+      "sha": "c0d5466cdacc448ee6c2864950832ee46175e036",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        8
+      ]
+    },
+    {
+      "name": "closure/pr6-import-first-fix-v0_1_0",
+      "sha": "211b362c16ff6ef73e9a5f2f70c5cbb9a444cf80",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        13
+      ]
+    },
+    {
+      "name": "closure/preflight-222-42-after-616-v0_1_0",
+      "sha": "c83940716a4db534e65dc376825ab6e88459c199",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        9
+      ]
+    },
+    {
+      "name": "closure/preflight-224-frozen-queue-v0_1_0",
+      "sha": "66921d03453e5172a067841534e8db80eae9f59f",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        11
+      ]
+    },
+    {
+      "name": "closure/preflight-225-beukers-after-hermite-v0_1_0",
+      "sha": "49dcfe46fb6fa82037d936a9751485a737479088",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        18
+      ]
+    },
+    {
+      "name": "continuation-in-progress",
+      "sha": "d6230ba0fc870dafa32af8fa9c08eaddbbc44009",
+      "action": "keep",
+      "reason": "Distinct Section2LagrangeFormula.lean continuation.",
+      "pull_requests": []
+    },
+    {
+      "name": "feat/gwf-target-33-carleman-factorial-criterion-v0_1_0",
+      "sha": "7ccd21fc8d267365567dafa1ab7e7dbeb952a228",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        16
+      ]
+    },
+    {
+      "name": "feat/gwf-target-33-shifted-solid-minors-v0_1_0",
+      "sha": "abcf957e88e7fb5bf0204806a787e0005ac3ed22",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        12
+      ]
+    },
+    {
+      "name": "feat/gwf-target-34-signature-restriction-v0_1_0",
+      "sha": "caaa311360d363dc4c6e672059e3146ee0dc8448",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        10
+      ]
+    },
+    {
+      "name": "feat/gwf-target-38-matrix-curve-jacobi-v0_1_0",
+      "sha": "e2afb4799552057e9d1bf0a8831624e5429b31de",
+      "action": "keep",
+      "reason": "Retained Section 3.8 working reference; mathematical source already incorporated in main.",
+      "pull_requests": [
+        14
+      ]
+    },
+    {
+      "name": "feat/gwf-target-38-monic-orthogonal-v0_1_0",
+      "sha": "53f82c21f01b154a5f0b2f5fe467c33350d3e387",
+      "action": "keep",
+      "reason": "Retained Section 3.8 working reference; mathematical source already incorporated in main.",
+      "pull_requests": [
+        19
+      ]
+    },
+    {
+      "name": "feat/gwf-target-42-algebraic-lattice-v0_1_0",
+      "sha": "211b362c16ff6ef73e9a5f2f70c5cbb9a444cf80",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        4
+      ]
+    },
+    {
+      "name": "feat/gwf-target-51-beukers-moment-series-v0_1_0",
+      "sha": "d9c6bdfafd9e5c3e9cea39389eda8eb09fac5ead",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        7
+      ]
+    },
+    {
+      "name": "feat/gwf-target-51-beukers-offdiag-kernel-v0_1_0",
+      "sha": "922ae0e8a4322a3c014f0f38d60a660bda11720f",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        17
+      ]
+    },
+    {
+      "name": "feat/gwf-target-52-rational-polynomial-independence-v0_1_0",
+      "sha": "1c2391047cc6dd1116e2d53be5bc9ea151f92e08",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        15
+      ]
+    },
+    {
+      "name": "feat/gwf-target-69-hermite-modp-core-v0_1_0",
+      "sha": "211b362c16ff6ef73e9a5f2f70c5cbb9a444cf80",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        6
+      ]
+    },
+    {
+      "name": "feat/gwf-target-610-coefficient-gram-growth-v0_1_0",
+      "sha": "211b362c16ff6ef73e9a5f2f70c5cbb9a444cf80",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        5
+      ]
+    },
+    {
+      "name": "feat/gwf-target-616-compact-ratio-v0_1_0",
+      "sha": "211b362c16ff6ef73e9a5f2f70c5cbb9a444cf80",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        3
+      ]
+    },
+    {
+      "name": "feat/gwf-target-617-corrected-q-window-v0_1_0",
+      "sha": "211b362c16ff6ef73e9a5f2f70c5cbb9a444cf80",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        2
+      ]
+    },
+    {
+      "name": "feat/gwf-weightfive-inertia-counts-after237-v0_1_0_construction",
+      "sha": "211b362c16ff6ef73e9a5f2f70c5cbb9a444cf80",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        48
+      ]
+    },
+    {
+      "name": "feat/leaned-paper-source-assembly-v0_1_0",
+      "sha": "898c17c8ed17e1c37fb9d3fc4c1116b9beb062b0",
+      "action": "keep",
+      "reason": "Distinct five-file manuscript source assembly and source ledger.",
+      "pull_requests": [
+        1
+      ]
+    },
+    {
+      "name": "intake/gwf-p04-02-algebraic-height-on-main235-v0_1_0_construction",
+      "sha": "211b362c16ff6ef73e9a5f2f70c5cbb9a444cf80",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        45
+      ]
+    },
+    {
+      "name": "intake/gwf-section52-rational-independence-on-236-v0_1_0_construction",
+      "sha": "211b362c16ff6ef73e9a5f2f70c5cbb9a444cf80",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        47
+      ]
+    },
+    {
+      "name": "intake/snditeration-34-38-51-52-unified-v0_1_0_construction",
+      "sha": "14a24c1f4ebf9e3068b3476c74d8ac7d0fa09396",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        34
+      ]
+    },
+    {
+      "name": "intake/snditeration-p05-01-complete-v0_1_0",
+      "sha": "b4f656a923e41d1b3bb55a9c21fd1f5cb43b57d4",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        28
+      ]
+    },
+    {
+      "name": "intake/snditeration-p05-02-finite-krein-v0_1_0_construction",
+      "sha": "6e39d42a08c7f017cf58e3da4ac09f232b87f366",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        31
+      ]
+    },
+    {
+      "name": "leaned-paper",
+      "sha": "211b362c16ff6ef73e9a5f2f70c5cbb9a444cf80",
+      "action": "keep",
+      "reason": "Existing named paper workflow branch; currently identical to main.",
+      "pull_requests": []
+    },
+    {
+      "name": "main",
+      "sha": "211b362c16ff6ef73e9a5f2f70c5cbb9a444cf80",
+      "action": "keep",
+      "reason": "Canonical integrated paper sources; preserved unchanged.",
+      "pull_requests": []
+    },
+    {
+      "name": "merge/gwf-234-solid-minors-after233-v0_1_0_construction",
+      "sha": "52b880a48cb5fd49a11b16abeacd1faf379bd416",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        38
+      ]
+    },
+    {
+      "name": "merge/gwf-beukers51-after26-v0_1_0_construction",
+      "sha": "c709c4ef22023587a20c5c2d2f0e6c9f6a782a2e",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        30
+      ]
+    },
+    {
+      "name": "merge/gwf-beukers-finite-kernel-after234-v0_1_0_construction",
+      "sha": "211b362c16ff6ef73e9a5f2f70c5cbb9a444cf80",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        43
+      ]
+    },
+    {
+      "name": "merge/gwf-krein52-after30-v0_1_0_construction",
+      "sha": "fec2b7ce83b627b09c3f64cb9b2016375be35c48",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        33
+      ]
+    },
+    {
+      "name": "merge/gwf-main-233-manuscript-consolidation-v0_1_0_construction",
+      "sha": "d2012b35e73fc24f0dc13dbb7c2e9373904682c9",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        35
+      ]
+    },
+    {
+      "name": "merge/gwf-manuscript-34-38-51-certified-source-batch-v0_1_0",
+      "sha": "3dccf55813e61f8c4fe9d146ee72758dc58adb38",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        26
+      ]
+    },
+    {
+      "name": "merge/gwf-manuscript-34-38-after-beukers-v0_1_0_construction",
+      "sha": "211b362c16ff6ef73e9a5f2f70c5cbb9a444cf80",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        36
+      ]
+    },
+    {
+      "name": "merge/gwf-manuscript-234-current-main-dedup-v0_1_0_construction",
+      "sha": "211b362c16ff6ef73e9a5f2f70c5cbb9a444cf80",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        42
+      ]
+    },
+    {
+      "name": "merge/gwf-snditeration-unified-233-after225-v0_1_0_construction",
+      "sha": "5638ca543777095dd79a2abf507829ed29cdf606",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        37
+      ]
+    },
+    {
+      "name": "merge/gwf-target-33-shifted-minors-after-beukers-v0_1_0_construction",
+      "sha": "58fc72ef7fbe5b7ddf1f943ebd8c004a966c584c",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        39
+      ]
+    },
+    {
+      "name": "merge/gwf-target-33-shifted-solid-minors-repair-v0_1_0",
+      "sha": "04b7395d302a09cbcbf657d8a38e785901e6ace1",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        25
+      ]
+    },
+    {
+      "name": "merge/gwf-target-34-signature-restriction-after-hermite-v0_1_0",
+      "sha": "d0d010a16f0e89cde1abcad2e4649a73d91e2b6b",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        27
+      ]
+    },
+    {
+      "name": "merge/gwf-target-38-matrix-curve-jacobi-rebased-v0_1_0",
+      "sha": "29d9d976a5e206c810d5bddb7bc190eaed59fe89",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        21
+      ]
+    },
+    {
+      "name": "merge/gwf-target-51-52-after-36-v0_1_0_construction",
+      "sha": "f14c563769af673895cb8399f4478688adad00ee",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        40
+      ]
+    },
+    {
+      "name": "merge/gwf-target-51-beukers-moment-series-after-hermite-v0_1_0",
+      "sha": "211b362c16ff6ef73e9a5f2f70c5cbb9a444cf80",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        23
+      ]
+    },
+    {
+      "name": "merge/gwf-target-51-beukers-offdiag-kernel-fix-v0_1_0",
+      "sha": "d4bfcec6041be8c51eebe3f34e9b889f7c5fcc45",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        22
+      ]
+    },
+    {
+      "name": "merge/gwf-target-51-beukers-series-after-hermite-v0_1_0",
+      "sha": "2513bdadba5232c7e9f52eda86cde52f8fa118c9",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        24
+      ]
+    },
+    {
+      "name": "merge/gwf-target-51-offdiag-after-34-38-51-v0_1_0_construction",
+      "sha": "a799a62130d824ac88db8e7aad04659462613ca9",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        29
+      ]
+    },
+    {
+      "name": "merge/gwf-theorem51-actual-on-main228-v0_1_0_construction",
+      "sha": "68483b89b0ff4c555e457df91c69e56a8a052f6e",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        41
+      ]
+    },
+    {
+      "name": "merge/gwf-theorem-51-complete-after-batch-v0_1_0_construction",
+      "sha": "e10cb587bfcd1760a7c4862d3b1f2044f843ef18",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        32
+      ]
+    },
+    {
+      "name": "merge/persistent-gap-tracker-docs-v0_1_0",
+      "sha": "211b362c16ff6ef73e9a5f2f70c5cbb9a444cf80",
+      "action": "retire",
+      "reason": "Superseded, merged, duplicate, or test/integration history; retained as reachable ancestry of this archive.",
+      "pull_requests": [
+        20
+      ]
+    },
+    {
+      "name": "persistent/zetahyperbolic-paper-gap-tracker",
+      "sha": "a1cd210007b773d0652da3870363c4fba28c5388",
+      "action": "keep",
+      "reason": "Existing named 45-item manuscript gap tracking branch.",
+      "pull_requests": []
+    },
+    {
+      "name": "repair/gwf-33-carleman-after235-v0_1_0_construction",
+      "sha": "82fcf7b31da336585fe81bd5b75f0043a69fec4e",
+      "action": "keep",
+      "reason": "Open PR #46; distinct repaired Carleman criterion.",
+      "pull_requests": [
+        46
+      ]
+    },
+    {
+      "name": "repair/gwf-52-rational-independence-after235-v0_1_0_construction",
+      "sha": "cf4b3e49887b7293d8794adf5f45cea8126b9517",
+      "action": "keep",
+      "reason": "Retained Section 5.2 repair reference; main already contains its mathematical source.",
+      "pull_requests": [
+        44
+      ]
+    }
+  ]
+}

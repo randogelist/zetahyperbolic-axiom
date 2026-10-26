@@ -1,2 +1,0 @@
-MAIN_CHAIN
-Theorem_3_1_Rational_Integral_Bridge

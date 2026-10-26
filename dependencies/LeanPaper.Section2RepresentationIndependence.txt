@@ -1,2 +1,0 @@
-LeanPaper.Section2LagrangeIdentification
-LeanPaper.PullbackReflection

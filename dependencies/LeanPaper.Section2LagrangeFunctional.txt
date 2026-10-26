@@ -1,4 +1,0 @@
-LeanPaper.Section2PoleLinearSpace
-LeanPaper.Section2FunctionalBasis
-Zetahyperbolic.ManuscriptCompatibility
-LeanPaper.Rebuild.PartialFractionsResidues

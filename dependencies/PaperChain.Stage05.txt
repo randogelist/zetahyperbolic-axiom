@@ -1,2 +1,0 @@
-PaperChain.Stage04
-Theorem_4_1_Integer_Polynomial_Irrationality

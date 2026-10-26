@@ -1,3 +1,0 @@
-LeanPaper.ImportedSection3.PoleKernel
-LeanPaper.ImportedSection3.RealExponent
-LeanPaper.ImportedSection3.SlopeSign

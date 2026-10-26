@@ -1,4 +1,0 @@
-'LeanPaper.ActualStrictNewton.actual_coefficient_strict_criterion' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]
-'LeanPaper.ActualStrictNewton.actual_centered_newton_strict' depends on axioms: [propext, Classical.choice, Quot.sound]

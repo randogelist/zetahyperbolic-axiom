@@ -1,2 +1,0 @@
-Theorem_2_4_Canonical_Basis_Invariance
-Definition_2_1_Order_s_Rational_Moment_Functional

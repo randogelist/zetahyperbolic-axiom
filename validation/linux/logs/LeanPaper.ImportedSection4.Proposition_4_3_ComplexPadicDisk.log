@@ -1,6 +1,0 @@
-'PaperAdvances.Proposition4_3_ComplexPadicDisk.PROPOSITION_4_3_INTEGRAL_COMPLEX_PADIC' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]
-'PaperAdvances.Proposition4_3_ComplexPadicDisk.PROPOSITION_4_3_INTEGER_COMPLEX_PADIC' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]

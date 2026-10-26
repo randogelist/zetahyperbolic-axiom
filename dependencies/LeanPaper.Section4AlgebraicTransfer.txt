@@ -1,2 +1,0 @@
-LeanPaper.Section4AlgebraicBudget
-LeanPaper.Section4ComplexComparison

@@ -1,2 +1,0 @@
-MAIN_CHAIN_ASSEMBLED
-LeanPaper.OperatorNormDisk

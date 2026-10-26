@@ -1,2 +1,0 @@
-LeanPaper.ImportedSection3.PowerSumExtrema
-LeanPaper.ReciprocalRootMoments

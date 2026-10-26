@@ -1,6 +1,0 @@
-'PaperAdvances.Corollary3_6_PowerSumExtrema.positive_atomic_moment_bounds' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]
-'PaperAdvances.Corollary3_6_PowerSumExtrema.even_atomic_moment_bounds' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]

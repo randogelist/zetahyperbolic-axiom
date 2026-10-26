@@ -1,1 +1,0 @@
-'LeanPaper.Section4AlgebraicLimsup.algebraic_transfer_limsup' depends on axioms: [propext, Classical.choice, Quot.sound]

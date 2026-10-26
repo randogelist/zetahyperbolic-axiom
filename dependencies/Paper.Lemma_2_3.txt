@@ -1,2 +1,0 @@
-Paper.Lemma_2_2
-Zetahyperbolic.Section2Checked

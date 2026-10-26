@@ -1,4 +1,0 @@
-'ManuscriptChain.General.delta_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
-'ManuscriptChain.General.derivative_nonsingular' depends on axioms: [propext, Classical.choice, Quot.sound]
-'ManuscriptChain.General.complex_zero_free_disk' depends on axioms: [propext, Classical.choice, Quot.sound]
-'ManuscriptChain.General.theorem_3_1_general' depends on axioms: [propext, Classical.choice, Quot.sound]

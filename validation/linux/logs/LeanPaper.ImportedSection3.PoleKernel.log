@@ -1,3 +1,0 @@
-'PaperAdvances.Theorem3_8_Kernel.charpoly_relative_eq_pole' depends on axioms: [propext, Classical.choice, Quot.sound]
-'PaperAdvances.Theorem3_8_Kernel.trace_relative_eq_pole' depends on axioms: [propext, Classical.choice, Quot.sound]
-'PaperAdvances.Theorem3_8_Kernel.kernelMatrix_entry' depends on axioms: [propext, Classical.choice, Quot.sound]

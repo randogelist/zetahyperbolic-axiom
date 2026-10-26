@@ -1,6 +1,0 @@
-LeanPaper/SingularSlope.lean:123:34: warning: Try `simp at hi` instead of `simpa using hi`
-
-Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
-'LeanPaper.SingularSlope.all_complex_roots_real_even_if_slope_singular' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]

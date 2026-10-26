@@ -1,2 +1,0 @@
-LeanPaper.StrictCenteredLaguerre
-LeanPaper.SlopeIndefinite

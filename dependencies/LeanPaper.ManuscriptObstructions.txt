@@ -1,2 +1,0 @@
-LeanPaper.ReciprocalRootMoments
-LeanPaper.ImportedSection3.NormalizedContinuedFraction

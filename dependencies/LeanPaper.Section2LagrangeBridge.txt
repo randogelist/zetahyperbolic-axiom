@@ -1,2 +1,0 @@
-LeanPaper.Section2LagrangeBasis
-Theorem_2_5_Lagrange_Pole_Diagonalization

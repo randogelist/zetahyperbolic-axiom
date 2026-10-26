@@ -1,6 +1,0 @@
-'PaperAdvances.Proposition4_3_IsometricExtension.ISOMETRIC_EXTENSION_UNIT_DISK' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]
-'PaperAdvances.Proposition4_3_IsometricExtension.PROPOSITION_4_3_INTEGRAL_ISOMETRIC_EXTENSION' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]

@@ -1,6 +1,0 @@
-'LeanPaper.OperatorNormDisk.hermitian_norm_eq_eigenvalue_norm' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]
-'LeanPaper.OperatorNormDisk.actual_radius_eq_inverse_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
-'LeanPaper.OperatorNormDisk.actual_exact_norm_disk' depends on axioms: [propext, Classical.choice, Quot.sound]
-'LeanPaper.OperatorNormDisk.original_root_distance' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,7 +1,0 @@
-LeanPaper/Section2RepresentationIndependence.lean:62:28: warning: This simp argument is unused:
-  Polynomial.C_0
-
-Hint: Omit it from the simp argument list.
-  [apply] simp only [map_zero, zero_div]
-
-Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

@@ -1,2 +1,0 @@
-LeanPaper.Section2LagrangeFunctional
-LeanPaper.Section2RatFuncPullback

@@ -1,6 +1,0 @@
-ZetaHyperbolicPaper.CHAPTER_3_EXACT_DISK (p : ManuscriptChain.Real.Parameters)
-  (hp : ManuscriptChain.Real.Admissible p) :
-  ∃ radius,
-    0 < radius ∧
-      (∀ (z : ℂ), ‖z - ↑(ManuscriptChain.Real.zeta p.weight)‖ < radius → ¬ManuscriptChain.General.ComplexRoot p z) ∧
-        ∃ z, ManuscriptChain.General.ComplexRoot p z ∧ ‖z - ↑(ManuscriptChain.Real.zeta p.weight)‖ = radius

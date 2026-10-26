@@ -1,4 +1,0 @@
-'ManuscriptChain.REALIZATION_FROM_POLE_INTEGRALS' depends on axioms: [propext, Classical.choice, Quot.sound]
-'ManuscriptChain.GRAM_POSITIVE_FROM_POLE_INTEGRALS' depends on axioms: [propext, Classical.choice, Quot.sound]
-'ManuscriptChain.MAIN_CHAIN_FROM_POLE_INTEGRALS' depends on axioms: [propext, Classical.choice, Quot.sound]
-'ManuscriptChain.MAIN_CHAIN_UNIFORM_FROM_POLE_INTEGRALS' depends on axioms: [propext, Classical.choice, Quot.sound]

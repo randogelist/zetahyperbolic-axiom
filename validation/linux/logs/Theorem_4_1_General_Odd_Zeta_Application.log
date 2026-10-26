@@ -1,8 +1,0 @@
-'ManuscriptChain.GeneralArithmetic.primitive_degree' depends on axioms: [propext, Classical.choice, Quot.sound]
-'ManuscriptChain.GeneralArithmetic.localComparison' depends on axioms: [propext, Classical.choice, Quot.sound]
-'ManuscriptChain.GeneralArithmetic.general_measure_and_irrational' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]
-'ManuscriptChain.GeneralArithmetic.general_measure_and_irrational_from_moments' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]

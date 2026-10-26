@@ -1,2 +1,0 @@
-Theorem_3_1_Hyperbolic_Moments
-Theorem_3_1_Zeta_Tail

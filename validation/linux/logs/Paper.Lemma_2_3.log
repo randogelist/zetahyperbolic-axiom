@@ -1,4 +1,0 @@
-Zetahyperbolic.tau_reflection_pole (k : ℕ) (r : ℤ) :
-  -Zetahyperbolic.tauPolePoly k (-1 - r) = -Zetahyperbolic.tauPolePoly k r
-Zetahyperbolic.tau_difference_pole (k : ℕ) (r : ℤ) (hr0 : r ≠ 0) (hr1 : r ≠ 1) :
-  Zetahyperbolic.tauPolePoly k (r - 1) - Zetahyperbolic.tauPolePoly k r = C (-(↑r ^ (2 * k + 1))⁻¹)

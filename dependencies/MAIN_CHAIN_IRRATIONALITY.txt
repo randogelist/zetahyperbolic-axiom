@@ -1,3 +1,0 @@
-MAIN_CHAIN_ASSEMBLED
-Theorem_4_1_Direct_Irrationality_From_Decay
-Theorem_2_4_Primitive_Normalization_Minimality

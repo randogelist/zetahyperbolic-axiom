@@ -1,3 +1,0 @@
-'LeanPaper.ReciprocalAllOrders.actual_inverseGapSum_rational' depends on axioms: [propext, Classical.choice, Quot.sound]
-'LeanPaper.ReciprocalAllOrders.actual_iterated_log' depends on axioms: [propext, Classical.choice, Quot.sound]
-'LeanPaper.ReciprocalAllOrders.primitive_iterated_log' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,2 +1,0 @@
-PaperChain.Stage02
-Theorem_3_1_Universal_Hyperbolicity_And_Zero_Free_Disk

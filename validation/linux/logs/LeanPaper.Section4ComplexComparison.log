@@ -1,9 +1,0 @@
-LeanPaper/Section4ComplexComparison.lean:124:17: warning: This simp argument is unused:
-  one_div
-
-Hint: Omit it from the simp argument list.
-  [apply] simp only [div_eq_mul_inv, mul_inv_rev]
-
-Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-'LeanPaper.Section4ComplexComparison.polynomial_comparison' depends on axioms: [propext, Classical.choice, Quot.sound]
-'LeanPaper.Section4ComplexComparison.integer_comparison' depends on axioms: [propext, Classical.choice, Quot.sound]

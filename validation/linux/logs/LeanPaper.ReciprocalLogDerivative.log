@@ -1,4 +1,0 @@
-'LeanPaper.ReciprocalLogDerivative.actual_first_inverse_gap_sum_rational' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]
-'LeanPaper.ReciprocalLogDerivative.actual_log_hasDerivAt' depends on axioms: [propext, Classical.choice, Quot.sound]

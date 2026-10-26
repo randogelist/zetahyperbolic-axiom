@@ -1,4 +1,0 @@
-'ManuscriptChain.Hyperbolic.bose_geometric' depends on axioms: [propext, Classical.choice, Quot.sound]
-'ManuscriptChain.Hyperbolic.integrableOn_bose_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
-'ManuscriptChain.Hyperbolic.integral_bose_tail_tsum' depends on axioms: [propext, Classical.choice, Quot.sound]
-'ManuscriptChain.Hyperbolic.integral_bose_tail' depends on axioms: [propext, Classical.choice, Quot.sound]

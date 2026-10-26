@@ -1,2 +1,0 @@
-ManuscriptChain.PoleDiagonalization.poleWeight_ne_zero (p : ManuscriptChain.Real.Parameters) (a : Fin p.h) :
-  ManuscriptChain.PoleDiagonalization.poleWeight p a ≠ 0

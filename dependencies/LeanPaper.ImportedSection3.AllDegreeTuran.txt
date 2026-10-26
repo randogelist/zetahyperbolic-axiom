@@ -1,3 +1,0 @@
-LeanPaper.ImportedMultiweight.PositiveSlopeSpectrum
-LeanPaper.ImportedSection3.CubicTuran
-MAIN_CHAIN_ASSEMBLED

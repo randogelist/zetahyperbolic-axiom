@@ -1,4 +1,0 @@
-Theorem_3_1_Rational_Integral_Bridge
-Theorem_3_1_Pole_Scaling
-Theorem_3_1_Coth_Partial_Fractions
-Theorem_3_1_Bose_Tail_Integral

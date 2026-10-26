@@ -1,9 +1,0 @@
-'PaperOrder.Section4.theorem_4_6_integer_leading_coefficient_barrier' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]
-'PaperOrder.Section4.theorem_4_6_integer_evaluation_lower_bound' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]
-'PaperOrder.Section4.theorem_4_6_reciprocal_evaluation_lower_bound' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]

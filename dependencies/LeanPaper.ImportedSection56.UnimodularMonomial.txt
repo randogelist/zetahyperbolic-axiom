@@ -1,2 +1,0 @@
-LeanPaper.ImportedSection56.DualBasisCongruence
-LeanPaper.ImportedSection56.SelectedMonomial

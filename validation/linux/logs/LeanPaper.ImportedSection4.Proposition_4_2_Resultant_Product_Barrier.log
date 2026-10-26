@@ -1,3 +1,0 @@
-'PaperOrder.Section4.proposition_4_2_resultant_product_barrier' depends on axioms: [propext,
- Classical.choice,
- Quot.sound]

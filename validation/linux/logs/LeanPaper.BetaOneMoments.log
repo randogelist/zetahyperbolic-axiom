@@ -1,3 +1,0 @@
-'LeanPaper.BetaOneMoments.zeroth_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
-'LeanPaper.BetaOneMoments.first_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
-'LeanPaper.BetaOneMoments.eta_at_one_needs_removable_value' depends on axioms: [propext, Classical.choice, Quot.sound]

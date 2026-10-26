@@ -1,2 +1,0 @@
-PaperChain.Stage05PrimitiveBridge
-Theorem_4_1_Leading_Coefficient_Gap

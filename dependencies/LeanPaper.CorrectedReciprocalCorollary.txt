@@ -1,2 +1,0 @@
-LeanPaper.ReciprocalAllOrders
-LeanPaper.ReciprocalNearestRootLimit

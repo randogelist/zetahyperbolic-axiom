@@ -1,2 +1,0 @@
-Paper.Lemma_2_3
-Theorem_2_4_Canonical_Basis_Invariance

@@ -1,2 +1,0 @@
-'PaperAdvances.Proposition3_2.slope_det_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
-'PaperAdvances.Proposition3_2.all_complex_roots_real' depends on axioms: [propext, Classical.choice, Quot.sound]
