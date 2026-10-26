@@ -77,12 +77,13 @@ jobs:
           restore-keys: |
             leaned-paper-ci-v1-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('lean-toolchain', 'lake-manifest.json', 'scripts/ci_verify.py') }}-
       - name: Compile independent modules and run the transitive axiom gate
+        id: verify
         shell: bash
         run: |
           set -euo pipefail
           python3 -u scripts/ci_verify.py --jobs 2
-      - name: Cache only the accepted CI proof objects
-        if: success() && steps.proof-cache.outputs.cache-hit != 'true'
+      - name: Cache only independently audited CI proof objects
+        if: always() && steps.verify.outputs.cache-ready == 'true' && steps.proof-cache.outputs.cache-hit != 'true'
         uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
           path: .build/ci-cache

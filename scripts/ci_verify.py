@@ -25,6 +25,36 @@ import tomllib
 PIN = "db584cd6d46c92f209a44c0f1c829460d327499d"
 AUDIT = "LeanPaper.KernelAudit"
 SENTINEL = "AXIOM_AUDIT_ACCEPTED=ALL_PROJECT_DECLARATIONS"
+SUBSET_SENTINEL = "AXIOM_AUDIT_ACCEPTED=COMPLETED_PROJECT_SUBSET"
+
+
+def audit_body(source):
+    marker = "run_cmd Elab.Command.liftCoreM do"
+    if source.count(marker) != 1:
+        raise ValueError("Expected one independent global audit command")
+    body = marker + source.split(marker, 1)[1]
+    expected = "let allowed : List Name := [``propext, ``Quot.sound, ``Classical.choice]"
+    if expected not in body or body.count(SENTINEL) != 1:
+        raise ValueError("Unexpected global audit policy")
+    return body
+
+
+def subset_audit_source(source, modules):
+    """Retain the exact global walker/check; change only audited ownership/scope."""
+    if not modules or AUDIT in modules or len(modules) != len(set(modules)):
+        raise ValueError("Invalid subset membership")
+    if any(re.fullmatch(r"[A-Za-z][A-Za-z0-9_.]*", module) is None for module in modules):
+        raise ValueError("Invalid module name")
+    body, count = re.subn(r"  let projectModules : Array Name := #\[[\s\S]*?\]\n",
+                         "  let projectModules : Array Name := #[\n    " +
+                         ",\n    ".join("`" + module for module in modules) + "]\n",
+                         audit_body(source))
+    if count != 1:
+        raise ValueError("Expected one audited module array")
+    body = body.replace(SENTINEL, SUBSET_SENTINEL)
+    body = body.replace("AUDITED_PROJECT_", "AUDITED_SUBSET_PROJECT_")
+    return ("\n".join("import " + module for module in modules) +
+            "\n\nopen Lean\nset_option maxRecDepth 100000\nset_option maxHeartbeats 0\n\n" + body)
 
 
 def digest(path: Path) -> str:
@@ -48,9 +78,8 @@ def accepted_cache(cache: Path, proof_context_hash: str):
         summary = json.loads((cache / "summary.json").read_text())
         evidence = json.loads((cache / "environment.json").read_text())
         context = evidence["proof_context"]
-        if not (summary["state"] == "PASS" and summary["target"] == "GITHUB_CI"
+        if not (summary["cache_verification_status"] == "PASS" and summary["target"] == "GITHUB_CI"
                 and evidence["target"] == "GITHUB_CI" and context["target"] == "GITHUB_CI"
-                and summary["axiom_audit_accepted"] is True
                 and summary["axiom_regressions"]["status"] == "completed"
                 and summary["environment_sha256"] == digest(cache / "environment.json")
                 and evidence["proof_context_sha256"] == json_digest(context) == proof_context_hash
@@ -58,7 +87,30 @@ def accepted_cache(cache: Path, proof_context_hash: str):
                 and all(row["status"] == "completed" for row in summary["modules"])):
             return None
         modules = {row["module"]: row for row in summary["modules"]}
-        if len(modules) != len(summary["modules"]) or not modules[AUDIT]["audit_accepted"]:
+        if len(modules) != len(summary["modules"]):
+            return None
+        # The cached set must be closed under all project imports, with the
+        # exact same outputs used by each dependent compilation.
+        for row in modules.values():
+            if any(dep not in modules or hashes != modules[dep]["output_hashes"]
+                   for dep, hashes in row.get("dependencies", {}).items()):
+                return None
+        scope = summary["verification_scope"]
+        if scope == "ALL_PROJECT_DECLARATIONS":
+            if not (summary["state"] == "PASS" and summary["axiom_audit_accepted"] is True
+                    and modules[AUDIT]["audit_accepted"] is True):
+                return None
+        elif scope == "COMPLETED_PROJECT_SUBSET":
+            subset = summary["subset_audit"]
+            if not (summary["state"] == "FAIL" and not summary["axiom_audit_accepted"]
+                    and subset["accepted"] is True and subset["returncode"] == 0
+                    and set(subset["modules"]) == set(modules) and AUDIT not in modules
+                    and len(subset["modules"]) == len(modules)
+                    and digest(cache / "subset-audit/CompletedSubsetAudit.lean") == subset["source_sha256"]
+                    and digest(cache / "subset-audit/audit.log") == subset["log_sha256"]
+                    and SUBSET_SENTINEL in (cache / "subset-audit/audit.log").read_text()):
+                return None
+        else:
             return None
         return {"root": cache, "summary": summary, "modules": modules,
                 "run_id": evidence["run_id"], "commit": evidence["commit"]}
@@ -158,7 +210,7 @@ def main() -> int:
     cache_path = root / ".build/ci-cache"
     objects, logs, states = [build / name for name in ("objects", "logs", "states")]
     # Cache objects are copied here only after all reuse checks have passed.
-    for path in (objects, logs, states):
+    for path in (objects, logs, states, build / "subset-audit"):
         if path.exists():
             shutil.rmtree(path)
         path.mkdir(parents=True)
@@ -229,6 +281,12 @@ def main() -> int:
     proof_context["configuration"] = semantic_config
     proof_context["toolchain_sha256"] = evidence["configuration"]["lean-toolchain"]
     proof_context["manifest_sha256"] = evidence["configuration"]["lake-manifest.json"]
+    policy = re.sub(r"  let projectModules : Array Name := #\[[\s\S]*?\]\n", "",
+                    audit_body((root / "src/LeanPaper/KernelAudit.lean").read_text()))
+    proof_context["audit_policy_sha256"] = hashlib.sha256(policy.encode()).hexdigest()
+    proof_context["auditor_sha256"] = digest(root / "src/LeanPaper/AxiomWalk.lean")
+    proof_context["negative_fixtures"] = {name: digest(root / "tests/axiom_walk" / name)
+                                          for name in ("AuditFixtures.lean", "AuditRegression.lean")}
     evidence["proof_context"] = proof_context
     evidence["proof_context_sha256"] = json_digest(proof_context)
     atomic_json(build / "environment.json", evidence)
@@ -254,7 +312,7 @@ def main() -> int:
     observed = {m: {"module": m, "status": "untouched", "source_sha256": source_hashes[m]}
                 for m in modules}
 
-    def save_summary(state="RUNNING", regressions=None):
+    def save_summary(state="RUNNING", regressions=None, subset=None):
         summary = {"target": "GITHUB_CI", "commit": commit, "state": state,
                    "environment_sha256": environment_hash, "module_count": len(modules),
                    "completed": sum(row["status"] == "completed" for row in observed.values()),
@@ -264,6 +322,7 @@ def main() -> int:
                                           if row["status"] == "skipped_dependency"],
                    "axiom_audit_accepted": observed[AUDIT].get("audit_accepted", False),
                    "axiom_regressions": regressions, "native_windows_status": "NOT_RUN",
+                   "subset_audit": subset,
                    "full_manuscript_equivalence": "NOT_CERTIFIED",
                    "modules": [observed[m] for m in modules]}
         atomic_json(build / "summary.json", summary)
@@ -345,20 +404,80 @@ def main() -> int:
     accepted = (all(row["status"] == "completed" for row in observed.values())
                 and observed[AUDIT].get("audit_accepted", False)
                 and regression["status"] == "completed")
-    summary = save_summary("PASS" if accepted else "FAIL", regression)
-    if accepted:
-        # Publishable cache content is created only after both fresh audits pass.
+    subset = None
+    completed_modules = [m for m in modules if m != AUDIT and observed[m]["status"] == "completed"]
+    if not accepted and regression["status"] == "completed" and completed_modules:
+        subset_root = build / "subset-audit"
+        subset_objects = subset_root / "objects"
+        subset_objects.mkdir()
+        for module in completed_modules:
+            if any(dep not in completed_modules for dep in dependencies[module]):
+                raise RuntimeError("Completed subset is not dependency-closed")
+            for name, expected_hash in observed[module]["output_hashes"].items():
+                if digest(objects / name) != expected_hash:
+                    raise RuntimeError("Completed object changed before subset audit")
+                destination = subset_objects / name
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(objects / name, destination)
+        source = subset_root / "CompletedSubsetAudit.lean"
+        source.write_text(subset_audit_source(paths[AUDIT].read_text(), completed_modules))
+        source_hash = digest(source)
+        subset_env = environment.copy()
+        subset_env["LEAN_PATH"] = os.pathsep.join(map(str, [subset_objects, *external]))
+        log = subset_root / "audit.log"
+        output = subset_root / "CompletedSubsetAudit.olean"
+        with log.open("w") as stream:
+            process = subprocess.run([str(lean), *flags, "-o", str(output), source.name],
+                                     cwd=subset_root, env=subset_env,
+                                     stdout=stream, stderr=subprocess.STDOUT)
+        subset_ok = (process.returncode == 0 and output.exists() and digest(source) == source_hash
+                     and SUBSET_SENTINEL in log.read_text())
+        subset = {"accepted": subset_ok, "scope": "COMPLETED_PROJECT_SUBSET",
+                  "returncode": process.returncode, "modules": completed_modules,
+                  "source_sha256": source_hash, "log_sha256": digest(log),
+                  "environment_sha256": environment_hash}
+        print("SUBSET_AXIOM_AUDIT=" + ("PASS" if subset_ok else "FAIL"), flush=True)
+        if not subset_ok:
+            print("\n".join(log.read_text().splitlines()[-160:]), flush=True)
+    summary = save_summary("PASS" if accepted else "FAIL", regression, subset)
+    cache_ready = accepted or (subset is not None and subset["accepted"])
+    if cache_ready:
+        # A failing project may publish ONLY its independently audited closed
+        # subset. Its CI state remains FAIL; the receipt labels this scope.
+        cache_modules = modules if accepted else completed_modules
+        cache_receipt = dict(summary)
+        cache_receipt.update(cache_verification_status="PASS",
+                             verification_scope="ALL_PROJECT_DECLARATIONS" if accepted else "COMPLETED_PROJECT_SUBSET",
+                             project_module_count=len(modules), module_count=len(cache_modules),
+                             completed=len(cache_modules), modules=[observed[m] for m in cache_modules])
+        atomic_json(build / "cache-receipt.json", cache_receipt)
         staging = root / ".build/ci-cache.next"
         if staging.exists():
             shutil.rmtree(staging)
         staging.mkdir()
         for name in ("objects", "logs", "states"):
-            shutil.copytree(build / name, staging / name)
-        for name in ("summary.json", "environment.json"):
-            shutil.copy2(build / name, staging / name)
+            (staging / name).mkdir()
+        for module in cache_modules:
+            for name, expected_hash in observed[module]["output_hashes"].items():
+                if digest(objects / name) != expected_hash:
+                    raise RuntimeError("Object changed before cache publication")
+                destination = staging / "objects" / name
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(objects / name, destination)
+            shutil.copy2(logs / (module + ".log"), staging / "logs" / (module + ".log"))
+            shutil.copy2(states / (module + ".json"), staging / "states" / (module + ".json"))
+        shutil.copy2(build / "cache-receipt.json", staging / "summary.json")
+        shutil.copy2(build / "environment.json", staging / "environment.json")
+        if not accepted:
+            (staging / "subset-audit").mkdir()
+            for name in ("CompletedSubsetAudit.lean", "audit.log"):
+                shutil.copy2(build / "subset-audit" / name, staging / "subset-audit" / name)
         if cache_path.exists():
             shutil.rmtree(cache_path)
         staging.replace(cache_path)
+    if os.environ.get("GITHUB_OUTPUT"):
+        with open(os.environ["GITHUB_OUTPUT"], "a") as stream:
+            stream.write("cache-ready=" + ("true" if cache_ready else "false") + "\n")
     print(json.dumps({key: value for key, value in summary.items() if key != "modules"}), flush=True)
     return 0 if accepted else 1
 

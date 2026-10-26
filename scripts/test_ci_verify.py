@@ -4,7 +4,8 @@ import json
 from pathlib import Path
 import tempfile
 
-from ci_verify import AUDIT, accepted_cache, digest, json_digest, reuse_module, schedule
+from ci_verify import (AUDIT, SENTINEL, SUBSET_SENTINEL, accepted_cache, digest,
+                       json_digest, reuse_module, schedule, subset_audit_source)
 
 
 class SchedulingTests(unittest.TestCase):
@@ -71,6 +72,7 @@ class CacheTests(unittest.TestCase):
                        "log_sha256": digest(self.cache / "logs/A.log"),
                        "output_hashes": {"A.olean": digest(self.cache / "objects/A.olean")}}
         self.summary = {"target": "GITHUB_CI", "state": "PASS", "module_count": 2, "completed": 2,
+                        "cache_verification_status": "PASS", "verification_scope": "ALL_PROJECT_DECLARATIONS",
                         "axiom_audit_accepted": True, "axiom_regressions": {"status": "completed"},
                         "environment_sha256": environment_hash,
                         "modules": [self.module, {"module": AUDIT, "status": "completed", "audit_accepted": True}]}
@@ -117,6 +119,68 @@ class CacheTests(unittest.TestCase):
         self.summary["axiom_regressions"] = {"status": "failed"}
         self.write("summary.json", self.summary)
         self.assertIsNone(accepted_cache(self.cache, self.context_hash))
+
+    def make_subset_receipt(self):
+        folder = self.cache / "subset-audit"
+        folder.mkdir()
+        (folder / "CompletedSubsetAudit.lean").write_text("mock generated scoped audit source\n")
+        (folder / "audit.log").write_text(SUBSET_SENTINEL + "\n")
+        self.summary.update(state="FAIL", verification_scope="COMPLETED_PROJECT_SUBSET",
+                            axiom_audit_accepted=False, module_count=1, completed=1,
+                            modules=[self.module],
+                            subset_audit={"accepted": True, "returncode": 0, "modules": ["A"],
+                                          "source_sha256": digest(folder / "CompletedSubsetAudit.lean"),
+                                          "log_sha256": digest(folder / "audit.log")})
+        self.write("summary.json", self.summary)
+
+    def test_independently_audited_subset_can_be_reused_without_global_pass(self):
+        self.make_subset_receipt()
+        info = accepted_cache(self.cache, self.context_hash)
+        self.assertIsNotNone(info)
+        self.assertEqual(info["summary"]["state"], "FAIL")
+        self.assertFalse(info["summary"]["axiom_audit_accepted"])
+        self.assertEqual(self.reuse()["action"], "REUSED_CI_AUDITED_PASS")
+
+    def test_subset_must_be_audited_and_exactly_match_cache_membership(self):
+        self.make_subset_receipt()
+        subset = dict(self.summary["subset_audit"])
+        for field, value in (("accepted", False), ("returncode", 1), ("modules", ["A", "failed"])):
+            with self.subTest(field=field):
+                self.summary["subset_audit"] = dict(subset, **{field: value})
+                self.write("summary.json", self.summary)
+                self.assertIsNone(accepted_cache(self.cache, self.context_hash))
+
+    def test_cached_subset_must_be_dependency_closed(self):
+        self.make_subset_receipt()
+        self.module["dependencies"] = {"failed": {"failed.olean": "hash"}}
+        self.write("summary.json", self.summary)
+        self.assertIsNone(accepted_cache(self.cache, self.context_hash))
+
+    def test_subset_audit_source_or_log_corruption_rejects_cache(self):
+        self.make_subset_receipt()
+        (self.cache / "subset-audit/audit.log").write_text("missing acceptance")
+        self.assertIsNone(accepted_cache(self.cache, self.context_hash))
+
+
+class SubsetSourceTests(unittest.TestCase):
+    def test_generation_preserves_policy_and_replaces_only_membership_and_scope(self):
+        source = ("import Old\nrun_cmd Elab.Command.liftCoreM do\n"
+                  "  let allowed : List Name := [``propext, ``Quot.sound, ``Classical.choice]\n"
+                  "  let projectModules : Array Name := #[`Old]\n"
+                  "  let result := LeanPaper.AxiomWalk.collect env roots\n"
+                  "  match LeanPaper.AxiomWalk.check result allowed with\n"
+                  "  | .error msg => throwError msg\n  | .ok () => pure ()\n"
+                  '  IO.println "' + SENTINEL + '"\n')
+        generated = subset_audit_source(source, ["A", "B.C"])
+        self.assertTrue(generated.startswith("import A\nimport B.C\n"))
+        self.assertIn("`A,\n    `B.C", generated)
+        self.assertIn("LeanPaper.AxiomWalk.check result allowed", generated)
+        self.assertIn(SUBSET_SENTINEL, generated)
+        self.assertNotIn(SENTINEL, generated)
+        with self.assertRaises(ValueError):
+            subset_audit_source(source, [AUDIT])
+        with self.assertRaises(ValueError):
+            subset_audit_source(source.replace("``Classical.choice", "``sorryAx"), ["A"])
 
 
 if __name__ == "__main__":

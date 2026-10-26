@@ -33,10 +33,10 @@ theorem term_hasDerivAt (m n : ℕ) (c τ : ℝ) :
         Real.exp (-(c * τ) * ((n + 1 : ℕ) : ℝ))) τ := by
   have hlinear : HasDerivAt (fun t : ℝ => -(c * t) * ((n + 1 : ℕ) : ℝ))
       (-c * ((n + 1 : ℕ) : ℝ)) τ := by
-    simpa only [id, mul_one] using
-      (((hasDerivAt_id τ).const_mul c).neg.mul_const ((n + 1 : ℕ) : ℝ))
-  convert hlinear.exp.const_mul (((n + 1 : ℕ) : ℝ)^m) using 1 <;>
-    simp only [pow_succ] <;> ring
+    convert! (((hasDerivAt_id τ).const_mul c).neg.mul_const
+      ((n + 1 : ℕ) : ℝ)) using 1 <;> simp [id]
+  convert! hlinear.exp.const_mul (((n + 1 : ℕ) : ℝ)^m) using 1 <;>
+    (try simp only [pow_succ]) <;> ring
 
 /-- The derivative series is uniformly bounded on `τ > a` by its value at a
 fixed positive scale. This is the needed summable local majorant. -/
@@ -71,7 +71,7 @@ theorem exponentialSeries_hasDerivAt (m : ℕ) {c τ : ℝ}
   let bound (n : ℕ) := c * (((n + 1 : ℕ) : ℝ)^(m + 1) *
     Real.exp (-(c * (τ / 2)) * ((n + 1 : ℕ) : ℝ)))
   have hhalf : 0 < τ / 2 := half_pos hτ
-  have hmem : τ ∈ Ioi (τ / 2) := by dsimp; linarith
+  have hmem : τ ∈ Ioi (τ / 2) := by change τ / 2 < τ; linarith
   have hs : Summable bound := (summable_terms (m + 1) hc hhalf).mul_left c
   have hd : ∀ n t, t ∈ Ioi (τ / 2) → HasDerivAt (g n) (g' n t) t := by
     intro n t _

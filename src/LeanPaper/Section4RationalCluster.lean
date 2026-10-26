@@ -41,7 +41,7 @@ theorem irrational_of_real_measure (ξ μ : ℝ) (b₀ : ℕ)
       (a : ℝ)/(b : ℝ) = (r.num : ℝ)/(r.den : ℝ) := by
         dsimp [a, b]
         push_cast
-        field_simp <;> ring
+        field_simp
       _ = (r : ℝ) := (Rat.cast_def r).symm
       _ = ξ := hr
   have h := hmeasure a b hb hbb
@@ -80,8 +80,8 @@ theorem fixed_denominator_separation (ξ : ℝ) (hξ : Irrational ξ)
       min ((b : ℝ)*ξ-(A : ℝ)) ((A : ℝ)+1-(b : ℝ)*ξ)
           ≤ (b : ℝ)*ξ-(A : ℝ) := min_le_left _ _
       _ ≤ (b : ℝ)*ξ-(a : ℝ) := by linarith
-      _ = (ξ-(a : ℝ)/(b : ℝ))*(b : ℝ) := by field_simp [hbR.ne']; ring
-      _ ≤ |ξ-(a : ℝ)/(b : ℝ)|*(b : ℝ) :=
+      _ = (ξ-(a : ℝ)/(b : ℝ))*(b : ℝ) := by field_simp [hbR.ne']
+      _ ≤ |ξ-(a : ℝ)/(b : ℝ)| * (b : ℝ) :=
         mul_le_mul_of_nonneg_right (le_abs_self _) hbR.le
   · have haZ : A+1 ≤ a := by omega
     have haR : (A : ℝ)+1 ≤ (a : ℝ) := by exact_mod_cast haZ
@@ -89,8 +89,8 @@ theorem fixed_denominator_separation (ξ : ℝ) (hξ : Irrational ξ)
       min ((b : ℝ)*ξ-(A : ℝ)) ((A : ℝ)+1-(b : ℝ)*ξ)
           ≤ (A : ℝ)+1-(b : ℝ)*ξ := min_le_right _ _
       _ ≤ (a : ℝ)-(b : ℝ)*ξ := by linarith
-      _ = -(ξ-(a : ℝ)/(b : ℝ))*(b : ℝ) := by field_simp [hbR.ne']; ring
-      _ ≤ |ξ-(a : ℝ)/(b : ℝ)|*(b : ℝ) :=
+      _ = -(ξ-(a : ℝ)/(b : ℝ))*(b : ℝ) := by field_simp [hbR.ne'] <;> ring
+      _ ≤ |ξ-(a : ℝ)/(b : ℝ)| * (b : ℝ) :=
         mul_le_mul_of_nonneg_right (neg_le_abs _) hbR.le
 
 /-- Uniform separation for every bounded positive denominator, with no bound
@@ -146,7 +146,7 @@ theorem eventual_rational_cluster_exclusion (ξ μ τ : ℝ) (hμ : 0 < μ)
   have ht : Tendsto (fun K : ℕ => τ*(K : ℝ)) atTop atTop :=
     tendsto_natCast_atTop_atTop.const_mul_atTop hτ
   have he : Tendsto (fun K : ℕ => Real.exp (-τ*(K : ℝ))) atTop (𝓝 0) := by
-    simpa only [neg_mul] using Real.tendsto_exp_neg_atTop_nhds_zero.comp ht
+    simpa only [Function.comp_def, neg_mul] using Real.tendsto_exp_neg_atTop_nhds_zero.comp ht
   filter_upwards [he.eventually (gt_mem_nhds hδ)] with K hK
   intro a b hb hclose
   have hb₀ : b₀ ≤ b := by

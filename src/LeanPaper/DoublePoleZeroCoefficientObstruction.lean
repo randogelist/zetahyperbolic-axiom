@@ -37,7 +37,15 @@ theorem numeratorOne_divisible_by_zero_pole : X^2 ∣ numeratorOne := by
 
 theorem poleCofactorOne_at_zero (k : Fin 7) :
     (poleCofactorOne k).eval 0 = if k = 0 then (518400 : ℚ) else 0 := by
-  fin_cases k <;> norm_num [poleCofactorOne, Fin.prod_univ_succ]
+  simp only [poleCofactorOne, Polynomial.eval_prod, apply_ite,
+    Polynomial.eval_one, Polynomial.eval_pow, Polynomial.eval_add,
+    Polynomial.eval_X, Polynomial.eval_C, zero_add]
+  by_cases hk : k = 0
+  · subst k
+    norm_num [Fin.prod_univ_succ, Fin.ext_iff]
+  · rw [if_neg hk]
+    apply Finset.prod_eq_zero (Finset.mem_univ (0 : Fin 7))
+    simp [Ne.symm hk]
 
 /-- Every valid cleared decomposition of the actual n=1 rational function
 has zero double-pole coefficient at the zero node. -/

@@ -40,3 +40,19 @@ Additional constructed candidates, all awaiting their receiving verification:
 | Corrected 6.13 | `CentralFactorialMoments`: all moments of the actual accelerated secant density, an explicit factorial bound and all finite Hankel positive definiteness. | Does not identify the beta functional or close the full corrected theorem. |
 
 The original manuscript is unchanged. The full per-item review and final verification receipts will be recorded after these candidates are checked.
+
+## Complete per-item investigation trail
+
+Every one of the 45 original results is tracked in [formalization_repair_status.json](formalization_repair_status.json). Status describes the whole original, not the number of compiled helper lemmas. Existing proofs are retained; unproved clauses are recorded with the attempted route and the specific missing construction.
+
+Detailed reviews: [Chapters 2–3](repair_reviews/spectral.md), [Chapter 4](repair_reviews/section4.md), [Chapter 5](repair_reviews/beukers.md), [5.2 compilation repair](repair_reviews/section5_build.md), [Chapter 6](repair_reviews/section6.md), and [CI/audit implementation](repair_reviews/ci.md). Independent statement comparisons cover [3.8](repair_reviews/semantic_38.md), [4.2](repair_reviews/semantic_42.md), and [5.3](repair_reviews/semantic_53.md).
+
+The next verification batch also includes actual Laplace rational-weight differentiation, deformed Gram positivity and integral kernel/Jacobi assembly for 3.8; actual closest-root existence from center decay for 4.7; all eleven actual floor-function integrals and endpoint noncontinuity in 5.6; and an exact differential-coupling correction for the displayed weight on manuscript page34 in 6.4. The page33 signed density is a different formula and is not refuted merely by the page34 identity. These changes retain their exact source-level hypotheses and are candidates until CI accepts them.
+
+Failed CI remains failed even when independent modules compile. Reusable outputs from an incomplete run require a separate transitive audit of precisely the completed dependency-closed subset and passing negative-audit regressions. Such a receipt is explicitly scoped `COMPLETED_PROJECT_SUBSET`; it never certifies the whole repository. A full pass still requires a fresh `ALL_PROJECT_DECLARATIONS` audit and fresh negative regressions.
+
+## Second receiving CI
+
+[Run40318924083](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40318924083), commit `96ffaabc6051e7ebbf66b3f86aeea91cb7602111`, compiled **241/253** modules. Eight new/repaired modules failed and four dependency closures were skipped. The negative-audit regressions passed. The orthogonal kernel, restricted 3.3 endpoint, actual Beukers measure, factor-degree bounds and divisor-height proofs compiled, but no whole-project or A-Tier promotion follows from this failed run.
+
+Follow-up repairs address exact compiler diagnostics: normalize the bundled rational matrix-cast homomorphism before determinant transport; separate absolute-value bars from multiplication in the parser; simplify limit-function composition explicitly; resolve the actual series-derivative expression; normalize finite-sum casts and product factors; avoid a reserved identifier in the odd-square prefix polynomial; and simplify finite pole-cofactor evaluations structurally. Original theorem statements remain unchanged.

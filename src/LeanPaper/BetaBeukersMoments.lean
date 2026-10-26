@@ -174,17 +174,20 @@ theorem betaDensity_moment_eq_tsum (r t : ℕ) {z : ℝ × ℝ} (hz : z ∈ squa
     nlinarith
   have h := (hasSum_geometric_of_norm_lt_one hnorm).mul_left
     (z.1^r*z.2^t*(-_root_.Real.log (z.1*z.2))^2/6)
+  have hp (n : ℕ) : (-((z.1*z.2)^2))^n =
+      (-1 : ℝ)^n * (z.1*z.2)^(2*n) := by
+    rw [show -((z.1*z.2)^2) = (-1 : ℝ)*(z.1*z.2)^2 by ring,
+      mul_pow, ← pow_mul]
   have hterm : (fun n => signedTerm r t n z) =
       (fun n => (z.1^r*z.2^t*(-_root_.Real.log (z.1*z.2))^2/6)*
         (-((z.1*z.2)^2))^n) := by
     funext n
-    rw [signedTerm, positiveTerm_eq r t n hz]
-    simp only [neg_pow, pow_mul]
+    rw [signedTerm, positiveTerm_eq r t n hz, hp]
     ring
   rw [hterm, h.tsum_eq]
   unfold betaDensity
-  have hd : 1+(z.1*z.2)^2 ≠ 0 := by positivity
-  field_simp [hd] <;> ring
+  simp only [sub_neg_eq_add, div_eq_mul_inv, mul_inv_rev]
+  ring
 
 theorem integral_positiveTerm (r t n : ℕ) :
     (∫ z, positiveTerm r t n z ∂squareMeasure) =

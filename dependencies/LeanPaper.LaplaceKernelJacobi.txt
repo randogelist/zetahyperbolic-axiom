@@ -1,0 +1,2 @@
+LeanPaper.LaplaceGram
+LeanPaper.MatrixCurveJacobi

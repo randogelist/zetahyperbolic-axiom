@@ -250,4 +250,10 @@ LeanPaper.CentralFactorialMoments
 LeanPaper.BetaOddResidueSigns
 LeanPaper.DoublePoleZeroCoefficientObstruction
 LeanPaper.Section4FactorHeight
+LeanPaper.LaplaceMomentDerivative
+LeanPaper.LaplaceGram
+LeanPaper.LaplaceKernelJacobi
+LeanPaper.Section4ClosestRoot
+LeanPaper.Section5OuterPrimeIntegral
+LeanPaper.BetaCouplingDerivative
 LeanPaper.KernelAudit

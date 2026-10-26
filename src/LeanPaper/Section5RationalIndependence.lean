@@ -59,7 +59,9 @@ theorem real_rows_separate_of_rational_injective {h K : ℕ}
     rw [hGram]
     exact Matrix.posSemidef_self_mul_conjTranspose _
   have hrdet : (coefficientSlope (realCoefficients c)).det ≠ 0 := by
-    rw [hmap, ← (Rat.castHom ℝ).map_det]
+    have hcastdet := (Rat.castHom ℝ).map_det (c * c.transpose)
+    simp only [RingHom.mapMatrix_apply] at hcastdet
+    rw [hmap, ← hcastdet]
     exact_mod_cast hqdet
   have hpd := hps.posDef_iff_det_ne_zero.mpr hrdet
   intro v hv

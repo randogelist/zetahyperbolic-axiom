@@ -251,6 +251,12 @@ import LeanPaper.CentralFactorialMoments
 import LeanPaper.BetaOddResidueSigns
 import LeanPaper.DoublePoleZeroCoefficientObstruction
 import LeanPaper.Section4FactorHeight
+import LeanPaper.LaplaceMomentDerivative
+import LeanPaper.LaplaceGram
+import LeanPaper.LaplaceKernelJacobi
+import LeanPaper.Section4ClosestRoot
+import LeanPaper.Section5OuterPrimeIntegral
+import LeanPaper.BetaCouplingDerivative
 
 /-! Independent transitive axiom audit of every active imported project declaration.
 Manuscript correspondence is certified separately. -/
@@ -919,7 +925,13 @@ run_cmd Elab.Command.liftCoreM do
     `LeanPaper.CentralFactorialMoments,
     `LeanPaper.BetaOddResidueSigns,
     `LeanPaper.DoublePoleZeroCoefficientObstruction,
-    `LeanPaper.Section4FactorHeight]
+    `LeanPaper.Section4FactorHeight,
+    `LeanPaper.LaplaceMomentDerivative,
+    `LeanPaper.LaplaceGram,
+    `LeanPaper.LaplaceKernelJacobi,
+    `LeanPaper.Section4ClosestRoot,
+    `LeanPaper.Section5OuterPrimeIntegral,
+    `LeanPaper.BetaCouplingDerivative]
   let mut roots : Array Name := #[]
   for (decl, _) in env.constants do
     if let some idx := env.getModuleIdxFor? decl then

@@ -41,9 +41,7 @@ lemma summable_integral_norm_adjacent (r : ℕ) :
       ∫ z, ‖z.1 ^ (r + n) * z.2 ^ (r + n + 1) * density z‖ ∂squareMeasure) := by
   simp_rw [integral_norm_adjacent_moment]
   have h := (Real.zeta_tail_summable (s := 6) (by norm_num) r).mul_left (1 / 6 : ℝ)
-  convert h using 1
-  funext n
-  rw [one_div_mul_one_div]
+  simpa only [one_div_mul_one_div] using h
 
 /-- The literal extra-denominator integrand in equation (6.2). -/
 def shiftedKernel (r : ℕ) (z : ℝ × ℝ) : ℝ :=
@@ -153,7 +151,9 @@ theorem polynomial_pair_integral_affine {K : ℕ} (c : Fin (K + 1) → ℚ) :
     (∫ z, coefficientEval c z.1 * coefficientEval c z.2 * density z ∂squareMeasure) =
       (constantCoefficient c : ℝ) + (diagonalCoefficient c : ℝ) * Real.zeta 7 := by
   have h := integral_polynomial_pair_eq_dualEntry (fun _ : Fin 1 => c) 0 0
-  simpa [Real.dualEntry, constantCoefficient, diagonalCoefficient] using h
+  simpa only [Real.dualEntry, Polynomial.eval₂_add, Polynomial.eval₂_mul,
+    Polynomial.eval₂_C, Polynomial.eval₂_X, Rat.coe_castHom,
+    constantCoefficient, diagonalCoefficient] using h
 
 /-- The printed rational correction, using the already identified dual moments.
 Expanding `dualConstant` gives the diagonal harmonic-seven terms and the
@@ -187,10 +187,14 @@ theorem simultaneousRationalPart_eq_printed {K : ℕ}
       apply Finset.sum_congr rfl
       intro t ht
       have hne : r.val ≠ t.val := by
-        simpa only [Fin.val_inj] using Ne.symm (Finset.ne_of_mem_erase ht)
+        intro he
+        exact (Finset.ne_of_mem_erase ht) (Fin.ext he.symm)
+      have hd : (r.val : ℚ) - (t.val : ℚ) ≠ 0 := by
+        apply sub_ne_zero.mpr
+        exact_mod_cast hne
       simp only [Real.dualConstant, hne, if_false]
       norm_num only [Nat.reduceSub, Nat.cast_ofNat]
-      ring
+      field_simp [hd] <;> ring
     rw [he]
     simp only [Real.dualConstant, if_true]
     ring

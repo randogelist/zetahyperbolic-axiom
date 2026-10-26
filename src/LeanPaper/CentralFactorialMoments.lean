@@ -32,10 +32,14 @@ theorem integrableOn_monomial_density (k e : ℕ) :
   filter_upwards [ae_restrict_mem measurableSet_Ioi] with u hu
   have hnonneg : 0 ≤ u ^ e * density k u :=
     mul_nonneg (pow_nonneg (le_of_lt hu) _) (density_pos k hu).le
+  simp only [Pi.mul_apply, id_eq]
   rw [Real.norm_of_nonneg hnonneg]
   have hb := mul_le_mul_of_nonneg_left (density_le_exp k (le_of_lt hu))
     (pow_nonneg (le_of_lt hu) e)
-  simpa only [pow_add, neg_mul, mul_assoc, mul_left_comm, mul_comm] using hb
+  have he : -((2 * k + 1 : ℕ) : ℝ) * Real.pi * u =
+      -((((2 * k + 1 : ℕ) : ℝ) * Real.pi) * u) := by ring
+  rw [he] at hb
+  simpa only [pow_add, mul_assoc, mul_left_comm, mul_comm] using hb
 
 /-- An explicit factorial upper bound for every actual density moment. -/
 theorem integral_monomial_density_le (k e : ℕ) :
@@ -52,7 +56,10 @@ theorem integral_monomial_density_le (k e : ℕ) :
       filter_upwards [ae_restrict_mem measurableSet_Ioi] with u hu
       have hb := mul_le_mul_of_nonneg_left (density_le_exp k (le_of_lt hu))
         (pow_nonneg (le_of_lt hu) e)
-      simpa only [pow_add, neg_mul, mul_assoc, mul_left_comm, mul_comm] using hb
+      have he : -((2 * k + 1 : ℕ) : ℝ) * Real.pi * u =
+          -((((2 * k + 1 : ℕ) : ℝ) * Real.pi) * u) := by ring
+      rw [he] at hb
+      simpa only [pow_add, mul_assoc, mul_left_comm, mul_comm] using hb
     _ = _ := by
       rw [integral_const_mul, ManuscriptChain.Hyperbolic.integral_pow_mul_exp
         (e + (2 * k + 1)) (by positivity)]

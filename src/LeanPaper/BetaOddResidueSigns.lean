@@ -7,9 +7,9 @@ import LeanPaper.ImportedCharacter.PositiveSlope
 # Theorem 6.4: signs of the actual odd-square residues
 
 The manuscript includes three signs: the character, the tail derivative,
-and the odd power of the prefix polynomial. All three cancel. Checking only
+and the odd power of the oddPrefix polynomial. All three cancel. Checking only
 the first two leaves `(-1)^N`, but does not refute the printed formula.
-Here the prefix and tail are the actual odd-square polynomials and the
+Here the oddPrefix and tail are the actual odd-square polynomials and the
 residue amplitude is proved positive, rather than assumed positive.
 -/
 
@@ -21,7 +21,7 @@ namespace LeanPaper.BetaOddResidueSigns
 
 def oddSquare (j : ℕ) : ℚ := (2 * (j : ℚ) + 1) ^ 2
 
-def prefix (N : ℕ) : ℚ[X] :=
+def oddPrefix (N : ℕ) : ℚ[X] :=
   ∏ j ∈ Finset.range N, (X + C (oddSquare j))
 
 def tail (N K : ℕ) : ℚ[X] :=
@@ -35,8 +35,8 @@ lemma oddSquare_strictMono : StrictMono oddSquare := by
   nlinarith
 
 lemma sign_prefix (N j : ℕ) (hj : N ≤ j) :
-    sign ((prefix N).eval (-oddSquare j)) = (-1 : SignType) ^ N := by
-  simp only [prefix, eval_prod, eval_add, eval_X, eval_C]
+    sign ((oddPrefix N).eval (-oddSquare j)) = (-1 : SignType) ^ N := by
+  simp only [oddPrefix, Polynomial.eval_prod, Polynomial.eval_add, Polynomial.eval_X, Polynomial.eval_C]
   change signHom (∏ b ∈ Finset.range N, (-oddSquare j + oddSquare b)) = _
   rw [map_prod]
   have hb (b : ℕ) (hb : b ∈ Finset.range N) :
@@ -53,8 +53,8 @@ lemma tail_derivative_eval (N K j : ℕ) (hj : j ∈ Finset.Ico N K) :
       ∏ b ∈ (Finset.Ico N K).erase j, (oddSquare b - oddSquare j) := by
   classical
   simp only [tail, derivative_prod_finset, derivative_add, derivative_X,
-    derivative_C, add_zero, eval_sum, eval_mul, eval_one, one_mul, mul_one,
-    eval_prod, eval_add, eval_X, eval_C]
+    derivative_C, add_zero, Polynomial.eval_sum, Polynomial.eval_mul, Polynomial.eval_one, one_mul, mul_one,
+    Polynomial.eval_prod, Polynomial.eval_add, Polynomial.eval_X, Polynomial.eval_C]
   rw [Finset.sum_eq_single j]
   · apply Finset.prod_congr rfl
     intro b hb
@@ -94,10 +94,10 @@ lemma sign_tail_derivative (N K j : ℕ) (hj : j ∈ Finset.Ico N K) :
   rw [Finset.prod_congr rfl hl, Finset.prod_congr rfl hr]
   simp
 
-/-- The literal residue in Theorem 6.4(2), with its prefix sign retained. -/
+/-- The literal residue in Theorem 6.4(2), with its oddPrefix sign retained. -/
 def residue (N K m j : ℕ) : ℚ :=
   (2 * (j : ℚ) + 1) ^ 3 * (-1 : ℚ) ^ j *
-    ((prefix N).eval (-oddSquare j)) ^ (2 * m - 1) /
+    ((oddPrefix N).eval (-oddSquare j)) ^ (2 * m - 1) /
       (derivative (tail N K)).eval (-oddSquare j)
 
 /-- Every residue in the actual printed odd-square formula is positive. -/
@@ -111,11 +111,11 @@ theorem residue_pos (N K m j : ℕ) (hm : 1 ≤ m) (hj : j ∈ Finset.Ico N K) :
   have hn : sign (-1 : ℚ) = (-1 : SignType) :=
     sign_eq_neg_one_iff.mpr (by norm_num)
   change signHom ((2 * (j : ℚ) + 1) ^ 3 * (-1 : ℚ) ^ j *
-    ((prefix N).eval (-oddSquare j)) ^ (2 * m - 1) /
+    ((oddPrefix N).eval (-oddSquare j)) ^ (2 * m - 1) /
       (derivative (tail N K)).eval (-oddSquare j)) = 1
   rw [map_div₀, map_mul, map_mul, map_pow, map_pow, map_pow]
   change sign (2 * (j : ℚ) + 1) ^ 3 * sign (-1 : ℚ) ^ j *
-    sign ((prefix N).eval (-oddSquare j)) ^ (2 * m - 1) /
+    sign ((oddPrefix N).eval (-oddSquare j)) ^ (2 * m - 1) /
       sign ((derivative (tail N K)).eval (-oddSquare j)) = 1
   rw [hp, hn, sign_prefix N j hj'.1, sign_tail_derivative N K j hj,
     one_pow, one_mul]
