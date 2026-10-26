@@ -69,8 +69,9 @@ theorem det_norm_one {n : ℕ} (M : Matrix (Fin n) (Fin n) ℚ)
     obtain ⟨i, hi⟩ : ∃ i, σ i ≠ i := by
       by_contra! h
       apply hσ
-      ext i
-      exact h i
+      apply Equiv.ext
+      intro i
+      simpa using h i
     have hle (j : Fin n) : padicNorm p (M (σ j) j) ≤ 1 := by
       by_cases hj : σ j = j
       · simpa [hj] using (hdiag j).le

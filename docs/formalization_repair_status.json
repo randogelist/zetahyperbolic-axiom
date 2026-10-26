@@ -12,9 +12,9 @@
     "genuinely blocked"
   ],
   "source_base": "41674aac3544bf314a53b4302266ad22a30ae707",
-  "current_receiving_commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-  "current_receiving_run": 40327942655,
-  "full_project_verified": true,
+  "current_receiving_commit": "1a72973e4713b7f5e732329a253e5a94659b3022",
+  "current_receiving_run": 40335811634,
+  "full_project_verified": false,
   "rows": [
     {
       "item": "2.2",
@@ -633,11 +633,11 @@
     {
       "item": "6.3",
       "title": "q-adic nonvanishing and positive-cone approximations",
-      "status": "genuinely blocked",
+      "status": "under repair",
       "original_statement_preserved": true,
       "whole_original_verified": false,
       "verification": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-      "investigation": "Genuinely blocked as printed; independent part (1) still open",
+      "investigation": "Constructed actual harmonic remainders and leading coefficient control; new harmonic module compiled. Repairing an extensionality type mismatch in the generic dominant determinant lemma before receiving compilation of the actual Aq matrix endpoint.",
       "remaining_obstacle": "The actual h=4,K=28 exact rational certificate in `BEUKERS_POSITIVITY_COUNTEREXAMPLE.md` contradicts the printed positive cone in part (2). Its rational arithmetic and analytic ζ(7) enclosure are external checks, not a Lean kernel theorem. Orthogonality to finitely many negative modes does not control the infinite negative tail. A corrected tail-controlled cone with new parameter estimates is required; part (1) separately requires actual q-adic harmonic/matrix valuations. No cone positivity was assumed.",
       "review": "docs/repair_reviews/section6.md",
       "github_verification": {
@@ -650,7 +650,12 @@
         "native_windows_status": "NOT_RUN"
       },
       "blocker_kind": "printed_statement_requires_correction",
-      "attempts_and_possible_repair": "docs/repair_reviews/section6.md"
+      "attempts_and_possible_repair": "docs/repair_reviews/section6.md",
+      "components": {
+        "6.3(1)": "under repair; actual matrix awaits receiving compilation",
+        "6.3(2)": "genuinely blocked; printed positive cone refuted"
+      },
+      "additional_review": "docs/repair_reviews/semantic_63_1.md"
     },
     {
       "item": "6.4",
@@ -984,20 +989,14 @@
     }
   ],
   "latest_completed_verification": {
-    "state": "PASS",
+    "state": "FAIL",
     "compiled": 260,
-    "registered": 260,
-    "scope": "ALL_PROJECT_DECLARATIONS",
-    "full_project_verified": true,
-    "fresh_global_audit": true,
-    "negative_regressions": "PASS",
-    "target": "GITHUB_CI",
-    "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-    "run_id": 40327942655,
-    "receipt": "validation/github/20261026/acceptance.json",
-    "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-    "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
-    "native_windows_status": "NOT_RUN"
+    "registered": 263,
+    "subset_audit": "PASS",
+    "scope": "COMPLETED_PROJECT_SUBSET",
+    "full_project_verified": false,
+    "commit": "1a72973e4713b7f5e732329a253e5a94659b3022",
+    "run_id": 40335811634
   },
   "pre_autonomous_metadata": {
     "schema_version": 1,
@@ -1033,18 +1032,10 @@
     "scope": "COMPLETED_PROJECT_SUBSET",
     "full_project_verified": false
   },
-  "final_verification": {
-    "target": "GITHUB_CI",
-    "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-    "run_id": 40327942655,
-    "receipt": "validation/github/20261026/acceptance.json",
-    "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-    "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
-    "native_windows_status": "NOT_RUN"
-  },
   "counts": {
     "completed": 12,
-    "genuinely blocked": 33
+    "genuinely blocked": 32,
+    "under repair": 1
   },
   "alternatives": [
     {
@@ -1116,5 +1107,14 @@
       "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
       "native_windows_status": "NOT_RUN"
     }
-  ]
+  ],
+  "previous_verified_checkpoint": {
+    "target": "GITHUB_CI",
+    "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
+    "run_id": 40327942655,
+    "receipt": "validation/github/20261026/acceptance.json",
+    "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
+    "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+    "native_windows_status": "NOT_RUN"
+  }
 }
