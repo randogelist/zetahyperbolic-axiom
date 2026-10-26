@@ -191,6 +191,7 @@ roots = [
   "LeanPaper.BetaHarmonicIndexObstruction",
   "LeanPaper.BetaOneMoments",
   "LeanPaper.BeukersDenominator",
+  "LeanPaper.BeukersOffDiagonalKernel",
   "LeanPaper.CentralFactorialSecant",
   "LeanPaper.CentralFactorialDecay",
   "LeanPaper.ContinuousDensityNormalization",
