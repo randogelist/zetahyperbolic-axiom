@@ -32,7 +32,6 @@ theorem sixKernel_eq_sum (a b : ℚ) :
     sixKernel a b =
       ∑ j ∈ Finset.range 6, 1 / (a ^ (j + 1) * b ^ (6 - j)) := by
   simp [sixKernel, Finset.sum_range_succ]
-  ring
 
 /-- The key finite difference: a six-term positive kernel becomes a
 difference of reciprocal sixth powers, divided by the index gap. -/
