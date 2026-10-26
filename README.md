@@ -44,35 +44,61 @@ The two `!!` corrected entries below (3.2.alt and 3.6.alt) refer to existing his
 | 6 | Structural Barriers, Multi-Weight Couplings, and Further Diophantine Advances | [29](Zetahyperbolic%20(3)%20(1)%20(1).pdf#page=29) | 18 |
 | 7 | Discussion and Open Problems | [51](Zetahyperbolic%20(3)%20(1)%20(1).pdf#page=51) | 0 |
 
-### Chapter flowchart
+### Reading the chapter flowcharts
 
-The arrows show the paper's conceptual organization, **not a certified theorem-dependency graph**. Counts are numbered endpoints with at least one recorded A-Tier original or corrected alternative: **9/45**, comprising seven originals and two corrected versions. The evidence is the historical Linux checkpoint described above.
+Each chapter has **one separate flowchart**. Solid arrows trace a selected development route, which may still end at an **OPEN** obligation. Dashed branches expose deadpoints; dashed **next topic** arrows indicate reading order only. These are work maps, not certified theorem-dependency graphs.
 
-A chapter is green only when **every listed endpoint in that chapter** has such an A-Tier option. Partial chapters stay neutral; their qualifying individual endpoint pairs remain green in the detailed tables.
+**Green** marks a whole original or corrected endpoint with recorded A-Tier evidence. **Amber OPEN** marks an outstanding mathematical or certification obligation. **Red DEAD** marks a failed literal statement; **red DEAD PROOF STEP** marks an invalid argument without asserting that the whole theorem is false. Neutral nodes identify selected targets or intermediate routes and confer no additional tier.
+
+There are still **9/45 endpoint pairs with an A-Tier route**: seven originals and two corrected versions, all from the historical Linux checkpoint described above. An alternative remains a candidate until its exact statement is proved and audited. The tables retain each original immediately followed by its alternative and give the detailed evidence.
+
+### Chapter 1 — Introduction
+
+The introduction sets the program; it has no numbered theorem endpoint. Choose an exact original or a separately stated correction before following the later chapters.
 
 ```mermaid
 flowchart TD
-    C1["1 · Introduction"]
-    C2["2 · Algebraic structure · 4/4 A-Tier options"]
-    C3["3 · Spectral structure · 3/9 A-Tier options"]
-    C4["4 · Diophantine approximation · 1/8 A-Tier options"]
-    C5["5 · Weight-seven identities and dual pencils · 1/6 A-Tier options"]
-    C6["6 · Barriers and multi-weight couplings · 0/18 A-Tier options"]
-    C7["7 · Discussion and open problems"]
+    C1["1 · Odd-zeta Hankel determinant program"]
+    EXACT["Fix each endpoint's exact hypotheses"]
+    CHOICE{"Literal statement usable?"}
+    ORIGINAL["Retain the original endpoint"]
+    ALT["State a separate corrected .alt endpoint"]
+    ROUTE["Follow the relevant Chapter 2–6 route"]
+    GAP["OPEN · The replacement still needs its own proof"]
 
-    C1 --> C2
-    C2 --> C3
-    C3 --> C4
-    C3 --> C5
-    C4 --> C6
-    C5 --> C6
-    C6 --> C7
+    C1 --> EXACT
+    EXACT --> CHOICE
+    CHOICE -->|Yes| ORIGINAL
+    CHOICE -->|Correction required| ALT
+    ORIGINAL --> ROUTE
+    ALT --> ROUTE
+    ALT --> GAP
 
-    classDef complete fill:#e8f5e9,stroke:#238636,color:#196127,stroke-width:2px;
-    class C2 complete;
+    classDef open fill:#fff8c5,stroke:#9a6700,color:#633c01;
+    class GAP open;
 ```
 
 ### Chapter 2 — Algebraic Structure and Canonical Basis Invariance
+
+**Selected route: 4/4 A-Tier originals.** No mathematical deadpoint is recorded for these four exact statements.
+
+```mermaid
+flowchart TD
+    D21["2.1 · Exact rational-function domains"]
+    L22["2.2 · Pullback identity"]
+    L23["2.3 · Reflection and difference"]
+    T24["2.4 · Basis invariance"]
+    T25["2.5 · Lagrange diagonalization"]
+
+    D21 --> L22
+    L22 --> L23
+    L22 --> T24
+    L23 --> T25
+    T24 --> T25
+
+    classDef verified fill:#e8f5e9,stroke:#238636,color:#196127,stroke-width:2px;
+    class L22,L23,T24,T25 verified;
+```
 
 | Result | Printed title | Recorded whole-result tier / state | Proved scope, correction or open endpoint |
 | --- | --- | --- | --- |
@@ -86,6 +112,59 @@ flowchart TD
 | 🟢 **↳** $\color{green}\textsf{2.5.alt}$ | $\color{green}\textsf{Alternative / corrected version: Original retained / equivalent-formula route}$ | Same statement; original tier retained | Retain original-denominator Lagrange diagonalization. An alternative product spelling is a separate equality to prove, not a change in hypotheses or a new certificate. [Source](docs/formalization_status.json). |
 
 ### Chapter 3 — Hyperbolicity, Total Positivity, and Spectral Structure
+
+**Selected routes: 3/9 A-Tier options** — 3.1, 3.2.alt and 3.6.alt. Use the corrected density and finite-support corollary; the other repairs still carry the open obligations shown below.
+
+```mermaid
+flowchart TD
+    subgraph FOUNDATIONS["Gram and moment foundations"]
+        T31["3.1 · Gram hyperbolicity and zero-free disk"]
+        C32["3.2.alt · Corrected density normalization"]
+        D32["DEAD · 3.2 printed density normalization"]
+        CORE["3.3 / 3.7 · Positivity, signature and Newton components"]
+        OCORE["OPEN · Mixed minors, determinacy and coefficient nonvanishing"]
+        T31 --> C32
+        C32 -.-> D32
+        T31 --> CORE
+        CORE --> OCORE
+    end
+
+    subgraph ROOTS["Root and Jacobi routes"]
+        ROOT["Select the rank and support appropriate to the endpoint"]
+        C34["3.4.alt · Rank-sensitive roots and interlacing"]
+        D34["DEAD · Universal r-root count with singular slopes"]
+        O34["OPEN · Full corrected interlacing"]
+        C35["3.5.alt · Normalized Jacobi / Krylov fraction"]
+        D35["DEAD · Printed fraction normalization"]
+        O35["OPEN · Cyclicity or rank stop; full Jacobi construction"]
+        C36["3.6.alt · Corrected finite-support corollary"]
+        D36["DEAD · All-order strictness, sign and bound orientation"]
+        ROOT --> C34
+        C34 -.-> D34
+        C34 --> O34
+        ROOT --> C35
+        C35 -.-> D35
+        C35 --> O35
+        ROOT --> C36
+        C36 -.-> D36
+    end
+
+    subgraph EXTENSIONS["Analytic extensions"]
+        ANALYTIC["3.8 / 3.9 · Kernels, Laplace and character measures"]
+        OANALYTIC["OPEN · Actual analytic identities and pencil bridges"]
+        ANALYTIC --> OANALYTIC
+    end
+
+    FOUNDATIONS -. next topic .-> ROOTS
+    ROOTS -. next topic .-> EXTENSIONS
+
+    classDef verified fill:#e8f5e9,stroke:#238636,color:#196127,stroke-width:2px;
+    classDef dead fill:#fff1f1,stroke:#cf222e,color:#a40e26,stroke-width:2px;
+    classDef open fill:#fff8c5,stroke:#9a6700,color:#633c01;
+    class T31,C32,C36 verified;
+    class D32,D34,D35,D36 dead;
+    class OCORE,O34,O35,OANALYTIC open;
+```
 
 | Result | Printed title | Recorded whole-result tier / state | Proved scope, correction or open endpoint |
 | --- | --- | --- | --- |
@@ -110,6 +189,51 @@ flowchart TD
 
 ### Chapter 4 — Diophantine Approximation, Heights, and Root Collapse for ζ(5)
 
+**Selected route: 1/8 A-Tier originals** — 4.3. Continue the approximation routes with explicit effective data, two-sided arithmetic bounds and a proved upper-closeness premise. The red nodes identify failed proof steps, not counterexamples to the complete theorems.
+
+```mermaid
+flowchart TD
+    START["Select the approximation route"]
+    T41["4.1.alt · Separate eventual and effective hypotheses"]
+    T42["4.2 · Actual algebraic-height candidate"]
+    T43["4.3 · Ultrametric zero-free disk"]
+    O41["OPEN · Effective onset and rational rate margins"]
+    O42["OPEN · Full-statement assembly and receiving audit"]
+    FAMILY["4.4 / 4.5 · Conditional family measures"]
+    OFAMILY["OPEN · Actual multipliers, decay and spectral rates"]
+    T46["4.6.alt · Two-sided height budget"]
+    D46["DEAD PROOF STEP · Upper estimate used as lower estimate"]
+    O46["OPEN · Independent lower bound or certified two-sided interval"]
+    T47["4.7 · Conditional collapse with symbolic constants"]
+    O47["OPEN · Uniform spectral caps and average bounds"]
+    T48["4.8.alt · Cluster-restricted rational-root exclusion"]
+    D48["DEAD PROOF STEP · Lower separation used as upper closeness"]
+    O48["OPEN · Upper-closeness premise and outside-cluster argument"]
+
+    START --> T41
+    START --> T42
+    START --> T43
+    T41 --> O41
+    T42 --> O42
+    T41 --> FAMILY
+    FAMILY --> OFAMILY
+    T41 --> T46
+    T46 -.-> D46
+    T46 --> O46
+    O46 --> T47
+    T47 --> O47
+    T47 --> T48
+    T48 -.-> D48
+    T48 --> O48
+
+    classDef verified fill:#e8f5e9,stroke:#238636,color:#196127,stroke-width:2px;
+    classDef dead fill:#fff1f1,stroke:#cf222e,color:#a40e26,stroke-width:2px;
+    classDef open fill:#fff8c5,stroke:#9a6700,color:#633c01;
+    class T43 verified;
+    class D46,D48 dead;
+    class O41,O42,OFAMILY,O46,O47,O48 open;
+```
+
 | Result | Printed title | Recorded whole-result tier / state | Proved scope, correction or open endpoint |
 | --- | --- | --- | --- |
 | [Theorem 4.1](Zetahyperbolic%20(3)%20(1)%20(1).pdf#page=14) | Spectral irrationality measure criterion | **— Partial** | Transfer and effective-data variants exist. The printed computability claim needs effective onset/rate inputs, beyond existential eventual bounds. |
@@ -131,6 +255,37 @@ flowchart TD
 
 ### Chapter 5 — Weight-Seven Integral Identities, Dual Pencils, and Double-Pole Systems
 
+**Selected route: 1/6 A-Tier originals** — 5.4. Develop the finite constructions toward the actual infinite measures and arithmetic estimates; combined receiving certification for 5.1 remains open. No wholly false numbered result is established here; the displayed endpoints remain open where indicated.
+
+```mermaid
+flowchart TD
+    C5["5 · Weight-seven integral and double-pole routes"]
+    M["5.1 · Actual Beukers-moment route"]
+    F["5.2.alt · Finite independent-polynomial spectrum"]
+    T["OPEN · Infinite Krein realization and tail-controlled cones"]
+    Q["REPAIR · Allow sufficiently large K depending on h"]
+    B["5.3.alt · Moment-conditional beta pencil"]
+    BA["OPEN · Actual beta measure and identification"]
+    P["5.4 · Cancellation theorem with corrected proof"]
+    A["5.6 / 5.7 · Prime sums and double-pole arithmetic"]
+    AO["OPEN · Uniform tails and actual q-adic valuations"]
+
+    C5 --> M
+    M --> F
+    F --> Q
+    Q --> T
+    C5 --> B
+    B --> BA
+    C5 --> P
+    P --> A
+    A --> AO
+
+    classDef verified fill:#e8f5e9,stroke:#238636,color:#196127,stroke-width:2px;
+    classDef open fill:#fff8c5,stroke:#9a6700,color:#633c01;
+    class P verified;
+    class T,BA,AO open;
+```
+
 | Result | Printed title | Recorded whole-result tier / state | Proved scope, correction or open endpoint |
 | --- | --- | --- | --- |
 | [Theorem 5.1](Zetahyperbolic%20(3)%20(1)%20(1).pdf#page=22) | Two-variable Beukers measure for ζ(7) | **— Partial** | Moment-series, actual off-diagonal integral, density and rationality sources are integrated from audited donors; combined receiving certification is still required. |
@@ -147,6 +302,91 @@ flowchart TD
 | **↳ 5.7.alt** | **Alternative / corrected version:** Local-arithmetic conditional determinant | — Proposed conditional target | Construct the actual double-pole Hermite determinant; make its local coefficient nonvanishing and minor-valuation requirements explicit before deriving the stated q-adic valuation. These arithmetic requirements remain open. [Source](docs/SECTION56_CONTINUATION_REVIEW.md). |
 
 ### Chapter 6 — Structural Barriers, Multi-Weight Couplings, and Further Diophantine Advances
+
+**Selected routes: 0/18 full A-Tier options.** Use the repaired or restricted candidates below while retaining their analytic and arithmetic obligations. The prescribed 6.3 cone is refuted; its replacement must be a new cone. The 6.17 proof-step failures do not refute the complete conditional theorem.
+
+```mermaid
+flowchart TD
+    subgraph MOMENTS["6.1–6.3 · Moments and the prescribed cone"]
+        R61["6.1 / 6.2 · Separate Mellin, rational moments and valuations"]
+        R63["6.3.alt · Construct a new tail-controlled cone"]
+        O63["OPEN · New cone, infinite moments and local valuations"]
+        D63["DEAD · 6.3 prescribed cone fails at h = 4"]
+        R61 --> R63
+        R63 --> O63
+        R63 -.-> D63
+    end
+
+    subgraph BETA["6.4–6.5 · Beta measures and local units"]
+        R64["6.4.alt · Keep the parity and orientation"]
+        R65["6.5.alt · Instancewise q-adic unit calculation"]
+        O65["OPEN · Actual beta measures and uniform valuations"]
+        R64 --> R65
+        R65 --> O65
+    end
+
+    subgraph KREIN["6.6–6.7 · Finite identities toward infinite cones"]
+        R66["6.6.alt / 6.7.alt · Finite positive cones and Krein identities"]
+        O67["OPEN · Actual multiweight measures, explicit tails and infinite subspaces"]
+        R66 --> O67
+    end
+
+    subgraph ARITHMETIC["6.8–6.10 · Independence, Hermite and height"]
+        R68["6.8 · Conditional arithmetic reduction"]
+        R69["6.9.alt · Actual-node Hermite arithmetic"]
+        R610["6.10.alt · Finite identity and conditional coefficient-Gram growth"]
+        O610["OPEN · Family estimates, local blocks and potential limits"]
+        R68 --> R69
+        R68 --> R610
+        R69 --> O610
+        R610 --> O610
+    end
+
+    subgraph SERIES["6.11–6.13 · Finite identities and corrected series"]
+        R611["6.11.alt · Finite Euler and dyadic identities"]
+        O611["OPEN · Uniform prime-sum and rate inputs"]
+        R612["6.12.alt · Rational cutoffs conditional on a positive margin"]
+        R613["6.13.alt · Insert the missing alternating sign"]
+        O613["OPEN · Convergence, actual pencil and q-adic compatibility"]
+        D613["DEAD · 6.13 printed series sign"]
+        R611 --> O611
+        R611 --> R612
+        R612 --> R613
+        R613 --> O613
+        R613 -.-> D613
+    end
+
+    subgraph COMPARISONS["6.14–6.18 · Comparisons, exterior rates and arithmetic repairs"]
+        R614["6.14 / 6.16.alt · Positive comparison and closed-interval ratios"]
+        R615["6.15.alt · Correct the geometric exterior rate"]
+        D615["DEAD · 6.15 exterior h^(-2k) factor for k at least 1"]
+        O615["OPEN · Actual moments, comparison and full corrected result"]
+        R617["6.17.alt · Correct q-windows; rebuild the local block"]
+        D617["DEAD PROOF STEP · 6.17 indexing and scalar-block argument"]
+        O617["OPEN · Local valuations and infinite Krein realization"]
+        R618["6.18.alt · Split quotient and height obligations"]
+        O618["OPEN · Dyadic residues, prime clearing, height and measures"]
+        R614 --> R615
+        R615 -.-> D615
+        R615 --> O615
+        R614 --> R617
+        R617 -.-> D617
+        R617 --> O617
+        R617 --> R618
+        R618 --> O618
+    end
+
+    MOMENTS -. next topic .-> BETA
+    BETA -. next topic .-> KREIN
+    KREIN -. next topic .-> ARITHMETIC
+    ARITHMETIC -. next topic .-> SERIES
+    SERIES -. next topic .-> COMPARISONS
+
+    classDef dead fill:#fff1f1,stroke:#cf222e,color:#a40e26,stroke-width:2px;
+    classDef open fill:#fff8c5,stroke:#9a6700,color:#633c01;
+    class D63,D613,D615,D617 dead;
+    class O63,O65,O67,O610,O611,O613,O615,O617,O618 open;
+```
 
 | Result | Printed title | Recorded whole-result tier / state | Proved scope, correction or open endpoint |
 | --- | --- | --- | --- |
@@ -186,6 +426,47 @@ flowchart TD
 | **↳ 6.17.alt** | **Alternative / corrected version:** Corrected odd-pole windows, new local block | — Restricted correction; full theorem open | Use the documented integer windows for odd q≥3: `h=⌊(q+1)/4⌋`, `shift=⌊(q+3)/4⌋`, `degree=(q−1)/2`, isolating no lower q-pole and one upper q-pole. Recompute the actual leading block and allowed primes separately; window correction alone does not establish the determinant valuation or infinite Krein theorem. [Source](docs/TARGET_6_17_Q_WINDOW_FREEZE.md). |
 | [Theorem 6.18](Zetahyperbolic%20(3)%20(1)%20(1).pdf#page=49) | Principal-minor 2-adic integrality law, dyadic height bounds for Zeta–Beta pencils, and multi-weight effective measures | **— Partial** | Quotient disappearance and exact degree components are proved; dyadic residues, determinant height loss, odd-prime multipliers and measure remain. |
 | **↳ 6.18.alt** | **Alternative / corrected version:** Exact quotient restriction / conditional arithmetic | — Restricted target; degree components recorded | Retain sub-threshold quotient disappearance, the 6n leading-block specialization and degree bound 42n−1. Require residue integrality, odd-prime clearing and determinant-height budgets separately for any arithmetic or irrationality-measure transfer. [Source](docs/SECTION56_CONTINUATION_REVIEW.md). |
+
+### Chapter 7 — Discussion and Open Problems
+
+This chapter has no numbered theorem endpoint. Its open problems return to the unfinished routes above; the final proof-and-audit gates describe future work and grant no new tier.
+
+```mermaid
+flowchart TD
+    C7["7 · Discussion and open problems"]
+    RATES["Spectral and arithmetic rates · Chapter 4"]
+    HEIGHT["Degree at least two · 4.2 / 6.10"]
+    WEIGHTS["Weight seven and coupled weights · Chapters 5–6"]
+    ORATES["OPEN · Decay and separation estimates"]
+    OHEIGHT["OPEN · Actual height and potential bridges"]
+    OWEIGHTS["OPEN · New cones, tails and local valuations"]
+    TARGET["Choose an exact original or corrected endpoint"]
+    PROOF{"All required proof obligations closed?"}
+    RETURN["Return to the relevant chapter's OPEN node"]
+    AUDIT["Compile and audit that exact endpoint"]
+    EVIDENCE{"Matching evidence complete?"}
+    OEVIDENCE["OPEN · Build or audit evidence missing"]
+    RECORD["Record the tier and update the pair's color"]
+
+    C7 --> RATES
+    C7 --> HEIGHT
+    C7 --> WEIGHTS
+    RATES --> ORATES
+    HEIGHT --> OHEIGHT
+    WEIGHTS --> OWEIGHTS
+    ORATES --> TARGET
+    OHEIGHT --> TARGET
+    OWEIGHTS --> TARGET
+    TARGET --> PROOF
+    PROOF -->|No| RETURN
+    PROOF -->|Yes| AUDIT
+    AUDIT --> EVIDENCE
+    EVIDENCE -->|No| OEVIDENCE
+    EVIDENCE -->|Yes| RECORD
+
+    classDef open fill:#fff8c5,stroke:#9a6700,color:#633c01;
+    class ORATES,OHEIGHT,OWEIGHTS,OEVIDENCE open;
+```
 
 ### Definitions, remarks and conjecture
 
