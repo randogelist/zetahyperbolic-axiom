@@ -11,7 +11,7 @@ The goal is to **collect exact mathematics from the user's other Lean projects a
 
 **A — Historically passing donors, collect now for isolated receiving-repo replay.**
 
-- Uploaded `zeta5-spectral-lean (1).zip` has [28 selected source compile receipts](https://github.com/randogelist/zetahyperbolic-axiom/tree/persistent/zetahyperbolic-paper-gap-tracker) for Lean 4.33.0 in its internal `verification/MERGE_BUILD.json`, including `Zeta5Merge/Theorem6_10.lean`, `Theorem6_16.lean`, `Theorem6_17.lean`, `Theorem6_18.lean`, `OddZeta/ResidueMoments.lean`, `OddZeta/DecompositionBridge.lean`. Each selected `PASS` receipt's SHA-256 was compared to the ZIP source.
+- Uploaded `zeta5-spectral-lean (1).zip` contains 28 selected source compile receipts **inside the ZIP** (`verification/MERGE_BUILD.json`) for Lean 4.33.0 including `Zeta5Merge/Theorem6_10.lean`, `Theorem6_16.lean`, `Theorem6_17.lean`, `Theorem6_18.lean`, `OddZeta/ResidueMoments.lean`, `OddZeta/DecompositionBridge.lean`. Each selected `PASS` receipt's SHA-256 was compared to the ZIP source.
 - Uploaded `ODD_ZETA_3X3_MERGED_v0_3_0.zip` has a **127-module Linux Lean 4.33 source-hash/cached-compilation manifest**, including `Zeta5/HermiteBasisCore.lean`, `Zeta5/HermiteBasis.lean`, `Merge/ImpactGEtaZeta.lean` and `Merge/LinearFormLimit.lean`. All four extracted sources match that manifest's SHA-256. Full `Zeta5` imported endpoint **is not certified** as an axiom-clean source by the selected 28-module merge; the original `Zeta5/Axioms.lean` contains a PNT axiom and must not be used as an allowed proof dependency.
 
 **B — Failed/unfinished GitHub continuation: useful source mathematics, not admitted A-Tier.**
