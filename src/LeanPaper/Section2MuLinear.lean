@@ -67,7 +67,7 @@ def pullback (k : ℕ) : MuSpace →ₗ[ℚ] Section2TauLinear.TauSpace where
   map_smul' c f := by
     apply Subtype.ext
     simp only [weightedPullback_coe, Submodule.coe_smul, Algebra.smul_def,
-      map_mul, AlgHom.commutes]
+      map_mul, AlgHom.commutes, RingHom.id_apply]
     ring
 
 @[simp] theorem pullback_coe (k : ℕ) (f : MuSpace) :

@@ -1,293 +1,736 @@
 {
-  "version": "v0_1_4_construction",
-  "base_commit": "b378cba25cca544a8a2a45529a6673960d175f66",
-  "base_tree": "5d7d0075decb96cd662bb19bd7ef725c42a3e62a",
-  "source_scope": "New constructed proofs using retained project results and exact pinned Mathlib APIs",
+  "version": "v0_1_5_construction",
+  "base_commit": "0d5ecc23608eb5791f934d2be90ab3385ce1e1c3",
+  "base_tree": "882ae6b6a036f6662d13fb647783dd13b66e250c",
   "sources": [
     {
-      "module": "LeanPaper.HigherDerivativeTuran",
-      "active": "src/LeanPaper/HigherDerivativeTuran.lean",
-      "origin": "NEW_PROOF_CONSTRUCTION_v0_1_4_construction",
-      "sha256": "7adf339e150a6834d6fdc038d77b5776204bbd6bdf076d45466575506d937a07",
+      "module": "LeanPaper.ActualStrictCenter",
+      "active": "src/LeanPaper/ActualStrictCenter.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "5ae8e38f31375454c899cdbf87f874c95315d089aa82d36008a7fac7cc4617d8",
       "imports": [
-        "LeanPaper.ImportedSection3.StrictTuranRolle",
-        "MAIN_CHAIN_IRRATIONALITY",
-        "Mathlib.Algebra.Polynomial.Splits",
-        "Mathlib.Analysis.Calculus.LocalExtr.Polynomial"
+        "LeanPaper.StrictCenteredLaguerre",
+        "LeanPaper.SlopeIndefinite"
       ],
       "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
       "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
     },
     {
-      "module": "LeanPaper.ManuscriptObstructions",
-      "active": "src/LeanPaper/ManuscriptObstructions.lean",
-      "origin": "NEW_PROOF_CONSTRUCTION_v0_1_4_construction",
-      "sha256": "8bfb250a4822bc4e5d9068d97d90ae4473dcd8fb4e5bda7ffac1960625758dec",
+      "module": "LeanPaper.ActualStrictNewton",
+      "active": "src/LeanPaper/ActualStrictNewton.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "b8bd04c3bb598b4e34ac95e46195a5ef311b3820d45c4599ca93620fe47f81bc",
       "imports": [
-        "LeanPaper.ReciprocalRootMoments",
-        "LeanPaper.ImportedSection3.NormalizedContinuedFraction"
+        "LeanPaper.ActualStrictCenter",
+        "LeanPaper.StrictNormalizedNewton"
       ],
       "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
       "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
     },
     {
-      "module": "LeanPaper.NormalizedNewton",
-      "active": "src/LeanPaper/NormalizedNewton.lean",
-      "origin": "NEW_PROOF_CONSTRUCTION_v0_1_4_construction",
-      "sha256": "24bca9092b39987bb86666c7cd5f0a2ffdd78c8b82622623674c9d5277d8c9f6",
+      "module": "LeanPaper.BetaHarmonicIndexObstruction",
+      "active": "src/LeanPaper/BetaHarmonicIndexObstruction.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "2564887803186f8254e502dd7252d871d1b582584c57157213478cd549500950",
       "imports": [
-        "LeanPaper.HigherDerivativeTuran",
-        "Mathlib.Algebra.Polynomial.Taylor"
+        "Mathlib.Tactic",
+        "Mathlib.NumberTheory.Padics.PadicVal.Basic"
       ],
       "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
       "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
     },
     {
-      "module": "LeanPaper.OperatorNormDisk",
-      "active": "src/LeanPaper/OperatorNormDisk.lean",
-      "origin": "NEW_PROOF_CONSTRUCTION_v0_1_4_construction",
-      "sha256": "ab9c8623bce41acfac9168240752dc1e02035a88f0d64701a8c0ee2d0739dcd1",
+      "module": "LeanPaper.BetaOneMoments",
+      "active": "src/LeanPaper/BetaOneMoments.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "90fed68dff29385067f81e7e884eee12363e7909caefd762c01e6e4a507f058b",
+      "imports": [
+        "Mathlib.Analysis.SpecialFunctions.Integrals.Basic"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.BeukersDenominator",
+      "active": "src/LeanPaper/BeukersDenominator.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "91262e6594c666469dfd8af450810d36c905b6ef9bead25ebc1b35b27ee2b800",
+      "imports": [
+        "LeanPaper.ImportedSection56.DualMoments",
+        "Mathlib.Algebra.GCDMonoid.Finset",
+        "Mathlib.Data.Rat.Lemmas",
+        "Mathlib.Tactic"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.CentralFactorialDecay",
+      "active": "src/LeanPaper/CentralFactorialDecay.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "b4f66e6c2e2fca9694eff8b18a014ef79113a68137731e784d054966aaec429f",
+      "imports": [
+        "LeanPaper.CentralFactorialSecant"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.CentralFactorialSecant",
+      "active": "src/LeanPaper/CentralFactorialSecant.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "2eac1bdddb34f3cdbaba407d32135887735e04643020876837ca41558dbef3d3",
+      "imports": [
+        "Mathlib.Analysis.SpecialFunctions.Trigonometric.DerivHyp",
+        "Mathlib.Analysis.Calculus.Deriv.Pow",
+        "Mathlib.Tactic"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.ConsecutiveDerivativeZeros",
+      "active": "src/LeanPaper/ConsecutiveDerivativeZeros.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "6e9ca7d7c608322ae865716c06c6bed9cfb288c83ab980d62fffe117c3c854f4",
+      "imports": [
+        "LeanPaper.NormalizedNewton"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.ContinuousDensityNormalization",
+      "active": "src/LeanPaper/ContinuousDensityNormalization.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "e6dd4e8ec2f6eb49807fc977ff200fafe86c813a1ad9eca5e2c2be5cc75c2e4c",
+      "imports": [
+        "LeanPaper.RebuildKernelBridge",
+        "MAIN_CHAIN_ASSEMBLED",
+        "Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.ContinuousGram",
+      "active": "src/LeanPaper/ContinuousGram.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "a07f008d25d04523b1a0f9f0e5fee6a06b2884895b23159251de0ba962c2ded4",
+      "imports": [
+        "LeanPaper.ContinuousWeightMoments",
+        "LeanPaper.ImportedSection3.ActualPoleKernel"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.ContinuousWeightMoments",
+      "active": "src/LeanPaper/ContinuousWeightMoments.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "2fa78cda8966f8f365ac3e916aaad92f7aec8e18c8b5a8c5d3c23f80331e02ea",
+      "imports": [
+        "LeanPaper.ContinuousDensityNormalization",
+        "Mathlib.Analysis.SpecialFunctions.Pow.Real"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.CorrectedReciprocalCorollary",
+      "active": "src/LeanPaper/CorrectedReciprocalCorollary.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "eccc8f89eac79fcc9ad6794ea9e338387d1c5fbbb04494a4c95d7f7f5bd65fb1",
+      "imports": [
+        "LeanPaper.ReciprocalAllOrders",
+        "LeanPaper.ReciprocalNearestRootLimit"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.DerivativeDistinctRoots",
+      "active": "src/LeanPaper/DerivativeDistinctRoots.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "d53eccf811aba5a6c2281924b6340b26aaa1d7bf4ee5307ad25a2487ca612414",
+      "imports": [
+        "LeanPaper.ConsecutiveDerivativeZeros",
+        "Mathlib.Algebra.Polynomial.FieldDivision"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.DodgsonCondensation",
+      "active": "src/LeanPaper/DodgsonCondensation.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "b26a58f53331c7ec13e6dd6e5103392def87584c85de00d23c5b95c785adeb6b",
+      "imports": [
+        "LeanPaper.PrincipalMinorRealRoots",
+        "Mathlib.LinearAlgebra.Matrix.SchurComplement",
+        "Mathlib.FieldTheory.RatFunc.Basic",
+        "Mathlib.Tactic"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.DyadicQuotientThreshold",
+      "active": "src/LeanPaper/DyadicQuotientThreshold.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "675d3f4108f09e02f2047c30f06368e257af785e0ab3db915e681f3feaac2430",
+      "imports": [
+        "Definition_2_1_Order_s_Rational_Moment_Functional",
+        "Mathlib.Algebra.Polynomial.FieldDivision",
+        "Mathlib.Tactic"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.ExternalPi.ETranscendental",
+      "active": "src/LeanPaper/ExternalPi/ETranscendental.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "9a629261092c708e8dc2cd40470152a1d0ec407bbe8feba1687c0d0f69a8060b",
+      "imports": [
+        "Mathlib.NumberTheory.Transcendental.Lindemann.AnalyticalPart",
+        "Mathlib.RingTheory.Algebraic.Integral",
+        "Mathlib.RingTheory.Localization.Integral",
+        "Mathlib.Analysis.SpecialFunctions.Exponential",
+        "Mathlib.Topology.Algebra.Order.Floor"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.ExternalPi.HermiteLindemann",
+      "active": "src/LeanPaper/ExternalPi/HermiteLindemann.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "a14f3c4259df80783abfd4303ffdf8a4e399e69089da1fe9e1d24eec538bbf32",
+      "imports": [
+        "Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic",
+        "Mathlib.Analysis.Complex.IsIntegral",
+        "Mathlib.RingTheory.Algebraic.Integral"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.ExternalPi.MonicRootSums",
+      "active": "src/LeanPaper/ExternalPi/MonicRootSums.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "a68ad55d04622eec471cf95c5fcdd9e93a8657fa10983bf76ecaaeece718d25a",
+      "imports": [
+        "Mathlib",
+        "LeanPaper.ExternalPi.PiLindemann",
+        "LeanPaper.ExternalPi.HermiteLindemann"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.ExternalPi.PiLindemann",
+      "active": "src/LeanPaper/ExternalPi/PiLindemann.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "9ed5dc448a47d79345b74516f0cb1c1ecd1d4c30d27de3b43e5d0375b603eee8",
+      "imports": [
+        "Mathlib.Analysis.SpecialFunctions.Complex.Circle",
+        "Mathlib.Analysis.SpecialFunctions.Exponential",
+        "Mathlib.Algebra.BigOperators.Ring.Finset",
+        "Mathlib.RingTheory.Polynomial.IntegralNormalization",
+        "Mathlib.RingTheory.Polynomial.ScaleRoots",
+        "Mathlib.RingTheory.Polynomial.Vieta",
+        "Mathlib.FieldTheory.IsAlgClosed.Basic",
+        "Mathlib.Analysis.Complex.Polynomial.Basic",
+        "LeanPaper.ExternalPi.ETranscendental"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.ExternalPi.PiTranscendental",
+      "active": "src/LeanPaper/ExternalPi/PiTranscendental.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "e46ced19b2be3e8c1ab51d451eaf91735378f7f15309f593305df1b469079144",
+      "imports": [
+        "LeanPaper.ExternalPi.MonicRootSums",
+        "LeanPaper.ExternalPi.SubsetSumEsymm"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.ExternalPi.SubsetSumEsymm",
+      "active": "src/LeanPaper/ExternalPi/SubsetSumEsymm.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "3084d5fd3b491452da871b43e7980c15ee83ecdf972117f7bbfe4003b2106f0d",
+      "imports": [
+        "Mathlib"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.JFractionActualObstruction",
+      "active": "src/LeanPaper/JFractionActualObstruction.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "f4becf089c4a529dea579bf2a684093cfededf9c317a06aff424bf9c0a722784",
       "imports": [
         "MAIN_CHAIN_ASSEMBLED",
-        "Mathlib.Analysis.CStarAlgebra.Matrix",
-        "Mathlib.Analysis.Matrix.Spectrum"
+        "LeanPaper.OperatorNormDisk",
+        "Mathlib.Tactic"
       ],
       "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
       "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
     },
     {
-      "module": "LeanPaper.PrimitiveNormDisk",
-      "active": "src/LeanPaper/PrimitiveNormDisk.lean",
-      "origin": "NEW_PROOF_CONSTRUCTION_v0_1_4_construction",
-      "sha256": "f89e272dde8b836a61b197f8e48ef2e76ba69419e32f970588fc2e0f803f3e2c",
+      "module": "LeanPaper.KreinDimensionObstruction",
+      "active": "src/LeanPaper/KreinDimensionObstruction.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "cf49244cd899047929403af96cfa208b0f351225d11bf2924e41ac35552e237a",
       "imports": [
-        "LeanPaper.OperatorNormDisk",
+        "Mathlib.LinearAlgebra.FiniteDimensional.Lemmas",
+        "Mathlib.LinearAlgebra.Dimension.Finrank",
+        "Mathlib.Data.Real.Basic"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.OddBetaValues",
+      "active": "src/LeanPaper/OddBetaValues.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "d6213447f53872b67d4cdc7c0967141880667aa8384cf369745a32b85b3dd8bb",
+      "imports": [
+        "LeanPaper.OddPiPowers",
+        "Mathlib.NumberTheory.ZetaValues",
+        "Mathlib.Analysis.SpecificLimits.Normed"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.OddPiPowers",
+      "active": "src/LeanPaper/OddPiPowers.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "287dcd698239c864178f01bb7870866f4591ce97a94e212193dfc4caf28cd129",
+      "imports": [
+        "LeanPaper.ExternalPi.PiTranscendental",
+        "Mathlib.Algebra.Polynomial.Basis",
+        "Mathlib.LinearAlgebra.LinearIndependent.Basic",
+        "Mathlib.RingTheory.Algebraic.Basic",
+        "Mathlib.Analysis.Real.Pi.Leibniz"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.PoleWeightSigns",
+      "active": "src/LeanPaper/PoleWeightSigns.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "b4a1a9491ae1dbd5e5e2b621826c615d92aed7203846296c08081237e3642b3e",
+      "imports": [
+        "LeanPaper.ImportedSection3.RealExponent",
+        "Mathlib.Data.Sign.Basic",
+        "Mathlib.Algebra.BigOperators.Intervals",
+        "Mathlib.Tactic"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.RationalLogJets",
+      "active": "src/LeanPaper/RationalLogJets.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "e774c3b0251dd564eb231b63437a875906712b068062c25714ed005933894f78",
+      "imports": [
+        "LeanPaper.ReciprocalLogDerivative",
+        "Mathlib.Analysis.Calculus.IteratedDeriv.Lemmas"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.ReciprocalAllOrders",
+      "active": "src/LeanPaper/ReciprocalAllOrders.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "01998d885a87c7d21d07c934204061285381f2ebc88204ee7ff64d19931d5883",
+      "imports": [
+        "LeanPaper.RationalLogJets",
         "MAIN_CHAIN_IRRATIONALITY"
       ],
       "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
       "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
     },
     {
-      "module": "LeanPaper.PrincipalMinorRank",
-      "active": "src/LeanPaper/PrincipalMinorRank.lean",
-      "origin": "NEW_PROOF_CONSTRUCTION_v0_1_4_construction",
-      "sha256": "3194228ec8e733c596daca64f8531bffce0629b63ba163f1e6d3e67420ee0eca",
+      "module": "LeanPaper.Section2DifferenceDerivative",
+      "active": "src/LeanPaper/Section2DifferenceDerivative.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "2ac32f397598873cf9a99bde8aef4352d00675d5ea85b084af8a7b1944a2ca8b",
       "imports": [
-        "LeanPaper.PrincipalMinorRealRoots",
-        "Mathlib.Analysis.Matrix.Spectrum",
-        "Mathlib.Algebra.Polynomial.Splits"
+        "LeanPaper.Section2RatFuncTranslation",
+        "Mathlib.Analysis.Calculus.IteratedDeriv.Lemmas"
       ],
       "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
       "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
     },
     {
-      "module": "LeanPaper.ReciprocalLogDerivative",
-      "active": "src/LeanPaper/ReciprocalLogDerivative.lean",
-      "origin": "NEW_PROOF_CONSTRUCTION_v0_1_4_construction",
-      "sha256": "aeee3e906b085cd45e8d335fb04b8b5fe07b718404503d3ed5206098343501c9",
+      "module": "LeanPaper.Section2FunctionalBasis",
+      "active": "src/LeanPaper/Section2FunctionalBasis.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "201a57a0168552b25f6a0c587087cd0b6b343ef43ddca40433c7907bcb723646",
       "imports": [
-        "LeanPaper.ReciprocalRootMoments",
-        "Mathlib.Analysis.Calculus.LogDeriv",
-        "Mathlib.Analysis.Calculus.Deriv.Polynomial",
-        "Mathlib.Analysis.SpecialFunctions.Log.Deriv"
+        "Theorem_2_4_Canonical_Basis_Invariance",
+        "Mathlib.RingTheory.Polynomial.DegreeLT",
+        "Mathlib.FieldTheory.RatFunc.Basic",
+        "Mathlib.LinearAlgebra.Basis.Bilinear",
+        "Mathlib.LinearAlgebra.Determinant"
       ],
       "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
       "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
     },
     {
-      "module": "LeanPaper.ReciprocalNearestRootLimit",
-      "active": "src/LeanPaper/ReciprocalNearestRootLimit.lean",
-      "origin": "NEW_PROOF_CONSTRUCTION_v0_1_4_construction",
-      "sha256": "d3b33ca2f2ce9fa2485e489d7ecd1c50bd9f231a8c42b19ece6bb4ab5a3a87fd",
+      "module": "LeanPaper.Section2LagrangeFunctional",
+      "active": "src/LeanPaper/Section2LagrangeFunctional.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "4c3af58787ab3e37118a3d61b9c41654e1bdfbe2ed109bb8c49148665324c139",
       "imports": [
-        "LeanPaper.ImportedSection3.RootMomentBounds",
-        "Mathlib.Analysis.SpecialFunctions.Pow.Continuity",
-        "Mathlib.Analysis.SpecificLimits.Basic"
+        "LeanPaper.Section2PoleLinearSpace",
+        "LeanPaper.Section2FunctionalBasis",
+        "Zetahyperbolic.ManuscriptCompatibility",
+        "LeanPaper.Rebuild.PartialFractionsResidues",
+        "Mathlib.LinearAlgebra.Basis.VectorSpace"
       ],
       "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
       "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
     },
     {
-      "module": "LeanPaper.ReciprocalSecondMoment",
-      "active": "src/LeanPaper/ReciprocalSecondMoment.lean",
-      "origin": "NEW_PROOF_CONSTRUCTION_v0_1_4_construction",
-      "sha256": "ccbdc753878b1a4023de6762943ca25030f1c416045ba6c5f23806ad2adbaeb7",
+      "module": "LeanPaper.Section2MuLinear",
+      "active": "src/LeanPaper/Section2MuLinear.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "192cf9db7d07925fb61110376f7c6e99674340c928e61937617a6ff2bc032f2b",
       "imports": [
-        "LeanPaper.ReciprocalLogDerivative"
+        "LeanPaper.Section2LagrangeFunctional",
+        "LeanPaper.Section2RatFuncPullback"
       ],
       "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
       "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
     },
     {
-      "module": "LeanPaper.Section2RationalDomains",
-      "active": "src/LeanPaper/Section2RationalDomains.lean",
-      "origin": "NEW_PROOF_CONSTRUCTION_v0_1_4_construction",
-      "sha256": "b1b19199280667a2b13ec3b7d60dba867049477c4980245a31d45e5c8c4f7c29",
+      "module": "LeanPaper.Section2PoleLinearSpace",
+      "active": "src/LeanPaper/Section2PoleLinearSpace.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "46676f0c2aa3264623a86728f15f48c9559e4a0b05abf77b155dcc998423f4a9",
       "imports": [
-        "LeanPaper.Section2TauRepresentation",
-        "LeanPaper.Rebuild.PartialFractionsQuotient"
+        "LeanPaper.Section2RationalDomains",
+        "Mathlib.FieldTheory.RatFunc.AsPolynomial"
       ],
       "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
       "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
     },
     {
-      "module": "LeanPaper.Section2RepresentationIndependence",
-      "active": "src/LeanPaper/Section2RepresentationIndependence.lean",
-      "origin": "NEW_PROOF_CONSTRUCTION_v0_1_4_construction",
-      "sha256": "b66b7810f05862d4a9e64c33949aa7c33d8454d783aeaff3acd39118fca6a02b",
+      "module": "LeanPaper.Section2RatFuncPullback",
+      "active": "src/LeanPaper/Section2RatFuncPullback.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "ed895809f4ec6125919ce13d5f1f8136a3b576e036bcbc9f0f6a4603b556aa04",
       "imports": [
-        "LeanPaper.Section2LagrangeIdentification",
-        "LeanPaper.PullbackReflection",
-        "Mathlib.Algebra.Polynomial.PartialFractions",
-        "Mathlib.Algebra.Polynomial.RingDivision",
-        "Mathlib.FieldTheory.RatFunc.Basic"
+        "LeanPaper.Section2TauLinear",
+        "Mathlib.Algebra.Field.GeomSum",
+        "Mathlib.Algebra.Algebra.Hom.Rat"
       ],
       "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
       "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
     },
     {
-      "module": "LeanPaper.Section2TauRepresentation",
-      "active": "src/LeanPaper/Section2TauRepresentation.lean",
-      "origin": "NEW_PROOF_CONSTRUCTION_v0_1_4_construction",
-      "sha256": "449cd161c55e9d6050f2e7eb0fa191a02de0168ba428027e3f8b0f29f868020a",
+      "module": "LeanPaper.Section2RatFuncReflection",
+      "active": "src/LeanPaper/Section2RatFuncReflection.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "db0434adf7c5d9c1fbc73d9a72b86e9945cb11a92d63ee0566aae1f61b35df39",
       "imports": [
-        "LeanPaper.Section2RepresentationIndependence",
-        "LeanPaper.Section2FiniteDifference"
+        "LeanPaper.Section2TauLinear",
+        "Mathlib.Algebra.Algebra.Hom.Rat"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.Section2RatFuncTranslation",
+      "active": "src/LeanPaper/Section2RatFuncTranslation.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "83c043d85190e8477c387d3f2bc664663689b7b02e130b3779cad0cfac923b46",
+      "imports": [
+        "LeanPaper.Section2TauLinear",
+        "Mathlib.Algebra.Algebra.Hom.Rat",
+        "Mathlib.Analysis.Calculus.Deriv.ZPow"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.Section2TauLinear",
+      "active": "src/LeanPaper/Section2TauLinear.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "6907a64d9f38ab0b75a9b7b2fa431924c0cf42558d39b8b560a4de2d111b1c63",
+      "imports": [
+        "LeanPaper.Section2PoleLinearSpace"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.Section4AlgebraicBudget",
+      "active": "src/LeanPaper/Section4AlgebraicBudget.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "4a00ba63b57a25a5d367956c5b7f740ed83d9ddd752a508d4959c422671e36fc",
+      "imports": [
+        "LeanPaper.Section4ConjugateBounds",
+        "LeanPaper.Section4IndexSelection",
+        "Mathlib.Analysis.Complex.Exponential"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.Section4AlgebraicLimsup",
+      "active": "src/LeanPaper/Section4AlgebraicLimsup.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "16786f6a4837c7607f1278b13a52f3125eff378ae596c35530504df6e421820f",
+      "imports": [
+        "LeanPaper.Section4AlgebraicTransfer",
+        "Mathlib.Topology.Instances.EReal.Lemmas"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.Section4AlgebraicTransfer",
+      "active": "src/LeanPaper/Section4AlgebraicTransfer.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "a523a11f67285728412d6bec4583d12d00c48d28d0f96a7d3a15ddb871538487",
+      "imports": [
+        "LeanPaper.Section4AlgebraicBudget",
+        "LeanPaper.Section4ComplexComparison"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.Section4ComplexComparison",
+      "active": "src/LeanPaper/Section4ComplexComparison.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "f8905f126bdcde6dc882049d69f654d7638804f0cad487fb31e7c69a5eac96fc",
+      "imports": [
+        "Theorem_4_1_Spectral_Irrationality_Measure_Criterion",
+        "Mathlib.Analysis.Complex.Polynomial.Basic"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.Section4ConjugateBounds",
+      "active": "src/LeanPaper/Section4ConjugateBounds.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "5114f9fb305e81d57dca19f719a1200bd0faf273ca09047fd30e6f7b86f2b3cc",
+      "imports": [
+        "LeanPaper.Section4Resultant"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.Section4EffectiveBudget",
+      "active": "src/LeanPaper/Section4EffectiveBudget.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "b27f80e11ea4ea41d6a50edf6353e4d88a6f31c320da8db9e9c7ede0194a8d5e",
+      "imports": [
+        "LeanPaper.Section4ComplexComparison",
+        "LeanPaper.Section4IndexSelection",
+        "Mathlib.Analysis.Complex.ExponentialBounds",
+        "Mathlib.Data.Rat.Floor"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.Section4IndexSelection",
+      "active": "src/LeanPaper/Section4IndexSelection.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "5ad7a241595b6dc3c6c9ba8f298e361d1ab9c66a31be0e66afc54bad45e28c98",
+      "imports": [
+        "Theorem_4_1_Spectral_Irrationality_Measure_Criterion",
+        "Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics",
+        "Mathlib.Topology.Algebra.Order.Floor"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.Section4Resultant",
+      "active": "src/LeanPaper/Section4Resultant.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "510b4548e206db12a16716cd1d92e1f1166ea16f92e24e4917bd155e7b7df36f",
+      "imports": [
+        "LeanPaper.PrimitiveNormDisk",
+        "LeanPaper.ImportedSection4.Proposition_4_2_Resultant_Product_Barrier",
+        "Mathlib.RingTheory.Polynomial.Resultant.Basic",
+        "Mathlib.Analysis.Complex.Polynomial.Basic",
+        "Mathlib.Analysis.Polynomial.MahlerMeasure"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.Section4TransferComplete",
+      "active": "src/LeanPaper/Section4TransferComplete.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "ff78c32484ebf89506d4ef0a00090bc4c77a0092484f003d06b63f7a2c407c78",
+      "imports": [
+        "LeanPaper.Section4IndexSelection",
+        "LeanPaper.Section4ComplexComparison"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.SlopeIndefinite",
+      "active": "src/LeanPaper/SlopeIndefinite.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "43ab8e4d1aea53d06273efac7f0ad8bfbbda336c26f8151a79b5ad57199ea2e5",
+      "imports": [
+        "LeanPaper.PoleWeightSigns",
+        "LeanPaper.OperatorNormDisk",
+        "LeanPaper.ImportedSection3.ActualPoleKernel",
+        "Mathlib.Analysis.Matrix.PosDef"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.SlopeSignature",
+      "active": "src/LeanPaper/SlopeSignature.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "c7f9c4c1da99215465ef4071bc618ec4d31d44a41b502517486f5489150dbebf",
+      "imports": [
+        "LeanPaper.SlopeIndefinite",
+        "Mathlib.LinearAlgebra.QuadraticForm.Signature",
+        "Mathlib.LinearAlgebra.Matrix.ToLinearEquiv"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.StrictCenteredLaguerre",
+      "active": "src/LeanPaper/StrictCenteredLaguerre.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "736079bdb2ef32d40e1215b1dfd7ab8a6368e80c7e6cd0d4e3bc461791c18e46",
+      "imports": [
+        "LeanPaper.NormalizedNewton",
+        "LeanPaper.ReciprocalSecondMoment"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.StrictLaguerreGeneral",
+      "active": "src/LeanPaper/StrictLaguerreGeneral.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "bcbef9f06121c4b80c9b1aaf304ffaa43e32b995164acfa7a5260d245989534e",
+      "imports": [
+        "LeanPaper.DerivativeDistinctRoots",
+        "LeanPaper.StrictCenteredLaguerre",
+        "Mathlib.Data.List.OfFn"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.StrictNormalizedNewton",
+      "active": "src/LeanPaper/StrictNormalizedNewton.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "0e165d445530adf0205fa58ce7dccb2718d3ae1961264f80d752a7c8a5163f07",
+      "imports": [
+        "LeanPaper.StrictLaguerreGeneral"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.SymmetricPoleSpectrum",
+      "active": "src/LeanPaper/SymmetricPoleSpectrum.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "0c4208e40d1f87bf7b2fe84fca439278b93943dfcae7cb228a3d8b25de0624d7",
+      "imports": [
+        "LeanPaper.OperatorNormDisk",
+        "LeanPaper.ImportedSection3.ActualPoleKernel",
+        "Mathlib.LinearAlgebra.Matrix.Charpoly.Basic"
+      ],
+      "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
+      "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
+    },
+    {
+      "module": "LeanPaper.UnitLogMoments",
+      "active": "src/LeanPaper/UnitLogMoments.lean",
+      "origin": "CONTINUATION_PROOF_v0_1_5_construction",
+      "sha256": "6cb093af150118382615e72499281b53c23885abde8a06cfa52d23e28178ff5d",
+      "imports": [
+        "Mathlib.Analysis.SpecialFunctions.Gamma.Basic",
+        "Mathlib.MeasureTheory.Integral.IntegralEqImproper",
+        "Mathlib.Tactic"
       ],
       "local_evidence": "LINUX_LEAN433_PASS_AXIOM_AUDITED;validation/linux/acceptance.json",
       "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d"
     }
   ],
   "new_targets": [
-    "LeanPaper.HigherDerivativeTuran.real_splits_derivative",
-    "LeanPaper.HigherDerivativeTuran.real_splits_iterated_derivative",
-    "LeanPaper.HigherDerivativeTuran.iterated_derivative_natDegree",
-    "LeanPaper.HigherDerivativeTuran.turan_nonnegative_of_real_splits",
-    "LeanPaper.HigherDerivativeTuran.turan_strict_of_real_splits",
-    "LeanPaper.HigherDerivativeTuran.iterated_turan_nonnegative",
-    "LeanPaper.HigherDerivativeTuran.iterated_turan_strict",
-    "LeanPaper.HigherDerivativeTuran.iterated_turan_eq_zero_iff",
-    "LeanPaper.HigherDerivativeTuran.spectral_polynomial_splits",
-    "LeanPaper.HigherDerivativeTuran.actual_determinant_splits",
-    "LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial",
-    "LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial_identity",
-    "LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial_splits",
-    "LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial_natDegree",
-    "LeanPaper.HigherDerivativeTuran.actual_primitive_all_derivative_turan",
-    "LeanPaper.HigherDerivativeTuran.actual_primitive_all_derivative_turan_strict",
-    "LeanPaper.HigherDerivativeTuran.actual_primitive_all_derivative_turan_equality",
-    "LeanPaper.ManuscriptObstructions.manuscript_hankel_det_succ_eq_zero",
-    "LeanPaper.ManuscriptObstructions.manuscript_hankel_not_positive_at_all_orders",
-    "LeanPaper.ManuscriptObstructions.normalized_fraction_printed_formula_fails",
-    "LeanPaper.ManuscriptObstructions.first_logarithmic_ratio_sign_fails",
-    "LeanPaper.NormalizedNewton.laguerre",
-    "LeanPaper.NormalizedNewton.laguerre_mul_root_identity",
-    "LeanPaper.NormalizedNewton.laguerre_nonnegative_of_real_splits",
-    "LeanPaper.NormalizedNewton.normalizedJet",
-    "LeanPaper.NormalizedNewton.normalizedJet_newton",
-    "LeanPaper.NormalizedNewton.normalizedJet_zero",
-    "LeanPaper.NormalizedNewton.coefficient_newton",
-    "LeanPaper.NormalizedNewton.shifted_coefficient_newton",
-    "LeanPaper.NormalizedNewton.normalized_shifted_newton",
-    "LeanPaper.NormalizedNewton.actual_primitive_laguerre",
-    "LeanPaper.NormalizedNewton.actual_primitive_coefficient_newton",
-    "LeanPaper.NormalizedNewton.actual_primitive_shifted_newton",
-    "LeanPaper.NormalizedNewton.actual_primitive_centered_newton",
-    "LeanPaper.OperatorNormDisk.whitened",
-    "LeanPaper.OperatorNormDisk.hermitian_norm_eq_eigenvalue_norm",
-    "LeanPaper.OperatorNormDisk.norm_compatible_factorization",
-    "LeanPaper.OperatorNormDisk.complex_root_distance",
-    "LeanPaper.OperatorNormDisk.complex_root_on_boundary",
-    "LeanPaper.OperatorNormDisk.actual_radius_eq_inverse_norm",
-    "LeanPaper.OperatorNormDisk.actual_root_distance",
-    "LeanPaper.OperatorNormDisk.actual_exact_norm_disk",
-    "LeanPaper.OperatorNormDisk.original_root_distance",
-    "LeanPaper.PrimitiveNormDisk.normalization_eval_complex",
-    "LeanPaper.PrimitiveNormDisk.normalization_complex_root_iff",
-    "LeanPaper.PrimitiveNormDisk.primitive_complex_root_iff",
-    "LeanPaper.PrimitiveNormDisk.primitive_root_distance",
-    "LeanPaper.PrimitiveNormDisk.primitive_exact_norm_disk",
-    "LeanPaper.PrimitiveNormDisk.primitive_theorem_3_1",
-    "LeanPaper.PrincipalMinorRank.nonzeroCount",
-    "LeanPaper.PrincipalMinorRank.spectralFactor_degree_indicator",
-    "LeanPaper.PrincipalMinorRank.degree_eq_nonzeroCount",
-    "LeanPaper.PrincipalMinorRank.weak_factorization_splits",
-    "LeanPaper.PrincipalMinorRank.roots_card_eq_nonzeroCount",
-    "LeanPaper.PrincipalMinorRank.rank_compatible_factorization",
-    "LeanPaper.PrincipalMinorRank.degree_eq_direction_rank",
-    "LeanPaper.PrincipalMinorRank.real_roots_card_eq_direction_rank",
-    "LeanPaper.PrincipalMinorRank.nonzeroCount_eq_direction_rank",
-    "LeanPaper.PrincipalMinorRank.root_count_le_dimension",
-    "LeanPaper.PrincipalMinorRank.zero_direction_has_no_roots",
-    "LeanPaper.PrincipalMinorRank.original_principal_degree_eq_rank",
-    "LeanPaper.PrincipalMinorRank.original_principal_real_roots_card_eq_rank",
-    "LeanPaper.PrincipalMinorRank.original_leading_degree_and_root_count",
-    "LeanPaper.ReciprocalLogDerivative.factorization_logDeriv",
-    "LeanPaper.ReciprocalLogDerivative.actual_logDeriv",
-    "LeanPaper.ReciprocalLogDerivative.actual_opposite_gap_sum",
-    "LeanPaper.ReciprocalLogDerivative.evalQ_at_rat",
-    "LeanPaper.ReciprocalLogDerivative.rational_logDeriv",
-    "LeanPaper.ReciprocalLogDerivative.actual_first_inverse_gap_sum_rational",
-    "LeanPaper.ReciprocalLogDerivative.actual_log_hasDerivAt",
-    "LeanPaper.ReciprocalNearestRootLimit.finite_power_root_bounds",
-    "LeanPaper.ReciprocalNearestRootLimit.finite_power_root_tendsto",
-    "LeanPaper.ReciprocalNearestRootLimit.reciprocal_atom_negative_half",
-    "LeanPaper.ReciprocalNearestRootLimit.pow_negative_root",
-    "LeanPaper.ReciprocalNearestRootLimit.reciprocal_negative_root_bounds",
-    "LeanPaper.ReciprocalNearestRootLimit.reciprocal_negative_root_tendsto",
-    "LeanPaper.ReciprocalNearestRootLimit.actual_nearest_root_limit",
-    "LeanPaper.ReciprocalSecondMoment.polynomial_logDeriv_hasDerivAt",
-    "LeanPaper.ReciprocalSecondMoment.actual_logDeriv_hasDerivAt",
-    "LeanPaper.ReciprocalSecondMoment.actual_log_second_hasDerivAt",
-    "LeanPaper.ReciprocalSecondMoment.actual_second_moment_formula",
-    "LeanPaper.ReciprocalSecondMoment.actual_second_moment_rational",
-    "LeanPaper.Section2RationalDomains.poleProduct",
-    "LeanPaper.Section2RationalDomains.poleProduct_ne_zero",
-    "LeanPaper.Section2RationalDomains.commonNumerator",
-    "LeanPaper.Section2RationalDomains.realization_eq_fraction",
-    "LeanPaper.Section2RationalDomains.realization_denom_dvd",
-    "LeanPaper.Section2RationalDomains.fraction_representation_exists",
-    "LeanPaper.Section2RationalDomains.range_realization_iff_denom_dvd",
-    "LeanPaper.Section2RationalDomains.muPoleProduct",
-    "LeanPaper.Section2RationalDomains.muPoleProduct_eq",
-    "LeanPaper.Section2RationalDomains.muDomain_iff_denom_dvd",
-    "LeanPaper.Section2RationalDomains.tauDomain_iff_denom_dvd",
-    "LeanPaper.Section2RationalDomains.fraction_mem_muDomain",
-    "LeanPaper.Section2RepresentationIndependence.SimplePoleForm",
-    "LeanPaper.Section2RepresentationIndependence.effectiveResidue",
-    "LeanPaper.Section2RepresentationIndependence.realization",
-    "LeanPaper.Section2RepresentationIndependence.sum_extend",
-    "LeanPaper.Section2RepresentationIndependence.realization_extend",
-    "LeanPaper.Section2RepresentationIndependence.realization_unique",
-    "LeanPaper.Section2RepresentationIndependence.realization_eq_of_data",
-    "LeanPaper.Section2RepresentationIndependence.realization_eq_iff",
-    "LeanPaper.Section2RepresentationIndependence.moment",
-    "LeanPaper.Section2RepresentationIndependence.moment_representation_independent",
-    "LeanPaper.Section2RepresentationIndependence.muForm",
-    "LeanPaper.Section2RepresentationIndependence.muRatFunc",
-    "LeanPaper.Section2RepresentationIndependence.mu_representation_unique",
-    "LeanPaper.Section2RepresentationIndependence.muFunctionalPoly_representation_independent",
-    "LeanPaper.Section2RepresentationIndependence.MuDomain",
-    "LeanPaper.Section2RepresentationIndependence.muOnDomain",
-    "LeanPaper.Section2RepresentationIndependence.muOnDomain_eq",
-    "LeanPaper.Section2RepresentationIndependence.pulledMoment_representation_independent",
-    "LeanPaper.Section2TauRepresentation.tauPolynomial",
-    "LeanPaper.Section2TauRepresentation.tauPolynomial_monomial",
-    "LeanPaper.Section2TauRepresentation.finiteForm",
-    "LeanPaper.Section2TauRepresentation.finiteSpanRatFunc",
-    "LeanPaper.Section2TauRepresentation.finiteForm_coefficient",
-    "LeanPaper.Section2TauRepresentation.tauFiniteSpan_eq_moment",
-    "LeanPaper.Section2TauRepresentation.tauFiniteSpan_representation_independent",
-    "LeanPaper.Section2TauRepresentation.TauDomain",
-    "LeanPaper.Section2TauRepresentation.tauOnDomain",
-    "LeanPaper.Section2TauRepresentation.tauOnDomain_eq",
-    "LeanPaper.Section2TauRepresentation.tauOnDomain_eq_finiteSpan",
-    "LeanPaper.Section2TauRepresentation.reflectedMoment_representation_independent",
-    "LeanPaper.Section2TauRepresentation.differenceCorrection",
-    "LeanPaper.Section2TauRepresentation.differenceCorrection_eq_moment",
-    "LeanPaper.Section2TauRepresentation.differenceCorrection_representation_independent",
-    "LeanPaper.Section2TauRepresentation.translatedMoment_representation_independent"
+    "LeanPaper.ReciprocalAllOrders.actual_inverseGapSum_rational",
+    "LeanPaper.ReciprocalAllOrders.actual_iterated_log",
+    "LeanPaper.ReciprocalAllOrders.primitive_iterated_log",
+    "LeanPaper.StrictCenteredLaguerre.dispersion_eq_zero_iff",
+    "LeanPaper.StrictCenteredLaguerre.actual_laguerre_dispersion",
+    "LeanPaper.StrictCenteredLaguerre.actual_laguerre_strict_of_distinct_roots",
+    "LeanPaper.ActualStrictCenter.theorem_3_7_strict_center",
+    "LeanPaper.Section4ComplexComparison.polynomial_comparison",
+    "LeanPaper.Section4ComplexComparison.integer_comparison",
+    "LeanPaper.Section4AlgebraicBudget.eventually_conjugate_budget",
+    "LeanPaper.Section4TransferComplete.spectral_transfer_lattice",
+    "LeanPaper.Section4TransferComplete.spectral_transfer_real_exponent",
+    "LeanPaper.SymmetricPoleSpectrum.actual_symmetric_charpoly_eq_pole",
+    "LeanPaper.JFractionActualObstruction.printed_fraction_fails_at_center",
+    "LeanPaper.JFractionActualObstruction.corrected_rank_one_fraction",
+    "LeanPaper.Section4AlgebraicLimsup.algebraic_transfer_limsup",
+    "LeanPaper.ActualStrictNewton.actual_coefficient_strict_criterion",
+    "LeanPaper.ActualStrictNewton.actual_centered_newton_strict",
+    "LeanPaper.SlopeIndefinite.derivative_indefinite",
+    "LeanPaper.Section4Resultant.integer_resultant_product",
+    "LeanPaper.Section4Resultant.irreducible_conjugate_product_one_le",
+    "LeanPaper.Section4Resultant.integer_mahler_bound",
+    "LeanPaper.Section4Resultant.primitive_conjugate_product_one_le_in_norm_disk",
+    "LeanPaper.Section4EffectiveBudget.explicit_budgets",
+    "LeanPaper.Section4EffectiveBudget.effective_spectral_measure",
+    "LeanPaper.Section4AlgebraicTransfer.algebraic_transfer_rates",
+    "LeanPaper.DerivativeDistinctRoots.derivative_hasDistinctRoots",
+    "LeanPaper.DerivativeDistinctRoots.iterated_derivative_hasDistinctRoots",
+    "LeanPaper.StrictLaguerreGeneral.laguerre_strict_of_distinct_roots",
+    "LeanPaper.Section4ConjugateBounds.algebraic_approximation_barrier",
+    "LeanPaper.Section4ConjugateBounds.polynomial_eval_height_bound",
+    "LeanPaper.Section4ConjugateBounds.resultant_upper_bound",
+    "LeanPaper.CorrectedReciprocalCorollary.corrected_corollary_3_6",
+    "LeanPaper.PoleWeightSigns.poleWeight_sign",
+    "LeanPaper.Section4IndexSelection.exists_indexBudget_of_rates",
+    "LeanPaper.Section4IndexSelection.measure_of_rates",
+    "LeanPaper.SlopeSignature.actual_normalized_signature",
+    "LeanPaper.ConsecutiveDerivativeZeros.consecutive_taylor_nonvanishing",
+    "LeanPaper.ConsecutiveDerivativeZeros.actual_centered_consecutive_nonvanishing",
+    "LeanPaper.BetaOneMoments.zeroth_moment",
+    "LeanPaper.BetaOneMoments.first_moment",
+    "LeanPaper.BetaOneMoments.eta_at_one_needs_removable_value",
+    "LeanPaper.DodgsonCondensation.at_minor_root",
+    "LeanPaper.KreinDimensionObstruction.fixed_K_two_h_two_impossible",
+    "LeanPaper.StrictNormalizedNewton.coefficient_newton_strict_criterion",
+    "LeanPaper.StrictNormalizedNewton.normalized_shifted_newton_strict",
+    "LeanPaper.RationalLogJets.iterated_log_rational"
   ],
   "local_acceptance": "validation/linux/acceptance.json",
-  "full_manuscript_equivalence": "BLOCKED_LITERAL_CLAIMS_AND_OPEN_RESULTS"
+  "full_manuscript_equivalence": "NOT_CERTIFIED;WORK_CONTINUES",
+  "external_pi_provenance": "provenance/external_pi_intake.json"
 }

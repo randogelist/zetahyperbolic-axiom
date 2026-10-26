@@ -12,8 +12,134 @@
     "native_status": "PENDING_WINDOWS"
   },
   {
+    "module": "LeanPaper.ActualStrictCenter",
+    "sha256": "5ae8e38f31375454c899cdbf87f874c95315d089aa82d36008a7fac7cc4617d8",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.ActualStrictNewton",
+    "sha256": "b8bd04c3bb598b4e34ac95e46195a5ef311b3820d45c4599ca93620fe47f81bc",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
     "module": "LeanPaper.AxiomWalk",
     "sha256": "c0ed90bb9b9e347ede612ee1e5f1dda15028bf1eb54e2c1cf1334ed2c93a58a8",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.BetaHarmonicIndexObstruction",
+    "sha256": "2564887803186f8254e502dd7252d871d1b582584c57157213478cd549500950",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.BetaOneMoments",
+    "sha256": "90fed68dff29385067f81e7e884eee12363e7909caefd762c01e6e4a507f058b",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.BeukersDenominator",
+    "sha256": "91262e6594c666469dfd8af450810d36c905b6ef9bead25ebc1b35b27ee2b800",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.CentralFactorialDecay",
+    "sha256": "b4f66e6c2e2fca9694eff8b18a014ef79113a68137731e784d054966aaec429f",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.CentralFactorialSecant",
+    "sha256": "2eac1bdddb34f3cdbaba407d32135887735e04643020876837ca41558dbef3d3",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.ConsecutiveDerivativeZeros",
+    "sha256": "6e9ca7d7c608322ae865716c06c6bed9cfb288c83ab980d62fffe117c3c854f4",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.ContinuousDensityNormalization",
+    "sha256": "e6dd4e8ec2f6eb49807fc977ff200fafe86c813a1ad9eca5e2c2be5cc75c2e4c",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.ContinuousGram",
+    "sha256": "a07f008d25d04523b1a0f9f0e5fee6a06b2884895b23159251de0ba962c2ded4",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.ContinuousWeightMoments",
+    "sha256": "2fa78cda8966f8f365ac3e916aaad92f7aec8e18c8b5a8c5d3c23f80331e02ea",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.CorrectedReciprocalCorollary",
+    "sha256": "eccc8f89eac79fcc9ad6794ea9e338387d1c5fbbb04494a4c95d7f7f5bd65fb1",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.DerivativeDistinctRoots",
+    "sha256": "d53eccf811aba5a6c2281924b6340b26aaa1d7bf4ee5307ad25a2487ca612414",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.DodgsonCondensation",
+    "sha256": "b26a58f53331c7ec13e6dd6e5103392def87584c85de00d23c5b95c785adeb6b",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.DyadicQuotientThreshold",
+    "sha256": "675d3f4108f09e02f2047c30f06368e257af785e0ab3db915e681f3feaac2430",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.ExternalPi.ETranscendental",
+    "sha256": "9a629261092c708e8dc2cd40470152a1d0ec407bbe8feba1687c0d0f69a8060b",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.ExternalPi.HermiteLindemann",
+    "sha256": "a14f3c4259df80783abfd4303ffdf8a4e399e69089da1fe9e1d24eec538bbf32",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.ExternalPi.MonicRootSums",
+    "sha256": "a68ad55d04622eec471cf95c5fcdd9e93a8657fa10983bf76ecaaeece718d25a",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.ExternalPi.PiLindemann",
+    "sha256": "9ed5dc448a47d79345b74516f0cb1c1ecd1d4c30d27de3b43e5d0375b603eee8",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.ExternalPi.PiTranscendental",
+    "sha256": "e46ced19b2be3e8c1ab51d451eaf91735378f7f15309f593305df1b469079144",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.ExternalPi.SubsetSumEsymm",
+    "sha256": "3084d5fd3b491452da871b43e7980c15ee83ecdf972117f7bbfe4003b2106f0d",
     "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
     "native_status": "PENDING_WINDOWS"
   },
@@ -330,8 +456,20 @@
     "native_status": "PENDING_WINDOWS"
   },
   {
+    "module": "LeanPaper.JFractionActualObstruction",
+    "sha256": "f4becf089c4a529dea579bf2a684093cfededf9c317a06aff424bf9c0a722784",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
     "module": "LeanPaper.KernelAudit",
-    "sha256": "43d4554b6c7906eb22c6cfbf6be279ec7392a951a5f4b3b4d9981a40e12f15fa",
+    "sha256": "9783b2622a65502c8285a6eebd992f38856e7627d635ec85e0463f9e96cf8ae0",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.KreinDimensionObstruction",
+    "sha256": "cf49244cd899047929403af96cfa208b0f351225d11bf2924e41ac35552e237a",
     "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
     "native_status": "PENDING_WINDOWS"
   },
@@ -348,8 +486,26 @@
     "native_status": "PENDING_WINDOWS"
   },
   {
+    "module": "LeanPaper.OddBetaValues",
+    "sha256": "d6213447f53872b67d4cdc7c0967141880667aa8384cf369745a32b85b3dd8bb",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.OddPiPowers",
+    "sha256": "287dcd698239c864178f01bb7870866f4591ce97a94e212193dfc4caf28cd129",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
     "module": "LeanPaper.OperatorNormDisk",
     "sha256": "ab9c8623bce41acfac9168240752dc1e02035a88f0d64701a8c0ee2d0739dcd1",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.PoleWeightSigns",
+    "sha256": "b4a1a9491ae1dbd5e5e2b621826c615d92aed7203846296c08081237e3642b3e",
     "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
     "native_status": "PENDING_WINDOWS"
   },
@@ -378,6 +534,12 @@
     "native_status": "PENDING_WINDOWS"
   },
   {
+    "module": "LeanPaper.RationalLogJets",
+    "sha256": "e774c3b0251dd564eb231b63437a875906712b068062c25714ed005933894f78",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
     "module": "LeanPaper.Rebuild.PartialFractionsCore",
     "sha256": "bb123fe5edf0a5cb47b34a91ba4284e306f4b503b61521903e6d8ba0caa9e674",
     "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
@@ -398,6 +560,12 @@
   {
     "module": "LeanPaper.RebuildKernelBridge",
     "sha256": "7f00c2b88daa91d966f00a4445546127111d47bf00f3d50b585f3d1fdba053e9",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.ReciprocalAllOrders",
+    "sha256": "01998d885a87c7d21d07c934204061285381f2ebc88204ee7ff64d19931d5883",
     "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
     "native_status": "PENDING_WINDOWS"
   },
@@ -426,8 +594,20 @@
     "native_status": "PENDING_WINDOWS"
   },
   {
+    "module": "LeanPaper.Section2DifferenceDerivative",
+    "sha256": "2ac32f397598873cf9a99bde8aef4352d00675d5ea85b084af8a7b1944a2ca8b",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
     "module": "LeanPaper.Section2FiniteDifference",
     "sha256": "c7975335df6a7c3df8e15477a1cf80bfb6d0daa4a59f47da59769c10cbeae17e",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.Section2FunctionalBasis",
+    "sha256": "201a57a0168552b25f6a0c587087cd0b6b343ef43ddca40433c7907bcb723646",
     "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
     "native_status": "PENDING_WINDOWS"
   },
@@ -444,8 +624,44 @@
     "native_status": "PENDING_WINDOWS"
   },
   {
+    "module": "LeanPaper.Section2LagrangeFunctional",
+    "sha256": "4c3af58787ab3e37118a3d61b9c41654e1bdfbe2ed109bb8c49148665324c139",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
     "module": "LeanPaper.Section2LagrangeIdentification",
     "sha256": "0aaf7f41c3e2e1221a58feb849cf4c89a32688d2685b18b652003e238fc6bc9b",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.Section2MuLinear",
+    "sha256": "192cf9db7d07925fb61110376f7c6e99674340c928e61937617a6ff2bc032f2b",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.Section2PoleLinearSpace",
+    "sha256": "46676f0c2aa3264623a86728f15f48c9559e4a0b05abf77b155dcc998423f4a9",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.Section2RatFuncPullback",
+    "sha256": "ed895809f4ec6125919ce13d5f1f8136a3b576e036bcbc9f0f6a4603b556aa04",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.Section2RatFuncReflection",
+    "sha256": "db0434adf7c5d9c1fbc73d9a72b86e9945cb11a92d63ee0566aae1f61b35df39",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.Section2RatFuncTranslation",
+    "sha256": "83c043d85190e8477c387d3f2bc664663689b7b02e130b3779cad0cfac923b46",
     "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
     "native_status": "PENDING_WINDOWS"
   },
@@ -462,14 +678,74 @@
     "native_status": "PENDING_WINDOWS"
   },
   {
+    "module": "LeanPaper.Section2TauLinear",
+    "sha256": "6907a64d9f38ab0b75a9b7b2fa431924c0cf42558d39b8b560a4de2d111b1c63",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
     "module": "LeanPaper.Section2TauRepresentation",
     "sha256": "449cd161c55e9d6050f2e7eb0fa191a02de0168ba428027e3f8b0f29f868020a",
     "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
     "native_status": "PENDING_WINDOWS"
   },
   {
+    "module": "LeanPaper.Section4AlgebraicBudget",
+    "sha256": "4a00ba63b57a25a5d367956c5b7f740ed83d9ddd752a508d4959c422671e36fc",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.Section4AlgebraicLimsup",
+    "sha256": "16786f6a4837c7607f1278b13a52f3125eff378ae596c35530504df6e421820f",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.Section4AlgebraicTransfer",
+    "sha256": "a523a11f67285728412d6bec4583d12d00c48d28d0f96a7d3a15ddb871538487",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.Section4ComplexComparison",
+    "sha256": "f8905f126bdcde6dc882049d69f654d7638804f0cad487fb31e7c69a5eac96fc",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.Section4ConjugateBounds",
+    "sha256": "5114f9fb305e81d57dca19f719a1200bd0faf273ca09047fd30e6f7b86f2b3cc",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.Section4EffectiveBudget",
+    "sha256": "b27f80e11ea4ea41d6a50edf6353e4d88a6f31c320da8db9e9c7ede0194a8d5e",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.Section4IndexSelection",
+    "sha256": "5ad7a241595b6dc3c6c9ba8f298e361d1ab9c66a31be0e66afc54bad45e28c98",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
     "module": "LeanPaper.Section4ManuscriptBridge",
     "sha256": "c7d82a2dda22fb92ae2b9d7ecbce560fd1dc14f3fbe21637f165ca17467eec52",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.Section4Resultant",
+    "sha256": "510b4548e206db12a16716cd1d92e1f1166ea16f92e24e4917bd155e7b7df36f",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.Section4TransferComplete",
+    "sha256": "ff78c32484ebf89506d4ef0a00090bc4c77a0092484f003d06b63f7a2c407c78",
     "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
     "native_status": "PENDING_WINDOWS"
   },
@@ -494,6 +770,48 @@
   {
     "module": "LeanPaper.SingularSlope",
     "sha256": "7e67da369d41eeeedee376264e512460a628bbf3c7d6f3d06ef8b131f4dac46d",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.SlopeIndefinite",
+    "sha256": "43ab8e4d1aea53d06273efac7f0ad8bfbbda336c26f8151a79b5ad57199ea2e5",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.SlopeSignature",
+    "sha256": "c7f9c4c1da99215465ef4071bc618ec4d31d44a41b502517486f5489150dbebf",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.StrictCenteredLaguerre",
+    "sha256": "736079bdb2ef32d40e1215b1dfd7ab8a6368e80c7e6cd0d4e3bc461791c18e46",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.StrictLaguerreGeneral",
+    "sha256": "bcbef9f06121c4b80c9b1aaf304ffaa43e32b995164acfa7a5260d245989534e",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.StrictNormalizedNewton",
+    "sha256": "0e165d445530adf0205fa58ce7dccb2718d3ae1961264f80d752a7c8a5163f07",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.SymmetricPoleSpectrum",
+    "sha256": "0c4208e40d1f87bf7b2fe84fca439278b93943dfcae7cb228a3d8b25de0624d7",
+    "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
+    "native_status": "PENDING_WINDOWS"
+  },
+  {
+    "module": "LeanPaper.UnitLogMoments",
+    "sha256": "6cb093af150118382615e72499281b53c23885abde8a06cfa52d23e28178ff5d",
     "local_status": "LINUX_LEAN433_PASS_AXIOM_AUDITED",
     "native_status": "PENDING_WINDOWS"
   },

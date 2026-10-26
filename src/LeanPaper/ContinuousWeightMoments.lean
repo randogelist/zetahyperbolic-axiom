@@ -68,8 +68,7 @@ theorem integral_momentTerm {s : ℝ} (hs : 1 < s) (e n : ℕ) :
     ring
   rw [he, _root_.Real.rpow_add hn, _root_.Real.rpow_natCast]
   have hna := _root_.Real.rpow_pos_of_pos hn (s - 1)
-  field_simp
-  ring
+  field_simp <;> ring
 
 theorem momentTerm_integrable {s : ℝ} (hs : 1 < s) (e n : ℕ) :
     IntegrableOn (momentTerm s e n) (Ioi 0) := by
@@ -87,6 +86,7 @@ theorem summable_integral_norm_momentTerm {s : ℝ} (hs : 1 < s) (e : ℕ) :
     rw [← integral_momentTerm hs]
     apply setIntegral_congr_fun measurableSet_Ioi
     intro y hy
+    have hy0 : 0 < y := hy
     apply _root_.Real.norm_of_nonneg
     unfold momentTerm
     positivity

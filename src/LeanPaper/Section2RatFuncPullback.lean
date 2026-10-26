@@ -13,6 +13,12 @@ open Section2TauRepresentation Section2TauLinear Zetahyperbolic
 
 def substitutionPolynomial : ℚ[X] →ₐ[ℚ] ℚ[X] := aeval (-X^2 : ℚ[X])
 
+theorem substitutionPolynomial_apply (q : ℚ[X]) :
+    substitutionPolynomial q = q.comp (-X^2) := rfl
+
+theorem scalar_cast (a : ℚ) : (algebraMap ℚ (RatFunc ℚ)) a = (a : RatFunc ℚ) :=
+  map_ratCast (algebraMap ℚ (RatFunc ℚ)) a
+
 theorem substitutionPolynomial_preserves_nonzero :
     (ℚ[X])⁰ ≤ ((ℚ[X])⁰).comap substitutionPolynomial := by
   intro q hq
@@ -33,7 +39,7 @@ theorem substitution_polynomial (q : ℚ[X]) :
       algebraMap ℚ[X] (RatFunc ℚ) (q.comp (-X^2)) := by
   change RatFunc.map substitutionPolynomial substitutionPolynomial_preserves_nonzero
     (algebraMap ℚ[X] (RatFunc ℚ) q) = _
-  simpa only [map_one, div_one] using
+  simpa only [map_one, div_one, substitutionPolynomial_apply] using
     RatFunc.map_apply_div substitutionPolynomial substitutionPolynomial_preserves_nonzero q 1
 
 def polePolynomial (k : ℕ) (a : ℚ) : ℚ[X] :=
@@ -67,7 +73,10 @@ theorem polePolynomial_eq_geometric (k : ℕ) (a : ℚ) :
   rw [Finset.mul_sum, ← Finset.sum_neg_distrib]
   apply Finset.sum_congr rfl
   intro e he
-  simp only [← C_mul_X_pow_eq_monomial, Polynomial.C_pow, pow_mul, pow_succ]
+  have hc : C (a^(2*(k-1-e))) = ((C a)^2)^(k-1-e) := by
+    rw [Polynomial.C_pow, pow_mul]
+  rw [← C_mul_X_pow_eq_monomial, hc]
+  simp only [pow_mul, pow_succ]
   ring
 
 theorem pole_division_identity {K : Type*} [Field K] [CharZero K]
@@ -122,19 +131,19 @@ theorem pulledPole_coe (k j : ℕ) :
   simp only [pulledPole, Submodule.coe_sub, Submodule.coe_smul, Submodule.coe_add,
     polynomial, pole, polePolynomial_eq_geometric]
   simp only [map_mul, map_neg, map_sum, map_pow, RatFunc.algebraMap_X,
-    RatFunc.algebraMap_C, map_sub, Int.cast_natCast, Int.cast_neg, sub_neg_eq_add]
-  simp only [Algebra.smul_def, map_ratCast, Rat.cast_neg, Rat.cast_div,
+    RatFunc.algebraMap_C, map_sub, map_add, Int.cast_natCast, Int.cast_neg, sub_neg_eq_add]
+  simp only [Algebra.smul_def, scalar_cast, Rat.cast_neg, Rat.cast_div,
     Rat.cast_pow, Rat.cast_ofNat, Rat.cast_natCast]
-  have hC (a : ℚ) : RatFunc.C a = (a : RatFunc ℚ) := map_ratCast RatFunc.C a
-  simp only [hC]
-  ring
+  have hC (a : ℚ) : RatFunc.C a = (a : RatFunc ℚ) := map_ratCast (RatFunc.C (K := ℚ)) a
+  simp only [hC, Rat.cast_neg, Rat.cast_div, Rat.cast_pow, Rat.cast_ofNat, Rat.cast_natCast]
 
 def pulledPolynomial (k : ℕ) (p : ℚ[X]) : ℚ[X] := X^(2*k+1) * p.comp (-X^2)
 
 theorem pulledPolynomial_monomial (k e : ℕ) (c : ℚ) :
     pulledPolynomial k (monomial e c) = monomial (2*e+2*k+1) (c * (-1:ℚ)^e) := by
-  simp only [pulledPolynomial, monomial_eq_C_mul_X, mul_comp, C_comp, pow_comp,
-    X_comp, map_mul, map_pow, map_neg, map_one, neg_pow, ← pow_mul]
+  unfold pulledPolynomial
+  rw [monomial_comp, ← C_mul_X_pow_eq_monomial, neg_pow]
+  simp only [map_mul, map_pow, map_neg, map_one, ← pow_mul]
   rw [show 2*e+2*k+1 = (2*k+1)+2*e by omega, pow_add]
   ring
 
@@ -174,11 +183,11 @@ theorem pullbackForm_coe (k : ℕ) (R : RatMomentElem) :
   congr 1
   apply Finset.sum_congr rfl
   intro j hj
-  simp only [Algebra.smul_def, pulledPole_coe, sub_comp, X_comp, C_comp,
-    map_sub, map_neg, map_pow, RatFunc.algebraMap_X, RatFunc.algebraMap_C,
+  simp only [Algebra.smul_def, pulledPole_coe, sub_comp, add_comp, pow_comp, X_comp, C_comp,
+    map_sub, map_add, map_neg, map_pow, RatFunc.algebraMap_X, RatFunc.algebraMap_C,
     sub_neg_eq_add]
-  have hC (a : ℚ) : RatFunc.C a = (a : RatFunc ℚ) := map_ratCast RatFunc.C a
-  simp only [hC, map_ratCast, Rat.cast_natCast]
+  have hC (a : ℚ) : RatFunc.C a = (a : RatFunc ℚ) := map_ratCast (RatFunc.C (K := ℚ)) a
+  simp only [hC, scalar_cast, Rat.cast_natCast]
   ring
 
 /-- The actual domain pullback chooses a presentation only to construct its

@@ -1,4 +1,5 @@
 import MAIN_CHAIN_ASSEMBLED
+import LeanPaper.OperatorNormDisk
 import Mathlib.Tactic
 
 /-! # Corollary 3.5: a counterexample from the actual manuscript family
@@ -11,12 +12,17 @@ counterexample, not merely an arbitrary symmetric-matrix diagnostic.
 The corrected rank-one ratio is (1/G)/(1+(X-zeta(3))*a1).
 -/
 noncomputable section
-open scoped BigOperators
+open scoped BigOperators MatrixOrder
 open Polynomial
 namespace LeanPaper.JFractionActualObstruction
+set_option backward.isDefEq.respectTransparency false
 open ManuscriptChain
 
-def parameters : Real.Parameters := ⟨1, 1, 1, 2⟩
+abbrev parameters : Real.Parameters := ⟨1, 1, 1, 2⟩
+local instance : NeZero parameters.h := ⟨by norm_num [parameters, Real.Parameters.h]⟩
+local instance : Unique (Fin parameters.h) := by
+  change Unique (Fin 1)
+  infer_instance
 theorem admissible : Real.Admissible parameters := by
   constructor <;> norm_num [parameters]
 
@@ -51,7 +57,32 @@ lemma actual_determinant_center : Real.evalQ (Real.delta parameters) center = ba
 theorem normalized_pencil (x : ℝ) :
     Real.evalQ (Real.delta parameters) x = base * (1+(x-center)*a1) := by
   rw [actual_determinant, a1]
-  field_simp [ne_of_gt base_pos]
+  field_simp [ne_of_gt base_pos] <;> ring
+
+/-- In order one the normalized coefficient is literally the manuscript's
+positive-square-root normalized matrix entry. -/
+theorem a1_eq_whitened_entry :
+    a1 = (OperatorNormDisk.whitened (Real.manuscriptPencil parameters)) 0 0 := by
+  have hdefault : (default : Fin parameters.h) = 0 := Subsingleton.elim _ _
+  let S : Matrix (Fin parameters.h) (Fin parameters.h) ℝ := CFC.sqrt (Real.gram parameters center)
+  have hs : S*S = Real.gram parameters center := by
+    simpa only [S, sq] using CFC.sq_sqrt (Real.gram parameters center)
+      (GRAM_POSITIVE parameters admissible).posSemidef.nonneg
+  have h00 : S 0 0 * S 0 0 = base := by
+    have h := congrArg (fun M : Matrix (Fin 1) (Fin 1) ℝ => M 0 0) hs
+    simpa only [Matrix.mul_apply, Finset.univ_unique, Finset.sum_singleton, hdefault, base] using h
+  have hne : S 0 0 ≠ 0 := by
+    intro hz
+    rw [hz, zero_mul] at h00
+    exact (ne_of_gt base_pos) h00.symm
+  have hi : S⁻¹ 0 0 = (S 0 0)⁻¹ := by
+    rw [Matrix.inv_subsingleton]
+    simp only [Matrix.det_unique, Matrix.diagonal_apply_eq, Ring.inverse_eq_inv']
+  change slope / base = (S⁻¹ * Real.derivativeMatrix parameters * S⁻¹) 0 0
+  simp only [Matrix.mul_apply, Finset.univ_unique, Finset.sum_singleton, hdefault]
+  rw [hi, ← h00]
+  change slope / (S 0 0 * S 0 0) = (S 0 0)⁻¹ * slope * (S 0 0)⁻¹
+  field_simp [hne] <;> ring
 
 theorem normalized_slope_negative : a1 < 0 := by
   unfold a1

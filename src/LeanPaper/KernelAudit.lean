@@ -140,6 +140,7 @@ import LeanPaper.ImportedSection56.DualSOS
 import LeanPaper.ImportedSection56.DualStrictDiscriminant
 import LeanPaper.ImportedSection56.DualWeightInvariance
 import LeanPaper.ImportedSection56.FiniteKreinCone
+import Zeta5Merge.Theorem6_16
 import LeanPaper.ImportedSection56.PositiveSlopeSpectrum
 import LeanPaper.ImportedSection56.ZetaSevenBound
 import LeanPaper.ImportedSection3.ExactTaylor
@@ -163,10 +164,80 @@ import LeanPaper.ReciprocalSecondMoment
 import LeanPaper.Section2RepresentationIndependence
 import LeanPaper.Section2TauRepresentation
 import LeanPaper.Section2RationalDomains
+import LeanPaper.StrictCenteredLaguerre
+import LeanPaper.PoleWeightSigns
+import LeanPaper.SlopeIndefinite
+import LeanPaper.ActualStrictCenter
+import LeanPaper.ConsecutiveDerivativeZeros
+import LeanPaper.DerivativeDistinctRoots
+import LeanPaper.StrictLaguerreGeneral
+import LeanPaper.StrictNormalizedNewton
+import LeanPaper.ActualStrictNewton
+import LeanPaper.BetaHarmonicIndexObstruction
+import LeanPaper.BetaOneMoments
+import LeanPaper.BeukersDenominator
+import LeanPaper.CentralFactorialSecant
+import LeanPaper.CentralFactorialDecay
+import LeanPaper.ContinuousDensityNormalization
+import LeanPaper.ContinuousWeightMoments
+import LeanPaper.ContinuousGram
+import LeanPaper.RationalLogJets
+import LeanPaper.ReciprocalAllOrders
+import LeanPaper.CorrectedReciprocalCorollary
+import LeanPaper.DodgsonCondensation
+import LeanPaper.DyadicQuotientThreshold
+import LeanPaper.CoefficientGramGrowth
+import LeanPaper.ExternalPi.ETranscendental
+import LeanPaper.ExternalPi.HermiteLindemann
+import LeanPaper.ExternalPi.PiLindemann
+import LeanPaper.ExternalPi.MonicRootSums
+import LeanPaper.ExternalPi.SubsetSumEsymm
+import LeanPaper.ExternalPi.PiTranscendental
+import LeanPaper.JFractionActualObstruction
+import LeanPaper.KreinDimensionObstruction
+import LeanPaper.OddPiPowers
+import LeanPaper.OddBetaValues
+import LeanPaper.Section2PoleLinearSpace
+import LeanPaper.Section2TauLinear
+import LeanPaper.Section2RatFuncTranslation
+import LeanPaper.Section2DifferenceDerivative
+import LeanPaper.Section2FunctionalBasis
+import LeanPaper.Section2LagrangeFunctional
+import LeanPaper.Section2RatFuncPullback
+import LeanPaper.Section2MuLinear
+import LeanPaper.Section2RatFuncReflection
+import LeanPaper.Section4Resultant
+import LeanPaper.Section4ConjugateBounds
+import LeanPaper.Section4IndexSelection
+import LeanPaper.Section4AlgebraicBudget
+import LeanPaper.Section4ComplexComparison
+import LeanPaper.Section4AlgebraicTransfer
+import LeanPaper.Section4AlgebraicLimsup
+import LeanPaper.Section4AlgebraicLattice
+import LeanPaper.Section4EffectiveBudget
+import LeanPaper.Section4TransferComplete
+import LeanPaper.SlopeSignature
+import LeanPaper.SymmetricPoleSpectrum
+import LeanPaper.UnitLogMoments
+import Zeta5.HermiteBasisCore
+import Zeta5Merge.Theorem6_17
+import LeanPaper.SignatureRestriction
+import LeanPaper.Section3MonicOrthogonal
+import LeanPaper.MatrixCurveJacobi
+import LeanPaper.BeukersMomentSeries
+import LeanPaper.BeukersOffDiagonalActual
+import LeanPaper.BeukersDensityActual
+import LeanPaper.BeukersRationalityActual
+import LeanPaper.BeukersKreinMonomialActual
+import LeanPaper.BeukersKreinPolynomialActual
+import LeanPaper.ShiftedSolidMinors
+import LeanPaper.BeukersOffDiagonalKernel
+import LeanPaper.Section4AlgebraicHeight
+import LeanPaper.Section5RationalIndependence
 import Lean
 
 /-! Independent transitive axiom audit of every active imported project declaration.
-Compilation certifies the exact statements; full manuscript correspondence is tracked separately. -/
+Manuscript correspondence is certified separately. -/
 set_option maxHeartbeats 0
 set_option maxRecDepth 100000
 open Lean
@@ -530,6 +601,53 @@ open Lean
 #check LeanPaper.Section2TauRepresentation.differenceCorrection_eq_moment
 #check LeanPaper.Section2TauRepresentation.differenceCorrection_representation_independent
 #check LeanPaper.Section2TauRepresentation.translatedMoment_representation_independent
+#check LeanPaper.ReciprocalAllOrders.actual_inverseGapSum_rational
+#check LeanPaper.ReciprocalAllOrders.actual_iterated_log
+#check LeanPaper.ReciprocalAllOrders.primitive_iterated_log
+#check LeanPaper.StrictCenteredLaguerre.dispersion_eq_zero_iff
+#check LeanPaper.StrictCenteredLaguerre.actual_laguerre_dispersion
+#check LeanPaper.StrictCenteredLaguerre.actual_laguerre_strict_of_distinct_roots
+#check LeanPaper.ActualStrictCenter.theorem_3_7_strict_center
+#check LeanPaper.Section4ComplexComparison.polynomial_comparison
+#check LeanPaper.Section4ComplexComparison.integer_comparison
+#check LeanPaper.Section4AlgebraicBudget.eventually_conjugate_budget
+#check LeanPaper.Section4TransferComplete.spectral_transfer_lattice
+#check LeanPaper.Section4TransferComplete.spectral_transfer_real_exponent
+#check LeanPaper.SymmetricPoleSpectrum.actual_symmetric_charpoly_eq_pole
+#check LeanPaper.JFractionActualObstruction.printed_fraction_fails_at_center
+#check LeanPaper.JFractionActualObstruction.corrected_rank_one_fraction
+#check LeanPaper.Section4AlgebraicLimsup.algebraic_transfer_limsup
+#check LeanPaper.ActualStrictNewton.actual_coefficient_strict_criterion
+#check LeanPaper.ActualStrictNewton.actual_centered_newton_strict
+#check LeanPaper.SlopeIndefinite.derivative_indefinite
+#check LeanPaper.Section4Resultant.integer_resultant_product
+#check LeanPaper.Section4Resultant.irreducible_conjugate_product_one_le
+#check LeanPaper.Section4Resultant.integer_mahler_bound
+#check LeanPaper.Section4Resultant.primitive_conjugate_product_one_le_in_norm_disk
+#check LeanPaper.Section4EffectiveBudget.explicit_budgets
+#check LeanPaper.Section4EffectiveBudget.effective_spectral_measure
+#check LeanPaper.Section4AlgebraicTransfer.algebraic_transfer_rates
+#check LeanPaper.DerivativeDistinctRoots.derivative_hasDistinctRoots
+#check LeanPaper.DerivativeDistinctRoots.iterated_derivative_hasDistinctRoots
+#check LeanPaper.StrictLaguerreGeneral.laguerre_strict_of_distinct_roots
+#check LeanPaper.Section4ConjugateBounds.algebraic_approximation_barrier
+#check LeanPaper.Section4ConjugateBounds.polynomial_eval_height_bound
+#check LeanPaper.Section4ConjugateBounds.resultant_upper_bound
+#check LeanPaper.CorrectedReciprocalCorollary.corrected_corollary_3_6
+#check LeanPaper.PoleWeightSigns.poleWeight_sign
+#check LeanPaper.Section4IndexSelection.exists_indexBudget_of_rates
+#check LeanPaper.Section4IndexSelection.measure_of_rates
+#check LeanPaper.SlopeSignature.actual_normalized_signature
+#check LeanPaper.ConsecutiveDerivativeZeros.consecutive_taylor_nonvanishing
+#check LeanPaper.ConsecutiveDerivativeZeros.actual_centered_consecutive_nonvanishing
+#check LeanPaper.BetaOneMoments.zeroth_moment
+#check LeanPaper.BetaOneMoments.first_moment
+#check LeanPaper.BetaOneMoments.eta_at_one_needs_removable_value
+#check LeanPaper.DodgsonCondensation.at_minor_root
+#check LeanPaper.KreinDimensionObstruction.fixed_K_two_h_two_impossible
+#check LeanPaper.StrictNormalizedNewton.coefficient_newton_strict_criterion
+#check LeanPaper.StrictNormalizedNewton.normalized_shifted_newton_strict
+#check LeanPaper.RationalLogJets.iterated_log_rational
 run_cmd Elab.Command.liftCoreM do
   let env := (← getEnv).setExporting false
   let allowed : List Name := [``propext, ``Quot.sound, ``Classical.choice]
@@ -676,6 +794,7 @@ run_cmd Elab.Command.liftCoreM do
     `LeanPaper.ImportedSection56.DualStrictDiscriminant,
     `LeanPaper.ImportedSection56.DualWeightInvariance,
     `LeanPaper.ImportedSection56.FiniteKreinCone,
+    `Zeta5Merge.Theorem6_16,
     `LeanPaper.ImportedSection56.PositiveSlopeSpectrum,
     `LeanPaper.ImportedSection56.ZetaSevenBound,
     `LeanPaper.ImportedSection3.ExactTaylor,
@@ -698,7 +817,77 @@ run_cmd Elab.Command.liftCoreM do
     `LeanPaper.ReciprocalSecondMoment,
     `LeanPaper.Section2RepresentationIndependence,
     `LeanPaper.Section2TauRepresentation,
-    `LeanPaper.Section2RationalDomains]
+    `LeanPaper.Section2RationalDomains,
+    `LeanPaper.StrictCenteredLaguerre,
+    `LeanPaper.PoleWeightSigns,
+    `LeanPaper.SlopeIndefinite,
+    `LeanPaper.ActualStrictCenter,
+    `LeanPaper.ConsecutiveDerivativeZeros,
+    `LeanPaper.DerivativeDistinctRoots,
+    `LeanPaper.StrictLaguerreGeneral,
+    `LeanPaper.StrictNormalizedNewton,
+    `LeanPaper.ActualStrictNewton,
+    `LeanPaper.BetaHarmonicIndexObstruction,
+    `LeanPaper.BetaOneMoments,
+    `LeanPaper.BeukersDenominator,
+    `LeanPaper.CentralFactorialSecant,
+    `LeanPaper.CentralFactorialDecay,
+    `LeanPaper.ContinuousDensityNormalization,
+    `LeanPaper.ContinuousWeightMoments,
+    `LeanPaper.ContinuousGram,
+    `LeanPaper.RationalLogJets,
+    `LeanPaper.ReciprocalAllOrders,
+    `LeanPaper.CorrectedReciprocalCorollary,
+    `LeanPaper.DodgsonCondensation,
+    `LeanPaper.DyadicQuotientThreshold,
+    `LeanPaper.CoefficientGramGrowth,
+    `LeanPaper.ExternalPi.ETranscendental,
+    `LeanPaper.ExternalPi.HermiteLindemann,
+    `LeanPaper.ExternalPi.PiLindemann,
+    `LeanPaper.ExternalPi.MonicRootSums,
+    `LeanPaper.ExternalPi.SubsetSumEsymm,
+    `LeanPaper.ExternalPi.PiTranscendental,
+    `LeanPaper.JFractionActualObstruction,
+    `LeanPaper.KreinDimensionObstruction,
+    `LeanPaper.OddPiPowers,
+    `LeanPaper.OddBetaValues,
+    `LeanPaper.Section2PoleLinearSpace,
+    `LeanPaper.Section2TauLinear,
+    `LeanPaper.Section2RatFuncTranslation,
+    `LeanPaper.Section2DifferenceDerivative,
+    `LeanPaper.Section2FunctionalBasis,
+    `LeanPaper.Section2LagrangeFunctional,
+    `LeanPaper.Section2RatFuncPullback,
+    `LeanPaper.Section2MuLinear,
+    `LeanPaper.Section2RatFuncReflection,
+    `LeanPaper.Section4Resultant,
+    `LeanPaper.Section4ConjugateBounds,
+    `LeanPaper.Section4IndexSelection,
+    `LeanPaper.Section4AlgebraicBudget,
+    `LeanPaper.Section4ComplexComparison,
+    `LeanPaper.Section4AlgebraicTransfer,
+    `LeanPaper.Section4AlgebraicLimsup,
+    `LeanPaper.Section4AlgebraicLattice,
+    `LeanPaper.Section4EffectiveBudget,
+    `LeanPaper.Section4TransferComplete,
+    `LeanPaper.SlopeSignature,
+    `LeanPaper.SymmetricPoleSpectrum,
+    `LeanPaper.UnitLogMoments,
+    `Zeta5.HermiteBasisCore,
+    `Zeta5Merge.Theorem6_17,
+    `LeanPaper.SignatureRestriction,
+    `LeanPaper.Section3MonicOrthogonal,
+    `LeanPaper.MatrixCurveJacobi,
+    `LeanPaper.BeukersMomentSeries,
+    `LeanPaper.BeukersOffDiagonalActual,
+    `LeanPaper.BeukersDensityActual,
+    `LeanPaper.BeukersRationalityActual,
+    `LeanPaper.BeukersKreinMonomialActual,
+    `LeanPaper.BeukersKreinPolynomialActual,
+    `LeanPaper.ShiftedSolidMinors,
+    `LeanPaper.BeukersOffDiagonalKernel,
+    `LeanPaper.Section4AlgebraicHeight,
+    `LeanPaper.Section5RationalIndependence]
   let mut roots : Array Name := #[]
   for (decl, _) in env.constants do
     if let some idx := env.getModuleIdxFor? decl then

@@ -3,8 +3,8 @@
   "lean_version": "Lean (version 4.33.0, x86_64-unknown-linux-gnu, commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)",
   "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d",
   "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
-  "total": 166,
-  "passed": 166,
+  "total": 219,
+  "passed": 219,
   "failed": [],
   "blocked": [],
   "axiom_audit_accepted": true,
@@ -3506,13 +3506,1110 @@
       "log_sha256": "af88f451a383a7c3fe286dd9470e059c6e41dbc3e8d5b5b05341cfbe36685def"
     },
     {
+      "module": "LeanPaper.StrictCenteredLaguerre",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 4.669,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "736079bdb2ef32d40e1215b1dfd7ab8a6368e80c7e6cd0d4e3bc461791c18e46",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.NormalizedNewton": {
+            "LeanPaper/NormalizedNewton.olean": "692ada4ab9ac4e438d8bd89d6aea8b66c538808785bdfaa241480b8ef32453cb"
+          },
+          "LeanPaper.ReciprocalSecondMoment": {
+            "LeanPaper/ReciprocalSecondMoment.olean": "85483a8c8a831e7308aa75ec514e83dbd2ffa10a4b892b96fac6b70e1e42fbb0"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/StrictCenteredLaguerre.olean": "130c13329a6f6962aadad1283beab1efe4b7c95110f9a970093887d6b5f9c1d3"
+      },
+      "log_sha256": "772165d9753718673d24fc46efc1f193690809b6d47a25aa2cb188e93a8ce2ee"
+    },
+    {
+      "module": "LeanPaper.PoleWeightSigns",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 5.672,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "b4a1a9491ae1dbd5e5e2b621826c615d92aed7203846296c08081237e3642b3e",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection3.RealExponent": {
+            "LeanPaper/ImportedSection3/RealExponent.olean": "cc7e09609ddc518142ffd5b033691702c5be1e949564ee03fe5ca4c5f6d8e6fe"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/PoleWeightSigns.olean": "2c3a98e13b808019cc3e1f0cd5afa1865066069c4a79d75398614f3c2458f5f2"
+      },
+      "log_sha256": "98cb03272b9ded75e55ac94c6ac9b058df7db0b711a3014d0890b55058f789ef"
+    },
+    {
+      "module": "LeanPaper.SlopeIndefinite",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 5.939,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "43ab8e4d1aea53d06273efac7f0ad8bfbbda336c26f8151a79b5ad57199ea2e5",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.PoleWeightSigns": {
+            "LeanPaper/PoleWeightSigns.olean": "2c3a98e13b808019cc3e1f0cd5afa1865066069c4a79d75398614f3c2458f5f2"
+          },
+          "LeanPaper.OperatorNormDisk": {
+            "LeanPaper/OperatorNormDisk.olean": "50daf04b90ae3310535b5935dfd2bd679e78e0438cc53c7394ea9da5fa657877"
+          },
+          "LeanPaper.ImportedSection3.ActualPoleKernel": {
+            "LeanPaper/ImportedSection3/ActualPoleKernel.olean": "d21f307ed53cb4bfb9f8b232ea0726c23d4622a43ed412a6b0a6a02ae46d8d12"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/SlopeIndefinite.olean": "2e51efe39424c72089d925ce2fdfae77a8c0aac58a4fd8b9d7659ae6409255fd"
+      },
+      "log_sha256": "70d3014b94f9634ac7a274492534be6ce353cb80d3027ba1a3ec72a95fa027e4"
+    },
+    {
+      "module": "LeanPaper.ActualStrictCenter",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 5.201,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "5ae8e38f31375454c899cdbf87f874c95315d089aa82d36008a7fac7cc4617d8",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.StrictCenteredLaguerre": {
+            "LeanPaper/StrictCenteredLaguerre.olean": "130c13329a6f6962aadad1283beab1efe4b7c95110f9a970093887d6b5f9c1d3"
+          },
+          "LeanPaper.SlopeIndefinite": {
+            "LeanPaper/SlopeIndefinite.olean": "2e51efe39424c72089d925ce2fdfae77a8c0aac58a4fd8b9d7659ae6409255fd"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ActualStrictCenter.olean": "b467f535fa6140ed84f1dc398f10dc707647e5d93793abde53782fa3e0e6a650"
+      },
+      "log_sha256": "e67e0f19e3bbb6e474214e0eedcc2589be90aeee155c1e35275b1f0f81cc65ae"
+    },
+    {
+      "module": "LeanPaper.ConsecutiveDerivativeZeros",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 22.801,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "6e9ca7d7c608322ae865716c06c6bed9cfb288c83ab980d62fffe117c3c854f4",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.NormalizedNewton": {
+            "LeanPaper/NormalizedNewton.olean": "692ada4ab9ac4e438d8bd89d6aea8b66c538808785bdfaa241480b8ef32453cb"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ConsecutiveDerivativeZeros.olean": "d2a9ccf7fbe1235d76cd42dac7fadbdb83723577734252fcb2c3e7f921930b12"
+      },
+      "log_sha256": "bd8026976606b8efa2a2535fb68d34afe05f9ceb8cfe2937c4bc5ac17ce0cb3a"
+    },
+    {
+      "module": "LeanPaper.DerivativeDistinctRoots",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 4.656,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "d53eccf811aba5a6c2281924b6340b26aaa1d7bf4ee5307ad25a2487ca612414",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ConsecutiveDerivativeZeros": {
+            "LeanPaper/ConsecutiveDerivativeZeros.olean": "d2a9ccf7fbe1235d76cd42dac7fadbdb83723577734252fcb2c3e7f921930b12"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/DerivativeDistinctRoots.olean": "c7a28893a3a980c6048cba007187b9ffddeda4dcc97be52fb1103ef332a110fa"
+      },
+      "log_sha256": "4a7bfe41f7b53d355ca08989c6b904f1e4ccf8fd26a3bd1c5ad1863398918d29"
+    },
+    {
+      "module": "LeanPaper.StrictLaguerreGeneral",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 5.448,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "bcbef9f06121c4b80c9b1aaf304ffaa43e32b995164acfa7a5260d245989534e",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.DerivativeDistinctRoots": {
+            "LeanPaper/DerivativeDistinctRoots.olean": "c7a28893a3a980c6048cba007187b9ffddeda4dcc97be52fb1103ef332a110fa"
+          },
+          "LeanPaper.StrictCenteredLaguerre": {
+            "LeanPaper/StrictCenteredLaguerre.olean": "130c13329a6f6962aadad1283beab1efe4b7c95110f9a970093887d6b5f9c1d3"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/StrictLaguerreGeneral.olean": "f32ac1a579ca11f33613f845935246a052fa19208110f346d28a539a2b236059"
+      },
+      "log_sha256": "50d84f455e80bdd41d37914f36074839d2b74f6c3d1c344d36070a6c622c0dcd"
+    },
+    {
+      "module": "LeanPaper.StrictNormalizedNewton",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 5.844,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "0e165d445530adf0205fa58ce7dccb2718d3ae1961264f80d752a7c8a5163f07",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.StrictLaguerreGeneral": {
+            "LeanPaper/StrictLaguerreGeneral.olean": "f32ac1a579ca11f33613f845935246a052fa19208110f346d28a539a2b236059"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/StrictNormalizedNewton.olean": "e0f1628fd9fc14cd6ef058663ea59ba198f6643a8e9477e9ccb4949d65762841"
+      },
+      "log_sha256": "96c2b36de58009dc98ea22881a8ab976096a1fe2d86b7cf924f075cd77815d27"
+    },
+    {
+      "module": "LeanPaper.ActualStrictNewton",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 4.696,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "b8bd04c3bb598b4e34ac95e46195a5ef311b3820d45c4599ca93620fe47f81bc",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ActualStrictCenter": {
+            "LeanPaper/ActualStrictCenter.olean": "b467f535fa6140ed84f1dc398f10dc707647e5d93793abde53782fa3e0e6a650"
+          },
+          "LeanPaper.StrictNormalizedNewton": {
+            "LeanPaper/StrictNormalizedNewton.olean": "e0f1628fd9fc14cd6ef058663ea59ba198f6643a8e9477e9ccb4949d65762841"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ActualStrictNewton.olean": "639ad9f9bda4b43b93704e8ded8ce38bb0550f4902fe31f5505ca455fe36b895"
+      },
+      "log_sha256": "e92593a67864c4f609b83bb34e257c3d1f26eebacb144acc18555e35a44401cd"
+    },
+    {
+      "module": "LeanPaper.BetaHarmonicIndexObstruction",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 2.913,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "2564887803186f8254e502dd7252d871d1b582584c57157213478cd549500950",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {}
+      },
+      "output_hashes": {
+        "LeanPaper/BetaHarmonicIndexObstruction.olean": "88b53e254de1c1f636deccb279b819905205b29a8b8ba5bc626c69ddac5e47b9"
+      },
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "LeanPaper.BetaOneMoments",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 2.344,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "90fed68dff29385067f81e7e884eee12363e7909caefd762c01e6e4a507f058b",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {}
+      },
+      "output_hashes": {
+        "LeanPaper/BetaOneMoments.olean": "f63b031234c25335477d8cd5040375127ffd53e103eb03adbf8e3a91adb08eb5"
+      },
+      "log_sha256": "342efb679abb564275042090bc0dff562bdc18f2d0ba3564f945cf9f2d933b74"
+    },
+    {
+      "module": "LeanPaper.BeukersDenominator",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 3.628,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "91262e6594c666469dfd8af450810d36c905b6ef9bead25ebc1b35b27ee2b800",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ImportedSection56.DualMoments": {
+            "LeanPaper/ImportedSection56/DualMoments.olean": "cb45dc0eae01c498c0dfaa7880af9f89478d8a1cc4deb6518614db8b153f4563"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/BeukersDenominator.olean": "df76d8bbad117568a325848b30511d9b68a421bd9e35ff2af36737df0662eecf"
+      },
+      "log_sha256": "1b54f4a148ab0c1e293531ff609ca9978b1e3653f1364e198092a619dded612f"
+    },
+    {
+      "module": "LeanPaper.CentralFactorialSecant",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 3.182,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "2eac1bdddb34f3cdbaba407d32135887735e04643020876837ca41558dbef3d3",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {}
+      },
+      "output_hashes": {
+        "LeanPaper/CentralFactorialSecant.olean": "36a72cd024ab36bedae5370800b623ff1e96454a4d6d95e254a9aa432e7a89f7"
+      },
+      "log_sha256": "b3b93857277aa8b73b93c177f39cb93b9573c071d739d2be89411d136c1408ce"
+    },
+    {
+      "module": "LeanPaper.CentralFactorialDecay",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 2.497,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "b4f66e6c2e2fca9694eff8b18a014ef79113a68137731e784d054966aaec429f",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.CentralFactorialSecant": {
+            "LeanPaper/CentralFactorialSecant.olean": "36a72cd024ab36bedae5370800b623ff1e96454a4d6d95e254a9aa432e7a89f7"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/CentralFactorialDecay.olean": "8cc2966a236b8b15f238c6b600af71cd24b79a0529b2f864b183d8cce1e0d02d"
+      },
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "LeanPaper.ContinuousDensityNormalization",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 136.033,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "e6dd4e8ec2f6eb49807fc977ff200fafe86c813a1ad9eca5e2c2be5cc75c2e4c",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.RebuildKernelBridge": {
+            "LeanPaper/RebuildKernelBridge.olean": "d78b96f5627188e7ea49d1c2069ef07f75e92889254321bfc9fbc0d7fbf3d07c"
+          },
+          "MAIN_CHAIN_ASSEMBLED": {
+            "MAIN_CHAIN_ASSEMBLED.olean": "0a253bac1e5ea3178716fe3cfc3542321ef9f18e6a33a80a25edc1dc03beefb2"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ContinuousDensityNormalization.olean": "fea414fdc5dbc6bafee5309fcd81f8ec329575c6ea266665f3ca92ae7fdf3cea"
+      },
+      "log_sha256": "8e4fdfc6090f68b5b83eb9ed06300b3aa9669af4aad83740d6ff05de0c5f7b6b"
+    },
+    {
+      "module": "LeanPaper.ContinuousWeightMoments",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 5.011,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "2fa78cda8966f8f365ac3e916aaad92f7aec8e18c8b5a8c5d3c23f80331e02ea",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ContinuousDensityNormalization": {
+            "LeanPaper/ContinuousDensityNormalization.olean": "fea414fdc5dbc6bafee5309fcd81f8ec329575c6ea266665f3ca92ae7fdf3cea"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ContinuousWeightMoments.olean": "94bf20cf3f72de08a556165f7de1a1030af46911fc613710829073b2ae6c7c4c"
+      },
+      "log_sha256": "a348ec9dc459d48dac3ecc844967404ef72055546e1eee6dda251c348940d236"
+    },
+    {
+      "module": "LeanPaper.ContinuousGram",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 5.339,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "a07f008d25d04523b1a0f9f0e5fee6a06b2884895b23159251de0ba962c2ded4",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ContinuousWeightMoments": {
+            "LeanPaper/ContinuousWeightMoments.olean": "94bf20cf3f72de08a556165f7de1a1030af46911fc613710829073b2ae6c7c4c"
+          },
+          "LeanPaper.ImportedSection3.ActualPoleKernel": {
+            "LeanPaper/ImportedSection3/ActualPoleKernel.olean": "d21f307ed53cb4bfb9f8b232ea0726c23d4622a43ed412a6b0a6a02ae46d8d12"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ContinuousGram.olean": "e198e65eb7e85d8d753db5e698b1958cc4c67685ff96ceb658e6e39de4a43089"
+      },
+      "log_sha256": "16f99272eb5688c0e8f737b2f7663f32785070704464c632a439e8f6ef8b525d"
+    },
+    {
+      "module": "LeanPaper.RationalLogJets",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 7.521,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "e774c3b0251dd564eb231b63437a875906712b068062c25714ed005933894f78",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ReciprocalLogDerivative": {
+            "LeanPaper/ReciprocalLogDerivative.olean": "9bcbad406966767d029da51fd448470adb57b1f8b94d9e9089d2ddbe1a07f546"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/RationalLogJets.olean": "5f0cbc89db7afc37fc50acac21881ec5f3c862a2de9c67e9ea77b6407d55295a"
+      },
+      "log_sha256": "88f39e57ae9fd860b5b87e3b2d68bce80c129e090a997c2719dbee1855e47ac2"
+    },
+    {
+      "module": "LeanPaper.ReciprocalAllOrders",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 17.578,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "01998d885a87c7d21d07c934204061285381f2ebc88204ee7ff64d19931d5883",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.RationalLogJets": {
+            "LeanPaper/RationalLogJets.olean": "5f0cbc89db7afc37fc50acac21881ec5f3c862a2de9c67e9ea77b6407d55295a"
+          },
+          "MAIN_CHAIN_IRRATIONALITY": {
+            "MAIN_CHAIN_IRRATIONALITY.olean": "a8002917d27085553718b8c746fd9ee3cfe4af56a04596363e6e5c3330eaba8f"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ReciprocalAllOrders.olean": "e0ff169eee7f1c6d96039e8afa23e9d5f7c8a2bd46efdfc97da81a06e19a2cbb"
+      },
+      "log_sha256": "5220328acf8e22241a36c44474b609f73ff74a108185d4449bd51640df7b1236"
+    },
+    {
+      "module": "LeanPaper.CorrectedReciprocalCorollary",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 26.09,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "eccc8f89eac79fcc9ad6794ea9e338387d1c5fbbb04494a4c95d7f7f5bd65fb1",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ReciprocalAllOrders": {
+            "LeanPaper/ReciprocalAllOrders.olean": "e0ff169eee7f1c6d96039e8afa23e9d5f7c8a2bd46efdfc97da81a06e19a2cbb"
+          },
+          "LeanPaper.ReciprocalNearestRootLimit": {
+            "LeanPaper/ReciprocalNearestRootLimit.olean": "d877c4ff5986e55bb23cdef3fd4af930bd79273ee43ccbeef791108864e12f8c"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/CorrectedReciprocalCorollary.olean": "bd6afd83378d143381005f0468717fe0303303354ac799260a21eb23235664ee"
+      },
+      "log_sha256": "d1f387fe0b858417ea2ba3fc986dae5a2ba2336f43a58f1b3a7eda936a4ba6cf"
+    },
+    {
+      "module": "LeanPaper.DodgsonCondensation",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 5.574,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "b26a58f53331c7ec13e6dd6e5103392def87584c85de00d23c5b95c785adeb6b",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.PrincipalMinorRealRoots": {
+            "LeanPaper/PrincipalMinorRealRoots.olean": "9cb7982c61e8f76df9b9a806848949beede454a3295a466bb1fb1998fd4370d6"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/DodgsonCondensation.olean": "3e4ee362a626209d7b9b681e33da16f4ebbf6a3cee2c0b276b8d3c784acaad8d"
+      },
+      "log_sha256": "c1c3a678680c926b635b6c65b4ad10e6ac65fe8a7588d5c2184c6dda9f29df5c"
+    },
+    {
+      "module": "LeanPaper.DyadicQuotientThreshold",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 2.674,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "675d3f4108f09e02f2047c30f06368e257af785e0ab3db915e681f3feaac2430",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "Definition_2_1_Order_s_Rational_Moment_Functional": {
+            "Definition_2_1_Order_s_Rational_Moment_Functional.olean": "34a1976fdc0192b645f954ed1dc03a2b523c09a51b53c017c7286f6c074de6a3"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/DyadicQuotientThreshold.olean": "af6129ae6079fe490995fa3fc4d870cf176a6599a02e2dbb79b23b728e3c8e6b"
+      },
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "LeanPaper.ExternalPi.ETranscendental",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 3.448,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "9a629261092c708e8dc2cd40470152a1d0ec407bbe8feba1687c0d0f69a8060b",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {}
+      },
+      "output_hashes": {
+        "LeanPaper/ExternalPi/ETranscendental.olean": "5e3d8e7de517bf1675c8186fd4b9999bc41afffa1b8a2ea9e20c3d5a3894c4e3"
+      },
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "LeanPaper.ExternalPi.HermiteLindemann",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 1.824,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "a14f3c4259df80783abfd4303ffdf8a4e399e69089da1fe9e1d24eec538bbf32",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {}
+      },
+      "output_hashes": {
+        "LeanPaper/ExternalPi/HermiteLindemann.olean": "069e7a20d03c351cbe917769c8590f7a89efc226c5a1e7b52f26d7aca4948f24"
+      },
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "LeanPaper.ExternalPi.PiLindemann",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 3.491,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "9ed5dc448a47d79345b74516f0cb1c1ecd1d4c30d27de3b43e5d0375b603eee8",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ExternalPi.ETranscendental": {
+            "LeanPaper/ExternalPi/ETranscendental.olean": "5e3d8e7de517bf1675c8186fd4b9999bc41afffa1b8a2ea9e20c3d5a3894c4e3"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ExternalPi/PiLindemann.olean": "88a5e60022f890333fc30b06a38bddf65e09d564542791d69911fe3c434be145"
+      },
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "LeanPaper.ExternalPi.MonicRootSums",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 26.557,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "a68ad55d04622eec471cf95c5fcdd9e93a8657fa10983bf76ecaaeece718d25a",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ExternalPi.PiLindemann": {
+            "LeanPaper/ExternalPi/PiLindemann.olean": "88a5e60022f890333fc30b06a38bddf65e09d564542791d69911fe3c434be145"
+          },
+          "LeanPaper.ExternalPi.HermiteLindemann": {
+            "LeanPaper/ExternalPi/HermiteLindemann.olean": "069e7a20d03c351cbe917769c8590f7a89efc226c5a1e7b52f26d7aca4948f24"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ExternalPi/MonicRootSums.olean": "243fb2e605f2377347a04819c936ada46b75403840799e2f87f2c09a11e4e5f6"
+      },
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "LeanPaper.ExternalPi.SubsetSumEsymm",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 7.668,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "3084d5fd3b491452da871b43e7980c15ee83ecdf972117f7bbfe4003b2106f0d",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {}
+      },
+      "output_hashes": {
+        "LeanPaper/ExternalPi/SubsetSumEsymm.olean": "975dccbc31f5babc168429c6480c150226cbec14722cc4d9d425e05bcf051627"
+      },
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "LeanPaper.ExternalPi.PiTranscendental",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 4.285,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "e46ced19b2be3e8c1ab51d451eaf91735378f7f15309f593305df1b469079144",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ExternalPi.MonicRootSums": {
+            "LeanPaper/ExternalPi/MonicRootSums.olean": "243fb2e605f2377347a04819c936ada46b75403840799e2f87f2c09a11e4e5f6"
+          },
+          "LeanPaper.ExternalPi.SubsetSumEsymm": {
+            "LeanPaper/ExternalPi/SubsetSumEsymm.olean": "975dccbc31f5babc168429c6480c150226cbec14722cc4d9d425e05bcf051627"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/ExternalPi/PiTranscendental.olean": "77eff36789c30567b23865183589f37f4746c28df6f812c68ecc67b3b2ff7abd"
+      },
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "LeanPaper.JFractionActualObstruction",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 5.292,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "f4becf089c4a529dea579bf2a684093cfededf9c317a06aff424bf9c0a722784",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "MAIN_CHAIN_ASSEMBLED": {
+            "MAIN_CHAIN_ASSEMBLED.olean": "0a253bac1e5ea3178716fe3cfc3542321ef9f18e6a33a80a25edc1dc03beefb2"
+          },
+          "LeanPaper.OperatorNormDisk": {
+            "LeanPaper/OperatorNormDisk.olean": "50daf04b90ae3310535b5935dfd2bd679e78e0438cc53c7394ea9da5fa657877"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/JFractionActualObstruction.olean": "134e206e9cc64632626705586ee92ced17cd32800735b253ec42af7a5eeaede1"
+      },
+      "log_sha256": "9b120f2e2158dfb586ee220af09a575bf95a023786e222a9ed1ca01168e150fb"
+    },
+    {
+      "module": "LeanPaper.KreinDimensionObstruction",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 1.485,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "cf49244cd899047929403af96cfa208b0f351225d11bf2924e41ac35552e237a",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {}
+      },
+      "output_hashes": {
+        "LeanPaper/KreinDimensionObstruction.olean": "961e9bbefe8b62d94c72c511284f08297cbc531f4a5e2611eb98a21e3edebc97"
+      },
+      "log_sha256": "f36a89868b18464e5211427fd90f3811d5625e34f4301fb43baab1ac1509c514"
+    },
+    {
+      "module": "LeanPaper.OddPiPowers",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 5.047,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "287dcd698239c864178f01bb7870866f4591ce97a94e212193dfc4caf28cd129",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.ExternalPi.PiTranscendental": {
+            "LeanPaper/ExternalPi/PiTranscendental.olean": "77eff36789c30567b23865183589f37f4746c28df6f812c68ecc67b3b2ff7abd"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/OddPiPowers.olean": "8033d57f366e6f93f37d881ee753294ccb01cbfecd2f2fcf818767fd8e711956"
+      },
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "LeanPaper.OddBetaValues",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 5.126,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "d6213447f53872b67d4cdc7c0967141880667aa8384cf369745a32b85b3dd8bb",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.OddPiPowers": {
+            "LeanPaper/OddPiPowers.olean": "8033d57f366e6f93f37d881ee753294ccb01cbfecd2f2fcf818767fd8e711956"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/OddBetaValues.olean": "0eb601e19bfa1a845329ce3ac943b7d4fd9ff1f888550b46f72582325bc0229a"
+      },
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "LeanPaper.Section2PoleLinearSpace",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 4.632,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "46676f0c2aa3264623a86728f15f48c9559e4a0b05abf77b155dcc998423f4a9",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.Section2RationalDomains": {
+            "LeanPaper/Section2RationalDomains.olean": "4599b3edb4904059c7f85749ff6ed3e831f40f4720f5cf301306f5790cbed996"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/Section2PoleLinearSpace.olean": "3c633be8dc7d8c012f5225617ef063b3b5b2f82707039c6ccd5276d160f47d50"
+      },
+      "log_sha256": "e8a1a6283af46eb098be7f0290410e1b00002676692856f1298c424e4c4888ab"
+    },
+    {
+      "module": "LeanPaper.Section2TauLinear",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 6.32,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "6907a64d9f38ab0b75a9b7b2fa431924c0cf42558d39b8b560a4de2d111b1c63",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.Section2PoleLinearSpace": {
+            "LeanPaper/Section2PoleLinearSpace.olean": "3c633be8dc7d8c012f5225617ef063b3b5b2f82707039c6ccd5276d160f47d50"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/Section2TauLinear.olean": "e51477be1482ae747aadec94b44b3c24740aa8727a242a1d985681feb8233788"
+      },
+      "log_sha256": "3dbfd4333014f3b6514ad23059cc0d361296546eee030b990021364d81777020"
+    },
+    {
+      "module": "LeanPaper.Section2RatFuncTranslation",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 6.666,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "83c043d85190e8477c387d3f2bc664663689b7b02e130b3779cad0cfac923b46",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.Section2TauLinear": {
+            "LeanPaper/Section2TauLinear.olean": "e51477be1482ae747aadec94b44b3c24740aa8727a242a1d985681feb8233788"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/Section2RatFuncTranslation.olean": "b7ac2d129ff4cffc7a694c7b557d541b057267c397e2d6931fd22322b96d9b6f"
+      },
+      "log_sha256": "fa6780ed6bf094811b76660a39b3ed79704f96c16dae7bae1abffc0eb60cabad"
+    },
+    {
+      "module": "LeanPaper.Section2DifferenceDerivative",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 4.818,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "2ac32f397598873cf9a99bde8aef4352d00675d5ea85b084af8a7b1944a2ca8b",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.Section2RatFuncTranslation": {
+            "LeanPaper/Section2RatFuncTranslation.olean": "b7ac2d129ff4cffc7a694c7b557d541b057267c397e2d6931fd22322b96d9b6f"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/Section2DifferenceDerivative.olean": "1ac5e9b0fa40dc5674e7694304e6e53740e608dd2fe3c4bf4e5accb871eeb8c0"
+      },
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "LeanPaper.Section2FunctionalBasis",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 4.414,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "201a57a0168552b25f6a0c587087cd0b6b343ef43ddca40433c7907bcb723646",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "Theorem_2_4_Canonical_Basis_Invariance": {
+            "Theorem_2_4_Canonical_Basis_Invariance.olean": "04b288a4852f07da746e15b65a73995fa5163540ec91838d6845b68c81f335aa"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/Section2FunctionalBasis.olean": "3499e312a9076c961a6159c3878b422c6fb67b3103821a25b0efc74c24561f4c"
+      },
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "LeanPaper.Section2LagrangeFunctional",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 7.542,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "4c3af58787ab3e37118a3d61b9c41654e1bdfbe2ed109bb8c49148665324c139",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.Section2PoleLinearSpace": {
+            "LeanPaper/Section2PoleLinearSpace.olean": "3c633be8dc7d8c012f5225617ef063b3b5b2f82707039c6ccd5276d160f47d50"
+          },
+          "LeanPaper.Section2FunctionalBasis": {
+            "LeanPaper/Section2FunctionalBasis.olean": "3499e312a9076c961a6159c3878b422c6fb67b3103821a25b0efc74c24561f4c"
+          },
+          "Zetahyperbolic.ManuscriptCompatibility": {
+            "Zetahyperbolic/ManuscriptCompatibility.olean": "d3364a6f2f4f9bb0c6b18b9223dae4ef1a27b98d038123870736e9248c7fc97e"
+          },
+          "LeanPaper.Rebuild.PartialFractionsResidues": {
+            "LeanPaper/Rebuild/PartialFractionsResidues.olean": "304ac5725a10d08a070bb1a884893287eb9c825a6248827559e9343cbc119938"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/Section2LagrangeFunctional.olean": "4d1ef3948ca7384f709cc2718dc747b3738c5f46483b30fa730c35be3736d716"
+      },
+      "log_sha256": "c0d099d3f3f223c175c9385a5c8994680553807d0fc7c4eeee885687a38e11bb"
+    },
+    {
+      "module": "LeanPaper.Section2RatFuncPullback",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 6.275,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "ed895809f4ec6125919ce13d5f1f8136a3b576e036bcbc9f0f6a4603b556aa04",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.Section2TauLinear": {
+            "LeanPaper/Section2TauLinear.olean": "e51477be1482ae747aadec94b44b3c24740aa8727a242a1d985681feb8233788"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/Section2RatFuncPullback.olean": "62a0b0f5403855069a1b99b00a6120d031377273193157fbfc185a0ad07999c6"
+      },
+      "log_sha256": "9c22ee1f9fbb78c9a9e2954718105ebf29dcd509c8adfe644108c3a8272cd3e7"
+    },
+    {
+      "module": "LeanPaper.Section2MuLinear",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 5.064,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "192cf9db7d07925fb61110376f7c6e99674340c928e61937617a6ff2bc032f2b",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.Section2LagrangeFunctional": {
+            "LeanPaper/Section2LagrangeFunctional.olean": "4d1ef3948ca7384f709cc2718dc747b3738c5f46483b30fa730c35be3736d716"
+          },
+          "LeanPaper.Section2RatFuncPullback": {
+            "LeanPaper/Section2RatFuncPullback.olean": "62a0b0f5403855069a1b99b00a6120d031377273193157fbfc185a0ad07999c6"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/Section2MuLinear.olean": "19fef4993fe19b793e64a54b429192606d1d8121a65723009d273e47ba28806b"
+      },
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "LeanPaper.Section2RatFuncReflection",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 6.012,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "db0434adf7c5d9c1fbc73d9a72b86e9945cb11a92d63ee0566aae1f61b35df39",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.Section2TauLinear": {
+            "LeanPaper/Section2TauLinear.olean": "e51477be1482ae747aadec94b44b3c24740aa8727a242a1d985681feb8233788"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/Section2RatFuncReflection.olean": "db8fb4808bde15bd217e53ee2ac772b8838b30adf17239668d42a60da40abc71"
+      },
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "module": "LeanPaper.Section4Resultant",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 67.695,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "510b4548e206db12a16716cd1d92e1f1166ea16f92e24e4917bd155e7b7df36f",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.PrimitiveNormDisk": {
+            "LeanPaper/PrimitiveNormDisk.olean": "d49456b63fcd5df77e17bf99aaa87cd364aca5ecc5fee8879fe997534aec2167"
+          },
+          "LeanPaper.ImportedSection4.Proposition_4_2_Resultant_Product_Barrier": {
+            "LeanPaper/ImportedSection4/Proposition_4_2_Resultant_Product_Barrier.olean": "a190186ebea2ddfe64c07877aa707c9793bb5b3a9370e4d176605235d4aeb2b4"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/Section4Resultant.olean": "7503e7b200b420e8ebe6f135069d885219b00e1a3ed0d9fd8407bc5eaa5593c8"
+      },
+      "log_sha256": "27804db82a1be88d531904489da3eeb3b1263373f6dc4051115b862ccdf0e596"
+    },
+    {
+      "module": "LeanPaper.Section4ConjugateBounds",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 5.955,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "5114f9fb305e81d57dca19f719a1200bd0faf273ca09047fd30e6f7b86f2b3cc",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.Section4Resultant": {
+            "LeanPaper/Section4Resultant.olean": "7503e7b200b420e8ebe6f135069d885219b00e1a3ed0d9fd8407bc5eaa5593c8"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/Section4ConjugateBounds.olean": "98896d4cdd63d816bc352935adf1d6c7ab43761bf64ffbe646a11515793eb6be"
+      },
+      "log_sha256": "1840b21c105519f1dbb9f16f6667f4969e73ae3aa93645f7c30d808ca2c22dcb"
+    },
+    {
+      "module": "LeanPaper.Section4IndexSelection",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 6.488,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "5ad7a241595b6dc3c6c9ba8f298e361d1ab9c66a31be0e66afc54bad45e28c98",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "Theorem_4_1_Spectral_Irrationality_Measure_Criterion": {
+            "Theorem_4_1_Spectral_Irrationality_Measure_Criterion.olean": "1b95efb2c17d54c707b167ce3170b54b1e2d4ee30f4d8f972404271c91dcb28c"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/Section4IndexSelection.olean": "ef3092854606bcef0b7938a8b22bfc2a01216844da84164689b4bbb5bc70af30"
+      },
+      "log_sha256": "c889a672b952546cc630c1aa374e77d731e4f46511d5c98913cdbc4d82d82976"
+    },
+    {
+      "module": "LeanPaper.Section4AlgebraicBudget",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 8.961,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "4a00ba63b57a25a5d367956c5b7f740ed83d9ddd752a508d4959c422671e36fc",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.Section4ConjugateBounds": {
+            "LeanPaper/Section4ConjugateBounds.olean": "98896d4cdd63d816bc352935adf1d6c7ab43761bf64ffbe646a11515793eb6be"
+          },
+          "LeanPaper.Section4IndexSelection": {
+            "LeanPaper/Section4IndexSelection.olean": "ef3092854606bcef0b7938a8b22bfc2a01216844da84164689b4bbb5bc70af30"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/Section4AlgebraicBudget.olean": "150277b8fb0ace136808a67f90071b7ed64b66208cf6953b00672a2f6710ca7b"
+      },
+      "log_sha256": "0db4e71176d59cb670af12a4adc27f78135d34c177c036362b39f7613d1c69e4"
+    },
+    {
+      "module": "LeanPaper.Section4ComplexComparison",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 3.509,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "f8905f126bdcde6dc882049d69f654d7638804f0cad487fb31e7c69a5eac96fc",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "Theorem_4_1_Spectral_Irrationality_Measure_Criterion": {
+            "Theorem_4_1_Spectral_Irrationality_Measure_Criterion.olean": "1b95efb2c17d54c707b167ce3170b54b1e2d4ee30f4d8f972404271c91dcb28c"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/Section4ComplexComparison.olean": "33c407b222f0a59c44f49a12de92366eb2a1765318b36566aeac611328e325c8"
+      },
+      "log_sha256": "00f708db708ea664c266887afd02eee5712e09bdee87fe30a132fdd4077fabfb"
+    },
+    {
+      "module": "LeanPaper.Section4AlgebraicTransfer",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 8.69,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "a523a11f67285728412d6bec4583d12d00c48d28d0f96a7d3a15ddb871538487",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.Section4AlgebraicBudget": {
+            "LeanPaper/Section4AlgebraicBudget.olean": "150277b8fb0ace136808a67f90071b7ed64b66208cf6953b00672a2f6710ca7b"
+          },
+          "LeanPaper.Section4ComplexComparison": {
+            "LeanPaper/Section4ComplexComparison.olean": "33c407b222f0a59c44f49a12de92366eb2a1765318b36566aeac611328e325c8"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/Section4AlgebraicTransfer.olean": "67aab6dc7aeb11ae01b7a28b44d09b219bcb4fda7dc494f6d9c1491c4bcc6bee"
+      },
+      "log_sha256": "a76ba42f12dcd1465dc9e416f4535ca2faed3194fdbebe0f503d2ec01ee5177f"
+    },
+    {
+      "module": "LeanPaper.Section4AlgebraicLimsup",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 14.925,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "16786f6a4837c7607f1278b13a52f3125eff378ae596c35530504df6e421820f",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.Section4AlgebraicTransfer": {
+            "LeanPaper/Section4AlgebraicTransfer.olean": "67aab6dc7aeb11ae01b7a28b44d09b219bcb4fda7dc494f6d9c1491c4bcc6bee"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/Section4AlgebraicLimsup.olean": "a16c90b2ac38aeedfc23f928dd3137df8edfb4d948e881d3b90e95df30ee40d3"
+      },
+      "log_sha256": "9d0234dcaa18227f9f0aa8c3ec7f5a8da48db047ac31c4ea13069e754ff2de4a"
+    },
+    {
+      "module": "LeanPaper.Section4EffectiveBudget",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 14.336,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "b27f80e11ea4ea41d6a50edf6353e4d88a6f31c320da8db9e9c7ede0194a8d5e",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.Section4ComplexComparison": {
+            "LeanPaper/Section4ComplexComparison.olean": "33c407b222f0a59c44f49a12de92366eb2a1765318b36566aeac611328e325c8"
+          },
+          "LeanPaper.Section4IndexSelection": {
+            "LeanPaper/Section4IndexSelection.olean": "ef3092854606bcef0b7938a8b22bfc2a01216844da84164689b4bbb5bc70af30"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/Section4EffectiveBudget.olean": "f0961cc16bed442bcceab6d73a2165a6c20c339dd5c850e86282d85d8f598adf"
+      },
+      "log_sha256": "064496a08a2c98535a69c29a89fb4909b79de1e026198851caf4d45a967388fd"
+    },
+    {
+      "module": "LeanPaper.Section4TransferComplete",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 4.027,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "ff78c32484ebf89506d4ef0a00090bc4c77a0092484f003d06b63f7a2c407c78",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.Section4IndexSelection": {
+            "LeanPaper/Section4IndexSelection.olean": "ef3092854606bcef0b7938a8b22bfc2a01216844da84164689b4bbb5bc70af30"
+          },
+          "LeanPaper.Section4ComplexComparison": {
+            "LeanPaper/Section4ComplexComparison.olean": "33c407b222f0a59c44f49a12de92366eb2a1765318b36566aeac611328e325c8"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/Section4TransferComplete.olean": "b6ffa759074df1fa472b6240424ab2708a8ed3193e0fbaaa02b431c7228d08bd"
+      },
+      "log_sha256": "5f9051b7e163c09e34369ed1b52d8c63101ae0a218eae1e72f6e98861049f744"
+    },
+    {
+      "module": "LeanPaper.SlopeSignature",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 5.454,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "c7f9c4c1da99215465ef4071bc618ec4d31d44a41b502517486f5489150dbebf",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.SlopeIndefinite": {
+            "LeanPaper/SlopeIndefinite.olean": "2e51efe39424c72089d925ce2fdfae77a8c0aac58a4fd8b9d7659ae6409255fd"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/SlopeSignature.olean": "893c2b6bda65825c6c78e4bd6d74c5333f4218a929fdc89c0a3118e6ae7d2bb9"
+      },
+      "log_sha256": "031666dfd3eb35998b39b92f63be25f50b8c21230ce1eab67752978ec2194601"
+    },
+    {
+      "module": "LeanPaper.SymmetricPoleSpectrum",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 4.534,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "0c4208e40d1f87bf7b2fe84fca439278b93943dfcae7cb228a3d8b25de0624d7",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {
+          "LeanPaper.OperatorNormDisk": {
+            "LeanPaper/OperatorNormDisk.olean": "50daf04b90ae3310535b5935dfd2bd679e78e0438cc53c7394ea9da5fa657877"
+          },
+          "LeanPaper.ImportedSection3.ActualPoleKernel": {
+            "LeanPaper/ImportedSection3/ActualPoleKernel.olean": "d21f307ed53cb4bfb9f8b232ea0726c23d4622a43ed412a6b0a6a02ae46d8d12"
+          }
+        }
+      },
+      "output_hashes": {
+        "LeanPaper/SymmetricPoleSpectrum.olean": "c719b6d3c584adec1e8b2e7b63fcea7a77af4e04f3eefd5904ba4671512f50e2"
+      },
+      "log_sha256": "d4bbe5b7b5a23756fb1eae453df2b5f61824b1178ca56b4a22986a053059edaa"
+    },
+    {
+      "module": "LeanPaper.UnitLogMoments",
+      "status": "PASS",
+      "action": "REUSED_LOCAL_PASS",
+      "seconds": 2.491,
+      "returncode": 0,
+      "inputs": {
+        "source_sha256": "6cb093af150118382615e72499281b53c23885abde8a06cfa52d23e28178ff5d",
+        "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
+        "dependencies": {}
+      },
+      "output_hashes": {
+        "LeanPaper/UnitLogMoments.olean": "bdc13c32d2bdbf8084e5cd6f7843c4bcfe6c6ff3cee152d88241598654407d58"
+      },
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
       "module": "LeanPaper.KernelAudit",
       "status": "PASS",
       "action": "COMPILED",
-      "seconds": 427.042,
+      "seconds": 457.346,
       "returncode": 0,
       "inputs": {
-        "source_sha256": "43d4554b6c7906eb22c6cfbf6be279ec7392a951a5f4b3b4d9981a40e12f15fa",
+        "source_sha256": "9783b2622a65502c8285a6eebd992f38856e7627d635ec85e0463f9e96cf8ae0",
         "environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
         "dependencies": {
           "Definition_2_1_Order_s_Rational_Moment_Functional": {
@@ -4009,13 +5106,172 @@
           },
           "LeanPaper.Section2RationalDomains": {
             "LeanPaper/Section2RationalDomains.olean": "4599b3edb4904059c7f85749ff6ed3e831f40f4720f5cf301306f5790cbed996"
+          },
+          "LeanPaper.StrictCenteredLaguerre": {
+            "LeanPaper/StrictCenteredLaguerre.olean": "130c13329a6f6962aadad1283beab1efe4b7c95110f9a970093887d6b5f9c1d3"
+          },
+          "LeanPaper.PoleWeightSigns": {
+            "LeanPaper/PoleWeightSigns.olean": "2c3a98e13b808019cc3e1f0cd5afa1865066069c4a79d75398614f3c2458f5f2"
+          },
+          "LeanPaper.SlopeIndefinite": {
+            "LeanPaper/SlopeIndefinite.olean": "2e51efe39424c72089d925ce2fdfae77a8c0aac58a4fd8b9d7659ae6409255fd"
+          },
+          "LeanPaper.ActualStrictCenter": {
+            "LeanPaper/ActualStrictCenter.olean": "b467f535fa6140ed84f1dc398f10dc707647e5d93793abde53782fa3e0e6a650"
+          },
+          "LeanPaper.ConsecutiveDerivativeZeros": {
+            "LeanPaper/ConsecutiveDerivativeZeros.olean": "d2a9ccf7fbe1235d76cd42dac7fadbdb83723577734252fcb2c3e7f921930b12"
+          },
+          "LeanPaper.DerivativeDistinctRoots": {
+            "LeanPaper/DerivativeDistinctRoots.olean": "c7a28893a3a980c6048cba007187b9ffddeda4dcc97be52fb1103ef332a110fa"
+          },
+          "LeanPaper.StrictLaguerreGeneral": {
+            "LeanPaper/StrictLaguerreGeneral.olean": "f32ac1a579ca11f33613f845935246a052fa19208110f346d28a539a2b236059"
+          },
+          "LeanPaper.StrictNormalizedNewton": {
+            "LeanPaper/StrictNormalizedNewton.olean": "e0f1628fd9fc14cd6ef058663ea59ba198f6643a8e9477e9ccb4949d65762841"
+          },
+          "LeanPaper.ActualStrictNewton": {
+            "LeanPaper/ActualStrictNewton.olean": "639ad9f9bda4b43b93704e8ded8ce38bb0550f4902fe31f5505ca455fe36b895"
+          },
+          "LeanPaper.BetaHarmonicIndexObstruction": {
+            "LeanPaper/BetaHarmonicIndexObstruction.olean": "88b53e254de1c1f636deccb279b819905205b29a8b8ba5bc626c69ddac5e47b9"
+          },
+          "LeanPaper.BetaOneMoments": {
+            "LeanPaper/BetaOneMoments.olean": "f63b031234c25335477d8cd5040375127ffd53e103eb03adbf8e3a91adb08eb5"
+          },
+          "LeanPaper.BeukersDenominator": {
+            "LeanPaper/BeukersDenominator.olean": "df76d8bbad117568a325848b30511d9b68a421bd9e35ff2af36737df0662eecf"
+          },
+          "LeanPaper.CentralFactorialSecant": {
+            "LeanPaper/CentralFactorialSecant.olean": "36a72cd024ab36bedae5370800b623ff1e96454a4d6d95e254a9aa432e7a89f7"
+          },
+          "LeanPaper.CentralFactorialDecay": {
+            "LeanPaper/CentralFactorialDecay.olean": "8cc2966a236b8b15f238c6b600af71cd24b79a0529b2f864b183d8cce1e0d02d"
+          },
+          "LeanPaper.ContinuousDensityNormalization": {
+            "LeanPaper/ContinuousDensityNormalization.olean": "fea414fdc5dbc6bafee5309fcd81f8ec329575c6ea266665f3ca92ae7fdf3cea"
+          },
+          "LeanPaper.ContinuousWeightMoments": {
+            "LeanPaper/ContinuousWeightMoments.olean": "94bf20cf3f72de08a556165f7de1a1030af46911fc613710829073b2ae6c7c4c"
+          },
+          "LeanPaper.ContinuousGram": {
+            "LeanPaper/ContinuousGram.olean": "e198e65eb7e85d8d753db5e698b1958cc4c67685ff96ceb658e6e39de4a43089"
+          },
+          "LeanPaper.RationalLogJets": {
+            "LeanPaper/RationalLogJets.olean": "5f0cbc89db7afc37fc50acac21881ec5f3c862a2de9c67e9ea77b6407d55295a"
+          },
+          "LeanPaper.ReciprocalAllOrders": {
+            "LeanPaper/ReciprocalAllOrders.olean": "e0ff169eee7f1c6d96039e8afa23e9d5f7c8a2bd46efdfc97da81a06e19a2cbb"
+          },
+          "LeanPaper.CorrectedReciprocalCorollary": {
+            "LeanPaper/CorrectedReciprocalCorollary.olean": "bd6afd83378d143381005f0468717fe0303303354ac799260a21eb23235664ee"
+          },
+          "LeanPaper.DodgsonCondensation": {
+            "LeanPaper/DodgsonCondensation.olean": "3e4ee362a626209d7b9b681e33da16f4ebbf6a3cee2c0b276b8d3c784acaad8d"
+          },
+          "LeanPaper.DyadicQuotientThreshold": {
+            "LeanPaper/DyadicQuotientThreshold.olean": "af6129ae6079fe490995fa3fc4d870cf176a6599a02e2dbb79b23b728e3c8e6b"
+          },
+          "LeanPaper.ExternalPi.ETranscendental": {
+            "LeanPaper/ExternalPi/ETranscendental.olean": "5e3d8e7de517bf1675c8186fd4b9999bc41afffa1b8a2ea9e20c3d5a3894c4e3"
+          },
+          "LeanPaper.ExternalPi.HermiteLindemann": {
+            "LeanPaper/ExternalPi/HermiteLindemann.olean": "069e7a20d03c351cbe917769c8590f7a89efc226c5a1e7b52f26d7aca4948f24"
+          },
+          "LeanPaper.ExternalPi.PiLindemann": {
+            "LeanPaper/ExternalPi/PiLindemann.olean": "88a5e60022f890333fc30b06a38bddf65e09d564542791d69911fe3c434be145"
+          },
+          "LeanPaper.ExternalPi.MonicRootSums": {
+            "LeanPaper/ExternalPi/MonicRootSums.olean": "243fb2e605f2377347a04819c936ada46b75403840799e2f87f2c09a11e4e5f6"
+          },
+          "LeanPaper.ExternalPi.SubsetSumEsymm": {
+            "LeanPaper/ExternalPi/SubsetSumEsymm.olean": "975dccbc31f5babc168429c6480c150226cbec14722cc4d9d425e05bcf051627"
+          },
+          "LeanPaper.ExternalPi.PiTranscendental": {
+            "LeanPaper/ExternalPi/PiTranscendental.olean": "77eff36789c30567b23865183589f37f4746c28df6f812c68ecc67b3b2ff7abd"
+          },
+          "LeanPaper.JFractionActualObstruction": {
+            "LeanPaper/JFractionActualObstruction.olean": "134e206e9cc64632626705586ee92ced17cd32800735b253ec42af7a5eeaede1"
+          },
+          "LeanPaper.KreinDimensionObstruction": {
+            "LeanPaper/KreinDimensionObstruction.olean": "961e9bbefe8b62d94c72c511284f08297cbc531f4a5e2611eb98a21e3edebc97"
+          },
+          "LeanPaper.OddPiPowers": {
+            "LeanPaper/OddPiPowers.olean": "8033d57f366e6f93f37d881ee753294ccb01cbfecd2f2fcf818767fd8e711956"
+          },
+          "LeanPaper.OddBetaValues": {
+            "LeanPaper/OddBetaValues.olean": "0eb601e19bfa1a845329ce3ac943b7d4fd9ff1f888550b46f72582325bc0229a"
+          },
+          "LeanPaper.Section2PoleLinearSpace": {
+            "LeanPaper/Section2PoleLinearSpace.olean": "3c633be8dc7d8c012f5225617ef063b3b5b2f82707039c6ccd5276d160f47d50"
+          },
+          "LeanPaper.Section2TauLinear": {
+            "LeanPaper/Section2TauLinear.olean": "e51477be1482ae747aadec94b44b3c24740aa8727a242a1d985681feb8233788"
+          },
+          "LeanPaper.Section2RatFuncTranslation": {
+            "LeanPaper/Section2RatFuncTranslation.olean": "b7ac2d129ff4cffc7a694c7b557d541b057267c397e2d6931fd22322b96d9b6f"
+          },
+          "LeanPaper.Section2DifferenceDerivative": {
+            "LeanPaper/Section2DifferenceDerivative.olean": "1ac5e9b0fa40dc5674e7694304e6e53740e608dd2fe3c4bf4e5accb871eeb8c0"
+          },
+          "LeanPaper.Section2FunctionalBasis": {
+            "LeanPaper/Section2FunctionalBasis.olean": "3499e312a9076c961a6159c3878b422c6fb67b3103821a25b0efc74c24561f4c"
+          },
+          "LeanPaper.Section2LagrangeFunctional": {
+            "LeanPaper/Section2LagrangeFunctional.olean": "4d1ef3948ca7384f709cc2718dc747b3738c5f46483b30fa730c35be3736d716"
+          },
+          "LeanPaper.Section2RatFuncPullback": {
+            "LeanPaper/Section2RatFuncPullback.olean": "62a0b0f5403855069a1b99b00a6120d031377273193157fbfc185a0ad07999c6"
+          },
+          "LeanPaper.Section2MuLinear": {
+            "LeanPaper/Section2MuLinear.olean": "19fef4993fe19b793e64a54b429192606d1d8121a65723009d273e47ba28806b"
+          },
+          "LeanPaper.Section2RatFuncReflection": {
+            "LeanPaper/Section2RatFuncReflection.olean": "db8fb4808bde15bd217e53ee2ac772b8838b30adf17239668d42a60da40abc71"
+          },
+          "LeanPaper.Section4Resultant": {
+            "LeanPaper/Section4Resultant.olean": "7503e7b200b420e8ebe6f135069d885219b00e1a3ed0d9fd8407bc5eaa5593c8"
+          },
+          "LeanPaper.Section4ConjugateBounds": {
+            "LeanPaper/Section4ConjugateBounds.olean": "98896d4cdd63d816bc352935adf1d6c7ab43761bf64ffbe646a11515793eb6be"
+          },
+          "LeanPaper.Section4IndexSelection": {
+            "LeanPaper/Section4IndexSelection.olean": "ef3092854606bcef0b7938a8b22bfc2a01216844da84164689b4bbb5bc70af30"
+          },
+          "LeanPaper.Section4AlgebraicBudget": {
+            "LeanPaper/Section4AlgebraicBudget.olean": "150277b8fb0ace136808a67f90071b7ed64b66208cf6953b00672a2f6710ca7b"
+          },
+          "LeanPaper.Section4ComplexComparison": {
+            "LeanPaper/Section4ComplexComparison.olean": "33c407b222f0a59c44f49a12de92366eb2a1765318b36566aeac611328e325c8"
+          },
+          "LeanPaper.Section4AlgebraicTransfer": {
+            "LeanPaper/Section4AlgebraicTransfer.olean": "67aab6dc7aeb11ae01b7a28b44d09b219bcb4fda7dc494f6d9c1491c4bcc6bee"
+          },
+          "LeanPaper.Section4AlgebraicLimsup": {
+            "LeanPaper/Section4AlgebraicLimsup.olean": "a16c90b2ac38aeedfc23f928dd3137df8edfb4d948e881d3b90e95df30ee40d3"
+          },
+          "LeanPaper.Section4EffectiveBudget": {
+            "LeanPaper/Section4EffectiveBudget.olean": "f0961cc16bed442bcceab6d73a2165a6c20c339dd5c850e86282d85d8f598adf"
+          },
+          "LeanPaper.Section4TransferComplete": {
+            "LeanPaper/Section4TransferComplete.olean": "b6ffa759074df1fa472b6240424ab2708a8ed3193e0fbaaa02b431c7228d08bd"
+          },
+          "LeanPaper.SlopeSignature": {
+            "LeanPaper/SlopeSignature.olean": "893c2b6bda65825c6c78e4bd6d74c5333f4218a929fdc89c0a3118e6ae7d2bb9"
+          },
+          "LeanPaper.SymmetricPoleSpectrum": {
+            "LeanPaper/SymmetricPoleSpectrum.olean": "c719b6d3c584adec1e8b2e7b63fcea7a77af4e04f3eefd5904ba4671512f50e2"
+          },
+          "LeanPaper.UnitLogMoments": {
+            "LeanPaper/UnitLogMoments.olean": "bdc13c32d2bdbf8084e5cd6f7843c4bcfe6c6ff3cee152d88241598654407d58"
           }
         }
       },
       "output_hashes": {
-        "LeanPaper/KernelAudit.olean": "5eb584869d29655665dd4b98c23604ce6915ef368a2ded191213be8305724711"
+        "LeanPaper/KernelAudit.olean": "e6b8edec1b3e7ee018e8b30d52daaad80aa6daaef871c0931887d03cd253a904"
       },
-      "log_sha256": "434014a4ca757d85c3828a7b6372ae72adb1f49d93e92e3b6b24e305c9d42c2a"
+      "log_sha256": "6a856357dd806474d7c29caccb92fb455b5bf8a029c99d3834b687ae7d56f5a7"
     }
   ]
 }

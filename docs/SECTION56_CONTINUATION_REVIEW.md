@@ -9,9 +9,11 @@ Compilation status is given by the final module receipts, not by this source rev
 - `CentralFactorialSecant.lean`: actual repeated differential operators on `1/(2 cosh z)`,
   their all-order factorial closed form, final-derivative strict positivity on `z>0`, and
   annihilation of the first odd exponential modes. The finite multiplier sign is explicit.
-  The termwise differentiated infinite series, accelerated asymptotic bound, identification
+  The termwise differentiated infinite series, identification
   with the coupled beta moment functional, and non-scalar/strict-Newton assertions remain
   independent obligations.
+- `CentralFactorialDecay.lean`: explicit pointwise exponential envelope for the actual
+  positive secant density, proving the accelerated big-O bound by an explicit constant (targeted compile passed).
 - `DyadicQuotientThreshold.lean`: actual square-pole denominator and shifted numerator,
   exact degree, zero polynomial quotient below the threshold, `6n` leading-block
   specialization, and `42n-1` full quotient degree bound. These facts alone do not prove
@@ -21,10 +23,16 @@ Compilation status is given by the final module receipts, not by this source rev
   realization remains distinct.
 - `BetaHarmonicIndexObstruction.lean`: exact rational counterexamples to intermediate
   assertions in the printed 6.17 local valuation argument.
-- `ExternalPi/` and `OddPiPowers.lean`: a candidate imported full Lindemann pi proof,
+- `ExternalPi/` and `OddPiPowers.lean`: an imported full Lindemann pi proof (all six source modules locally compiled),
   its rational-power/linear-independence consequences, and the ordered beta-one series.
   See `provenance/external_pi_intake.json` for the source pin and adaptation record.
   No general beta/Euler closed-form identity is silently assumed.
+- `OddBetaValues.lean`: actual odd Dirichlet beta series evaluation through the Bernoulli
+  Fourier formula at `1/4`, nonzero rational coefficient proved by an alternating-series
+  lower bound, and unconditional transcendence and Q-linear independence of every finite
+  odd-beta family together with one. All assertions targeted compile successfully. The
+  effective irrationality measure clause remains open; the Euler-number spelling of the
+  same rational coefficient is not needed or assumed.
 
 ## Corrections established from the actual formulas
 
@@ -140,7 +148,7 @@ basis change and resulting valuation theorem remain further mathematical work.
 | 6.12 | Examined rational cutoff perturbation: finite-dimensional positive definiteness is open, so continuity would give rational cutoffs once a positive continuous Gram is established. The latter measure and q-adic compatibility are not yet instantiated. | Constructive continuity strategy, analytic realization required. |
 | 6.13 | Constructed the all-order differential identity and actual exponential annihilation. Found and formalized the missing finite-product sign. Infinite differentiated-series convergence and coupled-pencil identification remain. | Literal formula requires correction; corrected components proved. |
 | 6.14 | Read the even-pole scaling and comparison argument. Need actual beta derivative/moment integral identities and globally bounded ratios with endpoint limits. Finite cone algebra does not supply those estimates. | Analytic comparison unproved. |
-| 6.15 | Investigated trusted external formal libraries; obtained a six-module pi-transcendence proof for porting. Ordered beta1 series is already in Mathlib. General beta/Euler evaluation and effective fixed-degree pi transcendence measure remain. The printed exterior h^(-2k) factor contradicts the Szegő theorem, as detailed above. | Pi dependency obtainable; asymptotic requires correction for k>=1. |
+| 6.15 | Investigated trusted external formal libraries; obtained a six-module pi-transcendence proof for porting. The existing ordered beta1 series and Bernoulli Fourier values supply the analytic bridge for all odd exponents. The actual all-odd beta evaluation, transcendence and independence are now proved. Effective fixed-degree pi transcendence measure remains. The printed exterior h^(-2k) factor contradicts the Szegő theorem, as detailed above. | Pi dependency obtainable; asymptotic requires correction for k>=1. |
 | 6.16 | Algebraic slope combination is finite, but the actual combined densities require 6.6/6.14. The highest-weight valuations require explicit residue estimates, not generic positive-matrix hypotheses. | Downstream analytic/arithmetic gaps remain. |
 | 6.17 | Recomputed odd-harmonic indexing; q=11 lower-pole and q=41 leading-coefficient obstructions found. Requires revised local basis/primes plus infinite analytic realization. | Supplied local proof is incorrect; full conditional theorem not refuted. |
 | 6.18 | Proved exact shifted-degree/quotient disappearance and weight-five specializations. Odd denominator harmonic sums alone do not clear residue denominators; full q-adic/2-adic multiplier proof remains. Irrationality rate depends on 4.5. | Exact degree components, not full arithmetic closure. |
@@ -169,7 +177,7 @@ pi-transcendence endpoint. A primary-source search located:
    Transcendental ℚ Real.pi`. Its transitive project closure has six files and uses
    Mathlib's analytic Lindemann engine plus symmetric-polynomial/conjugate arguments.
    It is Apache-2.0, originally Lean 4.31.0. The sources are obtainable and a 4.33.0 port
-   is attempted here; comments containing historical axiom names are not active declarations.
+   passes targeted compilation here; comments containing historical axiom names are not active declarations. The complete global dependency audit is recorded separately.
 2. [frenzymath/PiIrrationalityMeasure](https://github.com/frenzymath/PiIrrationalityMeasure/tree/3ee5d4d080b440469d331a2fb3862aee88c23ca0)
    targets the exact current Lean and Mathlib pins. Its README identifies 309 proof
    modules and an unconditional bound `IrrationalityMeasure Real.pi <
@@ -180,8 +188,17 @@ pi-transcendence endpoint. A primary-source search located:
 
 For all odd powers the exact further requirement is an effective, degree-dependent
 lower bound for nonzero integer polynomials evaluated at pi (or directly for
-`q_k*pi^(2k+1)-a/b`), together with the nonzero rational Euler coefficient identity.
+`q_k*pi^(2k+1)-a/b`), The rational coefficient and its nonvanishing are now proved in `OddBetaValues` using Bernoulli Fourier evaluation and a positive alternating lower bound; the Euler-number expression can be related separately.
 Ordinary irrationality measure of pi alone does not imply such a bound for its powers.
 No matching complete Lean source was found by the targeted search. This is a located
 missing mathematical dependency, not a proof of impossibility; a formal Mahler measure
 argument or an independently audited external implementation would supply it.
+
+## Targeted verification receipts
+
+The following modules passed the source-hashed local Lean 4.33.0 candidate compiler:
+`BetaHarmonicIndexObstruction`, `BeukersDenominator`, `DyadicQuotientThreshold`,
+`CentralFactorialSecant`, `CentralFactorialDecay`, all six `ExternalPi` modules,
+`OddPiPowers`, and `OddBetaValues`. They are frozen for the next global
+dependency audit. Full project/CI status and exact axiom accounting remain
+the responsibility of the shared build receipts, not inferred from targeted passes.

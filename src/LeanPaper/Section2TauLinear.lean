@@ -86,7 +86,7 @@ theorem representation_decomposition (F : SimplePoleForm ℤ) :
       polynomial F.polynomial + ∑ r ∈ F.support, F.residue r • pole r := by
   apply Subtype.ext
   have hc (c : ℚ) : RatFunc.C c = (algebraMap ℚ (RatFunc ℚ)) c :=
-    (map_ratCast RatFunc.C c).trans (map_ratCast (algebraMap ℚ (RatFunc ℚ)) c).symm
+    (map_ratCast (RatFunc.C (K := ℚ)) c).trans (map_ratCast (algebraMap ℚ (RatFunc ℚ)) c).symm
   simp only [Submodule.coe_add, Submodule.coe_sum, Submodule.coe_smul]
   simp only [realization, polynomial, pole, Algebra.smul_def, div_eq_mul_inv,
     RatFunc.algebraMap_C, hc]
@@ -109,6 +109,6 @@ theorem printed_evenPair_division_fails_at_zero :
 /-- The B₁ exceptional term disproves the printed assertion that only odd
 monomial degrees contribute. The reflection theorem itself remains valid. -/
 theorem even_monomial_Bernoulli_exception : tauMonomial 1 2 = -(1/2 : ℚ) := by
-  norm_num [tauMonomial, bernoulli_one]
+  norm_num [tauMonomial, _root_.bernoulli_one]
 
 end LeanPaper.Section2TauLinear

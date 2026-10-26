@@ -27,6 +27,13 @@ def translate : RatFunc ℚ →ₐ[ℚ] RatFunc ℚ :=
   (RatFunc.liftRingHom translatePolyHom
     (nonZeroDivisors_le_comap_nonZeroDivisors_of_injective _ translatePolyHom_injective)).toRatAlgHom
 
+@[simp] theorem translate_scalar (c : ℚ) :
+    translate ((algebraMap ℚ (RatFunc ℚ)) c) = (algebraMap ℚ (RatFunc ℚ)) c := by
+  have hc : (algebraMap ℚ (RatFunc ℚ)) c = (c : RatFunc ℚ) :=
+    map_ratCast (algebraMap ℚ (RatFunc ℚ)) c
+  rw [hc]
+  exact map_ratCast translate.toRingHom c
+
 @[simp] theorem translate_polynomial (p : ℚ[X]) :
     translate (algebraMap ℚ[X] (RatFunc ℚ) p) =
       algebraMap ℚ[X] (RatFunc ℚ) (translatePolynomial p) := by
@@ -49,20 +56,23 @@ theorem translate_mem (f : TauSpace) : translate (f : RatFunc ℚ) ∈ TauSpace 
     exact (Subtype.ext hF.symm).trans (representation_decomposition F)
   rw [hf]
   simp only [Submodule.coe_add, Submodule.coe_sum, Submodule.coe_smul,
-    map_add, map_sum, map_smul]
+    map_add, map_sum]
   apply Submodule.add_mem
   · change translate (algebraMap ℚ[X] (RatFunc ℚ) F.polynomial) ∈ TauSpace
     rw [translate_polynomial]
     exact (polynomial (translatePolynomial F.polynomial)).property
   · apply Submodule.sum_mem
     intro r hr
-    rw [translate_pole]
-    exact TauSpace.smul_mem _ (pole (r-1)).property
+    simp only [Algebra.smul_def, map_mul, translate_scalar, translate_pole]
+    simpa only [Algebra.smul_def, map_ratCast] using
+      TauSpace.smul_mem (F.residue r) (pole (r-1)).property
 
 def translation : TauSpace →ₗ[ℚ] TauSpace where
   toFun f := ⟨translate f, translate_mem f⟩
   map_add' f g := Subtype.ext (map_add translate (f : RatFunc ℚ) (g : RatFunc ℚ))
-  map_smul' c f := Subtype.ext (map_smul translate c (f : RatFunc ℚ))
+  map_smul' c f := by
+    apply Subtype.ext
+    simp only [Submodule.coe_smul, Algebra.smul_def, map_mul, translate_scalar, RingHom.id_apply]
 
 @[simp] theorem translation_polynomial (p : ℚ[X]) :
     translation (polynomial p) = polynomial (translatePolynomial p) :=
@@ -87,7 +97,6 @@ theorem tauPolynomial_difference (k : ℕ) (hk : 1 ≤ k) (p : ℚ[X]) :
   induction p using Polynomial.induction_on' with
   | add p q hp hq =>
       simp only [translatePolynomial, add_comp, map_add, coeff_add] at *
-      rw [map_add]
       linear_combination hp + hq
   | monomial d c =>
       change tauPolynomial k ((monomial d c).comp (X+1)) - _ = _
@@ -96,7 +105,7 @@ theorem tauPolynomial_difference (k : ℕ) (hk : 1 ≤ k) (p : ℚ[X]) :
         Section2FiniteDifference.tau_monomial_difference k d hk]
       by_cases h : d = 2*k
       · simp [h]
-      · simp [h, Ne.symm h]
+      · simp [Polynomial.coeff_monomial, h, Ne.symm h]
 
 @[simp] theorem translation_pole (r : ℤ) : translation (pole r) = pole (r-1) :=
   Subtype.ext (translate_pole r)

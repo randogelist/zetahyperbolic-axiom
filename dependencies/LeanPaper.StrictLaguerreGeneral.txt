@@ -1,0 +1,2 @@
+LeanPaper.DerivativeDistinctRoots
+LeanPaper.StrictCenteredLaguerre

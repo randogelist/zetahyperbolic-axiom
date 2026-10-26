@@ -25,7 +25,7 @@ lemma squareDenominator_natDegree (N : ℕ) : (D N).natDegree = N := by
   unfold D
   rw [Polynomial.natDegree_prod]
   · simp only [Polynomial.natDegree_X_add_C, Finset.sum_const,
-      Finset.card_range, nsmul_eq_mul, mul_one]
+      Finset.card_range, nsmul_eq_mul, mul_one, Nat.cast_id]
   · intro i hi
     exact (Polynomial.monic_X_add_C _).ne_zero
 

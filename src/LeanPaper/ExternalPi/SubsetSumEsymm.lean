@@ -36,7 +36,7 @@ lemma ringHom_map_multiset_esymm {R S : Type*} [CommSemiring R] [CommSemiring S]
     f (s.esymm m) = (s.map f).esymm m := by
   unfold Multiset.esymm
   induction' s using Multiset.induction_on with a s ih generalizing m
-  · cases m <;> simp +decide
+  · cases m <;> simp +decide [Multiset.powersetCard_zero_left, Multiset.powersetCard_zero_right]
   · rcases m with ( _ | m ) <;> simp_all +decide [ Multiset.powersetCard_cons ]
     simp +decide [ ← ih, Multiset.sum_map_mul_left ]
 

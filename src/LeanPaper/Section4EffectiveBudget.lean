@@ -39,7 +39,7 @@ theorem index_above_threshold (n₀ : ℕ) (lam ε ρ c σ : ℚ) (hc : 0 < c)
     indexThreshold n₀ lam ε ρ c σ ≤ gridIndex 1 (c : ℝ) b := by
   let N := indexThreshold n₀ lam ε ρ c σ
   have hbpos : 0 < b := by
-    have : 0 < denominatorThreshold n₀ lam ε ρ c σ := by unfold denominatorThreshold; omega
+    have : 0 < denominatorThreshold n₀ lam ε ρ c σ := by unfold denominatorThreshold; positivity
     omega
   have hbR : (0 : ℝ) < b := by exact_mod_cast hbpos
   have hcR : (0 : ℝ) < c := by exact_mod_cast hc
@@ -50,7 +50,8 @@ theorem index_above_threshold (n₀ : ℕ) (lam ε ρ c σ : ℚ) (hc : 0 < c)
       omega)
   have hlog : ((N : ℝ)+1)/(c : ℝ) ≤ Real.log b := by
     apply (Real.le_log_iff_exp_le hbR).2
-    exact (by simpa using he).trans hpow
+    have heR : Real.exp (((N : ℝ)+1)/(c : ℝ)) ≤ (((3 : ℕ)^⌈((N : ℚ)+1)/c⌉₊ : ℕ) : ℝ) := by simpa using he
+    exact heR.trans hpow
   have hmul := (div_le_iff₀ hcR).1 hlog
   have hu := (gridIndex_bounds 1 (by omega) c hcR b hbpos).2
   have hn : (N : ℝ) ≤ gridIndex 1 (c : ℝ) b := by norm_num at hu; nlinarith
@@ -71,7 +72,7 @@ theorem explicit_budgets (n₀ μ : ℕ) (lam ε ρ c σ : ℚ)
     have h : 2 ≤ indexThreshold n₀ lam ε ρ c σ := by unfold indexThreshold; omega
     exact h.trans hNK
   have hb0 : 0 < b := by
-    have h : 0 < denominatorThreshold n₀ lam ε ρ c σ := by unfold denominatorThreshold; omega
+    have h : 0 < denominatorThreshold n₀ lam ε ρ c σ := by unfold denominatorThreshold; positivity
     omega
   have hbR : (0 : ℝ) < b := by exact_mod_cast hb0
   have hcR : (0 : ℝ) < c := by exact_mod_cast hc
@@ -92,16 +93,18 @@ theorem explicit_budgets (n₀ μ : ℕ) (lam ε ρ c σ : ℚ)
   have ht1 : ((lam : ℝ)/c+1)/((ε : ℝ)-lam/c) ≤ K := by
     exact_mod_cast (Nat.le_ceil ((lam/c+1)/(ε-lam/c))).trans (by exact_mod_cast hceil1)
   have ht2 : 16*((lam : ℝ)+1)/((σ : ℝ)-ρ)^2 ≤ K := by
-    exact_mod_cast (Nat.le_ceil (16*(lam+1)/(σ-ρ)^2)).trans (by exact_mod_cast hceil2)
+    have ht : (16*(lam+1)/(σ-ρ)^(2 : ℕ) : ℚ) ≤ K :=
+      (Nat.le_ceil _).trans (by exact_mod_cast hceil2)
+    exact_mod_cast ht
   have ht1' := (div_le_iff₀ haR).1 ht1
   have ht2' := (div_le_iff₀ (sq_pos_of_pos hgR)).1 ht2
   have hm1 := mul_le_mul_of_nonneg_right ht1' (show (0 : ℝ) ≤ K by positivity)
   have hm2 := mul_le_mul_of_nonneg_right ht2' (show (0 : ℝ) ≤ K by positivity)
-  have he := Real.pow_div_factorial_le_exp
+  have he := Real.pow_div_factorial_le_exp (((σ : ℝ)-ρ)*(K : ℝ))
     (show 0 ≤ ((σ : ℝ)-ρ)*(K : ℝ) by positivity) 2
   norm_num at he
   have hexp : 8*((d : ℝ)+1) ≤ Real.exp (((σ : ℝ)-ρ)*K) := by
-    have hlamK := mul_le_mul_of_nonneg_left (show (1 : ℝ) ≤ K by linarith) (hlamR.add (by norm_num))
+    have hlamK := mul_le_mul_of_nonneg_left (show (1 : ℝ) ≤ K by linarith) (show 0 ≤ (lam : ℝ)+1 by linarith)
     nlinarith
   have hradius : Real.exp (-(σ : ℝ)*K) ≤
       ManuscriptChain.Spectral.comparisonRadius d (Real.exp ((ρ : ℝ)*K)) := by
@@ -187,4 +190,5 @@ theorem manuscript_effective_rate_margins :
 #print axioms explicit_budgets
 #print axioms effective_spectral_measure
 
+end
 end LeanPaper.Section4EffectiveBudget

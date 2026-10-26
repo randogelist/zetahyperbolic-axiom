@@ -17,11 +17,13 @@ theorem normalized_even_derivative_span (k : ℕ) (s : Finset ℤ) (c : ℤ → 
     iteratedDeriv (2*k) (poleSpan s c) 0 / ((2*k).factorial : ℝ) =
       ∑ r ∈ s, (c r : ℝ) * (-((r : ℝ)^(2*k+1))⁻¹) := by
   have hr (r : ℤ) (hmem : r ∈ s) :
-      ContDiffAt ℝ (2*k) (fun x : ℝ => (c r : ℝ) * (x-(r : ℝ))⁻¹) 0 := by
+      ContDiffAt ℝ (2*k : ℕ) (fun x : ℝ => (c r : ℝ) * (x-(r : ℝ))⁻¹) 0 := by
     have hzero : (0 : ℝ) - (r : ℝ) ≠ 0 := by
       have hh : (r : ℝ) ≠ 0 := by exact_mod_cast hs r hmem
       simpa using neg_ne_zero.mpr hh
-    exact ((contDiffAt_id.sub contDiffAt_const).inv hzero).const_mul (c r : ℝ)
+    have hinv : ContDiffAt ℝ (2*k : ℕ) (fun x : ℝ => (x-(r : ℝ))⁻¹) 0 :=
+      (contDiffAt_id.sub contDiffAt_const).inv hzero
+    exact contDiffAt_const.mul hinv
   unfold poleSpan
   rw [iteratedDeriv_fun_sum hr, Finset.sum_div]
   apply Finset.sum_congr rfl

@@ -30,8 +30,7 @@ theorem first_moment :
     have hb : HasDerivAt (fun v : ℝ => 1 + v ^ 2) (2 * u) u := by
       simpa using ((hasDerivAt_id u).pow 2).const_add 1
     convert (hb.log hp).div_const (2 : ℝ) using 1
-    field_simp
-    <;> ring
+    all_goals first | ring | rfl
   have hc : Continuous (fun u : ℝ => u / (1 + u ^ 2)) :=
     continuous_id.div (continuous_const.add (continuous_id.pow 2))
       (fun u => ne_of_gt (by positivity))

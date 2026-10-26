@@ -1,0 +1,3 @@
+'LeanPaper.Section4AlgebraicTransfer.algebraic_transfer_rates' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

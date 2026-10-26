@@ -81,7 +81,7 @@ theorem dualConstant_seven_denominator (K r t : ℕ) (hr : r≤K) (ht : t≤K) :
     6*(commonDenominator K : ℚ)^7 * dualConstant 7 r t ∈ integerRationals := by
   by_cases he : r=t
   · subst t
-    norm_num only [dualConstant, if_pos rfl, Nat.reduceLT]
+    simp only [dualConstant, ↓reduceIte]
     have h := (integerRationals).mul_mem (nat_mem 6)
       ((integerRationals).neg_mem (harmonic_denominator 7 K r hr))
     convert h using 1 <;> ring

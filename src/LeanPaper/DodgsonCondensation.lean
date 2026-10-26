@@ -23,8 +23,9 @@ lemma det_border {R n : Type*} [CommRing R] [Fintype n] [DecidableEq n]
     (A : Matrix n n R) (U : Matrix n (Fin 2) R) (V : Matrix (Fin 2) n R)
     (D : Matrix (Fin 2) (Fin 2) R) [Invertible A] (i j : Fin 2) :
     (border A U V D i j).det = A.det * (D - V * ⅟A * U) i j := by
-  rw [border, det_fromBlocks₁₁, Matrix.det_unique]
+  rw [border, det_fromBlocks₁₁]
   congr 1
+  rw [Matrix.det_unique]
   simp [Matrix.mul_apply]
 
 /-- Schur-complement derivation with an invertible central block. -/

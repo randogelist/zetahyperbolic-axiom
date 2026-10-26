@@ -12,6 +12,5 @@
   "binary_tree_files": 55882,
   "binary_tree_sha256": "853ba48132e6493dde39ba73805c4054d5ad82deaf7fca9fe9c18509eab1e3b3",
   "full_environment_sha256": "b70af2931f96602fcadf2a0c361dca21f219caf1f56b9d40b8cff0dc2446d874",
-  "full_environment_local_path": "/workspace/scratch/6026d2aa054f/zetahyperbolic-axiom/.build/local-lean433/environment.json",
   "native_windows_status": "NOT_RUN"
 }

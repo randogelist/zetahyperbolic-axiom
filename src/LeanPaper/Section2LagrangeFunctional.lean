@@ -111,6 +111,7 @@ theorem kernelForm_realization (p : Real.Parameters) (i j : ℕ) :
   rw [hfactor, map_mul]
   have hd : φ (X + C ((a : ℚ) ^ 2)) ≠ 0 :=
     RatFunc.algebraMap_ne_zero (monic_X_add_C _).ne_zero
+  rw [← map_add]
   change (φ (C (Real.residue p i j a)) / φ (X + C ((a : ℚ) ^ 2))) *
       (φ (X + C ((a : ℚ) ^ 2)) * _) = _
   field_simp <;> ring
@@ -129,11 +130,15 @@ theorem polePolynomial_expansion (p : Real.Parameters) (a : Fin p.h) :
     polePolynomial p a = ∑ i : Fin p.h,
       (polePolynomial p a).coeff i.val • (X : ℚ[X]) ^ i.val := by
   have hpos : 0 < p.h := Nat.zero_lt_of_lt a.isLt
-  rw [Polynomial.as_sum_range_C_mul_X_pow, polePolynomial_natDegree,
-    Nat.sub_add_cancel hpos]
-  simpa [Polynomial.smul_eq_C_mul] using
-    (Fin.sum_univ_eq_sum_range
-      (fun i => C ((polePolynomial p a).coeff i) * X ^ i) p.h).symm
+  calc
+    polePolynomial p a = ∑ i ∈ Finset.range p.h,
+        C ((polePolynomial p a).coeff i) * X ^ i := by
+      simpa only [polePolynomial_natDegree, Nat.sub_add_cancel hpos] using
+        (polePolynomial p a).as_sum_range_C_mul_X_pow
+    _ = _ := by
+      simpa only [Polynomial.smul_eq_C_mul] using
+        (Fin.sum_univ_eq_sum_range
+          (fun i => C ((polePolynomial p a).coeff i) * X ^ i) p.h).symm
 
 def numeratorMoment (p : Real.Parameters) : ℚ[X] →ₗ[ℚ] ℚ[X] where
   toFun Q := mu p.k
@@ -145,9 +150,9 @@ def numeratorMoment (p : Real.Parameters) : ℚ[X] →ₗ[ℚ] ℚ[X] where
     rw [← (mu p.k).map_smul]
     congr 1
     have hc : RatFunc.C c = algebraMap ℚ (RatFunc ℚ) c :=
-      (map_ratCast RatFunc.C c).trans (map_ratCast (algebraMap ℚ (RatFunc ℚ)) c).symm
-    simp only [Polynomial.smul_eq_C_mul, map_mul, RatFunc.algebraMap_C, Algebra.smul_def]
-    rw [hc]
+      (map_ratCast (RatFunc.C (K := ℚ)) c).trans (map_ratCast (algebraMap ℚ (RatFunc ℚ)) c).symm
+    simp only [Algebra.smul_def, map_mul, Polynomial.algebraMap_eq, RatFunc.algebraMap_C,
+      RingHom.id_apply, hc]
     ring
 
 theorem numeratorMoment_monomial (p : Real.Parameters) (i j : Fin p.h) :
@@ -165,16 +170,23 @@ theorem lagrange_functional_eq (p : Real.Parameters) (a b : Fin p.h) :
       poleDiagonalPencil p a b := by
   rw [mul_assoc (Real.D p.N ^ (2 * p.m - 1))]
   change numeratorMoment p (polePolynomial p a * polePolynomial p b) = _
-  rw [polePolynomial_expansion p a, polePolynomial_expansion p b,
-    Finset.sum_mul]
-  simp only [Finset.mul_sum, smul_mul_assoc, mul_smul_comm, smul_smul,
-    map_sum, map_smul, numeratorMoment_monomial, Polynomial.smul_eq_C_mul]
-  exact (actual_lagrange_entries p a b).symm
+  rw [polePolynomial_expansion p a, polePolynomial_expansion p b, Finset.sum_mul]
+  simp only [Finset.mul_sum, map_sum]
+  rw [actual_lagrange_entries]
+  apply Finset.sum_congr rfl
+  intro i _
+  apply Finset.sum_congr rfl
+  intro j _
+  have hmul (u v : ℚ) (P Q : ℚ[X]) :
+      (u • P) * (v • Q) = (u * v) • (P * Q) := by
+    simp only [Polynomial.smul_eq_C_mul, map_mul]
+    ring
+  rw [hmul, map_smul, numeratorMoment_monomial, Polynomial.smul_eq_C_mul]
 
 theorem D_eq_Icc (n : ℕ) :
     Real.D n = ∏ a ∈ Finset.Icc 1 n, (X + C ((a : ℚ) ^ 2)) := by
   unfold Real.D
-  rw [show Finset.Icc 1 n = Finset.Ico 1 (n + 1) by ext; simp; omega,
+  rw [show Finset.Icc 1 n = Finset.Ico 1 (n + 1) by ext; simp,
     Finset.prod_Ico_eq_prod_range]
   simp [Nat.add_comm]
 
@@ -210,7 +222,8 @@ theorem full_kernel_eq_reduced (p : Real.Parameters) (hm : 0 < p.m)
       (monic_prod_of_monic _ _ (fun a _ => monic_X_add_C _)).ne_zero
   have hpow : 2 * p.m = (2 * p.m - 1) + 1 := by omega
   simp only [map_mul, map_pow]
-  rw [hpow, pow_succ]
+  nth_rw 1 [hpow]
+  rw [pow_succ]
   field_simp <;> ring
 
 /-- The literal Theorem 2.5 matrix identity, with the original full denominator

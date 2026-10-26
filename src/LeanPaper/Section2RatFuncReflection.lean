@@ -27,6 +27,13 @@ def reflect : RatFunc ℚ →ₐ[ℚ] RatFunc ℚ :=
   (RatFunc.liftRingHom reflectPolyHom
     (nonZeroDivisors_le_comap_nonZeroDivisors_of_injective _ reflectPolyHom_injective)).toRatAlgHom
 
+@[simp] theorem reflect_scalar (c : ℚ) :
+    reflect ((algebraMap ℚ (RatFunc ℚ)) c) = (algebraMap ℚ (RatFunc ℚ)) c := by
+  have hc : (algebraMap ℚ (RatFunc ℚ)) c = (c : RatFunc ℚ) :=
+    map_ratCast (algebraMap ℚ (RatFunc ℚ)) c
+  rw [hc]
+  exact map_ratCast reflect.toRingHom c
+
 @[simp] theorem reflect_polynomial (p : ℚ[X]) :
     reflect (algebraMap ℚ[X] (RatFunc ℚ) p) =
       algebraMap ℚ[X] (RatFunc ℚ) (reflectPolynomial p) := by
@@ -72,8 +79,7 @@ theorem tauPolynomial_reflection (k : ℕ) (hk : 1 ≤ k) (p : ℚ[X]) :
   | monomial d c =>
       have heq : reflectPolynomial (monomial d c) =
           C (c * (-1 : ℚ)^d) * (X+1)^d := by
-        simp only [reflectPolynomial, monomial_eq_C_mul_X, mul_comp, C_comp,
-          pow_comp, X_comp, map_mul, map_pow, map_neg, map_one]
+        simp only [reflectPolynomial, monomial_comp, map_mul, map_pow, map_neg, map_one]
         rw [show (-1-X : ℚ[X]) = -1*(X+1) by ring, mul_pow]
         ring
       rw [heq, polynomial_C_mul, polynomial_add_one_pow, ← map_mul,
@@ -88,21 +94,24 @@ theorem reflect_mem (f : TauSpace) : reflect (f : RatFunc ℚ) ∈ TauSpace := b
     exact (Subtype.ext hF.symm).trans (representation_decomposition F)
   rw [hf]
   simp only [Submodule.coe_add, Submodule.coe_sum, Submodule.coe_smul,
-    map_add, map_sum, map_smul]
+    map_add, map_sum]
   apply Submodule.add_mem
   · change reflect (algebraMap ℚ[X] (RatFunc ℚ) F.polynomial) ∈ TauSpace
     rw [reflect_polynomial]
     exact (polynomial (reflectPolynomial F.polynomial)).property
   · apply Submodule.sum_mem
     intro r hr
-    rw [reflect_pole]
-    exact TauSpace.smul_mem _ (TauSpace.neg_mem (pole (-1-r)).property)
+    simp only [Algebra.smul_def, map_mul, reflect_scalar, reflect_pole]
+    simpa only [Algebra.smul_def, map_ratCast] using
+      TauSpace.smul_mem (F.residue r) (TauSpace.neg_mem (pole (-1-r)).property)
 
 /-- Reflection as an operator on actual rational functions in the tau domain. -/
 def reflection : TauSpace →ₗ[ℚ] TauSpace where
   toFun f := ⟨reflect f, reflect_mem f⟩
   map_add' f g := Subtype.ext (map_add reflect (f : RatFunc ℚ) (g : RatFunc ℚ))
-  map_smul' c f := Subtype.ext (map_smul reflect c (f : RatFunc ℚ))
+  map_smul' c f := by
+    apply Subtype.ext
+    simp only [Submodule.coe_smul, Algebra.smul_def, map_mul, reflect_scalar, RingHom.id_apply]
 
 @[simp] theorem reflection_polynomial (p : ℚ[X]) :
     reflection (polynomial p) = polynomial (reflectPolynomial p) := by

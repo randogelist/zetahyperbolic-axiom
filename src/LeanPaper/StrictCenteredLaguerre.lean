@@ -42,7 +42,8 @@ theorem dispersion_positive_of_distinct {n : ℕ} (v : Fin n → ℝ)
     Finset.single_le_sum (fun k _ => sq_nonneg (v i - v k)) (Finset.mem_univ j)
   have htotal : (∑ k, (v i - v k) ^ 2) ≤ ∑ l, ∑ k, (v l - v k) ^ 2 :=
     Finset.single_le_sum
-      (fun l _ => Finset.sum_nonneg (fun k _ => sq_nonneg _)) (Finset.mem_univ i)
+      (fun l _ => Finset.sum_nonneg (fun k _ => sq_nonneg (v l - v k)))
+      (Finset.mem_univ i)
   have h := lt_of_lt_of_le hsq (le_trans hrow htotal)
   rw [pairwise_square_identity] at h
   linarith

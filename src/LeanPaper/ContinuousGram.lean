@@ -190,8 +190,7 @@ theorem gamma_exact (p : Real.Parameters) (s : ℝ) (a : Fin p.h) :
       (PoleDiagonalization.poleNode p a) : ℚ) : ℝ) ≠ 0 := by
     exact_mod_cast PoleDiagonalization.tailD_derivative_eval_ne_zero p _
       (PoleDiagonalization.poleIndex_mem p a)
-  field_simp
-  ring
+  field_simp <;> ring
 
 def pencil (p : Real.Parameters) (s : ℝ) : Spectral.SymmetricAffinePencil p.h :=
   PaperAdvances.Proposition3_2.pencil p s (riemannZeta (s : ℂ)).re
@@ -220,7 +219,7 @@ theorem weightedDensity_odd (p : Real.Parameters) (y : ℝ) :
 theorem baseMatrix_odd (p : Real.Parameters) (hp : Real.Admissible p) :
     baseMatrix p (p.weight : ℝ) = Real.gram p (Real.zeta p.weight) := by
   have hs : (1 : ℝ) < p.weight := by
-    simp only [Real.Parameters.weight, Nat.cast_add, Nat.cast_mul, Nat.cast_ofNat]
+    simp only [Real.Parameters.weight, Nat.cast_add, Nat.cast_mul, Nat.cast_ofNat, Nat.cast_one]
     have hk : (0 : ℝ) < p.k := by exact_mod_cast hp.k_pos
     linarith
   ext i j
@@ -241,7 +240,7 @@ theorem pencil_odd (p : Real.Parameters) (hp : Real.Admissible p) (x : ℝ) :
   simp only [Matrix.add_apply, Matrix.smul_apply, Real.gram, Real.evalQ,
     Real.realPolynomial, Real.pencil, Polynomial.eval_map, Polynomial.eval₂_add,
     Polynomial.eval₂_mul, Polynomial.eval₂_C, Polynomial.eval₂_X, Real.derivativeMatrix,
-    smul_eq_mul]
+    smul_eq_mul, Rat.coe_castHom]
   ring
 
 /-- The printed normalization is a fixed positive multiple of the corrected
@@ -290,7 +289,8 @@ theorem printed_pencil_degree_and_real_roots (p : Real.Parameters) (s : ℝ) (hs
     (printedPencil p s).detPolynomial.natDegree = p.h ∧
       ∀ z : ℂ, (printedPencil p s).detPolynomial.eval₂ (algebraMap ℝ ℂ) z = 0 →
         z.im = 0 := by
-  let f := PaperAdvances.Proposition3_2.factorization p s _ _
+  let f := PaperAdvances.Proposition3_2.factorization p s
+    (riemannZeta (s : ℂ)).re (printedBaseMatrix p s)
     (printedBaseMatrix_isSymm p s) (printedBaseMatrix_posDef p s hs)
   exact ⟨f.natDegree_eq, f.complex_root_im_zero⟩
 

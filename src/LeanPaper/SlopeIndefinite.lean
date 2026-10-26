@@ -10,6 +10,7 @@ noncomputable section
 open scoped BigOperators MatrixOrder
 open Matrix Polynomial
 namespace LeanPaper.SlopeIndefinite
+set_option backward.isDefEq.respectTransparency false
 open ManuscriptChain ManuscriptChain.Spectral
 open PaperAdvances.Proposition3_2
 
@@ -18,7 +19,8 @@ lemma slope_posSemidef_iff (p : Real.Parameters) (s : ℝ) :
   have hV : IsUnit (vandermonde p) :=
     (Matrix.isUnit_iff_isUnit_det _).mpr (isUnit_iff_ne_zero.mpr (vandermonde_det_ne_zero p))
   have h := hV.posSemidef_star_right_conjugate_iff (x := Matrix.diagonal (gamma p s))
-  simpa [slope, Matrix.star_eq_conjTranspose, Matrix.conjTranspose_eq_transpose_of_trivial,
+  change (vandermonde p * Matrix.diagonal (gamma p s) * (vandermonde p)ᵀ).PosSemidef ↔ _
+  simpa only [Matrix.star_eq_conjTranspose, Matrix.conjTranspose_eq_transpose_of_trivial,
     Matrix.posSemidef_diagonal_iff] using h
 
 lemma neg_slope_posSemidef_iff (p : Real.Parameters) (s : ℝ) :
@@ -26,8 +28,14 @@ lemma neg_slope_posSemidef_iff (p : Real.Parameters) (s : ℝ) :
   have hV : IsUnit (vandermonde p) :=
     (Matrix.isUnit_iff_isUnit_det _).mpr (isUnit_iff_ne_zero.mpr (vandermonde_det_ne_zero p))
   have h := hV.posSemidef_star_right_conjugate_iff (x := Matrix.diagonal (-(gamma p s)))
-  simpa [slope, Matrix.star_eq_conjTranspose, Matrix.conjTranspose_eq_transpose_of_trivial,
-    Matrix.posSemidef_diagonal_iff, Matrix.diagonal_neg, Matrix.mul_neg, Matrix.neg_mul] using h
+  rw [Matrix.posSemidef_diagonal_iff] at h
+  have hd : Matrix.diagonal (-(gamma p s)) = -(Matrix.diagonal (gamma p s)) :=
+    (Matrix.diagonal_neg _).symm
+  rw [hd] at h
+  change (-(vandermonde p * Matrix.diagonal (gamma p s) * (vandermonde p)ᵀ)).PosSemidef ↔ _
+  simpa only [Matrix.star_eq_conjTranspose, Matrix.conjTranspose_eq_transpose_of_trivial,
+    Matrix.posSemidef_diagonal_iff, Matrix.mul_neg, Matrix.neg_mul,
+    Pi.neg_apply, neg_nonneg] using h
 
 theorem slope_indefinite (p : Real.Parameters) (hm : 1 ≤ p.m) (s : ℝ) (hh : 2 ≤ p.h) :
     ¬ (slope p s).PosSemidef ∧ ¬ (-(slope p s)).PosSemidef := by
@@ -59,9 +67,16 @@ lemma hermitian_mixed_eigenvalues {n : ℕ} (B : Matrix (Fin n) (Fin n) ℝ)
     have hd : (Matrix.diagonal (-hB.eigenvalues)).PosSemidef :=
       Matrix.posSemidef_diagonal_iff.mpr (fun i => neg_nonneg.mpr (h i))
     have hc := hd.mul_mul_conjTranspose_same (hB.eigenvectorUnitary : Matrix (Fin n) (Fin n) ℝ)
-    rw [hB.spectral_theorem]
-    simpa [Unitary.conjStarAlgAut_apply, Matrix.diagonal_neg,
-      Matrix.mul_neg, Matrix.neg_mul, Function.comp_def] using hc
+    have hdn : Matrix.diagonal (-hB.eigenvalues) = -Matrix.diagonal hB.eigenvalues :=
+      (Matrix.diagonal_neg _).symm
+    rw [hdn] at hc
+    have hspectral : B = Unitary.conjStarAlgAut ℝ _ hB.eigenvectorUnitary
+        (Matrix.diagonal hB.eigenvalues) := by
+      simpa [Function.comp_def] using hB.spectral_theorem
+    rw [hspectral]
+    simpa only [Unitary.conjStarAlgAut_apply,
+      Matrix.mul_neg, Matrix.neg_mul, Matrix.star_eq_conjTranspose,
+      Matrix.conjTranspose_eq_transpose_of_trivial, Function.comp_def] using hc
 
 theorem mixed_factorization_exists {n : ℕ}
     (p : SymmetricAffinePencil n) (positive : p.base.PosDef)

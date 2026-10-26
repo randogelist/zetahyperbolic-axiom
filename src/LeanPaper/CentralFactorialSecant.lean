@@ -28,9 +28,8 @@ lemma hasDerivAt_sechPower (n : ℕ) (z : ℝ) :
       unfold sechPower
       simpa using hasDerivAt_const z (1 : ℝ)
   | succ n =>
-      change HasDerivAt (fun x => (Real.cosh x)⁻¹ ^ (n+1)) _ z
-      convert h using 1
-      try simp only [Nat.cast_add, Nat.cast_one, Nat.add_sub_cancel, pow_succ]
+      apply h.congr_deriv
+      simp only [Pi.inv_apply, Nat.cast_add, Nat.cast_one, Nat.add_sub_cancel, pow_succ]
       field_simp
       <;> ring
 
@@ -150,7 +149,7 @@ lemma deriv_scaled_exp (a c : ℝ) :
       fun z => (-a*c)*Real.exp (-a*z) := by
   funext z
   have h := (((hasDerivAt_id z).const_mul (-a)).exp).const_mul c
-  convert h.deriv using 1 <;> ring
+  convert h.deriv using 1 <;> simp only [id_eq] <;> ring
 
 lemma deriv_twice_scaled_exp (a c : ℝ) :
     deriv (deriv (fun z : ℝ => c * Real.exp (-a*z))) =
@@ -175,6 +174,7 @@ theorem centralOperator_exp (k : ℕ) (a : ℝ) :
 theorem centralOperator_annihilates {k l : ℕ} (hl : l<k) :
     centralOperator k (fun z => Real.exp (-((2*l+1 : ℕ) : ℝ)*z)) = 0 := by
   rw [centralOperator_exp, modeMultiplier_zero hl]
+  funext z
   simp
 
 /-- Reversing all factors introduces the sign missing in printed equation (6.5). -/

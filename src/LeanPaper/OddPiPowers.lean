@@ -36,9 +36,9 @@ theorem rational_pi_pow_transcendental (q : ℚ) (hq : q≠0) (n : ℕ) (hn : 0<
 theorem pi_powers_linearIndependent : LinearIndependent ℚ (fun n : ℕ => Real.pi^n) := by
   have h := (Polynomial.basisMonomials ℚ).linearIndependent.map'
     (Polynomial.aeval Real.pi).toLinearMap
-    (transcendental_iff_injective.mp
-      LeanFormalizations.Transcendence.transcendental_pi_axiomClean)
-  simpa [Polynomial.coe_basisMonomials] using h
+    (LinearMap.ker_eq_bot.mpr (transcendental_iff_injective.mp
+      LeanFormalizations.Transcendence.transcendental_pi_axiomClean))
+  simpa [Polynomial.coe_basisMonomials, Function.comp_def] using h
 
 /-- Constant exponent zero followed by the distinct odd exponents. -/
 def oddExponent {N : ℕ} : Option (Fin N) → ℕ

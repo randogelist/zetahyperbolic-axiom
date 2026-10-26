@@ -29,7 +29,7 @@ theorem naiveHeight_is_nat (f : ℤ[X]) : ∃ B : ℕ, naiveHeight f = B := by
   change (complexPolynomial f).supNorm = _
   rw [hi]
   simp only [complexPolynomial, Polynomial.coeff_map, eq_intCast, Complex.norm_intCast]
-  exact_mod_cast (Int.natCast_natAbs (f.coeff i)).symm
+  simpa only [Int.cast_abs] using (Nat.cast_natAbs (α := ℝ) (f.coeff i)).symm
 
 /-- Every nonzero integer polynomial has height at least one. -/
 theorem one_le_naiveHeight (f : ℤ[X]) (hf : f ≠ 0) : 1 ≤ naiveHeight f := by
@@ -117,6 +117,7 @@ theorem resultant_upper_bound (f Q : ℤ[X]) (a : ℂ)
             ((((Q.natDegree : ℝ)+1)*naiveHeight Q)^(f.natDegree-1) *
               ((s.erase a).map (fun z => max 1 ‖z‖)).prod^Q.natDegree)) := by
           gcongr
+          simpa only [naiveHeight, Nat.pred_eq_sub_one] using hprod
     _ = ‖(complexPolynomial Q).eval a‖ *
           (((Q.natDegree : ℝ)+1)*naiveHeight Q)^(f.natDegree-1) *
           (|(f.leadingCoeff : ℝ)| *
@@ -139,7 +140,7 @@ theorem algebraic_approximation_barrier (f Q : ℤ[X]) (a : ℂ)
   have hf0 : complexPolynomial f ≠ 0 := by
     intro hz
     have hfQ0 : rationalPolynomial f = 0 := by
-      apply (Polynomial.map_injective (show Function.Injective (algebraMap ℚ ℂ)
+      apply (Polynomial.map_injective (algebraMap ℚ ℂ) (show Function.Injective (algebraMap ℚ ℂ)
         from Rat.cast_injective))
       rw [complexPolynomial_from_rational, hz, Polynomial.map_zero]
     exact hf.ne_zero hfQ0

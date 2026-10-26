@@ -34,7 +34,7 @@ theorem actual_symmetric_charpoly_eq_pole (p : Real.Parameters) (hp : Real.Admis
         (PaperAdvances.Theorem3_8_Actual.actualGram p)
         (PaperAdvances.Theorem3_8_Actual.actualV p)
         (PaperAdvances.Theorem3_8_Actual.actualGamma p)).charpoly := by
-  rw [whitened_charpoly_eq_relative _ (GRAM_POSITIVE p hp)]
+  rw [whitened_charpoly_eq_relative (Real.manuscriptPencil p) (GRAM_POSITIVE p hp)]
   exact PaperAdvances.Theorem3_8_Actual.actual_relative_charpoly_eq_pole p
 
 /-- The real eigenvalue multisets, not merely their support sets, agree. -/

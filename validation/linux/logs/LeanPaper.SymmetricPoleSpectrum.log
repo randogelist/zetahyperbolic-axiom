@@ -1,0 +1,3 @@
+'LeanPaper.SymmetricPoleSpectrum.actual_symmetric_charpoly_eq_pole' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

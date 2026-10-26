@@ -1,0 +1,6 @@
+'LeanPaper.ConsecutiveDerivativeZeros.consecutive_taylor_nonvanishing' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'LeanPaper.ConsecutiveDerivativeZeros.actual_centered_consecutive_nonvanishing' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

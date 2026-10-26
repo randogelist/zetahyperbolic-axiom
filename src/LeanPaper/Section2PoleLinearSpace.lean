@@ -39,7 +39,7 @@ theorem realization_add (nodes : ι → ℚ) (F G : SimplePoleForm ι) :
 theorem realization_smul (nodes : ι → ℚ) (c : ℚ) (F : SimplePoleForm ι) :
     realization nodes (smulForm c F) = (algebraMap ℚ (RatFunc ℚ) c) * realization nodes F := by
   have hc : RatFunc.C c = (algebraMap ℚ (RatFunc ℚ)) c :=
-    (map_ratCast RatFunc.C c).trans (map_ratCast (algebraMap ℚ (RatFunc ℚ)) c).symm
+    (map_ratCast (RatFunc.C (K := ℚ)) c).trans (map_ratCast (algebraMap ℚ (RatFunc ℚ)) c).symm
   simp only [realization, smulForm, Polynomial.smul_eq_C_mul, map_mul,
     RatFunc.algebraMap_C, hc, mul_add, Finset.mul_sum]
   congr 1

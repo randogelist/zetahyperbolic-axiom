@@ -4,8 +4,8 @@
   "toolchain_original": "Lean 4.31.0",
   "license": "Apache-2.0",
   "source_root": "src/LeanFormalizations/NumberTheory/Transcendence",
-  "adaptation": "Only local import path mapping before compilation; further compiler adaptations recorded in diff.",
-  "status": "UNCOMPILED_CANDIDATE",
+  "adaptation": "Local import path mapping; SubsetSumEsymm empty-multiset case supplies explicit Mathlib powersetCard_zero_left and powersetCard_zero_right simp lemmas for Lean 4.33.0. Mathematical statements unchanged.",
+  "status": "TARGETED_COMPILE_PASS_GLOBAL_AXIOM_AUDIT_PENDING",
   "files": [
     {
       "source_path": "ETranscendental.lean",
@@ -23,7 +23,7 @@
       "source_path": "SubsetSumEsymm.lean",
       "source_sha256": "b7ca64189eb633f354b0efcf6a37b378112411b8b1bda01d11aea41823f6608f",
       "local_path": "src/LeanPaper/ExternalPi/SubsetSumEsymm.lean",
-      "local_sha256": "b7ca64189eb633f354b0efcf6a37b378112411b8b1bda01d11aea41823f6608f"
+      "local_sha256": "3084d5fd3b491452da871b43e7980c15ee83ecdf972117f7bbfe4003b2106f0d"
     },
     {
       "source_path": "PiTranscendental.lean",
@@ -43,5 +43,6 @@
       "local_path": "src/LeanPaper/ExternalPi/HermiteLindemann.lean",
       "local_sha256": "a14f3c4259df80783abfd4303ffdf8a4e399e69089da1fe9e1d24eec538bbf32"
     }
-  ]
+  ],
+  "toolchain_target": "Lean 4.33.0"
 }

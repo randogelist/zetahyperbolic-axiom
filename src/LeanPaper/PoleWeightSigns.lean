@@ -25,6 +25,7 @@ lemma sign_D_eval (N a : ℕ) (ha : N < a) :
     have hja : (j+1 : ℚ) < a := by exact_mod_cast (show j+1<a by have := Finset.mem_range.mp hj; omega)
     have hj0 : (0 : ℚ) ≤ j+1 := by positivity
     have ha0 : (0 : ℚ) < a := by exact_mod_cast (show 0<a by omega)
+    norm_num only [Nat.cast_add, Nat.cast_one] at *
     nlinarith
   rw [Finset.prod_congr rfl hf]
   simp
@@ -148,7 +149,7 @@ theorem determinant_leading_sign (p : Real.Parameters) (hm : 1 ≤ p.m) :
   congr 1
   rw [Finset.sum_add_distrib]
   have hi : (∑ a : Fin p.h, a.val) = p.h*(p.h-1)/2 := by
-    rw [Fin.sum_univ_eq_sum_range, Finset.sum_range_id]
+    simpa only [Finset.sum_range_id] using (Fin.sum_univ_eq_sum_range (fun i : ℕ => i) p.h)
   simp [hi, Nat.mul_comm]
 
 end LeanPaper.PoleWeightSigns

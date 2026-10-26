@@ -58,11 +58,11 @@ theorem eventually_radius_budget (d : ℕ → ℕ) (lam ρ σ : ℝ)
         ManuscriptChain.Spectral.comparisonRadius (d K) (Real.exp (ρ * K)) := by
   have hg : 0 < σ - ρ := sub_pos.mpr hgap
   have ht1 : Tendsto (fun K : ℕ => (K : ℝ) * Real.exp (-(σ - ρ) * K)) atTop (𝓝 0) := by
-    simpa only [Real.rpow_one] using
-      (Real.tendsto_rpow_mul_exp_neg_mul_atTop_nhds_zero 1 (σ - ρ) hg).comp
+    simpa only [Real.rpow_one, Function.comp_def] using
+      (tendsto_rpow_mul_exp_neg_mul_atTop_nhds_zero 1 (σ - ρ) hg).comp
         tendsto_natCast_atTop_atTop
   have ht0 : Tendsto (fun K : ℕ => Real.exp (-(σ - ρ) * K)) atTop (𝓝 0) := by
-    simpa only [neg_mul] using Real.tendsto_exp_neg_atTop_nhds_zero.comp
+    simpa only [neg_mul, Function.comp_def] using Real.tendsto_exp_neg_atTop_nhds_zero.comp
       (tendsto_natCast_atTop_atTop.const_mul_atTop hg)
   have ht : Tendsto (fun K : ℕ => 8 * ((lam * K + 1) * Real.exp (-(σ - ρ) * K)))
       atTop (𝓝 0) := by

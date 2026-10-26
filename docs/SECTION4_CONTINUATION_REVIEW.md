@@ -41,6 +41,18 @@ height lower constant by one supported by a certified two-sided interval for
 `A_M`. The arithmetic multiplier and family identity must be the same on both
 sides. For example A=-3 satisfies the displayed upper bound but A+2.557199=-0.442801<0.23, so that implication fails even over rational numbers. This is a proof gap, not by itself a counterexample to the theorem.
 
+
+A second direction error occurs on p. 21 in Proposition 4.8(1). Its proof
+applies the cluster estimate `|r-zeta(5)| <= exp(-tau*K)` with `tau=11.411`
+to every root, citing Theorem 4.4. The cited spectral-norm estimate instead
+gives `|r-zeta(5)| >= exp(-11.411*K)`. The conditional conclusion for a root
+already known to lie in a cluster remains valid, but the blanket exclusion
+of all rational roots with denominator at most `exp(K/2251)` does not follow.
+A correction must either add the upper-closeness premise to that exclusion,
+or supply an independent arithmetic argument ruling out rational roots far
+from zeta(5). This is an invalid inference in the supplied proof, not a
+constructed counterexample to the particular polynomial family's conclusion.
+
 Theorem 4.5 additionally needs the coupled-family arithmetic multiplier,
 valuation loss and density comparison to preserve those rates. The finite
 coupled-shift algebra in the baseline does not supply these estimates.
@@ -80,3 +92,30 @@ session. Its equation (2.1), printed page 3, fixes `K=40n, N=3n, h=37n`,
 constants cannot be imported by citing the source alone: their dependence on
 the changed parameter ratio must be proved. The original source's quantitative
 conclusions for its own family remain distinct from the manuscript's family.
+
+## Independent review of the Section 6.3(2) counterexample
+
+The Section 4 agent independently inspected manuscript equation (5.3), the
+precise subspace and normalization in Theorem 6.3(2), the certificate JSON,
+and `tools/check_beukers_h4_counterexample.py`, and executed that checker
+successfully. The negative combination has actual degree 25 (hence at most
+27), vanishing order 8 at zero, and nonzero free Q-coordinates `(-t,1,0,0)`.
+The four Q-vectors' final coordinates are the identity, proving independence;
+multiplication by `x^8(1-x)^4` preserves it. Their twelve exact constraints
+coincide with the printed Mellin moment conditions.
+
+If `s_i` is the positive coefficient l1 norm of Q_i, the normalized basis
+consists of `P_i/s_i`. The same negative vector P has coordinates
+`(-t*s_0,s_1,0,0)` in this basis, so normalization does not remove the negative
+quadratic direction. The diagonal and off-diagonal coefficients in the
+checker agree with equation (5.3), including its positive difference quotient
+and factor `1/6`.
+
+The finite geometric identity for `1/(1+x)` gives exactly the displayed Euler
+eta partial sum after integration against `(-log x)^6/720`. Its positive
+remainder is bounded by `2^(-240)` because that logarithmic weight has total
+mass one. Absolute summability justifies the eta/zeta relation
+`eta(7)=(63/64)*zeta(7)`. Thus the exact rational enclosure and final negative
+interval establish the counterexample without floating-point sign decisions.
+This independent review agrees with the explicit scope label: rational
+arithmetic plus an elementary analytic derivation, not a Lean kernel proof.

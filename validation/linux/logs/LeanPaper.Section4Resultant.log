@@ -1,0 +1,11 @@
+LeanPaper/Section4Resultant.lean:76:2: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+'LeanPaper.Section4Resultant.integer_resultant_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanPaper.Section4Resultant.irreducible_conjugate_product_one_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'LeanPaper.Section4Resultant.integer_mahler_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeanPaper.Section4Resultant.primitive_conjugate_product_one_le_in_norm_disk' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

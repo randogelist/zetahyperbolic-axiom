@@ -53,8 +53,8 @@ theorem derivative_hasDistinctRoots {P : ℝ[X]} (hP : P.Splits)
       (Polynomial.isRoot_iterate_derivative_of_lt_rootMultiplicity (n := 1) hm)
   have hpa : P.IsRoot a := by
     apply consecutive_derivative_zeros_force_root hP 1 (by omega) a
-    · simpa only [Function.iterate_one] using haroot
-    · simpa only [Function.iterate_succ_apply', Function.iterate_zero, id_eq] using hdouble
+    · simpa only [Function.iterate_one, Polynomial.IsRoot.def] using haroot
+    · simpa only [Function.iterate_succ_apply', Function.iterate_zero, id_eq, Polynomial.IsRoot.def] using hdouble
   have hpmult : P.rootMultiplicity a = P.natDegree := by
     rw [Polynomial.derivative_rootMultiplicity_of_root hpa,
       Polynomial.natDegree_derivative] at hmult
