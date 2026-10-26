@@ -152,6 +152,7 @@ import LeanPaper.ImportedSection56.DualNullspace
 import LeanPaper.ImportedSection56.SelectedMonomial
 import LeanPaper.ImportedSection56.UnimodularMonomial
 import LeanPaper.Section5DualSpectrum
+import LeanPaper.Section5RationalIndependence
 import LeanPaper.HigherDerivativeTuran
 import LeanPaper.ManuscriptObstructions
 import LeanPaper.NormalizedNewton
@@ -791,6 +792,7 @@ run_cmd Elab.Command.liftCoreM do
     `LeanPaper.ImportedSection56.SelectedMonomial,
     `LeanPaper.ImportedSection56.UnimodularMonomial,
     `LeanPaper.Section5DualSpectrum,
+    `LeanPaper.Section5RationalIndependence,
     `LeanPaper.HigherDerivativeTuran,
     `LeanPaper.ManuscriptObstructions,
     `LeanPaper.NormalizedNewton,
