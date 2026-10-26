@@ -78,3 +78,9 @@ The rational-independence repair, all Chapter 4 additions, full actual beta resi
 ## Actual outer-prime arithmetic for 6.1(2)
 
 `BeukersOuterValuation` proves the actual positive harmonic interval has exactly one term with valuation `-s`, derives the literal weight-seven off-diagonal rational value's valuation `-7`, reduces the full outer-prime congruence hypotheses to the shifted-index case, and identifies that rational value with the actual Beukers integral. This removes an actual arithmetic obstruction instead of assuming a generic local-valuation interface. The source is queued for receiving CI. The independent Mellin change of variables and full local two-by-two leading-congruence clause remain unproved.
+
+## Fifth receiving CI
+
+[Run 40326559574](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40326559574), commit `b1c99c0d25cf94ee2cfbb398f697b7e50c363f89`, compiled **258/260** modules, reusing 251 from the independently audited cache. All actual Laplace/Gram/Jacobi proofs, the floor integral and endpoint noncontinuity, the Hadamard bound and the actual outer-prime valuation passed. The completed-subset transitive audit and negative regressions passed. Only the beta-spectrum module failed, leaving the full audit correctly skipped.
+
+Its remaining issue was an inferred negated-equality function used with an ambiguous `.symm` projection. The repair explicitly constructs the reverse unequal-index proof before simplifying the divided-difference symmetry. No statement changes. Receiving verification of this final repair and the fresh global audit remain required.

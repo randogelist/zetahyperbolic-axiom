@@ -12,8 +12,8 @@
     "genuinely blocked"
   ],
   "source_base": "41674aac3544bf314a53b4302266ad22a30ae707",
-  "current_receiving_commit": "e83810004eb5e2392beb208e5d85bc3843ae5214",
-  "current_receiving_run": 40323993835,
+  "current_receiving_commit": "b1c99c0d25cf94ee2cfbb398f697b7e50c363f89",
+  "current_receiving_run": 40326559574,
   "full_project_verified": false,
   "rows": [
     {
@@ -514,8 +514,8 @@
   ],
   "latest_completed_verification": {
     "state": "FAIL",
-    "compiled": 251,
-    "registered": 259,
+    "compiled": 258,
+    "registered": 260,
     "subset_audit": "PASS",
     "scope": "COMPLETED_PROJECT_SUBSET",
     "full_project_verified": false

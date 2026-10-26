@@ -46,9 +46,9 @@ private theorem floor_reciprocal_eq (n : ℤ) {y : ℝ} (hy : 0 < y)
 theorem outerT_piece_1 {y : ℝ} (ha : 1/3 < y) (hb : y < 43/120) :
     outerT y = 51/8+(-5)*y := by
   have hf : ⌊1/y⌋ = (2 : ℤ) :=
-    floor_reciprocal_eq 2 (by linarith) (by norm_num <;> linarith) (by norm_num <;> linarith)
-  have hh : y < 1/2 := by linarith
-  have h1 : y < 1 := by linarith
+    floor_reciprocal_eq 2 (by linarith only [ha, hb]) (by norm_num <;> linarith only [ha, hb]) (by norm_num <;> linarith only [ha, hb])
+  have hh : y < 1/2 := by linarith only [ha, hb]
+  have h1 : y < 1 := by linarith only [ha, hb]
   have hv : v y = (1-2*y) := by
     unfold v
     rw [hf]
@@ -56,31 +56,31 @@ theorem outerT_piece_1 {y : ℝ} (ha : 1/3 < y) (hb : y < 43/120) :
   have hu : u y = (3/40+(1-2*y)-y) := by
     rw [u, hv]
     change max (0 : ℝ) (3/40+(1-2*y)-y) = (3/40+(1-2*y)-y)
-    exact max_eq_right (by linarith)
+    exact max_eq_right (by linarith only [ha, hb])
   have ht : t y = (3/40+(3/40+(1-2*y)-y)) := by
     rw [t, hv, hu]
     change min (3/40 : ℝ) (1-2*y)+(3/40+(1-2*y)-y) = (3/40+(3/40+(1-2*y)-y))
-    rw [min_eq_left (show (3/40 : ℝ) ≤ (1-2*y) by linarith)]
+    rw [min_eq_left (show (3/40 : ℝ) ≤ (1-2*y) by linarith only [ha, hb])]
   have hr : r y = (29/20-3*y) := by
     unfold r
-    exact max_eq_right (by linarith)
+    exact max_eq_right (by linarith only [ha, hb])
   have hm : min (r y) (y+u y) = (y+(3/40+(1-2*y)-y)) := by
     rw [hr, hu]
-    exact min_eq_right (by linarith)
+    exact min_eq_right (by linarith only [ha, hb])
   have hp1 : max (0 : ℝ) (37/20-y) = (37/20-y) :=
-    max_eq_right (by linarith)
+    max_eq_right (by linarith only [ha, hb])
   have hp2 : max (0 : ℝ) (37/20-2*y) = (37/20-2*y) :=
-    max_eq_right (by linarith)
+    max_eq_right (by linarith only [ha, hb])
   have hp3 : max (0 : ℝ) (37/20-3*y) = (37/20-3*y) :=
-    max_eq_right (by linarith)
+    max_eq_right (by linarith only [ha, hb])
   have hp4 : max (0 : ℝ) (37/20-4*y) = (37/20-4*y) :=
-    max_eq_right (by linarith)
+    max_eq_right (by linarith only [ha, hb])
   have hp5 : max (0 : ℝ) (37/20-5*y) = (37/20-5*y) :=
-    max_eq_right (by linarith)
+    max_eq_right (by linarith only [ha, hb])
   have hp6 : max (0 : ℝ) (37/20-6*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   have hp7 : max (0 : ℝ) (37/20-7*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   unfold outerT
   rw [hf]
   unfold outerR
@@ -92,9 +92,9 @@ theorem outerT_piece_1 {y : ℝ} (ha : 1/3 < y) (hb : y < 43/120) :
 theorem outerT_piece_2 {y : ℝ} (ha : 43/120 < y) (hb : y < 29/80) :
     outerT y = 513/40+(-23)*y := by
   have hf : ⌊1/y⌋ = (2 : ℤ) :=
-    floor_reciprocal_eq 2 (by linarith) (by norm_num <;> linarith) (by norm_num <;> linarith)
-  have hh : y < 1/2 := by linarith
-  have h1 : y < 1 := by linarith
+    floor_reciprocal_eq 2 (by linarith only [ha, hb]) (by norm_num <;> linarith only [ha, hb]) (by norm_num <;> linarith only [ha, hb])
+  have hh : y < 1/2 := by linarith only [ha, hb]
+  have h1 : y < 1 := by linarith only [ha, hb]
   have hv : v y = (1-2*y) := by
     unfold v
     rw [hf]
@@ -102,31 +102,31 @@ theorem outerT_piece_2 {y : ℝ} (ha : 43/120 < y) (hb : y < 29/80) :
   have hu : u y = 0 := by
     rw [u, hv]
     change max (0 : ℝ) (3/40+(1-2*y)-y) = 0
-    exact max_eq_left (by linarith)
+    exact max_eq_left (by linarith only [ha, hb])
   have ht : t y = (3/40+0) := by
     rw [t, hv, hu]
     change min (3/40 : ℝ) (1-2*y)+0 = (3/40+0)
-    rw [min_eq_left (show (3/40 : ℝ) ≤ (1-2*y) by linarith)]
+    rw [min_eq_left (show (3/40 : ℝ) ≤ (1-2*y) by linarith only [ha, hb])]
   have hr : r y = (29/20-3*y) := by
     unfold r
-    exact max_eq_right (by linarith)
+    exact max_eq_right (by linarith only [ha, hb])
   have hm : min (r y) (y+u y) = (y+0) := by
     rw [hr, hu]
-    exact min_eq_right (by linarith)
+    exact min_eq_right (by linarith only [ha, hb])
   have hp1 : max (0 : ℝ) (37/20-y) = (37/20-y) :=
-    max_eq_right (by linarith)
+    max_eq_right (by linarith only [ha, hb])
   have hp2 : max (0 : ℝ) (37/20-2*y) = (37/20-2*y) :=
-    max_eq_right (by linarith)
+    max_eq_right (by linarith only [ha, hb])
   have hp3 : max (0 : ℝ) (37/20-3*y) = (37/20-3*y) :=
-    max_eq_right (by linarith)
+    max_eq_right (by linarith only [ha, hb])
   have hp4 : max (0 : ℝ) (37/20-4*y) = (37/20-4*y) :=
-    max_eq_right (by linarith)
+    max_eq_right (by linarith only [ha, hb])
   have hp5 : max (0 : ℝ) (37/20-5*y) = (37/20-5*y) :=
-    max_eq_right (by linarith)
+    max_eq_right (by linarith only [ha, hb])
   have hp6 : max (0 : ℝ) (37/20-6*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   have hp7 : max (0 : ℝ) (37/20-7*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   unfold outerT
   rw [hf]
   unfold outerR
@@ -138,9 +138,9 @@ theorem outerT_piece_2 {y : ℝ} (ha : 43/120 < y) (hb : y < 29/80) :
 theorem outerT_piece_3 {y : ℝ} (ha : 29/80 < y) (hb : y < 37/100) :
     outerT y = 571/40+(-27)*y := by
   have hf : ⌊1/y⌋ = (2 : ℤ) :=
-    floor_reciprocal_eq 2 (by linarith) (by norm_num <;> linarith) (by norm_num <;> linarith)
-  have hh : y < 1/2 := by linarith
-  have h1 : y < 1 := by linarith
+    floor_reciprocal_eq 2 (by linarith only [ha, hb]) (by norm_num <;> linarith only [ha, hb]) (by norm_num <;> linarith only [ha, hb])
+  have hh : y < 1/2 := by linarith only [ha, hb]
+  have h1 : y < 1 := by linarith only [ha, hb]
   have hv : v y = (1-2*y) := by
     unfold v
     rw [hf]
@@ -148,31 +148,31 @@ theorem outerT_piece_3 {y : ℝ} (ha : 29/80 < y) (hb : y < 37/100) :
   have hu : u y = 0 := by
     rw [u, hv]
     change max (0 : ℝ) (3/40+(1-2*y)-y) = 0
-    exact max_eq_left (by linarith)
+    exact max_eq_left (by linarith only [ha, hb])
   have ht : t y = (3/40+0) := by
     rw [t, hv, hu]
     change min (3/40 : ℝ) (1-2*y)+0 = (3/40+0)
-    rw [min_eq_left (show (3/40 : ℝ) ≤ (1-2*y) by linarith)]
+    rw [min_eq_left (show (3/40 : ℝ) ≤ (1-2*y) by linarith only [ha, hb])]
   have hr : r y = (29/20-3*y) := by
     unfold r
-    exact max_eq_right (by linarith)
+    exact max_eq_right (by linarith only [ha, hb])
   have hm : min (r y) (y+u y) = (29/20-3*y) := by
     rw [hr, hu]
-    exact min_eq_left (by linarith)
+    exact min_eq_left (by linarith only [ha, hb])
   have hp1 : max (0 : ℝ) (37/20-y) = (37/20-y) :=
-    max_eq_right (by linarith)
+    max_eq_right (by linarith only [ha, hb])
   have hp2 : max (0 : ℝ) (37/20-2*y) = (37/20-2*y) :=
-    max_eq_right (by linarith)
+    max_eq_right (by linarith only [ha, hb])
   have hp3 : max (0 : ℝ) (37/20-3*y) = (37/20-3*y) :=
-    max_eq_right (by linarith)
+    max_eq_right (by linarith only [ha, hb])
   have hp4 : max (0 : ℝ) (37/20-4*y) = (37/20-4*y) :=
-    max_eq_right (by linarith)
+    max_eq_right (by linarith only [ha, hb])
   have hp5 : max (0 : ℝ) (37/20-5*y) = (37/20-5*y) :=
-    max_eq_right (by linarith)
+    max_eq_right (by linarith only [ha, hb])
   have hp6 : max (0 : ℝ) (37/20-6*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   have hp7 : max (0 : ℝ) (37/20-7*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   unfold outerT
   rw [hf]
   unfold outerR
@@ -184,9 +184,9 @@ theorem outerT_piece_3 {y : ℝ} (ha : 29/80 < y) (hb : y < 37/100) :
 theorem outerT_piece_4 {y : ℝ} (ha : 37/100 < y) (hb : y < 37/80) :
     outerT y = 497/40+(-22)*y := by
   have hf : ⌊1/y⌋ = (2 : ℤ) :=
-    floor_reciprocal_eq 2 (by linarith) (by norm_num <;> linarith) (by norm_num <;> linarith)
-  have hh : y < 1/2 := by linarith
-  have h1 : y < 1 := by linarith
+    floor_reciprocal_eq 2 (by linarith only [ha, hb]) (by norm_num <;> linarith only [ha, hb]) (by norm_num <;> linarith only [ha, hb])
+  have hh : y < 1/2 := by linarith only [ha, hb]
+  have h1 : y < 1 := by linarith only [ha, hb]
   have hv : v y = (1-2*y) := by
     unfold v
     rw [hf]
@@ -194,31 +194,31 @@ theorem outerT_piece_4 {y : ℝ} (ha : 37/100 < y) (hb : y < 37/80) :
   have hu : u y = 0 := by
     rw [u, hv]
     change max (0 : ℝ) (3/40+(1-2*y)-y) = 0
-    exact max_eq_left (by linarith)
+    exact max_eq_left (by linarith only [ha, hb])
   have ht : t y = (3/40+0) := by
     rw [t, hv, hu]
     change min (3/40 : ℝ) (1-2*y)+0 = (3/40+0)
-    rw [min_eq_left (show (3/40 : ℝ) ≤ (1-2*y) by linarith)]
+    rw [min_eq_left (show (3/40 : ℝ) ≤ (1-2*y) by linarith only [ha, hb])]
   have hr : r y = (29/20-3*y) := by
     unfold r
-    exact max_eq_right (by linarith)
+    exact max_eq_right (by linarith only [ha, hb])
   have hm : min (r y) (y+u y) = (29/20-3*y) := by
     rw [hr, hu]
-    exact min_eq_left (by linarith)
+    exact min_eq_left (by linarith only [ha, hb])
   have hp1 : max (0 : ℝ) (37/20-y) = (37/20-y) :=
-    max_eq_right (by linarith)
+    max_eq_right (by linarith only [ha, hb])
   have hp2 : max (0 : ℝ) (37/20-2*y) = (37/20-2*y) :=
-    max_eq_right (by linarith)
+    max_eq_right (by linarith only [ha, hb])
   have hp3 : max (0 : ℝ) (37/20-3*y) = (37/20-3*y) :=
-    max_eq_right (by linarith)
+    max_eq_right (by linarith only [ha, hb])
   have hp4 : max (0 : ℝ) (37/20-4*y) = (37/20-4*y) :=
-    max_eq_right (by linarith)
+    max_eq_right (by linarith only [ha, hb])
   have hp5 : max (0 : ℝ) (37/20-5*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   have hp6 : max (0 : ℝ) (37/20-6*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   have hp7 : max (0 : ℝ) (37/20-7*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   unfold outerT
   rw [hf]
   unfold outerR
@@ -230,9 +230,9 @@ theorem outerT_piece_4 {y : ℝ} (ha : 37/100 < y) (hb : y < 37/80) :
 theorem outerT_piece_5 {y : ℝ} (ha : 37/80 < y) (hb : y < 29/60) :
     outerT y = 41/10+(-4)*y := by
   have hf : ⌊1/y⌋ = (2 : ℤ) :=
-    floor_reciprocal_eq 2 (by linarith) (by norm_num <;> linarith) (by norm_num <;> linarith)
-  have hh : y < 1/2 := by linarith
-  have h1 : y < 1 := by linarith
+    floor_reciprocal_eq 2 (by linarith only [ha, hb]) (by norm_num <;> linarith only [ha, hb]) (by norm_num <;> linarith only [ha, hb])
+  have hh : y < 1/2 := by linarith only [ha, hb]
+  have h1 : y < 1 := by linarith only [ha, hb]
   have hv : v y = (1-2*y) := by
     unfold v
     rw [hf]
@@ -240,31 +240,31 @@ theorem outerT_piece_5 {y : ℝ} (ha : 37/80 < y) (hb : y < 29/60) :
   have hu : u y = 0 := by
     rw [u, hv]
     change max (0 : ℝ) (3/40+(1-2*y)-y) = 0
-    exact max_eq_left (by linarith)
+    exact max_eq_left (by linarith only [ha, hb])
   have ht : t y = ((1-2*y)+0) := by
     rw [t, hv, hu]
     change min (3/40 : ℝ) (1-2*y)+0 = ((1-2*y)+0)
-    rw [min_eq_right (show (1-2*y) ≤ (3/40 : ℝ) by linarith)]
+    rw [min_eq_right (show (1-2*y) ≤ (3/40 : ℝ) by linarith only [ha, hb])]
   have hr : r y = (29/20-3*y) := by
     unfold r
-    exact max_eq_right (by linarith)
+    exact max_eq_right (by linarith only [ha, hb])
   have hm : min (r y) (y+u y) = (29/20-3*y) := by
     rw [hr, hu]
-    exact min_eq_left (by linarith)
+    exact min_eq_left (by linarith only [ha, hb])
   have hp1 : max (0 : ℝ) (37/20-y) = (37/20-y) :=
-    max_eq_right (by linarith)
+    max_eq_right (by linarith only [ha, hb])
   have hp2 : max (0 : ℝ) (37/20-2*y) = (37/20-2*y) :=
-    max_eq_right (by linarith)
+    max_eq_right (by linarith only [ha, hb])
   have hp3 : max (0 : ℝ) (37/20-3*y) = (37/20-3*y) :=
-    max_eq_right (by linarith)
+    max_eq_right (by linarith only [ha, hb])
   have hp4 : max (0 : ℝ) (37/20-4*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   have hp5 : max (0 : ℝ) (37/20-5*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   have hp6 : max (0 : ℝ) (37/20-6*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   have hp7 : max (0 : ℝ) (37/20-7*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   unfold outerT
   rw [hf]
   unfold outerR
@@ -276,9 +276,9 @@ theorem outerT_piece_5 {y : ℝ} (ha : 37/80 < y) (hb : y < 29/60) :
 theorem outerT_piece_6 {y : ℝ} (ha : 29/60 < y) (hb : y < 1/2) :
     outerT y = 53/20+(-1)*y := by
   have hf : ⌊1/y⌋ = (2 : ℤ) :=
-    floor_reciprocal_eq 2 (by linarith) (by norm_num <;> linarith) (by norm_num <;> linarith)
-  have hh : y < 1/2 := by linarith
-  have h1 : y < 1 := by linarith
+    floor_reciprocal_eq 2 (by linarith only [ha, hb]) (by norm_num <;> linarith only [ha, hb]) (by norm_num <;> linarith only [ha, hb])
+  have hh : y < 1/2 := by linarith only [ha, hb]
+  have h1 : y < 1 := by linarith only [ha, hb]
   have hv : v y = (1-2*y) := by
     unfold v
     rw [hf]
@@ -286,31 +286,31 @@ theorem outerT_piece_6 {y : ℝ} (ha : 29/60 < y) (hb : y < 1/2) :
   have hu : u y = 0 := by
     rw [u, hv]
     change max (0 : ℝ) (3/40+(1-2*y)-y) = 0
-    exact max_eq_left (by linarith)
+    exact max_eq_left (by linarith only [ha, hb])
   have ht : t y = ((1-2*y)+0) := by
     rw [t, hv, hu]
     change min (3/40 : ℝ) (1-2*y)+0 = ((1-2*y)+0)
-    rw [min_eq_right (show (1-2*y) ≤ (3/40 : ℝ) by linarith)]
+    rw [min_eq_right (show (1-2*y) ≤ (3/40 : ℝ) by linarith only [ha, hb])]
   have hr : r y = 0 := by
     unfold r
-    exact max_eq_left (by linarith)
+    exact max_eq_left (by linarith only [ha, hb])
   have hm : min (r y) (y+u y) = 0 := by
     rw [hr, hu]
-    exact min_eq_left (by linarith)
+    exact min_eq_left (by linarith only [ha, hb])
   have hp1 : max (0 : ℝ) (37/20-y) = (37/20-y) :=
-    max_eq_right (by linarith)
+    max_eq_right (by linarith only [ha, hb])
   have hp2 : max (0 : ℝ) (37/20-2*y) = (37/20-2*y) :=
-    max_eq_right (by linarith)
+    max_eq_right (by linarith only [ha, hb])
   have hp3 : max (0 : ℝ) (37/20-3*y) = (37/20-3*y) :=
-    max_eq_right (by linarith)
+    max_eq_right (by linarith only [ha, hb])
   have hp4 : max (0 : ℝ) (37/20-4*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   have hp5 : max (0 : ℝ) (37/20-5*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   have hp6 : max (0 : ℝ) (37/20-6*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   have hp7 : max (0 : ℝ) (37/20-7*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   unfold outerT
   rw [hf]
   unfold outerR
@@ -322,9 +322,9 @@ theorem outerT_piece_6 {y : ℝ} (ha : 29/60 < y) (hb : y < 1/2) :
 theorem outerT_piece_7 {y : ℝ} (ha : 1/2 < y) (hb : y < 43/80) :
     outerT y = 7/2+(1)*y := by
   have hf : ⌊1/y⌋ = (1 : ℤ) :=
-    floor_reciprocal_eq 1 (by linarith) (by norm_num <;> linarith) (by norm_num <;> linarith)
-  have hh : ¬y < 1/2 := by linarith
-  have h1 : y < 1 := by linarith
+    floor_reciprocal_eq 1 (by linarith only [ha, hb]) (by norm_num <;> linarith only [ha, hb]) (by norm_num <;> linarith only [ha, hb])
+  have hh : ¬y < 1/2 := by linarith only [ha, hb]
+  have h1 : y < 1 := by linarith only [ha, hb]
   have hv : v y = (1-1*y) := by
     unfold v
     rw [hf]
@@ -332,32 +332,32 @@ theorem outerT_piece_7 {y : ℝ} (ha : 1/2 < y) (hb : y < 43/80) :
   have hu : u y = (3/40+(1-1*y)-y) := by
     rw [u, hv]
     change max (0 : ℝ) (3/40+(1-1*y)-y) = (3/40+(1-1*y)-y)
-    exact max_eq_right (by linarith)
+    exact max_eq_right (by linarith only [ha, hb])
   have ht : t y = (3/40+(3/40+(1-1*y)-y)) := by
     rw [t, hv, hu]
     change min (3/40 : ℝ) (1-1*y)+(3/40+(1-1*y)-y) = (3/40+(3/40+(1-1*y)-y))
-    rw [min_eq_left (show (3/40 : ℝ) ≤ (1-1*y) by linarith)]
+    rw [min_eq_left (show (3/40 : ℝ) ≤ (1-1*y) by linarith only [ha, hb])]
   have hr : r y = 0 := by
     unfold r
-    exact max_eq_left (by linarith)
+    exact max_eq_left (by linarith only [ha, hb])
   have hm : min (r y) (y-alpha+u y) = 0 := by
     rw [hr, hu]
     unfold alpha
-    exact min_eq_left (by linarith)
+    exact min_eq_left (by linarith only [ha, hb])
   have hp1 : max (0 : ℝ) (37/20-y) = (37/20-y) :=
-    max_eq_right (by linarith)
+    max_eq_right (by linarith only [ha, hb])
   have hp2 : max (0 : ℝ) (37/20-2*y) = (37/20-2*y) :=
-    max_eq_right (by linarith)
+    max_eq_right (by linarith only [ha, hb])
   have hp3 : max (0 : ℝ) (37/20-3*y) = (37/20-3*y) :=
-    max_eq_right (by linarith)
+    max_eq_right (by linarith only [ha, hb])
   have hp4 : max (0 : ℝ) (37/20-4*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   have hp5 : max (0 : ℝ) (37/20-5*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   have hp6 : max (0 : ℝ) (37/20-6*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   have hp7 : max (0 : ℝ) (37/20-7*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   unfold outerT
   rw [hf]
   unfold outerR
@@ -369,9 +369,9 @@ theorem outerT_piece_7 {y : ℝ} (ha : 1/2 < y) (hb : y < 43/80) :
 theorem outerT_piece_8 {y : ℝ} (ha : 43/80 < y) (hb : y < 37/60) :
     outerT y = 121/10+(-15)*y := by
   have hf : ⌊1/y⌋ = (1 : ℤ) :=
-    floor_reciprocal_eq 1 (by linarith) (by norm_num <;> linarith) (by norm_num <;> linarith)
-  have hh : ¬y < 1/2 := by linarith
-  have h1 : y < 1 := by linarith
+    floor_reciprocal_eq 1 (by linarith only [ha, hb]) (by norm_num <;> linarith only [ha, hb]) (by norm_num <;> linarith only [ha, hb])
+  have hh : ¬y < 1/2 := by linarith only [ha, hb]
+  have h1 : y < 1 := by linarith only [ha, hb]
   have hv : v y = (1-1*y) := by
     unfold v
     rw [hf]
@@ -379,32 +379,32 @@ theorem outerT_piece_8 {y : ℝ} (ha : 43/80 < y) (hb : y < 37/60) :
   have hu : u y = 0 := by
     rw [u, hv]
     change max (0 : ℝ) (3/40+(1-1*y)-y) = 0
-    exact max_eq_left (by linarith)
+    exact max_eq_left (by linarith only [ha, hb])
   have ht : t y = (3/40+0) := by
     rw [t, hv, hu]
     change min (3/40 : ℝ) (1-1*y)+0 = (3/40+0)
-    rw [min_eq_left (show (3/40 : ℝ) ≤ (1-1*y) by linarith)]
+    rw [min_eq_left (show (3/40 : ℝ) ≤ (1-1*y) by linarith only [ha, hb])]
   have hr : r y = 0 := by
     unfold r
-    exact max_eq_left (by linarith)
+    exact max_eq_left (by linarith only [ha, hb])
   have hm : min (r y) (y-alpha+u y) = 0 := by
     rw [hr, hu]
     unfold alpha
-    exact min_eq_left (by linarith)
+    exact min_eq_left (by linarith only [ha, hb])
   have hp1 : max (0 : ℝ) (37/20-y) = (37/20-y) :=
-    max_eq_right (by linarith)
+    max_eq_right (by linarith only [ha, hb])
   have hp2 : max (0 : ℝ) (37/20-2*y) = (37/20-2*y) :=
-    max_eq_right (by linarith)
+    max_eq_right (by linarith only [ha, hb])
   have hp3 : max (0 : ℝ) (37/20-3*y) = (37/20-3*y) :=
-    max_eq_right (by linarith)
+    max_eq_right (by linarith only [ha, hb])
   have hp4 : max (0 : ℝ) (37/20-4*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   have hp5 : max (0 : ℝ) (37/20-5*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   have hp6 : max (0 : ℝ) (37/20-6*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   have hp7 : max (0 : ℝ) (37/20-7*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   unfold outerT
   rw [hf]
   unfold outerR
@@ -416,9 +416,9 @@ theorem outerT_piece_8 {y : ℝ} (ha : 43/80 < y) (hb : y < 37/60) :
 theorem outerT_piece_9 {y : ℝ} (ha : 37/60 < y) (hb : y < 37/40) :
     outerT y = 41/4+(-12)*y := by
   have hf : ⌊1/y⌋ = (1 : ℤ) :=
-    floor_reciprocal_eq 1 (by linarith) (by norm_num <;> linarith) (by norm_num <;> linarith)
-  have hh : ¬y < 1/2 := by linarith
-  have h1 : y < 1 := by linarith
+    floor_reciprocal_eq 1 (by linarith only [ha, hb]) (by norm_num <;> linarith only [ha, hb]) (by norm_num <;> linarith only [ha, hb])
+  have hh : ¬y < 1/2 := by linarith only [ha, hb]
+  have h1 : y < 1 := by linarith only [ha, hb]
   have hv : v y = (1-1*y) := by
     unfold v
     rw [hf]
@@ -426,32 +426,32 @@ theorem outerT_piece_9 {y : ℝ} (ha : 37/60 < y) (hb : y < 37/40) :
   have hu : u y = 0 := by
     rw [u, hv]
     change max (0 : ℝ) (3/40+(1-1*y)-y) = 0
-    exact max_eq_left (by linarith)
+    exact max_eq_left (by linarith only [ha, hb])
   have ht : t y = (3/40+0) := by
     rw [t, hv, hu]
     change min (3/40 : ℝ) (1-1*y)+0 = (3/40+0)
-    rw [min_eq_left (show (3/40 : ℝ) ≤ (1-1*y) by linarith)]
+    rw [min_eq_left (show (3/40 : ℝ) ≤ (1-1*y) by linarith only [ha, hb])]
   have hr : r y = 0 := by
     unfold r
-    exact max_eq_left (by linarith)
+    exact max_eq_left (by linarith only [ha, hb])
   have hm : min (r y) (y-alpha+u y) = 0 := by
     rw [hr, hu]
     unfold alpha
-    exact min_eq_left (by linarith)
+    exact min_eq_left (by linarith only [ha, hb])
   have hp1 : max (0 : ℝ) (37/20-y) = (37/20-y) :=
-    max_eq_right (by linarith)
+    max_eq_right (by linarith only [ha, hb])
   have hp2 : max (0 : ℝ) (37/20-2*y) = (37/20-2*y) :=
-    max_eq_right (by linarith)
+    max_eq_right (by linarith only [ha, hb])
   have hp3 : max (0 : ℝ) (37/20-3*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   have hp4 : max (0 : ℝ) (37/20-4*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   have hp5 : max (0 : ℝ) (37/20-5*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   have hp6 : max (0 : ℝ) (37/20-6*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   have hp7 : max (0 : ℝ) (37/20-7*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   unfold outerT
   rw [hf]
   unfold outerR
@@ -463,9 +463,9 @@ theorem outerT_piece_9 {y : ℝ} (ha : 37/60 < y) (hb : y < 37/40) :
 theorem outerT_piece_10 {y : ℝ} (ha : 37/40 < y) (hb : y < 1) :
     outerT y = 1+(-2)*y := by
   have hf : ⌊1/y⌋ = (1 : ℤ) :=
-    floor_reciprocal_eq 1 (by linarith) (by norm_num <;> linarith) (by norm_num <;> linarith)
-  have hh : ¬y < 1/2 := by linarith
-  have h1 : y < 1 := by linarith
+    floor_reciprocal_eq 1 (by linarith only [ha, hb]) (by norm_num <;> linarith only [ha, hb]) (by norm_num <;> linarith only [ha, hb])
+  have hh : ¬y < 1/2 := by linarith only [ha, hb]
+  have h1 : y < 1 := by linarith only [ha, hb]
   have hv : v y = (1-1*y) := by
     unfold v
     rw [hf]
@@ -473,32 +473,32 @@ theorem outerT_piece_10 {y : ℝ} (ha : 37/40 < y) (hb : y < 1) :
   have hu : u y = 0 := by
     rw [u, hv]
     change max (0 : ℝ) (3/40+(1-1*y)-y) = 0
-    exact max_eq_left (by linarith)
+    exact max_eq_left (by linarith only [ha, hb])
   have ht : t y = ((1-1*y)+0) := by
     rw [t, hv, hu]
     change min (3/40 : ℝ) (1-1*y)+0 = ((1-1*y)+0)
-    rw [min_eq_right (show (1-1*y) ≤ (3/40 : ℝ) by linarith)]
+    rw [min_eq_right (show (1-1*y) ≤ (3/40 : ℝ) by linarith only [ha, hb])]
   have hr : r y = 0 := by
     unfold r
-    exact max_eq_left (by linarith)
+    exact max_eq_left (by linarith only [ha, hb])
   have hm : min (r y) (y-alpha+u y) = 0 := by
     rw [hr, hu]
     unfold alpha
-    exact min_eq_left (by linarith)
+    exact min_eq_left (by linarith only [ha, hb])
   have hp1 : max (0 : ℝ) (37/20-y) = (37/20-y) :=
-    max_eq_right (by linarith)
+    max_eq_right (by linarith only [ha, hb])
   have hp2 : max (0 : ℝ) (37/20-2*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   have hp3 : max (0 : ℝ) (37/20-3*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   have hp4 : max (0 : ℝ) (37/20-4*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   have hp5 : max (0 : ℝ) (37/20-5*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   have hp6 : max (0 : ℝ) (37/20-6*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   have hp7 : max (0 : ℝ) (37/20-7*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   unfold outerT
   rw [hf]
   unfold outerR
@@ -510,23 +510,23 @@ theorem outerT_piece_10 {y : ℝ} (ha : 37/40 < y) (hb : y < 1) :
 theorem outerT_piece_11 {y : ℝ} (ha : 1 < y) (hb : y < 37/20) :
     outerT y = 37/20+(-1)*y := by
   have hf : ⌊1/y⌋ = (0 : ℤ) :=
-    floor_reciprocal_eq 0 (by linarith) (by norm_num <;> linarith) (by norm_num <;> linarith)
-  have hh : ¬y < 1/2 := by linarith
-  have h1 : ¬y < 1 := by linarith
+    floor_reciprocal_eq 0 (by linarith only [ha, hb]) (by norm_num <;> linarith only [ha, hb]) (by norm_num <;> linarith only [ha, hb])
+  have hh : ¬y < 1/2 := by linarith only [ha, hb]
+  have h1 : ¬y < 1 := by linarith only [ha, hb]
   have hp1 : max (0 : ℝ) (37/20-y) = (37/20-y) :=
-    max_eq_right (by linarith)
+    max_eq_right (by linarith only [ha, hb])
   have hp2 : max (0 : ℝ) (37/20-2*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   have hp3 : max (0 : ℝ) (37/20-3*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   have hp4 : max (0 : ℝ) (37/20-4*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   have hp5 : max (0 : ℝ) (37/20-5*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   have hp6 : max (0 : ℝ) (37/20-6*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   have hp7 : max (0 : ℝ) (37/20-7*y) = 0 :=
-    max_eq_left (by linarith)
+    max_eq_left (by linarith only [ha, hb])
   unfold outerT
   rw [hf]
   unfold outerR

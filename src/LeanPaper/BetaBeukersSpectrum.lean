@@ -29,7 +29,8 @@ theorem betaConstant_swap (r t : ℕ) : betaConstant r t = betaConstant t r := b
   by_cases h : r = t
   · subst t
     simp
-  · simp only [if_neg h, if_neg h.symm]
+  · have htr : t ≠ r := fun htr => h htr.symm
+    simp only [if_neg h, if_neg htr]
     have hd : (t : ℚ)-(r : ℚ) = -((r : ℚ)-(t : ℚ)) := by ring
     rw [hd, mul_neg, div_neg]
     ring

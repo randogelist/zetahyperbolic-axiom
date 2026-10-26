@@ -12,6 +12,16 @@ An independent semantic review confirmed the fixed density power, parameter scal
 rational weights, and kernel normalization. The last three analytic modules also received
 an independent pinned-API review; receiving CI remains authoritative.
 
+## Latest verification: CI5
+
+GitHub Actions run [40326559574](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40326559574),
+commit `b1c99c0d25cf94ee2cfbb398f697b7e50c363f89`, compiled all seven spectral modules
+and accepted their complete transitive dependencies in the 258-module completed-subset axiom
+audit. The audited spectral results use only `propext`, `Classical.choice`, and `Quot.sound`.
+This verifies both clauses of original Theorem 3.8 and the previously approved 3.3.alt.
+The complete repository has not yet received a global PASS: an unrelated `BetaBeukersSpectrum`
+compilation error remains. No spectral source change is required by CI5.
+
 ## Implemented corrections and additions
 
 ### Section3OrthogonalKernel.lean — Theorem 3.8(1)
@@ -82,7 +92,8 @@ an independent pinned-API review; receiving CI remains authoritative.
   target, missing explicit numerator positivity, and hidden pointwise multiplication/negation
   obstructing tactic rewriting. Fixed with `Summable.tsum_le_tsum`, explicit sign lemmas and
   numerator positivity, an explicit pointwise `change`, and AE congruence for negation.
-  All mathematical statements and their hypotheses are unchanged. Await CI5.
+  All mathematical statements and their hypotheses are unchanged.
+- CI5: compiled successfully and passed the completed-subset transitive axiom audit.
 
 ### LaplaceGram.lean — actual positive Gram curve
 
@@ -95,7 +106,7 @@ an independent pinned-API review; receiving CI remains authoritative.
   admissibility assumptions (only positive scale), so determinant invertibility is not assumed.
 - `monicPolynomial_integral_pairing` and `squaredNorm_eq_integral` explicitly identify the
   deformed kernel's monic polynomials and norms with the actual measure at every positive scale.
-- Verification: source candidate queued for CI batch 3.
+- CI5: compiled successfully and passed the completed-subset transitive axiom audit.
 
 ### LaplaceKernelJacobi.lean — actual Theorem 3.8(2) endpoint
 
@@ -104,9 +115,10 @@ an independent pinned-API review; receiving CI remains authoritative.
   justified by the weighted-derivative integrability proved above.
 - `laplace_logDet_hasDerivAt` establishes the printed parameter formula at every positive scale.
   `actual_gram_laplace_logDet` includes the original-family base-point identification.
-- Together with `Section3OrthogonalKernel`, this supplies candidates for both clauses of 3.8.
-  Neither clause is certified until the entire dependency chain compiles and passes the axiom audit.
-- Verification: source candidate queued for CI batch 3.
+- Together with `Section3OrthogonalKernel`, this completes both clauses of original 3.8.
+- CI5: compiled successfully, with the entire spectral dependency chain accepted by the
+  completed-subset transitive axiom audit. Global project verification remains pending the
+  unrelated Beta spectrum repair.
 
 ### Section3RestrictedSpectral.lean — the previously approved 3.3.alt
 
@@ -118,7 +130,8 @@ an independent pinned-API review; receiving CI remains authoritative.
 - Only `Real.Admissible p` is assumed. This is exactly the prior approved restricted target;
   arbitrary mixed-minor positivity and Stieltjes determinacy remain excluded, as before.
 - CI2: compiled successfully with only the allowed foundations in its printed axiom set.
-  Only the alternative may be promoted after the whole-project audit, never original 3.3.
+- CI5: accepted by the completed-subset transitive axiom audit. Only the approved alternative
+  is covered, never original 3.3; final global-project verification remains separate.
 
 ## Result-by-result review and remaining obstacles
 
@@ -135,7 +148,7 @@ an independent pinned-API review; receiving CI remains authoritative.
 | 3.5 | Inspected actual scalar normalization counterexample and exact two-/three-level corrected Schur identities. | Literal formula is false. Full correction requires constructing the normalized tridiagonal/Krylov chain, proving cyclicity or exact rank termination, and retaining the Gram determinant prefactor. Existing finite determinant formulas do not supply that construction. |
 | 3.6 | Retained complete corrected finite-support reciprocal endpoint. | Literal all-order strict Hankel positivity is impossible beyond the number of distinct atoms; printed signs/bounds also need the recorded corrections. |
 | 3.7 | Inspected actual strict Newton/Turan and derivative distinct-root proofs against PDF p.12. Existing `ActualStrictNewton.actual_centered_newton_strict` and `actual_coefficient_strict_criterion` cover the previously approved restricted 3.7.alt; their `2 ≤ h` premise follows whenever the inequality range `k+2 ≤ h` is inhabited. | Original individual centered-coefficient nonvanishing remains separate: real distinct roots alone do not imply it (symmetric real-rooted polynomials have vanishing odd coefficients). The paper's appeal to genericity is not an actual-family proof. Need an exact sign/nonvanishing argument for the specific centered coefficients; no new assumption was substituted. |
-| 3.8 | Implemented both actual orthogonal kernel/pole-spectrum clause and actual Laplace integral log-determinant clause, including analytic bounds, derivative interchange, positive deformed Gram, scale-one identification and trace/kernel assembly. | Candidate whole endpoint; pending CI for the new source chain and its complete axiom audit. No additional mathematical hypothesis was introduced beyond admissibility and positive Laplace scale. It is not an asymptotic Taylor-remainder problem. |
+| 3.8 | Completed both actual orthogonal kernel/pole-spectrum clause and actual Laplace integral log-determinant clause, including analytic bounds, derivative interchange, positive deformed Gram, scale-one identification and trace/kernel assembly. All seven spectral modules compiled and passed the transitive completed-subset audit in CI5. | No remaining spectral proof obligation. Final global-project PASS awaits an unrelated Beta spectrum repair. No additional mathematical hypothesis was introduced beyond admissibility and positive Laplace scale. It is not an asymptotic Taylor-remainder problem. |
 | 3.9 | Inspected exact shifted-pole/slope algebra and five positive Fekete kernels; checked PDF p.13 statement. | Hurwitz: actual Hermite pole integral and Gram-functional identification. Character case: identify the specified real characters with the five periodic kernels, prove the actual generating-series identities/integrability and rational-functional matrix bridge. Generic positive finite kernels do not supply these identifications; no counterexample is established. |
 
 No unexamined theorem was marked proved. False printed statements are kept distinct from open
