@@ -237,5 +237,8 @@ roots = [
   "Zeta5.HermiteBasisCore",
   "Zeta5Merge.Theorem6_17",
   "LeanPaper.BeukersMomentSeries",
+  "LeanPaper.BeukersOffDiagonalActual",
+  "LeanPaper.BeukersDensityActual",
+  "LeanPaper.BeukersRationalityActual",
   "LeanPaper.KernelAudit",
 ]
