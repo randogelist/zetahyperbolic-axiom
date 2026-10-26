@@ -135,7 +135,6 @@ import LeanPaper.ImportedSection56.RankOneWitness
 import LeanPaper.Section4ManuscriptBridge
 import LeanPaper.ImportedMultiweight.AnchoredSemidefiniteCone
 import LeanPaper.ImportedSection3.Jacobi
-import LeanPaper.MatrixCurveJacobi
 import LeanPaper.ImportedSection56.DualQuadraticRoot
 import LeanPaper.ImportedSection56.DualSOS
 import LeanPaper.ImportedSection56.DualStrictDiscriminant
@@ -187,6 +186,7 @@ import LeanPaper.ReciprocalAllOrders
 import LeanPaper.CorrectedReciprocalCorollary
 import LeanPaper.DodgsonCondensation
 import LeanPaper.DyadicQuotientThreshold
+import LeanPaper.CoefficientGramGrowth
 import LeanPaper.ExternalPi.ETranscendental
 import LeanPaper.ExternalPi.HermiteLindemann
 import LeanPaper.ExternalPi.PiLindemann
@@ -213,12 +213,27 @@ import LeanPaper.Section4AlgebraicBudget
 import LeanPaper.Section4ComplexComparison
 import LeanPaper.Section4AlgebraicTransfer
 import LeanPaper.Section4AlgebraicLimsup
+import LeanPaper.Section4AlgebraicLattice
 import LeanPaper.Section4EffectiveBudget
 import LeanPaper.Section4TransferComplete
 import LeanPaper.SlopeSignature
 import LeanPaper.SymmetricPoleSpectrum
 import LeanPaper.UnitLogMoments
+import Zeta5.HermiteBasisCore
 import Zeta5Merge.Theorem6_17
+import LeanPaper.SignatureRestriction
+import LeanPaper.Section3MonicOrthogonal
+import LeanPaper.MatrixCurveJacobi
+import LeanPaper.BeukersMomentSeries
+import LeanPaper.BeukersOffDiagonalActual
+import LeanPaper.BeukersDensityActual
+import LeanPaper.BeukersRationalityActual
+import LeanPaper.BeukersKreinMonomialActual
+import LeanPaper.BeukersKreinPolynomialActual
+import LeanPaper.ShiftedSolidMinors
+import LeanPaper.BeukersOffDiagonalKernel
+import LeanPaper.Section4AlgebraicHeight
+import LeanPaper.Section5RationalIndependence
 import Lean
 
 /-! Independent transitive axiom audit of every active imported project declaration.
@@ -774,7 +789,6 @@ run_cmd Elab.Command.liftCoreM do
     `LeanPaper.Section4ManuscriptBridge,
     `LeanPaper.ImportedMultiweight.AnchoredSemidefiniteCone,
     `LeanPaper.ImportedSection3.Jacobi,
-    `LeanPaper.MatrixCurveJacobi,
     `LeanPaper.ImportedSection56.DualQuadraticRoot,
     `LeanPaper.ImportedSection56.DualSOS,
     `LeanPaper.ImportedSection56.DualStrictDiscriminant,
@@ -826,6 +840,7 @@ run_cmd Elab.Command.liftCoreM do
     `LeanPaper.CorrectedReciprocalCorollary,
     `LeanPaper.DodgsonCondensation,
     `LeanPaper.DyadicQuotientThreshold,
+    `LeanPaper.CoefficientGramGrowth,
     `LeanPaper.ExternalPi.ETranscendental,
     `LeanPaper.ExternalPi.HermiteLindemann,
     `LeanPaper.ExternalPi.PiLindemann,
@@ -852,12 +867,27 @@ run_cmd Elab.Command.liftCoreM do
     `LeanPaper.Section4ComplexComparison,
     `LeanPaper.Section4AlgebraicTransfer,
     `LeanPaper.Section4AlgebraicLimsup,
+    `LeanPaper.Section4AlgebraicLattice,
     `LeanPaper.Section4EffectiveBudget,
     `LeanPaper.Section4TransferComplete,
     `LeanPaper.SlopeSignature,
     `LeanPaper.SymmetricPoleSpectrum,
     `LeanPaper.UnitLogMoments,
-    `Zeta5Merge.Theorem6_17]
+    `Zeta5.HermiteBasisCore,
+    `Zeta5Merge.Theorem6_17,
+    `LeanPaper.SignatureRestriction,
+    `LeanPaper.Section3MonicOrthogonal,
+    `LeanPaper.MatrixCurveJacobi,
+    `LeanPaper.BeukersMomentSeries,
+    `LeanPaper.BeukersOffDiagonalActual,
+    `LeanPaper.BeukersDensityActual,
+    `LeanPaper.BeukersRationalityActual,
+    `LeanPaper.BeukersKreinMonomialActual,
+    `LeanPaper.BeukersKreinPolynomialActual,
+    `LeanPaper.ShiftedSolidMinors,
+    `LeanPaper.BeukersOffDiagonalKernel,
+    `LeanPaper.Section4AlgebraicHeight,
+    `LeanPaper.Section5RationalIndependence]
   let mut roots : Array Name := #[]
   for (decl, _) in env.constants do
     if let some idx := env.getModuleIdxFor? decl then
