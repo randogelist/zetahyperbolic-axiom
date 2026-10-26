@@ -1,0 +1,1809 @@
+ManuscriptChain.MAIN_CHAIN_UNCONDITIONAL (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) : ManuscriptChain.General.GeneralStatement p
+Zetahyperbolic.ORIGINAL_EXACT_ZERO_FREE_DISK (p : Zetahyperbolic.HankelParams) (k : ℕ) (hk : 1 ≤ k) :
+  ∃ radius,
+    0 < radius ∧
+      (∀ (z : ℂ),
+          Polynomial.eval₂ (algebraMap ℚ ℂ) z (Zetahyperbolic.Delta_poly p k) = 0 →
+            z.im = 0 ∧
+              z ≠ ↑(ManuscriptChain.Real.zeta (2 * k + 1)) ∧ radius ≤ ‖z - ↑(ManuscriptChain.Real.zeta (2 * k + 1))‖) ∧
+        ∃ z,
+          Polynomial.eval₂ (algebraMap ℚ ℂ) z (Zetahyperbolic.Delta_poly p k) = 0 ∧
+            ‖z - ↑(ManuscriptChain.Real.zeta (2 * k + 1))‖ = radius
+ManuscriptChain.PrincipalMinors.determinant_center_pos (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) {r : ℕ} (index : Fin r ↪ Fin p.h) :
+  0 <
+    ManuscriptChain.Real.evalQ (ManuscriptChain.PrincipalMinors.determinant p index)
+      (ManuscriptChain.Real.zeta p.weight)
+ManuscriptChain.PrincipalMinors.determinant_ne_zero (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) {r : ℕ} (index : Fin r ↪ Fin p.h) :
+  ManuscriptChain.PrincipalMinors.determinant p index ≠ 0
+ManuscriptChain.PrincipalMinors.leading_determinant_center_pos (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (r : ℕ) (hr : r ≤ p.h) :
+  0 <
+    ManuscriptChain.Real.evalQ
+      (ManuscriptChain.PrincipalMinors.determinant p (ManuscriptChain.PrincipalMinors.leadingIndex p r hr))
+      (ManuscriptChain.Real.zeta p.weight)
+ManuscriptChain.PrincipalMinors.two_index_strict (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (i j : Fin p.h) (hij : i ≠ j) :
+  ManuscriptChain.Real.gram p (ManuscriptChain.Real.zeta p.weight) i j *
+      ManuscriptChain.Real.gram p (ManuscriptChain.Real.zeta p.weight) j i <
+    ManuscriptChain.Real.gram p (ManuscriptChain.Real.zeta p.weight) i i *
+      ManuscriptChain.Real.gram p (ManuscriptChain.Real.zeta p.weight) j j
+PaperAdvances.Corollary3_6_WeightedCorrected.weighted_hankel_posSemidef {h : ℕ} (u w : Fin h → ℝ) (n : ℕ)
+  (hw : ∀ (k : Fin h), 0 ≤ w k) : (PaperAdvances.Corollary3_6_WeightedCorrected.weightedHankel u w n).PosSemidef
+PaperAdvances.Corollary3_6_WeightedCorrected.weighted_hankel_det_zero_above_support {h : ℕ} (u w : Fin h → ℝ) (n : ℕ)
+  (hn : h < n) : (PaperAdvances.Corollary3_6_WeightedCorrected.weightedHankel u w n).det = 0
+PaperAdvances.Corollary3_6_ExactFiniteRank.weighted_det_pos_iff_order_le_support {h : ℕ} (u w : Fin h → ℝ)
+  (hu : Function.Injective u) (hw : ∀ (i : Fin h), 0 < w i) (n : ℕ) :
+  0 < (PaperAdvances.Corollary3_6_WeightedCorrected.weightedHankel u w n).det ↔ n ≤ h
+PaperAdvances.Corollary3_6_AllPrincipalMinors.weighted_all_principal_minors_positive {h n m : ℕ} (u w : Fin h → ℝ)
+  (hu : Function.Injective u) (hw : ∀ (k : Fin h), 0 < w k) (hn : n ≤ h) (e : Fin m → Fin n)
+  (he : Function.Injective e) :
+  0 < ((PaperAdvances.Corollary3_6_WeightedCorrected.weightedHankel u w n).submatrix e e).det
+LeanPaper.PullbackReflection.rationalValue_pullback (k : ℕ) (R : Zetahyperbolic.RatMomentElem) (x : ℚ)
+  (hAvoid : ∀ j ∈ Finset.Icc 1 R.maxPole, x ≠ ↑j ∧ x ≠ -↑j) :
+  x ^ (2 * k + 1) * LeanPaper.PullbackReflection.rationalValue R (-x ^ 2) =
+    LeanPaper.PullbackReflection.pulledValue k R x
+LeanPaper.PullbackReflection.muFunctionalPoly_eq_pulledMoment (k : ℕ) (hk : 1 ≤ k) (R : Zetahyperbolic.RatMomentElem) :
+  Zetahyperbolic.muFunctionalPoly k R = LeanPaper.PullbackReflection.pulledMoment k R
+LeanPaper.PullbackReflection.finite_span_reflection (k : ℕ) (hk : 1 ≤ k) (es : Finset ℕ) (u : ℕ → ℚ) (rs : Finset ℤ)
+  (v : ℤ → ℚ) :
+  LeanPaper.PullbackReflection.reflectedMoment k es u rs v = -LeanPaper.PullbackReflection.tauFiniteSpan k es u rs v
+LeanPaper.PullbackReflection.finite_pole_difference (k : ℕ) (rs : Finset ℤ) (v : ℤ → ℚ) (hr : ∀ r ∈ rs, r ≠ 0 ∧ r ≠ 1) :
+  ∑ r ∈ rs, Polynomial.C (v r) * (Zetahyperbolic.tauPolePoly k (r - 1) - Zetahyperbolic.tauPolePoly k r) =
+    ∑ r ∈ rs, Polynomial.C (v r * -(↑r ^ (2 * k + 1))⁻¹)
+LeanPaper.SingularSlope.all_complex_roots_real_even_if_slope_singular {n : ℕ}
+  (p : ManuscriptChain.Spectral.SymmetricAffinePencil n) (positive : p.base.PosDef) (z : ℂ)
+  (hz : Polynomial.eval₂ (algebraMap ℝ ℂ) z p.detPolynomial = 0) : z.im = 0
+LeanPaper.PrincipalMinorRealRoots.original_principal_zeros_real (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) {r : ℕ} (index : Fin r ↪ Fin p.h) (z : ℂ)
+  (hz : Polynomial.eval₂ (algebraMap ℚ ℂ) z (ManuscriptChain.PrincipalMinors.determinant p index) = 0) : z.im = 0
+LeanPaper.PrincipalMinorRealRoots.original_leading_principal_zeros_real (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (r : ℕ) (hr : r ≤ p.h) (z : ℂ)
+  (hz :
+    Polynomial.eval₂ (algebraMap ℚ ℂ) z
+        (ManuscriptChain.PrincipalMinors.determinant p (ManuscriptChain.PrincipalMinors.leadingIndex p r hr)) =
+      0) :
+  z.im = 0
+LeanPaper.ReciprocalRootMoments.manuscript_reciprocal_moments (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (q : ℚ)
+  (hq : ManuscriptChain.Real.evalQ (ManuscriptChain.Real.delta p) ↑q ≠ 0) (n : ℕ) :
+  (∀ (i : Fin p.h),
+      0 <
+        LeanPaper.ReciprocalRootMoments.reciprocalAtom (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) (↑q) i) ∧
+    (LeanPaper.ReciprocalRootMoments.reciprocalHankel (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) (↑q)
+          n).PosSemidef ∧
+      (Matrix.PosSemidef fun i j =>
+          LeanPaper.ReciprocalRootMoments.reciprocalEvenMoment (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp)
+            (↑q) (↑i + ↑j + 1)) ∧
+        (0 <
+              (LeanPaper.ReciprocalRootMoments.reciprocalHankel (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp)
+                  (↑q) n).det ↔
+            n ≤
+              (LeanPaper.ReciprocalRootMoments.atomSupport
+                  (LeanPaper.ReciprocalRootMoments.reciprocalAtom (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp)
+                    ↑q)).card) ∧
+          ((LeanPaper.ReciprocalRootMoments.atomSupport
+                  (LeanPaper.ReciprocalRootMoments.reciprocalAtom (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp)
+                    ↑q)).card <
+              n →
+            (LeanPaper.ReciprocalRootMoments.reciprocalHankel (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp)
+                  (↑q) n).det =
+              0)
+LeanPaper.ReciprocalRootMoments.reciprocalHankel_det_pos_iff {h : ℕ} (r : Fin h → ℝ) (q : ℝ) (n : ℕ) :
+  0 < (LeanPaper.ReciprocalRootMoments.reciprocalHankel r q n).det ↔
+    n ≤ (LeanPaper.ReciprocalRootMoments.atomSupport (LeanPaper.ReciprocalRootMoments.reciprocalAtom r q)).card
+LeanPaper.ReciprocalRootMoments.reciprocalHankel_det_zero_above_distinct_support {h : ℕ} (r : Fin h → ℝ) (q : ℝ) (n : ℕ)
+  (hn : (LeanPaper.ReciprocalRootMoments.atomSupport (LeanPaper.ReciprocalRootMoments.reciprocalAtom r q)).card < n) :
+  (LeanPaper.ReciprocalRootMoments.reciprocalHankel r q n).det = 0
+LeanPaper.SingularPrincipalMinorExample.first_slope_zero :
+  ManuscriptChain.Real.entryM LeanPaper.SingularPrincipalMinorExample.parameters 0 0 = 0
+LeanPaper.SingularPrincipalMinorExample.first_minor_no_real_zero (x : ℝ) :
+  ManuscriptChain.Real.evalQ
+      (ManuscriptChain.PrincipalMinors.determinant LeanPaper.SingularPrincipalMinorExample.parameters
+        LeanPaper.SingularPrincipalMinorExample.firstIndex)
+      x ≠
+    0
+LeanPaper.SingularPrincipalMinorExample.first_minor_natDegree_zero :
+  (ManuscriptChain.PrincipalMinors.determinant LeanPaper.SingularPrincipalMinorExample.parameters
+        LeanPaper.SingularPrincipalMinorExample.firstIndex).natDegree =
+    0
+ManuscriptChain.PartialFractions.data_quotient_eq_actual (p : ManuscriptChain.Real.Parameters) (i j : ℕ) :
+  (ManuscriptChain.PartialFractions.data p (i + j)).quotient = ManuscriptChain.Real.quotient p i j
+ManuscriptChain.PartialFractions.residueCoeff_eq_actual (p : ManuscriptChain.Real.Parameters) (i j a : ℕ)
+  (ha : a ∈ Finset.Icc (p.N + 1) p.K) :
+  ManuscriptChain.PartialFractions.residueCoeff p (i + j) a = ManuscriptChain.Real.residue p i j a
+ManuscriptChain.PartialFractions.rational_kernel_decomposition (p : ManuscriptChain.Real.Parameters) (i j : ℕ) :
+  ManuscriptChain.Real.numerator p i j =
+    ManuscriptChain.Real.quotient p i j * ManuscriptChain.Real.tailD p +
+      ∑ a ∈ Finset.Icc (p.N + 1) p.K,
+        Polynomial.C (ManuscriptChain.Real.residue p i j a) *
+          ∏ b ∈ (Finset.Icc (p.N + 1) p.K).erase a, (Polynomial.X + Polynomial.C (↑b ^ 2))
+LeanPaper.RebuildKernelBridge.resolvedKernel_eq_fraction_all_real (p : ManuscriptChain.Real.Parameters) (i j : ℕ)
+  (y : ℝ) :
+  ManuscriptChain.Hyperbolic.resolvedKernel p i j y =
+    Polynomial.eval₂ (algebraMap ℚ ℝ) (y ^ 2) (ManuscriptChain.Real.numerator p i j) /
+      Polynomial.eval₂ (algebraMap ℚ ℝ) (y ^ 2) (ManuscriptChain.Real.tailD p)
+LeanPaper.RebuildKernelBridge.gram_eq_fraction_integral (p : ManuscriptChain.Real.Parameters) (hk : 0 < p.k)
+  (i j : Fin p.h) :
+  ManuscriptChain.Real.gram p (ManuscriptChain.Real.zeta p.weight) i j =
+    ∫ (y : ℝ) in Set.Ioi 0,
+      Polynomial.eval₂ (algebraMap ℚ ℝ) (y ^ 2) (ManuscriptChain.Real.numerator p ↑i ↑j) /
+          Polynomial.eval₂ (algebraMap ℚ ℝ) (y ^ 2) (ManuscriptChain.Real.tailD p) *
+        ManuscriptChain.Hyperbolic.density p.k y
+PaperOrder.CoreAlgebra.dualConstant_swap (s r t : ℕ) :
+  ManuscriptChain.Real.dualConstant s r t = ManuscriptChain.Real.dualConstant s t r
+PaperOrder.CoreAlgebra.dualEntry_derivative {h K : ℕ} (s : ℕ) (c : Fin h → Fin (K + 1) → ℚ) (i j : Fin h) :
+  Polynomial.derivative (ManuscriptChain.Real.dualEntry s c i j) =
+    Polynomial.C (PaperOrder.CoreAlgebra.dualSlopeMatrix c i j)
+PaperOrder.CoreAlgebra.dualSlopeMatrix_symmetric {h K : ℕ} (c : Fin h → Fin (K + 1) → ℚ) :
+  (PaperOrder.CoreAlgebra.dualSlopeMatrix c).IsSymm
+PaperOrder.CoreAlgebra.dualSlopeMatrix_eq_CCT {h K : ℕ} (c : Fin h → Fin (K + 1) → ℚ) :
+  PaperOrder.CoreAlgebra.dualSlopeMatrix c =
+    PaperOrder.CoreAlgebra.dualCoefficientMatrix c * (PaperOrder.CoreAlgebra.dualCoefficientMatrix c).transpose
+PaperOrder.CoreAlgebra.dualPencil_decomposition {h K : ℕ} (s : ℕ) (c : Fin h → Fin (K + 1) → ℚ) :
+  (fun i j => ManuscriptChain.Real.dualEntry s c i j) =
+    Polynomial.X • (PaperOrder.CoreAlgebra.dualSlopeMatrix c).map ⇑Polynomial.C +
+      (PaperOrder.CoreAlgebra.dualConstantMatrix s c).map ⇑Polynomial.C
+PaperOrder.CoreAlgebra.dualConstantMatrix_symmetric {h K : ℕ} (s : ℕ) (c : Fin h → Fin (K + 1) → ℚ) :
+  (PaperOrder.CoreAlgebra.dualConstantMatrix s c).IsSymm
+PaperOrder.PrincipalTheorems.coefficientSlope_quadratic_sos {h K : ℕ} (c : Fin h → Fin (K + 1) → ℝ) (v : Fin h → ℝ) :
+  ∑ i, ∑ j, v i * PaperOrder.PrincipalTheorems.coefficientSlope c i j * v j = ∑ r, (∑ i, v i * c i r) ^ 2
+PaperOrder.PrincipalTheorems.coefficientSlope_posDef {h K : ℕ} (c : Fin h → Fin (K + 1) → ℝ)
+  (hc : PaperOrder.PrincipalTheorems.coefficientRowsSeparate c) :
+  (PaperOrder.PrincipalTheorems.coefficientSlope c).PosDef
+PaperOrder.PrincipalTheorems.positiveSlopePencil_factorization_exists {h : ℕ}
+  (p : PaperOrder.PrincipalTheorems.PositiveSlopePencil h) :
+  ∃ beta, p.detPolynomial = Polynomial.C p.slope.det * ∏ i, (Polynomial.X + Polynomial.C (beta i))
+PaperOrder.PrincipalTheorems.positiveSlopePencil_degree {h : ℕ}
+  (p : PaperOrder.PrincipalTheorems.PositiveSlopePencil h) : p.detPolynomial.natDegree = h
+PaperOrder.PrincipalTheorems.positiveSlopePencil_every_complex_root_real {h : ℕ}
+  (p : PaperOrder.PrincipalTheorems.PositiveSlopePencil h) (z : ℂ)
+  (hz : Polynomial.eval₂ (algebraMap ℝ ℂ) z p.detPolynomial = 0) : z.im = 0
+PaperOrder.PrincipalTheorems.independent_coefficients_full_hyperbolicity {h K : ℕ} (c : Fin h → Fin (K + 1) → ℝ)
+  (constant : Matrix (Fin h) (Fin h) ℝ) (hconstant : constant.IsSymm)
+  (hc : PaperOrder.PrincipalTheorems.coefficientRowsSeparate c) :
+  ∃ beta,
+    (Matrix.det fun i j =>
+        Polynomial.C (constant i j) +
+          Polynomial.X * Polynomial.C (PaperOrder.PrincipalTheorems.coefficientSlope c i j)) =
+      Polynomial.C (PaperOrder.PrincipalTheorems.coefficientSlope c).det * ∏ i, (Polynomial.X + Polynomial.C (beta i))
+PaperOrder.CoreAlgebra.dualDelta_coefficient_dimension {h K : ℕ} (s : ℕ) (c : Fin h → Fin (K + 1) → ℚ) :
+  (ManuscriptChain.Real.dualDelta s c).coeff h = (PaperOrder.CoreAlgebra.dualSlopeMatrix c).det
+PaperOrder.CoreAlgebra.dualDelta_natDegree_le {h K : ℕ} (s : ℕ) (c : Fin h → Fin (K + 1) → ℚ) :
+  (ManuscriptChain.Real.dualDelta s c).natDegree ≤ h
+PaperOrder.CoreAlgebra.dualSlopeQuadraticForm_sos {h K : ℕ} (c : Fin h → Fin (K + 1) → ℚ) (v : Fin h → ℚ) :
+  PaperOrder.CoreAlgebra.dualSlopeQuadraticForm c v = ∑ r, (∑ i, v i * c i r) ^ 2
+PaperOrder.CoreAlgebra.dualSlopeQuadraticForm_nonneg {h K : ℕ} (c : Fin h → Fin (K + 1) → ℚ) (v : Fin h → ℚ) :
+  0 ≤ PaperOrder.CoreAlgebra.dualSlopeQuadraticForm c v
+PaperOrder.CoreAlgebra.dualCoefficientRowsSeparate_exists_nonzero {h K : ℕ} (c : Fin h → Fin (K + 1) → ℚ)
+  (hc : PaperOrder.CoreAlgebra.dualCoefficientRowsSeparate c) (v : Fin h → ℚ) (hv : v ≠ 0) : ∃ r, ∑ i, v i * c i r ≠ 0
+PaperOrder.CoreAlgebra.dualSlopeQuadraticForm_pos_of_separation {h K : ℕ} (c : Fin h → Fin (K + 1) → ℚ)
+  (hc : PaperOrder.CoreAlgebra.dualCoefficientRowsSeparate c) (v : Fin h → ℚ) (hv : v ≠ 0) :
+  0 < PaperOrder.CoreAlgebra.dualSlopeQuadraticForm c v
+PaperOrder.CoreAlgebra.dualSlopeQuadraticForm_zero_iff {h K : ℕ} (c : Fin h → Fin (K + 1) → ℚ) (v : Fin h → ℚ) :
+  PaperOrder.CoreAlgebra.dualSlopeQuadraticForm c v = 0 ↔ ∀ (r : Fin (K + 1)), ∑ i, v i * c i r = 0
+PaperOrder.CoreAlgebra.dualSlopeQuadraticForm_pos_iff_rowsSeparate {h K : ℕ} (c : Fin h → Fin (K + 1) → ℚ) :
+  (∀ (v : Fin h → ℚ), v ≠ 0 → 0 < PaperOrder.CoreAlgebra.dualSlopeQuadraticForm c v) ↔
+    PaperOrder.CoreAlgebra.dualCoefficientRowsSeparate c
+PaperOrder.CoreAlgebra.dualEntry_derivative_weight_independent {h K : ℕ} (s t : ℕ) (c : Fin h → Fin (K + 1) → ℚ)
+  (i j : Fin h) :
+  Polynomial.derivative (ManuscriptChain.Real.dualEntry s c i j) =
+    Polynomial.derivative (ManuscriptChain.Real.dualEntry t c i j)
+PaperOrder.CoreAlgebra.dualDelta_top_coefficient_weight_independent {h K : ℕ} (s t : ℕ) (c : Fin h → Fin (K + 1) → ℚ) :
+  (ManuscriptChain.Real.dualDelta s c).coeff h = (ManuscriptChain.Real.dualDelta t c).coeff h
+PaperOrder.CoreAlgebra.dualSlopeMatrix_rowChange {h K : ℕ} (A : Matrix (Fin h) (Fin h) ℚ)
+  (c : Fin h → Fin (K + 1) → ℚ) :
+  PaperOrder.CoreAlgebra.dualSlopeMatrix (PaperOrder.CoreAlgebra.dualRowChange A c) =
+    A * PaperOrder.CoreAlgebra.dualSlopeMatrix c * A.transpose
+PaperOrder.CoreAlgebra.dualDelta_top_coeff_rowChange {h K : ℕ} (s : ℕ) (A : Matrix (Fin h) (Fin h) ℚ)
+  (c : Fin h → Fin (K + 1) → ℚ) :
+  (ManuscriptChain.Real.dualDelta s (PaperOrder.CoreAlgebra.dualRowChange A c)).coeff h =
+    A.det ^ 2 * (ManuscriptChain.Real.dualDelta s c).coeff h
+PaperOrder.CoreAlgebra.dualDelta_degree_rowChange {h K : ℕ} (s : ℕ) (A : Matrix (Fin h) (Fin h) ℚ)
+  (c : Fin h → Fin (K + 1) → ℚ) (hA : A.det ≠ 0) (hc : (ManuscriptChain.Real.dualDelta s c).coeff h ≠ 0) :
+  (ManuscriptChain.Real.dualDelta s (PaperOrder.CoreAlgebra.dualRowChange A c)).natDegree = h
+PaperOrder.CoreAlgebra.dualDelta_degree_of_nonsingular_slope {h K : ℕ} (s : ℕ) (c : Fin h → Fin (K + 1) → ℚ)
+  (hslope : (PaperOrder.CoreAlgebra.dualSlopeMatrix c).det ≠ 0) : (ManuscriptChain.Real.dualDelta s c).natDegree = h
+PaperOrder.CoreAlgebra.dualDelta_topCoeff_nonzero_rowChange_iff {h K : ℕ} (s : ℕ) (A : Matrix (Fin h) (Fin h) ℚ)
+  (c : Fin h → Fin (K + 1) → ℚ) (hA : A.det ≠ 0) :
+  (ManuscriptChain.Real.dualDelta s (PaperOrder.CoreAlgebra.dualRowChange A c)).coeff h ≠ 0 ↔
+    (ManuscriptChain.Real.dualDelta s c).coeff h ≠ 0
+PaperOrder.CoreAlgebra.dualDelta_degree_rowChange_of_nonsingular_slope {h K : ℕ} (s : ℕ) (A : Matrix (Fin h) (Fin h) ℚ)
+  (c : Fin h → Fin (K + 1) → ℚ) (hA : A.det ≠ 0) (hslope : (PaperOrder.CoreAlgebra.dualSlopeMatrix c).det ≠ 0) :
+  (ManuscriptChain.Real.dualDelta s (PaperOrder.CoreAlgebra.dualRowChange A c)).natDegree = h
+PaperOrder.CoreAlgebra.dualFullMonomialSlope_one (K : ℕ) :
+  PaperOrder.CoreAlgebra.dualSlopeMatrix (PaperOrder.CoreAlgebra.dualFullMonomialCoefficients K) = 1
+PaperOrder.CoreAlgebra.dualFullMonomialDelta_degree (K s : ℕ) :
+  (ManuscriptChain.Real.dualDelta s (PaperOrder.CoreAlgebra.dualFullMonomialCoefficients K)).natDegree = K + 1
+PaperOrder.CoreAlgebra.dualSelectedMonomialSlope_one {h K : ℕ} (f : Fin h → Fin (K + 1)) (hf : Function.Injective f) :
+  PaperOrder.CoreAlgebra.dualSlopeMatrix (PaperOrder.CoreAlgebra.dualSelectedMonomialCoefficients f) = 1
+PaperOrder.CoreAlgebra.dualSelectedMonomialDelta_degree {h K : ℕ} (s : ℕ) (f : Fin h → Fin (K + 1))
+  (hf : Function.Injective f) :
+  (ManuscriptChain.Real.dualDelta s (PaperOrder.CoreAlgebra.dualSelectedMonomialCoefficients f)).natDegree = h
+PaperOrder.CoreAlgebra.dualUnimodularSelectedMonomial_top_coeff {h K : ℕ} (s : ℕ) (A : Matrix (Fin h) (Fin h) ℚ)
+  (f : Fin h → Fin (K + 1)) (hf : Function.Injective f) (hA : A.det ^ 2 = 1) :
+  (ManuscriptChain.Real.dualDelta s
+          (PaperOrder.CoreAlgebra.dualRowChange A (PaperOrder.CoreAlgebra.dualSelectedMonomialCoefficients f))).coeff
+      h =
+    1
+PaperOrder.CoreAlgebra.dualUnimodularSelectedMonomial_degree {h K : ℕ} (s : ℕ) (A : Matrix (Fin h) (Fin h) ℚ)
+  (f : Fin h → Fin (K + 1)) (hf : Function.Injective f) (hA : A.det ^ 2 = 1) :
+  (ManuscriptChain.Real.dualDelta s
+        (PaperOrder.CoreAlgebra.dualRowChange A
+          (PaperOrder.CoreAlgebra.dualSelectedMonomialCoefficients f))).natDegree =
+    h
+PaperOrder.CoreAlgebra.dualTwoByTwo_det_expansion (a b c u v w x : ℝ) :
+  !![a + x * u, b + x * v; b + x * v, c + x * w].det =
+    (u * w - v ^ 2) * x ^ 2 + (a * w + c * u - 2 * b * v) * x + (a * c - b ^ 2)
+PaperOrder.CoreAlgebra.dualTwoByTwo_discriminant_sos (a b c u v w : ℝ) :
+  u ^ 2 * PaperOrder.CoreAlgebra.dualTwoByTwoDiscriminant a b c u v w =
+    (a * (u * w - v ^ 2) - c * u ^ 2 + 2 * b * u * v - a * v ^ 2) ^ 2 + 4 * (u * w - v ^ 2) * (b * u - a * v) ^ 2
+PaperOrder.CoreAlgebra.dualTwoByTwo_discriminant_nonneg (a b c u v w : ℝ) (hu : 0 < u) (hM : 0 < u * w - v ^ 2) :
+  0 ≤ PaperOrder.CoreAlgebra.dualTwoByTwoDiscriminant a b c u v w
+PaperOrder.CoreAlgebra.dualTwoByTwo_discriminant_pos_of_nonproportional (a b c u v w : ℝ) (hu : 0 < u)
+  (hM : 0 < u * w - v ^ 2) (hsep : b * u - a * v ≠ 0) : 0 < PaperOrder.CoreAlgebra.dualTwoByTwoDiscriminant a b c u v w
+PaperOrder.CoreAlgebra.realQuadratic_has_root_of_discriminant_nonneg (A B C : ℝ) (hA : A ≠ 0)
+  (hdisc : 0 ≤ B ^ 2 - 4 * A * C) : ∃ x, A * x ^ 2 + B * x + C = 0
+PaperOrder.CoreAlgebra.dualTwoByTwo_det_has_real_zero (a b c u v w : ℝ) (hu : 0 < u) (hM : 0 < u * w - v ^ 2) :
+  ∃ x, !![a + x * u, b + x * v; b + x * v, c + x * w].det = 0
+PaperOrder.PrincipalTheorems.weightSeven_binomial (u v : ℝ) :
+  (u + v) ^ 5 = ∑ ν ∈ Finset.range 6, ↑(Nat.choose 5 ν) * u ^ ν * v ^ (5 - ν)
+PaperOrder.PrincipalTheorems.weightSeven_Krein_bilinear (a b : ℕ → ℝ) :
+  PaperOrder.PrincipalTheorems.weightSevenPairing a b = PaperOrder.PrincipalTheorems.weightSevenKreinPairing a b
+PaperOrder.PrincipalTheorems.weightSeven_Krein_quadratic (a : ℕ → ℝ) :
+  PaperOrder.PrincipalTheorems.weightSevenPairing a a =
+    1 / 1440 * ∑ ν ∈ Finset.range 3, ↑(Nat.choose 5 ν) * ((a ν + a (5 - ν)) ^ 2 - (a ν - a (5 - ν)) ^ 2)
+PaperOrder.PrincipalTheorems.weightSeven_Krein_infinite_modes (a b : ℕ → ℕ → ℝ)
+  (hsum : Summable fun m => PaperOrder.PrincipalTheorems.weightSevenPairing (a m) (b m)) :
+  (Summable fun m => PaperOrder.PrincipalTheorems.weightSevenKreinPairing (a m) (b m)) ∧
+    ∑' (m : ℕ), PaperOrder.PrincipalTheorems.weightSevenPairing (a m) (b m) =
+      ∑' (m : ℕ), PaperOrder.PrincipalTheorems.weightSevenKreinPairing (a m) (b m)
+PaperOrder.PrincipalTheorems.finiteKreinGram_posDef {h K : ℕ} (plus minus : Fin h → Fin (K + 1) → ℝ)
+  (hminus : ∀ (i : Fin h) (r : Fin (K + 1)), minus i r = 0)
+  (hplus : PaperOrder.PrincipalTheorems.coefficientRowsSeparate plus) :
+  (PaperOrder.PrincipalTheorems.finiteKreinGram plus minus).PosDef
+PaperOrder.PrincipalTheorems.finiteKreinGram_neg_posDef {h K : ℕ} (plus minus : Fin h → Fin (K + 1) → ℝ)
+  (hplus : ∀ (i : Fin h) (r : Fin (K + 1)), plus i r = 0)
+  (hminus : PaperOrder.PrincipalTheorems.coefficientRowsSeparate minus) :
+  (-PaperOrder.PrincipalTheorems.finiteKreinGram plus minus).PosDef
+PaperOrder.PrincipalTheorems.negativeWeightSeven_actual_pencil :
+  ManuscriptChain.Real.dualDelta 7 PaperOrder.PrincipalTheorems.negativeWeightSevenRow =
+    Polynomial.C 37 * Polynomial.X - Polynomial.C 38
+PaperOrder.PrincipalTheorems.negativeWeightSeven_rational_root :
+  Polynomial.eval (38 / 37) (ManuscriptChain.Real.dualDelta 7 PaperOrder.PrincipalTheorems.negativeWeightSevenRow) = 0
+PaperOrder.PrincipalTheorems.negativeWeightSeven_below_zero_at_zeta (hzeta : ManuscriptChain.Real.zeta 7 < 38 / 37) :
+  ManuscriptChain.Real.evalQ (ManuscriptChain.Real.dualDelta 7 PaperOrder.PrincipalTheorems.negativeWeightSevenRow)
+      (ManuscriptChain.Real.zeta 7) <
+    0
+PaperOrder.PrincipalTheorems.positiveWeightSeven_at_zeta :
+  0 <
+    ManuscriptChain.Real.evalQ (ManuscriptChain.Real.dualDelta 7 PaperOrder.PrincipalTheorems.positiveWeightSevenRow)
+      (ManuscriptChain.Real.zeta 7)
+PaperOrder.PrincipalTheorems.zetaSeven_tail_le_one_div_64 : ∑' (n : ℕ), 1 / ↑(n + 2) ^ 7 ≤ 1 / 64
+PaperOrder.PrincipalTheorems.zetaSeven_lt_38_div_37 : ManuscriptChain.Real.zeta 7 < 38 / 37
+PaperOrder.PrincipalTheorems.weightSeven_rankOne_negative_unconditional :
+  ManuscriptChain.Real.evalQ (ManuscriptChain.Real.dualDelta 7 PaperOrder.PrincipalTheorems.negativeWeightSevenRow)
+      (ManuscriptChain.Real.zeta 7) <
+    0
+Zetahyperbolic.TriplePoleRepair.hermite_congruence {n : ℕ} (nodes : Fin n → ℚ) (c u : Fin n → Fin 3 → ℚ)
+  (basis : Zetahyperbolic.TriplePoleRepair.JetIndex n → Polynomial ℚ) :
+  Zetahyperbolic.TriplePoleRepair.momentMatrix nodes c u basis =
+    (Zetahyperbolic.TriplePoleRepair.jetTable nodes basis *
+        Matrix.blockDiagonal fun a =>
+          Zetahyperbolic.TriplePoleRepair.localBlock (Zetahyperbolic.TriplePoleRepair.jetWeights (c a) (u a))) *
+      (Zetahyperbolic.TriplePoleRepair.jetTable nodes basis).transpose
+Zetahyperbolic.TriplePoleRepair.momentMatrix_det_ne_zero {n : ℕ} (nodes : Fin n → ℚ) (c u : Fin n → Fin 3 → ℚ)
+  (basis : Zetahyperbolic.TriplePoleRepair.JetIndex n → Polynomial ℚ)
+  (hbasis : (Zetahyperbolic.TriplePoleRepair.jetTable nodes basis).det ≠ 0) (htriple : ∀ (a : Fin n), c a 2 ≠ 0)
+  (hpole : ∀ (a : Fin n), u a 0 ≠ 0) : (Zetahyperbolic.TriplePoleRepair.momentMatrix nodes c u basis).det ≠ 0
+Zetahyperbolic.Theorem6_10.abs_top_coefficient_eq_eval_mul_relative_det {n : ℕ} (A M : Matrix (Fin n) (Fin n) ℝ)
+  (xi scale : ℝ) (hA : A.det ≠ 0) :
+  |(Zetahyperbolic.Theorem6_10.normalizedDet A M xi scale).coeff n| =
+    |Polynomial.eval xi (Zetahyperbolic.Theorem6_10.normalizedDet A M xi scale)| *
+      |(Zetahyperbolic.Theorem6_10.relativeMatrix A M).det|
+Zetahyperbolic.Theorem6_10.abs_top_coefficient_eq_eval_mul_spectral_det {n : ℕ} (A M S : Matrix (Fin n) (Fin n) ℝ)
+  (xi scale : ℝ) (hS : S * S = A) (hdet : S.det ≠ 0) :
+  |(Zetahyperbolic.Theorem6_10.normalizedDet A M xi scale).coeff n| =
+    |Polynomial.eval xi (Zetahyperbolic.Theorem6_10.normalizedDet A M xi scale)| *
+      |(Zetahyperbolic.Theorem6_10.symmetricRelativeMatrix S M).det|
+Zetahyperbolic.Theorem6_10.abs_top_coefficient_eq_eval_mul_sqrt_det {n : ℕ} (A M : Matrix (Fin n) (Fin n) ℝ)
+  (xi scale : ℝ) (hA : A.PosDef) :
+  |(Zetahyperbolic.Theorem6_10.normalizedDet A M xi scale).coeff n| =
+    |Polynomial.eval xi (Zetahyperbolic.Theorem6_10.normalizedDet A M xi scale)| *
+      |(Zetahyperbolic.Theorem6_10.symmetricRelativeMatrix (CFC.sqrt A) M).det|
+Zetahyperbolic.Theorem6_10.abs_leadingCoeff_eq_eval_mul_sqrt_det {n : ℕ} (A M : Matrix (Fin n) (Fin n) ℝ) (xi scale : ℝ)
+  (hA : A.PosDef) (hscale : scale ≠ 0) (hM : M.det ≠ 0) :
+  |(Zetahyperbolic.Theorem6_10.normalizedDet A M xi scale).leadingCoeff| =
+    |Polynomial.eval xi (Zetahyperbolic.Theorem6_10.normalizedDet A M xi scale)| *
+      |(Zetahyperbolic.Theorem6_10.symmetricRelativeMatrix (CFC.sqrt A) M).det|
+PaperChronology.Paper10.PAPER10_BETA_VANDERMONDE_RESIDUAL_SIGN (j N : ℕ) (h : N ≤ j) :
+  (-1) ^ j * (-1) ^ (j - N) = (-1) ^ N
+PaperChronology.Paper10.PAPER10_BETA_VANDERMONDE_EVEN_BASE (j t : ℕ) (h : 2 * t ≤ j) : (-1) ^ j * (-1) ^ (j - 2 * t) = 1
+PaperChronology.Paper10.PAPER10_BETA_VANDERMONDE_ODD_BASE (j t : ℕ) (h : 2 * t + 1 ≤ j) :
+  (-1) ^ j * (-1) ^ (j - (2 * t + 1)) = -1
+PaperChronology.Paper10.PAPER10_BETA_FULL_CHARACTER_VANDERMONDE_CANCELLATION (j N : ℕ) (h : N ≤ j) :
+  (-1) ^ N * ((-1) ^ j * (-1) ^ (j - N)) = 1
+PaperChronology.Paper10.PAPER10_POSITIVE_DIAGONAL_NONNEG {n : ℕ} (gamma v : Fin n → ℝ)
+  (hgamma : ∀ (i : Fin n), 0 < gamma i) : 0 ≤ ∑ i, gamma i * v i ^ 2
+PaperChronology.Paper10.PAPER10_POSITIVE_DIAGONAL_STRICT {n : ℕ} (gamma v : Fin n → ℝ)
+  (hgamma : ∀ (i : Fin n), 0 < gamma i) (hnonzero : ∃ i, v i ≠ 0) : 0 < ∑ i, gamma i * v i ^ 2
+PaperChronology.Paper10.PAPER10_TWO_NODE_VANDERMONDE_ZERO (u v a b : ℝ) (huv : u ≠ v) (hfirst : a + u * b = 0)
+  (hsecond : a + v * b = 0) : a = 0 ∧ b = 0
+PaperChronology.Paper10.PAPER10_TWO_NODE_VANDERMONDE_GRAM_STRICT (u v w0 w1 a b : ℝ) (huv : u ≠ v) (hw0 : 0 < w0)
+  (hw1 : 0 < w1) (hcoeff : a ≠ 0 ∨ b ≠ 0) : 0 < w0 * (a + u * b) ^ 2 + w1 * (a + v * b) ^ 2
+PaperChronology.Paper10.PAPER10_FINITE_WEIGHTED_GRAM_STRICT {m n : ℕ} (A : Fin m → Fin n → ℝ) (gamma : Fin m → ℝ)
+  (v : Fin n → ℝ) (hgamma : ∀ (i : Fin m), 0 < gamma i) (hinj : Function.Injective fun t i => ∑ j, A i j * t j)
+  (hv : v ≠ 0) : 0 < ∑ i, gamma i * (∑ j, A i j * v j) ^ 2
+PaperChronology.Paper10.PAPER10_BILINEAR_TENSOR_GRID_ZERO (u v s t a b c d : ℝ) (huv : u ≠ v) (hst : s ≠ t)
+  (h00 : a + u * b + s * c + u * s * d = 0) (h01 : a + u * b + t * c + u * t * d = 0)
+  (h10 : a + v * b + s * c + v * s * d = 0) (h11 : a + v * b + t * c + v * t * d = 0) : a = 0 ∧ b = 0 ∧ c = 0 ∧ d = 0
+PaperChronology.Paper10.PAPER10_BILINEAR_TENSOR_GRID_GRAM_STRICT (u v s t w00 w01 w10 w11 a b c d : ℝ) (huv : u ≠ v)
+  (hst : s ≠ t) (hw00 : 0 < w00) (hw01 : 0 < w01) (hw10 : 0 < w10) (hw11 : 0 < w11)
+  (hcoeff : a ≠ 0 ∨ b ≠ 0 ∨ c ≠ 0 ∨ d ≠ 0) :
+  0 <
+    w00 * (a + u * b + s * c + u * s * d) ^ 2 + w01 * (a + u * b + t * c + u * t * d) ^ 2 +
+        w10 * (a + v * b + s * c + v * s * d) ^ 2 +
+      w11 * (a + v * b + t * c + v * t * d) ^ 2
+PaperChronology.Paper10.PAPER10_BETA_REAL_SIGN_NORMALIZATION (j N : ℕ) (hj : N ≤ j) :
+  (-1) ^ N * ((-1) ^ j * (-1) ^ (j - N)) = 1
+PaperChronology.Paper10.PAPER10_BETA_NORMALIZED_RESIDUE_EQ (N j : ℕ) (hNj : N ≤ j) (q : ℝ) :
+  PaperChronology.Paper10.PAPER10_BETA_NORMALIZED_RESIDUE N j q = q
+PaperChronology.Paper10.PAPER10_BETA_NORMALIZED_RESIDUES_POSITIVE (N m : ℕ) (q : Fin m → ℝ)
+  (hq : ∀ (i : Fin m), 0 < q i) (i : Fin m) :
+  0 < PaperChronology.Paper10.PAPER10_BETA_NORMALIZED_RESIDUE N (N + ↑i) (q i)
+PaperChronology.Paper10.PAPER10_BETA_INJECTIVE_PENCIL_STRICT {m n : ℕ} (N : ℕ) (A : Fin m → Fin n → ℝ) (q : Fin m → ℝ)
+  (v : Fin n → ℝ) (hq : ∀ (i : Fin m), 0 < q i) (hinj : Function.Injective fun t i => ∑ j, A i j * t j) (hv : v ≠ 0) :
+  0 < ∑ i, PaperChronology.Paper10.PAPER10_BETA_NORMALIZED_RESIDUE N (N + ↑i) (q i) * (∑ j, A i j * v j) ^ 2
+PaperChronology.Paper10.PAPER10_BETA_TWO_NODE_PENCIL_STRICT (N : ℕ) (u v q0 q1 a b : ℝ) (huv : u ≠ v) (hq0 : 0 < q0)
+  (hq1 : 0 < q1) (hcoeff : a ≠ 0 ∨ b ≠ 0) :
+  0 <
+    PaperChronology.Paper10.PAPER10_BETA_NORMALIZED_RESIDUE N N q0 * (a + u * b) ^ 2 +
+      PaperChronology.Paper10.PAPER10_BETA_NORMALIZED_RESIDUE N (N + 1) q1 * (a + v * b) ^ 2
+PaperChronology.Paper10.PAPER10_BETA_BILINEAR_TENSOR_GRID_STRICT (N : ℕ) (u v s t w00 w01 w10 w11 a b c d : ℝ)
+  (huv : u ≠ v) (hst : s ≠ t) (hw00 : 0 < w00) (hw01 : 0 < w01) (hw10 : 0 < w10) (hw11 : 0 < w11)
+  (hcoeff : a ≠ 0 ∨ b ≠ 0 ∨ c ≠ 0 ∨ d ≠ 0) :
+  0 <
+    PaperChronology.Paper10.PAPER10_BETA_NORMALIZED_RESIDUE N N w00 * (a + u * b + s * c + u * s * d) ^ 2 +
+          PaperChronology.Paper10.PAPER10_BETA_NORMALIZED_RESIDUE N (N + 1) w01 * (a + u * b + t * c + u * t * d) ^ 2 +
+        PaperChronology.Paper10.PAPER10_BETA_NORMALIZED_RESIDUE N (N + 2) w10 * (a + v * b + s * c + v * s * d) ^ 2 +
+      PaperChronology.Paper10.PAPER10_BETA_NORMALIZED_RESIDUE N (N + 3) w11 * (a + v * b + t * c + v * t * d) ^ 2
+PaperChronology.Paper10.PAPER10_TWO_NODE_GRAM_DETERMINANT (u v q0 q1 : ℝ) :
+  (q0 + q1) * (q0 * u ^ 2 + q1 * v ^ 2) - (q0 * u + q1 * v) ^ 2 = q0 * q1 * (u - v) ^ 2
+PaperChronology.Paper10.PAPER10_TWO_NODE_GRAM_DETERMINANT_POSITIVE (u v q0 q1 : ℝ) (huv : u ≠ v) (hq0 : 0 < q0)
+  (hq1 : 0 < q1) : 0 < (q0 + q1) * (q0 * u ^ 2 + q1 * v ^ 2) - (q0 * u + q1 * v) ^ 2
+PaperChronology.Paper10.PAPER10_THREE_NODE_VANDERMONDE_ZERO (u v w a b c : ℝ) (huv : u ≠ v) (huw : u ≠ w) (hvw : v ≠ w)
+  (hu : a + u * b + u ^ 2 * c = 0) (hv : a + v * b + v ^ 2 * c = 0) (hw : a + w * b + w ^ 2 * c = 0) :
+  a = 0 ∧ b = 0 ∧ c = 0
+PaperChronology.Paper10.PAPER10_THREE_NODE_WEIGHTED_GRAM_STRICT (u v w q0 q1 q2 a b c : ℝ) (huv : u ≠ v) (huw : u ≠ w)
+  (hvw : v ≠ w) (hq0 : 0 < q0) (hq1 : 0 < q1) (hq2 : 0 < q2) (hcoeff : a ≠ 0 ∨ b ≠ 0 ∨ c ≠ 0) :
+  0 < q0 * (a + u * b + u ^ 2 * c) ^ 2 + q1 * (a + v * b + v ^ 2 * c) ^ 2 + q2 * (a + w * b + w ^ 2 * c) ^ 2
+PaperChronology.Paper10.PAPER10_BETA_THREE_NODE_PENCIL_STRICT (N : ℕ) (u v w q0 q1 q2 a b c : ℝ) (huv : u ≠ v)
+  (huw : u ≠ w) (hvw : v ≠ w) (hq0 : 0 < q0) (hq1 : 0 < q1) (hq2 : 0 < q2) (hcoeff : a ≠ 0 ∨ b ≠ 0 ∨ c ≠ 0) :
+  0 <
+    PaperChronology.Paper10.PAPER10_BETA_NORMALIZED_RESIDUE N N q0 * (a + u * b + u ^ 2 * c) ^ 2 +
+        PaperChronology.Paper10.PAPER10_BETA_NORMALIZED_RESIDUE N (N + 1) q1 * (a + v * b + v ^ 2 * c) ^ 2 +
+      PaperChronology.Paper10.PAPER10_BETA_NORMALIZED_RESIDUE N (N + 2) q2 * (a + w * b + w ^ 2 * c) ^ 2
+PaperChronology.Paper10.PAPER10_DIFFERENTIAL_SHIFT_POLE_ALIGNMENT (j k m : ℕ) (hm : m ≤ k) :
+  ↑j ^ (2 * (k - m)) * ↑j ^ (2 * m) = ↑j ^ (2 * k)
+PaperChronology.Paper10.PAPER10_DIFFERENTIAL_SHIFT_FINITE_COUPLING (j k : ℕ) (a X : ℕ → ℚ) :
+  ∑ m ∈ Finset.Icc 1 k, a m * (↑j ^ (2 * (k - m)) * ↑j ^ (2 * m)) * X m = ↑j ^ (2 * k) * ∑ m ∈ Finset.Icc 1 k, a m * X m
+LeanPaper.Section5DualSpectrum.actual_dual_degree {h K : ℕ} (s : ℕ) (c : Fin h → Fin (K + 1) → ℚ)
+  (hc : PaperOrder.PrincipalTheorems.coefficientRowsSeparate (LeanPaper.Section5DualSpectrum.realCoefficients c)) :
+  (ManuscriptChain.Real.dualDelta s c).natDegree = h
+LeanPaper.Section5DualSpectrum.actual_dual_zeros_real {h K : ℕ} (s : ℕ) (c : Fin h → Fin (K + 1) → ℚ)
+  (hc : PaperOrder.PrincipalTheorems.coefficientRowsSeparate (LeanPaper.Section5DualSpectrum.realCoefficients c))
+  (z : ℂ) (hz : Polynomial.eval₂ (algebraMap ℚ ℂ) z (ManuscriptChain.Real.dualDelta s c) = 0) : z.im = 0
+LeanPaper.Section5DualSpectrum.selected_monomial_dual_zeros_real {h K : ℕ} (s : ℕ) (f : Fin h → Fin (K + 1))
+  (hf : Function.Injective f) (z : ℂ)
+  (hz :
+    Polynomial.eval₂ (algebraMap ℚ ℂ) z
+        (ManuscriptChain.Real.dualDelta s (PaperOrder.CoreAlgebra.dualSelectedMonomialCoefficients f)) =
+      0) :
+  z.im = 0
+PaperAdvances.Theorem3_9_ShiftedPole.hurwitz_slope_nonsingular {n : ℕ} (N : ℕ) (theta s : ℝ) (htheta : 0 < theta)
+  (residue : Fin n → ℝ) (hres : ∀ (a : Fin n), residue a ≠ 0) :
+  (PaperAdvances.Theorem3_9_ShiftedPole.poleM (PaperAdvances.Theorem3_9_ShiftedPole.shiftedSquareNode N theta)
+        (PaperAdvances.Theorem3_9_ShiftedPole.shiftedGamma N theta s residue)).det ≠
+    0
+PaperAdvances.Theorem3_9_ShiftedPole.hurwitz_complex_roots_real {n : ℕ} (N : ℕ) (theta s center : ℝ)
+  (htheta : 0 < theta) (residue : Fin n → ℝ) (hres : ∀ (a : Fin n), residue a ≠ 0) (G : Matrix (Fin n) (Fin n) ℝ)
+  (hG : G.IsSymm) (hpos : G.PosDef) (z : ℂ)
+  (hz :
+    Polynomial.eval₂ (algebraMap ℝ ℂ) z
+        (PaperAdvances.Theorem3_9_ShiftedPole.polePencil
+            (PaperAdvances.Theorem3_9_ShiftedPole.shiftedSquareNode N theta)
+            (PaperAdvances.Theorem3_9_ShiftedPole.shiftedGamma N theta s residue) center G hG).detPolynomial =
+      0) :
+  z.im = 0
+PaperAdvances.Theorem3_9_CharacterPositive.all_fekete_laplace_numerators_pos (q y : ℝ) (hq : 0 < q) (hy : 0 < y) :
+  0 < PaperAdvances.Theorem3_9_CharacterPositive.f3 (PaperAdvances.Theorem3_9_CharacterPositive.qParameter q y) ∧
+    0 < PaperAdvances.Theorem3_9_CharacterPositive.f4 (PaperAdvances.Theorem3_9_CharacterPositive.qParameter q y) ∧
+      0 < PaperAdvances.Theorem3_9_CharacterPositive.f5 (PaperAdvances.Theorem3_9_CharacterPositive.qParameter q y) ∧
+        0 <
+            PaperAdvances.Theorem3_9_CharacterPositive.f8pos
+              (PaperAdvances.Theorem3_9_CharacterPositive.qParameter q y) ∧
+          0 <
+            PaperAdvances.Theorem3_9_CharacterPositive.f8neg (PaperAdvances.Theorem3_9_CharacterPositive.qParameter q y)
+PaperAdvances.Theorem3_9_CharacterPositive.all_rational_character_kernels_pos (z : ℝ) (hz : 0 < z) (h1 : z < 1) :
+  0 < PaperAdvances.Theorem3_9_CharacterPositive.f3 z / (1 - z ^ 3) ∧
+    0 < PaperAdvances.Theorem3_9_CharacterPositive.f4 z / (1 - z ^ 4) ∧
+      0 < PaperAdvances.Theorem3_9_CharacterPositive.f5 z / (1 - z ^ 5) ∧
+        0 < PaperAdvances.Theorem3_9_CharacterPositive.f8pos z / (1 - z ^ 8) ∧
+          0 < PaperAdvances.Theorem3_9_CharacterPositive.f8neg z / (1 - z ^ 8)
+PaperAdvances.Theorem3_9_PositiveSlope.poleM_posDef {n : ℕ} (nodes gamma : Fin n → ℝ) (hn : Function.Injective nodes)
+  (hgamma : ∀ (a : Fin n), 0 < gamma a) : (PaperAdvances.Theorem3_9_ShiftedPole.poleM nodes gamma).PosDef
+PaperAdvances.Theorem3_9_PositiveSlope.shiftedSlope_posDef {n : ℕ} (N : ℕ) (theta s : ℝ) (htheta : 0 < theta)
+  (residue : Fin n → ℝ) (hres : ∀ (a : Fin n), 0 < residue a) :
+  (PaperAdvances.Theorem3_9_ShiftedPole.poleM (PaperAdvances.Theorem3_9_ShiftedPole.shiftedSquareNode N theta)
+      (PaperAdvances.Theorem3_9_ShiftedPole.shiftedGamma N theta s residue)).PosDef
+PaperAdvances.Theorem5_2_RealRoots.positive_slope_factorization {n : ℕ}
+  (p : ManuscriptChain.Spectral.SymmetricAffinePencil n) (hp : p.direction.PosDef) :
+  ∃ beta, p.detPolynomial = Polynomial.C p.direction.det * ∏ i, (Polynomial.X + Polynomial.C (beta i - p.center))
+PaperAdvances.Theorem5_2_RealRoots.positive_slope_exact_degree {n : ℕ}
+  (p : ManuscriptChain.Spectral.SymmetricAffinePencil n) (hp : p.direction.PosDef) : p.detPolynomial.natDegree = n
+PaperAdvances.Theorem5_2_RealRoots.positive_slope_complex_roots_real {n : ℕ}
+  (p : ManuscriptChain.Spectral.SymmetricAffinePencil n) (hp : p.direction.PosDef) (z : ℂ)
+  (hz : Polynomial.eval₂ (algebraMap ℝ ℂ) z p.detPolynomial = 0) : z.im = 0
+PaperAdvances.Theorem6_6_FiniteMultiweightCone.FINITE_MULTIWEIGHT_SPECTRAL_HYPERBOLICITY.{u_1} {n : ℕ} {ι : Type u_1}
+  [DecidableEq ι] (p : ManuscriptChain.Spectral.SymmetricAffinePencil n) (s : Finset ι) (hs : s.Nonempty)
+  (A : ι → Matrix (Fin n) (Fin n) ℝ) (w : ι → ℝ) (hA : ∀ i ∈ s, (A i).PosDef) (hw : ∀ i ∈ s, 0 < w i)
+  (hdir : p.direction = ∑ i ∈ s, w i • A i) :
+  p.detPolynomial.natDegree = n ∧
+    (∀ (z : ℂ), Polynomial.eval₂ (algebraMap ℝ ℂ) z p.detPolynomial = 0 → z.im = 0) ∧
+      ∀ (x : ℝ), 0 ≤ PaperAdvances.Theorem3_7_AllDegrees.turan p.detPolynomial x
+PaperAdvances.Theorem6_6_FiniteMultiweightCone.FINITE_MULTIWEIGHT_STRICT_TURAN.{u_1} {n : ℕ} {ι : Type u_1}
+  [DecidableEq ι] (p : ManuscriptChain.Spectral.SymmetricAffinePencil n) (s : Finset ι) (hs : s.Nonempty)
+  (A : ι → Matrix (Fin n) (Fin n) ℝ) (w : ι → ℝ) (hA : ∀ i ∈ s, (A i).PosDef) (hw : ∀ i ∈ s, 0 < w i)
+  (hdir : p.direction = ∑ i ∈ s, w i • A i) (hn : 0 < n) (x : ℝ) (hx : Polynomial.eval x p.detPolynomial ≠ 0) :
+  0 < PaperAdvances.Theorem3_7_AllDegrees.turan p.detPolynomial x
+PaperAdvances.Theorem6_6_AnchoredSemidefiniteCone.ANCHORED_FINITE_CONE_POSDEF.{u_1} {n : ℕ} {ι : Type u_1}
+  [DecidableEq ι] (s : Finset ι) (A : ι → Matrix (Fin n) (Fin n) ℝ) (w : ι → ℝ) (hA : ∀ i ∈ s, (A i).PosSemidef)
+  (hw : ∀ i ∈ s, 0 ≤ w i) (j : ι) (hj : j ∈ s) (hAj : (A j).PosDef) (hwj : 0 < w j) : (∑ i ∈ s, w i • A i).PosDef
+PaperAdvances.Theorem6_6_AnchoredSemidefiniteCone.ANCHORED_FINITE_CONE_SPECTRAL_PACKAGE.{u_1} {n : ℕ} {ι : Type u_1}
+  [DecidableEq ι] (p : ManuscriptChain.Spectral.SymmetricAffinePencil n) (s : Finset ι)
+  (A : ι → Matrix (Fin n) (Fin n) ℝ) (w : ι → ℝ) (hA : ∀ i ∈ s, (A i).PosSemidef) (hw : ∀ i ∈ s, 0 ≤ w i) (j : ι)
+  (hj : j ∈ s) (hAj : (A j).PosDef) (hwj : 0 < w j) (hdir : p.direction = ∑ i ∈ s, w i • A i) :
+  (∃ beta, p.detPolynomial = Polynomial.C p.direction.det * ∏ i, (Polynomial.X + Polynomial.C (beta i - p.center))) ∧
+    p.detPolynomial.natDegree = n ∧
+      (∀ (z : ℂ), Polynomial.eval₂ (algebraMap ℝ ℂ) z p.detPolynomial = 0 → z.im = 0) ∧
+        (∀ (x : ℝ), 0 ≤ PaperAdvances.Theorem3_7_AllDegrees.turan p.detPolynomial x) ∧
+          (0 < n →
+            ∀ (x : ℝ),
+              Polynomial.eval x p.detPolynomial ≠ 0 → 0 < PaperAdvances.Theorem3_7_AllDegrees.turan p.detPolynomial x)
+PaperAdvances.Theorem3_9_CharacterPositive.all_fekete_numerators_pos (z : ℝ) (hz : 0 < z) (h1 : z < 1) :
+  0 < PaperAdvances.Theorem3_9_CharacterPositive.f3 z ∧
+    0 < PaperAdvances.Theorem3_9_CharacterPositive.f4 z ∧
+      0 < PaperAdvances.Theorem3_9_CharacterPositive.f5 z ∧
+        0 < PaperAdvances.Theorem3_9_CharacterPositive.f8pos z ∧ 0 < PaperAdvances.Theorem3_9_CharacterPositive.f8neg z
+PaperAdvances.Theorem3_9_CharacterPositive.alternating_character_vandermonde_cancellation (j : ℕ) (u v : ℝ) (hu : 0 < u)
+  (hv : 0 < v) : 0 < (-1) ^ j * u * ((-1) ^ j * v)
+PaperAdvances.Theorem3_9_ShiftedPole.poleM_det_ne_zero {n : ℕ} (nodes gamma : Fin n → ℝ) (hn : Function.Injective nodes)
+  (hgamma : ∀ (a : Fin n), gamma a ≠ 0) : (PaperAdvances.Theorem3_9_ShiftedPole.poleM nodes gamma).det ≠ 0
+PaperAdvances.Theorem3_9_ShiftedPole.polePencil_complex_roots_real {n : ℕ} (nodes gamma : Fin n → ℝ)
+  (hn : Function.Injective nodes) (hgamma : ∀ (a : Fin n), gamma a ≠ 0) (center : ℝ) (G : Matrix (Fin n) (Fin n) ℝ)
+  (hG : G.IsSymm) (hpos : G.PosDef) (z : ℂ)
+  (hz :
+    Polynomial.eval₂ (algebraMap ℝ ℂ) z
+        (PaperAdvances.Theorem3_9_ShiftedPole.polePencil nodes gamma center G hG).detPolynomial =
+      0) :
+  z.im = 0
+PaperAdvances.Theorem6_6_FiniteMultiweightCone.FINITE_MULTIWEIGHT_POSITIVE_DIRECTION.{u_1} {n : ℕ} {ι : Type u_1}
+  [DecidableEq ι] (s : Finset ι) (hs : s.Nonempty) (A : ι → Matrix (Fin n) (Fin n) ℝ) (w : ι → ℝ)
+  (hA : ∀ i ∈ s, (A i).PosDef) (hw : ∀ i ∈ s, 0 < w i) : (∑ i ∈ s, w i • A i).PosDef
+PaperAdvances.Theorem5_2_RealRoots.det_add_scalar_of_hermitian {n : ℕ} (B : Matrix (Fin n) (Fin n) ℝ)
+  (hB : B.IsHermitian) (t : ℝ) : (B + t • 1).det = ∏ i, (hB.eigenvalues i + t)
+PaperAdvances.Theorem3_8_Actual.actual_derivative_eq_real_slope (p : ManuscriptChain.Real.Parameters) :
+  ManuscriptChain.Real.derivativeMatrix p = PaperAdvances.Proposition3_2.slope p ↑p.weight
+PaperAdvances.Theorem3_8_Actual.actual_relative_charpoly_eq_pole (p : ManuscriptChain.Real.Parameters) :
+  ((PaperAdvances.Theorem3_8_Actual.actualGram p)⁻¹ * ManuscriptChain.Real.derivativeMatrix p).charpoly =
+    (PaperAdvances.Theorem3_8_Kernel.poleOperator (PaperAdvances.Theorem3_8_Actual.actualGram p)
+        (PaperAdvances.Theorem3_8_Actual.actualV p) (PaperAdvances.Theorem3_8_Actual.actualGamma p)).charpoly
+PaperAdvances.Theorem3_8_Actual.actual_relative_trace_eq_pole (p : ManuscriptChain.Real.Parameters) :
+  ((PaperAdvances.Theorem3_8_Actual.actualGram p)⁻¹ * ManuscriptChain.Real.derivativeMatrix p).trace =
+    (PaperAdvances.Theorem3_8_Kernel.poleOperator (PaperAdvances.Theorem3_8_Actual.actualGram p)
+        (PaperAdvances.Theorem3_8_Actual.actualV p) (PaperAdvances.Theorem3_8_Actual.actualGamma p)).trace
+PaperAdvances.Theorem3_7_AllDegrees.turan_mul_linear (P L : Polynomial ℝ) (a x : ℝ)
+  (hL : Polynomial.derivative L = Polynomial.C a) :
+  PaperAdvances.Theorem3_7_AllDegrees.turan (L * P) x =
+    Polynomial.eval x L ^ 2 * PaperAdvances.Theorem3_7_AllDegrees.turan P x + a ^ 2 * Polynomial.eval x P ^ 2
+PaperAdvances.Theorem3_7_AllDegrees.finite_affine_turan_nonnegative.{u_1} {ι : Type u_1} [DecidableEq ι] (s : Finset ι)
+  (a b : ι → ℝ) (x : ℝ) :
+  0 ≤ PaperAdvances.Theorem3_7_AllDegrees.turan (∏ i ∈ s, (Polynomial.C (a i) * Polynomial.X + Polynomial.C (b i))) x
+PaperAdvances.Theorem3_7_AllDegrees.THEOREM_3_7_ACTUAL_ALL_DEGREES (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (x : ℝ) :
+  0 ≤ PaperAdvances.Theorem3_7_AllDegrees.turan (ManuscriptChain.Real.realPolynomial (ManuscriptChain.Real.delta p)) x
+LeanPaper.Section3Newton.cubic_newton_first (a b c : ℝ) :
+  3 * LeanPaper.Section3Newton.cubicSym2 a b c ≤ LeanPaper.Section3Newton.cubicSym1 a b c ^ 2
+LeanPaper.Section3Newton.cubic_newton_second (a b c : ℝ) :
+  3 * LeanPaper.Section3Newton.cubicSym1 a b c * LeanPaper.Section3Newton.cubicSym3 a b c ≤
+    LeanPaper.Section3Newton.cubicSym2 a b c ^ 2
+PaperAdvances.Theorem3_7.cubic_first_turan_nonnegative (x a b c : ℝ) :
+  0 ≤
+    ((x - b) * (x - c) + (x - a) * (x - c) + (x - a) * (x - b)) ^ 2 -
+      (x - a) * (x - b) * (x - c) * (2 * (x - a + (x - b) + (x - c)))
+PaperAdvances.Theorem3_7.cubic_second_turan_nonnegative (x a b c : ℝ) :
+  0 ≤ (2 * (x - a + (x - b) + (x - c))) ^ 2 - 6 * ((x - a) * (x - b) + (x - a) * (x - c) + (x - b) * (x - c))
+PaperAdvances.Theorem3_7.three_mode_taylor_bound (a b c : ℝ) : 3 * (2 * (a * b + a * c + b * c)) ≤ 2 * (a + b + c) ^ 2
+PaperAdvances.Theorem3_8_ExactTaylor.unit_det_linear_coeff {n : ℕ} (A : Matrix (Fin n) (Fin n) ℝ) :
+  (PaperAdvances.Theorem3_8_Jacobi.unitDetPoly A).coeff 1 = A.trace
+PaperAdvances.Theorem3_8_ExactTaylor.affine_det_exact_second_order {n : ℕ} (G H : Matrix (Fin n) (Fin n) ℝ)
+  (hG : G.det ≠ 0) (t : ℝ) :
+  (G + t • H).det =
+    G.det *
+      (1 + (G⁻¹ * H).trace * t +
+        Polynomial.eval t (PaperAdvances.Theorem3_8_Jacobi.unitDetPoly (G⁻¹ * H)).divX.divX * t ^ 2)
+PaperAdvances.Theorem3_8_Jacobi.unitDetPoly_derivative {n : ℕ} (A : Matrix (Fin n) (Fin n) ℝ) :
+  Polynomial.eval 0 (Polynomial.derivative (PaperAdvances.Theorem3_8_Jacobi.unitDetPoly A)) = A.trace
+PaperAdvances.Theorem3_8_Jacobi.unitDetPoly_eval {n : ℕ} (A : Matrix (Fin n) (Fin n) ℝ) (t : ℝ) :
+  Polynomial.eval t (PaperAdvances.Theorem3_8_Jacobi.unitDetPoly A) = (1 + t • A).det
+PaperAdvances.Theorem3_8_Jacobi.unitDet_hasDerivAt {n : ℕ} (A : Matrix (Fin n) (Fin n) ℝ) :
+  HasDerivAt (fun t => (1 + t • A).det) A.trace 0
+PaperAdvances.Theorem3_8_Jacobi.affineDet_factor_pointwise {n : ℕ} (G H : Matrix (Fin n) (Fin n) ℝ) (hG : G.det ≠ 0)
+  (t : ℝ) : (G + t • H).det = G.det * (1 + t • (G⁻¹ * H)).det
+PaperAdvances.Theorem3_8_Jacobi.affineDet_hasDerivAt {n : ℕ} (G H : Matrix (Fin n) (Fin n) ℝ) (hG : G.det ≠ 0) :
+  HasDerivAt (fun t => (G + t • H).det) (G.det * (G⁻¹ * H).trace) 0
+PaperAdvances.Theorem3_8_Jacobi.affineDet_log_hasDerivAt {n : ℕ} (G H : Matrix (Fin n) (Fin n) ℝ) (hG : 0 < G.det) :
+  HasDerivAt (fun t => Real.log (G + t • H).det) (G⁻¹ * H).trace 0
+PaperAdvances.Theorem3_8_Jacobi.actual_affine_log_jacobi (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) :
+  HasDerivAt
+    (fun t => Real.log (PaperAdvances.Theorem3_8_Actual.actualGram p + t • ManuscriptChain.Real.derivativeMatrix p).det)
+    (PaperAdvances.Theorem3_8_Kernel.poleOperator (PaperAdvances.Theorem3_8_Actual.actualGram p)
+        (PaperAdvances.Theorem3_8_Actual.actualV p) (PaperAdvances.Theorem3_8_Actual.actualGamma p)).trace
+    0
+LeanPaper.Section3ContinuedFractions.corollary_3_5_normalized_two_det (a b c t : ℝ) :
+  Matrix.det ![![1 + t * a, t * b], ![t * b, 1 + t * c]] = LeanPaper.Section3ContinuedFractions.normalizedTwoDet a b c t
+LeanPaper.Section3ContinuedFractions.corollary_3_5_two_level_schur_identity (a b c t : ℝ) (h : 1 + t * a ≠ 0) :
+  (1 + t * a) * (1 + t * c - (t * b) ^ 2 / (1 + t * a)) = LeanPaper.Section3ContinuedFractions.normalizedTwoDet a b c t
+LeanPaper.Section3ContinuedFractions.normalized_three_continuant_recurrence (a b c d e t : ℝ) :
+  LeanPaper.Section3ContinuedFractions.normalizedThreeContinuant a b c d e t =
+    (1 + t * e) * ((1 + t * a) * (1 + t * c) - (t * b) ^ 2) - (t * d) ^ 2 * (1 + t * a)
+LeanPaper.Section3ContinuedFractions.normalized_three_schur_identity (a b c d e t : ℝ) (h1 : 1 + t * a ≠ 0)
+  (h2 : 1 + t * c - (t * b) ^ 2 / (1 + t * a) ≠ 0) :
+  (1 + t * a) * (1 + t * c - (t * b) ^ 2 / (1 + t * a)) *
+      (1 + t * e - (t * d) ^ 2 / (1 + t * c - (t * b) ^ 2 / (1 + t * a))) =
+    LeanPaper.Section3ContinuedFractions.normalizedThreeContinuant a b c d e t
+LeanPaper.Section3ContinuedFractions.normalized_three_continuant_eq_det (a b c d e t : ℝ) :
+  LeanPaper.Section3ContinuedFractions.normalizedThreeContinuant a b c d e t =
+    !![1 + t * a, t * b, 0; t * b, 1 + t * c, t * d; 0, t * d, 1 + t * e].det
+PaperAdvances.Theorem3_8_Kernel.charpoly_relative_eq_pole {n : ℕ} (G V : Matrix (Fin n) (Fin n) ℝ) (γ : Fin n → ℝ) :
+  (G⁻¹ * (V * Matrix.diagonal γ * V.transpose)).charpoly = (PaperAdvances.Theorem3_8_Kernel.poleOperator G V γ).charpoly
+PaperAdvances.Theorem3_8_Kernel.trace_relative_eq_pole {n : ℕ} (G V : Matrix (Fin n) (Fin n) ℝ) (γ : Fin n → ℝ) :
+  (G⁻¹ * (V * Matrix.diagonal γ * V.transpose)).trace = (PaperAdvances.Theorem3_8_Kernel.poleOperator G V γ).trace
+PaperAdvances.Theorem3_8_Kernel.kernelMatrix_entry {n : ℕ} (G V : Matrix (Fin n) (Fin n) ℝ) (a b : Fin n) :
+  PaperAdvances.Theorem3_8_Kernel.kernelMatrix G V a b = ∑ j, ∑ i, V i a * G⁻¹ i j * V j b
+PaperAdvances.Corollary3_6_PowerSumExtrema.positive_atomic_moment_bounds {h : ℕ} (u : Fin h → ℝ)
+  (hu : ∀ (i : Fin h), 0 ≤ u i) (j : Fin h) (hj : ∀ (i : Fin h), u i ≤ u j) (r : ℕ) :
+  u j ^ r ≤ ∑ i, u i ^ r ∧ ∑ i, u i ^ r ≤ ↑h * u j ^ r
+PaperAdvances.Corollary3_6_PowerSumExtrema.even_atomic_moment_bounds {h : ℕ} (u : Fin h → ℝ)
+  (hu : ∀ (i : Fin h), 0 ≤ u i) (j : Fin h) (hj : ∀ (i : Fin h), u i ≤ u j) (r : ℕ) :
+  u j ^ (2 * r) ≤ ∑ i, u i ^ (2 * r) ∧ ∑ i, u i ^ (2 * r) ≤ ↑h * u j ^ (2 * r)
+PaperAdvances.Proposition3_2.slope_det_ne_zero (p : ManuscriptChain.Real.Parameters) (s : ℝ) :
+  (PaperAdvances.Proposition3_2.slope p s).det ≠ 0
+PaperAdvances.Proposition3_2.all_complex_roots_real (p : ManuscriptChain.Real.Parameters) (s center : ℝ)
+  (A : Matrix (Fin p.h) (Fin p.h) ℝ) (hA : A.IsSymm) (hpos : A.PosDef) (z : ℂ)
+  (hz : Polynomial.eval₂ (algebraMap ℝ ℂ) z (PaperAdvances.Proposition3_2.pencil p s center A hA).detPolynomial = 0) :
+  z.im = 0
+LeanPaper.Section3RootMomentBounds.actual_reciprocal_moment_bounds (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (q : ℚ)
+  (hq : ManuscriptChain.Real.evalQ (ManuscriptChain.Real.delta p) ↑q ≠ 0) :
+  ∃ j,
+    0 < LeanPaper.ReciprocalRootMoments.reciprocalAtom (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) (↑q) j ∧
+      (∀ (i : Fin p.h),
+          LeanPaper.ReciprocalRootMoments.reciprocalAtom (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) (↑q) i ≤
+            LeanPaper.ReciprocalRootMoments.reciprocalAtom (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) (↑q)
+              j) ∧
+        ∀ (m : ℕ),
+          LeanPaper.ReciprocalRootMoments.reciprocalAtom (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) (↑q) j ^
+                m ≤
+              LeanPaper.ReciprocalRootMoments.reciprocalEvenMoment
+                (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) (↑q) m ∧
+            LeanPaper.ReciprocalRootMoments.reciprocalEvenMoment (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp)
+                (↑q) m ≤
+              ↑p.h *
+                LeanPaper.ReciprocalRootMoments.reciprocalAtom (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp)
+                    (↑q) j ^
+                  m
+PaperAdvances.Theorem3_3.actual_gram_det_pos (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) : 0 < (ManuscriptChain.Real.gram p (ManuscriptChain.Real.zeta p.weight)).det
+PaperAdvances.Theorem3_3.leading_coefficient_product (p : ManuscriptChain.Real.Parameters) :
+  (ManuscriptChain.Real.delta p).leadingCoeff =
+    (ManuscriptChain.PoleDiagonalization.poleVandermonde p).det ^ 2 *
+      ∏ a, ManuscriptChain.PoleDiagonalization.poleWeight p a
+PaperAdvances.Theorem3_3.positive_pole_count_constant (p : ManuscriptChain.Real.Parameters) (s t : ℝ) :
+  {a | 0 < PaperAdvances.Proposition3_2.gamma p s a}.card = {a | 0 < PaperAdvances.Proposition3_2.gamma p t a}.card
+PaperAdvances.Theorem3_3_Sign.slope_det_pos_iff (p : ManuscriptChain.Real.Parameters) (s : ℝ) :
+  0 < (PaperAdvances.Proposition3_2.slope p s).det ↔ 0 < ∏ a, PaperAdvances.Proposition3_2.gamma p s a
+PaperAdvances.Theorem3_3_Sign.slope_det_neg_iff (p : ManuscriptChain.Real.Parameters) (s : ℝ) :
+  (PaperAdvances.Proposition3_2.slope p s).det < 0 ↔ ∏ a, PaperAdvances.Proposition3_2.gamma p s a < 0
+PaperAdvances.Theorem3_7_StrictRolle.finite_affine_turan_strict_offroots.{u_1} {ι : Type u_1} [DecidableEq ι]
+  (s : Finset ι) (a b : ι → ℝ) (x : ℝ) (i : ι) (hi : i ∈ s) (hai : a i ≠ 0)
+  (hx : Polynomial.eval x (∏ j ∈ s, (Polynomial.C (a j) * Polynomial.X + Polynomial.C (b j))) ≠ 0) :
+  0 < PaperAdvances.Theorem3_7_AllDegrees.turan (∏ j ∈ s, (Polynomial.C (a j) * Polynomial.X + Polynomial.C (b j))) x
+PaperAdvances.Theorem3_7_StrictRolle.THEOREM_3_7_ACTUAL_TURAN_STRICT (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (x : ℝ)
+  (hx : Polynomial.eval x (ManuscriptChain.Real.realPolynomial (ManuscriptChain.Real.delta p)) ≠ 0) :
+  0 < PaperAdvances.Theorem3_7_AllDegrees.turan (ManuscriptChain.Real.realPolynomial (ManuscriptChain.Real.delta p)) x
+PaperAdvances.Theorem3_7_StrictRolle.THEOREM_3_7_ACTUAL_TURAN_EQUALITY (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (x : ℝ) :
+  PaperAdvances.Theorem3_7_AllDegrees.turan (ManuscriptChain.Real.realPolynomial (ManuscriptChain.Real.delta p)) x = 0 ↔
+    Polynomial.eval x (ManuscriptChain.Real.realPolynomial (ManuscriptChain.Real.delta p)) = 0 ∧
+      Polynomial.eval x (Polynomial.derivative (ManuscriptChain.Real.realPolynomial (ManuscriptChain.Real.delta p))) = 0
+PaperAdvances.Theorem3_7_StrictRolle.THEOREM_3_7_ACTUAL_CRITICAL_POINT_SEPARATION (p : ManuscriptChain.Real.Parameters)
+  (a b : ℝ) (hab : a < b)
+  (ha : Polynomial.eval a (ManuscriptChain.Real.realPolynomial (ManuscriptChain.Real.delta p)) = 0)
+  (hb : Polynomial.eval b (ManuscriptChain.Real.realPolynomial (ManuscriptChain.Real.delta p)) = 0) :
+  ∃ x,
+    a < x ∧
+      x < b ∧
+        Polynomial.eval x (Polynomial.derivative (ManuscriptChain.Real.realPolynomial (ManuscriptChain.Real.delta p))) =
+          0
+PaperOrder.Section4.proposition_4_2_resultant_product_barrier {d : ℕ} (z : ℤ) (hz : z ≠ 0) (leading : ℝ)
+  (conjugateEval : Fin d → ℝ) (hresultant : ↑z = leading * ∏ i, conjugateEval i)
+  (hsmall : |leading| * ∏ i, |conjugateEval i| < 1) : False
+PaperAdvances.Proposition4_3_ComplexPadicDisk.PROPOSITION_4_3_INTEGRAL_COMPLEX_PADIC {p : ℕ} [Fact (Nat.Prime p)]
+  (Q : Polynomial ℤ_[p]) (ξ : ℤ_[p]) (α : ℂ_[p]) (hQ : Polynomial.eval ξ Q ≠ 0)
+  (hα : ‖α - ↑((algebraMap ℚ_[p] (PadicAlgCl p)) ↑ξ)‖ < ‖↑(Polynomial.eval ξ Q)‖) :
+  ‖Polynomial.eval α (Polynomial.map (algebraMap ℚ_[p] ℂ_[p]) (Polynomial.map PadicInt.Coe.ringHom Q))‖ =
+      ‖↑(Polynomial.eval ξ Q)‖ ∧
+    Polynomial.eval α (Polynomial.map (algebraMap ℚ_[p] ℂ_[p]) (Polynomial.map PadicInt.Coe.ringHom Q)) ≠ 0
+PaperAdvances.Proposition4_3_ComplexPadicDisk.PROPOSITION_4_3_INTEGER_COMPLEX_PADIC {p : ℕ} [Fact (Nat.Prime p)]
+  (Q : Polynomial ℤ) (ξ : ℤ_[p]) (α : ℂ_[p]) (hQ : Polynomial.eval ξ (Polynomial.map (Int.castRingHom ℤ_[p]) Q) ≠ 0)
+  (hα :
+    ‖α - ↑((algebraMap ℚ_[p] (PadicAlgCl p)) ↑ξ)‖ < ‖↑(Polynomial.eval ξ (Polynomial.map (Int.castRingHom ℤ_[p]) Q))‖) :
+  ‖Polynomial.eval α
+          (Polynomial.map (algebraMap ℚ_[p] ℂ_[p])
+            (Polynomial.map PadicInt.Coe.ringHom (Polynomial.map (Int.castRingHom ℤ_[p]) Q)))‖ =
+      ‖↑(Polynomial.eval ξ (Polynomial.map (Int.castRingHom ℤ_[p]) Q))‖ ∧
+    Polynomial.eval α
+        (Polynomial.map (algebraMap ℚ_[p] ℂ_[p])
+          (Polynomial.map PadicInt.Coe.ringHom (Polynomial.map (Int.castRingHom ℤ_[p]) Q))) ≠
+      0
+PaperAdvances.Proposition4_3_IsometricExtension.ISOMETRIC_EXTENSION_UNIT_DISK.{u_1, u_2} {K : Type u_1} {L : Type u_2}
+  [NontriviallyNormedField K] [IsUltrametricDist K] [NontriviallyNormedField L] [IsUltrametricDist L] (φ : K →+* L)
+  (hφ : ∀ (y : K), ‖φ y‖ = ‖y‖) (P : Polynomial K) (z : L) (h0 : P.coeff 0 ≠ 0)
+  (hcoeff : ∀ (k : ℕ), 0 < k → ‖P.coeff k‖ ≤ 1) (hcenter : ‖P.coeff 0‖ ≤ 1) (hz : ‖z‖ < ‖P.coeff 0‖) :
+  ‖Polynomial.eval z (Polynomial.map φ P)‖ = ‖P.coeff 0‖ ∧ Polynomial.eval z (Polynomial.map φ P) ≠ 0
+PaperAdvances.Proposition4_3_IsometricExtension.PROPOSITION_4_3_INTEGRAL_ISOMETRIC_EXTENSION.{u_1} {p : ℕ}
+  [Fact (Nat.Prime p)] {L : Type u_1} [NontriviallyNormedField L] [IsUltrametricDist L] (φ : ℚ_[p] →+* L)
+  (hφ : ∀ (y : ℚ_[p]), ‖φ y‖ = ‖y‖) (Q : Polynomial ℤ_[p]) (ξ : ℤ_[p]) (α : L) (hQ : Polynomial.eval ξ Q ≠ 0)
+  (hα : ‖α - φ ↑ξ‖ < ‖↑(Polynomial.eval ξ Q)‖) :
+  ‖Polynomial.eval α (Polynomial.map φ (Polynomial.map PadicInt.Coe.ringHom Q))‖ = ‖↑(Polynomial.eval ξ Q)‖ ∧
+    Polynomial.eval α (Polynomial.map φ (Polynomial.map PadicInt.Coe.ringHom Q)) ≠ 0
+PaperAdvances.Proposition4_3_PadicDisk.finite_ultrametric_sum_strict.{u_1, u_2} {K : Type u_1}
+  [NontriviallyNormedField K] [IsUltrametricDist K] {ι : Type u_2} [DecidableEq ι] (s : Finset ι) (f : ι → K) (B : ℝ)
+  (hB : 0 < B) (hf : ∀ i ∈ s, ‖f i‖ < B) : ‖∑ i ∈ s, f i‖ < B
+PaperAdvances.Proposition4_3_PadicDisk.ultrametric_eval_norm_eq_constant.{u_1} {K : Type u_1}
+  [NontriviallyNormedField K] [IsUltrametricDist K] (P : Polynomial K) (x : K) (h0 : P.coeff 0 ≠ 0)
+  (hterms : ∀ (k : ℕ), 0 < k → ‖P.coeff k * x ^ k‖ < ‖P.coeff 0‖) : ‖Polynomial.eval x P‖ = ‖P.coeff 0‖
+PaperAdvances.Proposition4_3_PadicDisk.ultrametric_unit_coeff_disk.{u_1} {K : Type u_1} [NontriviallyNormedField K]
+  [IsUltrametricDist K] (P : Polynomial K) (x : K) (h0 : P.coeff 0 ≠ 0) (hcoeff : ∀ (k : ℕ), 0 < k → ‖P.coeff k‖ ≤ 1)
+  (hcenter : ‖P.coeff 0‖ ≤ 1) (hx : ‖x‖ < ‖P.coeff 0‖) : ‖Polynomial.eval x P‖ = ‖P.coeff 0‖ ∧ Polynomial.eval x P ≠ 0
+PaperAdvances.Proposition4_3_PadicDisk.PROPOSITION_4_3_INTEGRAL_QPADIC {p : ℕ} [Fact (Nat.Prime p)]
+  (Q : Polynomial ℤ_[p]) (ξ : ℤ_[p]) (α : ℚ_[p]) (hQ : Polynomial.eval ξ Q ≠ 0)
+  (hα : ‖α - ↑ξ‖ < ‖↑(Polynomial.eval ξ Q)‖) :
+  ‖Polynomial.eval α (Polynomial.map PadicInt.Coe.ringHom Q)‖ = ‖↑(Polynomial.eval ξ Q)‖ ∧
+    Polynomial.eval α (Polynomial.map PadicInt.Coe.ringHom Q) ≠ 0
+PaperAdvances.Proposition4_3_PadicDisk.PROPOSITION_4_3_INTEGER_QPADIC {p : ℕ} [Fact (Nat.Prime p)] (Q : Polynomial ℤ)
+  (ξ : ℤ_[p]) (α : ℚ_[p]) (hQ : Polynomial.eval ξ (Polynomial.map (Int.castRingHom ℤ_[p]) Q) ≠ 0)
+  (hα : ‖α - ↑ξ‖ < ‖↑(Polynomial.eval ξ (Polynomial.map (Int.castRingHom ℤ_[p]) Q))‖) :
+  ‖Polynomial.eval α (Polynomial.map PadicInt.Coe.ringHom (Polynomial.map (Int.castRingHom ℤ_[p]) Q))‖ =
+      ‖↑(Polynomial.eval ξ (Polynomial.map (Int.castRingHom ℤ_[p]) Q))‖ ∧
+    Polynomial.eval α (Polynomial.map PadicInt.Coe.ringHom (Polynomial.map (Int.castRingHom ℤ_[p]) Q)) ≠ 0
+PaperOrder.Section4.proposition_4_8_distance_product_nonnegative (ξ : ℝ) (xs : List ℝ) :
+  0 ≤ (List.map (fun r => |ξ - r|) xs).prod
+PaperOrder.Section4.proposition_4_8_distance_product_lower (ξ δ : ℝ) (xs : List ℝ) (hδ : 0 ≤ δ) :
+  (∀ r ∈ xs, δ ≤ |ξ - r|) → δ ^ xs.length ≤ (List.map (fun r => |ξ - r|) xs).prod
+PaperOrder.Section4.proposition_4_8_distance_product_upper (ξ η : ℝ) (xs : List ℝ) (hη : 0 ≤ η) :
+  (∀ r ∈ xs, |ξ - r| ≤ η) → (List.map (fun r => |ξ - r|) xs).prod ≤ η ^ xs.length
+PaperOrder.Section4.proposition_4_8_factor_evaluation_bounds (ξ c δ η : ℝ) (xs : List ℝ) (hδ : 0 ≤ δ) (hη : 0 ≤ η)
+  (hlower : ∀ r ∈ xs, δ ≤ |ξ - r|) (hupper : ∀ r ∈ xs, |ξ - r| ≤ η) :
+  |c| * δ ^ xs.length ≤ |c| * (List.map (fun r => |ξ - r|) xs).prod ∧
+    |c| * (List.map (fun r => |ξ - r|) xs).prod ≤ |c| * η ^ xs.length
+PaperOrder.Section4.theorem_4_6_integer_leading_coefficient_barrier (c : ℤ) (ξvalue detValue : ℝ) (hc : c ≠ 0)
+  (hidentity : ↑|c| = |ξvalue| * |detValue|) : 1 ≤ |ξvalue| * |detValue|
+PaperOrder.Section4.theorem_4_6_integer_evaluation_lower_bound (c : ℤ) (ξvalue detValue T : ℝ) (hc : c ≠ 0)
+  (hidentity : ↑|c| = |ξvalue| * |detValue|) (hdet : |detValue| ≤ T) : 1 ≤ |ξvalue| * T
+PaperOrder.Section4.theorem_4_6_reciprocal_evaluation_lower_bound (c : ℤ) (ξvalue detValue T : ℝ) (hc : c ≠ 0)
+  (hidentity : ↑|c| = |ξvalue| * |detValue|) (hT : 0 < T) (hdet : |detValue| ≤ T) : 1 / T ≤ |ξvalue|
+PaperOrder.Section4.theorem_4_7_finite_cluster_sum_bound (xs : List ℝ) (U τ : ℝ) :
+  (∀ x ∈ xs, x ≤ U) → xs.sum ≤ τ * ↑xs.length + (U - τ) * ↑(PaperOrder.Section4.countAtLeastThreshold τ xs)
+PaperOrder.Section4.theorem_4_7_cluster_fraction_lower_bound (xs : List ℝ) (U τ μ : ℝ) (hU : τ < U)
+  (hcap : ∀ x ∈ xs, x ≤ U) (haverage : μ * ↑xs.length ≤ xs.sum) :
+  (μ - τ) / (U - τ) * ↑xs.length ≤ ↑(PaperOrder.Section4.countAtLeastThreshold τ xs)
+PaperOrder.Section4.theorem_4_7_cluster_percentage_arithmetic :
+  14 / 1000 < (2589 / 10000 - 1 / 10) / (11411 / 1000 - 1 / 10)
+LeanPaper.Section2FiniteDifference.tau_monomial_difference (k d : ℕ) (hk : 1 ≤ k) :
+  ∑ i ∈ Finset.range (d + 1), ↑(d.choose i) * Zetahyperbolic.tauMonomial k i - Zetahyperbolic.tauMonomial k d =
+    if d = 2 * k then 1 else 0
+LeanPaper.Section2FiniteDifference.finite_span_difference (k : ℕ) (hk : 1 ≤ k) (es : Finset ℕ) (u : ℕ → ℚ)
+  (rs : Finset ℤ) (v : ℤ → ℚ) (hr : ∀ r ∈ rs, r ≠ 0 ∧ r ≠ 1) :
+  LeanPaper.Section2FiniteDifference.translatedMoment k es u rs v -
+      LeanPaper.PullbackReflection.tauFiniteSpan k es u rs v =
+    ∑ d ∈ es, Polynomial.C (u d * if d = 2 * k then 1 else 0) + ∑ r ∈ rs, Polynomial.C (v r * -(↑r ^ (2 * k + 1))⁻¹)
+LeanPaper.Section2FiniteDifference.finite_span_difference_coefficient (k : ℕ) (hk : 1 ≤ k) (es : Finset ℕ) (u : ℕ → ℚ)
+  (rs : Finset ℤ) (v : ℤ → ℚ) (hr : ∀ r ∈ rs, r ≠ 0 ∧ r ≠ 1) :
+  LeanPaper.Section2FiniteDifference.translatedMoment k es u rs v -
+      LeanPaper.PullbackReflection.tauFiniteSpan k es u rs v =
+    Polynomial.C (if 2 * k ∈ es then u (2 * k) else 0) + ∑ r ∈ rs, Polynomial.C (v r * -(↑r ^ (2 * k + 1))⁻¹)
+LeanPaper.Section2FiniteDifference.finite_span_translation (es : Finset ℕ) (u : ℕ → ℚ) (rs : Finset ℤ) (v : ℤ → ℚ)
+  (x : ℚ) :
+  LeanPaper.Section2FiniteDifference.finiteSpanValue es u rs v (x + 1) =
+    LeanPaper.Section2FiniteDifference.translatedSpanValue es u rs v x
+LeanPaper.Section2FiniteDifference.function_and_moment_difference (k : ℕ) (hk : 1 ≤ k) (es : Finset ℕ) (u : ℕ → ℚ)
+  (rs : Finset ℤ) (v : ℤ → ℚ) (hr : ∀ r ∈ rs, r ≠ 0 ∧ r ≠ 1) (x : ℚ) :
+  LeanPaper.Section2FiniteDifference.finiteSpanValue es u rs v (x + 1) =
+      LeanPaper.Section2FiniteDifference.translatedSpanValue es u rs v x ∧
+    LeanPaper.Section2FiniteDifference.translatedMoment k es u rs v -
+        LeanPaper.PullbackReflection.tauFiniteSpan k es u rs v =
+      Polynomial.C (if 2 * k ∈ es then u (2 * k) else 0) + ∑ r ∈ rs, Polynomial.C (v r * -(↑r ^ (2 * k + 1))⁻¹)
+Zetahyperbolic.lagrangePolePolynomial_eval_self (N K a : ℕ) (ha : a ∈ Finset.Icc (N + 1) K) :
+  Polynomial.eval (-↑a ^ 2) (Zetahyperbolic.lagrangePolePolynomial N K a) = 1
+Zetahyperbolic.lagrangePolePolynomial_eval_ne (N K a b : ℕ) (ha : a ∈ Finset.Icc (N + 1) K)
+  (hb : b ∈ Finset.Icc (N + 1) K) (hab : a ≠ b) :
+  Polynomial.eval (-↑b ^ 2) (Zetahyperbolic.lagrangePolePolynomial N K a) = 0
+Zetahyperbolic.lagrangePolePolynomial_eval (N K a b : ℕ) (ha : a ∈ Finset.Icc (N + 1) K)
+  (hb : b ∈ Finset.Icc (N + 1) K) :
+  Polynomial.eval (-↑b ^ 2) (Zetahyperbolic.lagrangePolePolynomial N K a) = if a = b then 1 else 0
+Zetahyperbolic.lagrangePolePolynomial_eval_eq_one_iff (N K a b : ℕ) (ha : a ∈ Finset.Icc (N + 1) K)
+  (hb : b ∈ Finset.Icc (N + 1) K) : Polynomial.eval (-↑b ^ 2) (Zetahyperbolic.lagrangePolePolynomial N K a) = 1 ↔ a = b
+Zetahyperbolic.lagrangePoleEvaluationMatrix_eq_one (N K : ℕ) : Zetahyperbolic.lagrangePoleEvaluationMatrix N K = 1
+Zetahyperbolic.det_lagrangePoleEvaluationMatrix (N K : ℕ) : (Zetahyperbolic.lagrangePoleEvaluationMatrix N K).det = 1
+Zetahyperbolic.lagrangePoleEvaluationMatrix_det_ne_zero (N K : ℕ) :
+  (Zetahyperbolic.lagrangePoleEvaluationMatrix N K).det ≠ 0
+Zetahyperbolic.lagrangePoleEvaluationMatrix_mulVec (N K : ℕ) (v : ↥(Finset.Icc (N + 1) K) → ℚ) :
+  (Zetahyperbolic.lagrangePoleEvaluationMatrix N K).mulVec v = v
+LeanPaper.Section2LagrangeBridge.polePolynomial_eval (p : ManuscriptChain.Real.Parameters) (a b : Fin p.h) :
+  Polynomial.eval (ManuscriptChain.PoleDiagonalization.poleNode p b)
+      (LeanPaper.Section2LagrangeBridge.polePolynomial p a) =
+    if a = b then 1 else 0
+LeanPaper.Section2LagrangeBridge.polePolynomial_natDegree (p : ManuscriptChain.Real.Parameters) (a : Fin p.h) :
+  (LeanPaper.Section2LagrangeBridge.polePolynomial p a).natDegree = p.h - 1
+LeanPaper.Section2LagrangeBridge.polePolynomial_ne_zero (p : ManuscriptChain.Real.Parameters) (a : Fin p.h) :
+  LeanPaper.Section2LagrangeBridge.polePolynomial p a ≠ 0
+LeanPaper.Section2LagrangeBridge.polePolynomial_eval_sum (p : ManuscriptChain.Real.Parameters) (a : Fin p.h) (x : ℚ) :
+  Polynomial.eval x (LeanPaper.Section2LagrangeBridge.polePolynomial p a) =
+    ∑ i, LeanPaper.Section2LagrangeBridge.coefficientMatrix p a i * x ^ ↑i
+LeanPaper.Section2LagrangeBridge.coefficientMatrix_mul_vandermonde (p : ManuscriptChain.Real.Parameters) :
+  LeanPaper.Section2LagrangeBridge.coefficientMatrix p * ManuscriptChain.PoleDiagonalization.poleVandermonde p = 1
+LeanPaper.Section2LagrangeBridge.coefficientMatrix_eq_inverse (p : ManuscriptChain.Real.Parameters) :
+  LeanPaper.Section2LagrangeBridge.coefficientMatrix p = (ManuscriptChain.PoleDiagonalization.poleVandermonde p)⁻¹
+LeanPaper.Section2LagrangeBridge.coefficientMatrix_det_ne_zero (p : ManuscriptChain.Real.Parameters) :
+  (LeanPaper.Section2LagrangeBridge.coefficientMatrix p).det ≠ 0
+LeanPaper.Section2LagrangeBridge.lagrange_pencil_eq_actual (p : ManuscriptChain.Real.Parameters) :
+  ManuscriptChain.BasisInvariance.changeBasisPencil (ManuscriptChain.Real.pencil p)
+      (LeanPaper.Section2LagrangeBridge.coefficientMatrix p) (LeanPaper.Section2LagrangeBridge.coefficientMatrix p) =
+    ManuscriptChain.PoleDiagonalization.poleDiagonalPencil p
+LeanPaper.Section2LagrangeBridge.actual_lagrange_entries (p : ManuscriptChain.Real.Parameters) (a b : Fin p.h) :
+  ManuscriptChain.PoleDiagonalization.poleDiagonalPencil p a b =
+    ∑ i,
+      ∑ j,
+        Polynomial.C
+            ((LeanPaper.Section2LagrangeBridge.polePolynomial p a).coeff ↑i *
+              (LeanPaper.Section2LagrangeBridge.polePolynomial p b).coeff ↑j) *
+          ManuscriptChain.Real.pencil p i j
+LeanPaper.Section2LagrangeBridge.actual_lagrange_slope (p : ManuscriptChain.Real.Parameters) :
+  LeanPaper.Section2LagrangeBridge.coefficientMatrix p *
+        ManuscriptChain.PoleDiagonalization.rationalDerivativeMatrix p *
+      (LeanPaper.Section2LagrangeBridge.coefficientMatrix p).transpose =
+    Matrix.diagonal (ManuscriptChain.PoleDiagonalization.poleWeight p)
+LeanPaper.Section2LagrangeIdentification.negative_square_injective : Function.Injective fun a => -↑a ^ 2
+LeanPaper.Section2LagrangeIdentification.archive_polynomial_eq_mathlib (N K a : ℕ) :
+  Zetahyperbolic.lagrangePolePolynomial N K a = Lagrange.basis (Finset.Icc (N + 1) K) (fun b => -↑b ^ 2) a
+LeanPaper.Section2LagrangeIdentification.archive_polynomial_natDegree (p : ManuscriptChain.Real.Parameters)
+  (a : Fin p.h) :
+  (Zetahyperbolic.lagrangePolePolynomial p.N p.K (ManuscriptChain.PoleDiagonalization.poleIndex p a)).natDegree =
+    p.h - 1
+LeanPaper.Section2LagrangeIdentification.archive_polynomial_eval (p : ManuscriptChain.Real.Parameters) (a b : Fin p.h) :
+  Polynomial.eval (ManuscriptChain.PoleDiagonalization.poleNode p b)
+      (Zetahyperbolic.lagrangePolePolynomial p.N p.K (ManuscriptChain.PoleDiagonalization.poleIndex p a)) =
+    if a = b then 1 else 0
+LeanPaper.Section2LagrangeIdentification.archive_polynomial_eq_constructed (p : ManuscriptChain.Real.Parameters)
+  (a : Fin p.h) :
+  Zetahyperbolic.lagrangePolePolynomial p.N p.K (ManuscriptChain.PoleDiagonalization.poleIndex p a) =
+    LeanPaper.Section2LagrangeBridge.polePolynomial p a
+LeanPaper.Section2LagrangeIdentification.archive_coefficients_eq_inverse (p : ManuscriptChain.Real.Parameters)
+  (a i : Fin p.h) :
+  (Zetahyperbolic.lagrangePolePolynomial p.N p.K (ManuscriptChain.PoleDiagonalization.poleIndex p a)).coeff ↑i =
+    (ManuscriptChain.PoleDiagonalization.poleVandermonde p)⁻¹ a i
+LeanPaper.Section4ManuscriptBridge.primitive_leading_barrier_identity (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) :
+  ↑|(ManuscriptChain.GeneralIrrationality.primitivePolynomial p).leadingCoeff| =
+    |ManuscriptChain.RealTransfer.evalReal (ManuscriptChain.GeneralIrrationality.primitivePolynomial p)
+          (ManuscriptChain.Real.zeta p.weight)| *
+      |1 / ManuscriptChain.LeadingCoefficientGap.determinantRatio p|
+LeanPaper.Section4ManuscriptBridge.primitive_evaluation_lower_of_inverse_ratio_bound
+  (p : ManuscriptChain.Real.Parameters) (hp : ManuscriptChain.Real.Admissible p) (T : ℝ) (hT : 0 < T)
+  (hbound : |1 / ManuscriptChain.LeadingCoefficientGap.determinantRatio p| ≤ T) :
+  1 / T ≤
+    |ManuscriptChain.RealTransfer.evalReal (ManuscriptChain.GeneralIrrationality.primitivePolynomial p)
+        (ManuscriptChain.Real.zeta p.weight)|
+LeanPaper.Section4ManuscriptBridge.manuscript_spectral_cluster_fraction (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (U τ μ : ℝ) (hU : τ < U)
+  (hcap : ∀ (i : Fin p.h), LeanPaper.Section4ManuscriptBridge.spectralExponent p hp i ≤ U)
+  (haverage : μ * ↑p.h ≤ ∑ i, LeanPaper.Section4ManuscriptBridge.spectralExponent p hp i) :
+  (μ - τ) / (U - τ) * ↑p.h ≤
+    ↑(PaperOrder.Section4.countAtLeastThreshold τ (LeanPaper.Section4ManuscriptBridge.spectralExponentList p hp))
+LeanPaper.Section4ManuscriptBridge.manuscript_large_exponent_gives_close_root (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (τ : ℝ) (i : Fin p.h)
+  (hlarge : τ ≤ LeanPaper.Section4ManuscriptBridge.spectralExponent p hp i) :
+  have r := (ManuscriptChain.General.factorization p ⋯).root i;
+  ManuscriptChain.Real.evalQ (ManuscriptChain.Real.delta p) r = 0 ∧
+    |r - ManuscriptChain.Real.zeta p.weight| ≤ Real.exp (-τ)
+LeanPaper.Section4ManuscriptBridge.manuscript_primitive_complex_padic_disk (params : ManuscriptChain.Real.Parameters)
+  {q : ℕ} [Fact (Nat.Prime q)] (ξ : ℤ_[q]) (α : ℂ_[q])
+  (hQ :
+    Polynomial.eval ξ
+        (Polynomial.map (Int.castRingHom ℤ_[q]) (ManuscriptChain.GeneralIrrationality.primitivePolynomial params)) ≠
+      0)
+  (hα :
+    ‖α - ↑((algebraMap ℚ_[q] (PadicAlgCl q)) ↑ξ)‖ <
+      ‖↑(Polynomial.eval ξ
+            (Polynomial.map (Int.castRingHom ℤ_[q])
+              (ManuscriptChain.GeneralIrrationality.primitivePolynomial params)))‖) :
+  ‖Polynomial.eval α
+          (Polynomial.map (algebraMap ℚ_[q] ℂ_[q])
+            (Polynomial.map PadicInt.Coe.ringHom
+              (Polynomial.map (Int.castRingHom ℤ_[q])
+                (ManuscriptChain.GeneralIrrationality.primitivePolynomial params))))‖ =
+      ‖↑(Polynomial.eval ξ
+            (Polynomial.map (Int.castRingHom ℤ_[q])
+              (ManuscriptChain.GeneralIrrationality.primitivePolynomial params)))‖ ∧
+    Polynomial.eval α
+        (Polynomial.map (algebraMap ℚ_[q] ℂ_[q])
+          (Polynomial.map PadicInt.Coe.ringHom
+            (Polynomial.map (Int.castRingHom ℤ_[q])
+              (ManuscriptChain.GeneralIrrationality.primitivePolynomial params)))) ≠
+      0
+LeanPaper.Section5DualSpectrum.actualDualPencil_polynomialMatrix {h K : ℕ} (s : ℕ) (c : Fin h → Fin (K + 1) → ℚ)
+  (hc : PaperOrder.PrincipalTheorems.coefficientRowsSeparate (LeanPaper.Section5DualSpectrum.realCoefficients c)) :
+  (LeanPaper.Section5DualSpectrum.actualDualPencil s c hc).polynomialMatrix = fun i j =>
+    (Polynomial.mapRingHom (Rat.castHom ℝ)) (ManuscriptChain.Real.dualEntry s c i j)
+LeanPaper.Section5DualSpectrum.actualDualPencil_detPolynomial {h K : ℕ} (s : ℕ) (c : Fin h → Fin (K + 1) → ℚ)
+  (hc : PaperOrder.PrincipalTheorems.coefficientRowsSeparate (LeanPaper.Section5DualSpectrum.realCoefficients c)) :
+  (LeanPaper.Section5DualSpectrum.actualDualPencil s c hc).detPolynomial =
+    ManuscriptChain.Real.realPolynomial (ManuscriptChain.Real.dualDelta s c)
+LeanPaper.Section5DualSpectrum.selected_monomial_rows_separate {h K : ℕ} (f : Fin h → Fin (K + 1))
+  (hf : Function.Injective f) :
+  PaperOrder.PrincipalTheorems.coefficientRowsSeparate
+    (LeanPaper.Section5DualSpectrum.realCoefficients (PaperOrder.CoreAlgebra.dualSelectedMonomialCoefficients f))
+LeanPaper.HigherDerivativeTuran.real_splits_derivative {P : Polynomial ℝ} (hP : P.Splits) :
+  (Polynomial.derivative P).Splits
+LeanPaper.HigherDerivativeTuran.real_splits_iterated_derivative {P : Polynomial ℝ} (hP : P.Splits) (k : ℕ) :
+  ((⇑Polynomial.derivative)^[k] P).Splits
+LeanPaper.HigherDerivativeTuran.iterated_derivative_natDegree (P : Polynomial ℝ) (k : ℕ) :
+  ((⇑Polynomial.derivative)^[k] P).natDegree = P.natDegree - k
+LeanPaper.HigherDerivativeTuran.turan_nonnegative_of_real_splits {P : Polynomial ℝ} (hP : P.Splits) (x : ℝ) :
+  0 ≤ PaperAdvances.Theorem3_7_AllDegrees.turan P x
+LeanPaper.HigherDerivativeTuran.turan_strict_of_real_splits {P : Polynomial ℝ} (hP : P.Splits) (hd : 0 < P.natDegree)
+  (x : ℝ) (hx : Polynomial.eval x P ≠ 0) : 0 < PaperAdvances.Theorem3_7_AllDegrees.turan P x
+LeanPaper.HigherDerivativeTuran.iterated_turan_nonnegative {P : Polynomial ℝ} (hP : P.Splits) (k : ℕ) (x : ℝ) :
+  0 ≤ PaperAdvances.Theorem3_7_AllDegrees.turan ((⇑Polynomial.derivative)^[k] P) x
+LeanPaper.HigherDerivativeTuran.iterated_turan_strict {P : Polynomial ℝ} (hP : P.Splits) (k : ℕ) (hk : k < P.natDegree)
+  (x : ℝ) (hx : Polynomial.eval x ((⇑Polynomial.derivative)^[k] P) ≠ 0) :
+  0 < PaperAdvances.Theorem3_7_AllDegrees.turan ((⇑Polynomial.derivative)^[k] P) x
+LeanPaper.HigherDerivativeTuran.iterated_turan_eq_zero_iff {P : Polynomial ℝ} (hP : P.Splits) (k : ℕ)
+  (hk : k < P.natDegree) (x : ℝ) :
+  PaperAdvances.Theorem3_7_AllDegrees.turan ((⇑Polynomial.derivative)^[k] P) x = 0 ↔
+    Polynomial.eval x ((⇑Polynomial.derivative)^[k] P) = 0 ∧
+      Polynomial.eval x (Polynomial.derivative ((⇑Polynomial.derivative)^[k] P)) = 0
+LeanPaper.HigherDerivativeTuran.spectral_polynomial_splits {n : ℕ}
+  {p : ManuscriptChain.Spectral.SymmetricAffinePencil n} (h : ManuscriptChain.Spectral.RootFactorization p) :
+  p.detPolynomial.Splits
+LeanPaper.HigherDerivativeTuran.actual_determinant_splits (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) : (ManuscriptChain.Real.realPolynomial (ManuscriptChain.Real.delta p)).Splits
+LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial (p : ManuscriptChain.Real.Parameters) : Polynomial ℝ
+LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial_identity (p : ManuscriptChain.Real.Parameters) :
+  LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p =
+    Polynomial.C ↑(ManuscriptChain.GeneralIrrationality.normalization p).scale *
+      ManuscriptChain.Real.realPolynomial (ManuscriptChain.Real.delta p)
+LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial_splits (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) : (LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p).Splits
+LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial_natDegree (p : ManuscriptChain.Real.Parameters) :
+  (LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p).natDegree = p.h
+LeanPaper.HigherDerivativeTuran.actual_primitive_all_derivative_turan (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (k : ℕ) (x : ℝ) :
+  0 ≤
+    PaperAdvances.Theorem3_7_AllDegrees.turan
+      ((⇑Polynomial.derivative)^[k] (LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p)) x
+LeanPaper.HigherDerivativeTuran.actual_primitive_all_derivative_turan_strict (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (k : ℕ) (hk : k < p.h) (x : ℝ)
+  (hx :
+    Polynomial.eval x ((⇑Polynomial.derivative)^[k] (LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p)) ≠ 0) :
+  0 <
+    PaperAdvances.Theorem3_7_AllDegrees.turan
+      ((⇑Polynomial.derivative)^[k] (LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p)) x
+LeanPaper.HigherDerivativeTuran.actual_primitive_all_derivative_turan_equality (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (k : ℕ) (hk : k < p.h) (x : ℝ) :
+  PaperAdvances.Theorem3_7_AllDegrees.turan
+        ((⇑Polynomial.derivative)^[k] (LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p)) x =
+      0 ↔
+    Polynomial.eval x ((⇑Polynomial.derivative)^[k] (LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p)) = 0 ∧
+      Polynomial.eval x
+          (Polynomial.derivative
+            ((⇑Polynomial.derivative)^[k] (LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p))) =
+        0
+LeanPaper.ManuscriptObstructions.manuscript_hankel_det_succ_eq_zero (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (q : ℝ) :
+  (LeanPaper.ReciprocalRootMoments.reciprocalHankel (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) q
+        (p.h + 1)).det =
+    0
+LeanPaper.ManuscriptObstructions.manuscript_hankel_not_positive_at_all_orders (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (q : ℝ) :
+  ¬∀ (n : ℕ),
+      0 <
+        (LeanPaper.ReciprocalRootMoments.reciprocalHankel (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) q
+            n).det
+LeanPaper.ManuscriptObstructions.normalized_fraction_printed_formula_fails :
+  (1 + 0 * 3) / LeanPaper.Section3ContinuedFractions.normalizedTwoDet 2 1 3 0 ≠ 1 / (2 + 0 - 1 ^ 2 / (3 + 0))
+LeanPaper.ManuscriptObstructions.first_logarithmic_ratio_sign_fails :
+  Polynomial.eval 0 (Polynomial.derivative (Polynomial.X - 1)) / Polynomial.eval 0 (Polynomial.X - 1) ≠ (1 - 0)⁻¹
+LeanPaper.NormalizedNewton.laguerre (n : ℕ) (P : Polynomial ℝ) (x : ℝ) : ℝ
+LeanPaper.NormalizedNewton.laguerre_mul_root_identity (m : ℕ) (P : Polynomial ℝ) (a x : ℝ) :
+  ↑m * LeanPaper.NormalizedNewton.laguerre (m + 1) ((Polynomial.X - Polynomial.C a) * P) x =
+    (↑m + 1) * (x - a) ^ 2 * LeanPaper.NormalizedNewton.laguerre m P x +
+      ((x - a) * Polynomial.eval x (Polynomial.derivative P) - ↑m * Polynomial.eval x P) ^ 2
+LeanPaper.NormalizedNewton.laguerre_nonnegative_of_real_splits {P : Polynomial ℝ} (hP : P.Splits) (x : ℝ) :
+  0 ≤ LeanPaper.NormalizedNewton.laguerre P.natDegree P x
+LeanPaper.NormalizedNewton.normalizedJet (P : Polynomial ℝ) (n k : ℕ) (x : ℝ) : ℝ
+LeanPaper.NormalizedNewton.normalizedJet_newton {P : Polynomial ℝ} (hP : P.Splits) (k : ℕ) (hk : k + 2 ≤ P.natDegree)
+  (x : ℝ) :
+  LeanPaper.NormalizedNewton.normalizedJet P P.natDegree k x *
+      LeanPaper.NormalizedNewton.normalizedJet P P.natDegree (k + 2) x ≤
+    LeanPaper.NormalizedNewton.normalizedJet P P.natDegree (k + 1) x ^ 2
+LeanPaper.NormalizedNewton.normalizedJet_zero (P : Polynomial ℝ) (n k : ℕ) (hk : k ≤ n) :
+  LeanPaper.NormalizedNewton.normalizedJet P n k 0 = P.coeff k / ↑(n.choose k)
+LeanPaper.NormalizedNewton.coefficient_newton {P : Polynomial ℝ} (hP : P.Splits) (k : ℕ) (hk : k + 2 ≤ P.natDegree) :
+  P.coeff k / ↑(P.natDegree.choose k) * (P.coeff (k + 2) / ↑(P.natDegree.choose (k + 2))) ≤
+    (P.coeff (k + 1) / ↑(P.natDegree.choose (k + 1))) ^ 2
+LeanPaper.NormalizedNewton.shifted_coefficient_newton {P : Polynomial ℝ} (hP : P.Splits) (a : ℝ) (k : ℕ)
+  (hk : k + 2 ≤ P.natDegree) :
+  ((Polynomial.taylor a) P).coeff k / ↑(P.natDegree.choose k) *
+      (((Polynomial.taylor a) P).coeff (k + 2) / ↑(P.natDegree.choose (k + 2))) ≤
+    (((Polynomial.taylor a) P).coeff (k + 1) / ↑(P.natDegree.choose (k + 1))) ^ 2
+LeanPaper.NormalizedNewton.normalized_shifted_newton {P : Polynomial ℝ} (hP : P.Splits) (a : ℝ) (k : ℕ)
+  (hk : k + 2 ≤ P.natDegree) :
+  ((Polynomial.taylor a) P).coeff k / Polynomial.eval a P / ↑(P.natDegree.choose k) *
+      (((Polynomial.taylor a) P).coeff (k + 2) / Polynomial.eval a P / ↑(P.natDegree.choose (k + 2))) ≤
+    (((Polynomial.taylor a) P).coeff (k + 1) / Polynomial.eval a P / ↑(P.natDegree.choose (k + 1))) ^ 2
+LeanPaper.NormalizedNewton.actual_primitive_laguerre (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (x : ℝ) :
+  0 ≤ LeanPaper.NormalizedNewton.laguerre p.h (LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p) x
+LeanPaper.NormalizedNewton.actual_primitive_coefficient_newton (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (k : ℕ) (hk : k + 2 ≤ p.h) :
+  (LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p).coeff k / ↑(p.h.choose k) *
+      ((LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p).coeff (k + 2) / ↑(p.h.choose (k + 2))) ≤
+    ((LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p).coeff (k + 1) / ↑(p.h.choose (k + 1))) ^ 2
+LeanPaper.NormalizedNewton.actual_primitive_shifted_newton (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (a : ℝ) (k : ℕ) (hk : k + 2 ≤ p.h) :
+  ((Polynomial.taylor a) (LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p)).coeff k / ↑(p.h.choose k) *
+      (((Polynomial.taylor a) (LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p)).coeff (k + 2) /
+        ↑(p.h.choose (k + 2))) ≤
+    (((Polynomial.taylor a) (LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p)).coeff (k + 1) /
+        ↑(p.h.choose (k + 1))) ^
+      2
+LeanPaper.NormalizedNewton.actual_primitive_centered_newton (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (k : ℕ) (hk : k + 2 ≤ p.h) :
+  ((Polynomial.taylor (ManuscriptChain.Real.zeta p.weight))
+                (LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p)).coeff
+            k /
+          Polynomial.eval (ManuscriptChain.Real.zeta p.weight)
+            (LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p) /
+        ↑(p.h.choose k) *
+      (((Polynomial.taylor (ManuscriptChain.Real.zeta p.weight))
+                (LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p)).coeff
+            (k + 2) /
+          Polynomial.eval (ManuscriptChain.Real.zeta p.weight)
+            (LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p) /
+        ↑(p.h.choose (k + 2))) ≤
+    (((Polynomial.taylor (ManuscriptChain.Real.zeta p.weight))
+                (LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p)).coeff
+            (k + 1) /
+          Polynomial.eval (ManuscriptChain.Real.zeta p.weight)
+            (LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p) /
+        ↑(p.h.choose (k + 1))) ^
+      2
+LeanPaper.OperatorNormDisk.whitened {n : ℕ} (p : ManuscriptChain.Spectral.SymmetricAffinePencil n) :
+  Matrix (Fin n) (Fin n) ℝ
+LeanPaper.OperatorNormDisk.hermitian_norm_eq_eigenvalue_norm {n : ℕ} {B : Matrix (Fin n) (Fin n) ℝ}
+  (hB : B.IsHermitian) : ‖B‖ = ‖hB.eigenvalues‖
+LeanPaper.OperatorNormDisk.norm_compatible_factorization {n : ℕ} (p : ManuscriptChain.Spectral.SymmetricAffinePencil n)
+  (positive : p.base.PosDef) (direction_nonzero : p.direction.det ≠ 0) :
+  ∃ c, ‖c.beta‖ = ‖LeanPaper.OperatorNormDisk.whitened p‖
+LeanPaper.OperatorNormDisk.complex_root_distance {n : ℕ} (p : ManuscriptChain.Spectral.SymmetricAffinePencil n)
+  (positive : p.base.PosDef) (direction_nonzero : p.direction.det ≠ 0) (z : ℂ)
+  (hz : Polynomial.eval₂ (algebraMap ℝ ℂ) z p.detPolynomial = 0) :
+  1 / ‖LeanPaper.OperatorNormDisk.whitened p‖ ≤ ‖z - ↑p.center‖
+LeanPaper.OperatorNormDisk.complex_root_on_boundary {n : ℕ} (p : ManuscriptChain.Spectral.SymmetricAffinePencil n)
+  (hn : 0 < n) (positive : p.base.PosDef) (direction_nonzero : p.direction.det ≠ 0) :
+  0 < 1 / ‖LeanPaper.OperatorNormDisk.whitened p‖ ∧
+    ∃ z,
+      Polynomial.eval₂ (algebraMap ℝ ℂ) z p.detPolynomial = 0 ∧
+        ‖z - ↑p.center‖ = 1 / ‖LeanPaper.OperatorNormDisk.whitened p‖
+LeanPaper.OperatorNormDisk.actual_radius_eq_inverse_norm (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (positive : ManuscriptChain.General.GramPositive p) :
+  ManuscriptChain.General.zeroFreeRadius p hp positive =
+    1 / ‖LeanPaper.OperatorNormDisk.whitened (ManuscriptChain.Real.manuscriptPencil p)‖
+LeanPaper.OperatorNormDisk.actual_root_distance (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (z : ℂ) (hz : ManuscriptChain.General.ComplexRoot p z) :
+  1 / ‖LeanPaper.OperatorNormDisk.whitened (ManuscriptChain.Real.manuscriptPencil p)‖ ≤
+    ‖z - ↑(ManuscriptChain.Real.zeta p.weight)‖
+LeanPaper.OperatorNormDisk.actual_exact_norm_disk (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) :
+  0 < 1 / ‖LeanPaper.OperatorNormDisk.whitened (ManuscriptChain.Real.manuscriptPencil p)‖ ∧
+    (∀ (z : ℂ),
+        ‖z - ↑(ManuscriptChain.Real.zeta p.weight)‖ <
+            1 / ‖LeanPaper.OperatorNormDisk.whitened (ManuscriptChain.Real.manuscriptPencil p)‖ →
+          ¬ManuscriptChain.General.ComplexRoot p z) ∧
+      ∃ z,
+        ManuscriptChain.General.ComplexRoot p z ∧
+          ‖z - ↑(ManuscriptChain.Real.zeta p.weight)‖ =
+            1 / ‖LeanPaper.OperatorNormDisk.whitened (ManuscriptChain.Real.manuscriptPencil p)‖
+LeanPaper.OperatorNormDisk.original_root_distance (p : Zetahyperbolic.HankelParams) (k : ℕ) (hk : 1 ≤ k) (z : ℂ)
+  (hz : Polynomial.eval₂ (algebraMap ℚ ℂ) z (Zetahyperbolic.Delta_poly p k) = 0) :
+  1 /
+      ‖LeanPaper.OperatorNormDisk.whitened
+          (ManuscriptChain.Real.manuscriptPencil (Zetahyperbolic.ManuscriptCompatibility.toParameters p k))‖ ≤
+    ‖z - ↑(ManuscriptChain.Real.zeta (2 * k + 1))‖
+LeanPaper.PrimitiveNormDisk.normalization_eval_complex {f : Polynomial ℚ}
+  (nf : ManuscriptChain.BasisInvariance.PrimitiveNormalization f) (z : ℂ) :
+  Polynomial.eval₂ (algebraMap ℤ ℂ) z nf.polynomial = ↑nf.scale * Polynomial.eval₂ (algebraMap ℚ ℂ) z f
+LeanPaper.PrimitiveNormDisk.normalization_complex_root_iff {f : Polynomial ℚ}
+  (nf : ManuscriptChain.BasisInvariance.PrimitiveNormalization f) (z : ℂ) :
+  Polynomial.eval₂ (algebraMap ℤ ℂ) z nf.polynomial = 0 ↔ Polynomial.eval₂ (algebraMap ℚ ℂ) z f = 0
+LeanPaper.PrimitiveNormDisk.primitive_complex_root_iff (p : ManuscriptChain.Real.Parameters) (z : ℂ) :
+  Polynomial.eval₂ (algebraMap ℤ ℂ) z (ManuscriptChain.GeneralIrrationality.primitivePolynomial p) = 0 ↔
+    ManuscriptChain.General.ComplexRoot p z
+LeanPaper.PrimitiveNormDisk.primitive_root_distance (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (z : ℂ)
+  (hz : Polynomial.eval₂ (algebraMap ℤ ℂ) z (ManuscriptChain.GeneralIrrationality.primitivePolynomial p) = 0) :
+  1 / ‖LeanPaper.OperatorNormDisk.whitened (ManuscriptChain.Real.manuscriptPencil p)‖ ≤
+    ‖z - ↑(ManuscriptChain.Real.zeta p.weight)‖
+LeanPaper.PrimitiveNormDisk.primitive_exact_norm_disk (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) :
+  0 < 1 / ‖LeanPaper.OperatorNormDisk.whitened (ManuscriptChain.Real.manuscriptPencil p)‖ ∧
+    (∀ (z : ℂ),
+        ‖z - ↑(ManuscriptChain.Real.zeta p.weight)‖ <
+            1 / ‖LeanPaper.OperatorNormDisk.whitened (ManuscriptChain.Real.manuscriptPencil p)‖ →
+          Polynomial.eval₂ (algebraMap ℤ ℂ) z (ManuscriptChain.GeneralIrrationality.primitivePolynomial p) ≠ 0) ∧
+      ∃ z,
+        Polynomial.eval₂ (algebraMap ℤ ℂ) z (ManuscriptChain.GeneralIrrationality.primitivePolynomial p) = 0 ∧
+          ‖z - ↑(ManuscriptChain.Real.zeta p.weight)‖ =
+            1 / ‖LeanPaper.OperatorNormDisk.whitened (ManuscriptChain.Real.manuscriptPencil p)‖
+LeanPaper.PrimitiveNormDisk.primitive_theorem_3_1 (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) :
+  (ManuscriptChain.GeneralIrrationality.primitivePolynomial p).IsPrimitive ∧
+    (ManuscriptChain.GeneralIrrationality.primitivePolynomial p).natDegree = p.h ∧
+      0 <
+          ManuscriptChain.RealTransfer.evalReal (ManuscriptChain.GeneralIrrationality.primitivePolynomial p)
+            (ManuscriptChain.Real.zeta p.weight) ∧
+        ManuscriptChain.Real.zeta p.weight = (riemannZeta ↑p.weight).re ∧
+          0 < 1 / ‖LeanPaper.OperatorNormDisk.whitened (ManuscriptChain.Real.manuscriptPencil p)‖ ∧
+            (∀ (z : ℂ),
+                Polynomial.eval₂ (algebraMap ℤ ℂ) z (ManuscriptChain.GeneralIrrationality.primitivePolynomial p) = 0 →
+                  z.im = 0 ∧
+                    z ≠ ↑(ManuscriptChain.Real.zeta p.weight) ∧
+                      1 / ‖LeanPaper.OperatorNormDisk.whitened (ManuscriptChain.Real.manuscriptPencil p)‖ ≤
+                        ‖z - ↑(ManuscriptChain.Real.zeta p.weight)‖) ∧
+              ∃ z,
+                Polynomial.eval₂ (algebraMap ℤ ℂ) z (ManuscriptChain.GeneralIrrationality.primitivePolynomial p) = 0 ∧
+                  ‖z - ↑(ManuscriptChain.Real.zeta p.weight)‖ =
+                    1 / ‖LeanPaper.OperatorNormDisk.whitened (ManuscriptChain.Real.manuscriptPencil p)‖
+LeanPaper.PrincipalMinorRank.nonzeroCount {n : ℕ} (beta : Fin n → ℝ) : ℕ
+LeanPaper.PrincipalMinorRank.spectralFactor_degree_indicator (center beta : ℝ) :
+  (ManuscriptChain.Spectral.spectralFactor center beta).natDegree = if beta ≠ 0 then 1 else 0
+LeanPaper.PrincipalMinorRank.degree_eq_nonzeroCount {n : ℕ} {p : ManuscriptChain.Spectral.SymmetricAffinePencil n}
+  (w : LeanPaper.SingularSlope.WeakSpectralFactorization p) :
+  p.detPolynomial.natDegree = LeanPaper.PrincipalMinorRank.nonzeroCount w.beta
+LeanPaper.PrincipalMinorRank.weak_factorization_splits {n : ℕ} {p : ManuscriptChain.Spectral.SymmetricAffinePencil n}
+  (w : LeanPaper.SingularSlope.WeakSpectralFactorization p) : p.detPolynomial.Splits
+LeanPaper.PrincipalMinorRank.roots_card_eq_nonzeroCount {n : ℕ} {p : ManuscriptChain.Spectral.SymmetricAffinePencil n}
+  (w : LeanPaper.SingularSlope.WeakSpectralFactorization p) :
+  p.detPolynomial.roots.card = LeanPaper.PrincipalMinorRank.nonzeroCount w.beta
+LeanPaper.PrincipalMinorRank.rank_compatible_factorization {n : ℕ}
+  (p : ManuscriptChain.Spectral.SymmetricAffinePencil n) (positive : p.base.PosDef) :
+  ∃ w, LeanPaper.PrincipalMinorRank.nonzeroCount w.beta = p.direction.rank
+LeanPaper.PrincipalMinorRank.degree_eq_direction_rank {n : ℕ} (p : ManuscriptChain.Spectral.SymmetricAffinePencil n)
+  (positive : p.base.PosDef) : p.detPolynomial.natDegree = p.direction.rank
+LeanPaper.PrincipalMinorRank.real_roots_card_eq_direction_rank {n : ℕ}
+  (p : ManuscriptChain.Spectral.SymmetricAffinePencil n) (positive : p.base.PosDef) :
+  p.detPolynomial.roots.card = p.direction.rank
+LeanPaper.PrincipalMinorRank.nonzeroCount_eq_direction_rank {n : ℕ}
+  (p : ManuscriptChain.Spectral.SymmetricAffinePencil n) (positive : p.base.PosDef)
+  (w : LeanPaper.SingularSlope.WeakSpectralFactorization p) :
+  LeanPaper.PrincipalMinorRank.nonzeroCount w.beta = p.direction.rank
+LeanPaper.PrincipalMinorRank.root_count_le_dimension {n : ℕ} (p : ManuscriptChain.Spectral.SymmetricAffinePencil n)
+  (positive : p.base.PosDef) : p.detPolynomial.roots.card ≤ n
+LeanPaper.PrincipalMinorRank.zero_direction_has_no_roots {n : ℕ} (p : ManuscriptChain.Spectral.SymmetricAffinePencil n)
+  (positive : p.base.PosDef) (hz : p.direction = 0) : p.detPolynomial.natDegree = 0 ∧ p.detPolynomial.roots.card = 0
+LeanPaper.PrincipalMinorRank.original_principal_degree_eq_rank (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) {r : ℕ} (index : Fin r ↪ Fin p.h) :
+  (ManuscriptChain.PrincipalMinors.determinant p index).natDegree =
+    (LeanPaper.PrincipalMinorRealRoots.originalPencil p index).direction.rank
+LeanPaper.PrincipalMinorRank.original_principal_real_roots_card_eq_rank (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) {r : ℕ} (index : Fin r ↪ Fin p.h) :
+  (ManuscriptChain.Real.realPolynomial (ManuscriptChain.PrincipalMinors.determinant p index)).roots.card =
+    (LeanPaper.PrincipalMinorRealRoots.originalPencil p index).direction.rank
+LeanPaper.PrincipalMinorRank.original_leading_degree_and_root_count (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (r : ℕ) (hr : r ≤ p.h) :
+  have index := ManuscriptChain.PrincipalMinors.leadingIndex p r hr;
+  (ManuscriptChain.PrincipalMinors.determinant p index).natDegree =
+      (LeanPaper.PrincipalMinorRealRoots.originalPencil p index).direction.rank ∧
+    (ManuscriptChain.Real.realPolynomial (ManuscriptChain.PrincipalMinors.determinant p index)).roots.card =
+      (LeanPaper.PrincipalMinorRealRoots.originalPencil p index).direction.rank
+LeanPaper.ReciprocalLogDerivative.factorization_logDeriv {n : ℕ} {p : ManuscriptChain.Spectral.SymmetricAffinePencil n}
+  (c : ManuscriptChain.Spectral.RootFactorization p) (x : ℝ) (hx : Polynomial.eval x p.detPolynomial ≠ 0) :
+  logDeriv (fun t => Polynomial.eval t p.detPolynomial) x = ∑ i, (x - c.root i)⁻¹
+LeanPaper.ReciprocalLogDerivative.actual_logDeriv (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (x : ℝ)
+  (hx : ManuscriptChain.Real.evalQ (ManuscriptChain.Real.delta p) x ≠ 0) :
+  logDeriv (ManuscriptChain.Real.evalQ (ManuscriptChain.Real.delta p)) x =
+    ∑ i, (x - LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp i)⁻¹
+LeanPaper.ReciprocalLogDerivative.actual_opposite_gap_sum (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (x : ℝ)
+  (hx : ManuscriptChain.Real.evalQ (ManuscriptChain.Real.delta p) x ≠ 0) :
+  ∑ i, (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp i - x)⁻¹ =
+    -logDeriv (ManuscriptChain.Real.evalQ (ManuscriptChain.Real.delta p)) x
+LeanPaper.ReciprocalLogDerivative.evalQ_at_rat (P : Polynomial ℚ) (q : ℚ) :
+  ManuscriptChain.Real.evalQ P ↑q = ↑(Polynomial.eval q P)
+LeanPaper.ReciprocalLogDerivative.rational_logDeriv (P : Polynomial ℚ) (q : ℚ) :
+  logDeriv (ManuscriptChain.Real.evalQ P) ↑q = ↑(Polynomial.eval q (Polynomial.derivative P) / Polynomial.eval q P)
+LeanPaper.ReciprocalLogDerivative.actual_first_inverse_gap_sum_rational (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (q : ℚ)
+  (hq : ManuscriptChain.Real.evalQ (ManuscriptChain.Real.delta p) ↑q ≠ 0) :
+  ∑ i, (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp i - ↑q)⁻¹ =
+    ↑(-Polynomial.eval q (Polynomial.derivative (ManuscriptChain.Real.delta p)) /
+        Polynomial.eval q (ManuscriptChain.Real.delta p))
+LeanPaper.ReciprocalLogDerivative.actual_log_hasDerivAt (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (x : ℝ)
+  (hx : ManuscriptChain.Real.evalQ (ManuscriptChain.Real.delta p) x ≠ 0) :
+  HasDerivAt (fun t => Real.log (ManuscriptChain.Real.evalQ (ManuscriptChain.Real.delta p) t))
+    (∑ i, (x - LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp i)⁻¹) x
+LeanPaper.ReciprocalNearestRootLimit.finite_power_root_bounds {h : ℕ} (u : Fin h → ℝ) (hu : ∀ (i : Fin h), 0 ≤ u i)
+  (j : Fin h) (hj : ∀ (i : Fin h), u i ≤ u j) (n : ℕ) (hn : 0 < n) :
+  u j ≤ (∑ i, u i ^ n) ^ (1 / ↑n) ∧ (∑ i, u i ^ n) ^ (1 / ↑n) ≤ ↑h ^ (1 / ↑n) * u j
+LeanPaper.ReciprocalNearestRootLimit.finite_power_root_tendsto {h : ℕ} (u : Fin h → ℝ) (hu : ∀ (i : Fin h), 0 ≤ u i)
+  (j : Fin h) (hj : ∀ (i : Fin h), u i ≤ u j) :
+  Filter.Tendsto (fun m => (∑ i, u i ^ (m + 1)) ^ (1 / ↑(m + 1))) Filter.atTop (nhds (u j))
+LeanPaper.ReciprocalNearestRootLimit.reciprocal_atom_negative_half {h : ℕ} (r : Fin h → ℝ) (q : ℝ) (i : Fin h) :
+  LeanPaper.ReciprocalRootMoments.reciprocalAtom r q i ^ (-1 / 2) = |r i - q|
+LeanPaper.ReciprocalNearestRootLimit.pow_negative_root (u : ℝ) (hu : 0 ≤ u) (n : ℕ) (hn : 0 < n) :
+  (u ^ n) ^ (-1 / (2 * ↑n)) = u ^ (-1 / 2)
+LeanPaper.ReciprocalNearestRootLimit.reciprocal_negative_root_bounds {h : ℕ} (r : Fin h → ℝ) (q : ℝ)
+  (hr : ∀ (i : Fin h), r i ≠ q) (j : Fin h)
+  (hj :
+    ∀ (i : Fin h),
+      LeanPaper.ReciprocalRootMoments.reciprocalAtom r q i ≤ LeanPaper.ReciprocalRootMoments.reciprocalAtom r q j)
+  (n : ℕ) (hn : 0 < n) :
+  ↑h ^ (-1 / (2 * ↑n)) * |r j - q| ≤ LeanPaper.ReciprocalRootMoments.reciprocalEvenMoment r q n ^ (-1 / (2 * ↑n)) ∧
+    LeanPaper.ReciprocalRootMoments.reciprocalEvenMoment r q n ^ (-1 / (2 * ↑n)) ≤ |r j - q|
+LeanPaper.ReciprocalNearestRootLimit.reciprocal_negative_root_tendsto {h : ℕ} (r : Fin h → ℝ) (q : ℝ)
+  (hr : ∀ (i : Fin h), r i ≠ q) (j : Fin h)
+  (hj :
+    ∀ (i : Fin h),
+      LeanPaper.ReciprocalRootMoments.reciprocalAtom r q i ≤ LeanPaper.ReciprocalRootMoments.reciprocalAtom r q j) :
+  Filter.Tendsto (fun m => LeanPaper.ReciprocalRootMoments.reciprocalEvenMoment r q (m + 1) ^ (-1 / (2 * ↑(m + 1))))
+    Filter.atTop (nhds |r j - q|)
+LeanPaper.ReciprocalNearestRootLimit.actual_nearest_root_limit (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (q : ℚ)
+  (hq : ManuscriptChain.Real.evalQ (ManuscriptChain.Real.delta p) ↑q ≠ 0) :
+  ∃ j,
+    0 < |LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp j - ↑q| ∧
+      (∀ (i : Fin p.h),
+          |LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp j - ↑q| ≤
+            |LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp i - ↑q|) ∧
+        (∀ (n : ℕ),
+            0 < n →
+              ↑p.h ^ (-1 / (2 * ↑n)) * |LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp j - ↑q| ≤
+                  LeanPaper.ReciprocalRootMoments.reciprocalEvenMoment
+                      (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) (↑q) n ^
+                    (-1 / (2 * ↑n)) ∧
+                LeanPaper.ReciprocalRootMoments.reciprocalEvenMoment
+                      (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) (↑q) n ^
+                    (-1 / (2 * ↑n)) ≤
+                  |LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp j - ↑q|) ∧
+          Filter.Tendsto
+            (fun m =>
+              LeanPaper.ReciprocalRootMoments.reciprocalEvenMoment
+                  (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) (↑q) (m + 1) ^
+                (-1 / (2 * ↑(m + 1))))
+            Filter.atTop (nhds |LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp j - ↑q|)
+LeanPaper.ReciprocalSecondMoment.polynomial_logDeriv_hasDerivAt (P : Polynomial ℚ) (x : ℝ)
+  (hx : ManuscriptChain.Real.evalQ P x ≠ 0) :
+  HasDerivAt (logDeriv (ManuscriptChain.Real.evalQ P))
+    ((ManuscriptChain.Real.evalQ (Polynomial.derivative (Polynomial.derivative P)) x * ManuscriptChain.Real.evalQ P x -
+        ManuscriptChain.Real.evalQ (Polynomial.derivative P) x ^ 2) /
+      ManuscriptChain.Real.evalQ P x ^ 2)
+    x
+LeanPaper.ReciprocalSecondMoment.actual_logDeriv_hasDerivAt (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (x : ℝ)
+  (hx : ManuscriptChain.Real.evalQ (ManuscriptChain.Real.delta p) x ≠ 0) :
+  HasDerivAt (logDeriv (ManuscriptChain.Real.evalQ (ManuscriptChain.Real.delta p)))
+    (-LeanPaper.ReciprocalRootMoments.reciprocalEvenMoment (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) x 1) x
+LeanPaper.ReciprocalSecondMoment.actual_log_second_hasDerivAt (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (x : ℝ)
+  (hx : ManuscriptChain.Real.evalQ (ManuscriptChain.Real.delta p) x ≠ 0) :
+  HasDerivAt (deriv fun y => Real.log (ManuscriptChain.Real.evalQ (ManuscriptChain.Real.delta p) y))
+    (-LeanPaper.ReciprocalRootMoments.reciprocalEvenMoment (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) x 1) x
+LeanPaper.ReciprocalSecondMoment.actual_second_moment_formula (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (x : ℝ)
+  (hx : ManuscriptChain.Real.evalQ (ManuscriptChain.Real.delta p) x ≠ 0) :
+  LeanPaper.ReciprocalRootMoments.reciprocalEvenMoment (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) x 1 =
+    (ManuscriptChain.Real.evalQ (Polynomial.derivative (ManuscriptChain.Real.delta p)) x ^ 2 -
+        ManuscriptChain.Real.evalQ (Polynomial.derivative (Polynomial.derivative (ManuscriptChain.Real.delta p))) x *
+          ManuscriptChain.Real.evalQ (ManuscriptChain.Real.delta p) x) /
+      ManuscriptChain.Real.evalQ (ManuscriptChain.Real.delta p) x ^ 2
+LeanPaper.ReciprocalSecondMoment.actual_second_moment_rational (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (q : ℚ)
+  (hq : ManuscriptChain.Real.evalQ (ManuscriptChain.Real.delta p) ↑q ≠ 0) :
+  LeanPaper.ReciprocalRootMoments.reciprocalEvenMoment (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) (↑q) 1 =
+    ↑((Polynomial.eval q (Polynomial.derivative (ManuscriptChain.Real.delta p)) ^ 2 -
+          Polynomial.eval q (Polynomial.derivative (Polynomial.derivative (ManuscriptChain.Real.delta p))) *
+            Polynomial.eval q (ManuscriptChain.Real.delta p)) /
+        Polynomial.eval q (ManuscriptChain.Real.delta p) ^ 2)
+LeanPaper.Section2RationalDomains.poleProduct.{u_1} {ι : Type u_1} (nodes : ι → ℚ) (s : Finset ι) : Polynomial ℚ
+LeanPaper.Section2RationalDomains.poleProduct_ne_zero.{u_1} {ι : Type u_1} [DecidableEq ι] (nodes : ι → ℚ)
+  (s : Finset ι) : LeanPaper.Section2RationalDomains.poleProduct nodes s ≠ 0
+LeanPaper.Section2RationalDomains.commonNumerator.{u_1} {ι : Type u_1} [DecidableEq ι] (nodes : ι → ℚ)
+  (F : LeanPaper.Section2RepresentationIndependence.SimplePoleForm ι) : Polynomial ℚ
+LeanPaper.Section2RationalDomains.realization_eq_fraction.{u_1} {ι : Type u_1} [DecidableEq ι] (nodes : ι → ℚ)
+  (F : LeanPaper.Section2RepresentationIndependence.SimplePoleForm ι) :
+  LeanPaper.Section2RepresentationIndependence.realization nodes F =
+    (algebraMap (Polynomial ℚ) (RatFunc ℚ)) (LeanPaper.Section2RationalDomains.commonNumerator nodes F) /
+      (algebraMap (Polynomial ℚ) (RatFunc ℚ)) (LeanPaper.Section2RationalDomains.poleProduct nodes F.support)
+LeanPaper.Section2RationalDomains.realization_denom_dvd.{u_1} {ι : Type u_1} [DecidableEq ι] (nodes : ι → ℚ)
+  (F : LeanPaper.Section2RepresentationIndependence.SimplePoleForm ι) :
+  (LeanPaper.Section2RepresentationIndependence.realization nodes F).denom ∣
+    LeanPaper.Section2RationalDomains.poleProduct nodes F.support
+LeanPaper.Section2RationalDomains.fraction_representation_exists.{u_1} {ι : Type u_1} [DecidableEq ι] (nodes : ι → ℚ)
+  (hnodes : Function.Injective nodes) (s : Finset ι) (num : Polynomial ℚ) :
+  ∃ q c,
+    LeanPaper.Section2RepresentationIndependence.realization nodes { polynomial := q, support := s, residue := c } =
+      (algebraMap (Polynomial ℚ) (RatFunc ℚ)) num /
+        (algebraMap (Polynomial ℚ) (RatFunc ℚ)) (LeanPaper.Section2RationalDomains.poleProduct nodes s)
+LeanPaper.Section2RationalDomains.range_realization_iff_denom_dvd.{u_1} {ι : Type u_1} [DecidableEq ι] (nodes : ι → ℚ)
+  (hnodes : Function.Injective nodes) (f : RatFunc ℚ) :
+  f ∈ Set.range (LeanPaper.Section2RepresentationIndependence.realization nodes) ↔
+    ∃ s, f.denom ∣ LeanPaper.Section2RationalDomains.poleProduct nodes s
+LeanPaper.Section2RationalDomains.muPoleProduct (M : ℕ) : Polynomial ℚ
+LeanPaper.Section2RationalDomains.muPoleProduct_eq (M : ℕ) :
+  LeanPaper.Section2RationalDomains.muPoleProduct M = Zetahyperbolic.denominatorPolynomial M
+LeanPaper.Section2RationalDomains.muDomain_iff_denom_dvd (f : RatFunc ℚ) :
+  f ∈ LeanPaper.Section2RepresentationIndependence.MuDomain ↔
+    ∃ M, f.denom ∣ LeanPaper.Section2RationalDomains.muPoleProduct M
+LeanPaper.Section2RationalDomains.tauDomain_iff_denom_dvd (f : RatFunc ℚ) :
+  f ∈ LeanPaper.Section2TauRepresentation.TauDomain ↔
+    ∃ s, f.denom ∣ LeanPaper.Section2RationalDomains.poleProduct (fun r => ↑r) s
+LeanPaper.Section2RationalDomains.fraction_mem_muDomain (M : ℕ) (num : Polynomial ℚ) :
+  (algebraMap (Polynomial ℚ) (RatFunc ℚ)) num /
+      (algebraMap (Polynomial ℚ) (RatFunc ℚ)) (LeanPaper.Section2RationalDomains.muPoleProduct M) ∈
+    LeanPaper.Section2RepresentationIndependence.MuDomain
+LeanPaper.Section2RepresentationIndependence.SimplePoleForm.{u_1} (ι : Type u_1) : Type u_1
+LeanPaper.Section2RepresentationIndependence.effectiveResidue.{u_1} {ι : Type u_1} [DecidableEq ι]
+  (F : LeanPaper.Section2RepresentationIndependence.SimplePoleForm ι) (i : ι) : ℚ
+LeanPaper.Section2RepresentationIndependence.realization.{u_1} {ι : Type u_1} (nodes : ι → ℚ)
+  (F : LeanPaper.Section2RepresentationIndependence.SimplePoleForm ι) : RatFunc ℚ
+LeanPaper.Section2RepresentationIndependence.sum_extend.{u_1, u_2} {ι : Type u_1} [DecidableEq ι] {A : Type u_2}
+  [AddCommMonoid A] (F : LeanPaper.Section2RepresentationIndependence.SimplePoleForm ι) (t : Finset ι)
+  (ht : F.support ⊆ t) (f : ι → ℚ → A) (hf : ∀ (i : ι), f i 0 = 0) :
+  ∑ i ∈ F.support, f i (F.residue i) = ∑ i ∈ t, f i (LeanPaper.Section2RepresentationIndependence.effectiveResidue F i)
+LeanPaper.Section2RepresentationIndependence.realization_extend.{u_1} {ι : Type u_1} [DecidableEq ι] (nodes : ι → ℚ)
+  (F : LeanPaper.Section2RepresentationIndependence.SimplePoleForm ι) (t : Finset ι) (ht : F.support ⊆ t) :
+  LeanPaper.Section2RepresentationIndependence.realization nodes F =
+    (algebraMap (Polynomial ℚ) (RatFunc ℚ)) F.polynomial +
+      ∑ i ∈ t,
+        (algebraMap (Polynomial ℚ) (RatFunc ℚ))
+            (Polynomial.C (LeanPaper.Section2RepresentationIndependence.effectiveResidue F i)) /
+          (algebraMap (Polynomial ℚ) (RatFunc ℚ)) (Polynomial.X - Polynomial.C (nodes i))
+LeanPaper.Section2RepresentationIndependence.realization_unique.{u_1} {ι : Type u_1} [DecidableEq ι] (nodes : ι → ℚ)
+  (hnodes : Function.Injective nodes) (F G : LeanPaper.Section2RepresentationIndependence.SimplePoleForm ι)
+  (h :
+    LeanPaper.Section2RepresentationIndependence.realization nodes F =
+      LeanPaper.Section2RepresentationIndependence.realization nodes G) :
+  F.polynomial = G.polynomial ∧
+    LeanPaper.Section2RepresentationIndependence.effectiveResidue F =
+      LeanPaper.Section2RepresentationIndependence.effectiveResidue G
+LeanPaper.Section2RepresentationIndependence.realization_eq_of_data.{u_1} {ι : Type u_1} [DecidableEq ι] (nodes : ι → ℚ)
+  (F G : LeanPaper.Section2RepresentationIndependence.SimplePoleForm ι) (hp : F.polynomial = G.polynomial)
+  (hr :
+    LeanPaper.Section2RepresentationIndependence.effectiveResidue F =
+      LeanPaper.Section2RepresentationIndependence.effectiveResidue G) :
+  LeanPaper.Section2RepresentationIndependence.realization nodes F =
+    LeanPaper.Section2RepresentationIndependence.realization nodes G
+LeanPaper.Section2RepresentationIndependence.realization_eq_iff.{u_1} {ι : Type u_1} [DecidableEq ι] (nodes : ι → ℚ)
+  (hnodes : Function.Injective nodes) (F G : LeanPaper.Section2RepresentationIndependence.SimplePoleForm ι) :
+  LeanPaper.Section2RepresentationIndependence.realization nodes F =
+      LeanPaper.Section2RepresentationIndependence.realization nodes G ↔
+    F.polynomial = G.polynomial ∧
+      LeanPaper.Section2RepresentationIndependence.effectiveResidue F =
+        LeanPaper.Section2RepresentationIndependence.effectiveResidue G
+LeanPaper.Section2RepresentationIndependence.moment.{u_1} {ι : Type u_1} (polyMoment : Polynomial ℚ → Polynomial ℚ)
+  (poleMoment : ι → Polynomial ℚ) (F : LeanPaper.Section2RepresentationIndependence.SimplePoleForm ι) : Polynomial ℚ
+LeanPaper.Section2RepresentationIndependence.moment_representation_independent.{u_1} {ι : Type u_1} [DecidableEq ι]
+  (nodes : ι → ℚ) (hnodes : Function.Injective nodes) (polyMoment : Polynomial ℚ → Polynomial ℚ)
+  (poleMoment : ι → Polynomial ℚ) (F G : LeanPaper.Section2RepresentationIndependence.SimplePoleForm ι)
+  (h :
+    LeanPaper.Section2RepresentationIndependence.realization nodes F =
+      LeanPaper.Section2RepresentationIndependence.realization nodes G) :
+  LeanPaper.Section2RepresentationIndependence.moment polyMoment poleMoment F =
+    LeanPaper.Section2RepresentationIndependence.moment polyMoment poleMoment G
+LeanPaper.Section2RepresentationIndependence.muForm (R : Zetahyperbolic.RatMomentElem) :
+  LeanPaper.Section2RepresentationIndependence.SimplePoleForm ℕ
+LeanPaper.Section2RepresentationIndependence.muRatFunc (R : Zetahyperbolic.RatMomentElem) : RatFunc ℚ
+LeanPaper.Section2RepresentationIndependence.mu_representation_unique (R S : Zetahyperbolic.RatMomentElem)
+  (h :
+    LeanPaper.Section2RepresentationIndependence.muRatFunc R =
+      LeanPaper.Section2RepresentationIndependence.muRatFunc S) :
+  R.polyPart = S.polyPart ∧
+    (fun j => if j ∈ Finset.Icc 1 R.maxPole then R.poleRes j else 0) = fun j =>
+      if j ∈ Finset.Icc 1 S.maxPole then S.poleRes j else 0
+LeanPaper.Section2RepresentationIndependence.muFunctionalPoly_representation_independent (k : ℕ)
+  (R S : Zetahyperbolic.RatMomentElem)
+  (h :
+    LeanPaper.Section2RepresentationIndependence.muRatFunc R =
+      LeanPaper.Section2RepresentationIndependence.muRatFunc S) :
+  Zetahyperbolic.muFunctionalPoly k R = Zetahyperbolic.muFunctionalPoly k S
+LeanPaper.Section2RepresentationIndependence.MuDomain : Set (RatFunc ℚ)
+LeanPaper.Section2RepresentationIndependence.muOnDomain (k : ℕ)
+  (f : ↑LeanPaper.Section2RepresentationIndependence.MuDomain) : Polynomial ℚ
+LeanPaper.Section2RepresentationIndependence.muOnDomain_eq (k : ℕ) (R : Zetahyperbolic.RatMomentElem) :
+  LeanPaper.Section2RepresentationIndependence.muOnDomain k
+      ⟨LeanPaper.Section2RepresentationIndependence.muRatFunc R, ⋯⟩ =
+    Zetahyperbolic.muFunctionalPoly k R
+LeanPaper.Section2RepresentationIndependence.pulledMoment_representation_independent (k : ℕ) (hk : 1 ≤ k)
+  (R S : Zetahyperbolic.RatMomentElem)
+  (h :
+    LeanPaper.Section2RepresentationIndependence.muRatFunc R =
+      LeanPaper.Section2RepresentationIndependence.muRatFunc S) :
+  LeanPaper.PullbackReflection.pulledMoment k R = LeanPaper.PullbackReflection.pulledMoment k S
+LeanPaper.Section2TauRepresentation.tauPolynomial (k : ℕ) : Polynomial ℚ →ₗ[ℚ] Polynomial ℚ
+LeanPaper.Section2TauRepresentation.tauPolynomial_monomial (k d : ℕ) (c : ℚ) :
+  (LeanPaper.Section2TauRepresentation.tauPolynomial k) ((Polynomial.monomial d) c) =
+    Polynomial.C (c * Zetahyperbolic.tauMonomial k d)
+LeanPaper.Section2TauRepresentation.finiteForm (es : Finset ℕ) (u : ℕ → ℚ) (rs : Finset ℤ) (v : ℤ → ℚ) :
+  LeanPaper.Section2RepresentationIndependence.SimplePoleForm ℤ
+LeanPaper.Section2TauRepresentation.finiteSpanRatFunc (es : Finset ℕ) (u : ℕ → ℚ) (rs : Finset ℤ) (v : ℤ → ℚ) :
+  RatFunc ℚ
+LeanPaper.Section2TauRepresentation.finiteForm_coefficient (es : Finset ℕ) (u : ℕ → ℚ) (rs : Finset ℤ) (v : ℤ → ℚ)
+  (d : ℕ) : (LeanPaper.Section2TauRepresentation.finiteForm es u rs v).polynomial.coeff d = if d ∈ es then u d else 0
+LeanPaper.Section2TauRepresentation.tauFiniteSpan_eq_moment (k : ℕ) (es : Finset ℕ) (u : ℕ → ℚ) (rs : Finset ℤ)
+  (v : ℤ → ℚ) :
+  LeanPaper.PullbackReflection.tauFiniteSpan k es u rs v =
+    LeanPaper.Section2RepresentationIndependence.moment (⇑(LeanPaper.Section2TauRepresentation.tauPolynomial k))
+      (Zetahyperbolic.tauPolePoly k) (LeanPaper.Section2TauRepresentation.finiteForm es u rs v)
+LeanPaper.Section2TauRepresentation.tauFiniteSpan_representation_independent (k : ℕ) (es fs : Finset ℕ) (u w : ℕ → ℚ)
+  (rs ts : Finset ℤ) (v z : ℤ → ℚ)
+  (h :
+    LeanPaper.Section2TauRepresentation.finiteSpanRatFunc es u rs v =
+      LeanPaper.Section2TauRepresentation.finiteSpanRatFunc fs w ts z) :
+  LeanPaper.PullbackReflection.tauFiniteSpan k es u rs v = LeanPaper.PullbackReflection.tauFiniteSpan k fs w ts z
+LeanPaper.Section2TauRepresentation.TauDomain : Set (RatFunc ℚ)
+LeanPaper.Section2TauRepresentation.tauOnDomain (k : ℕ) (f : ↑LeanPaper.Section2TauRepresentation.TauDomain) :
+  Polynomial ℚ
+LeanPaper.Section2TauRepresentation.tauOnDomain_eq (k : ℕ)
+  (F : LeanPaper.Section2RepresentationIndependence.SimplePoleForm ℤ) :
+  LeanPaper.Section2TauRepresentation.tauOnDomain k
+      ⟨LeanPaper.Section2RepresentationIndependence.realization (fun r => ↑r) F, ⋯⟩ =
+    LeanPaper.Section2RepresentationIndependence.moment (⇑(LeanPaper.Section2TauRepresentation.tauPolynomial k))
+      (Zetahyperbolic.tauPolePoly k) F
+LeanPaper.Section2TauRepresentation.tauOnDomain_eq_finiteSpan (k : ℕ) (es : Finset ℕ) (u : ℕ → ℚ) (rs : Finset ℤ)
+  (v : ℤ → ℚ) :
+  LeanPaper.Section2TauRepresentation.tauOnDomain k
+      ⟨LeanPaper.Section2TauRepresentation.finiteSpanRatFunc es u rs v, ⋯⟩ =
+    LeanPaper.PullbackReflection.tauFiniteSpan k es u rs v
+LeanPaper.Section2TauRepresentation.reflectedMoment_representation_independent (k : ℕ) (hk : 1 ≤ k) (es fs : Finset ℕ)
+  (u w : ℕ → ℚ) (rs ts : Finset ℤ) (v z : ℤ → ℚ)
+  (h :
+    LeanPaper.Section2TauRepresentation.finiteSpanRatFunc es u rs v =
+      LeanPaper.Section2TauRepresentation.finiteSpanRatFunc fs w ts z) :
+  LeanPaper.PullbackReflection.reflectedMoment k es u rs v = LeanPaper.PullbackReflection.reflectedMoment k fs w ts z
+LeanPaper.Section2TauRepresentation.differenceCorrection (k : ℕ) (es : Finset ℕ) (u : ℕ → ℚ) (rs : Finset ℤ)
+  (v : ℤ → ℚ) : Polynomial ℚ
+LeanPaper.Section2TauRepresentation.differenceCorrection_eq_moment (k : ℕ) (es : Finset ℕ) (u : ℕ → ℚ) (rs : Finset ℤ)
+  (v : ℤ → ℚ) :
+  LeanPaper.Section2TauRepresentation.differenceCorrection k es u rs v =
+    LeanPaper.Section2RepresentationIndependence.moment (fun p => Polynomial.C (p.coeff (2 * k)))
+      (fun r => Polynomial.C (-(↑r ^ (2 * k + 1))⁻¹)) (LeanPaper.Section2TauRepresentation.finiteForm es u rs v)
+LeanPaper.Section2TauRepresentation.differenceCorrection_representation_independent (k : ℕ) (es fs : Finset ℕ)
+  (u w : ℕ → ℚ) (rs ts : Finset ℤ) (v z : ℤ → ℚ)
+  (h :
+    LeanPaper.Section2TauRepresentation.finiteSpanRatFunc es u rs v =
+      LeanPaper.Section2TauRepresentation.finiteSpanRatFunc fs w ts z) :
+  LeanPaper.Section2TauRepresentation.differenceCorrection k es u rs v =
+    LeanPaper.Section2TauRepresentation.differenceCorrection k fs w ts z
+LeanPaper.Section2TauRepresentation.translatedMoment_representation_independent (k : ℕ) (hk : 1 ≤ k) (es fs : Finset ℕ)
+  (u w : ℕ → ℚ) (rs ts : Finset ℤ) (v z : ℤ → ℚ) (hr : ∀ r ∈ rs, r ≠ 0 ∧ r ≠ 1) (ht : ∀ r ∈ ts, r ≠ 0 ∧ r ≠ 1)
+  (h :
+    LeanPaper.Section2TauRepresentation.finiteSpanRatFunc es u rs v =
+      LeanPaper.Section2TauRepresentation.finiteSpanRatFunc fs w ts z) :
+  LeanPaper.Section2FiniteDifference.translatedMoment k es u rs v =
+    LeanPaper.Section2FiniteDifference.translatedMoment k fs w ts z
+LeanPaper.ReciprocalAllOrders.actual_inverseGapSum_rational (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (n : ℕ) (q : ℚ)
+  (hq : ManuscriptChain.Real.evalQ (ManuscriptChain.Real.delta p) ↑q ≠ 0) :
+  LeanPaper.ReciprocalAllOrders.inverseGapSum (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) (n + 1) ↑q =
+    ↑(LeanPaper.ReciprocalAllOrders.rationalMoment (ManuscriptChain.Real.delta p) n q)
+LeanPaper.ReciprocalAllOrders.actual_iterated_log (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (n : ℕ) (x : ℝ)
+  (hx : ManuscriptChain.Real.evalQ (ManuscriptChain.Real.delta p) x ≠ 0) :
+  iteratedDeriv (n + 1) (fun y => Real.log (ManuscriptChain.Real.evalQ (ManuscriptChain.Real.delta p) y)) x =
+    -↑n.factorial *
+      LeanPaper.ReciprocalAllOrders.inverseGapSum (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) (n + 1) x
+LeanPaper.ReciprocalAllOrders.primitive_iterated_log (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (n : ℕ) (x : ℝ)
+  (hx : ManuscriptChain.RealTransfer.evalReal (ManuscriptChain.GeneralIrrationality.primitivePolynomial p) x ≠ 0) :
+  iteratedDeriv (n + 1)
+      (fun y =>
+        Real.log (ManuscriptChain.RealTransfer.evalReal (ManuscriptChain.GeneralIrrationality.primitivePolynomial p) y))
+      x =
+    -↑n.factorial *
+      LeanPaper.ReciprocalAllOrders.inverseGapSum (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) (n + 1) x
+LeanPaper.StrictCenteredLaguerre.dispersion_eq_zero_iff {n : ℕ} (v : Fin n → ℝ) :
+  LeanPaper.StrictCenteredLaguerre.dispersion v = 0 ↔ ∀ (i j : Fin n), v i = v j
+LeanPaper.StrictCenteredLaguerre.actual_laguerre_dispersion (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (x : ℝ)
+  (hx : ManuscriptChain.Real.evalQ (ManuscriptChain.Real.delta p) x ≠ 0) :
+  LeanPaper.NormalizedNewton.laguerre p.h (ManuscriptChain.Real.realPolynomial (ManuscriptChain.Real.delta p)) x =
+    ManuscriptChain.Real.evalQ (ManuscriptChain.Real.delta p) x ^ 2 *
+      LeanPaper.StrictCenteredLaguerre.dispersion fun i =>
+        (x - LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp i)⁻¹
+LeanPaper.StrictCenteredLaguerre.actual_laguerre_strict_of_distinct_roots (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (x : ℝ)
+  (hx : ManuscriptChain.Real.evalQ (ManuscriptChain.Real.delta p) x ≠ 0) (i j : Fin p.h)
+  (hij :
+    LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp i ≠ LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp j) :
+  0 < LeanPaper.NormalizedNewton.laguerre p.h (ManuscriptChain.Real.realPolynomial (ManuscriptChain.Real.delta p)) x
+LeanPaper.ActualStrictCenter.theorem_3_7_strict_center (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (hh : 2 ≤ p.h) :
+  Polynomial.eval (ManuscriptChain.Real.zeta p.weight)
+        (Polynomial.derivative (Polynomial.derivative (LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p))) /
+      Polynomial.eval (ManuscriptChain.Real.zeta p.weight) (LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p) <
+    (1 - 1 / ↑p.h) *
+      (Polynomial.eval (ManuscriptChain.Real.zeta p.weight)
+            (Polynomial.derivative (LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p)) /
+          Polynomial.eval (ManuscriptChain.Real.zeta p.weight)
+            (LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p)) ^
+        2
+LeanPaper.Section4ComplexComparison.polynomial_comparison (P : Polynomial ℂ) (w z : ℂ) (δ : ℝ) (hδ : 0 < δ)
+  (hPw : Polynomial.eval w P ≠ 0) (hsep : ∀ r ∈ P.roots, δ ≤ ‖w - r‖)
+  (hclose : ‖z - w‖ ≤ δ / (8 * (↑P.natDegree + 1))) :
+  Polynomial.eval z P ≠ 0 ∧ ‖Polynomial.eval z P‖ ≤ 2 * ‖Polynomial.eval w P‖
+LeanPaper.Section4ComplexComparison.integer_comparison (P : Polynomial ℤ) (ξ x ρ : ℝ) (K : ℕ)
+  (hvalue : ManuscriptChain.RealTransfer.evalReal P ξ ≠ 0)
+  (hsep : ∀ r ∈ (Polynomial.map (algebraMap ℤ ℂ) P).roots, Real.exp (-ρ * ↑K) ≤ ‖↑ξ - r‖)
+  (hclose : |x - ξ| ≤ ManuscriptChain.Spectral.comparisonRadius P.natDegree (Real.exp (ρ * ↑K))) :
+  ManuscriptChain.RealTransfer.evalReal P x ≠ 0 ∧
+    |ManuscriptChain.RealTransfer.evalReal P x| ≤ 2 * |ManuscriptChain.RealTransfer.evalReal P ξ|
+LeanPaper.Section4AlgebraicBudget.eventually_conjugate_budget (Q : ℕ → Polynomial ℤ) (d : ℕ) (lam ε L c : ℝ)
+  (hlam : 0 ≤ lam) (hL : 0 ≤ L) (hc : 0 < c) (hgap : ↑(d - 1) * L + lam / c < ε)
+  (hdegree : ∀ᶠ (K : ℕ) in Filter.atTop, ↑(Q K).natDegree ≤ lam * ↑K)
+  (hheight : ∀ᶠ (K : ℕ) in Filter.atTop, LeanPaper.Section4Resultant.naiveHeight (Q K) ≤ Real.exp (L * ↑K ^ 2)) :
+  ∀ᶠ (B : ℕ) in Filter.atTop,
+    ∀ m ≤ d,
+      2 * Real.exp (-ε * ↑(LeanPaper.Section4IndexSelection.gridIndex 1 c B) ^ 2) *
+            ((↑(Q (LeanPaper.Section4IndexSelection.gridIndex 1 c B)).natDegree + 1) *
+                LeanPaper.Section4Resultant.naiveHeight (Q (LeanPaper.Section4IndexSelection.gridIndex 1 c B))) ^
+              (m - 1) *
+          (√(↑m + 1) * ↑B) ^ (Q (LeanPaper.Section4IndexSelection.gridIndex 1 c B)).natDegree <
+        1
+LeanPaper.Section4TransferComplete.spectral_transfer_lattice (Q : ℕ → Polynomial ℤ) (d0 : ℕ) (hd0 : 0 < d0)
+  (ξ lam ε ρ μ : ℝ) (hlam : 0 < lam) (hε : 0 < ε) (hρ : 0 < ρ) (hμ : lam * ρ / ε < μ)
+  (hdegree : ∀ᶠ (n : ℕ) in Filter.atTop, ↑(Q (d0 * n)).natDegree ≤ lam * ↑(d0 * n))
+  (hvalues :
+    ∀ᶠ (n : ℕ) in Filter.atTop,
+      ManuscriptChain.RealTransfer.evalReal (Q (d0 * n)) ξ ≠ 0 ∧
+        |ManuscriptChain.RealTransfer.evalReal (Q (d0 * n)) ξ| ≤ Real.exp (-ε * ↑(d0 * n) ^ 2))
+  (hroots :
+    ∀ᶠ (n : ℕ) in Filter.atTop,
+      ∀ r ∈ (Polynomial.map (algebraMap ℤ ℂ) (Q (d0 * n))).roots, Real.exp (-ρ * ↑(d0 * n)) ≤ ‖↑ξ - r‖) :
+  ∃ b₀, ∀ (a : ℤ) (b : ℕ), 0 < b → b₀ ≤ b → ↑b ^ (-μ) < |ξ - ↑a / ↑b|
+LeanPaper.Section4TransferComplete.spectral_transfer_real_exponent (Q : ℕ → Polynomial ℤ) (ξ lam ε ρ μ : ℝ)
+  (hlam : 0 < lam) (hε : 0 < ε) (hρ : 0 < ρ) (hμ : lam * ρ / ε < μ)
+  (hdegree : ∀ᶠ (K : ℕ) in Filter.atTop, ↑(Q K).natDegree ≤ lam * ↑K)
+  (hvalues :
+    ∀ᶠ (K : ℕ) in Filter.atTop,
+      ManuscriptChain.RealTransfer.evalReal (Q K) ξ ≠ 0 ∧
+        |ManuscriptChain.RealTransfer.evalReal (Q K) ξ| ≤ Real.exp (-ε * ↑K ^ 2))
+  (hroots :
+    ∀ᶠ (K : ℕ) in Filter.atTop, ∀ r ∈ (Polynomial.map (algebraMap ℤ ℂ) (Q K)).roots, Real.exp (-ρ * ↑K) ≤ ‖↑ξ - r‖) :
+  ∃ b₀, ∀ (a : ℤ) (b : ℕ), 0 < b → b₀ ≤ b → ↑b ^ (-μ) < |ξ - ↑a / ↑b|
+LeanPaper.SymmetricPoleSpectrum.actual_symmetric_charpoly_eq_pole (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) :
+  (LeanPaper.OperatorNormDisk.whitened (ManuscriptChain.Real.manuscriptPencil p)).charpoly =
+    (PaperAdvances.Theorem3_8_Kernel.poleOperator (PaperAdvances.Theorem3_8_Actual.actualGram p)
+        (PaperAdvances.Theorem3_8_Actual.actualV p) (PaperAdvances.Theorem3_8_Actual.actualGamma p)).charpoly
+LeanPaper.JFractionActualObstruction.printed_fraction_fails_at_center :
+  1 /
+      ManuscriptChain.Real.evalQ (ManuscriptChain.Real.delta LeanPaper.JFractionActualObstruction.parameters)
+        LeanPaper.JFractionActualObstruction.center ≠
+    1 /
+      (LeanPaper.JFractionActualObstruction.a1 +
+        (LeanPaper.JFractionActualObstruction.center - LeanPaper.JFractionActualObstruction.center))
+LeanPaper.JFractionActualObstruction.corrected_rank_one_fraction (x : ℝ) :
+  1 / ManuscriptChain.Real.evalQ (ManuscriptChain.Real.delta LeanPaper.JFractionActualObstruction.parameters) x =
+    1 / LeanPaper.JFractionActualObstruction.base /
+      (1 + (x - LeanPaper.JFractionActualObstruction.center) * LeanPaper.JFractionActualObstruction.a1)
+LeanPaper.Section4AlgebraicLimsup.algebraic_transfer_limsup (Q : ℕ → Polynomial ℤ) (d : ℕ) (hd : 1 ≤ d)
+  (ξ lam ε ρ Λ μ : ℝ) (hlam : 0 < lam) (hρ : 0 < ρ) (hgap : ↑(d - 1) * Λ < ε)
+  (hμ : lam * ρ * ↑d / (ε - ↑(d - 1) * Λ) < μ) (hdegree : ∀ᶠ (K : ℕ) in Filter.atTop, ↑(Q K).natDegree ≤ lam * ↑K)
+  (hvalues :
+    ∀ᶠ (K : ℕ) in Filter.atTop,
+      0 < ‖Polynomial.eval (↑ξ) (LeanPaper.Section4Resultant.complexPolynomial (Q K))‖ ∧
+        ‖Polynomial.eval (↑ξ) (LeanPaper.Section4Resultant.complexPolynomial (Q K))‖ ≤ Real.exp (-ε * ↑K ^ 2))
+  (hroots :
+    ∀ᶠ (K : ℕ) in Filter.atTop,
+      ∀ r ∈ (LeanPaper.Section4Resultant.complexPolynomial (Q K)).roots, Real.exp (-ρ * ↑K) ≤ ‖↑ξ - r‖)
+  (hheight :
+    Filter.limsup (fun K => ↑(Real.log (LeanPaper.Section4Resultant.naiveHeight (Q K)) / ↑K ^ 2)) Filter.atTop ≤ ↑Λ) :
+  ∃ B₀,
+    ∀ (f : Polynomial ℤ),
+      Irreducible (LeanPaper.Section4Resultant.rationalPolynomial f) →
+        f.natDegree ≤ d →
+          ↑B₀ ≤ LeanPaper.Section4Resultant.naiveHeight f →
+            ∀ (α : ℂ),
+              Polynomial.eval α (LeanPaper.Section4Resultant.complexPolynomial f) = 0 →
+                LeanPaper.Section4Resultant.naiveHeight f ^ (-μ) < ‖↑ξ - α‖
+LeanPaper.ActualStrictNewton.actual_coefficient_strict_criterion (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (hh : 2 ≤ p.h) (k : ℕ) (hk : k + 2 ≤ p.h) :
+  (LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p).coeff k / ↑(p.h.choose k) *
+        ((LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p).coeff (k + 2) / ↑(p.h.choose (k + 2))) <
+      ((LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p).coeff (k + 1) / ↑(p.h.choose (k + 1))) ^ 2 ↔
+    (LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p).coeff (k + 1) ≠ 0 ∨
+      (LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p).coeff k ≠ 0 ∧
+        (LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p).coeff (k + 2) ≠ 0
+LeanPaper.ActualStrictNewton.actual_centered_newton_strict (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (hh : 2 ≤ p.h) (k : ℕ) (hk : k + 2 ≤ p.h) :
+  ((Polynomial.taylor (ManuscriptChain.Real.zeta p.weight))
+                (LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p)).coeff
+            k /
+          Polynomial.eval (ManuscriptChain.Real.zeta p.weight)
+            (LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p) /
+        ↑(p.h.choose k) *
+      (((Polynomial.taylor (ManuscriptChain.Real.zeta p.weight))
+                (LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p)).coeff
+            (k + 2) /
+          Polynomial.eval (ManuscriptChain.Real.zeta p.weight)
+            (LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p) /
+        ↑(p.h.choose (k + 2))) <
+    (((Polynomial.taylor (ManuscriptChain.Real.zeta p.weight))
+                (LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p)).coeff
+            (k + 1) /
+          Polynomial.eval (ManuscriptChain.Real.zeta p.weight)
+            (LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p) /
+        ↑(p.h.choose (k + 1))) ^
+      2
+LeanPaper.SlopeIndefinite.derivative_indefinite (p : ManuscriptChain.Real.Parameters) (hm : 1 ≤ p.m) (hh : 2 ≤ p.h) :
+  ¬(ManuscriptChain.Real.derivativeMatrix p).PosSemidef ∧ ¬(-ManuscriptChain.Real.derivativeMatrix p).PosSemidef
+LeanPaper.Section4Resultant.integer_resultant_product (f Q : Polynomial ℤ) :
+  ↑(f.resultant Q f.natDegree Q.natDegree) =
+    ↑f.leadingCoeff ^ Q.natDegree *
+      (Multiset.map (fun x => Polynomial.eval x (LeanPaper.Section4Resultant.complexPolynomial Q))
+          (LeanPaper.Section4Resultant.complexPolynomial f).roots).prod
+LeanPaper.Section4Resultant.irreducible_conjugate_product_one_le (f Q : Polynomial ℤ)
+  (hf : Irreducible (LeanPaper.Section4Resultant.rationalPolynomial f)) (a : ℂ)
+  (hfa : Polynomial.eval a (LeanPaper.Section4Resultant.complexPolynomial f) = 0)
+  (hQa : Polynomial.eval a (LeanPaper.Section4Resultant.complexPolynomial Q) ≠ 0) :
+  1 ≤
+    |↑f.leadingCoeff| ^ Q.natDegree *
+      (Multiset.map (fun z => ‖Polynomial.eval z (LeanPaper.Section4Resultant.complexPolynomial Q)‖)
+          (LeanPaper.Section4Resultant.complexPolynomial f).roots).prod
+LeanPaper.Section4Resultant.integer_mahler_bound (f : Polynomial ℤ) :
+  |↑f.leadingCoeff| * (Multiset.map (fun a => max 1 ‖a‖) (LeanPaper.Section4Resultant.complexPolynomial f).roots).prod ≤
+    √(↑f.natDegree + 1) * LeanPaper.Section4Resultant.naiveHeight f
+LeanPaper.Section4Resultant.primitive_conjugate_product_one_le_in_norm_disk (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (f : Polynomial ℤ)
+  (hf : Irreducible (LeanPaper.Section4Resultant.rationalPolynomial f)) (a : ℂ)
+  (hfa : Polynomial.eval a (LeanPaper.Section4Resultant.complexPolynomial f) = 0)
+  (hclose :
+    ‖a - ↑(ManuscriptChain.Real.zeta p.weight)‖ <
+      1 / ‖LeanPaper.OperatorNormDisk.whitened (ManuscriptChain.Real.manuscriptPencil p)‖) :
+  1 ≤
+    |↑f.leadingCoeff| ^ p.h *
+      (Multiset.map
+          (fun z =>
+            ‖Polynomial.eval z
+                (LeanPaper.Section4Resultant.complexPolynomial
+                  (ManuscriptChain.GeneralIrrationality.primitivePolynomial p))‖)
+          (LeanPaper.Section4Resultant.complexPolynomial f).roots).prod
+LeanPaper.Section4EffectiveBudget.explicit_budgets (n₀ μ : ℕ) (lam ε ρ c σ : ℚ) (hlam : 0 ≤ lam) (hc : 0 < c)
+  (hσ : 0 < σ) (hgap : lam / c < ε) (hr : ρ < σ) (hμ : σ * c ≤ ↑μ) (b d : ℕ)
+  (hb : LeanPaper.Section4EffectiveBudget.denominatorThreshold n₀ lam ε ρ c σ ≤ b)
+  (hd : ↑d ≤ ↑lam * ↑(LeanPaper.Section4IndexSelection.gridIndex 1 (↑c) b)) :
+  1 / ↑b ^ μ ≤
+      ManuscriptChain.Spectral.comparisonRadius d
+        (Real.exp (↑ρ * ↑(LeanPaper.Section4IndexSelection.gridIndex 1 (↑c) b))) ∧
+    2 * ↑b ^ d * Real.exp (-↑ε * ↑(LeanPaper.Section4IndexSelection.gridIndex 1 (↑c) b) ^ 2) < 1
+LeanPaper.Section4EffectiveBudget.effective_spectral_measure (Q : ℕ → Polynomial ℤ) (ξ : ℝ) (n₀ μ : ℕ) (lam ε ρ c σ : ℚ)
+  (hlam : 0 ≤ lam) (hc : 0 < c) (hσ : 0 < σ) (hgap : lam / c < ε) (hr : ρ < σ) (hμ : σ * c ≤ ↑μ)
+  (hdegree : ∀ (K : ℕ), n₀ ≤ K → ↑(Q K).natDegree ≤ ↑lam * ↑K)
+  (hvalues :
+    ∀ (K : ℕ),
+      n₀ ≤ K →
+        ManuscriptChain.RealTransfer.evalReal (Q K) ξ ≠ 0 ∧
+          |ManuscriptChain.RealTransfer.evalReal (Q K) ξ| ≤ Real.exp (-↑ε * ↑K ^ 2))
+  (hroots : ∀ (K : ℕ), n₀ ≤ K → ∀ r ∈ (Polynomial.map (algebraMap ℤ ℂ) (Q K)).roots, Real.exp (-↑ρ * ↑K) ≤ ‖↑ξ - r‖) :
+  ManuscriptChain.RealTransfer.RationalMeasure ξ μ
+    (LeanPaper.Section4EffectiveBudget.denominatorThreshold n₀ lam ε ρ c σ)
+LeanPaper.Section4AlgebraicTransfer.algebraic_transfer_rates (Q : ℕ → Polynomial ℤ) (d : ℕ) (ξ lam ε ρ L μ : ℝ)
+  (hlam : 0 < lam) (hρ : 0 < ρ) (hL : 0 ≤ L) (hgap : ↑(d - 1) * L < ε) (hμ : lam * ρ / (ε - ↑(d - 1) * L) < μ)
+  (hdegree : ∀ᶠ (K : ℕ) in Filter.atTop, ↑(Q K).natDegree ≤ lam * ↑K)
+  (hvalues :
+    ∀ᶠ (K : ℕ) in Filter.atTop,
+      0 < ‖Polynomial.eval (↑ξ) (LeanPaper.Section4Resultant.complexPolynomial (Q K))‖ ∧
+        ‖Polynomial.eval (↑ξ) (LeanPaper.Section4Resultant.complexPolynomial (Q K))‖ ≤ Real.exp (-ε * ↑K ^ 2))
+  (hroots :
+    ∀ᶠ (K : ℕ) in Filter.atTop,
+      ∀ r ∈ (LeanPaper.Section4Resultant.complexPolynomial (Q K)).roots, Real.exp (-ρ * ↑K) ≤ ‖↑ξ - r‖)
+  (hheight : ∀ᶠ (K : ℕ) in Filter.atTop, LeanPaper.Section4Resultant.naiveHeight (Q K) ≤ Real.exp (L * ↑K ^ 2)) :
+  ∃ B₀,
+    ∀ (f : Polynomial ℤ),
+      Irreducible (LeanPaper.Section4Resultant.rationalPolynomial f) →
+        f.natDegree ≤ d →
+          ↑B₀ ≤ LeanPaper.Section4Resultant.naiveHeight f →
+            ∀ (α : ℂ),
+              Polynomial.eval α (LeanPaper.Section4Resultant.complexPolynomial f) = 0 →
+                LeanPaper.Section4Resultant.naiveHeight f ^ (-μ) < ‖↑ξ - α‖
+LeanPaper.DerivativeDistinctRoots.derivative_hasDistinctRoots {P : Polynomial ℝ} (hP : P.Splits) (hd : 3 ≤ P.natDegree)
+  (hdist : LeanPaper.DerivativeDistinctRoots.HasDistinctRoots P) :
+  LeanPaper.DerivativeDistinctRoots.HasDistinctRoots (Polynomial.derivative P)
+LeanPaper.DerivativeDistinctRoots.iterated_derivative_hasDistinctRoots {P : Polynomial ℝ} (hP : P.Splits)
+  (hdist : LeanPaper.DerivativeDistinctRoots.HasDistinctRoots P) (k : ℕ) (hk : k + 2 ≤ P.natDegree) :
+  LeanPaper.DerivativeDistinctRoots.HasDistinctRoots ((⇑Polynomial.derivative)^[k] P)
+LeanPaper.StrictLaguerreGeneral.laguerre_strict_of_distinct_roots {P : Polynomial ℝ} (hP : P.Splits)
+  (hdist : LeanPaper.DerivativeDistinctRoots.HasDistinctRoots P) (x : ℝ) (hx : Polynomial.eval x P ≠ 0) :
+  0 < LeanPaper.NormalizedNewton.laguerre P.natDegree P x
+LeanPaper.Section4ConjugateBounds.algebraic_approximation_barrier (f Q : Polynomial ℤ) (a : ℂ)
+  (hf : Irreducible (LeanPaper.Section4Resultant.rationalPolynomial f))
+  (hfa : Polynomial.eval a (LeanPaper.Section4Resultant.complexPolynomial f) = 0)
+  (hQa : Polynomial.eval a (LeanPaper.Section4Resultant.complexPolynomial Q) ≠ 0) :
+  1 ≤
+    ‖Polynomial.eval a (LeanPaper.Section4Resultant.complexPolynomial Q)‖ *
+        ((↑Q.natDegree + 1) * LeanPaper.Section4Resultant.naiveHeight Q) ^ (f.natDegree - 1) *
+      (√(↑f.natDegree + 1) * LeanPaper.Section4Resultant.naiveHeight f) ^ Q.natDegree
+LeanPaper.Section4ConjugateBounds.polynomial_eval_height_bound (P : Polynomial ℂ) (z : ℂ) :
+  ‖Polynomial.eval z P‖ ≤ (↑P.natDegree + 1) * P.supNorm * max 1 ‖z‖ ^ P.natDegree
+LeanPaper.Section4ConjugateBounds.resultant_upper_bound (f Q : Polynomial ℤ) (a : ℂ)
+  (hfa : a ∈ (LeanPaper.Section4Resultant.complexPolynomial f).roots) :
+  |↑(f.resultant Q f.natDegree Q.natDegree)| ≤
+    ‖Polynomial.eval a (LeanPaper.Section4Resultant.complexPolynomial Q)‖ *
+        ((↑Q.natDegree + 1) * LeanPaper.Section4Resultant.naiveHeight Q) ^ (f.natDegree - 1) *
+      (√(↑f.natDegree + 1) * LeanPaper.Section4Resultant.naiveHeight f) ^ Q.natDegree
+LeanPaper.CorrectedReciprocalCorollary.corrected_corollary_3_6 (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (q : ℚ)
+  (hq : ManuscriptChain.RealTransfer.evalReal (ManuscriptChain.GeneralIrrationality.primitivePolynomial p) ↑q ≠ 0) :
+  (∀ (m : ℕ),
+      ∃ a,
+        LeanPaper.ReciprocalRootMoments.reciprocalEvenMoment (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) (↑q)
+            m =
+          ↑a) ∧
+    (∀ (n : ℕ),
+        LeanPaper.ReciprocalAllOrders.inverseGapSum (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) (n + 1) ↑q =
+          ↑(LeanPaper.ReciprocalAllOrders.rationalMoment
+              (Polynomial.map (Int.castRingHom ℚ) (ManuscriptChain.GeneralIrrationality.primitivePolynomial p)) n q)) ∧
+      (∀ (n : ℕ),
+          iteratedDeriv (n + 1)
+              (fun y =>
+                Real.log
+                  (ManuscriptChain.RealTransfer.evalReal (ManuscriptChain.GeneralIrrationality.primitivePolynomial p)
+                    y))
+              ↑q =
+            -↑n.factorial *
+              LeanPaper.ReciprocalAllOrders.inverseGapSum (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) (n + 1)
+                ↑q) ∧
+        (∀ (i : Fin p.h),
+            0 <
+              LeanPaper.ReciprocalRootMoments.reciprocalAtom (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) (↑q)
+                i) ∧
+          (∀ (n : ℕ),
+              (LeanPaper.ReciprocalRootMoments.reciprocalHankel (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp)
+                    (↑q) n).PosSemidef ∧
+                (Matrix.PosSemidef fun i j =>
+                    LeanPaper.ReciprocalRootMoments.reciprocalEvenMoment
+                      (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) (↑q) (↑i + ↑j + 1)) ∧
+                  (0 <
+                        (LeanPaper.ReciprocalRootMoments.reciprocalHankel
+                            (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) (↑q) n).det ↔
+                      n ≤
+                        (LeanPaper.ReciprocalRootMoments.atomSupport
+                            (LeanPaper.ReciprocalRootMoments.reciprocalAtom
+                              (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) ↑q)).card) ∧
+                    ((LeanPaper.ReciprocalRootMoments.atomSupport
+                            (LeanPaper.ReciprocalRootMoments.reciprocalAtom
+                              (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) ↑q)).card <
+                        n →
+                      (LeanPaper.ReciprocalRootMoments.reciprocalHankel
+                            (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) (↑q) n).det =
+                        0)) ∧
+            ∃ j,
+              0 < |LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp j - ↑q| ∧
+                (∀ (i : Fin p.h),
+                    |LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp j - ↑q| ≤
+                      |LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp i - ↑q|) ∧
+                  (∀ (n : ℕ),
+                      0 < n →
+                        ↑p.h ^ (-1 / (2 * ↑n)) * |LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp j - ↑q| ≤
+                            LeanPaper.ReciprocalRootMoments.reciprocalEvenMoment
+                                (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) (↑q) n ^
+                              (-1 / (2 * ↑n)) ∧
+                          LeanPaper.ReciprocalRootMoments.reciprocalEvenMoment
+                                (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) (↑q) n ^
+                              (-1 / (2 * ↑n)) ≤
+                            |LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp j - ↑q|) ∧
+                    Filter.Tendsto
+                      (fun m =>
+                        LeanPaper.ReciprocalRootMoments.reciprocalEvenMoment
+                            (LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp) (↑q) (m + 1) ^
+                          (-1 / (2 * ↑(m + 1))))
+                      Filter.atTop (nhds |LeanPaper.ReciprocalRootMoments.manuscriptRoots p hp j - ↑q|)
+LeanPaper.PoleWeightSigns.poleWeight_sign (p : ManuscriptChain.Real.Parameters) (hm : 1 ≤ p.m) (a : Fin p.h) :
+  SignType.sign (ManuscriptChain.PoleDiagonalization.poleWeight p a) = (-1) ^ (p.N + ↑a)
+LeanPaper.Section4IndexSelection.exists_indexBudget_of_rates (Q : ℕ → Polynomial ℤ) (n₀ μ d0 : ℕ) (hd0 : 0 < d0)
+  (lam ε ρ c σ : ℝ) (hlam : 0 ≤ lam) (hc : 0 < c) (hσ : 0 < σ) (hdecay : lam / c < ε) (hρσ : ρ < σ) (hμ : σ * c ≤ ↑μ)
+  (hdegree : ∀ᶠ (K : ℕ) in Filter.atTop, ↑(Q K).natDegree ≤ lam * ↑K) :
+  ∃ b₀,
+    ManuscriptChain.RealTransfer.IndexBudget Q
+      (fun K => ManuscriptChain.Spectral.comparisonRadius (Q K).natDegree (Real.exp (ρ * ↑K)))
+      (fun K => Real.exp (-ε * ↑K ^ 2)) n₀ μ b₀
+LeanPaper.Section4IndexSelection.measure_of_rates (Q : ℕ → Polynomial ℤ) (ξ : ℝ) (n₀ μ d0 : ℕ) (hd0 : 0 < d0)
+  (lam ε ρ c σ : ℝ) (hlam : 0 ≤ lam) (hc : 0 < c) (hσ : 0 < σ) (hdecay : lam / c < ε) (hρσ : ρ < σ) (hμ : σ * c ≤ ↑μ)
+  (hdegree : ∀ᶠ (K : ℕ) in Filter.atTop, ↑(Q K).natDegree ≤ lam * ↑K)
+  (hcomparison :
+    ManuscriptChain.RealTransfer.LocalComparison Q ξ
+      (fun K => ManuscriptChain.Spectral.comparisonRadius (Q K).natDegree (Real.exp (ρ * ↑K))) n₀)
+  (hvalues : ManuscriptChain.RealTransfer.Decay Q ξ (fun K => Real.exp (-ε * ↑K ^ 2)) n₀) :
+  ∃ b₀, ManuscriptChain.RealTransfer.RationalMeasure ξ μ b₀
+LeanPaper.SlopeSignature.actual_normalized_signature (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) :
+  sigPos (LeanPaper.OperatorNormDisk.whitened (ManuscriptChain.Real.manuscriptPencil p)).toQuadraticForm' =
+      {a | Even (p.N + ↑a)}.ncard ∧
+    sigNeg (LeanPaper.OperatorNormDisk.whitened (ManuscriptChain.Real.manuscriptPencil p)).toQuadraticForm' =
+      {a | Odd (p.N + ↑a)}.ncard
+LeanPaper.ConsecutiveDerivativeZeros.consecutive_taylor_nonvanishing {P : Polynomial ℝ} (hP : P.Splits) (k : ℕ)
+  (hk : k < P.natDegree) (x : ℝ) (hx : Polynomial.eval x P ≠ 0) :
+  ((Polynomial.taylor x) P).coeff k ≠ 0 ∨ ((Polynomial.taylor x) P).coeff (k + 1) ≠ 0
+LeanPaper.ConsecutiveDerivativeZeros.actual_centered_consecutive_nonvanishing (p : ManuscriptChain.Real.Parameters)
+  (hp : ManuscriptChain.Real.Admissible p) (k : ℕ) (hk : k < p.h) :
+  ((Polynomial.taylor (ManuscriptChain.Real.zeta p.weight))
+            (LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p)).coeff
+        k ≠
+      0 ∨
+    ((Polynomial.taylor (ManuscriptChain.Real.zeta p.weight))
+            (LeanPaper.HigherDerivativeTuran.primitiveRealPolynomial p)).coeff
+        (k + 1) ≠
+      0
+LeanPaper.BetaOneMoments.zeroth_moment : ∫ (u : ℝ) in 0..1, 1 / (1 + u ^ 2) = Real.pi / 4
+LeanPaper.BetaOneMoments.first_moment : ∫ (u : ℝ) in 0..1, u / (1 + u ^ 2) = Real.log 2 / 2
+LeanPaper.BetaOneMoments.eta_at_one_needs_removable_value (zetaAtOne : ℝ) :
+  ∫ (u : ℝ) in 0..1, u / (1 + u ^ 2) ≠ (1 - 2 ^ (1 - 1)) * zetaAtOne / 2
+LeanPaper.DodgsonCondensation.at_minor_root.{u_1} {n : Type u_1} [Fintype n] [DecidableEq n]
+  (A : Matrix n n (Polynomial ℝ)) (U : Matrix n (Fin 2) (Polynomial ℝ)) (D : Matrix (Fin 2) (Fin 2) (Polynomial ℝ))
+  (hA : A.IsSymm) (hD : D.IsSymm) (hne : A.det ≠ 0) (x : ℝ)
+  (hx : Polynomial.eval x (LeanPaper.DodgsonCondensation.border A U U.transpose D 0 0).det = 0) :
+  Polynomial.eval x (Matrix.fromBlocks A U U.transpose D).det * Polynomial.eval x A.det =
+      -Polynomial.eval x (LeanPaper.DodgsonCondensation.border A U U.transpose D 0 1).det ^ 2 ∧
+    Polynomial.eval x (Matrix.fromBlocks A U U.transpose D).det * Polynomial.eval x A.det ≤ 0
+LeanPaper.KreinDimensionObstruction.fixed_K_two_h_two_impossible (q : (Fin 3 → ℝ) → ℝ) :
+  ¬∃ S T, Module.finrank ℝ ↥S = 2 ∧ Module.finrank ℝ ↥T = 2 ∧ (∀ v ∈ S, v ≠ 0 → 0 < q v) ∧ ∀ v ∈ T, v ≠ 0 → q v < 0
+LeanPaper.StrictNormalizedNewton.coefficient_newton_strict_criterion {P : Polynomial ℝ} (hP : P.Splits)
+  (hdist : LeanPaper.DerivativeDistinctRoots.HasDistinctRoots P) (k : ℕ) (hk : k + 2 ≤ P.natDegree) :
+  P.coeff k / ↑(P.natDegree.choose k) * (P.coeff (k + 2) / ↑(P.natDegree.choose (k + 2))) <
+      (P.coeff (k + 1) / ↑(P.natDegree.choose (k + 1))) ^ 2 ↔
+    P.coeff (k + 1) ≠ 0 ∨ P.coeff k ≠ 0 ∧ P.coeff (k + 2) ≠ 0
+LeanPaper.StrictNormalizedNewton.normalized_shifted_newton_strict {P : Polynomial ℝ} (hP : P.Splits)
+  (hdist : LeanPaper.DerivativeDistinctRoots.HasDistinctRoots P) (x : ℝ) (hx : Polynomial.eval x P ≠ 0) (k : ℕ)
+  (hk : k + 2 ≤ P.natDegree) :
+  ((Polynomial.taylor x) P).coeff k / Polynomial.eval x P / ↑(P.natDegree.choose k) *
+      (((Polynomial.taylor x) P).coeff (k + 2) / Polynomial.eval x P / ↑(P.natDegree.choose (k + 2))) <
+    (((Polynomial.taylor x) P).coeff (k + 1) / Polynomial.eval x P / ↑(P.natDegree.choose (k + 1))) ^ 2
+LeanPaper.RationalLogJets.iterated_log_rational (P : Polynomial ℚ) (n : ℕ) (q : ℚ)
+  (hq : ManuscriptChain.Real.evalQ P ↑q ≠ 0) :
+  iteratedDeriv (n + 1) (fun y => Real.log (ManuscriptChain.Real.evalQ P y)) ↑q =
+    ↑(LeanPaper.RationalLogJets.rationalJetValue (LeanPaper.RationalLogJets.logJet P n) q)
+AUDITED_PROJECT_THEOREM_DECLARATIONS=3076
+AUDITED_PROJECT_DECLARATIONS=3809
+AUDITED_DEPENDENCY_DECLARATIONS=86244
+AUDITED_AXIOMS=[Quot.sound, Classical.choice, propext]
+AXIOM_AUDIT_METHOD=INDEPENDENT_VISITED_SET_GRAPH
+AXIOM_AUDIT_ACCEPTED=ALL_PROJECT_DECLARATIONS

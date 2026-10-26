@@ -142,11 +142,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/spectral.md",
@@ -274,11 +274,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/spectral.md",
@@ -366,11 +366,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/spectral.md",
@@ -449,11 +449,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/spectral.md",
@@ -536,11 +536,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/spectral.md"
@@ -617,11 +617,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/spectral.md",
@@ -735,11 +735,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/spectral.md",
@@ -852,11 +852,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/spectral.md",
@@ -937,11 +937,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/spectral.md",
@@ -1083,11 +1083,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/spectral.md",
@@ -1265,11 +1265,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/spectral.md",
@@ -1375,11 +1375,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/spectral.md",
@@ -1447,11 +1447,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/spectral.md"
@@ -1535,11 +1535,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/section4.md",
@@ -1657,11 +1657,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/section4.md",
@@ -1751,11 +1751,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/section4.md"
@@ -1798,11 +1798,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/section4.md"
@@ -1850,11 +1850,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/section4.md"
@@ -1902,11 +1902,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/section4.md"
@@ -1954,11 +1954,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/section4.md"
@@ -2001,11 +2001,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/section4.md"
@@ -2053,11 +2053,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/beukers.md",
@@ -2139,11 +2139,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/section5_build.md",
@@ -2202,11 +2202,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/beukers.md",
@@ -2278,11 +2278,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/beukers.md",
@@ -2330,11 +2330,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/beukers.md"
@@ -2371,11 +2371,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/beukers.md"
@@ -2412,11 +2412,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/section6.md"
@@ -2468,11 +2468,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/section6.md",
@@ -2508,13 +2508,13 @@
       "title": "q-adic nonvanishing and positive-cone approximations",
       "status": "Blocked",
       "full_printed_statement_verified": false,
-      "proved_scope": "The dimension and orthogonality conditions admit a concrete h=4 normalized rational basis whose true zeta(7) evaluation has a negative quadratic direction. Exact rational certificate and elementary Euler-eta enclosure were independently reviewed; this counterexample is not yet kernel-formalized.",
-      "remaining_obligations": "The actual h=4,K=28 exact rational certificate in `BEUKERS_POSITIVITY_COUNTEREXAMPLE.md` contradicts the printed positive cone in part (2). Its rational arithmetic and analytic ζ(7) enclosure are external checks, not a Lean kernel theorem. Orthogonality to finitely many negative modes does not control the infinite negative tail. A corrected tail-controlled cone with new parameter estimates is required; part (1) separately requires actual q-adic harmonic/matrix valuations. No cone positivity was assumed.",
-      "exact_hypotheses": "",
+      "proved_scope": "Complete original part (1): the actual q-row basis x^r+x^(r+q), exact four-moment matrix and slope 2I, determinant valuation -7q at zero and all rational a/b with q not dividing b, for every prime q>=5. Exact q=7 nonintegrality certificate corrects the overly strong intermediate unscaled congruence. Part (2) retains its separately checked rational/analytic h=4 counterexample, not a Lean kernel certificate.",
+      "remaining_obligations": "Part (1) is complete. The printed positive cone in part (2) is contradicted by the retained exact h=4,K=28 rational certificate and documented analytic zeta(7) enclosure. Orthogonality to finitely many negative modes does not control the infinite negative tail. Completing a corrected part (2) requires a newly constructed tail-controlled cone, dimension proof and quantitative parameter/decay estimates.",
+      "exact_hypotheses": "Part (1): q prime, q>=5, actual coefficients of x^r+x^(r+q) for r<q in degree window K=2q-1; rational-input extension has a,b integers and q not dividing b. Entrywise remainders, leading coefficient, basis independence and determinant valuation are proved. No positive-cone or determinant premise is supplied.",
       "baseline_endpoints": [],
-      "active_work": "",
+      "active_work": "Only corrected part (2) remains: new tail-controlled cone, dimension and quantitative decay estimates.",
       "printed_correction": "Replace the fixed m0=2h,K=7h finite-negative-mode prescription with a construction controlling the infinite negative tail. See BEUKERS_POSITIVITY_COUNTEREXAMPLE.md and the executable certificate.",
-      "evidence_kind": "no_active_manuscript_proof",
+      "evidence_kind": "complete_original_part_1;external_counterexample_to_part_2",
       "baseline_component_audit": "NO_MAPPED_ACTIVE_ENDPOINT",
       "new_work_verification": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
       "existing_ledger_source_state": "NOT_YET_MAPPED",
@@ -2540,15 +2540,35 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/section6.md",
-      "historical_current_continuation_modules": []
+      "historical_current_continuation_modules": [],
+      "component_status": {
+        "6.3(1)": "complete_original_part_verified",
+        "6.3(2)": "printed_statement_requires_correction"
+      },
+      "autonomous_verified_endpoints": [
+        {
+          "name": "ManuscriptChain.Beukers.PrimeMatrix.theorem_6_3_1",
+          "source": "src/LeanPaper/BeukersPrimeMatrix.lean",
+          "source_sha256": "6998a1cfb07e07d48c785c6173c72437e00a24e89d19ff6faac207390c032432",
+          "verification": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
+          "scope": "original_part_1_and_proof_step_correction_only"
+        },
+        {
+          "name": "ManuscriptChain.Beukers.PrimeMatrix.seven_diagonal_remainder_not_integral",
+          "source": "src/LeanPaper/BeukersPrimeMatrix.lean",
+          "source_sha256": "6998a1cfb07e07d48c785c6173c72437e00a24e89d19ff6faac207390c032432",
+          "verification": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
+          "scope": "original_part_1_and_proof_step_correction_only"
+        }
+      ]
     },
     {
       "ordinal": 31,
@@ -2593,11 +2613,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/section6.md"
@@ -2634,11 +2654,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/section6.md"
@@ -2686,11 +2706,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/section6.md"
@@ -2727,11 +2747,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/section6.md"
@@ -2768,11 +2788,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/section6.md"
@@ -2820,11 +2840,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/section6.md"
@@ -2867,11 +2887,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/section6.md"
@@ -2908,11 +2928,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/section6.md"
@@ -2949,11 +2969,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/section6.md"
@@ -3012,11 +3032,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/section6.md",
@@ -3071,11 +3091,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/section6.md"
@@ -3148,11 +3168,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/section6.md",
@@ -3221,11 +3241,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/section6.md"
@@ -3277,11 +3297,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/section6.md",
@@ -3344,11 +3364,11 @@
       },
       "github_verification": {
         "target": "GITHUB_CI",
-        "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-        "run_id": 40327942655,
-        "receipt": "validation/github/20261026/acceptance.json",
+        "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+        "run_id": 40339809027,
+        "receipt": "validation/github/20261026-prime/acceptance.json",
         "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-        "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+        "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
         "native_windows_status": "NOT_RUN"
       },
       "autonomous_review": "docs/repair_reviews/section6.md",
@@ -3674,14 +3694,14 @@
       }
     ]
   },
-  "latest_completed_global_receipt": "validation/github/20261026/acceptance.json",
-  "latest_completed_global_receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+  "latest_completed_global_receipt": "validation/github/20261026-prime/acceptance.json",
+  "latest_completed_global_receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
   "current_validation": {
-    "version": "github_ci_20261026",
+    "version": "github_ci_20261026_prime",
     "platform": "GITHUB_CI",
-    "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-    "run_id": 40327942655,
-    "compiled_modules": 260,
+    "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+    "run_id": 40339809027,
+    "compiled_modules": 263,
     "compiler": "Lean (version 4.33.0, x86_64-unknown-linux-gnu, commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)",
     "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d",
     "axiom_method": "INDEPENDENT_VISITED_SET_GRAPH",
@@ -3690,26 +3710,26 @@
       "Quot.sound",
       "Classical.choice"
     ],
-    "audit_log_sha256": "ee3e94a250f2086542074e6b8e21a9031b6ab2c6a19219e524b5ee464da858d3",
-    "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
-    "source_inventory": "validation/github/20261026/declarations.json",
+    "audit_log_sha256": "b81ae5280228df516388084d57a774c5297a1a52c698e5bc393ddacb304c997c",
+    "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
+    "source_inventory": "validation/github/20261026-prime/declarations.json",
     "native_windows_status": "NOT_RUN",
     "full_manuscript_equivalence": "NOT_CERTIFIED",
-    "AUDITED_PROJECT_THEOREM_DECLARATIONS": 3076,
-    "AUDITED_PROJECT_DECLARATIONS": 3809,
-    "AUDITED_DEPENDENCY_DECLARATIONS": 86244,
+    "AUDITED_PROJECT_THEOREM_DECLARATIONS": 3162,
+    "AUDITED_PROJECT_DECLARATIONS": 3901,
+    "AUDITED_DEPENDENCY_DECLARATIONS": 86382,
     "theorem_count_scope": "KERNEL_THEOREM_DECLARATIONS_INCLUDING_GENERATED_AND_PRIVATE;NOT_COMPLETE_PAPER_THEOREMS"
   },
   "global_validation_status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-  "current_receipt": "validation/github/20261026/acceptance.json",
+  "current_receipt": "validation/github/20261026-prime/acceptance.json",
   "current_receipt_status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-  "current_receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+  "current_receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
   "current_continuation_state": {
     "mission_complete": false,
     "only_fatal_blockers_remain": false,
     "ordinary_unfinished_results_remain": true,
     "work_status": "VERIFIED_GITHUB_REPAIR_CHECKPOINT_WITH_DOCUMENTED_REMAINDERS",
-    "global_modules": 260,
+    "global_modules": 263,
     "fatal_label_policy": "False literal clauses have specific evidence; ordinary open proof obligations are not relabeled fatal.",
     "new_complete_items": [
       "3.8",
@@ -3722,11 +3742,11 @@
     "candidate_files_excluded_from_this_checkpoint": [],
     "verification": {
       "target": "GITHUB_CI",
-      "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-      "run_id": 40327942655,
-      "receipt": "validation/github/20261026/acceptance.json",
+      "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+      "run_id": 40339809027,
+      "receipt": "validation/github/20261026-prime/acceptance.json",
       "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-      "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+      "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
       "native_windows_status": "NOT_RUN"
     }
   },
@@ -4575,11 +4595,11 @@
   },
   "current_github_verification": {
     "target": "GITHUB_CI",
-    "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-    "run_id": 40327942655,
-    "receipt": "validation/github/20261026/acceptance.json",
+    "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+    "run_id": 40339809027,
+    "receipt": "validation/github/20261026-prime/acceptance.json",
     "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-    "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+    "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
     "native_windows_status": "NOT_RUN"
   },
   "alternative_endpoint_evidence": [
@@ -4592,11 +4612,11 @@
       ],
       "review": "docs/repair_reviews/semantic_41_48_alternatives.md",
       "target": "GITHUB_CI",
-      "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-      "run_id": 40327942655,
-      "receipt": "validation/github/20261026/acceptance.json",
+      "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+      "run_id": 40339809027,
+      "receipt": "validation/github/20261026-prime/acceptance.json",
       "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-      "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+      "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
       "native_windows_status": "NOT_RUN"
     },
     {
@@ -4604,11 +4624,11 @@
       "scope": "Correctly normalized all-real-s continuous pencil and odd-weight coincidence.",
       "source": "src/LeanPaper/ContinuousGram.lean",
       "target": "GITHUB_CI",
-      "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-      "run_id": 40327942655,
-      "receipt": "validation/github/20261026/acceptance.json",
+      "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+      "run_id": 40339809027,
+      "receipt": "validation/github/20261026-prime/acceptance.json",
       "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-      "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+      "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
       "native_windows_status": "NOT_RUN"
     },
     {
@@ -4617,11 +4637,11 @@
       "source": "src/LeanPaper/Section3RestrictedSpectral.lean",
       "endpoint": "LeanPaper.Section3RestrictedSpectral.theorem_3_3_alt",
       "target": "GITHUB_CI",
-      "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-      "run_id": 40327942655,
-      "receipt": "validation/github/20261026/acceptance.json",
+      "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+      "run_id": 40339809027,
+      "receipt": "validation/github/20261026-prime/acceptance.json",
       "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-      "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+      "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
       "native_windows_status": "NOT_RUN"
     },
     {
@@ -4629,11 +4649,11 @@
       "scope": "Complete corrected finite-support reciprocal corollary.",
       "source": "src/LeanPaper/CorrectedReciprocalCorollary.lean",
       "target": "GITHUB_CI",
-      "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-      "run_id": 40327942655,
-      "receipt": "validation/github/20261026/acceptance.json",
+      "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+      "run_id": 40339809027,
+      "receipt": "validation/github/20261026-prime/acceptance.json",
       "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-      "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+      "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
       "native_windows_status": "NOT_RUN"
     },
     {
@@ -4645,11 +4665,11 @@
         "LeanPaper.ActualStrictNewton.actual_coefficient_strict_criterion"
       ],
       "target": "GITHUB_CI",
-      "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
-      "run_id": 40327942655,
-      "receipt": "validation/github/20261026/acceptance.json",
+      "commit": "cdcb1935aa73a7c7e65006c1c198d114e9dcc6db",
+      "run_id": 40339809027,
+      "receipt": "validation/github/20261026-prime/acceptance.json",
       "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
-      "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+      "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
       "native_windows_status": "NOT_RUN"
     }
   ],
@@ -6468,11 +6488,43 @@
       "axiom_audit_status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED"
     },
     {
-      "module": "LeanPaper.KernelAudit",
-      "source": "src/LeanPaper/KernelAudit.lean",
-      "source_sha256": "2a7bdbb6b3ea839016929266402bfce0bbb36d98171a473c4ed978f1b0326a96",
+      "module": "LeanPaper.PadicDominantDeterminant",
+      "source": "src/LeanPaper/PadicDominantDeterminant.lean",
+      "source_sha256": "3e480960542fcdac3e666483f9d503a5dad37d3b22f658c45c5fa404149eb464",
       "compiler_status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
       "axiom_audit_status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED"
+    },
+    {
+      "module": "LeanPaper.BeukersHarmonicRemainders",
+      "source": "src/LeanPaper/BeukersHarmonicRemainders.lean",
+      "source_sha256": "eddb8b0b0cbe103b812ba3c1f61ee6544314b13adff6e6741ca44574699773d5",
+      "compiler_status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
+      "axiom_audit_status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED"
+    },
+    {
+      "module": "LeanPaper.BeukersPrimeMatrix",
+      "source": "src/LeanPaper/BeukersPrimeMatrix.lean",
+      "source_sha256": "6998a1cfb07e07d48c785c6173c72437e00a24e89d19ff6faac207390c032432",
+      "compiler_status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
+      "axiom_audit_status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED"
+    },
+    {
+      "module": "LeanPaper.KernelAudit",
+      "source": "src/LeanPaper/KernelAudit.lean",
+      "source_sha256": "110758af1d62727c1c4822f1c6e26ed8c90b0c29c9fa9f2f86c86191f8469306",
+      "compiler_status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
+      "axiom_audit_status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED"
+    }
+  ],
+  "github_verification_history": [
+    {
+      "target": "GITHUB_CI",
+      "commit": "7250b47ba4d20ba934e890966a9b77a559689cfd",
+      "run_id": 40327942655,
+      "receipt": "validation/github/20261026/acceptance.json",
+      "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
+      "receipt_sha256": "c5e8b758cdf5bc938b2be9f8914e5a46d0ab90cb9e105cdffb82783145ddb301",
+      "native_windows_status": "NOT_RUN"
     }
   ]
 }

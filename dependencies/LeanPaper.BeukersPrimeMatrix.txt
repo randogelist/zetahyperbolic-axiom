@@ -1,0 +1,3 @@
+LeanPaper.BeukersHarmonicRemainders
+LeanPaper.PadicDominantDeterminant
+LeanPaper.ImportedSection56.DualAffineAlgebra

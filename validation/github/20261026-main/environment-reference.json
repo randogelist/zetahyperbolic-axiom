@@ -1,0 +1,75 @@
+{
+  "commit": "64f78a8fd3b929fcc6d6052df1890ac30cc42f58",
+  "compiler_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+  "configuration": {
+    "lake-manifest.json": "74a8c4bf242ad437371412618c1ee6bba4fe1b907d13996dd9a187bb0775f628",
+    "lakefile.toml": "ae35eac1b63cab614b1b180aec9a7f4e9baf79239fbaeb2d2ab57f163f9bee7e",
+    "lean-toolchain": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b",
+    "modules.txt": "a1f6d1b37392fcd69e7cd3e99915e2648b49ee4d7464dee9cd141530587906b4"
+  },
+  "flags": [
+    "-j",
+    "2"
+  ],
+  "lean_path": "/home/runner/work/zetahyperbolic-axiom/zetahyperbolic-axiom/.build/ci-lean/objects:/home/runner/work/zetahyperbolic-axiom/zetahyperbolic-axiom/.lake/packages/Cli/.lake/build/lib/lean:/home/runner/work/zetahyperbolic-axiom/zetahyperbolic-axiom/.lake/packages/batteries/.lake/build/lib/lean:/home/runner/work/zetahyperbolic-axiom/zetahyperbolic-axiom/.lake/packages/Qq/.lake/build/lib/lean:/home/runner/work/zetahyperbolic-axiom/zetahyperbolic-axiom/.lake/packages/aesop/.lake/build/lib/lean:/home/runner/work/zetahyperbolic-axiom/zetahyperbolic-axiom/.lake/packages/proofwidgets/.lake/build/lib/lean:/home/runner/work/zetahyperbolic-axiom/zetahyperbolic-axiom/.lake/packages/importGraph/.lake/build/lib/lean:/home/runner/work/zetahyperbolic-axiom/zetahyperbolic-axiom/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/home/runner/work/zetahyperbolic-axiom/zetahyperbolic-axiom/.lake/packages/plausible/.lake/build/lib/lean:/home/runner/work/zetahyperbolic-axiom/zetahyperbolic-axiom/.lake/packages/mathlib/.lake/build/lib/lean:/home/runner/.elan/toolchains/leanprover--lean4---v4.33.0/lib/lean",
+  "lean_version": "Lean (version 4.33.0, x86_64-unknown-linux-gnu, commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)",
+  "machine": "x86_64",
+  "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d",
+  "proof_context_sha256": "8168adeb8248dcf364aeab07bf764b83e79487008a3831c4ddfac472e080c22f",
+  "run_attempt": "1",
+  "run_id": "40331767740",
+  "runner_image": "20261023.334.3",
+  "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "runner_sha256": "c424d9e8436a79dfd42003803013a75953e7a1157cdb4973882bef41b128a119",
+  "target": "GITHUB_CI",
+  "proof_context_without_binary_tree": {
+    "audit_policy_sha256": "499beefcf84fef99933e2f27e011465a07a2379496ab82fbec5975712cb36a12",
+    "auditor_sha256": "c0ed90bb9b9e347ede612ee1e5f1dda15028bf1eb54e2c1cf1334ed2c93a58a8",
+    "compiler_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+    "configuration": {
+      "defaultTargets": [
+        "LeanedPaper"
+      ],
+      "lean_lib": [
+        {
+          "moreLeanArgs": [
+            "-j",
+            "2"
+          ],
+          "name": "LeanedPaper",
+          "srcDir": "src"
+        }
+      ],
+      "name": "leaned_paper",
+      "require": [
+        {
+          "git": "https://github.com/leanprover-community/mathlib4",
+          "name": "mathlib",
+          "rev": "db584cd6d46c92f209a44c0f1c829460d327499d",
+          "scope": "leanprover-community"
+        }
+      ]
+    },
+    "flags": [
+      "-j",
+      "2"
+    ],
+    "lean_path": "/home/runner/work/zetahyperbolic-axiom/zetahyperbolic-axiom/.build/ci-lean/objects:/home/runner/work/zetahyperbolic-axiom/zetahyperbolic-axiom/.lake/packages/Cli/.lake/build/lib/lean:/home/runner/work/zetahyperbolic-axiom/zetahyperbolic-axiom/.lake/packages/batteries/.lake/build/lib/lean:/home/runner/work/zetahyperbolic-axiom/zetahyperbolic-axiom/.lake/packages/Qq/.lake/build/lib/lean:/home/runner/work/zetahyperbolic-axiom/zetahyperbolic-axiom/.lake/packages/aesop/.lake/build/lib/lean:/home/runner/work/zetahyperbolic-axiom/zetahyperbolic-axiom/.lake/packages/proofwidgets/.lake/build/lib/lean:/home/runner/work/zetahyperbolic-axiom/zetahyperbolic-axiom/.lake/packages/importGraph/.lake/build/lib/lean:/home/runner/work/zetahyperbolic-axiom/zetahyperbolic-axiom/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/home/runner/work/zetahyperbolic-axiom/zetahyperbolic-axiom/.lake/packages/plausible/.lake/build/lib/lean:/home/runner/work/zetahyperbolic-axiom/zetahyperbolic-axiom/.lake/packages/mathlib/.lake/build/lib/lean:/home/runner/.elan/toolchains/leanprover--lean4---v4.33.0/lib/lean",
+    "lean_version": "Lean (version 4.33.0, x86_64-unknown-linux-gnu, commit d8b18978322de05a8f3dba51ef03cf5461676c17, Release)",
+    "machine": "x86_64",
+    "manifest_sha256": "74a8c4bf242ad437371412618c1ee6bba4fe1b907d13996dd9a187bb0775f628",
+    "mathlib_commit": "db584cd6d46c92f209a44c0f1c829460d327499d",
+    "negative_fixtures": {
+      "AuditFixtures.lean": "16cb6c20e7d763f93c65f7be40aad3dc866dff6ab585e77ccdf28ac856b6eacd",
+      "AuditRegression.lean": "f3e9cf53f245ab2ba88bf02686afb636b288e8fefadd6c1e364484dffa281b7b"
+    },
+    "runner_image": "20261023.334.3",
+    "runner_os": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+    "runner_sha256": "c424d9e8436a79dfd42003803013a75953e7a1157cdb4973882bef41b128a119",
+    "target": "GITHUB_CI",
+    "toolchain_sha256": "302cd63c54178885b89e669f33b38f12f4dd7ae7e5cac537b3203e3768d8fb2b"
+  },
+  "binary_tree_canonical_sha256": "b8e2e167cc0023e834fe44a5b7fb08a2ed245af34138f5c74e6ec470a51071e7",
+  "full_environment_sha256": "2d390146e78db71f3146a9f9cbfafdfbddd2606c7346ba180f34a9ffa32047d9",
+  "record_kind": "Compact reference to the full CI environment manifest in the hash-identified artifact; not a byte-for-byte replacement for that manifest."
+}

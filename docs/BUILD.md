@@ -94,3 +94,5 @@ Linux Lake or local-runner pass does not certify Windows execution. Cache
 directories `.lake/` and `.build/` are generated artifacts and must be excluded
 from source packages. None of these build routes closes the mathematical
 obligations listed in the manuscript ledger.
+
+The GitHub preflight also checks that every `dependencies/<module>.txt` exists and lists exactly the source's direct project imports, without duplicates. This catches omissions before the native CMD runner's strict import-plan gate; it is a static consistency check, not a native Windows execution receipt.
