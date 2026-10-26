@@ -1,5 +1,5 @@
-/-! Source: ODD_ZETA_3X3_MERGED_v0_3_0/Zeta5/HermiteBasisCore.lean. Comments removed; theorem statements and proof terms unchanged. -/
 import Mathlib
+/-! Source: ODD_ZETA_3X3_MERGED_v0_3_0/Zeta5/HermiteBasisCore.lean. Comments removed; theorem statements and proof terms unchanged. -/
 
 namespace Zeta5
 
