@@ -180,6 +180,7 @@ import LeanPaper.CentralFactorialDecay
 import LeanPaper.ContinuousDensityNormalization
 import LeanPaper.ContinuousWeightMoments
 import LeanPaper.ContinuousGram
+import LeanPaper.ShiftedSolidMinors
 import LeanPaper.RationalLogJets
 import LeanPaper.ReciprocalAllOrders
 import LeanPaper.CorrectedReciprocalCorollary
@@ -817,6 +818,7 @@ run_cmd Elab.Command.liftCoreM do
     `LeanPaper.ContinuousDensityNormalization,
     `LeanPaper.ContinuousWeightMoments,
     `LeanPaper.ContinuousGram,
+    `LeanPaper.ShiftedSolidMinors,
     `LeanPaper.RationalLogJets,
     `LeanPaper.ReciprocalAllOrders,
     `LeanPaper.CorrectedReciprocalCorollary,
