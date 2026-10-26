@@ -249,3 +249,73 @@ For **`h=1, K≥1`**, these are explicit rational positive/negative **one-dimens
 **Round 18 verdict:** **7/45 complete printed results remain the only entire-item `!!` claims**. Additional A-Tier subproofs crossed include **actual 5.2 weight-independent monicity, mode polarization under an explicit summability condition, h=1 genuine two-sign ζ(7) witnesses; actual `k=0` β integrals; the exact symmetric 3.8 pole-kernel spectrum and positive shifted-node slopes**. The substantial remaining Beukers infinite-tail, mixed-minor, arithmetic-rate, q-adic and corrected-claim obligations have not vanished.
 
 A new complete-item status requires **fresh exact-proposition equivalence + a passing Lean/axiom audit**, not further reading of unchanged sources.
+
+
+## 21. Round 19 — frozen source and transitive proof receipt reconciliation (26 October 2026)
+
+Rechecked all branches and GitHub Actions. The accepted [`zetahyperbolic-axiom/main@86ca99a`](https://github.com/randogelist/zetahyperbolic-axiom/commit/86ca99a23d65cde4880a9005a49076c43e7bc968) and [`snditeration/main@c521749`](https://github.com/randogelist/snditeration/commit/c521749190cce9981b0f108a8edc8034420f6420) remain unchanged and have passing CI receipts. The 219 active modules were compiled in [Actions 40188664869](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40188664869) using Lean 4.33.0 and pinned Mathlib `db584cd6d46c92f209a44c0f1c829460d327499d`. The full independent axiom gate passed with exactly the allowed foundations. No newly compiled code is claimed in this round.
+
+The ten newly inspected modules listed below were all individually checked against the *exact* [219-line build plan](../modules.txt) and [accepted source hash inventory](../provenance/active_module_hashes.json): `ImportedSection56.DualNullspace`, `ImportedSection56.DualBasisCongruence`, `ImportedSection56.DualStrictDiscriminant`, `ImportedSection56.DualQuadraticRoot`, `ImportedSection3.NormalizedContinuedFraction`, `ImportedSection3.PowerSumExtrema`, `ProofAdvances.Corollary_3_6_ExactFiniteRank`, `ProofAdvances.Corollary_3_6_AllPrincipalMinors`, `Theorem_2_5_Weight_Change`, and `PaperChain.Stage07WeightShiftBridge`. Each module is therefore in the already accepted A-Tier import closure; the *meaning and premises* of its exact theorem still control the marking.
+
+## 22. Round 20 — complete finite dual-Gram nullspace and change-of-basis laws (5.1–5.2)
+
+- [`dualSlopeQuadraticForm_zero_iff`](../src/LeanPaper/ImportedSection56/DualNullspace.lean) proves **the exact nullspace equivalence** for a finite rational coefficient matrix `C`: `vᵀ(CCᵀ)v=0` iff every column sum `Σ_i v_i C_{ir}=0`. [`dualSlopeQuadraticForm_pos_iff_rowsSeparate`](../src/LeanPaper/ImportedSection56/DualNullspace.lean) proves strict positivity on all nonzero coefficient vectors **if and only if** rational row separation. This closes both directions of a genuine finite `5.2(1)` slope criterion, rather than assuming positivity.
+- [`dualCoefficientMatrix_rowChange`](../src/LeanPaper/ImportedSection56/DualBasisCongruence.lean) proves the actual coefficient transform `C↦AC`. [`dualSlopeMatrix_rowChange`](../src/LeanPaper/ImportedSection56/DualBasisCongruence.lean) proves `CCᵀ↦A(CCᵀ)Aᵀ` for *every* rational square `A`. [`dualDelta_top_coeff_rowChange`](../src/LeanPaper/ImportedSection56/DualBasisCongruence.lean) proves top coefficient `c_h↦det(A)^2 c_h`; invertibility plus nonzero top coefficient preserves full degree.
+- These laws improve the earlier proof map for **5.1/5.2** beyond the special monomial basis and its unimodular case. They do **not** establish the original *full polynomial determinant* basis-congruence at every `X` if not stated, nor any integral-defined Beukers identity.
+
+**Crossed:** all-size exact finite Gram nullspace/row separation, slope congruence and top-coefficient transport. **Open:** two-variable analytic measure, summable *actual* infinite Krein modes, arbitrary-dimensional positive/negative cones.
+
+## 23. Round 21 — normalized rank-two/rank-three continued fractions (3.5)
+
+[The corrected normalization source](../src/LeanPaper/ImportedSection3/NormalizedContinuedFraction.lean) contains exact algebraic results at **two and three** successive Schur levels, not merely a scalar counterexample:
+
+- `corollary_3_5_normalized_two_det` proves the determinant of `[[1+ta,tb],[tb,1+tc]]` equals its normalized continuant.
+- `corollary_3_5_two_level_schur_identity` proves `(1+ta)(1+tc−(tb)^2/(1+ta))` equals the normalized determinant **provided `1+ta ≠ 0`**.
+- `normalized_three_continuant_recurrence`, `normalized_three_continuant_eq_det` and `normalized_three_schur_identity` give the exact `3×3` tridiagonal determinant and its nested Schur fraction, with **both relevant intermediate denominators nonzero**.
+
+These are A-Tier *generic finite identities* that discharge the low-rank normalized fraction algebra needed for the **corrected** Corollary 3.5. The paper's literal `a_j+t` / missing determinant-scale formula is **still false**. A general actual-family Lanczos tridiagonalization, cyclicity/no-breakdown theorem, complete `h`-step fraction and spectral-edge estimate remain open.
+
+## 24. Round 22 — exact finite-support Hankel rank/positivity dichotomy (3.6)
+
+Several A-Tier results resolve the sharp, **mathematically valid** replacement of the impossible printed all-orders strict Hankel assertion:
+
+- [`weighted_hankel_posSemidef`](../src/ProofAdvances/Corollary_3_6_WeightedCorrected.lean): every finite order, nonnegative weights, arbitrary real atoms.
+- [`weighted_det_pos_iff_order_le_support`](../src/ProofAdvances/Corollary_3_6_ExactFiniteRank.lean): **if the listed `h` atoms are pairwise distinct and the masses positive**, then **`det H_n > 0 ↔ n≤h`**. For `n>h` the determinant vanishes; these are exact Lean theorems, not numerical examples.
+- [`weighted_all_principal_minors_nonnegative`](../src/ProofAdvances/Corollary_3_6_AllPrincipalMinors.lean): all principal subdeterminants are nonnegative **at any truncation order**, even under repeated selected indices.
+- [`weighted_all_principal_minors_positive`](../src/ProofAdvances/Corollary_3_6_AllPrincipalMinors.lean): injectively chosen principal submatrices are strictly positive for `n≤h` under the **distinct-atom/positive-mass** conditions.
+- [`actual_reciprocal_moment_bounds`](../src/LeanPaper/ImportedSection3/RootMomentBounds.lean) applies finite extremal power-sum bounds to the actual manuscript root vector, with multiplicities allowed.
+
+**Crucial separation:** This is **3.6's finite atomic reciprocal-root moment family**, not **3.3(1)'s continuous positive density and *mixed nonprincipal* Hankel minors**. Roots symmetric around a rational center can have **coincident reciprocal-square atoms**; without proving distinctness, do not assert strict lower-order determinants for every actual shift. The corrected 3.6 proof remains complete at its own scope, but the false printed statement remains blocked.
+
+## 25. Round 23 — all-weight rational pole-reweight laws (4.5, 4.6, Section 2)
+
+For a **fixed** `m,N,K` and increased odd-zeta index `k→k+d`, [`Theorem_2_5_Weight_Change.lean`](../src/Theorem_2_5_Weight_Change.lean) proves
+
+```text
+w_a(k+d) = w_a(k) · a^(2d),
+det M(k+d) = det M(k) · ∏_a a^(2d),
+LC(Δ_{k+d}) = LC(Δ_k) · ∏_a a^(2d),
+∏_a a^(2d) > 0.
+```
+
+The source also proves the **exact positive ratio of slope determinants**, and a cross-multiplication identity for arbitrary weights `k,l`. [`PaperChain.Stage07WeightShiftBridge.stage07_original_derivative_det_reweight`](../src/PaperChain/Stage07WeightShiftBridge.lean) transports this to the **original manuscript parameters**, with [positive weight factor](../src/PaperChain/Stage07WeightShiftBridge.lean) proved.
+
+**Crossed:** rational finite pole-weight reweight, determinant and leading-coefficient transfer, positive factor, for every admissible finite family. **Still open:** the independent analytic positivity of the coupled `bζ(5)+aζ(3)` density, Loewner comparison, prime cancellation, uniform multiplier/height rates. A positive finite **determinant reweighting** is not positivity of an arbitrary coupled affine form.
+
+## 26. Round 24 — two-dimensional strict dual spectrum and finite multiweight Turán (5.2, 6.6)
+
+- [`dualTwoByTwo_discriminant_nonneg`](../src/LeanPaper/ImportedSection56/DualDiscriminant.lean) supplies a **sum-of-squares proof** of a nonnegative real discriminant for symmetric `2×2` pencils with positive-definite direction. [`dualTwoByTwo_det_has_real_zero`](../src/LeanPaper/ImportedSection56/DualQuadraticRoot.lean) constructs a real zero using that discriminant.
+- [`dualTwoByTwo_discriminant_pos_of_nonproportional`](../src/LeanPaper/ImportedSection56/DualStrictDiscriminant.lean) proves **strict** positive discriminant if, in addition, `bu−av≠0`. This is a legitimate sufficient condition for distinct roots of this *two-dimensional matrix*, not a proof of universal simplicity for all actual dual determinants.
+- [`FINITE_MULTIWEIGHT_SPECTRAL_HYPERBOLICITY`](../src/LeanPaper/ImportedMultiweight/FiniteMultiweightCone.lean) proves exact degree, real spectrum and Turán nonnegativity for **finite positive combinations of positive-definite real slope matrices** (with explicit positive weights and equality to the chosen pencil direction).
+- [`FINITE_MULTIWEIGHT_STRICT_TURAN`](../src/LeanPaper/ImportedMultiweight/FiniteMultiweightCone.lean) adds strict Turán away from roots, under `n>0`, for the **same finite model**.
+
+**Crossed:** rank-two real-root/conditional simplicity and all-dimensional finite multiweight hyperbolicity/strict Turán under exact stated assumptions. **Open:** the actual infinite multiweight `ζ/β` density, signed measures, q-adic multiplier and uniform asymptotic claims from Sections 6.6–6.18.
+
+## 27. Round 25 — manuscript-wide scope check and promotion threshold
+
+- Inspected both repositories' **current** head SHAs, recent Actions conclusions, the full accepted module plan, source hash inventory, and the actual signatures and proof bodies above. No new accepted `main` Lean commit was found; the broad `snditeration` continuation remains CI-failing.
+- The newly identified **exact proofs** above are all already present in the previously passing **219-module, axiom-audited main**. These may be crossed from *remaining subproof work*, but their successful compilation is **reused historical evidence**, not a new compilation.
+- No additional literal printed item joins the seven fully proved results: `2.2, 2.3, 2.4, 2.5, 3.1, 4.3, 5.4`. Section 3's total positivity/Carleman, interlacing and full continued fraction, Sections 4's concrete rate/prime bounds, and Sections 5–6's true two-variable measures, infinite Krein cones and valuation estimates **remain mathematically open** (or require a corrected printed specification).
+- A subsequent crossing to **whole-item `!!`** requires a checked original-clause identity, correct data/quantifiers, and a *new successful* compiler/axiom receipt for any newly introduced imports. `!!!` and `!!!!` remain unavailable without the stipulated finite-witness architecture and checker admission.
+
+**25-round status: seven complete numbered manuscript items, substantial additional verified subresults, no unproved quantitative claim promoted.**
