@@ -225,6 +225,9 @@ import LeanPaper.SignatureRestriction
 import LeanPaper.Section3MonicOrthogonal
 import LeanPaper.MatrixCurveJacobi
 import LeanPaper.BeukersMomentSeries
+import LeanPaper.BeukersOffDiagonalActual
+import LeanPaper.BeukersDensityActual
+import LeanPaper.BeukersRationalityActual
 import Lean
 
 /-! Independent transitive axiom audit of every active imported project declaration.
@@ -869,7 +872,10 @@ run_cmd Elab.Command.liftCoreM do
     `LeanPaper.SignatureRestriction,
     `LeanPaper.Section3MonicOrthogonal,
     `LeanPaper.MatrixCurveJacobi,
-    `LeanPaper.BeukersMomentSeries]
+    `LeanPaper.BeukersMomentSeries,
+    `LeanPaper.BeukersOffDiagonalActual,
+    `LeanPaper.BeukersDensityActual,
+    `LeanPaper.BeukersRationalityActual]
   let mut roots : Array Name := #[]
   for (decl, _) in env.constants do
     if let some idx := env.getModuleIdxFor? decl then

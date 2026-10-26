@@ -240,5 +240,8 @@ roots = [
   "LeanPaper.Section3MonicOrthogonal",
   "LeanPaper.MatrixCurveJacobi",
   "LeanPaper.BeukersMomentSeries",
+  "LeanPaper.BeukersOffDiagonalActual",
+  "LeanPaper.BeukersDensityActual",
+  "LeanPaper.BeukersRationalityActual",
   "LeanPaper.KernelAudit",
 ]
