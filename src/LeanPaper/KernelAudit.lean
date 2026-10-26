@@ -85,6 +85,7 @@ import ProofAdvances.Corollary_3_6_ExactFiniteRank
 import ProofAdvances.Corollary_3_6_AllPrincipalMinors
 import LeanPaper.PullbackReflection
 import LeanPaper.SingularSlope
+import LeanPaper.SignatureRestriction
 import LeanPaper.PrincipalMinorRealRoots
 import LeanPaper.ReciprocalRootMoments
 import LeanPaper.SingularPrincipalMinorExample
@@ -726,6 +727,7 @@ run_cmd Elab.Command.liftCoreM do
     `ProofAdvances.Corollary_3_6_AllPrincipalMinors,
     `LeanPaper.PullbackReflection,
     `LeanPaper.SingularSlope,
+    `LeanPaper.SignatureRestriction,
     `LeanPaper.PrincipalMinorRealRoots,
     `LeanPaper.ReciprocalRootMoments,
     `LeanPaper.SingularPrincipalMinorExample,

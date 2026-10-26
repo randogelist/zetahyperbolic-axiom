@@ -100,6 +100,7 @@ roots = [
   "ProofAdvances.Corollary_3_6_AllPrincipalMinors",
   "LeanPaper.PullbackReflection",
   "LeanPaper.SingularSlope",
+  "LeanPaper.SignatureRestriction",
   "LeanPaper.PrincipalMinorRealRoots",
   "LeanPaper.ReciprocalRootMoments",
   "LeanPaper.SingularPrincipalMinorExample",
