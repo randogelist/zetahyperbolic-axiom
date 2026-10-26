@@ -1,6 +1,8 @@
 # Multi-round cross-branch proof audit — 25–26 October 2026
 
-**Audit chronology:** Rounds 1–6 completed on 25 October 2026; additional source/PDF/branch rounds 7–12 completed on 26 October 2026. This review uses the same frozen successful compiler receipts and **does not claim a new Lean build**.\n\n**Scope:** original 52-page Zetahyperbolic manuscript; exact formalized claims in `randogelist/zetahyperbolic-axiom`, compared with `randogelist/snditeration` and archived staging sources. This is a **read-only proof-scope audit** of existing code and available receipts; **no newly compiled theorem** is claimed by the documentation update.
+**Audit chronology:** Rounds 1–6 completed on 25 October 2026; additional source/PDF/branch rounds 7–12 completed on 26 October 2026. This review uses the same frozen successful compiler receipts and **does not claim a new Lean build**.
+
+**Scope:** original 52-page Zetahyperbolic manuscript; exact formalized claims in `randogelist/zetahyperbolic-axiom`, compared with `randogelist/snditeration` and archived staging sources. This is a **read-only proof-scope audit** of existing code and available receipts; **no newly compiled theorem** is claimed by the documentation update.
 
 ## 1. Established tierlist (governing all entries below)
 
