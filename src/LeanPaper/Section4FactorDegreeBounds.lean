@@ -193,6 +193,65 @@ theorem manuscript_divisor_log_degree_upper
     Polynomial.natDegree_map_eq_of_injective hinj _
   simpa only [hnormlc, hdeg] using hdegree
 
+/-- The straddling-root part of 4.7(2) for the actual manuscript polynomial,
+with its exact radius and no asymptotic norm premise. -/
+theorem manuscript_straddling_root_gap
+    (p : Real.Parameters) (hp : Real.Admissible p) (rminus rplus : ℝ)
+    (hm : rminus < Real.zeta p.weight) (hp' : Real.zeta p.weight < rplus)
+    (hrminus : (GeneralIrrationality.primitivePolynomial p).eval₂
+      (algebraMap ℤ ℂ) (rminus : ℂ) = 0)
+    (hrplus : (GeneralIrrationality.primitivePolynomial p).eval₂
+      (algebraMap ℤ ℂ) (rplus : ℂ) = 0) :
+    2 / ‖whitened (Real.manuscriptPencil p)‖ ≤ rplus-rminus := by
+  have hminus := primitive_root_distance p hp (rminus : ℂ) hrminus
+  have hplus := primitive_root_distance p hp (rplus : ℂ) hrplus
+  have hm' : 1 / ‖whitened (Real.manuscriptPencil p)‖ ≤
+      Real.zeta p.weight-rminus := by
+    simpa only [← Complex.ofReal_sub, Complex.norm_real, Real.norm_eq_abs,
+      abs_of_neg (sub_neg.mpr hm), neg_sub] using hminus
+  have hp'' : 1 / ‖whitened (Real.manuscriptPencil p)‖ ≤
+      rplus-Real.zeta p.weight := by
+    simpa only [← Complex.ofReal_sub, Complex.norm_real, Real.norm_eq_abs,
+      abs_of_pos (sub_pos.mpr hp')] using hplus
+  calc
+    2 / ‖whitened (Real.manuscriptPencil p)‖ =
+        1 / ‖whitened (Real.manuscriptPencil p)‖ +
+          1 / ‖whitened (Real.manuscriptPencil p)‖ := by ring
+    _ ≤ (Real.zeta p.weight-rminus)+(rplus-Real.zeta p.weight) :=
+      add_le_add hm' hp''
+    _ = rplus-rminus := by ring
+
+/-- Any separately proved norm upper bound supplies the corresponding
+exponential straddling-root separation, preserving its inequality direction. -/
+theorem manuscript_straddling_root_gap_of_norm_bound
+    (p : Real.Parameters) (hp : Real.Admissible p) (rminus rplus a : ℝ)
+    (hm : rminus < Real.zeta p.weight) (hp' : Real.zeta p.weight < rplus)
+    (hrminus : (GeneralIrrationality.primitivePolynomial p).eval₂
+      (algebraMap ℤ ℂ) (rminus : ℂ) = 0)
+    (hrplus : (GeneralIrrationality.primitivePolynomial p).eval₂
+      (algebraMap ℤ ℂ) (rplus : ℂ) = 0)
+    (hnorm : ‖whitened (Real.manuscriptPencil p)‖ ≤ Real.exp a) :
+    2 * Real.exp (-a) ≤ rplus-rminus := by
+  have hpos : 0 < ‖whitened (Real.manuscriptPencil p)‖ :=
+    one_div_pos.mp (primitive_exact_norm_disk p hp).1
+  have hrecip : Real.exp (-a) ≤ 1 / ‖whitened (Real.manuscriptPencil p)‖ := by
+    rw [Real.exp_neg, ← one_div]
+    exact one_div_le_one_div_of_le hpos hnorm
+  calc
+    2 * Real.exp (-a) ≤ 2 * (1 / ‖whitened (Real.manuscriptPencil p)‖) := by
+      gcongr
+    _ = 2 / ‖whitened (Real.manuscriptPencil p)‖ := by ring
+    _ ≤ rplus-rminus := manuscript_straddling_root_gap p hp rminus rplus
+      hm hp' hrminus hrplus
+
+/-- The upper arithmetic-rate premise quoted before 4.6 does not supply the
+lower rate used in its proof. This is a counterexample to that inference,
+not a counterexample to the manuscript's actual determinant family. -/
+theorem paper_upper_rate_counterexample :
+    ∃ A : ℚ, A ≤ (-232425/100000 : ℚ) ∧
+      A + (2557199/1000000 : ℚ) < (23/100 : ℚ) := by
+  exact ⟨-3, by norm_num, by norm_num⟩
+
 end LeanPaper.Section4FactorDegreeBounds
 
 #print axioms LeanPaper.Section4FactorDegreeBounds.polynomial_log_degree_lower
@@ -200,3 +259,6 @@ end LeanPaper.Section4FactorDegreeBounds
 #print axioms LeanPaper.Section4FactorDegreeBounds.manuscript_divisor_root_separation
 #print axioms LeanPaper.Section4FactorDegreeBounds.manuscript_divisor_log_degree_lower
 #print axioms LeanPaper.Section4FactorDegreeBounds.manuscript_divisor_log_degree_upper
+#print axioms LeanPaper.Section4FactorDegreeBounds.manuscript_straddling_root_gap
+#print axioms LeanPaper.Section4FactorDegreeBounds.manuscript_straddling_root_gap_of_norm_bound
+#print axioms LeanPaper.Section4FactorDegreeBounds.paper_upper_rate_counterexample

@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """Fresh, dependency-aware GitHub CI compilation and transitive axiom audit.
 
-This runner never imports local/Windows proof receipts or reuses project objects
-from another run. Only the pinned external Mathlib cache is used. Its direct
-compiler invocation matches the existing fingerprinted tools/test_local.py,
-but its output directory and evidence target are exclusively GITHUB_CI.
+This runner never imports local/Windows proof receipts. Project reuse requires
+a previous accepted GitHub CI audit and exact input/object/log fingerprints.
+The global audit and its negative regressions always run freshly. Its direct
+compiler invocation matches the existing fingerprinted tools/test_local.py;
+its output directory and evidence target are exclusively GITHUB_CI.
 """
 from __future__ import annotations
 
@@ -19,6 +20,7 @@ import re
 import shutil
 import subprocess
 import time
+import tomllib
 
 PIN = "db584cd6d46c92f209a44c0f1c829460d327499d"
 AUDIT = "LeanPaper.KernelAudit"
@@ -34,6 +36,77 @@ def atomic_json(path: Path, value: object) -> None:
     temporary = path.with_suffix(path.suffix + ".tmp")
     temporary.write_text(json.dumps(value, indent=2, sort_keys=True) + "\n")
     temporary.replace(path)
+
+
+def json_digest(value: object) -> str:
+    return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+
+
+def accepted_cache(cache: Path, proof_context_hash: str):
+    """Accept only a complete, internally consistent prior same-target receipt."""
+    try:
+        summary = json.loads((cache / "summary.json").read_text())
+        evidence = json.loads((cache / "environment.json").read_text())
+        context = evidence["proof_context"]
+        if not (summary["state"] == "PASS" and summary["target"] == "GITHUB_CI"
+                and evidence["target"] == "GITHUB_CI" and context["target"] == "GITHUB_CI"
+                and summary["axiom_audit_accepted"] is True
+                and summary["axiom_regressions"]["status"] == "completed"
+                and summary["environment_sha256"] == digest(cache / "environment.json")
+                and evidence["proof_context_sha256"] == json_digest(context) == proof_context_hash
+                and summary["completed"] == summary["module_count"] == len(summary["modules"])
+                and all(row["status"] == "completed" for row in summary["modules"])):
+            return None
+        modules = {row["module"]: row for row in summary["modules"]}
+        if len(modules) != len(summary["modules"]) or not modules[AUDIT]["audit_accepted"]:
+            return None
+        return {"root": cache, "summary": summary, "modules": modules,
+                "run_id": evidence["run_id"], "commit": evidence["commit"]}
+    except (OSError, KeyError, TypeError, ValueError):
+        return None
+
+
+def reuse_module(cache, module, source_hash, dependencies, objects, log, environment_hash):
+    """Copy verified unchanged outputs into the fresh run; never reuse the audit."""
+    if cache is None or module == AUDIT:
+        return None
+    try:
+        previous = cache["modules"][module]
+        if not (previous["status"] == "completed" and previous["returncode"] == 0
+                and previous["environment_sha256"] == cache["summary"]["environment_sha256"]
+                and previous["source_sha256"] == source_hash
+                and previous["dependencies"] == dependencies and previous["output_hashes"]):
+            return None
+        source_log = cache["root"] / "logs" / (module + ".log")
+        if digest(source_log) != previous["log_sha256"]:
+            return None
+        stem = module.replace(".", "/")
+        if stem + ".olean" not in previous["output_hashes"]:
+            return None
+        for name, expected_hash in previous["output_hashes"].items():
+            relative = Path(name)
+            if (relative.is_absolute() or ".." in relative.parts
+                    or relative.parent != Path(stem).parent
+                    or not relative.name.startswith(Path(stem).name + ".")):
+                return None
+            source = cache["root"] / "objects" / relative
+            if not source.resolve().is_relative_to((cache["root"] / "objects").resolve()):
+                return None
+            if digest(source) != expected_hash:
+                return None
+        for name in previous["output_hashes"]:
+            destination = objects / name
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(cache["root"] / "objects" / name, destination)
+        shutil.copy2(source_log, log)
+        result = dict(previous)
+        result.update(action="REUSED_CI_AUDITED_PASS", seconds=0,
+                      environment_sha256=environment_hash,
+                      reused_from={"commit": cache["commit"], "run_id": cache["run_id"],
+                                   "summary_sha256": digest(cache["root"] / "summary.json")})
+        return result
+    except (OSError, KeyError, TypeError, ValueError):
+        return None
 
 
 def schedule(modules, dependencies, compile_one, on_result, jobs=2):
@@ -82,8 +155,9 @@ def main() -> int:
 
     root = Path(__file__).resolve().parents[1]
     build = root / ".build/ci-lean"
+    cache_path = root / ".build/ci-cache"
     objects, logs, states = [build / name for name in ("objects", "logs", "states")]
-    # No project object from an earlier run is evidence for this run.
+    # Cache objects are copied here only after all reuse checks have passed.
     for path in (objects, logs, states):
         if path.exists():
             shutil.rmtree(path)
@@ -115,6 +189,21 @@ def main() -> int:
     environment["LEAN_PATH"] = os.pathsep.join(map(str, [objects, *external]))
     environment["LEAN_SYSROOT"] = str(prefix)
 
+    config = tomllib.loads((root / "lakefile.toml").read_text())
+    if len(config["lean_lib"]) != 1:
+        raise RuntimeError("Expected one project library")
+    library = config["lean_lib"][0]
+    if (library.get("srcDir") != "src"
+            or set(library) - {"name", "srcDir", "moreLeanArgs", "roots"}):
+        raise RuntimeError("Unsupported library configuration: update the CI runner explicitly")
+    flags = library.get("moreLeanArgs", [])
+    if not isinstance(flags, list) or not all(isinstance(arg, str) for arg in flags):
+        raise RuntimeError("Invalid moreLeanArgs")
+    # Adding a root changes the inventory, not the compiler semantics of old
+    # modules. Sources/imports/objects are checked independently per module.
+    semantic_config = dict(config)
+    semantic_config["lean_lib"] = [{key: value for key, value in library.items() if key != "roots"}]
+
     binary_hashes = {}
     suffixes = (".olean", ".olean.private", ".olean.server", ".ir", ".ir.sig", ".so")
     for tree in [prefix / "lib/lean", *external]:
@@ -128,13 +217,24 @@ def main() -> int:
                 "runner_os": platform.platform(), "machine": platform.machine(),
                 "runner_image": os.environ.get("ImageVersion"),
                 "lean_version": version, "compiler_sha256": digest(lean),
-                "mathlib_commit": actual_pin, "flags": ["-j", "2"],
+                "mathlib_commit": actual_pin, "flags": flags,
                 "lean_path": environment["LEAN_PATH"], "binary_tree": binary_hashes,
                 "runner_sha256": digest(Path(__file__)),
                 "configuration": {name: digest(root / name) for name in
                                   ("lean-toolchain", "lakefile.toml", "lake-manifest.json", "modules.txt")}}
+    proof_context = {key: evidence[key] for key in
+                     ("target", "runner_os", "machine", "runner_image", "lean_version",
+                      "compiler_sha256", "mathlib_commit", "flags", "lean_path",
+                      "binary_tree", "runner_sha256")}
+    proof_context["configuration"] = semantic_config
+    proof_context["toolchain_sha256"] = evidence["configuration"]["lean-toolchain"]
+    proof_context["manifest_sha256"] = evidence["configuration"]["lake-manifest.json"]
+    evidence["proof_context"] = proof_context
+    evidence["proof_context_sha256"] = json_digest(proof_context)
     atomic_json(build / "environment.json", evidence)
     environment_hash = digest(build / "environment.json")
+    cache = accepted_cache(cache_path, evidence["proof_context_sha256"])
+    print("PRIOR_CI_CACHE=" + ("ACCEPTED_FOR_PER_MODULE_CHECKS" if cache else "ABSENT_OR_REJECTED"), flush=True)
     (build / "commit.txt").write_text(commit + "\n")
     (build / "toolchain.txt").write_text(version + "\n")
 
@@ -158,6 +258,7 @@ def main() -> int:
         summary = {"target": "GITHUB_CI", "commit": commit, "state": state,
                    "environment_sha256": environment_hash, "module_count": len(modules),
                    "completed": sum(row["status"] == "completed" for row in observed.values()),
+                   "reused": sum(row.get("action") == "REUSED_CI_AUDITED_PASS" for row in observed.values()),
                    "failed": [m for m, row in observed.items() if row["status"] == "failed"],
                    "skipped_dependency": [m for m, row in observed.items()
                                           if row["status"] == "skipped_dependency"],
@@ -172,8 +273,13 @@ def main() -> int:
         output = objects / (module.replace(".", "/") + ".olean")
         output.parent.mkdir(parents=True, exist_ok=True)
         log = logs / (module + ".log")
+        reused = reuse_module(cache, module, source_hashes[module], dependency_hashes,
+                              objects, log, environment_hash)
+        if reused is not None:
+            atomic_json(states / (module + ".json"), reused)
+            return reused
         start = time.monotonic()
-        command = [str(lean), "-j", "2", "-o", str(output), module.replace(".", "/") + ".lean"]
+        command = [str(lean), *flags, "-o", str(output), module.replace(".", "/") + ".lean"]
         with log.open("w") as stream:
             process = subprocess.run(command, cwd=root / "src", env=environment,
                                      stdout=stream, stderr=subprocess.STDOUT)
@@ -199,7 +305,7 @@ def main() -> int:
         result.setdefault("source_sha256", source_hashes[module])
         observed[module] = result
         save_summary()
-        print(module + ": " + result["status"], flush=True)
+        print(module + ": " + result["status"] + " " + result.get("action", ""), flush=True)
         if result["status"] == "failed":
             log = logs / (module + ".log")
             if log.exists():
@@ -240,6 +346,19 @@ def main() -> int:
                 and observed[AUDIT].get("audit_accepted", False)
                 and regression["status"] == "completed")
     summary = save_summary("PASS" if accepted else "FAIL", regression)
+    if accepted:
+        # Publishable cache content is created only after both fresh audits pass.
+        staging = root / ".build/ci-cache.next"
+        if staging.exists():
+            shutil.rmtree(staging)
+        staging.mkdir()
+        for name in ("objects", "logs", "states"):
+            shutil.copytree(build / name, staging / name)
+        for name in ("summary.json", "environment.json"):
+            shutil.copy2(build / name, staging / name)
+        if cache_path.exists():
+            shutil.rmtree(cache_path)
+        staging.replace(cache_path)
     print(json.dumps({key: value for key, value in summary.items() if key != "modules"}), flush=True)
     return 0 if accepted else 1
 

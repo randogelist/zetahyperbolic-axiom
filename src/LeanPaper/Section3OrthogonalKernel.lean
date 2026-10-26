@@ -99,7 +99,7 @@ theorem orthogonalCoefficients_pairing (hG : G.PosDef) (i j : Fin n) :
   rw [hs, lower_row_pairing]
   by_cases hij : i = j
   · subst j
-    simp only [if_pos rfl, squaredNorm, pow_two]
+    simp [squaredNorm, pow_two]
   · simp [hij]
 
 end LeanPaper.Section3MonicOrthogonal
@@ -170,7 +170,7 @@ theorem actualSquaredNorm_eq_integral (p : Real.Parameters)
     actualSquaredNorm p hp i =
       ∫ t, ((actualMonicPolynomial p hp i).eval t)^2
         ∂ConcreteMoment.momentMeasure p := by
-  simpa only [if_pos rfl, pow_two] using
+  simpa [pow_two] using
     (actualMonicPolynomial_integral_pairing p hp i i).symm
 
 /-- Evaluation at the actual negative-square poles gives the previously constructed
@@ -187,7 +187,7 @@ theorem actualPoleKernel_entry_eq_kernel (p : Real.Parameters)
     Matrix.dot_mulVec_eq_sum_sum,
     PaperAdvances.Theorem3_8_Actual.actualV,
     PaperAdvances.Proposition3_2.vandermonde,
-    PoleDiagonalization.poleVandermonde, Matrix.map_apply, Rat.cast_pow,
+    PoleDiagonalization.poleVandermonde, Matrix.map_apply, Rat.coe_castHom, Rat.cast_pow,
     monomialVector, PaperAdvances.Theorem3_8_Actual.actualGram]
 
 /-- The exact manuscript symmetric spectrum equals the signed orthogonal-polynomial
@@ -195,10 +195,10 @@ pole-kernel spectrum, as entire characteristic polynomials (with multiplicities)
 theorem actual_symmetric_charpoly_eq_orthogonal_kernel
     (p : Real.Parameters) (hp : Real.Admissible p) :
     (OperatorNormDisk.whitened (Real.manuscriptPencil p)).charpoly =
-      (fun a b : Fin p.h => PaperAdvances.Theorem3_8_Actual.actualGamma p a *
+      Matrix.charpoly (fun a b : Fin p.h => PaperAdvances.Theorem3_8_Actual.actualGamma p a *
         kernel (actualGram_posDef p hp)
           (PoleDiagonalization.poleNode p a : ℝ)
-          (PoleDiagonalization.poleNode p b : ℝ)).charpoly := by
+          (PoleDiagonalization.poleNode p b : ℝ)) := by
   rw [SymmetricPoleSpectrum.actual_symmetric_charpoly_eq_pole p hp]
   congr 1
   ext a b

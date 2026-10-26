@@ -34,8 +34,8 @@ theorem density_integrable : Integrable density squareMeasure := by
 theorem density_monomial_integrable (r t : ℕ) :
     Integrable (fun z => z.1 ^ r * z.2 ^ t * density z) squareMeasure := by
   refine density_integrable.mono' ?_ ?_
-  · exact (by fun_prop : Measurable
-      (fun z : ℝ × ℝ => z.1 ^ r * z.2 ^ t * density z)).aestronglyMeasurable
+  · exact (((measurable_fst.pow_const r).mul (measurable_snd.pow_const t)).mul
+      density_measurable).aestronglyMeasurable
   · filter_upwards [ae_restrict_mem (measurableSet_Ioo.prod measurableSet_Ioo)]
       with z hz
     have hd := (density_strictly_positive_on_square z hz).le
@@ -99,6 +99,7 @@ private theorem polynomial_pair_expansion {K : ℕ}
         ((c r : ℝ) * (d t : ℝ)) * (z.1 ^ r.val * z.2 ^ t.val * density z) := by
   unfold coefficientEval
   simp only [Finset.sum_mul, Finset.mul_sum]
+  rw [Finset.sum_comm]
   apply Finset.sum_congr rfl
   intro r hr
   apply Finset.sum_congr rfl

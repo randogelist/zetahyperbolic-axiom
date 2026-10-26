@@ -1,7 +1,10 @@
 """Scheduler regression tests; never invoke Lean, Lake or any compiler."""
 import unittest
+import json
+from pathlib import Path
+import tempfile
 
-from ci_verify import schedule
+from ci_verify import AUDIT, accepted_cache, digest, json_digest, reuse_module, schedule
 
 
 class SchedulingTests(unittest.TestCase):
@@ -44,6 +47,76 @@ class SchedulingTests(unittest.TestCase):
     def test_cycle_is_rejected(self):
         with self.assertRaisesRegex(RuntimeError, "Dependency cycle"):
             schedule(["a", "b"], {"a": ["b"], "b": ["a"]}, None, lambda *_: None)
+
+
+class CacheTests(unittest.TestCase):
+    def setUp(self):
+        self.temporary = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temporary.cleanup)
+        root = Path(self.temporary.name)
+        self.cache, self.objects, self.logs = root / "cache", root / "objects", root / "logs"
+        for path in (self.cache / "objects", self.cache / "logs", self.objects, self.logs):
+            path.mkdir(parents=True)
+        self.context = {"target": "GITHUB_CI", "compiler": "test-compiler-hash"}
+        self.context_hash = json_digest(self.context)
+        self.environment = {"target": "GITHUB_CI", "run_id": "123", "commit": "old-commit",
+                            "proof_context": self.context, "proof_context_sha256": self.context_hash}
+        self.write("environment.json", self.environment)
+        environment_hash = digest(self.cache / "environment.json")
+        (self.cache / "objects/A.olean").write_bytes(b"mock compiler output")
+        (self.cache / "logs/A.log").write_text("mock successful compile\n")
+        self.module = {"module": "A", "status": "completed", "returncode": 0,
+                       "source_sha256": "source-hash", "dependencies": {},
+                       "environment_sha256": environment_hash,
+                       "log_sha256": digest(self.cache / "logs/A.log"),
+                       "output_hashes": {"A.olean": digest(self.cache / "objects/A.olean")}}
+        self.summary = {"target": "GITHUB_CI", "state": "PASS", "module_count": 2, "completed": 2,
+                        "axiom_audit_accepted": True, "axiom_regressions": {"status": "completed"},
+                        "environment_sha256": environment_hash,
+                        "modules": [self.module, {"module": AUDIT, "status": "completed", "audit_accepted": True}]}
+        self.write("summary.json", self.summary)
+
+    def write(self, name, value):
+        (self.cache / name).write_text(json.dumps(value))
+
+    def reuse(self, module="A", source="source-hash", dependencies=None):
+        info = accepted_cache(self.cache, self.context_hash)
+        return reuse_module(info, module, source, dependencies or {},
+                            self.objects, self.logs / (module + ".log"), "current-environment")
+
+    def test_matching_audited_module_is_copied_but_audit_is_never_reused(self):
+        result = self.reuse()
+        self.assertEqual(result["action"], "REUSED_CI_AUDITED_PASS")
+        self.assertEqual((self.objects / "A.olean").read_bytes(), b"mock compiler output")
+        self.assertEqual(result["environment_sha256"], "current-environment")
+        self.assertEqual(result["reused_from"]["run_id"], "123")
+        self.assertIsNone(self.reuse(AUDIT))
+
+    def test_failed_or_other_target_receipt_is_rejected(self):
+        for field, value in (("state", "FAIL"), ("target", "LINUX_LOCAL"),
+                             ("axiom_audit_accepted", False), ("completed", 1)):
+            with self.subTest(field=field):
+                changed = dict(self.summary)
+                changed[field] = value
+                self.write("summary.json", changed)
+                self.assertIsNone(accepted_cache(self.cache, self.context_hash))
+
+    def test_environment_or_source_or_dependency_change_rejects_reuse(self):
+        self.assertIsNone(accepted_cache(self.cache, "different-context"))
+        self.assertIsNone(self.reuse(source="changed-source"))
+        self.assertIsNone(self.reuse(dependencies={"NewImport": {"NewImport.olean": "different"}}))
+
+    def test_corrupt_output_or_log_is_rejected(self):
+        (self.cache / "objects/A.olean").write_bytes(b"corruption")
+        self.assertIsNone(self.reuse())
+        (self.cache / "objects/A.olean").write_bytes(b"mock compiler output")
+        (self.cache / "logs/A.log").write_text("changed log")
+        self.assertIsNone(self.reuse())
+
+    def test_failed_audit_regression_rejects_cache(self):
+        self.summary["axiom_regressions"] = {"status": "failed"}
+        self.write("summary.json", self.summary)
+        self.assertIsNone(accepted_cache(self.cache, self.context_hash))
 
 
 if __name__ == "__main__":

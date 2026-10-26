@@ -38,8 +38,9 @@ theorem real_rows_separate_of_rational_injective {h K : ℕ}
         exact hvc (funext hn)
       have hid : star v ⬝ᵥ ((c * c.transpose).mulVec v) =
           ∑ r : Fin (K+1), (c.vecMul v r)^2 := by
-        simp only [← Matrix.mulVec_mulVec, Matrix.dotProduct_mulVec,
-          Matrix.mulVec_transpose, star_trivial, dotProduct, pow_two]
+        rw [← Matrix.mulVec_mulVec, star_trivial, Matrix.dotProduct_mulVec,
+          Matrix.mulVec_transpose]
+        simp only [dotProduct, pow_two]
       rw [hid]
       exact lt_of_lt_of_le (sq_pos_of_ne_zero hr)
         (Finset.single_le_sum (fun i _ => sq_nonneg (c.vecMul v i))
@@ -58,7 +59,7 @@ theorem real_rows_separate_of_rational_injective {h K : ℕ}
     rw [hGram]
     exact Matrix.posSemidef_self_mul_conjTranspose _
   have hrdet : (coefficientSlope (realCoefficients c)).det ≠ 0 := by
-    rw [hmap, (Rat.castHom ℝ).map_det]
+    rw [hmap, ← (Rat.castHom ℝ).map_det]
     exact_mod_cast hqdet
   have hpd := hps.posDef_iff_det_ne_zero.mpr hrdet
   intro v hv

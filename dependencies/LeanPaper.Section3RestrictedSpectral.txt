@@ -1,0 +1,2 @@
+LeanPaper.SlopeSignature
+LeanPaper.PrincipalMinorRealRoots
