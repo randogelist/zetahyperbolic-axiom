@@ -59,6 +59,21 @@ On each subsequent checkpoint, append a row to §3 and record the exact README/r
 2. **Evidence-index ledger** — number of distinct already-audited source files newly discovered, percentage retained/reused, and new source-file discovery rate. This measures audit saturation only.
 3. **Open-frontier ledger** — exact unproved analytic/arithmetic bridge and its smallest concrete Lean target, or a mathematical counterexample blocking the printed formula. Updating a description is not proof completion.
 
+**Explicit zero-novelty sign (per reinference batch):**
+
+> **⛔ REINFERENCE SATURATED — Δ = 0**
+
+After a defined audit pass over the available branches and accepted Lean sources, print this exact marker **only if all four independently checked deltas are zero**:
+
+- `ΔP=0`: no previously uncredited exact mathematical theorem/subclause that is provably covered by a passing Lean/axiom receipt, whether or not a whole printed theorem closes;
+- `ΔE=0`: no previously uncredited, relevant accepted source or evidence supporting a new material proof distinction;
+- `ΔO=0`: no newly discovered, corrected, or resolved mathematical obligation/counterexample that materially changes the open frontier;
+- `ΔF=0`: no new verified downstream implication, checker, or equivalence that changes the formal proof frontier.
+
+Changes in wording, formatting, descriptions, citations to already-counted proof facts, or repeated import paths do **not** count as new evidence. **An unchanged 7/45 complete-item tally alone is insufficient** to display the signal. Label each decision with the source heads, CI receipts, branch scope and the current checkpoint, and distinguish **NO NEW RESULTS FOUND IN SCANNED SOURCES** from a claim of global mathematical impossibility. When the marker appears, stop repeating the same unchanged-source sweep and redirect to `A_TIER_PLANNING` / `A_TIER_EXECUTION`, or resume upon a changed source/dependency fingerprint or new claim.
+
+**Current sign status at the round-40 checkpoint: NOT TRIGGERED.** The most recent eight-round batch still discovered four previously uncredited accepted Lean source paths. This says nothing by itself about progress on full printed theorems.
+
 **Suggested saturation rule:** Once **two consecutive batches of at least six rounds** reveal *zero newly discharged mathematical proof obligations* and **at most 0.5 newly cited accepted source modules per round**, stop repeating the same frozen-source sweep. The user may choose to continue anyway. The present last pair gives **0.57** then **0.50**, so this specific mechanical trigger has **not quite been met**. Still, low source novelty already makes **A_TIER_PLANNING → A_TIER_EXECUTION** on an actual open endpoint more productive than further rephrasing of the same status inventory.
 
 **Reset/refresh trigger:** The accepted source SHA, compiler/Mathlib dependencies, statement, or independent audit receipt changes, or a newly discovered *specific clause proof* is brought forward. Recompute counts against the changed proof base and distinguish newly **built** proofs from newly **found** old proofs. Do not guess progress between unmeasured checkpoints.
