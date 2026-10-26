@@ -1,0 +1,36 @@
+# YOU_ARE_GOODWORKFLOWFRONTIER — closure-only queue
+
+Checkpoint: **2026-10-26**, GitHub source state verified. Owner role: **INTEGRATION / CLOSURE**, separate from ongoing derivation or theorem-generation work.
+
+## Ownership / noninterference protocol
+
+1. **Read-only inputs:** active mathematical derivation and research branches, including `leaned-paper`, `feat/leaned-paper-source-assembly-v0_1_0`, `continuation-in-progress`, and newly created independent donor branches, unless explicitly handed over for closure. Do not rewrite their theorem statements, parameters, proof terms or mathlib pins.
+2. **Permitted closure:** verify exactly frozen candidate PR sources, manifests, import order and dependency hashes; perform isolated CI/reconciliation on dedicated closure or target-integration branches only; repair *integration defects* without changing research mathematics; merge **one accepted PR at a time**.
+3. **A-Tier admission:** require target-HEAD-matched successful pinned Lean 4.33.0 build; a full, actual `AXIOM_AUDIT_ACCEPTED=ALL_PROJECT_DECLARATIONS` trace with no nonfoundational mathematical axioms or `sorryAx`; exact donor/source fingerprint; correct full manuscript data and precise proposition quantifiers. A historically cached PASS or merely green *independent* branch is insufficient for the combined imported state.
+4. **When mathematics is missing:** record a minimal open lemma/obligation in the handoff. **Do not fix it by assuming it**, weakening it, silently changing quantifiers or replacing the actual zeta/β data with abstract data.
+5. **Freeze existing accepted artifacts:** unchanged audited sources and compatible Mathlib/`.olean` artifacts remain PASS-ONCE; compile new or invalidated modules only where the reproducible build supports such reuse. Never overclaim Lean validation from static reviews.
+6. **No scope expansion:** no new research targets, no new competing proofs, no change to the other assistant's ongoing paper assembly. Closing a conditional helper does not close a printed manuscript item automatically.
+
+## Serialized GitHub queue
+
+| Order | PR | Frozen component | Candidate source / initial HEAD | Verification and acceptance |
+|---|---|---|---|---|
+| 1 | [#2](https://github.com/randogelist/zetahyperbolic-axiom/pull/2) | 6.17 corrected prime-index windows | `Zeta5Merge.Theorem6_17` / `8da5614e6b8994fd163db024c51e3f3512cd1d7f` | **Merged** to `main@cb1abbe85bb277c823f31468142f7fdae8d0e9ba`; 220-module [CI 40260089735](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40260089735) PASS including all-project axiom audit |
+| 2 | [#3](https://github.com/randogelist/zetahyperbolic-axiom/pull/3) | 6.16 compact positive-ratio comparison | `Zeta5Merge.Theorem6_16` / `9814065ae1cba0098f873fea4fc0782dcba23187` | Draft; combined **221-module** [CI 40262637451](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40262637451) in progress. No merge until PASS + actual audit marker; source Git blob `1d435d2f251f7e9852cfd258c321fe5bf8367735` |
+| 3 | [#4](https://github.com/randogelist/zetahyperbolic-axiom/pull/4) | 4.2 exact conditional `d₀` algebraic lattice transfer | `LeanPaper.Section4AlgebraicLattice` / `0ed213307a2e934fae333ed8bc9317594514f18a` | Draft; initial **220-module** [CI 40261750743](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40261750743) in progress; old-base CI **insufficient**. Reconcile after #3; require combined **222-module** successful CI and independent axiom audit |
+| 4 | [#5](https://github.com/randogelist/zetahyperbolic-axiom/pull/5) | 6.10 conditional coefficient-Gram growth | `LeanPaper.CoefficientGramGrowth` / `c5f0d1236780de41ecf368f5dff5a6010b8be9f1` | Draft; initial **220-module** [CI 40262349310](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40262349310) in progress; reconcile after #4 and require combined **223-module** full CI/axiom acceptance |
+| 5 | [#6](https://github.com/randogelist/zetahyperbolic-axiom/pull/6) | 6.9 generic Hermite mod-p unimodularity core | `Zeta5.HermiteBasisCore` / `134e4a82b16d055e3023fcba5177e0c38a9cc09c` | Draft; initial **221-module** [CI 40263720294](https://github.com/randogelist/zetahyperbolic-axiom/actions/runs/40263720294) in progress; reconcile after #5; require **224-module** full combined CI/axiom acceptance |
+
+All five source modules are **subcomponents**. Their current presence never proves the whole printed 4.2/6.9/6.10/6.16/6.17 claims, and never upgrades the 45-item full-manuscript count without a new literal-statement audit.
+
+## Separate protected research work
+
+- [PR #1 — Leaned Paper Section 2 assembly](https://github.com/randogelist/zetahyperbolic-axiom/pull/1), `feat/leaned-paper-source-assembly-v0_1_0`: **research-owned; no closure edits** until explicit handoff. Its namespace/build architecture differs from the 220-module receiving base.
+- `leaned-paper`, `continuation-in-progress`, and independent project donor repositories: **read-only**.
+- The only documentation write in this checkpoint is this closure ledger on `persistent/zetahyperbolic-paper-gap-tracker`; no accepted mathematical source or open PR head modified.
+
+## Handoff outputs per completed closure
+
+For each PR: record immutable tested head, compiler/Mathlib fingerprints, module count, actual axiom-gate log, source SHA, merge commit, exact conditional theorem contribution, unchanged open mathematical obligations, and verified updated `main` contents. On CI failure record the exact failing module and first error, and transfer the mathematical proof obligation to the deriving assistant if not merely a namespace or dependency adjustment. Do **not** merge on a pending or inconclusive gate.
+
+**Status on writing:** #2 merged/audited; #3–#6 pending; **no additional merge claimed**.
