@@ -89,6 +89,10 @@ This is **convergence of the audit's knowledge of the fixed source base, not con
 
 **Zero-novelty sign:** **⛔ REINFERENCE SATURATED — Δ = 0**. Display it only after another scoped re-audit finds **no** new verified subclaim, previously uncredited relevant source evidence, changed open obligation, or verified downstream implication. Merely maintaining the same whole-item count does not trigger the sign. **Round 64 has not met the condition**: newly credited proof components and evidence are nonzero. The [convergence log](docs/AUDIT_CONVERGENCE.md) defines the four required zero deltas and evidence checks.
 
+### Cross-project source intake — not yet merged
+
+[**Collection and merger handoff for open manuscript gaps**](docs/CROSS_PROJECT_MERGE_INTAKE_20261026.md) maps the uploaded odd-zeta, ζ(5), Hermite and GP7/Chebyshev archives plus the `snditeration` continuation branch to exact existing proof obligations. It distinguishes **historically compiled donors**, **candidate modules compiled without final axiom audit**, and **failed or research-only source**. The strongest next integration candidates are **6.16 compact weight comparison**, **6.17 corrected q-harmonic index windows**, **4.2 the manuscript d₀ lattice**, **3.3 mixed minors/Carleman**, and **5.1 the actual Beukers double-integral moment**. None is counted as a new completed paper item before an independently passing receiving-repo Lean build, transitive axiom audit and exact object-identification proof.
+
 ## 6. Persistent update policy
 
 This branch `persistent/zetahyperbolic-paper-gap-tracker` is a **documentation and missing-work branch**, not the active mathematical proof base. After *genuinely new* Lean results, record **paper clause → exact original objects → fully qualified proof → source commit/SHA → Lean/Mathlib fingerprint → passing build + transitive axiom receipt → discharged hypotheses and remaining gaps**. Preserve `LEAN_ANCHORINGS` and `ZETA_HYPERBOLIC_ANCHOR_1` to `ZETA_HYPERBOLIC_ANCHOR_7`; freeze unchanged A-Tier source.
