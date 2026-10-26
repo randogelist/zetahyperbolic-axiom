@@ -218,5 +218,7 @@ LeanPaper.Section4TransferComplete
 LeanPaper.SlopeSignature
 LeanPaper.SymmetricPoleSpectrum
 LeanPaper.UnitLogMoments
+LeanPaper.CoefficientGramGrowth
+Zeta5.HermiteBasisCore
 Zeta5Merge.Theorem6_17
 LeanPaper.KernelAudit
