@@ -261,6 +261,11 @@ import LeanPaper.BeukersOuterValuation
 import LeanPaper.PadicDominantDeterminant
 import LeanPaper.BeukersHarmonicRemainders
 import LeanPaper.BeukersPrimeMatrix
+import LeanPaper.ActualMixedAndreief
+import LeanPaper.ActualMixedTwoMinors
+import LeanPaper.Section4RootMean
+import LeanPaper.BetaOddMeasureActual
+import LeanPaper.CentralFactorialSeries
 
 /-! Independent transitive axiom audit of every active imported project declaration.
 Manuscript correspondence is certified separately. -/
@@ -939,7 +944,12 @@ run_cmd Elab.Command.liftCoreM do
     `LeanPaper.BeukersOuterValuation,
     `LeanPaper.PadicDominantDeterminant,
     `LeanPaper.BeukersHarmonicRemainders,
-    `LeanPaper.BeukersPrimeMatrix]
+    `LeanPaper.BeukersPrimeMatrix,
+    `LeanPaper.ActualMixedAndreief,
+    `LeanPaper.ActualMixedTwoMinors,
+    `LeanPaper.Section4RootMean,
+    `LeanPaper.BetaOddMeasureActual,
+    `LeanPaper.CentralFactorialSeries]
   let mut roots : Array Name := #[]
   for (decl, _) in env.constants do
     if let some idx := env.getModuleIdxFor? decl then

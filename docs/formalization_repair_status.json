@@ -1130,5 +1130,23 @@
     "status": "GITHUB_CI_PASS_TRANSITIVE_AXIOM_AUDITED",
     "receipt_sha256": "939d672b5a5f76ce8e95823e675f76b5224d75d08cb3f2bb57413df5f251ecd3",
     "native_windows_status": "NOT_RUN"
+  },
+  "active_continuation": {
+    "branch": "repair/actual-endpoints-construction",
+    "baseline_main": "b56c8102d25b931a601992c93bf30b19cc7ee103",
+    "baseline_run": 40342234466,
+    "target": "GITHUB_CI",
+    "mode": "A_TIER_LEAN",
+    "status": "under repair",
+    "candidate_modules": [
+      "LeanPaper.ActualMixedAndreief",
+      "LeanPaper.ActualMixedTwoMinors",
+      "LeanPaper.Section4RootMean",
+      "LeanPaper.BetaOddMeasureActual",
+      "LeanPaper.CentralFactorialSeries"
+    ],
+    "promoted_originals": [],
+    "source_archives": "all 25 supplied ZIP archives; source/evidence inspection only",
+    "verification": "PENDING_RECEIVING_CI"
   }
 }
