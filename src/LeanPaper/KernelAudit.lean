@@ -221,6 +221,10 @@ import LeanPaper.SymmetricPoleSpectrum
 import LeanPaper.UnitLogMoments
 import Zeta5.HermiteBasisCore
 import Zeta5Merge.Theorem6_17
+import LeanPaper.SignatureRestriction
+import LeanPaper.Section3MonicOrthogonal
+import LeanPaper.MatrixCurveJacobi
+import LeanPaper.BeukersMomentSeries
 import Lean
 
 /-! Independent transitive axiom audit of every active imported project declaration.
@@ -861,7 +865,11 @@ run_cmd Elab.Command.liftCoreM do
     `LeanPaper.SymmetricPoleSpectrum,
     `LeanPaper.UnitLogMoments,
     `Zeta5.HermiteBasisCore,
-    `Zeta5Merge.Theorem6_17]
+    `Zeta5Merge.Theorem6_17,
+    `LeanPaper.SignatureRestriction,
+    `LeanPaper.Section3MonicOrthogonal,
+    `LeanPaper.MatrixCurveJacobi,
+    `LeanPaper.BeukersMomentSeries]
   let mut roots : Array Name := #[]
   for (decl, _) in env.constants do
     if let some idx := env.getModuleIdxFor? decl then
