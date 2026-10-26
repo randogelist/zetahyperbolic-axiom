@@ -46,3 +46,9 @@ Exactly one mathematical file is added. Only three existing integration files ch
 When #2–#4 have individually passed and merged, reconcile only this branch's intended source/registrations against the updated accepted main. Verify and independently axiom-audit **all 223 modules** together under Lean 4.33.0 with only `propext`, `Quot.sound`, `Classical.choice`, no `sorryAx` or hidden research axioms. **Do not merge on stale 220-module CI**.
 
 On success, record passing CI/run SHA and final merge commit, and mark only the standalone lemma as accepted; do not change the whole-item manuscript count of 7/45 without proof of the actual-family bridge. No other target is added in this PR.
+
+## Receiving-base combined 223-module repair candidate (2026-10-26)
+
+Source replacement is taken from [isolated repair PR #8](https://github.com/randogelist/zetahyperbolic-axiom/pull/8), git blob `b58764606ad898f27236c293245bfb54365192cf`. It replaces the previous terminal `convert ... (try field_simp ...)` step with explicit `calc`, `field_simp [ne_of_gt hKpos]`, and `ring`. The historical donor still failed and this later patch is NOT yet independently accepted. The source in this branch must be verified by **fresh combined 223-module GitHub CI**, rather than borrowing either the old failed 220-module run or the repair branch's separate check.
+
+The accepted main baseline is now `54136b39ec280b200c108ee48e80a5c247b1fa6b` (contains passing 6.17, 6.16 and 4.2 modules). This branch is merged with that base for exact plan comparison, while still contributing **only** the one new 6.10 proof and its frozen receipt.
