@@ -138,9 +138,8 @@ theorem GRAM_TRANSLATED_SPARSE_MINOR_POSITIVE
         (fun i j : Fin r =>
           ∫ t, t ^ (a + b + e i + e j) ∂ConcreteMoment.momentMeasure p) := by
     ext i j
-    simp only [Matrix.submatrix_apply, gram_eq_moment p hp]
-    congr 1
-    omega
+    simpa only [Matrix.submatrix_apply, gram_eq_moment p hp,
+      Nat.add_assoc, Nat.add_left_comm, Nat.add_comm]
   rw [heq]
   simpa only [Nat.add_assoc, Nat.add_left_comm, Nat.add_comm] using
     ConcreteMoment.sparse_shifted_moment_det_pos p (a + b) e he
